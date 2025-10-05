@@ -1,0 +1,105 @@
+{% comment %}
+  Section : Image avec texte + boutons (multilingue)
+{% endcomment %}
+
+
+<section class="image-banner-wrapper {{ section.settings.custom_class }}">
+  {% if request.locale.iso_code == 'fr' and section.settings.image_fr != blank %}
+    <img
+      src="{{ section.settings.image_fr | image_url: width: 1920 }}"
+      alt="{{ 'custom_sections.image_banner_title' | t | escape }}"
+      loading="lazy"
+      class="image-banner-img">
+  {% elsif request.locale.iso_code == 'de' and section.settings.image_de != blank %}
+    <img
+      src="{{ section.settings.image_de | image_url: width: 1920 }}"
+      alt="{{ 'custom_sections.image_banner_title' | t | escape }}"
+      loading="lazy"
+      class="image-banner-img">
+  {% elsif section.settings.image_en != blank %}
+    <img
+      src="{{ section.settings.image_en | image_url: width: 1920 }}"
+      alt="{{ 'custom_sections.image_banner_title' | t | escape }}"
+      loading="lazy"
+      class="image-banner-img">
+  {% endif %}
+
+  <div class="image-banner-overlay">
+    <h2 class="image-banner-title">{{ 'custom_sections.image_banner_title' | t }}</h2>
+    <p class="image-banner-description">{{ 'custom_sections.image_banner_description' | t }}</p>
+
+    <div class="btn-group">
+      <a href="{% if request.locale.iso_code == 'fr' %}{{ section.settings.btn_primary_url_fr }}{% elsif request.locale.iso_code == 'de' %}{{ section.settings.btn_primary_url_de }}{% else %}{{ section.settings.btn_primary_url_en }}{% endif %}" class="btn btn-primary">
+        {{ 'custom_sections.image_banner_btn_primary' | t }}
+      </a>
+      <a href="{% if request.locale.iso_code == 'fr' %}{{ section.settings.btn_secondary_url_fr }}{% elsif request.locale.iso_code == 'de' %}{{ section.settings.btn_secondary_url_de }}{% else %}{{ section.settings.btn_secondary_url_en }}{% endif %}" class="btn btn-secondary">
+        {{ 'custom_sections.image_banner_btn_secondary' | t }}
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image multilangue",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_fr",
+      "label": "Image (FR)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_de",
+      "label": "Image (DE)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_en",
+      "label": "Image (EN)"
+    },
+    {
+      "type": "url",
+      "id": "btn_primary_url_fr",
+      "label": "Lien du bouton principal (FR)"
+    },
+    {
+      "type": "url",
+      "id": "btn_primary_url_de",
+      "label": "Lien du bouton principal (DE)"
+    },
+    {
+      "type": "url",
+      "id": "btn_primary_url_en",
+      "label": "Lien du bouton principal (EN)"
+    },
+    {
+      "type": "url",
+      "id": "btn_secondary_url_fr",
+      "label": "Lien du second bouton (FR)"
+    },
+    {
+      "type": "url",
+      "id": "btn_secondary_url_de",
+      "label": "Lien du second bouton (DE)"
+    },
+    {
+      "type": "url",
+      "id": "btn_secondary_url_en",
+      "label": "Lien du second bouton (EN)"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Classe CSS personnalisée",
+      "default": "image-banner"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image multilangue",
+      "category": "Bannières"
+    }
+  ]
+}
+{% endschema %}

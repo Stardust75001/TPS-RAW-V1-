@@ -1,0 +1,67 @@
+{% comment %}
+Section produit simple pour test
+{% endcomment %}
+
+<div class="product-page-simple py-5">
+  <div class="container">
+    <div class="row align-items-start">
+      <div class="col-md-6">
+        {% if product.images.size > 0 %}
+          <img
+            src="{{ product.featured_image | img_url: 'master' }}"
+            alt="{{ product.title | escape }}"
+            class="img-fluid w-100"
+            loading="lazy">
+        {% else %}
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg w-100' }}
+        {% endif %}
+      </div>
+
+      <div class="col-md-6">
+        <h1 class="h2 mb-3">{{ product.title }}</h1>
+        <p class="price h4 mb-3">{{ product.price | money }}</p>
+        <div class="description mb-4">{{ product.description }}</div>
+
+        {% form 'product', product %}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+          <button type="submit" class="btn btn-primary mb-3">
+            {{ 'products.product.add_to_cart' | t }}
+          </button>
+        {% endform %}
+
+        <!-- ✅ Bouton wishlist (Option 1) -->
+        <button
+          class="btn btn-outline-secondary"
+          data-wishlist-button
+          data-id="{{ product.id }}"
+          data-title="{{ product.title | escape }}"
+          data-image="{{ product.featured_image | img_url: 'medium' }}"
+          data-price="{{ product.price | money }}"
+          data-url="{{ product.url }}"
+          data-add-label="{{ 'wishlist.add_to_wishlist' | t }}"
+          data-remove-label="{{ 'wishlist.remove_from_wishlist' | t }}"
+        >
+          {{ 'wishlist.add_to_wishlist' | t }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Produit simple",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Configuration"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Produit simple"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,372 @@
+{% comment %}
+---------------------------------------------------------
+Copyright © 2019/2024 Theme Shopiweb Premium. Tous droits réservés.
+La copie, la modification, la distribution ou l'utilisation
+non autorisée de ce code ou de toute partie de celui-ci est formellement interdite.
+Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
+---------------------------------------------------------
+{% endcomment %}
+
+{% liquid 
+  assign pt = section.settings.pt | prepend: 'pt-'
+  assign pb = section.settings.pb | prepend: 'pb-'
+  assign mt = section.settings.mt | prepend: 'mt-'
+  assign mb = section.settings.mb | prepend: 'mb-'
+  assign bg_color = section.settings.bg_color
+
+  if section.settings.bg_gradient
+    assign bg_color = bg_color | append: ' bg-gradient'
+  endif
+%}
+
+<section 
+  id="newsletter-{{ section.id }}" 
+  class="newsletter enter-view {{ bg_color }} {{ section.settings.text_align }} {{ mt }} {{ mb }}">
+  <div class="{{ section.settings.container }}">
+    <div class="newsletter-inner {{ pt }} {{ pb }}">
+      <div class="mx-auto" style="max-width: {{ section.settings.max_width }}px">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            {% render 'section-header' %}
+            <div class="newsletter-form-wrapper">
+              {% form 'customer' %}
+                <input type="hidden" name="form_type" value="customer">
+                <input type="hidden" name="utf8" value="✓">
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <input type="hidden" name="contact[accepts_marketing]" value="true">
+                {{ form.errors | default_errors }}
+                
+                <div class="newsletter-form">
+                                                                            <div class="newsletter-input-row">
+                                                                                {% if section.settings.show_first_name %}
+                                                                                    <input 
+                                                                                        type="text" 
+                                                                                        name="contact[first_name]" 
+                                                                                        class="form-control newsletter-name-input" 
+                                                                                        placeholder="{{ 'general.newsletter.name_placeholder' | t }}" 
+                                                                                        aria-label="{{ 'general.newsletter.name_placeholder' | t }}" 
+                                                                                        autocorrect="off" 
+                                                                                        autocapitalize="off">
+                                                                                {% endif %}
+
+                                                                                <input 
+                                                                                    type="email" 
+                                                                                    name="contact[email]" 
+                                                                                    class="form-control newsletter-email-input" 
+                                                                                    value="{{ customer.email }}" 
+                                                                                    placeholder="{{ 'general.newsletter.input_label' | t }}" 
+                                                                                    aria-label="{{ 'general.newsletter.input_label' | t }}" 
+                                                                                    autocorrect="off" 
+                                                                                    autocapitalize="off" 
+                                                                                    required>
+                                                                            </div>
+                                                                            <div class="newsletter-btn-row">
+                                                                                <button 
+                                                                                    class="btn {{ section.settings.btn_color }}" 
+                                                                                    type="submit" 
+                                                                                    name="commit">
+                                                                                    {{ 'general.newsletter.submit_button' | t }}
+                                                                                </button>
+                                                                            </div>
+                </div>
+
+                {% unless section.settings.notice == blank %}
+                  <div class="notice rte mt-3 lh-sm extra-small text-center newsletter-terms">
+                    {{ section.settings.notice }}
+                  </div>
+                {% endunless %}
+              {% endform %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+    "name": "Newsletter",
+    "settings": [
+        {
+            "type": "paragraph", 
+            "content": "EN Documentation: [Newsletter by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/sections\/newsletter)"
+        },
+        {
+            "type": "header",
+            "content": "General"
+        },
+        {
+            "type": "select",
+            "id": "bg_color",
+            "label": "Background color",
+            "default": "bg-dark text-white",
+            "options": [
+                { "group": "Principal", "value": "bg-primary text-white", "label": "Primaire" },
+                { "group": "Principal", "value": "bg-secondary text-white", "label": "Secondaire" },
+                { "group": "Principal", "value": "bg-tertiary text-white", "label": "Tertiaire" },
+                { "group": "Intermédiaire", "value": "bg-white text-dark", "label": "White" },
+                { "group": "Intermédiaire", "value": "bg-light text-body", "label": "Light" },
+                { "group": "Intermédiaire", "value": "bg-dark text-white", "label": "Dark" },
+                { "group": "Par défaut", "value": "bg-body text-body", "label": "Corps (body)" }
+            ]
+        },
+        {
+            "type": "checkbox",
+            "id": "bg_gradient",
+            "label": "Background gradient",
+            "default": false,
+            "info": "Does not apply to light colors"
+        },
+        {
+            "type": "select",
+            "id": "container",
+            "label": "Conteneur",
+            "default": "container",
+            "options": [
+                { "value": "container", "label": "Conteneur" },
+                { "value": "container-fluid", "label": "Pleine largeur" }
+            ]
+        },
+        {
+            "type": "text",
+            "id": "max_width",
+            "label": "Largeur maximale du conteneur (px)",
+            "default": "960",
+            "info": "Leave empty to disable"
+        },
+        {
+            "type": "select",
+            "id": "text_align",
+            "label": "Alignement du texte",
+            "default": "text-center",
+            "options": [
+                { "value": "text-start", "label": "Gauche" },
+                { "value": "text-center", "label": "Centre" }
+            ]
+        },
+        {
+            "type": "header",
+            "content": "Section header"
+        },
+        {
+            "type": "image_picker",
+            "id": "subtitle_img",
+            "label": "Image caption"
+        },
+        {
+            "type": "text",
+            "id": "brand_image_size",
+            "label": "Image Largeur/Hauteur (px)",
+            "default": "60"
+        },
+        {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Text caption"
+        },
+        {
+            "type": "select",
+            "id": "subtitle_size",
+            "label": "Caption size",
+            "default": "fs-5",
+            "options": [
+                { "group": "Légende Standard", "value": "fs-1", "label": "Extra Grand" },
+                { "group": "Légende Standard", "value": "fs-2", "label": "Super Grand" },
+                { "group": "Légende Standard", "value": "fs-3", "label": "Very Large" },
+                { "group": "Légende Standard", "value": "fs-4", "label": "Large" },
+                { "group": "Légende Standard", "value": "fs-5", "label": "Medium" },
+                { "group": "Légende Standard", "value": "fs-6", "label": "Small" } 
+            ]
+        },
+        {
+            "type": "color",
+            "id": "color_caption",
+            "label": "Caption color",
+            "default": "#6c757d"
+        },
+        {
+            "type": "text",
+            "id": "title_overlay",
+            "label": "Titre overlay",
+            "info": "Visible on desktop, hidden on mobile to optimize readability."
+        },
+        {
+            "type": "select",
+            "id": "title_overlay_size",
+            "label": "Taille du titre overlay",
+            "default": "3",
+            "options": [
+                { "group": "Titre Overlay", "value": "4", "label": "Large" },
+                { "group": "Titre Overlay", "value": "3", "label": "Medium" },
+                { "group": "Titre Overlay", "value": "2", "label": "Small" }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "color_title_overlay",
+            "label": "Overlay title color",
+            "default": "#000000"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "title",
+            "label": "Titre",
+            "default": "Subscribe to newsletter"
+        },
+        {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "Balise titre (SEO)",
+            "default": "h2",
+            "options": [
+                { "value": "h1", "label": "h1" },
+                { "value": "h2", "label": "h2" },
+                { "value": "h3", "label": "h3" },
+                { "value": "h4", "label": "h4" },
+                { "value": "h5", "label": "h5" },
+                { "value": "h6", "label": "h6" },
+                { "value": "span", "label": "Aucune" }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "title_size",
+            "label": "Taille du titre",
+            "default": "h3",
+            "options": [
+                { "group": "Titre Supérieur", "value": "display-1", "label": "Extra Extra Grand" },
+                { "group": "Titre Supérieur", "value": "display-2", "label": "Extra Grand" },
+                { "group": "Titre Supérieur", "value": "display-3", "label": "Ultra Grand" },
+                { "group": "Titre Supérieur", "value": "display-4", "label": "Super Grand" },
+                { "group": "Titre Standard", "value": "h1", "label": "Very Large" },
+                { "group": "Titre Standard", "value": "h2", "label": "Large" },
+                { "group": "Titre Standard", "value": "h3", "label": "Medium" },
+                { "group": "Titre Standard", "value": "h4", "label": "Small" },
+                { "group": "Titre Standard", "value": "h5", "label": "Very Small" },
+                { "group": "Titre Standard", "value": "h6", "label": "Super Petit" }
+            ]
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description",
+            "default": "<p>Sign up to receive information about our latest offers and other important topics.</p>"
+        },
+        {
+            "type": "select",
+            "id": "description_size",
+            "label": "Taille de description",
+            "default": "fs-5",
+            "options": [
+                { "group": "Description Standard", "value": "fs-1", "label": "Extra Grand" },
+                { "group": "Description Standard", "value": "fs-2", "label": "Super Grand" },
+                { "group": "Description Standard", "value": "fs-3", "label": "Very Large" },
+                { "group": "Description Standard", "value": "fs-4", "label": "Large" },
+                { "group": "Description Standard", "value": "fs-5", "label": "Medium" },
+                { "group": "Description Standard", "value": "fs-6", "label": "Small" } 
+            ]
+        },
+        {
+            "type": "select",
+            "id": "input_group_size",
+            "label": "Form element size",
+            "default": "",
+            "options": [
+                { "value": "", "label": "Normal" },
+                { "value": "input-group-lg", "label": "Large" }
+            ]
+        },
+        {
+            "type": "checkbox",
+            "id": "show_first_name",
+            "label": "Show first name field",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "first_name_placeholder",
+            "label": "First name placeholder",
+            "default": "Enter your first name"
+        },
+        {
+            "type": "select",
+            "id": "btn_color",
+            "label": "Button color",
+            "default": "btn-primary",
+            "options": [
+                { "group": "Normal", "value": "btn-link", "label": "Link" },
+                { "group": "Normal", "value": "btn-light", "label": "Light" },
+                { "group": "Normal", "value": "btn-dark", "label": "Dark" },
+                { "group": "Normal", "value": "btn-primary", "label": "Primaire" },
+                { "group": "Normal", "value": "btn-secondary", "label": "Secondaire" },
+                { "group": "Normal", "value": "btn-tertiary", "label": "Tertiaire" },
+                { "group": "Normal", "value": "btn-success", "label": "Success" },
+                { "group": "Normal", "value": "btn-danger", "label": "Danger" },
+                { "group": "Normal", "value": "btn-warning", "label": "Avertissement" },
+                { "group": "Normal", "value": "btn-info", "label": "Info" },
+                { "group": "Outline", "value": "btn-outline-light", "label": "Contour Claire" },
+                { "group": "Outline", "value": "btn-outline-dark", "label": "Contour Sombre" },
+                { "group": "Outline", "value": "btn-outline-primary", "label": "Contour Primaire" },
+                { "group": "Outline", "value": "btn-outline-secondary", "label": "Contour Secondaire" },
+                { "group": "Outline", "value": "btn-outline-tertiary", "label": "Contour Tertiaire" },
+                { "group": "Outline", "value": "btn-outline-success", "label": "Success Outline" },
+                { "group": "Outline", "value": "btn-outline-danger", "label": "Contour Danger" },
+                { "group": "Outline", "value": "btn-outline-warning", "label": "Contour Avertissement" },
+                { "group": "Outline", "value": "btn-outline-info", "label": "Contour Info" }
+            ]
+        },
+        {
+            "type": "richtext",
+            "id": "notice",
+            "label": "Notice",
+            "default": "<p>By signing up to receive emails, you agree to our terms of sale and privacy policy</p>"
+        },
+        {
+            "type": "header",
+            "content": "Espacement de la section"
+        },
+        {
+            "type": "range",
+            "id": "pt",
+            "label": "Top padding",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "pb",
+            "label": "Bottom padding",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "mt",
+            "label": "Top margin",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "mb",
+            "label": "Bottom margin",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 0
+        }
+    ],
+    "presets": [
+        {
+            "name": "Newsletter",
+            "category": "Promotional"
+        }
+    ]
+}
+{% endschema %}
