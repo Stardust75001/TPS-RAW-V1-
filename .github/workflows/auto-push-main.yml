@@ -1,0 +1,23 @@
+name: 🚀 Auto Push Main to Shopify
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Shopify CLI
+        run: npm install -g @shopify/cli @shopify/theme
+
+      - name: Deploy to Shopify
+        env:
+          SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_STORE }}
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+          THEME_ID: ${{ secrets.SHOPIFY_THEME_ID }}
+        run: |
+          shopify theme push --store "\$SHOPIFY_FLAG_STORE" --theme "\$THEME_ID" --path .
