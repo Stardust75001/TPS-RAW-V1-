@@ -2,15 +2,14 @@ name: Theme CI (theme-check + sanity)
 
 on:
   push:
-    branches: [ "**" ]
+    branches: ["**"]
   pull_request:
-    branches: [ "**" ]
+    branches: ["**"]
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -48,5 +47,4 @@ jobs:
       - name: Validate locale JSON
         run: |
           sudo apt-get update -y && sudo apt-get install -y jq
-          find locales -type f -name "*.json" -print0 | xargs -0 -I{} sh -c 'jq . "{}" >/dev/null' \
-            && echo "Locales JSON valid ✅"
+          find locales -type f -name "*.json" -print0 | xargs -0 -I{} sh -c 'jq . "{}" >/dev/null' && echo "Locales JSON valid ✅"
