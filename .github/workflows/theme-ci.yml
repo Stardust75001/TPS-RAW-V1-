@@ -1,0 +1,52 @@
+name: Theme CI (theme-check + sanity)
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # --- Ruby pour theme-check
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: false
+
+      - name: Install theme-check
+        run: |
+          gem install theme-check --no-document
+          theme-check --version
+
+      # --- Vérif structure minimale d'un thème Shopify
+      - name: Sanity: theme structure at repo root
+        run: |
+          set -e
+          for p in layout/theme.liquid config/settings_schema.json; do
+            [ -f "$p" ] || { echo "::error file=$p::missing required file $p"; exit 1; }
+          done
+          for d in assets sections snippets templates locales; do
+            [ -d "$d" ] || { echo "::error file=$d::missing required folder $d"; exit 1; }
+          done
+          echo "Theme structure OK ✅"
+
+      # --- Lint Liquid/JSON avec theme-check
+      - name: Run theme-check
+        run: |
+          theme-check --fail-level=error .
+
+      # --- Validation JSON des locales (rapide)
+      - name: Validate locale JSON
+        run: |
+          sudo apt-get update -y && sudo apt-get install -y jq
+          find locales -type f -name "*.json" -print0 | xargs -0 -I{} sh -c 'jq . "{}" >/dev/null' \
+            && echo "Locales JSON valid ✅"
