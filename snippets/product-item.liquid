@@ -52,10 +52,12 @@
                                 <img
                                     class="product-item-img img-fluid rounded {{ section.settings.product_img_thumbnail }} {{ section.settings.product_shadow_sp }} {{ section.settings.product_border_color }}"
                                     src="{{ image.src | image_url: width: img_width, height: img_height, crop: 'center' }}"
-                                    alt="{{ image.alt | escape }}"
+                                    alt="Image du produit : {{ product.title }}"
                                     width="{{ img_width }}"
                                     height="{{ img_height }}"
-                                    loading="lazy">
+                                    loading="lazy"
+                                    role="img"
+                                    aria-label="Image du produit : {{ product.title }}">
                             </div>
                         {% endfor %}
                     </div>

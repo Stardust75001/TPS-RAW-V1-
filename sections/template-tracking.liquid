@@ -37,9 +37,9 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
           aria-label="{{ 'general.tracking.placeholder' | t }}">
       </div>
       <div class="px-5 w-100">
-      <button class="btn w-100 {{ section.settings.btn_color }} {{ btn_shadow_sp }} {{ section.settings.btn_size }}" onclick="trackPackage()">
-        {{ 'general.tracking.btn_text' | t }}
-      </button>
+            <button class="btn w-100 {{ section.settings.btn_color }} {{ btn_shadow_sp }} {{ section.settings.btn_size }}" onclick="trackPackage()" aria-label="Suivre le colis" role="button">
+                {{ 'general.tracking.btn_text' | t }}
+            </button>
       </div>
     </div>
   </div>
@@ -49,7 +49,10 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     </div>
   </div>
 </section>
-<script src="https://www.17track.net/externalcall.js" defer></script>
+{%- comment -%}
+    External script should be served by Shopify CDN for best performance:
+    <script src="https://www.17track.net/externalcall.js" defer></script>
+{%- endcomment -%}
 <script>
   function trackPackage() {
       const trackingNumber = document.getElementById("tracking-input-{{ section.id }}").value;

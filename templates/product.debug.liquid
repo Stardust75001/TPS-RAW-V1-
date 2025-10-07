@@ -16,7 +16,7 @@ Template produit de débogage - Version ultra simple
                     <li><strong>Template utilisé:</strong> product.debug.liquid</li>
                 </ul>
             </div>
-            
+
             {% if product.id %}
                 <div class="alert alert-success">
                     <h3>✅ Produit trouvé !</h3>
@@ -30,29 +30,32 @@ Template produit de débogage - Version ultra simple
             {% endif %}
         </div>
     </div>
-    
+
     {% if product.id %}
         <div class="row">
             <div class="col-lg-6">
                 {% if product.images.size > 0 %}
-                    <img src="{{ product.featured_image | img_url: 'master' }}" 
-                         alt="{{ product.title }}" 
-                         class="img-fluid rounded">
+                    <img src="{{ product.featured_image | img_url: 'master' }}"
+                        alt="Image du produit : {{ product.title }}"
+                        class="img-fluid rounded"
+                        role="img"
+                        aria-label="Image du produit : {{ product.title }}"
+                        width="600" height="600">
                 {% else %}
                     <div class="bg-light p-5 text-center">
                         <p>Aucune image disponible</p>
                     </div>
                 {% endif %}
             </div>
-            
+
             <div class="col-lg-6">
                 <h1>{{ product.title }}</h1>
                 <p class="h4 text-primary">{{ product.price | money }}</p>
                 <div class="mb-4">{{ product.description }}</div>
-                
+
                 {% form 'product', product %}
                     <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary" aria-label="Ajouter {{ product.title }} au panier" role="button">
                         Ajouter au panier
                     </button>
                 {% endform %}

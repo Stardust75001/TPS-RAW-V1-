@@ -21,6 +21,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         assign limit = 18
     endif
 
+    assign active_filter_values = 0
     for filter in collection.filters
         if filter.type == "price_range"
            if filter.min_value.value != nil or filter.max_value.value != nil
@@ -52,17 +53,21 @@ window.shopiweb_bundle = {
             <img
                 class="collection-header-img img-mobile d-lg-none"
                 src="{{ collection.image.src | image_url: width: 960 }}"
-                alt="{{ collection.image.alt | escape }}"
+                alt="Image de la collection : {{ collection.title }}"
                 width="960"
                 height="{{ 960 | divided_by: collection.image.aspect_ratio | round }}"
                 loading="lazy"
-                style="opacity: {{ section.settings.img_opacity }};">
+                style="opacity: {{ section.settings.img_opacity }};"
+                role="img"
+                aria-label="Image de la collection : {{ collection.title }}">
             <img
                 class="collection-header-img img-desktop d-none d-lg-block"
                 src="{{ collection.image.src | image_url: width: 1920 }}"
-                alt="{{ collection.image.alt | escape }}"
+                alt="Image de la collection : {{ collection.title }}"
                 width="1920"
                 height="{{ 1920 | divided_by: collection.image.aspect_ratio | round }}"
+                role="img"
+                aria-label="Image de la collection : {{ collection.title }}"
                 loading="lazy"
                 style="opacity: {{ section.settings.img_opacity }};">
             {% if section.settings.img_blur > 0 %}
@@ -1271,7 +1276,6 @@ window.shopiweb_bundle = {
             ]
         }
     ],
-    "templates": ["collection"],
     "presets": [
         {
             "name": "Collection Bundle",

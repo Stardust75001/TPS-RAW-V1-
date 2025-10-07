@@ -1,5 +1,9 @@
 {
   "general": {
+    "tracking": {
+      "placeholder": "Enter tracking number",
+      "btn_text": "Track package"
+    },
     "accessibility": {
       "close": "Close",
       "skip_content": "Skip to content",
@@ -439,6 +443,17 @@
     }
   },
   "collection": {
+    "custom_bundle": {
+      "progress_label": "Bundle progress",
+      "progress_uncompleted_text": "Complete your bundle",
+      "progress_completed_text": "Bundle complete",
+      "bundle_price": "Bundle price",
+      "you_save": "You save",
+      "button_atc_text": "Add bundle to cart",
+      "button_view_contents_text": "View bundle contents",
+      "bundle_contents_title": "Bundle Contents",
+      "bundle_contents_empty_html": "Your bundle is empty"
+    },
     "filters": {
       "from": "From",
       "title": "Filters",

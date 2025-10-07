@@ -91,10 +91,12 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                                     class="product-item-img img-fluid me-4 rounded {{ section.settings.product_img_thumbnail }} {{ section.settings.product_shadow_sp }} {{ section.settings.product_border_color }}"
                                                     style="border-width: {{ section.settings.product_border_width }}px;"
                                                     src="{{ line_item.image | image_url: width: img_width, height: img_height, crop: 'center' }}"
-                                                    alt="{{ line_item.image.alt | escape }}"
+                                                    alt="Image du produit : {{ line_item.product.title }}"
                                                     width="{{ img_width }}"
                                                     height="{{ img_height }}"
-                                                    loading="lazy">
+                                                    loading="lazy"
+                                                    role="img"
+                                                    aria-label="Image du produit : {{ line_item.product.title }}">
                                             </a>
                                         </div>
                                         <div class="col-7 col-lg-8 px-3">
