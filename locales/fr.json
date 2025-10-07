@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "accessibility": {
@@ -45,28 +54,31 @@
     "offcanvas_search_title_products": "Produits",
     "offcanvas_search_title_collections": "Collections",
     "offcanvas_search_title_pages": "Pages",
-    "offcanvas_search_title_articles": "Articles"
-      ,
-      "newsletter": {
-        "name_placeholder": "Saisissez votre nom",
-        "input_label": "Saisissez votre email",
-        "submit_button": "S'abonner",
-        "confirmation_text": "Merci de vous être abonné !"
+    "offcanvas_search_title_articles": "Articles",
+    "newsletter": {
+      "name_placeholder": "Saisissez votre nom",
+      "input_label": "Saisissez votre email",
+      "submit_button": "S'abonner",
+      "confirmation_text": "Merci de vous être abonné !"
+    },
+    "countdown_timer": {
+      "s": "s",
+      "days": "jours",
+      "hours": "heures",
+      "minutes": "minutes",
+      "seconds": "secondes"
+    },
+    "password_page": {
+      "password_form": {
+        "password_label": "Mot de passe",
+        "btn_label": "Valider"
       }
-      ,
-      "countdown_timer": {
-        "s": "s",
-        "days": "jours",
-        "hours": "heures",
-        "minutes": "minutes",
-        "seconds": "secondes"
-      },
-      "password_page": {
-        "password_form": {
-          "password_label": "Mot de passe",
-          "btn_label": "Valider"
-        }
-      }
+    },
+    "tracking": {
+      "placeholder": "Saisissez le numéro de suivi",
+      "btn_text": "Suivre le colis"
+    },
+    "loading": "Chargement..."
   },
   "policy": {
     "title": "Politique",
@@ -75,28 +87,7 @@
     "last_updated": "Dernière mise à jour : {{ date }}",
     "menu": "Menu",
     "all_rights_reserved": "Tous droits réservés",
-    "secure_payments": "Paiements sécurisés",
-    "loading": "Chargement..."
-      ,"offcanvas_search_title_articles": "Articles"
-      ,"newsletter": {
-        "name_placeholder": "Saisissez votre nom",
-        "input_label": "Saisissez votre email",
-        "submit_button": "S'abonner",
-        "confirmation_text": "Merci de vous être abonné !"
-      }
-      ,"countdown_timer": {
-        "s": "s",
-        "days": "jours",
-        "hours": "heures",
-        "minutes": "minutes",
-        "seconds": "secondes"
-      }
-      ,"password_page": {
-        "password_form": {
-          "password_label": "Mot de passe",
-          "btn_label": "Valider"
-        }
-      }
+    "secure_payments": "Paiements sécurisés"
   },
   "newsletter": {
     "name_placeholder": "Saisissez votre nom",
@@ -125,26 +116,6 @@
     "correct_answer": "Bonne réponse",
     "your_answer": "Votre réponse",
     "try_again": "Réessayer"
-      ,"offcanvas_search_title_articles": "Articles"
-      ,"newsletter": {
-        "name_placeholder": "Saisissez votre nom",
-        "input_label": "Saisissez votre email",
-        "submit_button": "S'abonner",
-        "confirmation_text": "Merci de vous être abonné !"
-      }
-      ,"countdown_timer": {
-        "s": "s",
-        "days": "jours",
-        "hours": "heures",
-        "minutes": "minutes",
-        "seconds": "secondes"
-      }
-      ,"password_page": {
-        "password_form": {
-          "password_label": "Mot de passe",
-          "btn_label": "Valider"
-        }
-      }
   },
   "offcanvas_menu": {
     "title_customer": "Bonjour, {{ name }}",
@@ -280,11 +251,19 @@
     "type": "Type",
     "sku": "SKU",
     "view_details": "Voir les détails",
-    "stock_count": "Plus que {{ count }} en stock"
+    "stock_count": "Plus que {{ count }} en stock",
+    "inventory_bar": {
+      "sold_out": "Épuisé",
+      "untracked": "Stock non suivi",
+      "verylow_html": "Plus que quelques articles en stock !",
+      "low_html": "Stock faible",
+      "normal_html": "En stock",
+      "label": "Disponibilité"
+    }
   },
   "customer": {
     "login": {
-      "title": "Se connecter",
+      "title": "Connexion",
       "password": "Mot de passe",
       "forgot_password": "Mot de passe oublié ?",
       "submit": "Se connecter",
@@ -293,7 +272,7 @@
       "email": "Email"
     },
     "recover_password": {
-      "title": "Réinitialiser votre mot de passe",
+      "title": "Réinitialiser le mot de passe",
       "success": "Nous vous avons envoyé un lien de réinitialisation par email.",
       "subtext": "Saisissez l'email associé à votre compte.",
       "submit": "Envoyer le lien de réinitialisation",
@@ -311,7 +290,7 @@
       "login": "Se connecter"
     },
     "reset_password": {
-      "title": "Réinitialiser votre mot de passe",
+      "title": "Réinitialiser le mot de passe",
       "subtext": "Réinitialiser le mot de passe pour {{ email }}",
       "password": "Nouveau mot de passe",
       "password_confirm": "Confirmer le mot de passe",
@@ -329,8 +308,8 @@
       "none": "Vous n'avez pas encore de commandes.",
       "order_number": "Numéro de commande",
       "date": "Date",
-      "payment_status": "Statut du paiement",
-      "fulfillment_status": "Statut de traitement",
+      "payment_status": "Statut de paiement",
+      "fulfillment_status": "Statut de livraison",
       "total": "Total",
       "title": "Mes commandes"
     },
@@ -350,22 +329,22 @@
       "product": "Produit",
       "sku": "SKU",
       "price": "Prix",
-      "quantity": "Qté",
+      "quantity": "Quantité",
       "total": "Total",
       "discount": "Remise",
       "shipping": "Livraison",
-      "tax": "Taxe",
+      "tax": "Taxes",
       "subtotal": "Sous-total",
       "billing_address": "Adresse de facturation",
       "shipping_address": "Adresse de livraison",
-      "payment_status": "Statut du paiement",
-      "fulfillment_status": "Statut de traitement",
-      "track_shipment": "Suivre l'expédition",
-      "fulfilled_at_html": "Traitée le {{ date }}",
+      "payment_status": "Statut de paiement",
+      "fulfillment_status": "Statut de livraison",
+      "track_shipment": "Suivre la livraison",
+      "fulfilled_at_html": "Livrée le {{ date }}",
       "cancelled": "Annulée",
       "date": "Date",
       "tracking_url": "Suivre votre commande",
-      "tracking_company": "Transporteur",
+      "tracking_company": "Société de livraison",
       "tracking_number": "Numéro de suivi",
       "note": "Note de commande",
       "return": "Retour aux commandes"
@@ -383,7 +362,7 @@
       "edit_address": "Modifier l'adresse",
       "first_name": "Prénom",
       "last_name": "Nom",
-      "company": "Entreprise",
+      "company": "Société",
       "address1": "Adresse",
       "address2": "Appartement, suite, etc.",
       "city": "Ville",
@@ -454,20 +433,20 @@
     "sort_by": "Trier par",
     "btn_filter_products": "Filtrer les produits",
     "paginate_count": "Affichage de {{ count }} sur {{ total }} produits",
-    "empty_html": "Aucun produit trouvé"
-  },
-  "custom_bundle": {
-    "add_to_bundle": "Ajouter au lot",
-    "progress_label": "Progression du lot",
-    "progress_uncompleted_text": "Complétez votre lot",
-    "progress_completed_text": "Lot terminé",
-    "bundle_price": "Prix du lot",
-    "you_save": "Vous économisez",
-    "button_atc_text": "Ajouter le lot au panier",
-    "button_view_contents_text": "Voir le contenu du lot",
-    "bundle_contents_title": "Contenu du lot",
-    "bundle_contents_empty_html": "Votre lot est vide",
-    "no_reviews": "Aucun avis"
+    "empty_html": "Aucun produit trouvé",
+    "custom_bundle": {
+      "add_to_bundle": "Ajouter au lot",
+      "progress_label": "Progression du lot",
+      "progress_uncompleted_text": "Complétez votre lot",
+      "progress_completed_text": "Lot terminé",
+      "bundle_price": "Prix du lot",
+      "you_save": "Vous économisez",
+      "button_atc_text": "Ajouter le lot au panier",
+      "button_view_contents_text": "Voir le contenu du lot",
+      "bundle_contents_title": "Contenu du lot",
+      "bundle_contents_empty_html": "Votre lot est vide",
+      "no_reviews": "Aucun avis"
+    }
   },
   "announcement": {
     "shipping_notice": "Livraison dans toute l'Europe (EEE)",
