@@ -45,8 +45,8 @@ window.shopiweb_bundle = {
 
 <script src="{{ 'collection-bundle.js' | asset_url }}" defer></script>
 
-<div 
-    id="collection-{{ collection.id }}" 
+<div
+    id="collection-{{ collection.id }}"
     class="collection collection-bundle pb-11 {{ section.settings.text_align }}">
     {% if section.settings.show_collection_img and collection.image != blank %}
         <header class="collection-header collection-header-img py-12 py-xl-14 mb-8 mb-lg-9 enter-view">
@@ -75,7 +75,7 @@ window.shopiweb_bundle = {
                 </div>
             {% endif %}
             <div class="container">
-                <div 
+                <div
                     class="animate__animated animate__faster opacity-0"
                     {% if settings.effect_apply_title_enable %}
                       data-animate-class="{{ settings.animation_title_name }}"
@@ -85,7 +85,7 @@ window.shopiweb_bundle = {
                         {{ collection.title }}
                         {% if settings.custom_svg_h2 != blank %}
                           <div class="h2_svg animate__animated animate__faster opacity-0"
-                              {% if settings.effect_apply_svg_enable %} 
+                              {% if settings.effect_apply_svg_enable %}
                                 data-animate-class="{{ settings.animation_svg_name }}"
                                 style="animation-delay: 400ms;"
                               {% endif %}
@@ -95,7 +95,7 @@ window.shopiweb_bundle = {
                         {% else %}
                           {% if settings.svg_h2 != 'none' %}
                             <div class="h2_svg mb-4 animate__animated animate__faster opacity-0"
-                                  {% if settings.effect_apply_svg_enable %} 
+                                  {% if settings.effect_apply_svg_enable %}
                                     data-animate-class="{{ settings.animation_svg_name }}"
                                     style="animation-delay: 400ms;"
                                   {% endif %}>
@@ -106,9 +106,9 @@ window.shopiweb_bundle = {
                     </h1>
                 </div>
                 {% if section.settings.show_collection_description and collection.description != blank %}
-                    <div 
+                    <div
                         class="animate__animated animate__faster opacity-0"
-                        {% if settings.effect_apply_description_enable %} 
+                        {% if settings.effect_apply_description_enable %}
                           data-animate-class="{{ settings.animation_description_name }}"
                           style="animation-delay: 600ms;"
                         {% endif %}>
@@ -153,8 +153,8 @@ window.shopiweb_bundle = {
                         <div class="d-flex">
                             <button
                                 class="btn-filters btn d-flex align-items-center {{ section.settings.filters_btn_color }}"
-                                data-bs-toggle="offcanvas" 
-                                data-bs-target="#offcanvas-filters" 
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvas-filters"
                                 aria-controls="offcanvas-filters"
                                 aria-label="{{ 'collection.btn_filter_products' | t }}"
                                 type="button">
@@ -192,11 +192,11 @@ window.shopiweb_bundle = {
                                 {% endfor %}
                             </select>
                         </div>
-                        <span 
-                            id="collection-sort-by-notice" 
-                            class="visually-hidden" 
-                            aria-live="polite" 
-                            aria-atomic="true" 
+                        <span
+                            id="collection-sort-by-notice"
+                            class="visually-hidden"
+                            aria-live="polite"
+                            aria-atomic="true"
                             data-text-sort-by="{{ 'general.accessibility.sorted_by' | t }}">
                             {{ 'general.accessibility.sorted_by' | t }}: {{ collection.sort_by }}
                         </span>
@@ -231,19 +231,19 @@ window.shopiweb_bundle = {
                                 {% endfor %}
                             </ul>
                             <div class="bd-pss progress">
-                                <div 
-                                    class="progress-bar progress-bar-striped progress-bar-animated" 
-                                    role="progressbar" 
-                                    aria-label="{{ 'collection.custom_bundle.progress_label' | t }}" 
-                                    aria-valuenow="0" 
-                                    aria-valuemin="0" 
-                                    aria-valuemax="100" 
+                                <div
+                                    class="progress-bar progress-bar-striped progress-bar-animated"
+                                    role="progressbar"
+                                    aria-label="{{ 'collection.custom_bundle.progress_label' | t }}"
+                                    aria-valuenow="0"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
                                     style="width: 0%"
                                     data-color-uncompleted="{{ section.settings.bundle_progress_color_uncompleted }}"
                                     data-color-completed="{{ section.settings.bundle_progress_color_completed }}">
                                 </div>
                             </div>
-                            <p 
+                            <p
                                 class="progress-text small mt-2"
                                 data-text-uncompleted="{{ 'collection.custom_bundle.progress_uncompleted_text' | t }}"
                                 data-text-completed="{{ 'collection.custom_bundle.progress_completed_text' | t }}">
@@ -262,7 +262,7 @@ window.shopiweb_bundle = {
                                 <span data-bundle-discount></span>
                             </p>
                             <button
-                                class="bd-button-atc btn w-100 {{ section.settings.bundle_card_btn_atc }}" 
+                                class="bd-button-atc btn w-100 {{ section.settings.bundle_card_btn_atc }}"
                                 type="button"
                                 data-text-add-to-cart="{{ 'collection.custom_bundle.button_atc_text' | t }}"
                                 disabled
@@ -271,7 +271,7 @@ window.shopiweb_bundle = {
                                 {{ 'collection.custom_bundle.button_atc_text' | t }}
                             </button>
                             <button
-                                class="bundle-view-contents btn btn-sm w-100 mt-3 {{ section.settings.bundle_card_btn_view_contents }}" 
+                                class="bundle-view-contents btn btn-sm w-100 mt-3 {{ section.settings.bundle_card_btn_view_contents }}"
                                 type="button"
                                 data-bs-target="#modal-bundle-contents"
                                 data-bs-toggle="modal">
@@ -288,10 +288,10 @@ window.shopiweb_bundle = {
                             {{ 'collection.empty_html' | t }}
                         </p>
                     {% else %}
-                        <button 
+                        <button
                             id="btn-load-previous"
-                            class="btn btn-outline-secondary btn-sm my-4" 
-                            data-previous-url="{{ paginate.previous.url }}" 
+                            class="btn btn-outline-secondary btn-sm my-4"
+                            data-previous-url="{{ paginate.previous.url }}"
                             onclick="onClickCollectionLoadPrevious(this, event)"
                             {% unless paginate.previous %}hidden{% endunless %}>
                             {{ 'collection.load_previous' | t }}
@@ -301,8 +301,8 @@ window.shopiweb_bundle = {
                                 {% render 'product-item-bundle', product: product, current_page: paginate.current_page %}
                             {% endfor %}
                         </ul>
-                        <div 
-                            id="paging-collection" 
+                        <div
+                            id="paging-collection"
                             class="text-center mx-auto pt-8 pb-4" aria-hidden="true">
                             <small class="d-block text-muted mb-3 fst-italic">
                                 {% assign paginate_count = paginate.current_offset | plus: collection.products.size %}
@@ -310,19 +310,19 @@ window.shopiweb_bundle = {
                             </small>
                             <div class="progress mb-0">
                                 {% assign collection_progress = paginate.items | minus: paginate.items | minus: paginate_count | times: 100.0 | divided_by: paginate.items | round | remove: '-' %}
-                                <div 
-                                    class="progress-bar bg-primary" 
-                                    role="progressbar" 
-                                    style="width: {{ collection_progress }}%;" 
-                                    aria-valuenow="{{ paginate_count }}" 
-                                    aria-valuemin="0" 
+                                <div
+                                    class="progress-bar bg-primary"
+                                    role="progressbar"
+                                    style="width: {{ collection_progress }}%;"
+                                    aria-valuenow="{{ paginate_count }}"
+                                    aria-valuemin="0"
                                     aria-valuemax="{{ paginate.items }}">
                                 </div>
                             </div>
                             {% if paginate.next %}
-                                <button 
-                                    class="button-loading-more btn btn-outline-primary d-inline-flex align-items-center mt-5 mb-0" 
-                                    data-next-url="{{ paginate.next.url }}" 
+                                <button
+                                    class="button-loading-more btn btn-outline-primary d-inline-flex align-items-center mt-5 mb-0"
+                                    data-next-url="{{ paginate.next.url }}"
                                     onclick="onClickCollectionLoadMore(this, event)"
                                     aria-label="{{ 'general.accessibility.load_more_products' | t }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -353,7 +353,7 @@ window.shopiweb_bundle = {
 
 {% render 'offcanvas-filters' %}
 
-{% liquid 
+{% liquid
     case settings.offcanvas_img_orientation
         when 'square'
             assign img_width  = 600
@@ -366,12 +366,12 @@ window.shopiweb_bundle = {
             assign img_height = 600
     endcase
 %}
-    
-<div 
+
+<div
     id="modal-bundle-contents"
-    class="modal fade" 
-    tabindex="-1" 
-    aria-labelledby="modal-bundle-contents-label" 
+    class="modal fade"
+    tabindex="-1"
+    aria-labelledby="modal-bundle-contents-label"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
@@ -383,9 +383,9 @@ window.shopiweb_bundle = {
                         {{ 'collection.custom_bundle.bundle_contents_title' | t }}
                     </h2>
                 </div>
-                <button 
-                    type="button" 
-                    class="btn-close" 
+                <button
+                    type="button"
+                    class="btn-close"
                     data-bs-dismiss="modal"
                     aria-label="{{ 'general.accessibility.close' | t }}">
                 </button>
@@ -394,8 +394,8 @@ window.shopiweb_bundle = {
                 <div class="bundle-contents-empty my-5 rte text-center" hidden>
                     {{ 'collection.custom_bundle.bundle_contents_empty_html' | t }}
                 </div>
-                <ul 
-                    class="product-listing list-unstyled" 
+                <ul
+                    class="product-listing list-unstyled"
                     data-img-width="{{ img_width }}"
                     data-img-height="{{ img_height }}"
                     data-img-thumbnail="{{ settings.offcanvas_img_thumbnail }} {{ section.settings.product_shadow_sp }} {{ section.settings.product_border_color }}"
@@ -421,7 +421,7 @@ window.shopiweb_bundle = {
                         <span data-bundle-discount></span>
                     </p>
                     <button
-                        class="bd-button-atc btn w-100 {{ section.settings.bundle_card_btn_atc }}" 
+                        class="bd-button-atc btn w-100 {{ section.settings.bundle_card_btn_atc }}"
                         type="button"
                         data-text-add-to-cart="{{ 'collection.custom_bundle.button_atc_text' | t }}"
                         disabled
@@ -449,7 +449,7 @@ window.shopiweb_bundle = {
         <span data-bundle-discount></span>
     </p>
     <button
-        class="bundle-view-contents btn w-100 {{ section.settings.bundle_card_btn_view_contents }}" 
+        class="bundle-view-contents btn w-100 {{ section.settings.bundle_card_btn_view_contents }}"
         type="button"
         data-bs-target="#modal-bundle-contents"
         data-bs-toggle="modal">
@@ -464,7 +464,7 @@ window.shopiweb_bundle = {
     "name": "Collection Bundle",
     "settings": [
         {
-            "type": "paragraph", 
+            "type": "paragraph",
             "content": "Documentation FR : [Collection Bundle by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/page-collection\/collection-bundle)"
         },
         {
@@ -616,7 +616,7 @@ window.shopiweb_bundle = {
                 { "group": "Description Standard", "value": "fs-3", "label": "Très Grand" },
                 { "group": "Description Standard", "value": "fs-4", "label": "Grand" },
                 { "group": "Description Standard", "value": "fs-5", "label": "Moyen" },
-                { "group": "Description Standard", "value": "fs-6", "label": "Petit" } 
+                { "group": "Description Standard", "value": "fs-6", "label": "Petit" }
             ]
         },
         {

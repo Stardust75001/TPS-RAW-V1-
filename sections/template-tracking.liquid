@@ -7,7 +7,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 ---------------------------------------------------------
 {% endcomment %}
 
-{% liquid 
+{% liquid
   assign pt = section.settings.pt | prepend: 'pt-'
   assign pb = section.settings.pb | prepend: 'pb-'
   assign mt = section.settings.mt | prepend: 'mt-'
@@ -27,13 +27,13 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {% render 'section-header' %}
     <div class="row mb-3">
       <div class="form-group mb-5">
-        <input 
-          class="form-control" 
-          type="text" 
-          name="tracking-number" 
-          id="tracking-input-{{ section.id }}" 
-          value="" 
-          placeholder="{{ 'general.tracking.placeholder' | t }}" 
+        <input
+          class="form-control"
+          type="text"
+          name="tracking-number"
+          id="tracking-input-{{ section.id }}"
+          value=""
+          placeholder="{{ 'general.tracking.placeholder' | t }}"
           aria-label="{{ 'general.tracking.placeholder' | t }}">
       </div>
       <div class="px-5 w-100">
@@ -164,7 +164,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
               { "group": "Légende Standard", "value": "fs-3", "label": "Très Grand" },
               { "group": "Légende Standard", "value": "fs-4", "label": "Grand" },
               { "group": "Légende Standard", "value": "fs-5", "label": "Moyen" },
-              { "group": "Légende Standard", "value": "fs-6", "label": "Petit" } 
+              { "group": "Légende Standard", "value": "fs-6", "label": "Petit" }
           ]
       },
       {
@@ -252,7 +252,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
               { "group": "Description Standard", "value": "fs-3", "label": "Très Grand" },
               { "group": "Description Standard", "value": "fs-4", "label": "Grand" },
               { "group": "Description Standard", "value": "fs-5", "label": "Moyen" },
-              { "group": "Description Standard", "value": "fs-6", "label": "Petit" } 
+              { "group": "Description Standard", "value": "fs-6", "label": "Petit" }
           ]
       },
       {
