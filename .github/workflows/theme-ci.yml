@@ -1,30 +1,18 @@
-name: Theme CI (theme-check + sanity)
+name: Theme CI (structure + sanity + JSON)
 
 on:
   push:
-    branches: ["**"]
+    branches: [ main ]
   pull_request:
-    branches: ["**"]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
-  lint:
+  theme-ci:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: "3.2"
-          bundler-cache: false
-
-      - name: Install theme-check
-        run: |
-          gem install theme-check --no-document
-          theme-check --version
 
       - name: Sanity: theme structure at repo root
         run: |
@@ -37,11 +25,16 @@ jobs:
           done
           echo "Theme structure OK ✅"
 
-      - name: Run theme-check
-        run: |
-          theme-check --fail-level=error .
-
-      - name: Validate locale JSON
+      - name: Validate JSON files
         run: |
           sudo apt-get update -y && sudo apt-get install -y jq
-          find locales -type f -name "*.json" -print0 | xargs -0 -I{} sh -c 'jq . "{}" >/dev/null' && echo "Locales JSON valid ✅"
+          find locales -name "*.json" -type f | while read f; do
+            echo "Checking $f"
+            jq empty "$f" 2>/dev/null || { echo "::error file=$f::Invalid JSON"; exit 1; }
+          done
+          echo "✅ All locale JSON files valid"
+
+      - name: Run theme-check
+        uses: shopify/theme-check-action@v2
+        with:
+          fail_level: error
