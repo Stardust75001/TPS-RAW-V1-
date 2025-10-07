@@ -18,10 +18,16 @@ jobs:
         run: |
           set -e
           for p in layout/theme.liquid config/settings_schema.json; do
-            [ -f "$p" ] || { echo "::error file=$p::missing required file $p"; exit 1; }
+            if [ ! -f "$p" ]; then
+              echo "::error file=$p::missing required file $p"
+              exit 1
+            fi
           done
           for d in assets sections snippets templates locales; do
-            [ -d "$d" ] || { echo "::error file=$d::missing required folder $d"; exit 1; }
+            if [ ! -d "$d" ]; then
+              echo "::error file=$d::missing required folder $d"
+              exit 1
+            fi
           done
           echo "Theme structure OK ✅"
 
@@ -30,7 +36,10 @@ jobs:
           sudo apt-get update -y && sudo apt-get install -y jq
           find locales -name "*.json" -type f | while read f; do
             echo "Checking $f"
-            jq empty "$f" 2>/dev/null || { echo "::error file=$f::Invalid JSON"; exit 1; }
+            jq empty "$f" 2>/dev/null || {
+              echo "::error file=$f::Invalid JSON syntax"
+              exit 1
+            }
           done
           echo "✅ All locale JSON files valid"
 
