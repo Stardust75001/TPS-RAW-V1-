@@ -15,16 +15,17 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Sanity: theme structure at repo root
+        shell: bash
         run: |
-          set -e
+          set -euo pipefail
           for p in layout/theme.liquid config/settings_schema.json; do
-            if [ ! -f "$p" ]; then
+            if [[ ! -f "$p" ]]; then
               echo "::error file=$p::missing required file $p"
               exit 1
             fi
           done
           for d in assets sections snippets templates locales; do
-            if [ ! -d "$d" ]; then
+            if [[ ! -d "$d" ]]; then
               echo "::error file=$d::missing required folder $d"
               exit 1
             fi
@@ -32,14 +33,17 @@ jobs:
           echo "Theme structure OK ✅"
 
       - name: Validate JSON files
+        shell: bash
         run: |
+          set -euo pipefail
           sudo apt-get update -y && sudo apt-get install -y jq
-          find locales -name "*.json" -type f | while read f; do
+          # Valide tous les JSON de locales
+          find locales -type f -name '*.json' -print0 | while IFS= read -r -d '' f; do
             echo "Checking $f"
-            jq empty "$f" 2>/dev/null || {
+            if ! jq empty "$f" >/dev/null 2>&1; then
               echo "::error file=$f::Invalid JSON syntax"
               exit 1
-            }
+            fi
           done
           echo "✅ All locale JSON files valid"
 
