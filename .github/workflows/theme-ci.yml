@@ -5,6 +5,7 @@ on:
     branches: ["**"]
   pull_request:
     branches: ["**"]
+  workflow_dispatch:
 
 jobs:
   lint:
@@ -14,7 +15,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # --- Ruby pour theme-check
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -26,7 +26,6 @@ jobs:
           gem install theme-check --no-document
           theme-check --version
 
-      # --- Vérif structure minimale d'un thème Shopify
       - name: Sanity: theme structure at repo root
         run: |
           set -e
@@ -38,12 +37,10 @@ jobs:
           done
           echo "Theme structure OK ✅"
 
-      # --- Lint Liquid/JSON avec theme-check
       - name: Run theme-check
         run: |
           theme-check --fail-level=error .
 
-      # --- Validation JSON des locales (rapide)
       - name: Validate locale JSON
         run: |
           sudo apt-get update -y && sudo apt-get install -y jq
