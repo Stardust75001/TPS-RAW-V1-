@@ -58,7 +58,7 @@ Section : Stories Bar Sticky Configurable (dynamique via blocks)
 
     {% for block in section.blocks %}
       {% assign title = block.settings.title %}
-      {% assign image = block.settings.image | img_url: 'master' %}
+  {% assign image = block.settings.image | image_url: width: 800, height: 800 %}
       {% assign link = block.settings.link %}
       <a href="{{ link | prepend: base_url }}" class="animated-stories-link">
         <img src="{{ image }}" alt="{{ title }}">

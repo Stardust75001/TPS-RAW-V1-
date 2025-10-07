@@ -7,7 +7,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 ---------------------------------------------------------
 {% endcomment %}
 
-{% liquid 
+{% liquid
     assign pt = section.settings.pt | prepend: 'pt-'
     assign pb = section.settings.pb | prepend: 'pb-'
     assign mt = section.settings.mt | prepend: 'mt-'
@@ -32,8 +32,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     assign row_xxl = section.settings.breakpoint_xxl | prepend: 'row-cols-xxl-'
 %}
 
-<section 
-    id="latest-articles-{{ section.id }}" 
+<section
+    id="latest-articles-{{ section.id }}"
     class="latest-articles enter-view position-relative overflow-hidden {{ bg_color }} {{ section.settings.text_align }} {{ pt }} {{ pb }} {{ mt }} {{ mb }}">
     <div class="{{ section.settings.container }}" style="max-width: {{ section.settings.max_width }}px">
         {% render 'section-header' %}
@@ -54,9 +54,11 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     "name": "Articles de Blog",
     "settings": [
         {
-            "type": "paragraph", 
-            "content": "Documentation FR : [Articles de blog by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/sections\/articles-de-blog)"
-        },
+            "type": "paragraph",
+            "content": "Documentation FR : [Articles de blog by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/sections/articles-de-blog)"
+        }
+    ]
+}
         {
             "type": "blog",
             "id": "blog",
@@ -154,7 +156,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                 { "group": "Légende Standard", "value": "fs-3", "label": "Très Grand" },
                 { "group": "Légende Standard", "value": "fs-4", "label": "Grand" },
                 { "group": "Légende Standard", "value": "fs-5", "label": "Moyen" },
-                { "group": "Légende Standard", "value": "fs-6", "label": "Petit" } 
+                { "group": "Légende Standard", "value": "fs-6", "label": "Petit" }
             ]
         },
         {
@@ -242,7 +244,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                 { "group": "Description Standard", "value": "fs-3", "label": "Très Grand" },
                 { "group": "Description Standard", "value": "fs-4", "label": "Grand" },
                 { "group": "Description Standard", "value": "fs-5", "label": "Moyen" },
-                { "group": "Description Standard", "value": "fs-6", "label": "Petit" } 
+                { "group": "Description Standard", "value": "fs-6", "label": "Petit" }
             ]
         },
         {
@@ -402,7 +404,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                 { "value": "", "label": "Normal" },
                 { "value": "animate__fast", "label": "Rapide" },
                 { "value": "animate__faster", "label": "Plus rapide" }
-    
+
             ]
         },
         {

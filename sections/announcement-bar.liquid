@@ -7,7 +7,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 ---------------------------------------------------------
 {% endcomment %}
 
-{% liquid 
+{% liquid
     assign pt = section.settings.pt | prepend: 'pt-'
     assign pb = section.settings.pb | prepend: 'pb-'
 
@@ -22,18 +22,18 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 
 {% if section.settings.homepage == false or template.name == 'index' %}
-    <section 
-        id="announcement-bar-{{ section.id }}" 
+    <section
+        id="announcement-bar-{{ section.id }}"
         class="announcement-bar enter-view {{ bg_color }} {{ section.settings.font_size }} {{ section.settings.text_transform }} {% if section.settings.sticky %}sticky-announcement-bar{% endif %}"
         {% if section.settings.expiration_time  != blank %}
           data-expiration-time="{{ expiration_time }}"
         {% endif %}>
-        <div 
+        <div
             class="animate__animated animate__fast opacity-0"
             data-animate-class="animate__fadeInDown">
-            <div 
-  id="carousel-{{ section.id }}" 
-  class="carousel slide container-fluid mx-auto {% if bg_color contains 'text-dark' %}carousel-dark{% endif %}" 
+            <div
+  id="carousel-{{ section.id }}"
+  class="carousel slide container-fluid mx-auto {% if bg_color contains 'text-dark' %}carousel-dark{% endif %}"
   data-bs-ride="{% if section.settings.autoplay %}carousel{% else %}false{% endif %}">
                 <div class="carousel-inner w-100 text-center">Shipping throughout Europe (EEA)
                     {% for block in section.blocks %}
@@ -44,17 +44,12 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                 <span class="visually-hidden">
                                     {{ 'general.countdown_timer.expires' | t }}
                                 </span>
-                                <ul 
-                                    class="timer-countdown list-unstyled" 
+                                <ul
+                                    class="timer-countdown list-unstyled"
                                     data-time="{{ block_expiration_time }}"
                                     data-text-d="{{ 'general.countdown_timer.d' | t }}"
                                     data-text-h="{{ 'general.countdown_timer.h' | t }}"
                                     data-text-m="{{ 'general.countdown_timer.m' | t }}"
-                                    data-text-s="{{ 'general.countdown_timer.s' | t }}"
-                                    data-text-days="{{ 'general.countdown_timer.days' | t }}"
-                                    data-text-hours="{{ 'general.countdown_timer.hours' | t }}"
-                                    data-text-minutes="{{ 'general.countdown_timer.minutes' | t }}"
-                                    data-text-seconds="{{ 'general.countdown_timer.seconds' | t }}"
                                     hidden>
                                     <li data-days></li>
                                     <li data-hours></li>
@@ -63,8 +58,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                 </ul>
                             {% endif %}
                         {% endcapture %}
-                        <div 
-                            class="carousel-item {% if forloop.first == true %}active{% endif %}" 
+                        <div
+                            class="carousel-item {% if forloop.first == true %}active{% endif %}"
                             data-index="{{ forloop.index0 }}"
                             {{ block.shopify_attributes }}>
                             {% if block.settings.url == blank %}
@@ -87,20 +82,20 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                     {% endfor %}
                 </div>
                 {% if section.settings.controls and section.blocks.size > 1 %}
-                    <button 
-                        class="carousel-control carousel-control-prev" 
-                        type="button" 
-                        data-bs-target="#carousel-{{ section.id }}" 
+                    <button
+                        class="carousel-control carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carousel-{{ section.id }}"
                         data-bs-slide="prev">
                         <span class="carousel-control-icon carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">
                             {{ 'general.accessibility.previous' | t }}
                         </span>
                     </button>
-                    <button 
-                        class="carousel-control carousel-control-next" 
-                        type="button" 
-                        data-bs-target="#carousel-{{ section.id }}" 
+                    <button
+                        class="carousel-control carousel-control-next"
+                        type="button"
+                        data-bs-target="#carousel-{{ section.id }}"
                         data-bs-slide="next">
                         <span class="carousel-control-icon carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">
@@ -118,10 +113,10 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         const section = document.querySelector('#announcement-bar-{{ section.id }}')
 
         let expirationTime = section.dataset.expirationTime
-        
+
         if (expirationTime.length) {
             expirationTime = Number(expirationTime)
-        
+
             if (expirationTime <= Date.now() / 1000) {
                 section.remove()
             }
@@ -131,13 +126,15 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 {% schema %}
 {
-  "name": "🏆 Barre d'Annonces",
-  "settings": [
-    {
-      "type": "header",
-      "content": "🏆 Application Barre d'annonces",
-      "info": "👉 Version de l'application Shopiweb Premium"
-    },
+    "name": "🏆 Barre d'Annonces",
+    "settings": [
+        {
+            "type": "header",
+            "content": "🏆 Application Barre d'annonces",
+            "info": "👉 Version de l'application Shopiweb Premium"
+        }
+    ]
+}
     {
         "type": "paragraph",
         "content": "Documentation FR : [Barre d'annonces by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/sections\/barre-dannonces)"

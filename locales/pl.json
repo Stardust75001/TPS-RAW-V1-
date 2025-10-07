@@ -56,6 +56,47 @@
     "all_rights_reserved": "Wszelkie prawa zastrzeżone",
     "secure_payments": "Bezpieczne płatności",
     "loading": "Ładowanie..."
+      ,
+      "offcanvas_search_title_articles": "Artykuły",
+      "newsletter": {
+        "name_placeholder": "Wprowadź swoje imię",
+        "input_label": "Wprowadź swój email",
+        "submit_button": "Subskrybuj",
+        "confirmation_text": "Dziękujemy za subskrypcję!"
+      },
+      "countdown_timer": {
+        "s": "s",
+        "days": "dni",
+        "hours": "godziny",
+        "minutes": "minuty",
+        "seconds": "sekundy"
+      },
+      "password_page": {
+        "password_form": {
+          "password_label": "Hasło",
+          "btn_label": "Wyślij"
+        }
+      }
+      ,
+      "newsletter": {
+        "name_placeholder": "Wprowadź swoje imię",
+        "input_label": "Wprowadź swój email",
+        "submit_button": "Subskrybuj",
+        "confirmation_text": "Dziękujemy za subskrypcję!"
+      },
+      "countdown_timer": {
+        "s": "s",
+        "days": "dni",
+        "hours": "godziny",
+        "minutes": "minuty",
+        "seconds": "sekundy"
+      },
+      "password_page": {
+        "password_form": {
+          "password_label": "Hasło",
+          "btn_label": "Wyślij"
+        }
+      }
   },
   "newsletter": {
     "name_placeholder": "Wprowadź swoje imię",
@@ -84,6 +125,45 @@
     "correct_answer": "Poprawna odpowiedź",
     "your_answer": "Twoja odpowiedź",
     "try_again": "Spróbuj ponownie"
+      ,
+      "offcanvas_search_title_articles": "Artykuły",
+      "newsletter": {
+        "confirmation_text": "Dziękujemy za subskrypcję!",
+        "input_label": "Wprowadź swój email",
+        "submit_button": "Subskrybuj"
+      },
+      "countdown_timer": {
+        "s": "s",
+        "days": "dni",
+        "hours": "godziny",
+        "minutes": "minuty",
+        "seconds": "sekundy"
+      },
+      "password_page": {
+        "password_form": {
+          "password_label": "Hasło",
+          "btn_label": "Wyślij"
+        }
+      }
+      ,
+      "countdown_timer": {
+        "s": "s",
+        "days": "dni",
+        "hours": "godziny",
+        "minutes": "minuty",
+        "seconds": "sekundy"
+      },
+      "newsletter": {
+        "confirmation_text": "Dziękujemy za subskrypcję!",
+        "input_label": "Wprowadź swój email",
+        "submit_button": "Subskrybuj"
+      },
+      "password_page": {
+        "password_form": {
+          "password_label": "Hasło",
+          "btn_label": "Wyślij"
+        }
+      }
   },
   "offcanvas_menu": {
     "title_customer": "Cześć, {{ name }}",

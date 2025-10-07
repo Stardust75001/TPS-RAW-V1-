@@ -56,6 +56,26 @@
     "all_rights_reserved": "Alle rettigheder forbeholdes",
     "secure_payments": "Sikre betalinger",
     "loading": "Indlæser..."
+      ,"offcanvas_search_title_articles": "Artikler"
+      ,"newsletter": {
+        "name_placeholder": "Indtast dit navn",
+        "input_label": "Indtast din e-mail",
+        "submit_button": "Abonner",
+        "confirmation_text": "Tak for din tilmelding!"
+      }
+      ,"countdown_timer": {
+        "s": "s",
+        "days": "dage",
+        "hours": "timer",
+        "minutes": "minutter",
+        "seconds": "sekunder"
+      }
+      ,"password_page": {
+        "password_form": {
+          "password_label": "Indtast butikskode",
+          "btn_label": "Indtast"
+        }
+      }
   },
   "newsletter": {
     "name_placeholder": "Indtast dit navn",
@@ -84,6 +104,26 @@
     "correct_answer": "Korrekt svar",
     "your_answer": "Dit svar",
     "try_again": "Prøv igen"
+      ,"offcanvas_search_title_articles": "Artikler"
+      ,"newsletter": {
+        "name_placeholder": "Indtast dit navn",
+        "input_label": "Indtast din e-mail",
+        "submit_button": "Abonner",
+        "confirmation_text": "Tak for din tilmelding!"
+      }
+      ,"countdown_timer": {
+        "s": "s",
+        "days": "dage",
+        "hours": "timer",
+        "minutes": "minutter",
+        "seconds": "sekunder"
+      }
+      ,"password_page": {
+        "password_form": {
+          "password_label": "Indtast butikskode",
+          "btn_label": "Indtast"
+        }
+      }
   },
   "offcanvas_menu": {
     "title_customer": "Hej, {{ name }}",

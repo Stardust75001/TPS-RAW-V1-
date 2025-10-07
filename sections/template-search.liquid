@@ -7,7 +7,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 ---------------------------------------------------------
 {% endcomment %}
 
-{% liquid 
+{% liquid
     assign pt = section.settings.pt | prepend: 'pt-'
     assign pb = section.settings.pb | prepend: 'pb-'
     assign mt = section.settings.mt | prepend: 'mt-'
@@ -21,12 +21,12 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     assign row_xxl = section.settings.breakpoint_xxl | prepend: 'row-cols-xxl-'
 %}
 
-<section 
-    id="search" 
+<section
+    id="search"
     class="{{ pt }} {{ pb }} {{ mt }} {{ mb }}">
     <div id="search-header" class="mb-9 bg-light overflow-hidden">
         <div class="container">
-            <div 
+            <div
                 class="mx-auto text-center py-10"
                 style="max-width: {{ section.settings.form_max_width }}px">
                 <{{ section.settings.heading_tag }} class="title mb-4 {{ section.settings.title_size }}">
@@ -58,9 +58,9 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                         {% endif %}
                     {% endif %}
                 </{{ section.settings.heading_tag }}>
-                <form action="{{ routes.search_url }}"> 
+                <form action="{{ routes.search_url }}">
                     <div class="d-lg-flex">
-                        <input 
+                        <input
                             class="form-control mb-3 mb-lg-0 me-lg-3"
                             type="search"
                             placeholder="{{ 'general.search_page.form.input_label' | t }}"
@@ -68,9 +68,9 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                             name="q"
                             value="{{ search.terms | escape }}">
                         {% if section.settings.show_search_types_select %}
-                            <select 
-                                name="type" 
-                                class="form-select mb-3 mb-lg-0 me-lg-3" 
+                            <select
+                                name="type"
+                                class="form-select mb-3 mb-lg-0 me-lg-3"
                                 aria-label="{{ 'general.search_page.form.select_label' | t }}">
                                 <option value="product">
                                     {{ 'general.search_page.types.products' | t }}
@@ -85,7 +85,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                         {% else %}
                             <input type="hidden" name="type" value="product">
                         {% endif %}
-                        <button 
+                        <button
                             type="submit"
                             class="btn btn-primary">
                             {{ 'general.search_page.form.btn_text' | t }}
@@ -98,7 +98,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
     {% if search.performed %}
         <div class="{{ section.settings.container }}">
-            {% if search.results_count == 0 %}        
+            {% if search.results_count == 0 %}
                 <p class="alert alert-warning py-3" role="status">
                     {{ 'general.search_page.no_results' | t: terms: search.terms }}
                 </p>
@@ -156,7 +156,9 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
             "type": "header",
             "content": "General"
-        },
+        }
+    ]
+}
         {
             "type": "select",
             "id": "container",

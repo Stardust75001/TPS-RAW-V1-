@@ -46,6 +46,26 @@
     "offcanvas_search_title_collections": "Kollektionen",
     "offcanvas_search_title_pages": "Seiten",
     "offcanvas_search_title_articles": "Artikel"
+      ,"countdown_timer": {
+        "s": "s",
+        "days": "Tage",
+        "hours": "Stunden",
+        "minutes": "Minuten",
+        "seconds": "Sekunden"
+      }
+      ,"password_page": {
+        "password_form": {
+          "password_label": "Passwort",
+          "btn_label": "Absenden"
+        }
+      }
+      ,
+      "newsletter": {
+        "name_placeholder": "Geben Sie Ihren Namen ein",
+        "input_label": "Geben Sie Ihre E-Mail ein",
+        "submit_button": "Abonnieren",
+        "confirmation_text": "Danke für Ihr Abonnement!"
+      }
   },
   "policy": {
     "title": "Richtlinie",
@@ -56,6 +76,27 @@
     "all_rights_reserved": "Alle Rechte vorbehalten",
     "secure_payments": "Sichere Zahlungen",
     "loading": "Laden..."
+      ,
+      "offcanvas_search_title_articles": "Artikel",
+      "newsletter": {
+        "name_placeholder": "Geben Sie Ihren Namen ein",
+        "input_label": "Geben Sie Ihre E-Mail ein",
+        "submit_button": "Abonnieren",
+        "confirmation_text": "Danke für Ihr Abonnement!"
+      },
+      "countdown_timer": {
+        "s": "s",
+        "days": "Tage",
+        "hours": "Stunden",
+        "minutes": "Minuten",
+        "seconds": "Sekunden"
+      },
+      "password_page": {
+        "password_form": {
+          "password_label": "Passwort",
+          "btn_label": "Absenden"
+        }
+      }
   },
   "newsletter": {
     "name_placeholder": "Geben Sie Ihren Namen ein",
@@ -83,7 +124,27 @@
     "score": "Ihr Ergebnis: {{ score }}%",
     "correct_answer": "Richtige Antwort",
     "your_answer": "Ihre Antwort",
-    "try_again": "Erneut versuchen"
+    "try_again": "Erneut versuchen",
+    "offcanvas_search_title_articles": "Artikel",
+    "newsletter": {
+      "name_placeholder": "Geben Sie Ihren Namen ein",
+      "input_label": "Geben Sie Ihre E-Mail ein",
+      "submit_button": "Abonnieren",
+      "confirmation_text": "Danke für Ihr Abonnement!"
+    },
+    "countdown_timer": {
+      "s": "s",
+      "days": "Tage",
+      "hours": "Stunden",
+      "minutes": "Minuten",
+      "seconds": "Sekunden"
+    },
+    "password_page": {
+      "password_form": {
+        "password_label": "Passwort",
+        "btn_label": "Absenden"
+      }
+    }
   },
   "offcanvas_menu": {
     "title_customer": "Hallo, {{ name }}",

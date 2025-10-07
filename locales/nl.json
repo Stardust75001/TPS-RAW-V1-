@@ -56,6 +56,27 @@
     "all_rights_reserved": "Alle rechten voorbehouden",
     "secure_payments": "Veilige betalingen",
     "loading": "Laden..."
+      ,
+      "offcanvas_search_title_articles": "Artikelen",
+      "newsletter": {
+        "name_placeholder": "Voer uw naam in",
+        "input_label": "Voer uw e-mail in",
+        "submit_button": "Abonneren",
+        "confirmation_text": "Bedankt voor je inschrijving!"
+      },
+      "countdown_timer": {
+        "s": "s",
+        "days": "dagen",
+        "hours": "uren",
+        "minutes": "minuten",
+        "seconds": "seconden"
+      },
+      "password_page": {
+        "password_form": {
+          "password_label": "Wachtwoord",
+          "btn_label": "Verzenden"
+        }
+      }
   },
   "newsletter": {
     "name_placeholder": "Voer uw naam in",
@@ -84,6 +105,26 @@
     "correct_answer": "Juist antwoord",
     "your_answer": "Uw antwoord",
     "try_again": "Probeer opnieuw"
+      ,
+      "offcanvas_search_title_articles": "Artikelen",
+      "newsletter": {
+        "confirmation_text": "Bedankt voor je inschrijving!",
+        "input_label": "Voer uw e-mail in",
+        "submit_button": "Abonneren"
+      },
+      "countdown_timer": {
+        "s": "s",
+        "days": "dagen",
+        "hours": "uren",
+        "minutes": "minuten",
+        "seconds": "seconden"
+      },
+      "password_page": {
+        "password_form": {
+          "password_label": "Wachtwoord",
+          "btn_label": "Verzenden"
+        }
+      }
   },
   "offcanvas_menu": {
     "title_customer": "Hallo, {{ name }}",

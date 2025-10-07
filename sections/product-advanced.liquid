@@ -11,22 +11,24 @@ Section produit avancée avec galerie interactive et blocs dynamiques
         {% if product.images.size > 0 %}
           <div class="product-gallery">
             <div class="main-image mb-3 text-center">
-              <img id="main-product-image"
-                   src="{{ product.featured_image | img_url: '1024x1024' }}"
-                   alt="{{ product.title }}"
-                   class="img-fluid rounded"
-                   style="max-height: 500px; object-fit: contain; cursor: zoom-in;"
-                   onclick="openImagePopup('{{ product.featured_image | img_url: 'master' }}')">
+        <img id="main-product-image"
+          src="{{ product.featured_image | image_url: width: 1024, height: 1024 }}"
+          alt="{{ product.title }}"
+          class="img-fluid rounded"
+          width="1024" height="1024"
+          style="max-height: 500px; object-fit: contain; cursor: zoom-in;"
+          onclick="openImagePopup('{{ product.featured_image | image_url: width: 1024, height: 1024 }}')">
             </div>
             {% if product.images.size > 1 %}
               <div class="thumbnail-images d-flex flex-wrap justify-content-center gap-2">
                 {% for image in product.images %}
-                  <img src="{{ image | img_url: '100x100' }}"
-                       alt="{{ product.title }}"
-                       class="img-thumbnail"
-                       style="width: 60px; height: 60px; object-fit: cover; cursor: pointer;"
-                       onclick="document.getElementById('main-product-image').src='{{ image | img_url: '1024x1024' }}';
-                                document.getElementById('main-product-image').setAttribute('onclick', 'openImagePopup(\\'{{ image | img_url: 'master' }}\\')');">
+         <img src="{{ image | image_url: width: 100, height: 100 }}"
+           alt="{{ product.title }}"
+           class="img-thumbnail"
+           width="100" height="100"
+           style="width: 60px; height: 60px; object-fit: cover; cursor: pointer;"
+           onclick="document.getElementById('main-product-image').src='{{ image | image_url: width: 1024, height: 1024 }}';
+              document.getElementById('main-product-image').setAttribute('onclick', 'openImagePopup(\\'{{ image | image_url: width: 1024, height: 1024 }}\\')');">
                 {% endfor %}
               </div>
             {% endif %}
@@ -42,7 +44,7 @@ Section produit avancée avec galerie interactive et blocs dynamiques
           {% for block in section.blocks %}
             <div class="product-block mb-3" {{ block.shopify_attributes }}>
               {% case block.type %}
-              
+
                 {% when 'vendor' %}
                   {% if product.vendor != blank %}
                     <p class="vendor text-muted mb-2">{{ product.vendor }}</p>

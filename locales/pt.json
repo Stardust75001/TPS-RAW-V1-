@@ -46,6 +46,26 @@
     "offcanvas_search_title_collections": "Coleções",
     "offcanvas_search_title_pages": "Páginas",
     "offcanvas_search_title_articles": "Artigos"
+      ,"countdown_timer": {
+        "s": "s",
+        "days": "dias",
+        "hours": "horas",
+        "minutes": "minutos",
+        "seconds": "segundos"
+      }
+      ,"password_page": {
+        "password_form": {
+          "password_label": "Senha",
+          "btn_label": "Enviar"
+        }
+      }
+      ,
+      "newsletter": {
+        "name_placeholder": "Digite seu nome",
+        "input_label": "Digite seu email",
+        "submit_button": "Inscrever-se",
+        "confirmation_text": "Obrigado por se inscrever!"
+      }
   },
   "policy": {
     "title": "Política",
@@ -56,6 +76,27 @@
     "all_rights_reserved": "Todos os direitos reservados",
     "secure_payments": "Pagamentos seguros",
     "loading": "Carregando..."
+      ,
+      "offcanvas_search_title_articles": "Artigos",
+      "newsletter": {
+        "name_placeholder": "Digite seu nome",
+        "input_label": "Digite seu email",
+        "submit_button": "Inscrever-se",
+        "confirmation_text": "Obrigado por se inscrever!"
+      },
+      "countdown_timer": {
+        "s": "s",
+        "days": "dias",
+        "hours": "horas",
+        "minutes": "minutos",
+        "seconds": "segundos"
+      },
+      "password_page": {
+        "password_form": {
+          "password_label": "Senha",
+          "btn_label": "Enviar"
+        }
+      }
   },
   "newsletter": {
     "name_placeholder": "Digite seu nome",
@@ -84,6 +125,26 @@
     "correct_answer": "Resposta correta",
     "your_answer": "Sua resposta",
     "try_again": "Tentar novamente"
+      ,"offcanvas_search_title_articles": "Artigos"
+      ,"newsletter": {
+        "name_placeholder": "Digite seu nome",
+        "input_label": "Digite seu email",
+        "submit_button": "Inscrever-se",
+        "confirmation_text": "Obrigado por se inscrever!"
+      }
+      ,"countdown_timer": {
+        "s": "s",
+        "days": "dias",
+        "hours": "horas",
+        "minutes": "minutos",
+        "seconds": "segundos"
+      }
+      ,"password_page": {
+        "password_form": {
+          "password_label": "Senha",
+          "btn_label": "Enviar"
+        }
+      }
   },
   "offcanvas_menu": {
     "title_customer": "Olá, {{ name }}",
