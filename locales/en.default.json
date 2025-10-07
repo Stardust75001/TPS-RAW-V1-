@@ -1,14 +1,19 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
-    "tracking": {
-      "placeholder": "Enter tracking number",
-      "btn_text": "Track package"
-    },
     "accessibility": {
       "close": "Close",
       "skip_content": "Skip to content",
       "skip_product_content": "Skip to product information",
-      "utility_icons": "Utility icons",
+      "utility_icons": "Utility Icons",
       "menu": "Menu",
       "cart": "Cart",
       "search": "Search",
@@ -16,8 +21,7 @@
       "account": "Account",
       "previous": "Previous",
       "next": "Next",
-      "previous_page": "Previous page",
-      "next_page": "Next page",
+      "previous_page": "Previous Page",
       "decrease_qty": "Decrease quantity",
       "increase_qty": "Increase quantity",
       "cart_product_list": "Cart product list",
@@ -27,12 +31,13 @@
       "product_media_gallery": "Product media gallery",
       "product_options": "Product options",
       "slide_of": "Slide {{ current }} of {{ total }}",
-      "model_3d_list_label": "3D model viewer",
+      "model_3d_list_label": "3D Model Viewer",
       "model_3d_decrease": "Decrease 3D model size",
       "model_3d_increase": "Increase 3D model size",
       "model_3d_fullscreen": "View 3D model in fullscreen",
       "toggle_sound": "Toggle sound",
-      "back_to_top": "Back to top"
+      "back_to_top": "Back to top",
+      "next_page": "Next page"
     },
     "follow_us": "Follow us",
     "menu": "Menu",
@@ -44,61 +49,42 @@
     "map_address": "Address",
     "map_phone": "Phone",
     "map_email": "Email",
-    "map_hours": "Hours",
+    "map_hours": "Opening hours",
     "map_api_key_missing": "Google Maps API key is missing",
     "offcanvas_search_title_products": "Products",
     "offcanvas_search_title_collections": "Collections",
     "offcanvas_search_title_pages": "Pages",
-    "offcanvas_search_title_articles": "Articles"
-    ,"newsletter": {
-        "name_placeholder": "Enter your name",
-        "input_label": "Enter your email",
-        "submit_button": "Subscribe",
-        "confirmation_text": "Thank you for subscribing!"
-      },
-      "countdown_timer": {
-        "s": "s",
-        "days": "days",
-        "hours": "hours",
-        "minutes": "minutes",
-        "seconds": "seconds"
-      },
-      "password_page": {
-        "password_form": {
-          "password_label": "Password",
-          "btn_label": "Submit"
-        }
+    "offcanvas_search_title_articles": "Articles",
+    "countdown_timer": {
+      "s": "s",
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "seconds": "Seconds"
+    },
+    "password_page": {
+      "password_form": {
+        "password_label": "Password",
+        "btn_label": "Submit"
       }
+    },
+    "newsletter": {
+      "name_placeholder": "Enter your name",
+      "input_label": "Enter your email",
+      "submit_button": "Subscribe",
+      "confirmation_text": "Thank you for subscribing!"
+    },
+    "tracking": "Enter tracking number"
   },
   "policy": {
     "title": "Policy",
     "default_title": "Policy",
-    "default_content": "This page contains our store policy.",
+    "default_content": "This page contains our shop policy.",
     "last_updated": "Last updated: {{ date }}",
     "menu": "Menu",
     "all_rights_reserved": "All rights reserved",
-    "secure_payments": "Secure Payments",
-      "loading": "Loading...",
-          "offcanvas_search_title_articles": "Articles",
-          "newsletter": {
-            "name_placeholder": "Enter your name",
-            "input_label": "Enter your email",
-            "submit_button": "Subscribe",
-            "confirmation_text": "Thank you for subscribing!"
-          },
-      "countdown_timer": {
-        "s": "s",
-        "days": "days",
-        "hours": "hours",
-        "minutes": "minutes",
-        "seconds": "seconds"
-      },
-      "password_page": {
-        "password_form": {
-          "password_label": "Password",
-          "btn_label": "Submit"
-        }
-      }
+    "secure_payments": "Secure payments",
+    "loading": "Loading..."
   },
   "newsletter": {
     "name_placeholder": "Enter your name",
@@ -117,47 +103,27 @@
     "question_of_html": "Question {{ count }} of {{ total }}",
     "btn_previous": "Previous",
     "btn_next": "Next",
-    "btn_restart": "Restart Quiz",
-    "btn_reload_quiz": "Reload Quiz",
+    "btn_restart": "Restart quiz",
+    "btn_reload_quiz": "Reload quiz",
     "title": "Quiz",
-    "start": "Start Quiz",
-    "finish": "Finish Quiz",
-    "results": "Quiz Results",
-    "score": "Your Score: {{ score }}%",
-    "correct_answer": "Correct Answer",
-    "your_answer": "Your Answer",
-    "try_again": "Try Again",
-    "offcanvas_search_title_articles": "Articles",
-    "newsletter": {
-      "name_placeholder": "Enter your name",
-      "input_label": "Enter your email",
-      "submit_button": "Subscribe",
-      "confirmation_text": "Thank you for subscribing!"
-    },
-    "countdown_timer": {
-      "s": "s",
-      "days": "days",
-      "hours": "hours",
-      "minutes": "minutes",
-      "seconds": "seconds"
-    },
-    "password_page": {
-      "password_form": {
-        "password_label": "Password",
-        "btn_label": "Submit"
-      }
-    }
+    "start": "Start quiz",
+    "finish": "Finish quiz",
+    "results": "Quiz results",
+    "score": "Your score: {{ score }}%",
+    "correct_answer": "Correct answer",
+    "your_answer": "Your answer",
+    "try_again": "Try again"
   },
   "offcanvas_menu": {
     "title_customer": "Hello, {{ name }}",
     "title_guest": "Welcome",
-    "subtitle_guest_html": "Please <a href='#'>sign in</a> or <a href='#'>create an account</a>",
+    "subtitle_guest_html": "Please <a href='#'>log in</a> or <a href='#'>create an account</a>",
     "subtitle_customer_html": "Manage your account and orders",
     "pagination_page_of": "Page {{ count }} of {{ total }}"
   },
   "404_page": {
     "title": "Page not found",
-    "subtext": "The page you requested does not exist.",
+    "subtext": "The requested page does not exist.",
     "button": "Continue shopping"
   },
   "search_page": {
@@ -179,35 +145,35 @@
   "offcanvas_search": {
     "title": "Search",
     "input_label": "Search products",
-    "search_by_voice": "Search by voice",
-    "result_found": "result found",
-    "results_found": "results found",
+    "search_by_voice": "Voice search",
+    "result_found": "Result found",
+    "results_found": "Results found",
     "no_results": "No results found",
     "title_popular_products": "Popular products",
     "search_for": "Search for"
   },
   "wishlist": {
-    "offcanvas_title": "My Wishlist",
+    "offcanvas_title": "My wishlist",
     "empty_html": "Your wishlist is empty",
     "add_to_wishlist": "Add to wishlist",
     "remove_from_wishlist": "Remove from wishlist",
     "btn_label": "Wishlist"
   },
   "countdown_timer": {
-    "d": "d",
-    "h": "h",
-    "m": "m",
-    "s": "s",
-    "days": "days",
-    "hours": "hours",
-    "minutes": "minutes",
-    "seconds": "seconds",
+    "d": "D",
+    "h": "H",
+    "m": "M",
+    "s": "S",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
     "expires": "Offer expires in"
   },
   "password_page": {
     "password_form": {
-      "password_label": "Enter store password",
-      "btn_label": "Enter"
+      "password_label": "Enter shop password",
+      "btn_label": "Submit"
     }
   },
   "tracking": {
@@ -215,28 +181,28 @@
     "btn_text": "Track package"
   },
   "contact": {
-    "success": "Thank you for your message. We'll get back to you soon.",
+    "success": "Thank you for your message. We will get back to you soon.",
     "name": "Name",
     "email": "Email",
     "phone": "Phone",
     "message": "Message",
-    "send": "Send Message",
+    "send": "Send message",
     "form": {
-      "title": "Contact Us",
+      "title": "Contact us",
       "name": "Name",
       "email": "Email",
       "phone": "Phone",
       "message": "Message",
       "submit": "Send message",
-      "success": "Thank you for your message. We'll get back to you soon.",
-      "error": "There was an error sending your message. Please try again."
+      "success": "Thank you for your message. We will get back to you soon.",
+      "error": "An error occurred while sending your message. Please try again."
     },
     "info": {
-      "title": "Contact Information",
+      "title": "Contact information",
       "address": "Address",
       "phone": "Phone",
       "email": "Email",
-      "hours": "Hours"
+      "hours": "Opening hours"
     }
   },
   "product": {
@@ -255,7 +221,7 @@
     "add": "Add",
     "add_to_cart": "Add to cart",
     "buy_it_now": "Buy it now",
-    "include_taxes": "Tax included",
+    "include_taxes": "Incl. tax",
     "product_options": "Product options",
     "quantity": "Quantity",
     "save": "Save",
@@ -281,22 +247,22 @@
     },
     "type": "Type",
     "sku": "SKU",
-    "view_details": "View Details",
+    "view_details": "View details",
     "stock_count": "Only {{ count }} left in stock"
   },
   "customer": {
     "login": {
-      "title": "Login",
+      "title": "Log in",
       "password": "Password",
-      "forgot_password": "Forgot your password?",
-      "submit": "Sign in",
+      "forgot_password": "Forgot password?",
+      "submit": "Log in",
       "new": "New customer?",
       "create_account": "Create account",
       "email": "Email"
     },
     "recover_password": {
-      "title": "Reset your password",
-      "success": "We have emailed you a password reset link.",
+      "title": "Reset password",
+      "success": "We have sent you an email with a link to reset your password.",
       "subtext": "Enter the email associated with your account.",
       "submit": "Send reset link",
       "email": "Email",
@@ -313,7 +279,7 @@
       "login": "Log in"
     },
     "reset_password": {
-      "title": "Reset your password",
+      "title": "Reset password",
       "subtext": "Reset password for {{ email }}",
       "password": "New password",
       "password_confirm": "Confirm password",
@@ -352,7 +318,7 @@
       "product": "Product",
       "sku": "SKU",
       "price": "Price",
-      "quantity": "Qty",
+      "quantity": "Quantity",
       "total": "Total",
       "discount": "Discount",
       "shipping": "Shipping",
@@ -374,15 +340,15 @@
     },
     "addresses": {
       "title": "Addresses",
-      "tab_addresses": "Your Addresses",
-      "tab_add_new": "Add New Address",
+      "tab_addresses": "Your addresses",
+      "tab_add_new": "Add new",
       "default": "Default",
       "edit": "Edit",
       "delete": "Delete",
       "delete_confirm": "Are you sure you want to delete this address?",
       "no_addresses": "You haven't added any addresses yet.",
-      "add_new": "Add New Address",
-      "edit_address": "Edit Address",
+      "add_new": "Add new address",
+      "edit_address": "Edit address",
       "first_name": "First name",
       "last_name": "Last name",
       "company": "Company",
@@ -390,12 +356,12 @@
       "address2": "Apartment, suite, etc.",
       "city": "City",
       "country": "Country",
-      "province": "Province",
-      "zip": "Postal code",
+      "province": "State/Province",
+      "zip": "ZIP code",
       "phone": "Phone",
       "set_default": "Set as default address",
-      "add": "Add Address",
-      "update": "Update Address"
+      "add": "Add address",
+      "update": "Update address"
     }
   },
   "checkout": {
@@ -403,14 +369,14 @@
       "title": "Order {{ order_number }}",
       "thank_you": "Thank you for your order!",
       "order_confirmed": "Your order has been confirmed and will be shipped soon.",
-      "order_details": "Order Details",
+      "order_details": "Order details",
       "order_number": "Order number",
       "date": "Date",
       "total": "Total",
       "email": "Email",
       "phone": "Phone",
-      "shipping_address": "Shipping Address",
-      "continue_shopping": "Continue Shopping"
+      "shipping_address": "Shipping address",
+      "continue_shopping": "Continue shopping"
     }
   },
   "cart": {
@@ -424,7 +390,7 @@
     "view_cart": "View cart",
     "quantity": "Quantity",
     "remove": "Remove",
-    "note_label": "Order special instructions",
+    "note_label": "Special instructions for order",
     "note_placeholder": "Add your special instructions here...",
     "note_saved": "Note saved",
     "note_button": "Save note",
@@ -436,24 +402,13 @@
     "view_file": "View file",
     "shipping_rates": {
       "button_label": "Calculate shipping",
-      "modal_title": "Shipping Calculator",
+      "modal_title": "Shipping calculator",
       "modal_button_label": "Get rates",
       "no_results_found": "No shipping rates available",
-      "summary": "Cart Summary"
+      "summary": "Cart summary"
     }
   },
   "collection": {
-    "custom_bundle": {
-      "progress_label": "Bundle progress",
-      "progress_uncompleted_text": "Complete your bundle",
-      "progress_completed_text": "Bundle complete",
-      "bundle_price": "Bundle price",
-      "you_save": "You save",
-      "button_atc_text": "Add bundle to cart",
-      "button_view_contents_text": "View bundle contents",
-      "bundle_contents_title": "Bundle Contents",
-      "bundle_contents_empty_html": "Your bundle is empty"
-    },
     "filters": {
       "from": "From",
       "title": "Filters",
@@ -467,31 +422,32 @@
     "sort_by": "Sort by",
     "btn_filter_products": "Filter products",
     "paginate_count": "Showing {{ count }} of {{ total }} products",
-    "empty_html": "No products found"
+    "empty_html": "No products found",
+    "custom_bundle": "Custom bundle"
   },
   "custom_bundle": {
     "add_to_bundle": "Add to bundle",
     "progress_label": "Bundle progress",
     "progress_uncompleted_text": "Complete your bundle",
-    "progress_completed_text": "Bundle complete",
+    "progress_completed_text": "Bundle completed",
     "bundle_price": "Bundle price",
     "you_save": "You save",
     "button_atc_text": "Add bundle to cart",
     "button_view_contents_text": "View bundle contents",
-    "bundle_contents_title": "Bundle Contents",
+    "bundle_contents_title": "Bundle contents",
     "bundle_contents_empty_html": "Your bundle is empty",
     "no_reviews": "No reviews"
   },
   "announcement": {
-    "shipping_notice": "Shipping throughout Europe (EEA)",
+    "shipping_notice": "Shipping across Europe (EEA)",
     "title": "Announcement",
     "text": "This is an announcement message."
   },
   "gift_card": {
-    "title": "Here's your gift card!",
+    "title": "Here is your gift card!",
     "instructions": "Use this code at checkout to redeem your gift card.",
     "print": "Print",
-    "start_shopping": "Start Shopping",
+    "start_shopping": "Start shopping",
     "disabled": "Disabled",
     "expired_on": "Expired on {{ date }}",
     "expires_on": "Expires on {{ date }}",
@@ -499,10 +455,10 @@
   },
   "custom_sections": {
     "image_banner": {
-      "title": "Discover a haven of elegance and innovation for your pets.",
-      "text": "Curated selections, gourmet treats, and premium care await.",
-      "primary_button": "COME ON IN!",
-      "image_banner_title": "Image banner title",
+      "title": "Discover an oasis of elegance and innovation for your pets.",
+      "text": "Curated selection, gourmet treats, and premium care await you.",
+      "primary_button": "DISCOVER NOW!",
+      "image_banner_title": "Image Banner Title",
       "image_banner_description": "Short description for the image banner",
       "image_banner_btn_primary": "Primary action",
       "image_banner_btn_secondary": "Secondary action"
@@ -515,7 +471,7 @@
   },
   "recipient": {
     "form": {
-      "btn_label": "Send as a gift",
+      "btn_label": "Send as gift",
       "email_label": "Recipient email",
       "name_label": "Recipient name",
       "message_label": "Message (optional)",
@@ -553,20 +509,20 @@
       "email": "Email",
       "message": "Message",
       "submit": "Submit comment",
-      "success": "Your comment was posted successfully.",
-      "error": "There was an error posting your comment."
+      "success": "Your comment has been posted successfully.",
+      "error": "An error occurred while posting your comment."
     }
   },
   "map": {
-    "address_error": "Error looking up that address",
-    "address_no_results": "No results for that address",
+    "address_error": "Error looking up this address",
+    "address_no_results": "No results for this address",
     "address_query_limit": "You have exceeded the Google API usage limit. Please try again later.",
     "auth_error": "There was a problem authenticating your Google Maps account.",
     "section_heading": "Location"
   },
   "footer": {
     "newsletter": {
-      "first_name_placeholder": "First Name",
+      "first_name_placeholder": "First name",
       "email_placeholder": "Enter your email",
       "submit_button": "Subscribe"
     }
@@ -578,7 +534,7 @@
   },
   "products": {
     "color_variants": {
-      "choose_color": "Choose Color",
+      "choose_color": "Choose color",
       "select_option": "Select a color"
     },
     "variant": {
