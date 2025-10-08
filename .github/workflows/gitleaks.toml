@@ -1,0 +1,30 @@
+title = "TPS secret rules"
+
+[[rules]]
+id = "shopify-admin-token"
+description = "Shopify Admin API token (shpat_)"
+regex = '''shpat_[A-Za-z0-9]{32,}'''
+secretGroup = 0
+
+[[rules]]
+id = "shopify-theme-access"
+description = "Shopify Theme Access token (shptka_)"
+regex = '''shptka_[A-Za-z0-9]{32,}'''
+secretGroup = 0
+
+[[rules]]
+id = "google-api-key"
+description = "Google API key (AIza...)"
+regex = '''AIza[0-9A-Za-z\-_]{35}'''
+secretGroup = 0
+
+[[rules]]
+id = "generic-bearer"
+description = "Generic Bearer/Token"
+regex = '''(?i)(bearer|token|secret|api[_-]?key)\s*[:=]\s*["']?[A-Za-z0-9_\-]{20,}["']?'''
+secretGroup = 0
+
+# Ignorer les IDs publics non secrets
+[[allowlist.patterns]]
+description = "Public IDs (GA4/GTM/Facebook Pixel/GSC meta)"
+regex = '''(GTM-[A-Z0-9]+|G-[A-Z0-9]{6,}|facebook(_pixel)?_id|google-site-verification)'''
