@@ -346,97 +346,6 @@
     },
     "accessibility": {
       "account": "",
-        "d": "d",
-        "days": "days",
-        "expires": "Offer expires in",
-        "h": "h",
-        "hours": "hours",
-        "m": "m",
-        "minutes": "minutes",
-        "s": "s",
-        "seconds": "seconds"
-      "model_3d_fullscreen": "",
-      "model_3d_increase": "",
-      "model_3d_list_label": "",
-          "btn_label": "Send",
-          "password_label": "Password"
-      "payment_methods": "",
-      "previous": "",
-      "previous_page": "",
-        "confirmation_text": "Thank you for subscribing!",
-        "input_label": "Email",
-        "name_placeholder": "Name",
-        "submit_button": "Subscribe"
-      "skip_product_content": "",
-      "slide_of": "",
-        "button": "Continue shopping",
-        "subtext": "The page you requested does not exist.",
-        "title": "Page not found"
-      "wishlist": ""
-    },
-    "all_rights_reserved": "",
-        "home": "Home",
-        "label": "Breadcrumb"
-      "label": ""
-    },
-        "email": "Email",
-        "message": "Message",
-        "name": "Name",
-        "phone": "Phone",
-        "send": "Send message",
-        "success": "Thank you for your message. We will get back to you soon."
-      "success": ""
-    },
-    "copied": "",
-    "copy": "",
-    "countdown_timer": {
-        "address": "Address",
-        "api_key_missing": "Google Maps API key missing",
-        "email": "Email",
-        "hours": "Opening hours",
-        "phone": "Phone"
-      "m": "",
-      "minutes": "",
-        "confirmation_text": "Thank you for subscribing!",
-        "input_label": "Email",
-        "name_placeholder": "Name",
-        "submit_button": "Subscribe"
-    "general": {
-      "copied": "",
-      "copy": "",
-        "subtitle_customer_html": "Welcome, customer!",
-        "subtitle_guest_html": "Welcome, guest!",
-        "title_customer": "Customer Menu",
-        "title_guest": "Guest Menu",
-        "pagination_page_of": "Page of"
-    "loading": "",
-    "map": {
-        "input_label": "Search",
-        "no_results": "No results found",
-        "result_found": "Result found",
-        "results_found": "Results found",
-        "search_by_voice": "Search by voice",
-        "search_for": "Search for",
-        "title": "Search",
-        "title_articles": "Articles",
-        "title_collections": "Collections",
-        "title_pages": "Pages",
-        "title_popular_products": "Popular products",
-        "title_products": "Products"
-    "newsletter": {
-      "confirmation_text": "",
-      "input_label": "",
-      "name_placeholder": "",
-      "submit_button": ""
-    },
-    "no_reviews": "No reviews",
-    "404_page": {
-      "button": "Continue shopping",
-      "subtext": "The page you requested does not exist.",
-      "title": "Page not found"
-    },
-    "accessibility": {
-      "account": "",
       "back_to_top": "",
       "cart": "",
       "cart_product_list": "",
@@ -465,29 +374,97 @@
       "utility_icons": "",
       "wishlist": ""
     },
-    "countdown_timer": {
-      "d": "d",
-      "days": "days",
-      "expires": "Offer expires in",
-      "h": "h",
-      "hours": "hours",
-      "m": "m",
-      "minutes": "minutes",
-      "s": "s",
-      "seconds": "seconds"
+    "all_rights_reserved": "",
+    "breadcrumbs": {
+      "home": "",
+      "label": ""
     },
+    "contact": {
+      "email": "",
+      "message": "",
+      "name": "",
+      "phone": "",
+      "send": "",
+      "success": ""
+    },
+    "copied": "",
+    "copy": "",
+    "countdown_timer": {
+      "d": "",
+      "days": "",
+      "expires": "",
+      "h": "",
+      "hours": "",
+      "m": "",
+      "minutes": "",
+      "s": "",
+      "seconds": ""
+    },
+    "follow_us": "",
+    "general": {
+      "copied": "",
+      "copy": "",
+      "follow_us": "",
+      "menu": "",
+      "optional": "",
+      "share": ""
+    },
+    "loading": "",
+    "map": {
+      "address": "",
+      "api_key_missing": "",
+      "email": "",
+      "hours": "",
+      "phone": ""
+    },
+    "map_address": "",
+    "map_api_key_missing": "",
+    "map_email": "",
+    "map_hours": "",
+    "map_phone": "",
+    "menu": "",
+    "newsletter": {
+      "confirmation_text": "",
+      "input_label": "",
+      "name_placeholder": "",
+      "submit_button": ""
+    },
+    "no_reviews": "No reviews",
+    "offcanvas_menu": {
+      "subtitle_customer_html": "",
+      "subtitle_guest_html": "",
+      "title_customer": "",
+      "title_guest": "",
+      "pagination_page_of": "general.offcanvas_menu.pagination_page_of"
+    },
+    "offcanvas_search": {
+      "input_label": "",
+      "no_results": "",
+      "result_found": "",
+      "results_found": "",
+      "search_by_voice": "",
+      "search_for": "",
+      "title": "",
+      "title_articles": "",
+      "title_collections": "",
+      "title_pages": "",
+      "title_popular_products": "",
+      "title_products": ""
+    },
+    "offcanvas_search_title_articles": "",
+    "offcanvas_search_title_collections": "",
+    "offcanvas_search_title_pages": "",
+    "offcanvas_search_title_products": "",
+    "optional": "",
+    "pagination_page_of": "",
     "password_page": {
       "password_form": {
-        "btn_label": "Send",
-        "password_label": "Password"
+        "btn_label": "",
+        "password_label": ""
       }
     },
-    "newsletter": {
-      "confirmation_text": "Thank you for subscribing!",
-      "input_label": "Email",
-      "name_placeholder": "Name",
-      "submit_button": "Subscribe"
-    },
+    "policy": {
+      "default_content": "",
       "default_title": "",
       "last_updated": ""
     },
