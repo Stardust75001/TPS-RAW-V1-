@@ -1,0 +1,10 @@
+{
+  "404_page": {
+    "title": "Page introuvable",
+    "subtext": "La page que vous avez demandée n'existe pas.",
+    "button": "Continuer vos achats"
+  },
+  "breadcrumbs": {
+    "label": "Vous êtes ici :"
+  }
+}

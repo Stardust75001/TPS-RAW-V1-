@@ -1,0 +1,15 @@
+{
+  "404_page": {
+    "title": "Siden blev ikke fundet",
+    "subtext": "Siden du anmodede om findes ikke.",
+    "button": "Fortsæt med at shoppe"
+  },
+  "breadcrumbs": {
+    "label": "Du er her:"
+  },
+  "collection": {
+    "filters": {
+      "max_range_notice": "Maksimalt interval nået"
+    }
+  }
+}

@@ -1,40 +1,40 @@
 {
   "-": "",
   "404_page": {
-    "button": "Continue shopping",
-    "subtext": "The page you requested does not exist.",
-    "title": "Page not found"
+    "button": "Continuer vos achats",
+    "subtext": "La page que vous avez demandée n'existe pas.",
+    "title": "Page introuvable"
   },
   "announcement": {
-    "shipping_notice": "",
-    "text": "",
-    "title": ""
+    "shipping_notice": "Avis d'expédition",
+    "text": "Texte de l'annonce",
+    "title": "Titre de l'annonce"
   },
   "blogs": {
-    "all_topics": "",
-    "back_to_blog": "",
+    "all_topics": "Tous les sujets",
+    "back_to_blog": "Retour au blog",
     "comments": {
-      "email": "",
-      "error": "",
-      "leave_comment": "",
-      "message": "",
-      "name": "",
-      "submit": "",
-      "success": "",
-      "title": ""
+      "email": "E-mail",
+      "error": "Erreur",
+      "leave_comment": "Laisser un commentaire",
+      "message": "Message",
+      "name": "Nom",
+      "submit": "Envoyer",
+      "success": "Commentaire envoyé avec succès",
+      "title": "Titre du commentaire"
     },
-    "filter_by": "",
-    "next_post": "",
-    "posted_by": "",
-    "posted_in": "",
-    "posted_on": "",
-    "previous_post": "",
-    "read_more": "",
-    "recent_posts": ""
+    "filter_by": "Filtrer par",
+    "next_post": "Article suivant",
+    "posted_by": "Publié par",
+    "posted_in": "Publié dans",
+    "posted_on": "Publié le",
+    "previous_post": "Article précédent",
+    "read_more": "Lire la suite",
+    "recent_posts": "Articles récents"
   },
   "breadcrumbs": {
-    "home": "",
-    "label": ""
+    "home": "Accueil",
+    "label": "Libellé"
   },
   "cart": {
     "alert_cart_updated": "",
@@ -162,7 +162,6 @@
     "bundle_price": "",
     "button_atc_text": "",
     "button_view_contents_text": "",
-    "no_reviews": "",
     "progress_completed_text": "",
     "progress_label": "",
     "progress_uncompleted_text": "",
@@ -409,7 +408,6 @@
       "optional": "",
       "share": ""
     },
-    "loading": "",
     "map": {
       "address": "",
       "api_key_missing": "",
@@ -429,7 +427,6 @@
       "name_placeholder": "",
       "submit_button": ""
     },
-    "no_reviews": "No reviews",
     "offcanvas_menu": {
       "subtitle_customer_html": "",
       "subtitle_guest_html": "",
@@ -502,7 +499,7 @@
       "offcanvas_title": "",
       "remove_from_wishlist": ""
     },
-    "btn_add_to_cart": "general.btn_add_to_cart",
+    "btn_add_to_cart": "Ajouter au panier",
     "cookies": {
       "consent": "general.cookies.consent"
     },
@@ -532,7 +529,6 @@
     "name_placeholder": "",
     "submit_button": ""
   },
-  "no_reviews": "",
   "offcanvas_menu": {
     "pagination_page_of": "",
     "subtitle_customer_html": "",
@@ -568,7 +564,6 @@
     "default_content": "",
     "default_title": "",
     "last_updated": "",
-    "loading": "",
     "menu": "",
     "newsletter": {
       "confirmation_text": "",
@@ -825,6 +820,7 @@
     }
   },
   "textWishlistAdd": "textWishlistAdd",
-  "textWishlistBtnLabel": "textWishlistBtnLabel",
-  "textWishlistRemove": "textWishlistRemove"
+  "textWishlistBtnLabel": "Ma liste de souhaits",
+  "no_reviews": "Aucun avis",
+  "loading": "Chargement..."
 }

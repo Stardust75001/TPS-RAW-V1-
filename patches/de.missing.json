@@ -1,0 +1,12 @@
+{
+  "general": {
+    "accessibility": {
+      "search": "Suchen"
+    },
+    "all_rights_reserved": "Alle Rechte vorbehalten",
+    "breadcrumbs": {
+      "home": "Startseite",
+      "label": "Sie sind hier:"
+    }
+  }
+}

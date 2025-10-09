@@ -1,0 +1,12 @@
+{
+  "general": {
+    "accessibility": {
+      "account": "Cuenta"
+    },
+    "all_rights_reserved": "Todos los derechos reservados",
+    "breadcrumbs": {
+      "home": "Inicio",
+      "label": "Estás aquí:"
+    }
+  }
+}
