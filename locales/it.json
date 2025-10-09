@@ -1,9 +1,9 @@
 {
   "-": "",
   "404_page": {
-    "button": "Continue shopping",
-    "subtext": "The page you requested does not exist.",
-    "title": "Page not found"
+    "button": "Fortsæt med at handle",
+    "subtext": "Siden du anmodede om findes ikke.",
+    "title": "Siden blev ikke fundet"
   },
   "announcement": {
     "shipping_notice": "",
@@ -11,33 +11,33 @@
     "title": ""
   },
   "blogs": {
-    "all_topics": "",
-    "back_to_blog": "",
+    "all_topics": "Alle emner",
+    "back_to_blog": "Tilbage til bloggen",
     "comments": {
-      "email": "",
-      "error": "",
-      "leave_comment": "",
-      "message": "",
-      "name": "",
-      "submit": "",
-      "success": "",
-      "title": ""
+      "email": "E-mail",
+      "error": "Der opstod en fejl",
+      "leave_comment": "Skriv en kommentar",
+      "message": "Kommentar",
+      "name": "Navn",
+      "submit": "Indsend kommentar",
+      "success": "Kommentar sendt succesfuldt",
+      "title": "Kommentarer"
     },
-    "filter_by": "",
-    "next_post": "",
-    "posted_by": "",
-    "posted_in": "",
-    "posted_on": "",
-    "previous_post": "",
-    "read_more": "",
-    "recent_posts": ""
+    "filter_by": "Filtrer efter",
+    "next_post": "Næste indlæg",
+    "posted_by": "Forfatter",
+    "posted_in": "Kategori",
+    "posted_on": "Dato",
+    "previous_post": "Forrige indlæg",
+    "read_more": "Læs mere",
+    "recent_posts": "Seneste indlæg"
   },
   "breadcrumbs": {
     "home": "",
     "label": ""
   },
   "cart": {
-    "alert_cart_updated": "",
+    "alert_cart_updated": "Continue shopping",
     "alert_item_added": "",
     "alert_items_added": "",
     "checkout": "",

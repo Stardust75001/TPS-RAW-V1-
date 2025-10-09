@@ -37,7 +37,7 @@
     "label": "Libellé"
   },
   "cart": {
-    "alert_cart_updated": "",
+    "alert_cart_updated": "Continue shopping",
     "alert_item_added": "",
     "alert_items_added": "",
     "checkout": "",

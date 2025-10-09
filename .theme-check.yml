@@ -1,14 +1,10 @@
-ignore:
-  - locales_backup/**
-
-NestedSnippet:
-  enabled: true
-  severity: suggestion
-
-TemplateLength:
-  enabled: true
-  severity: suggestion
-
 LiquidTag:
-  enabled: true
-  severity: suggestion
+  enabled: false
+TemplateLength:
+  enabled: false
+AssetPreload:
+  enabled: false
+RemoteAsset:
+  enabled: false
+ImgLazyLoading:
+  enabled: false

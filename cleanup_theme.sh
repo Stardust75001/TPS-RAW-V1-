@@ -1,30 +1,23 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
+
 echo "Cleaning up theme files..."
 
-# Remove assignments from video-with-text
-if [ -f "./sections/video-with-text.liquid" ]; then
-    sed -i '' '/assign img_width/d' ./sections/video-with-text.liquid
-    sed -i '' '/assign img_height/d' ./sections/video-with-text.liquid
-    echo "✓ Cleaned video-with-text.liquid"
-fi
+# helpers
+remove_lines() { # remove_lines <pattern> <path>
+  local pat="$1" file="$2"
+  [[ -f "$file" ]] || return 0
+  sed -i '' "/$pat/d" "$file"
+  echo "✓ Cleaned $(basename "$file")"
+}
 
-# Remove assignments from offcanvas-search
-if [ -f "./snippets/offcanvas-search.liquid" ]; then
-    sed -i '' '/assign img_width/d' ./snippets/offcanvas-search.liquid
-    sed -i '' '/assign img_height/d' ./snippets/offcanvas-search.liquid
-    echo "✓ Cleaned offcanvas-search.liquid"
-fi
+remove_lines 'assign img_width'  ./sections/video-with-text.liquid
+remove_lines 'assign img_height' ./sections/video-with-text.liquid
 
-# Remove btn_shadow_sp assignment
-if [ -f "./snippets/product-item.liquid" ]; then
-    sed -i '' '/assign btn_shadow_sp/d' ./snippets/product-item.liquid
-    echo "✓ Cleaned product-item.liquid"
-fi
+remove_lines 'assign img_width'  ./snippets/offcanvas-search.liquid
+remove_lines 'assign img_height' ./snippets/offcanvas-search.liquid
 
-# Remove content_for_header from shogun handler
-if [ -f "./snippets/shogun-content-handler.liquid" ]; then
-    sed -i '' '/{{ content_for_header }}/d' ./snippets/shogun-content-handler.liquid
-    echo "✓ Cleaned shogun-content-handler.liquid"
-fi
+remove_lines 'assign btn_shadow_sp' ./snippets/product-item.liquid
+remove_lines '{{ content_for_header }}' ./snippets/shogun-content-handler.liquid
 
 echo "Cleanup completed!"
