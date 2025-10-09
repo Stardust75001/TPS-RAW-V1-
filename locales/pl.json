@@ -344,23 +344,69 @@
       "label": "Jesteś tutaj:"
     },
     "contact": {
-      "email": "E-mail"
+      "email": "E-mail",
+      "message": "Wiadomość",
+      "name": "Imię",
+      "phone": "Telefon",
+      "send": "Wyślij wiadomość",
+      "success": "Dziękujemy za wiadomość. Skontaktujemy się z Tobą wkrótce."
     },
     "copied": "Skopiowano!",
     "copy": "Kopiuj",
     "follow_us": "Śledź nas",
+    "loading": "Ładowanie...",
+    "map": {
+      "address": "Adres",
+      "email": "Email",
+      "hours": "Godziny",
+      "phone": "Telefon"
+    },
     "map_address": "Adres",
     "map_api_key_missing": "Brak klucza API Google Maps",
     "map_email": "Email",
     "map_hours": "Godziny",
     "map_phone": "Telefon",
     "menu": "Menu",
+    "newsletter": {
+      "confirmation_text": "Dziękujemy za subskrypcję!",
+      "input_label": "Wprowadź swój email",
+      "name_placeholder": "Wprowadź swoje imię",
+      "submit_button": "Subskrybuj"
+    },
+    "no_reviews": "Brak opinii",
+    "offcanvas_menu": {
+      "pagination_page_of": "Strona {{ count }} z {{ total }}",
+      "subtitle_customer_html": "Zarządzaj swoim kontem i zamówieniami",
+      "subtitle_guest_html": "Proszę <a href='#'>zaloguj się</a> lub <a href='#'>utwórz konto</a>",
+      "title_customer": "Cześć, {{ name }}",
+      "title_guest": "Witamy"
+    },
+    "offcanvas_search": {
+      "input_label": "Szukaj produktów",
+      "no_results": "Nie znaleziono wyników",
+      "result_found": "znaleziono wynik",
+      "results_found": "znaleziono wyników",
+      "search_by_voice": "Wyszukiwanie głosowe",
+      "search_for": "Szukaj",
+      "title": "Szukaj",
+      "title_articles": "Artykuły",
+      "title_collections": "Kolekcje",
+      "title_pages": "Strony",
+      "title_popular_products": "Popularne produkty",
+      "title_products": "Produkty"
+    },
     "offcanvas_search_title_articles": "Artykuły",
     "offcanvas_search_title_collections": "Kolekcje",
     "offcanvas_search_title_pages": "Strony",
     "offcanvas_search_title_products": "Produkty",
     "optional": "opcjonalne",
     "pagination_page_of": "Strona {{ count }} z {{ total }}",
+    "password_page": {
+      "password_form": {
+        "btn_label": "Wejdź",
+        "password_label": "Wprowadź hasło sklepu"
+      }
+    },
     "share": "Udostępnij"
   },
   "gift_card": {

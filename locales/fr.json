@@ -56,7 +56,8 @@
       "button_label": "Calculer les frais",
       "modal_button_label": "Calculer les frais",
       "modal_title": "Frais de livraison",
-      "no_results_found": "Aucun tarif disponible pour votre adresse"
+      "no_results_found": "Aucun tarif disponible pour votre adresse",
+      "summary": "Récapitulatif du panier"
     },
     "subtotal": "Sous-total",
     "subtotal_discounted": "Sous-total promo",
@@ -99,11 +100,13 @@
     },
     "empty_html": "Cette collection est vide.",
     "filters": {
+      "clear_all": "Tout effacer",
       "from": "De",
       "max_range_notice": "Plage maximale atteinte",
       "title": "Filtres",
       "to": "À",
-      "view_more": "Voir plus"
+      "view_more": "Voir plus",
+      "view_results": "Voir les résultats"
     },
     "load_more": "Charger plus de produits",
     "load_previous": "Charger les produits précédents",
@@ -349,6 +352,7 @@
       "name_placeholder": "Votre prénom",
       "submit_button": "M'abonner"
     },
+    "no_reviews": "Aucun avis",
     "offcanvas_menu": {
       "subtitle_customer_html": "Heureux de vous revoir",
       "subtitle_guest_html": "Bienvenue",

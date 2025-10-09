@@ -344,23 +344,69 @@
       "label": "Je bent hier:"
     },
     "contact": {
-      "email": "E-mail"
+      "email": "E-mail",
+      "message": "Bericht",
+      "name": "Naam",
+      "phone": "Telefoon",
+      "send": "Bericht versturen",
+      "success": "Bedankt voor uw bericht. We nemen binnenkort contact met u op."
     },
     "copied": "Gekopieerd!",
     "copy": "Kopiëren",
     "follow_us": "Volg ons",
+    "loading": "Laden...",
+    "map": {
+      "address": "Adres",
+      "email": "E-mail",
+      "hours": "Openingstijden",
+      "phone": "Telefoon"
+    },
     "map_address": "Adres",
     "map_api_key_missing": "Google Maps API-sleutel ontbreekt",
     "map_email": "E-mail",
     "map_hours": "Openingstijden",
     "map_phone": "Telefoon",
     "menu": "Menu",
+    "newsletter": {
+      "confirmation_text": "Bedankt voor je inschrijving!",
+      "input_label": "Voer uw e-mail in",
+      "name_placeholder": "Voer uw naam in",
+      "submit_button": "Abonneren"
+    },
+    "no_reviews": "Geen beoordelingen",
+    "offcanvas_menu": {
+      "pagination_page_of": "Pagina {{ count }} van {{ total }}",
+      "subtitle_customer_html": "Beheer uw account en bestellingen",
+      "subtitle_guest_html": "Gelieve <a href='#'>in te loggen</a> of <a href='#'>een account aan te maken</a>",
+      "title_customer": "Hallo, {{ name }}",
+      "title_guest": "Welkom"
+    },
+    "offcanvas_search": {
+      "input_label": "Zoek producten",
+      "no_results": "Geen resultaten gevonden",
+      "result_found": "resultaat gevonden",
+      "results_found": "resultaten gevonden",
+      "search_by_voice": "Zoeken met stem",
+      "search_for": "Zoeken naar",
+      "title": "Zoeken",
+      "title_articles": "Artikelen",
+      "title_collections": "Collecties",
+      "title_pages": "Pagina's",
+      "title_popular_products": "Populaire producten",
+      "title_products": "Producten"
+    },
     "offcanvas_search_title_articles": "Artikelen",
     "offcanvas_search_title_collections": "Collecties",
     "offcanvas_search_title_pages": "Pagina's",
     "offcanvas_search_title_products": "Producten",
     "optional": "optioneel",
     "pagination_page_of": "Pagina {{ count }} van {{ total }}",
+    "password_page": {
+      "password_form": {
+        "btn_label": "Invoeren",
+        "password_label": "Voer winkelwachtwoord in"
+      }
+    },
     "share": "Delen"
   },
   "gift_card": {

@@ -56,7 +56,8 @@
       "button_label": "Beregn omkostninger",
       "modal_button_label": "Beregn omkostninger",
       "modal_title": "Forsendelsesomkostninger",
-      "no_results_found": "Ingen priser tilgængelige for din adresse"
+      "no_results_found": "Ingen priser tilgængelige for din adresse",
+      "summary": "Kurvoversigt"
     },
     "subtotal": "Subtotal",
     "subtotal_discounted": "Nedsat subtotal",
@@ -99,11 +100,13 @@
     },
     "empty_html": "Denne kollektion er tom.",
     "filters": {
+      "clear_all": "Ryd alle",
       "from": "Fra",
       "max_range_notice": "Maksimalt interval nået",
       "title": "Filtre",
       "to": "Til",
-      "view_more": "Se mere"
+      "view_more": "Se mere",
+      "view_results": "Se resultater"
     },
     "load_more": "Indlæs flere produkter",
     "load_previous": "Indlæs tidligere produkter",
@@ -349,6 +352,7 @@
       "name_placeholder": "Dit fornavn",
       "submit_button": "Tilmeld"
     },
+    "no_reviews": "Ingen anmeldelser",
     "offcanvas_menu": {
       "subtitle_customer_html": "Godt at se dig igen",
       "subtitle_guest_html": "Velkommen",

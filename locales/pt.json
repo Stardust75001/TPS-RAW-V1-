@@ -365,6 +365,13 @@
       "seconds": "segundos"
     },
     "follow_us": "Siga-nos",
+    "loading": "Carregando...",
+    "map": {
+      "address": "Endereço",
+      "email": "Email",
+      "hours": "Horários",
+      "phone": "Telefone"
+    },
     "map_address": "Endereço",
     "map_api_key_missing": "Chave da API do Google Maps em falta",
     "map_email": "Email",
@@ -376,6 +383,28 @@
       "input_label": "Digite seu email",
       "name_placeholder": "Digite seu nome",
       "submit_button": "Inscrever-se"
+    },
+    "no_reviews": "Sem avaliações",
+    "offcanvas_menu": {
+      "pagination_page_of": "Página {{ count }} de {{ total }}",
+      "subtitle_customer_html": "Gerencie sua conta e pedidos",
+      "subtitle_guest_html": "Por favor <a href='#'>faça login</a> ou <a href='#'>crie uma conta</a>",
+      "title_customer": "Olá, {{ name }}",
+      "title_guest": "Bem-vindo"
+    },
+    "offcanvas_search": {
+      "input_label": "Buscar produtos",
+      "no_results": "Nenhum resultado encontrado",
+      "result_found": "resultado encontrado",
+      "results_found": "resultados encontrados",
+      "search_by_voice": "Busca por voz",
+      "search_for": "Buscar por",
+      "title": "Buscar",
+      "title_articles": "Artigos",
+      "title_collections": "Coleções",
+      "title_pages": "Páginas",
+      "title_popular_products": "Produtos populares",
+      "title_products": "Produtos"
     },
     "offcanvas_search_title_articles": "Artigos",
     "offcanvas_search_title_collections": "Coleções",

@@ -361,18 +361,59 @@
       "m": "m"
     },
     "follow_us": "Följ oss",
+    "loading": "Laddar...",
+    "map": {
+      "address": "Adress",
+      "email": "E-post",
+      "hours": "Öppettider",
+      "phone": "Telefon"
+    },
     "map_address": "Adress",
     "map_api_key_missing": "Google Maps API-nyckel saknas",
     "map_email": "E-post",
     "map_hours": "Öppettider",
     "map_phone": "Telefon",
     "menu": "Meny",
+    "newsletter": {
+      "confirmation_text": "Tack för din prenumeration!",
+      "input_label": "Ange din e-post",
+      "name_placeholder": "Ange ditt namn",
+      "submit_button": "Prenumerera"
+    },
+    "no_reviews": "Inga recensioner",
+    "offcanvas_menu": {
+      "pagination_page_of": "Sida {{ count }} av {{ total }}",
+      "subtitle_customer_html": "Hantera ditt konto och beställningar",
+      "subtitle_guest_html": "Vänligen <a href='#'>logga in</a> eller <a href='#'>skapa ett konto</a>",
+      "title_customer": "Hej, {{ name }}",
+      "title_guest": "Välkommen"
+    },
+    "offcanvas_search": {
+      "input_label": "Sök produkter",
+      "no_results": "Inga resultat hittades",
+      "result_found": "resultat hittades",
+      "results_found": "resultat hittades",
+      "search_by_voice": "Sök med röst",
+      "search_for": "Sök efter",
+      "title": "Sök",
+      "title_articles": "Artiklar",
+      "title_collections": "Samlingar",
+      "title_pages": "Sidor",
+      "title_popular_products": "Populära produkter",
+      "title_products": "Produkter"
+    },
     "offcanvas_search_title_articles": "Artiklar",
     "offcanvas_search_title_collections": "Samlingar",
     "offcanvas_search_title_pages": "Sidor",
     "offcanvas_search_title_products": "Produkter",
     "optional": "valfritt",
     "pagination_page_of": "Sida {{ count }} av {{ total }}",
+    "password_page": {
+      "password_form": {
+        "btn_label": "Logga in",
+        "password_label": "Ange butikslösenord"
+      }
+    },
     "share": "Dela"
   },
   "gift_card": {

@@ -343,6 +343,14 @@
       "home": "Home",
       "label": "Ti trovi qui:"
     },
+    "contact": {
+      "email": "Email",
+      "message": "Messaggio",
+      "name": "Nome",
+      "phone": "Telefono",
+      "send": "Invia messaggio",
+      "success": "Grazie per il tuo messaggio. Ti risponderemo presto."
+    },
     "copied": "Copiato!",
     "copy": "Copia",
     "countdown_timer": {
@@ -353,6 +361,13 @@
       "seconds": "secondi"
     },
     "follow_us": "Seguici",
+    "loading": "Caricamento...",
+    "map": {
+      "address": "Indirizzo",
+      "email": "Email",
+      "hours": "Orari",
+      "phone": "Telefono"
+    },
     "map_address": "Indirizzo",
     "map_api_key_missing": "Chiave API Google Maps mancante",
     "map_email": "Email",
@@ -364,6 +379,28 @@
       "input_label": "Inserisci la tua email",
       "name_placeholder": "Inserisci il tuo nome",
       "submit_button": "Iscriviti"
+    },
+    "no_reviews": "Nessuna recensione",
+    "offcanvas_menu": {
+      "pagination_page_of": "Pagina {{ count }} di {{ total }}",
+      "subtitle_customer_html": "Gestisci il tuo account e i tuoi ordini",
+      "subtitle_guest_html": "Per favore <a href='#'>accedi</a> o <a href='#'>crea un account</a>",
+      "title_customer": "Ciao, {{ name }}",
+      "title_guest": "Benvenuto"
+    },
+    "offcanvas_search": {
+      "input_label": "Cerca prodotti",
+      "no_results": "Nessun risultato trovato",
+      "result_found": "risultato trovato",
+      "results_found": "risultati trovati",
+      "search_by_voice": "Ricerca vocale",
+      "search_for": "Cerca",
+      "title": "Cerca",
+      "title_articles": "Articoli",
+      "title_collections": "Collezioni",
+      "title_pages": "Pagine",
+      "title_popular_products": "Prodotti popolari",
+      "title_products": "Prodotti"
     },
     "offcanvas_search_title_articles": "Articoli",
     "offcanvas_search_title_collections": "Collezioni",
