@@ -4,23 +4,23 @@
     "theme_name": "Shopiweb Premium",
     "theme_version": "1.6.0",
     "theme_author": "Équipe Shopiweb",
-    "theme_documentation_url": "https:\/\/docs.shopiweb.fr\/theme-premium",
-    "theme_support_url": "https:\/\/docs.shopiweb.fr\/theme-premium"
+    "theme_documentation_url": "https://docs.shopiweb.fr/theme-premium",
+    "theme_support_url": "https://docs.shopiweb.fr/theme-premium"
   },
   {
     "name": "Écosystème du thème",
     "settings": [
       {
         "type": "paragraph",
-        "content": "📚 Afficher la notice d'utilisation. [Documentation](https:\/\/docs.shopiweb.fr\/theme-premium)."
+        "content": "📚 Afficher la notice d'utilisation. [Documentation](https://docs.shopiweb.fr/theme-premium)."
       },
       {
         "type": "paragraph",
-        "content": "🙋🏻‍♂️ Besoin d'aide ? Passez 1 ou 2 heures en visio avec Xavier. Posez-lui vos questions. [Réserver](https:\/\/theme.shopiweb.fr\/coaching-technique-design)."
+        "content": "🙋🏻‍♂️ Besoin d'aide ? Passez 1 ou 2 heures en visio avec Xavier. Posez-lui vos questions. [Réserver](https://theme.shopiweb.fr/coaching-technique-design)."
       },
       {
         "type": "paragraph",
-        "content": "🔔 Besoin d'une assistance ? Rejoigner notre [Groupe Privé Facebook](https:\/\/www.facebook.com\/groups\/133448203019703)."
+        "content": "🔔 Besoin d'une assistance ? Rejoigner notre [Groupe Privé Facebook](https://www.facebook.com/groups/133448203019703)."
       }
     ]
   },
@@ -52,7 +52,7 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "Documentation FR : [Couleurs by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/parametres-du-theme\/couleurs)"
+        "content": "Documentation FR : [Couleurs by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/parametres-du-theme/couleurs)"
       },
       {
         "type": "header",
@@ -740,27 +740,27 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "Documentation FR : [Typographie by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/parametres-du-theme\/typographie)"
+        "content": "Documentation FR : [Typographie by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/parametres-du-theme/typographie)"
       },
       {
         "type": "font_picker",
         "id": "font_headings",
         "label": "Titres police",
         "default": "sans-serif",
-        "info": "La sélection d'une police différente peut influencer la vitesse de votre boutique. [En savoir plus sur les polices système.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+        "info": "La sélection d'une police différente peut influencer la vitesse de votre boutique. [En savoir plus sur les polices système.](https://help.shopify.com/manual/online-store/os/store-speed/improving-speed#fonts)"
       },
       {
         "type": "text",
         "id": "font_headings_custom",
         "label": "Titres police (custom)",
-        "info": "Téléchargez votre fichier de police dans la section [Fichiers](https:\/\/www.shopify.com\/admin\/content\/files) et entrez ici le nom exact du fichier. Par exemple, 'ubuntu-regular.woff2'. Pour plus d'informations, veuillez vous référer à notre vidéo de documentation."
+        "info": "Téléchargez votre fichier de police dans la section [Fichiers](https://www.shopify.com/admin/content/files) et entrez ici le nom exact du fichier. Par exemple, 'ubuntu-regular.woff2'. Pour plus d'informations, veuillez vous référer à notre vidéo de documentation."
       },
       {
         "type": "font_picker",
         "id": "font_body",
         "label": "Corps police",
         "default": "sans-serif",
-        "info": "La sélection d'une police différente peut influencer la vitesse de votre boutique. [En savoir plus sur les polices système.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+        "info": "La sélection d'une police différente peut influencer la vitesse de votre boutique. [En savoir plus sur les polices système.](https://help.shopify.com/manual/online-store/os/store-speed/improving-speed#fonts)"
       }
     ]
   },
@@ -1955,11 +1955,11 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "Documentation FR : [Réseaux sociaux by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/parametres-du-theme\/reseaux-sociaux)"
+        "content": "Documentation FR : [Réseaux sociaux by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/parametres-du-theme/reseaux-sociaux)"
       },
       {
         "type": "paragraph",
-        "content": "Saisissez l'URL complète de chaque site de média social ci-dessous. Par exemple : https:\/\/www.facebook.com\/shopiweb"
+        "content": "Saisissez l'URL complète de chaque site de média social ci-dessous. Par exemple : https://www.facebook.com/shopiweb"
       },
       {
         "type": "text",
@@ -2322,7 +2322,7 @@
         "type": "richtext",
         "id": "cooks_description",
         "label": "Description",
-        "default": "<p>Nous utilisons des cookies pour vous garantir la meilleure expérience possible sur notre site web...<\/p>"
+        "default": "<p>Nous utilisons des cookies pour vous garantir la meilleure expérience possible sur notre site web...</p>"
       },
       {
         "type": "select",
@@ -2807,7 +2807,7 @@
         "type": "richtext",
         "id": "dialog_msg",
         "label": "Message",
-        "default": "<p>Bonjour 👋<br>Comment puis-je vous aider ?<\/p>"
+        "default": "<p>Bonjour 👋<br>Comment puis-je vous aider ?</p>"
       },
       {
         "type": "text",
@@ -3253,7 +3253,7 @@
         "type": "richtext",
         "id": "cart_goal_description_before",
         "label": "Description - Objectif NON atteint",
-        "default": "<p>Plus que <strong>[amount]<\/strong> et la <strong>LIVRAISON<\/strong> est <strong>OFFERTE !<\/strong><\/p>"
+        "default": "<p>Plus que <strong>[amount]</strong> et la <strong>LIVRAISON</strong> est <strong>OFFERTE !</strong></p>"
       },
       {
         "type": "select",
@@ -3307,7 +3307,7 @@
         "type": "richtext",
         "id": "cart_goal_description_after",
         "label": "Description - Objectif atteint",
-        "default": "<p>Félicitations ! Vous pouvez bénéficier de la <strong>LIVRAISON GRATUITE.<\/strong><\/p>"
+        "default": "<p>Félicitations ! Vous pouvez bénéficier de la <strong>LIVRAISON GRATUITE.</strong></p>"
       },
       {
         "type": "select",
@@ -3382,7 +3382,7 @@
         "type": "richtext",
         "id": "cart_testimonial",
         "label": "Témoignage",
-        "default": "<p>Rejoignez les <strong>1 000+ clients<\/strong> qui ont fait confiance à Shopiweb pour les aider à créer leurs boutiques Shopify.<\/p>"
+        "default": "<p>Rejoignez les <strong>1 000+ clients</strong> qui ont fait confiance à Shopiweb pour les aider à créer leurs boutiques Shopify.</p>"
       },
       {
         "type": "image_picker",
@@ -3409,7 +3409,7 @@
         "id": "cart_upsell_metafield",
         "label": "Metafield nom de la clé",
         "default": "shopiweb.upsell",
-        "info": "Veuillez d'abord [créer le champ-méta ci-dessus](https:\/\/shopify.com\/admin\/metafields\/product\/create) puis ajoutez-y les produits en vente incitative. Si vous préférez afficher les produits d'une collection, veuillez définir le paramètre ci-dessous."
+        "info": "Veuillez d'abord [créer le champ-méta ci-dessus](https://shopify.com/admin/metafields/product/create) puis ajoutez-y les produits en vente incitative. Si vous préférez afficher les produits d'une collection, veuillez définir le paramètre ci-dessous."
       },
       {
         "type": "collection",
@@ -3503,7 +3503,7 @@
         "id": "shipping_protection_text",
         "label": "Texte",
         "info": "Utilisez [price] où vous voulez afficher le prix.",
-        "default": "<p>Ajouter une Protection Colis pour seulement <strong>[price]<\/strong> et assurez la sérénité de votre envoi !<\/p>"
+        "default": "<p>Ajouter une Protection Colis pour seulement <strong>[price]</strong> et assurez la sérénité de votre envoi !</p>"
       }
     ]
   },
@@ -3512,7 +3512,7 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "Documentation FR : [Recherche by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/parametres-du-theme\/recherche)"
+        "content": "Documentation FR : [Recherche by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/parametres-du-theme/recherche)"
       },
       {
         "type": "header",
@@ -3632,7 +3632,7 @@
       },
       {
         "type": "paragraph",
-        "content": "REMARQUE : Les échantillons de couleurs sont utilisés pour remplacer les options de produits de couleur par les couleurs\/teintes correspondantes. Vous devez nommer les images d'échantillons de couleurs au format \"swatch-bleu.png\" lorsque \"bleu\" est le nom de l'option traitée. Ensuite, veuillez télécharger les images dans le dossier [Fichiers](https:\/\/www.shopify.com\/admin\/settings\/files) de Shopify."
+        "content": "REMARQUE : Les échantillons de couleurs sont utilisés pour remplacer les options de produits de couleur par les couleurs/teintes correspondantes. Vous devez nommer les images d'échantillons de couleurs au format \"swatch-bleu.png\" lorsque \"bleu\" est le nom de l'option traitée. Ensuite, veuillez télécharger les images dans le dossier [Fichiers](https://www.shopify.com/admin/settings/files) de Shopify."
       },
       {
         "type": "checkbox",
@@ -3677,58 +3677,58 @@
       }
     ]
   },
-{
-  "name": "Stories Animées (Tooltips)",
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "stories_tooltips_enable",
-      "label": "Activer les infobulles",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "stories_tooltips_delay",
-      "label": "Durée d'affichage (ms)",
-      "default": "3000",
-      "info": "Temps en millisecondes avant que l'infobulle disparaisse (ex: 3000 = 3 sec)."
-    },
-    {
-      "type": "select",
-      "id": "stories_tooltips_position",
-      "label": "Position de l'infobulle",
-      "default": "top",
-      "options": [
-        {
-          "value": "top",
-          "label": "Haut"
-        },
-        {
-          "value": "bottom",
-          "label": "Bas"
-        },
-        {
-          "value": "left",
-          "label": "Gauche"
-        },
-        {
-          "value": "right",
-          "label": "Droite"
-        }
-      ]
-    },
-    {
-      "type": "color",
-      "id": "stories_tooltips_bg",
-      "label": "Couleur de fond",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "stories_tooltips_text",
-      "label": "Couleur du texte",
-      "default": "#ffffff"
-    }
-  ]
-}
+  {
+    "name": "Stories Animées (Tooltips)",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "stories_tooltips_enable",
+        "label": "Activer les infobulles",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "stories_tooltips_delay",
+        "label": "Durée d'affichage (ms)",
+        "default": "3000",
+        "info": "Temps en millisecondes avant que l'infobulle disparaisse (ex: 3000 = 3 sec)."
+      },
+      {
+        "type": "select",
+        "id": "stories_tooltips_position",
+        "label": "Position de l'infobulle",
+        "default": "top",
+        "options": [
+          {
+            "value": "top",
+            "label": "Haut"
+          },
+          {
+            "value": "bottom",
+            "label": "Bas"
+          },
+          {
+            "value": "left",
+            "label": "Gauche"
+          },
+          {
+            "value": "right",
+            "label": "Droite"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "stories_tooltips_bg",
+        "label": "Couleur de fond",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "stories_tooltips_text",
+        "label": "Couleur du texte",
+        "default": "#ffffff"
+      }
+    ]
+  }
 ]

@@ -6,7 +6,7 @@ This file can be re-written at any time.
 {{ collection.description }}
 
 {% if collection.image %}
-		<img src="{{ collection.image | image_url: width:600, height:600 }}"
+		<img loading="lazy" src="{{ collection.image | image_url: width: 600, height: 600 }}"
 			 alt="Image de la collection : {{ collection.title }}"
 			 role="img"
 			 aria-label="Image de la collection : {{ collection.title }}"

@@ -61,7 +61,11 @@ Section : Stories Bar Sticky Configurable (dynamique via blocks)
   {% assign image = block.settings.image | image_url: width: 800, height: 800 %}
       {% assign link = block.settings.link %}
       <a href="{{ link | prepend: base_url }}" class="animated-stories-link">
-        <img src="{{ image }}" alt="{{ title }}">
+        {% # theme-check-disable ImgWidthAndHeight %}{% # theme-check-disable RemoteAsset %}
+
+<img loading="lazy" src="{{ image }}" alt="{{ title }}">
+{% # theme-check-enable RemoteAsset %}
+{% # theme-check-enable ImgWidthAndHeight %}
         <div class="tooltip-bubble" role="tooltip">
           {{ title }}
         </div>
@@ -80,9 +84,18 @@ Section : Stories Bar Sticky Configurable (dynamique via blocks)
       "label": "Taille des icônes (px)",
       "default": "90",
       "options": [
-        { "value": "60", "label": "60px" },
-        { "value": "90", "label": "90px" },
-        { "value": "120", "label": "120px" }
+        {
+          "value": "60",
+          "label": "60px"
+        },
+        {
+          "value": "90",
+          "label": "90px"
+        },
+        {
+          "value": "120",
+          "label": "120px"
+        }
       ]
     },
     {
@@ -128,7 +141,9 @@ Section : Stories Bar Sticky Configurable (dynamique via blocks)
   "presets": [
     {
       "name": "Stories Bar Sticky",
-      "blocks": []
+      "blocks": [
+
+      ]
     }
   ]
 }

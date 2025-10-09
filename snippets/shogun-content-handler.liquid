@@ -16,16 +16,10 @@ This file can be re-written at any time.
 
 {% endif %}
 
-{% capture content_for_header %}
-  {{ content_for_header }}
-  {% render 'shogun-products', content: content %}
-{% endcapture %}
+{# ...existing code... #}
 
 {% if content.metafields.shogun.json_template_snippets %}
-  {% capture content_for_header %}
-    {{ content_for_header }}
-    {{ content.metafields.shogun.json_template_snippets.value['head'][template_suffix] }}
-  {% endcapture %}
+{# ...existing code... #}
 
   {% capture content_for_body %}
     {{ content_for_layout }}
@@ -45,19 +39,7 @@ This file can be re-written at any time.
 {% endif %}
 
 {% if content.metafields.shogun.json_template_optimizer %}
-     {% capture content_for_header %}
-        <template id="shogun-variant-head">
-          {{ content_for_header }}
-        </template>
-        <script type="text/javascript">
-          {% if customer %}
-            window.SHG_CUSTOMER = { "id": "{{ customer.id }}" }
-          {% else %}
-            window.SHG_CUSTOMER = null;
-          {% endif %}
-        </script>
-        {{ content.metafields.shogun.json_template_optimizer.value['head'] }}
-     {% endcapture %}
+{# ...existing code... #}
 
      {% capture content_for_layout %}
         <template id="shogun-variant-body">

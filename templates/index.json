@@ -1,119 +1,123 @@
 {
-	"name": "Home",
-	"sections": {
-		"hero": {
-			"type": "image-banner",
-			"settings": {
-				"image": "shopify://shop_images/hero.jpg",
-				"image_overlay_opacity": 10,
-				"show_text_box": true,
-				"heading": "New arrivals, lighter & faster",
-				"text": "Built for speed. Designed to convert.",
-				"button_label_1": "Shop now",
-				"button_link_1": "/collections/all",
-				"button_style_secondary_1": false,
-				"button_label_2": "",
-				"button_link_2": "",
-				"desktop_content_position": "middle-center",
-				"desktop_content_alignment": "center",
-				"mobile_content_alignment": "center",
-				"adapt_height_first_image": true,
-				"stack_images_on_mobile": true,
-				"color_scheme": "background-1",
-				"show_text_below": false
-			}
-		},
-		"featured_collection": {
-			"type": "featured-collection",
-			"settings": {
-				"title": "Best sellers",
-				"collection": "frontpage",
-				"products_to_show": 8,
-				"columns_desktop": 4,
-				"show_view_all": true,
-				"show_quick_add": false,
-				"enable_desktop_slider": false,
-				"color_scheme": "background-1",
-				"image_ratio": "adapt",
-				"show_secondary_image": false,
-				"add_image_padding": false,
-				"swipe_on_mobile": true
-			}
-		},
-		"value_props": {
-			"type": "multicolumn",
-			"blocks": {
-				"v1": {
-					"type": "column",
-					"settings": {
-						"title": "Free shipping",
-						"text": "On orders over $50",
-						"link_label": "",
-						"link": ""
-					}
-				},
-				"v2": {
-					"type": "column",
-					"settings": {
-						"title": "30-day returns",
-						"text": "No questions asked",
-						"link_label": "",
-						"link": ""
-					}
-				},
-				"v3": {
-					"type": "column",
-					"settings": {
-						"title": "Secure checkout",
-						"text": "Encrypted payments",
-						"link_label": "",
-						"link": ""
-					}
-				}
-			},
-			"block_order": ["v1", "v2", "v3"],
-			"settings": {
-				"title": "",
-				"heading_size": "h3",
-				"image_width": "small",
-				"image_ratio": "adapt",
-				"columns_desktop": 3,
-				"column_alignment": "center",
-				"background_style": "none",
-				"button_label": "",
-				"button_link": "",
-				"color_scheme": "background-1",
-				"swipe_on_mobile": true
-			}
-		},
-		"feature_band": {
-			"type": "image-with-text",
-			"settings": {
-				"image": "shopify://shop_images/feature.jpg",
-				"is_reversed": false,
-				"height": "adapt",
-				"desktop_image_width": "small",
-				"heading": "Built for performance",
-				"text": "Fewer scripts, optimized images, and a streamlined layout for faster pages and higher conversion.",
-				"button_label": "Learn more",
-				"button_link": "/pages/about",
-				"color_scheme": "background-1"
-			}
-		},
-		"email_signup": {
-			"type": "email-signup",
-			"settings": {
-				"color_scheme": "background-1",
-				"heading": "Get 10% off your first order",
-				"text": "Join the newsletter for early access and deals."
-			}
-		}
-	},
-	"order": [
-		"hero",
-		"featured_collection",
-		"value_props",
-		"feature_band",
-		"email_signup"
-	]
+  "name": "Home",
+  "sections": {
+    "hero": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/hero.jpg",
+        "image_overlay_opacity": 10,
+        "show_text_box": true,
+        "heading": "New arrivals, lighter & faster",
+        "text": "Built for speed. Designed to convert.",
+        "button_label_1": "Shop now",
+        "button_link_1": "/collections/all",
+        "button_style_secondary_1": false,
+        "button_label_2": "",
+        "button_link_2": "",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "adapt_height_first_image": true,
+        "stack_images_on_mobile": true,
+        "color_scheme": "background-1",
+        "show_text_below": false
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Best sellers",
+        "collection": "frontpage",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "show_view_all": true,
+        "show_quick_add": false,
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "swipe_on_mobile": true
+      }
+    },
+    "value_props": {
+      "type": "multicolumn",
+      "blocks": {
+        "v1": {
+          "type": "column",
+          "settings": {
+            "title": "Free shipping",
+            "text": "On orders over $50",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "v2": {
+          "type": "column",
+          "settings": {
+            "title": "30-day returns",
+            "text": "No questions asked",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "v3": {
+          "type": "column",
+          "settings": {
+            "title": "Secure checkout",
+            "text": "Encrypted payments",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "v1",
+        "v2",
+        "v3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h3",
+        "image_width": "small",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "swipe_on_mobile": true
+      }
+    },
+    "feature_band": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify://shop_images/feature.jpg",
+        "is_reversed": false,
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "heading": "Built for performance",
+        "text": "Fewer scripts, optimized images, and a streamlined layout for faster pages and higher conversion.",
+        "button_label": "Learn more",
+        "button_link": "/pages/about",
+        "color_scheme": "background-1"
+      }
+    },
+    "email_signup": {
+      "type": "email-signup",
+      "settings": {
+        "color_scheme": "background-1",
+        "heading": "Get 10% off your first order",
+        "text": "Join the newsletter for early access and deals."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured_collection",
+    "value_props",
+    "feature_band",
+    "email_signup"
+  ]
 }

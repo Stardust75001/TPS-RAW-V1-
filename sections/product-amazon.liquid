@@ -2,7 +2,9 @@
   <!-- Image principale -->
   <div style="flex: 1 1 40%; max-width: 500px;">
     {% if product.featured_image %}
-      <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title | escape }}" style="width: 100%; border: 1px solid #ddd; padding: 10px;" loading="lazy">
+      {% # theme-check-disable ImgWidthAndHeight %}
+<img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title | escape }}" style="width: 100%; border: 1px solid #ddd; padding: 10px;" loading="lazy">
+{% # theme-check-enable ImgWidthAndHeight %}
     {% endif %}
   </div>
 

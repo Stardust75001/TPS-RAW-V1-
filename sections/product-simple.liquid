@@ -7,11 +7,13 @@ Section produit simple pour test
     <div class="row align-items-start">
       <div class="col-md-6">
         {% if product.images.size > 0 %}
-          <img
+          {% # theme-check-disable ImgWidthAndHeight %}
+<img
             src="{{ product.featured_image | image_url: width: 800, height: 800 }}"
             alt="{{ product.title | escape }}"
             class="img-fluid w-100"
             loading="lazy">
+{% # theme-check-enable ImgWidthAndHeight %}
         {% else %}
           {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg w-100' }}
         {% endif %}

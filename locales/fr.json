@@ -165,7 +165,8 @@
     "progress_completed_text": "",
     "progress_label": "",
     "progress_uncompleted_text": "",
-    "you_save": ""
+    "you_save": "",
+    "no_reviews": "Aucun avis"
   },
   "custom_sections": {
     "image_banner": {
@@ -504,7 +505,9 @@
       "consent": "general.cookies.consent"
     },
     "text_btn_save": "general.text_btn_save",
-    "text_note_saved": "general.text_note_saved"
+    "text_note_saved": "general.text_note_saved",
+    "loading": "Chargement…",
+    "no_reviews": "Aucun avis"
   },
   "gift_card": {
     "balance": "",
@@ -579,7 +582,8 @@
       }
     },
     "secure_payments": "",
-    "title": ""
+    "title": "",
+    "loading": "Chargement…"
   },
   "product": {
     "add": "",
@@ -822,5 +826,5 @@
   "textWishlistAdd": "textWishlistAdd",
   "textWishlistBtnLabel": "Ma liste de souhaits",
   "no_reviews": "Aucun avis",
-  "loading": "Chargement..."
+  "textWishlistRemove": "Retirer de la liste"
 }

@@ -157,449 +157,778 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 {% schema %}
 {
-    "name": "Galerie de Styles",
-    "settings": [
+  "name": "Galerie de Styles",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Documentation FR : [Galerie de Styles by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/sections/galerie-de-style)"
+    },
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "select",
+      "id": "bg_color",
+      "label": "Couleur de l'arrière plan",
+      "default": "bg-body text-body",
+      "options": [
         {
-            "type": "paragraph", 
-            "content": "Documentation FR : [Galerie de Styles by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/sections\/galerie-de-style)"
+          "group": "Principal",
+          "value": "bg-primary text-white",
+          "label": "Primaire"
         },
         {
-            "type": "header",
-            "content": "General"
+          "group": "Principal",
+          "value": "bg-secondary text-white",
+          "label": "Secondaire"
         },
         {
-            "type": "select",
-            "id": "bg_color",
-            "label": "Couleur de l'arrière plan",
-            "default": "bg-body text-body",
-            "options": [
-                { "group": "Principal", "value": "bg-primary text-white", "label": "Primaire" },
-                { "group": "Principal", "value": "bg-secondary text-white", "label": "Secondaire" },
-                { "group": "Principal", "value": "bg-tertiary text-white", "label": "Tertiaire" },
-                { "group": "Intermédiaire", "value": "bg-white text-dark", "label": "Blanc" },
-                { "group": "Intermédiaire", "value": "bg-light text-body", "label": "Claire" },
-                { "group": "Intermédiaire", "value": "bg-dark text-white", "label": "Sombre" },
-                { "group": "Par défaut", "value": "bg-body text-body", "label": "Corps (body)" }
-            ]
+          "group": "Principal",
+          "value": "bg-tertiary text-white",
+          "label": "Tertiaire"
         },
         {
-            "type": "checkbox",
-            "id": "bg_gradient",
-            "label": "Dégradé d'arrière-plan",
-            "default": false,
-            "info": "Ne s'applique pas aux couleurs claires"
+          "group": "Intermédiaire",
+          "value": "bg-white text-dark",
+          "label": "Blanc"
         },
         {
-            "type": "select",
-            "id": "container",
-            "label": "Conteneur",
-            "default": "container",
-            "options": [
-                { "value": "container", "label": "Conteneur" },
-                { "value": "container-fluid", "label": "Pleine largeur" }
-            ]
+          "group": "Intermédiaire",
+          "value": "bg-light text-body",
+          "label": "Claire"
         },
         {
-            "type": "text",
-            "id": "max_width",
-            "label": "Largeur maximale (px)",
-            "info": "Ajuster la largeur du conteneur (en pixels)"
+          "group": "Intermédiaire",
+          "value": "bg-dark text-white",
+          "label": "Sombre"
         },
         {
-            "type": "select",
-            "id": "text_align",
-            "label": "Alignement du texte",
-            "default": "text-center",
-            "options": [
-                { "value": "text-start", "label": "Gauche" },
-                { "value": "text-center", "label": "Centre" }
-            ]
-        },
-        {
-            "type": "header",
-            "content": "En-tête de la section"
-        },
-        {
-            "type": "image_picker",
-            "id": "subtitle_img",
-            "label": "Légende Image"
-        },
-        {
-            "type": "text",
-            "id": "brand_image_size",
-            "label": "Image Largeur/Hauteur (px)",
-            "default": "60"
-        },
-        {
-            "type": "text",
-            "id": "subtitle",
-            "label": "Légende Texte"
-        },
-        {
-            "type": "select",
-            "id": "subtitle_size",
-            "label": "Taille de la légende",
-            "default": "fs-5",
-            "options": [
-                { "group": "Légende Standard", "value": "fs-1", "label": "Extra Grand" },
-                { "group": "Légende Standard", "value": "fs-2", "label": "Super Grand" },
-                { "group": "Légende Standard", "value": "fs-3", "label": "Très Grand" },
-                { "group": "Légende Standard", "value": "fs-4", "label": "Grand" },
-                { "group": "Légende Standard", "value": "fs-5", "label": "Moyen" },
-                { "group": "Légende Standard", "value": "fs-6", "label": "Petit" } 
-            ]
-        },
-        {
-            "type": "color",
-            "id": "color_caption",
-            "label": "Couleur de la légende",
-            "default": "#6c757d"
-        },
-        {
-            "type": "text",
-            "id": "title_overlay",
-            "label": "Titre overlay",
-            "info": "Visible sur ordinateur, masqué sur mobile pour optimiser la lisibilité."
-        },
-        {
-            "type": "select",
-            "id": "title_overlay_size",
-            "label": "Taille du titre overlay",
-            "default": "3",
-            "options": [
-                { "group": "Titre Overlay", "value": "4", "label": "Grand" },
-                { "group": "Titre Overlay", "value": "3", "label": "Moyen" },
-                { "group": "Titre Overlay", "value": "2", "label": "Petit" }
-            ]
-        },
-        {
-            "type": "color",
-            "id": "color_title_overlay",
-            "label": "Couleur du titre overlay",
-            "default": "#000000"
-        },
-        {
-            "type": "inline_richtext",
-            "id": "title",
-            "label": "Titre",
-            "default": "Galerie de Style"
-        },
-        {
-            "type": "select",
-            "id": "heading_tag",
-            "label": "Balise titre (SEO)",
-            "default": "h2",
-            "options": [
-                { "value": "h1", "label": "h1" },
-                { "value": "h2", "label": "h2" },
-                { "value": "h3", "label": "h3" },
-                { "value": "h4", "label": "h4" },
-                { "value": "h5", "label": "h5" },
-                { "value": "h6", "label": "h6" },
-                { "value": "span", "label": "Aucune" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "title_size",
-            "label": "Taille du titre",
-            "default": "h2",
-            "options": [
-                { "group": "Titre Supérieur", "value": "display-1", "label": "Extra Extra Grand" },
-                { "group": "Titre Supérieur", "value": "display-2", "label": "Extra Grand" },
-                { "group": "Titre Supérieur", "value": "display-3", "label": "Ultra Grand" },
-                { "group": "Titre Supérieur", "value": "display-4", "label": "Super Grand" },
-                { "group": "Titre Standard", "value": "h1", "label": "Très Grand" },
-                { "group": "Titre Standard", "value": "h2", "label": "Grand" },
-                { "group": "Titre Standard", "value": "h3", "label": "Moyen" },
-                { "group": "Titre Standard", "value": "h4", "label": "Petit" },
-                { "group": "Titre Standard", "value": "h5", "label": "Très Petit" },
-                { "group": "Titre Standard", "value": "h6", "label": "Super Petit" }
-            ]
-        },
-        {
-            "type": "richtext",
-            "id": "description",
-            "label": "Description (facultatif)",
-            "default": "<p>Ajouter une description facultative à cette section</p>"
-        },
-        {
-            "type": "select",
-            "id": "description_size",
-            "label": "Taille de description",
-            "default": "fs-5",
-            "options": [
-                { "group": "Description Standard", "value": "fs-1", "label": "Extra Grand" },
-                { "group": "Description Standard", "value": "fs-2", "label": "Super Grand" },
-                { "group": "Description Standard", "value": "fs-3", "label": "Très Grand" },
-                { "group": "Description Standard", "value": "fs-4", "label": "Grand" },
-                { "group": "Description Standard", "value": "fs-5", "label": "Moyen" },
-                { "group": "Description Standard", "value": "fs-6", "label": "Petit" } 
-            ]
-        },
-        {
-            "type": "header",
-            "content": "Image"
-        },
-        {
-            "type": "image_picker",
-            "id": "mobile_image",
-            "label": "Image (mobile)"
-        },
-        {
-            "type": "image_picker",
-            "id": "desktop_image",
-            "label": "Image (bureau)"
-        },
-        {
-            "type": "select",
-            "id": "img_thumbnail",
-            "label": "Bordure de l'image",
-            "default": "img-thumbnail",
-            "options": [
-                { "value": "", "label": "Aucune" },
-                { "value": "img-thumbnail", "label": "Bordure" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "border_color",
-            "label": "Couleur de la bordure",
-            "options": [
-                { "value": "", "label": "Par défaut" },
-                { "value": "border-primary", "label": "Primaire" },
-                { "value": "border-secondary", "label": "Secondaire" },
-                { "value": "border-tertiary", "label": "Tertiaire" },
-                { "value": "border-dark", "label": "Sombre" },
-                { "value": "border-success", "label": "Succès" },
-                { "value": "border-warning", "label": "Avertissement" },
-                { "value": "border-danger", "label": "Danger" },
-                { "value": "border-info", "label": "Info" }
-            ],
-            "default": ""
-        },
-        {
-            "type": "range",
-            "id": "border_width",
-            "label": "Largeur de la bordure",
-            "min": 1,
-            "max": 10,
-            "step": 1,
-            "default": 1
-        },
-        {
-            "type": "select",
-            "id": "shadow_sp",
-            "label": "Ombre",
-            "options": [
-                { "value": "shadow-none", "label": "Aucune" },
-                { "value": "shadow-1", "label": "Ombre légère" },
-                { "value": "shadow-2", "label": "Ombre partiel" },
-                { "value": "shadow-3", "label": "Ombre profonde" },
-                { "value": "shadow-4", "label": "Ombre totale" }
-            ],
-            "default": "shadow-1"
-        },
-        {
-            "type": "header",
-            "content": "Points"
-        },
-        {
-            "type": "select",
-            "id": "point_color",
-            "label": "Couleur des points",
-            "default": "--bs-primary",
-            "options": [
-                { "group": "Par défaut", "value": "--bs-body-bg", "label": "Corps (body)" },
-                { "group": "Principal", "value": "--bs-white", "label": "Blanc" },
-                { "group": "Principal", "value": "--bs-primary", "label": "Primaire" },
-                { "group": "Principal", "value": "--bs-secondary", "label": "Secondaire" },
-                { "group": "Principal", "value": "--bs-tertiary", "label": "Tertiaire" },
-                { "group": "Intermédiaire", "value": "--bs-light", "label": "Claire" },
-                { "group": "Intermédiaire", "value": "--bs-dark", "label": "Sombre" },
-                { "group": "Alerte", "value": "--bs-success", "label": "Succès" },
-                { "group": "Alerte", "value": "--bs-warning", "label": "Avertissement" },
-                { "group": "Alerte", "value": "--bs-danger", "label": "Danger" },
-                { "group": "Alerte", "value": "--bs-info", "label": "Info" }
-            ]
-        },
-        {
-            "type": "range",
-            "id": "point_diameter",
-            "label": "Diamètre des points",
-            "unit": "rem",
-            "min": 0.2,
-            "max": 2,
-            "step": 0.1,
-            "default": 1
-        },
-        {
-            "type": "header",
-            "content": "Espacement de la section"
-        },
-        {
-            "type": "range",
-            "id": "pt",
-            "label": "Padding supérieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "pb",
-            "label": "Padding inférieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mt",
-            "label": "Marge supérieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mb",
-            "label": "Marge inférieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
+          "group": "Par défaut",
+          "value": "bg-body text-body",
+          "label": "Corps (body)"
         }
-    ],
-    "blocks": [
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "bg_gradient",
+      "label": "Dégradé d'arrière-plan",
+      "default": false,
+      "info": "Ne s'applique pas aux couleurs claires"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Conteneur",
+      "default": "container",
+      "options": [
         {
-            "type": "point",
-            "name": "Point",
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": "Titre",
-                    "default": "Titre du point"
-                },
-                {
-                    "type": "richtext",
-                    "id": "description",
-                    "label": "Description",
-                    "default": "<p>Mettez un produit en avant avec un texte. Incluez des détails sur sa disponibilité ou son style.</p>",
-                    "info": "Laisser vide pour désactiver"
-                },
-                {
-                    "type": "header",
-                    "content": "Produit",
-                    "info": "En option"
-                },
-                {
-                    "type": "product",
-                    "id": "product",
-                    "label": "Produit"
-                },
-                {
-                    "type": "checkbox",
-                    "id": "show_image",
-                    "label": "Afficher l'image",
-                    "default": true
-                },
-                {
-                    "type": "checkbox",
-                    "id": "show_price",
-                    "label": "Afficher le prix",
-                    "default": true
-                },
-                {
-                    "type": "text",
-                    "id": "btn_text",
-                    "label": "Texte du bouton",
-                    "default": "Voir le produit",
-                    "info": "Laisser vide pour désactiver"
-                },
-                {
-                    "type": "select",
-                    "id": "btn_color",
-                    "label": "Couleur du bouton",
-                    "default": "btn-primary",
-                    "options": [
-                        { "group": "Normal", "value": "btn-link", "label": "Lien" },
-                        { "group": "Normal", "value": "btn-light", "label": "Claire" },
-                        { "group": "Normal", "value": "btn-dark", "label": "Sombre" },
-                        { "group": "Normal", "value": "btn-primary", "label": "Primaire" },
-                        { "group": "Normal", "value": "btn-secondary", "label": "Secondaire" },
-                        { "group": "Normal", "value": "btn-tertiary", "label": "Tertiaire" },
-                        { "group": "Normal", "value": "btn-success", "label": "Succès" },
-                        { "group": "Normal", "value": "btn-danger", "label": "Danger" },
-                        { "group": "Normal", "value": "btn-warning", "label": "Avertissement" },
-                        { "group": "Normal", "value": "btn-info", "label": "Info" },
-                        { "group": "Contour", "value": "btn-outline-light", "label": "Contour Claire" },
-                        { "group": "Contour", "value": "btn-outline-dark", "label": "Contour Sombre" },
-                        { "group": "Contour", "value": "btn-outline-primary", "label": "Contour Primaire" },
-                        { "group": "Contour", "value": "btn-outline-secondary", "label": "Contour Secondaire" },
-                        { "group": "Contour", "value": "btn-outline-tertiary", "label": "Contour Tertiaire" },
-                        { "group": "Contour", "value": "btn-outline-success", "label": "Contour Succès" },
-                        { "group": "Contour", "value": "btn-outline-danger", "label": "Contour Danger" },
-                        { "group": "Contour", "value": "btn-outline-warning", "label": "Contour Avertissement" },
-                        { "group": "Contour", "value": "btn-outline-info", "label": "Contour Info" }
-                    ]
-                },
-                {
-                    "type": "header",
-                    "content": "Positionnement mobile"
-                },
-                {
-                    "type": "range",
-                    "id": "mobile_pos_left",
-                    "label": "Gauche (%)",
-                    "min": 0,
-                    "max": 100,
-                    "step": 1,
-                    "default": 0
-                },
-                {
-                    "type": "range",
-                    "id": "mobile_pos_top",
-                    "label": "Haut (%)",
-                    "min": 0,
-                    "max": 100,
-                    "step": 1,
-                    "default": 0
-                },
-                {
-                    "type": "header",
-                    "content": "Positionnement bureau"
-                },
-                {
-                    "type": "range",
-                    "id": "desktop_pos_left",
-                    "label": "Gauche (%)",
-                    "min": 0,
-                    "max": 100,
-                    "step": 1,
-                    "default": 0
-                },
-                {
-                    "type": "range",
-                    "id": "desktop_pos_top",
-                    "label": "Haut (%)",
-                    "min": 0,
-                    "max": 100,
-                    "step": 1,
-                    "default": 0
-                }
-            ]
-        }
-    ],
-    "presets": [
+          "value": "container",
+          "label": "Conteneur"
+        },
         {
-            "name": "Galerie de Styles",
-            "category": "Image"
+          "value": "container-fluid",
+          "label": "Pleine largeur"
         }
-    ]
+      ]
+    },
+    {
+      "type": "text",
+      "id": "max_width",
+      "label": "Largeur maximale (px)",
+      "info": "Ajuster la largeur du conteneur (en pixels)"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Alignement du texte",
+      "default": "text-center",
+      "options": [
+        {
+          "value": "text-start",
+          "label": "Gauche"
+        },
+        {
+          "value": "text-center",
+          "label": "Centre"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "En-tête de la section"
+    },
+    {
+      "type": "image_picker",
+      "id": "subtitle_img",
+      "label": "Légende Image"
+    },
+    {
+      "type": "text",
+      "id": "brand_image_size",
+      "label": "Image Largeur/Hauteur (px)",
+      "default": "60"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Légende Texte"
+    },
+    {
+      "type": "select",
+      "id": "subtitle_size",
+      "label": "Taille de la légende",
+      "default": "fs-5",
+      "options": [
+        {
+          "group": "Légende Standard",
+          "value": "fs-1",
+          "label": "Extra Grand"
+        },
+        {
+          "group": "Légende Standard",
+          "value": "fs-2",
+          "label": "Super Grand"
+        },
+        {
+          "group": "Légende Standard",
+          "value": "fs-3",
+          "label": "Très Grand"
+        },
+        {
+          "group": "Légende Standard",
+          "value": "fs-4",
+          "label": "Grand"
+        },
+        {
+          "group": "Légende Standard",
+          "value": "fs-5",
+          "label": "Moyen"
+        },
+        {
+          "group": "Légende Standard",
+          "value": "fs-6",
+          "label": "Petit"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "color_caption",
+      "label": "Couleur de la légende",
+      "default": "#6c757d"
+    },
+    {
+      "type": "text",
+      "id": "title_overlay",
+      "label": "Titre overlay",
+      "info": "Visible sur ordinateur, masqué sur mobile pour optimiser la lisibilité."
+    },
+    {
+      "type": "select",
+      "id": "title_overlay_size",
+      "label": "Taille du titre overlay",
+      "default": "3",
+      "options": [
+        {
+          "group": "Titre Overlay",
+          "value": "4",
+          "label": "Grand"
+        },
+        {
+          "group": "Titre Overlay",
+          "value": "3",
+          "label": "Moyen"
+        },
+        {
+          "group": "Titre Overlay",
+          "value": "2",
+          "label": "Petit"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "color_title_overlay",
+      "label": "Couleur du titre overlay",
+      "default": "#000000"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Titre",
+      "default": "Galerie de Style"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Balise titre (SEO)",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        },
+        {
+          "value": "h4",
+          "label": "h4"
+        },
+        {
+          "value": "h5",
+          "label": "h5"
+        },
+        {
+          "value": "h6",
+          "label": "h6"
+        },
+        {
+          "value": "span",
+          "label": "Aucune"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Taille du titre",
+      "default": "h2",
+      "options": [
+        {
+          "group": "Titre Supérieur",
+          "value": "display-1",
+          "label": "Extra Extra Grand"
+        },
+        {
+          "group": "Titre Supérieur",
+          "value": "display-2",
+          "label": "Extra Grand"
+        },
+        {
+          "group": "Titre Supérieur",
+          "value": "display-3",
+          "label": "Ultra Grand"
+        },
+        {
+          "group": "Titre Supérieur",
+          "value": "display-4",
+          "label": "Super Grand"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h1",
+          "label": "Très Grand"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h2",
+          "label": "Grand"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h3",
+          "label": "Moyen"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h4",
+          "label": "Petit"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h5",
+          "label": "Très Petit"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h6",
+          "label": "Super Petit"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description (facultatif)",
+      "default": "<p>Ajouter une description facultative à cette section</p>"
+    },
+    {
+      "type": "select",
+      "id": "description_size",
+      "label": "Taille de description",
+      "default": "fs-5",
+      "options": [
+        {
+          "group": "Description Standard",
+          "value": "fs-1",
+          "label": "Extra Grand"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-2",
+          "label": "Super Grand"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-3",
+          "label": "Très Grand"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-4",
+          "label": "Grand"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-5",
+          "label": "Moyen"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-6",
+          "label": "Petit"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Image (mobile)"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Image (bureau)"
+    },
+    {
+      "type": "select",
+      "id": "img_thumbnail",
+      "label": "Bordure de l'image",
+      "default": "img-thumbnail",
+      "options": [
+        {
+          "value": "",
+          "label": "Aucune"
+        },
+        {
+          "value": "img-thumbnail",
+          "label": "Bordure"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "border_color",
+      "label": "Couleur de la bordure",
+      "options": [
+        {
+          "value": "",
+          "label": "Par défaut"
+        },
+        {
+          "value": "border-primary",
+          "label": "Primaire"
+        },
+        {
+          "value": "border-secondary",
+          "label": "Secondaire"
+        },
+        {
+          "value": "border-tertiary",
+          "label": "Tertiaire"
+        },
+        {
+          "value": "border-dark",
+          "label": "Sombre"
+        },
+        {
+          "value": "border-success",
+          "label": "Succès"
+        },
+        {
+          "value": "border-warning",
+          "label": "Avertissement"
+        },
+        {
+          "value": "border-danger",
+          "label": "Danger"
+        },
+        {
+          "value": "border-info",
+          "label": "Info"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Largeur de la bordure",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "shadow_sp",
+      "label": "Ombre",
+      "options": [
+        {
+          "value": "shadow-none",
+          "label": "Aucune"
+        },
+        {
+          "value": "shadow-1",
+          "label": "Ombre légère"
+        },
+        {
+          "value": "shadow-2",
+          "label": "Ombre partiel"
+        },
+        {
+          "value": "shadow-3",
+          "label": "Ombre profonde"
+        },
+        {
+          "value": "shadow-4",
+          "label": "Ombre totale"
+        }
+      ],
+      "default": "shadow-1"
+    },
+    {
+      "type": "header",
+      "content": "Points"
+    },
+    {
+      "type": "select",
+      "id": "point_color",
+      "label": "Couleur des points",
+      "default": "--bs-primary",
+      "options": [
+        {
+          "group": "Par défaut",
+          "value": "--bs-body-bg",
+          "label": "Corps (body)"
+        },
+        {
+          "group": "Principal",
+          "value": "--bs-white",
+          "label": "Blanc"
+        },
+        {
+          "group": "Principal",
+          "value": "--bs-primary",
+          "label": "Primaire"
+        },
+        {
+          "group": "Principal",
+          "value": "--bs-secondary",
+          "label": "Secondaire"
+        },
+        {
+          "group": "Principal",
+          "value": "--bs-tertiary",
+          "label": "Tertiaire"
+        },
+        {
+          "group": "Intermédiaire",
+          "value": "--bs-light",
+          "label": "Claire"
+        },
+        {
+          "group": "Intermédiaire",
+          "value": "--bs-dark",
+          "label": "Sombre"
+        },
+        {
+          "group": "Alerte",
+          "value": "--bs-success",
+          "label": "Succès"
+        },
+        {
+          "group": "Alerte",
+          "value": "--bs-warning",
+          "label": "Avertissement"
+        },
+        {
+          "group": "Alerte",
+          "value": "--bs-danger",
+          "label": "Danger"
+        },
+        {
+          "group": "Alerte",
+          "value": "--bs-info",
+          "label": "Info"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "point_diameter",
+      "label": "Diamètre des points",
+      "unit": "rem",
+      "min": 0.2,
+      "max": 2,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Espacement de la section"
+    },
+    {
+      "type": "range",
+      "id": "pt",
+      "label": "Padding supérieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "pb",
+      "label": "Padding inférieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mt",
+      "label": "Marge supérieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mb",
+      "label": "Marge inférieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Titre du point"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Mettez un produit en avant avec un texte. Incluez des détails sur sa disponibilité ou son style.</p>",
+          "info": "Laisser vide pour désactiver"
+        },
+        {
+          "type": "header",
+          "content": "Produit",
+          "info": "En option"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Produit"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_image",
+          "label": "Afficher l'image",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_price",
+          "label": "Afficher le prix",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Texte du bouton",
+          "default": "Voir le produit",
+          "info": "Laisser vide pour désactiver"
+        },
+        {
+          "type": "select",
+          "id": "btn_color",
+          "label": "Couleur du bouton",
+          "default": "btn-primary",
+          "options": [
+            {
+              "group": "Normal",
+              "value": "btn-link",
+              "label": "Lien"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-light",
+              "label": "Claire"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-dark",
+              "label": "Sombre"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-primary",
+              "label": "Primaire"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-secondary",
+              "label": "Secondaire"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-tertiary",
+              "label": "Tertiaire"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-success",
+              "label": "Succès"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-danger",
+              "label": "Danger"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-warning",
+              "label": "Avertissement"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-info",
+              "label": "Info"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-light",
+              "label": "Contour Claire"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-dark",
+              "label": "Contour Sombre"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-primary",
+              "label": "Contour Primaire"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-secondary",
+              "label": "Contour Secondaire"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-tertiary",
+              "label": "Contour Tertiaire"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-success",
+              "label": "Contour Succès"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-danger",
+              "label": "Contour Danger"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-warning",
+              "label": "Contour Avertissement"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-info",
+              "label": "Contour Info"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Positionnement mobile"
+        },
+        {
+          "type": "range",
+          "id": "mobile_pos_left",
+          "label": "Gauche (%)",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "mobile_pos_top",
+          "label": "Haut (%)",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "Positionnement bureau"
+        },
+        {
+          "type": "range",
+          "id": "desktop_pos_left",
+          "label": "Gauche (%)",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "desktop_pos_top",
+          "label": "Haut (%)",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Galerie de Styles",
+      "category": "Image"
+    }
+  ]
 }
 {% endschema %}

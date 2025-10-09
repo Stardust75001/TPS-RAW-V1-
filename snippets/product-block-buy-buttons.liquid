@@ -95,7 +95,7 @@
   data-wishlist-button
   data-id="{{ current_variant.id }}"
   data-title="{{ product.title }}"
-  data-image="{{ product.featured_image | img_url: 'medium' }}"
+  data-image="{{ product.featured_image | image_url: width: 240, height: 240 }}"
   data-price="{{ current_variant.price | money }}"
   data-url="{{ product.url }}"
   data-add-label="{{ 'general.wishlist.add_to_wishlist' | t }}"

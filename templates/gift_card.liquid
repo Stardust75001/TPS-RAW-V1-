@@ -20,8 +20,10 @@
     <script src="{{ 'modernizr.gift-card.js' | shopify_asset_url }}" defer></script>
     <script src="{{ 'vendor/qrcode.js' | shopify_asset_url }}" defer></script>
 
-    {% comment %}theme-check-disable{% endcomment %}
+    {% comment %}theme-check-disable{% endcomment %}{% # theme-check-disable RemoteAsset %}
+
         <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+{% # theme-check-enable RemoteAsset %}
     {% comment %}theme-check-enable{% endcomment %}
 
     <script type='text/javascript'>

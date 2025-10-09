@@ -320,182 +320,20 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 {% schema %}
 {
-    "name": "Panier",
-    "settings": [
-        {
-            "type": "header",
-            "content": "General"
-        }
-    ]
-}
-        },
-        {
-            "type": "select",
-            "id": "bg_color",
-            "label": "Couleur de l'arrière plan",
-            "default": "bg-body text-body",
-            "options": [
-                { "group": "Intermédiaire", "value": "bg-white text-dark", "label": "Blanc" },
-                { "group": "Intermédiaire", "value": "bg-light text-body", "label": "Claire" },
-                { "group": "Par défaut", "value": "bg-body text-body", "label": "Corps (body)" }
-            ]
-        },
-        {
-            "type": "text",
-            "id": "max_width",
-            "label": "Largeur maximale de la page (px)",
-            "info": "Empêcher la section de devenir trop grande.",
-            "default": "1000"
-        },
-        {
-            "type": "checkbox",
-            "id": "show_note",
-            "label": "Afficher la note",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_shipping_rates",
-            "label": "Afficher la fonction 'Tarifs d'expédition'",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_testimonial",
-            "label": "Afficher le témoignage",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_taxes_shipping",
-            "label": "Afficher 'Taxes incluses et frais d'expédition...'",
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": "Produit"
-        },
-        {
-            "type": "select",
-            "id": "product_img_orientation",
-            "label": "Image orientation",
-            "default": "square",
-            "options": [
-                { "value": "square", "label": "Carré" },
-                { "value": "landscape", "label": "Paysage" },
-                { "value": "portrait", "label": "Portrait" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "product_img_thumbnail",
-            "label": "Bordure de l'image",
-            "default": "img-thumbnail",
-            "options": [
-                { "value": "", "label": "Aucune" },
-                { "value": "img-thumbnail", "label": "Bordure" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "product_border_color",
-            "label": "Couleur de la bordure",
-            "options": [
-                { "value": "", "label": "Default" },
-                { "value": "border-primary", "label": "Primaire" },
-                { "value": "border-secondary", "label": "Secondaire" },
-                { "value": "border-tertiary", "label": "Tertiaire" },
-                { "value": "border-dark", "label": "Sombre" },
-                { "value": "border-success", "label": "Succès" },
-                { "value": "border-warning", "label": "Avertissement" },
-                { "value": "border-danger", "label": "Danger" },
-                { "value": "border-info", "label": "Info" }
-            ],
-            "default": ""
-        },
-        {
-            "type": "range",
-            "id": "product_border_width",
-            "label": "Largeur de la bordure",
-            "min": 0,
-            "max": 10,
-            "step": 1,
-            "default": 1
-        },
-        {
-            "type": "select",
-            "id": "product_shadow_sp",
-            "label": "Ombre",
-            "options": [
-                { "value": "shadow-none", "label": "Aucune" },
-                { "value": "shadow-1", "label": "Ombre légère" },
-                { "value": "shadow-2", "label": "Ombre partiel" },
-                { "value": "shadow-3", "label": "Ombre profonde" },
-                { "value": "shadow-4", "label": "Ombre totale" }
-            ],
-            "default": "shadow-1"
-        },
-        {
-            "type": "select",
-            "id": "product_title_size",
-            "label": "Taille du titre",
-            "default": "h6",
-            "options": [
-                { "group": "Titre Standard", "value": "h1", "label": "Très Grand" },
-                { "group": "Titre Standard", "value": "h2", "label": "Grand" },
-                { "group": "Titre Standard", "value": "h3", "label": "Moyen" },
-                { "group": "Titre Standard", "value": "h4", "label": "Petit" },
-                { "group": "Titre Standard", "value": "h5", "label": "Très Petit" },
-                { "group": "Titre Standard", "value": "h6", "label": "Super Petit" }
-            ]
-        },
-        {
-            "type": "header",
-            "content": "Espacement de la section"
-        },
-        {
-            "type": "range",
-            "id": "pt",
-            "label": "Padding supérieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "pb",
-            "label": "Padding inférieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mt",
-            "label": "Marge supérieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mb",
-            "label": "Marge inférieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        }
-    ],
-    "templates": ["cart"],
-    "presets": [
-        {
-            "name": "Panier",
-            "category": "Cart"
-        }
-    ]
+  "name": "Panier",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General"
+    }
+  ],
+  "blocks": [
+
+  ],
+  "presets": [
+    {
+      "name": "Panier"
+    }
+  ]
 }
 {% endschema %}

@@ -888,13 +888,13 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
   "tag": "section",
   "settings": [
     {
-        "type": "paragraph", 
-        "content": "Documentation FR : [Bordure personnalisée by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/sections\/bordure-personnalisee)"
+      "type": "paragraph",
+      "content": "Documentation FR : [Bordure personnalisée by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/sections/bordure-personnalisee)"
     },
     {
-        "type":"header",
-        "content": "⚙️ Bordures",
-        "info": "⚙️ Fonctionnalité 👉 Version Shopiweb Premium"
+      "type": "header",
+      "content": "⚙️ Bordures",
+      "info": "⚙️ Fonctionnalité 👉 Version Shopiweb Premium"
     },
     {
       "type": "select",
@@ -925,208 +925,336 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       ]
     },
     {
-        "type":"header",
-        "content": "Séparateur"
+      "type": "header",
+      "content": "Séparateur"
     },
     {
-        "type": "checkbox",
-        "id": "full_width",
-        "label": "Séparateur en pleine largeur",
-        "default": false
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Séparateur en pleine largeur",
+      "default": false
     },
     {
-        "type": "range",
-        "id": "width_border",
-        "label": "Epaisseur de la bordure",
-        "min": 0,
-        "max": 10,
-        "step": 1,
-        "default": 5
+      "type": "range",
+      "id": "width_border",
+      "label": "Epaisseur de la bordure",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 5
     },
     {
-        "type": "range",
-        "id": "opacity",
-        "label": "Opacité de la bordure",
-        "min": 0,
-        "max": 1,
-        "step": 0.1,
-        "default": 0.5
+      "type": "range",
+      "id": "opacity",
+      "label": "Opacité de la bordure",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.5
     },
     {
-        "type": "color",
-        "id": "color_border",
-        "label": "Couleur de la bordure",
-        "default": "#000"
+      "type": "color",
+      "id": "color_border",
+      "label": "Couleur de la bordure",
+      "default": "#000"
     },
     {
-        "type":"header",
-        "content": "Bordure Fixe"
+      "type": "header",
+      "content": "Bordure Fixe"
     },
     {
       "type": "select",
       "id": "wave_custom",
       "options": [
-        { "group": "Haut de section", "value": "1", "label": "Montagnes"},
-        { "group": "Haut de section", "value": "2", "label": "Gouttes"},
-        { "group": "Haut de section", "value": "3", "label": "Vague Big"},
-        { "group": "Haut de section", "value": "4", "label": "Inclinaison Opacité"},
-        { "group": "Haut de section", "value": "5", "label": "Inclinaison"},
-        { "group": "Haut de section", "value": "6", "label": "Vague Double"},
-        { "group": "Haut de section", "value": "7", "label": "Courbe"},
-        { "group": "Haut de section", "value": "8", "label": "Pyramides"},
-        { "group": "Haut de section", "value": "9", "label": "Éventail Opacité"},
-        { "group": "Haut de section", "value": "10", "label": "Vagues Patern"},
-        { "group": "Haut de section", "value": "11", "label": "Vague Light"},
-        { "group": "Haut de section", "value": "12", "label": "Triangle"},
-        { "group": "Haut de section", "value": "13", "label": "Equalizer"},
-        { "group": "Bas de section", "value": "bas1", "label": "Montagnes"},
-        { "group": "Bas de section", "value": "bas2", "label": "Gouttes"},
-        { "group": "Bas de section", "value": "bas3", "label": "Vague Big"},
-        { "group": "Bas de section", "value": "bas4", "label": "Inclinaison Opacité"},
-        { "group": "Bas de section", "value": "bas5", "label": "Inclinaison"},
-        { "group": "Bas de section", "value": "bas6", "label": "Vague Double"},
-        { "group": "Bas de section", "value": "bas7", "label": "Courbe"},
-        { "group": "Bas de section", "value": "bas8", "label": "Pyramides"},
-        { "group": "Bas de section", "value": "bas9", "label": "Éventail Opacité"},
-        { "group": "Bas de section", "value": "bas10", "label": "Vagues Patern"},
-        { "group": "Bas de section", "value": "bas11", "label": "Vague Light"},
-        { "group": "Bas de section", "value": "bas12", "label": "Triangle"},
-        { "group": "Bas de section", "value": "bas13", "label": "Equalizer"}
+        {
+          "group": "Haut de section",
+          "value": "1",
+          "label": "Montagnes"
+        },
+        {
+          "group": "Haut de section",
+          "value": "2",
+          "label": "Gouttes"
+        },
+        {
+          "group": "Haut de section",
+          "value": "3",
+          "label": "Vague Big"
+        },
+        {
+          "group": "Haut de section",
+          "value": "4",
+          "label": "Inclinaison Opacité"
+        },
+        {
+          "group": "Haut de section",
+          "value": "5",
+          "label": "Inclinaison"
+        },
+        {
+          "group": "Haut de section",
+          "value": "6",
+          "label": "Vague Double"
+        },
+        {
+          "group": "Haut de section",
+          "value": "7",
+          "label": "Courbe"
+        },
+        {
+          "group": "Haut de section",
+          "value": "8",
+          "label": "Pyramides"
+        },
+        {
+          "group": "Haut de section",
+          "value": "9",
+          "label": "Éventail Opacité"
+        },
+        {
+          "group": "Haut de section",
+          "value": "10",
+          "label": "Vagues Patern"
+        },
+        {
+          "group": "Haut de section",
+          "value": "11",
+          "label": "Vague Light"
+        },
+        {
+          "group": "Haut de section",
+          "value": "12",
+          "label": "Triangle"
+        },
+        {
+          "group": "Haut de section",
+          "value": "13",
+          "label": "Equalizer"
+        },
+        {
+          "group": "Bas de section",
+          "value": "bas1",
+          "label": "Montagnes"
+        },
+        {
+          "group": "Bas de section",
+          "value": "bas2",
+          "label": "Gouttes"
+        },
+        {
+          "group": "Bas de section",
+          "value": "bas3",
+          "label": "Vague Big"
+        },
+        {
+          "group": "Bas de section",
+          "value": "bas4",
+          "label": "Inclinaison Opacité"
+        },
+        {
+          "group": "Bas de section",
+          "value": "bas5",
+          "label": "Inclinaison"
+        },
+        {
+          "group": "Bas de section",
+          "value": "bas6",
+          "label": "Vague Double"
+        },
+        {
+          "group": "Bas de section",
+          "value": "bas7",
+          "label": "Courbe"
+        },
+        {
+          "group": "Bas de section",
+          "value": "bas8",
+          "label": "Pyramides"
+        },
+        {
+          "group": "Bas de section",
+          "value": "bas9",
+          "label": "Éventail Opacité"
+        },
+        {
+          "group": "Bas de section",
+          "value": "bas10",
+          "label": "Vagues Patern"
+        },
+        {
+          "group": "Bas de section",
+          "value": "bas11",
+          "label": "Vague Light"
+        },
+        {
+          "group": "Bas de section",
+          "value": "bas12",
+          "label": "Triangle"
+        },
+        {
+          "group": "Bas de section",
+          "value": "bas13",
+          "label": "Equalizer"
+        }
       ],
       "default": "8",
       "label": "Style de vague"
     },
     {
-        "type": "color",
-        "id": "color_border_fond_svg",
-        "label": "Couleur du fond",
-        "default": "#FFF"
+      "type": "color",
+      "id": "color_border_fond_svg",
+      "label": "Couleur du fond",
+      "default": "#FFF"
     },
     {
-        "type": "color",
-        "id": "color_border_svg",
-        "label": "Couleur du SVG",
-        "default": "#000"
+      "type": "color",
+      "id": "color_border_svg",
+      "label": "Couleur du SVG",
+      "default": "#000"
     },
     {
-        "type": "range",
-        "id": "wave_fixe_height_desktop",
-        "label": "Hauteur de la bordure bureau",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "default": 8
+      "type": "range",
+      "id": "wave_fixe_height_desktop",
+      "label": "Hauteur de la bordure bureau",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 8
     },
     {
-        "type": "range",
-        "id": "wave_fixe_height_mobile",
-        "label": "Hauteur de la bordure mobile",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "default": 4
+      "type": "range",
+      "id": "wave_fixe_height_mobile",
+      "label": "Hauteur de la bordure mobile",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 4
     },
     {
-        "type":"header",
-        "content": "Bordure Animée"
+      "type": "header",
+      "content": "Bordure Animée"
     },
     {
       "type": "select",
       "id": "wave_animated",
       "options": [
-        { "value": "1", "label": "AquaWave"},
-        { "value": "2", "label": "Pulse"},
-        { "value": "3", "label": "Gradient"},
-        { "value": "4", "label": "WaveFlow"},
-        { "value": "5", "label": "DemiWave"},
-        { "value": "6", "label": "RhythmWave"}
+        {
+          "value": "1",
+          "label": "AquaWave"
+        },
+        {
+          "value": "2",
+          "label": "Pulse"
+        },
+        {
+          "value": "3",
+          "label": "Gradient"
+        },
+        {
+          "value": "4",
+          "label": "WaveFlow"
+        },
+        {
+          "value": "5",
+          "label": "DemiWave"
+        },
+        {
+          "value": "6",
+          "label": "RhythmWave"
+        }
       ],
       "default": "1",
       "label": "Bordure Animée"
     },
     {
-        "type": "select",
-        "id": "waves_position",
-        "label": "Placement des bordures",
-        "default": "sp-waves-top",
-        "info": "Ajustez cette position et déplacez la section au-dessus ou en-dessous d'une autre section.",
-        "options": [
-            { "value": "sp-waves-top", "label": "Haut" },
-            { "value": "sp-waves-bottom", "label": "Bas" }
-        ]
+      "type": "select",
+      "id": "waves_position",
+      "label": "Placement des bordures",
+      "default": "sp-waves-top",
+      "info": "Ajustez cette position et déplacez la section au-dessus ou en-dessous d'une autre section.",
+      "options": [
+        {
+          "value": "sp-waves-top",
+          "label": "Haut"
+        },
+        {
+          "value": "sp-waves-bottom",
+          "label": "Bas"
+        }
+      ]
     },
     {
-        "type": "color",
-        "id": "color_border_svg_animated",
-        "label": "Couleur SVG",
-        "default": "#000"
+      "type": "color",
+      "id": "color_border_svg_animated",
+      "label": "Couleur SVG",
+      "default": "#000"
     },
     {
-        "type": "checkbox",
-        "id": "blend_wave",
-        "label": "Activer le remplissage",
-        "info": "Permet d'intégrer une couleur intermédiaire sélectionnée dans la vague de premier plan pour créer un effet visuel unique.",
-        "default": false
+      "type": "checkbox",
+      "id": "blend_wave",
+      "label": "Activer le remplissage",
+      "info": "Permet d'intégrer une couleur intermédiaire sélectionnée dans la vague de premier plan pour créer un effet visuel unique.",
+      "default": false
     },
     {
-        "type": "color",
-        "id": "color_border_fond_svg_animated",
-        "label": "Couleur intermédiaire",
-        "default": "#FFF"
+      "type": "color",
+      "id": "color_border_fond_svg_animated",
+      "label": "Couleur intermédiaire",
+      "default": "#FFF"
     },
     {
-        "type": "range",
-        "id": "blend_opacity",
-        "label": "Opacité couleur intermédiaire",
-        "min": 0.1,
-        "max": 1,
-        "step": 0.1,
-        "default": 1
+      "type": "range",
+      "id": "blend_opacity",
+      "label": "Opacité couleur intermédiaire",
+      "min": 0.1,
+      "max": 1,
+      "step": 0.1,
+      "default": 1
     },
     {
-        "type": "range",
-        "id": "animation_speed",
-        "label": "Vitesse de l'animation",
-        "min": 0,
-        "max": 24,
-        "step": 1,
-        "default": 12
+      "type": "range",
+      "id": "animation_speed",
+      "label": "Vitesse de l'animation",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "default": 12
     },
     {
-        "type": "range",
-        "id": "wave_height_desktop",
-        "label": "Hauteur de la bordure bureau",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "default": 8
+      "type": "range",
+      "id": "wave_height_desktop",
+      "label": "Hauteur de la bordure bureau",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 8
     },
     {
-        "type": "range",
-        "id": "wave_height_mobile",
-        "label": "Hauteur de la bordure mobile",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "default": 4
+      "type": "range",
+      "id": "wave_height_mobile",
+      "label": "Hauteur de la bordure mobile",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 4
     },
     {
-        "type":"header",
-        "content": "Bordure personnalisé"
+      "type": "header",
+      "content": "Bordure personnalisé"
     },
     {
-      "type":"html",
-      "id":"svg_border_top",
-      "label":"🔼 SVG Code Supérieur"
+      "type": "html",
+      "id": "svg_border_top",
+      "label": "🔼 SVG Code Supérieur"
     },
     {
-      "type":"html",
-      "id":"svg_border_bottom",
-      "label":"🔽 SVG Code Inférieur"
+      "type": "html",
+      "id": "svg_border_bottom",
+      "label": "🔽 SVG Code Inférieur"
     },
     {
-        "type": "header",
-        "content": "Espacement de la section"
+      "type": "header",
+      "content": "Espacement de la section"
     },
     {
       "type": "range",

@@ -64,7 +64,7 @@
     "taxes_shipping_at_checkout_html": "Forsendelse og skatter beregnes ved kassen",
     "title": "Min kurv",
     "view_cart": "Se kurv",
-    "view_file": "Se fil"
+    "view_file": "Vis fil"
   },
   "checkout": {
     "order_status": {
@@ -432,10 +432,10 @@
     "no_reviews": "Ingen anmeldelser",
     "offcanvas_menu": {
       "subtitle_customer_html": "Godt at se dig igen",
-      "subtitle_guest_html": "Velkommen",
       "title_customer": "Din konto",
       "title_guest": "Din konto",
-      "pagination_page_of": "Side {{ current }} af {{ total }}"
+      "pagination_page_of": "Side {{ current }} af {{ total }}",
+      "subtitle_guest_html": "Velkommen"
     },
     "offcanvas_search": {
       "input_label": "Hvad leder du efter?",

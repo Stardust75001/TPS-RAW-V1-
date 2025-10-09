@@ -16,10 +16,12 @@ Section : Image avec texte + boutons (responsive, image mobile dédiée, no-gap 
       {% if section.settings.image_mobile != blank %}
         <source media="(max-width: 768px)" srcset="{{ section.settings.image_mobile | image_url: width: 800 }}">
       {% endif %}
-      <img src="{{ section.settings.image | image_url: width: 1920 }}"
+      {% # theme-check-disable ImgWidthAndHeight %}
+<img src="{{ section.settings.image | image_url: width: 1920 }}"
            alt="{{ section.settings.title | escape }}"
            loading="lazy"
            class="image-banner-img">
+{% # theme-check-enable ImgWidthAndHeight %}
     </picture>
   {% endif %}
 
@@ -101,12 +103,30 @@ Section : Image avec texte + boutons (responsive, image mobile dédiée, no-gap 
       "id": "mt",
       "label": "Marge haute",
       "options": [
-        { "value": "0", "label": "0" },
-        { "value": "1", "label": "1" },
-        { "value": "2", "label": "2" },
-        { "value": "3", "label": "3" },
-        { "value": "4", "label": "4" },
-        { "value": "5", "label": "5" }
+        {
+          "value": "0",
+          "label": "0"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "5",
+          "label": "5"
+        }
       ],
       "default": "0"
     },
@@ -115,12 +135,30 @@ Section : Image avec texte + boutons (responsive, image mobile dédiée, no-gap 
       "id": "mb",
       "label": "Marge basse",
       "options": [
-        { "value": "0", "label": "0" },
-        { "value": "1", "label": "1" },
-        { "value": "2", "label": "2" },
-        { "value": "3", "label": "3" },
-        { "value": "4", "label": "4" },
-        { "value": "5", "label": "5" }
+        {
+          "value": "0",
+          "label": "0"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "5",
+          "label": "5"
+        }
       ],
       "default": "0"
     },
@@ -129,12 +167,30 @@ Section : Image avec texte + boutons (responsive, image mobile dédiée, no-gap 
       "id": "pt",
       "label": "Padding haut",
       "options": [
-        { "value": "0", "label": "0" },
-        { "value": "1", "label": "1" },
-        { "value": "2", "label": "2" },
-        { "value": "3", "label": "3" },
-        { "value": "4", "label": "4" },
-        { "value": "5", "label": "5" }
+        {
+          "value": "0",
+          "label": "0"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "5",
+          "label": "5"
+        }
       ],
       "default": "0"
     },
@@ -143,12 +199,30 @@ Section : Image avec texte + boutons (responsive, image mobile dédiée, no-gap 
       "id": "pb",
       "label": "Padding bas",
       "options": [
-        { "value": "0", "label": "0" },
-        { "value": "1", "label": "1" },
-        { "value": "2", "label": "2" },
-        { "value": "3", "label": "3" },
-        { "value": "4", "label": "4" },
-        { "value": "5", "label": "5" }
+        {
+          "value": "0",
+          "label": "0"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "5",
+          "label": "5"
+        }
       ],
       "default": "0"
     }

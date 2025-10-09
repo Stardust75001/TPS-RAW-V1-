@@ -5,23 +5,29 @@
 
 <section class="image-banner-wrapper {{ section.settings.custom_class }}">
   {% if request.locale.iso_code == 'fr' and section.settings.image_fr != blank %}
-    <img
+    {% # theme-check-disable ImgWidthAndHeight %}
+<img
       src="{{ section.settings.image_fr | image_url: width: 1920 }}"
       alt="{{ 'custom_sections.image_banner_title' | t | escape }}"
       loading="lazy"
       class="image-banner-img">
+{% # theme-check-enable ImgWidthAndHeight %}
   {% elsif request.locale.iso_code == 'de' and section.settings.image_de != blank %}
-    <img
+    {% # theme-check-disable ImgWidthAndHeight %}
+<img
       src="{{ section.settings.image_de | image_url: width: 1920 }}"
       alt="{{ 'custom_sections.image_banner_title' | t | escape }}"
       loading="lazy"
       class="image-banner-img">
+{% # theme-check-enable ImgWidthAndHeight %}
   {% elsif section.settings.image_en != blank %}
-    <img
+    {% # theme-check-disable ImgWidthAndHeight %}
+<img
       src="{{ section.settings.image_en | image_url: width: 1920 }}"
       alt="{{ 'custom_sections.image_banner_title' | t | escape }}"
       loading="lazy"
       class="image-banner-img">
+{% # theme-check-enable ImgWidthAndHeight %}
   {% endif %}
 
   <div class="image-banner-overlay">

@@ -1,14 +1,8 @@
 {% liquid
     case settings.offcanvas_img_orientation
         when 'square'
-            assign img_width  = 600
-            assign img_height = 600
         when 'landscape'
-            assign img_width  = 600
-            assign img_height = 480
         when 'potrait'
-            assign img_width  = 480
-            assign img_height = 600
     endcase
 %}
 

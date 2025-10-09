@@ -113,267 +113,477 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 {% schema %}
 {
-    "name": "🏆 Newsletter Popup",
-    "limit": 1,
-    "enabled_on": {
-        "groups": ["footer"]
-    },
-    "settings": [
-        {
-          "type": "header",
-          "content": "🏆 Application Newsletter Popup",
-          "info": "👉 Version de l'application Shopiweb Premium"
-        },
-        {
-            "type": "paragraph", 
-            "content": "EN Documentation: [Newsletter Popup by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/sections\/newsletter-popup)"
-        },
-        {
-            "type": "paragraph",
-            "content": "REMARQUE : comme la fenêtre popup ne s'affichera qu'une seule fois, vous pouvez la déclencher par une URL directe (paramètre). Par exemple : https://my-store.myshopify.com/?newsletter-popup=true. Utile pour les tests ou pour envoyer le lien à vos clients."
-        },
-        {
-            "type": "header",
-            "content": "General"
-        },
-        {
-            "type": "range",
-            "id": "delay",
-            "label": "Délai (sec)",
-            "info": "Le temps d'attente avant l'affichage de la fenêtre popup. (en secondes)",
-            "default": 5,
-            "min": 1,
-            "max": 20,
-            "step": 1
-        },
-        {
-            "type": "range",
-            "id": "days_to_wait",
-            "label": "Jours d'attente",
-            "info": "Nombre de jours à attendre avant d'afficher à nouveau la fenêtre popup.",
-            "default": 3,
-            "min": 1,
-            "max": 30,
-            "step": 1
-        },
-        {
-            "type": "text",
-            "id": "modal_title",
-            "label": "Titre de la popup",
-            "default": "Obtenez 20 % De Réduction En Ce Moment..."
-        },
-        {
-            "type": "inline_richtext",
-            "id": "title",
-            "label": "Titre",
-            "default": "S'abonner à la Newsletter"
-        },
-        {
-            "type": "select",
-            "id": "title_size",
-            "label": "Taille du titre",
-            "default": "h3",
-            "options": [
-                { "group": "Titre Standard", "value": "h1", "label": "Very Large" },
-                { "group": "Titre Standard", "value": "h2", "label": "Large" },
-                { "group": "Titre Standard", "value": "h3", "label": "Medium" },
-                { "group": "Titre Standard", "value": "h4", "label": "Small" },
-                { "group": "Titre Standard", "value": "h5", "label": "Very Small" },
-                { "group": "Titre Standard", "value": "h6", "label": "Super Petit" }
-            ]
-        },
-        {
-            "type": "richtext",
-            "id": "description",
-            "label": "Description",
-            "default": "<p>Inscrivez-vous pour recevoir des informations sur nos dernières offres et d'autres sujets importants.</p>"
-        },
-        {
-            "type": "select",
-            "id": "description_size",
-            "label": "Taille de description",
-            "default": "fs-5",
-            "options": [
-                { "group": "Description Standard", "value": "fs-1", "label": "Extra Grand" },
-                { "group": "Description Standard", "value": "fs-2", "label": "Super Grand" },
-                { "group": "Description Standard", "value": "fs-3", "label": "Very Large" },
-                { "group": "Description Standard", "value": "fs-4", "label": "Large" },
-                { "group": "Description Standard", "value": "fs-5", "label": "Medium" },
-                { "group": "Description Standard", "value": "fs-6", "label": "Small" } 
-            ]
-        },
-        {
-            "type": "select",
-            "id": "input_group_size",
-            "label": "Taille des éléments du formulaire",
-            "default": "",
-            "options": [
-                { "value": "", "label": "Normal" },
-                { "value": "input-group-lg", "label": "Large" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "btn_color",
-            "label": "Button color",
-            "default": "btn-primary",
-            "options": [
-                { "group": "Normal", "value": "btn-link", "label": "Link" },
-                { "group": "Normal", "value": "btn-light", "label": "Light" },
-                { "group": "Normal", "value": "btn-dark", "label": "Dark" },
-                { "group": "Normal", "value": "btn-primary", "label": "Primaire" },
-                { "group": "Normal", "value": "btn-secondary", "label": "Secondaire" },
-                { "group": "Normal", "value": "btn-tertiary", "label": "Tertiaire" },
-                { "group": "Normal", "value": "btn-success", "label": "Success" },
-                { "group": "Normal", "value": "btn-danger", "label": "Danger" },
-                { "group": "Normal", "value": "btn-warning", "label": "Avertissement" },
-                { "group": "Normal", "value": "btn-info", "label": "Info" },
-                { "group": "Outline", "value": "btn-outline-light", "label": "Contour Claire" },
-                { "group": "Outline", "value": "btn-outline-dark", "label": "Contour Sombre" },
-                { "group": "Outline", "value": "btn-outline-primary", "label": "Contour Primaire" },
-                { "group": "Outline", "value": "btn-outline-secondary", "label": "Contour Secondaire" },
-                { "group": "Outline", "value": "btn-outline-tertiary", "label": "Contour Tertiaire" },
-                { "group": "Outline", "value": "btn-outline-success", "label": "Success Outline" },
-                { "group": "Outline", "value": "btn-outline-danger", "label": "Contour Danger" },
-                { "group": "Outline", "value": "btn-outline-warning", "label": "Contour Avertissement" },
-                { "group": "Outline", "value": "btn-outline-info", "label": "Contour Info" }
-            ]
-        },
-        {
-            "type": "richtext",
-            "id": "notice",
-            "label": "Notice",
-            "default": "<p>En vous inscrivant pour recevoir des courriels, vous acceptez nos conditions général de vente et notre politique de confidentialité</p>"
-        },
-        {
-            "type": "header",
-            "content": "Image"
-        },
-        {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-        },
-        {
-            "type": "select",
-            "id": "img_orientation",
-            "label": "Image orientation",
-            "default": "landscape",
-            "options": [
-                { "value": "square", "label": "Square" },
-                { "value": "landscape", "label": "Paysage" },
-                { "value": "potrait", "label": "Portrait" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "img_crop",
-            "label": "Recadrage de l'image",
-            "default": "center",
-            "options": [
-                { "value": "top", "label": "Haut" },
-                { "value": "center", "label": "Centre" },
-                { "value": "bottom", "label": "Bas" },
-                { "value": "left", "label": "Gauche" },
-                { "value": "right", "label": "Droite" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "img_thumbnail",
-            "label": "Image border",
-            "default": "img-thumbnail",
-            "options": [
-                { "value": "", "label": "Aucune" },
-                { "value": "img-thumbnail", "label": "Bordure" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "border_color",
-            "label": "Border color",
-            "options": [
-                { "value": "", "label": "Default" },
-                { "value": "border-primary", "label": "Primaire" },
-                { "value": "border-secondary", "label": "Secondaire" },
-                { "value": "border-tertiary", "label": "Tertiaire" },
-                { "value": "border-dark", "label": "Dark" },
-                { "value": "border-success", "label": "Success" },
-                { "value": "border-warning", "label": "Avertissement" },
-                { "value": "border-danger", "label": "Danger" },
-                { "value": "border-info", "label": "Info" }
-            ],
-            "default": ""
-        },
-        {
-            "type": "select",
-            "id": "shadow_sp",
-            "label": "Ombre",
-            "options": [
-                { "value": "shadow-none", "label": "Aucune" },
-                { "value": "shadow-1", "label": "Light shadow" },
-                { "value": "shadow-2", "label": "Partial shadow" },
-                { "value": "shadow-3", "label": "Deep shadow" },
-                { "value": "shadow-4", "label": "Full shadow" }
-            ],
-            "default": "shadow-1"
-        },
-        {
-            "type": "select",
-            "id": "img_align_desktop",
-            "label": "Alignement de l'image (bureau)",
-            "default": "flex-lg-row",
-            "options": [
-                { "value": "flex-lg-row", "label": "Gauche" },
-                { "value": "flex-lg-row-reverse", "label": "Droite" }
-            ]
-        },
-        {
-            "type": "header",
-            "content": "Espacement de la section"
-        },
-        {
-            "type": "range",
-            "id": "pt",
-            "label": "Top padding",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "pb",
-            "label": "Bottom padding",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mt",
-            "label": "Top margin",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mb",
-            "label": "Bottom margin",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        }
-    ],
-    "presets": [
-        {
-            "name": "🏆 Newsletter Popup",
-            "category": "Promotional"
-        }
+  "name": "🏆 Newsletter Popup",
+  "limit": 1,
+  "enabled_on": {
+    "groups": [
+      "footer"
     ]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "🏆 Application Newsletter Popup",
+      "info": "👉 Version de l'application Shopiweb Premium"
+    },
+    {
+      "type": "paragraph",
+      "content": "EN Documentation: [Newsletter Popup by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/sections/newsletter-popup)"
+    },
+    {
+      "type": "paragraph",
+      "content": "REMARQUE : comme la fenêtre popup ne s'affichera qu'une seule fois, vous pouvez la déclencher par une URL directe (paramètre). Par exemple : https://my-store.myshopify.com/?newsletter-popup=true. Utile pour les tests ou pour envoyer le lien à vos clients."
+    },
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "range",
+      "id": "delay",
+      "label": "Délai (sec)",
+      "info": "Le temps d'attente avant l'affichage de la fenêtre popup. (en secondes)",
+      "default": 5,
+      "min": 1,
+      "max": 20,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "days_to_wait",
+      "label": "Jours d'attente",
+      "info": "Nombre de jours à attendre avant d'afficher à nouveau la fenêtre popup.",
+      "default": 3,
+      "min": 1,
+      "max": 30,
+      "step": 1
+    },
+    {
+      "type": "text",
+      "id": "modal_title",
+      "label": "Titre de la popup",
+      "default": "Obtenez 20 % De Réduction En Ce Moment..."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Titre",
+      "default": "S'abonner à la Newsletter"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Taille du titre",
+      "default": "h3",
+      "options": [
+        {
+          "group": "Titre Standard",
+          "value": "h1",
+          "label": "Very Large"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h2",
+          "label": "Large"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h3",
+          "label": "Medium"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h4",
+          "label": "Small"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h5",
+          "label": "Very Small"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h6",
+          "label": "Super Petit"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Inscrivez-vous pour recevoir des informations sur nos dernières offres et d'autres sujets importants.</p>"
+    },
+    {
+      "type": "select",
+      "id": "description_size",
+      "label": "Taille de description",
+      "default": "fs-5",
+      "options": [
+        {
+          "group": "Description Standard",
+          "value": "fs-1",
+          "label": "Extra Grand"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-2",
+          "label": "Super Grand"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-3",
+          "label": "Very Large"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-4",
+          "label": "Large"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-5",
+          "label": "Medium"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-6",
+          "label": "Small"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "input_group_size",
+      "label": "Taille des éléments du formulaire",
+      "default": "",
+      "options": [
+        {
+          "value": "",
+          "label": "Normal"
+        },
+        {
+          "value": "input-group-lg",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "btn_color",
+      "label": "Button color",
+      "default": "btn-primary",
+      "options": [
+        {
+          "group": "Normal",
+          "value": "btn-link",
+          "label": "Link"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-light",
+          "label": "Light"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-dark",
+          "label": "Dark"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-primary",
+          "label": "Primaire"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-secondary",
+          "label": "Secondaire"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-tertiary",
+          "label": "Tertiaire"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-success",
+          "label": "Success"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-danger",
+          "label": "Danger"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-warning",
+          "label": "Avertissement"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-info",
+          "label": "Info"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-light",
+          "label": "Contour Claire"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-dark",
+          "label": "Contour Sombre"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-primary",
+          "label": "Contour Primaire"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-secondary",
+          "label": "Contour Secondaire"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-tertiary",
+          "label": "Contour Tertiaire"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-success",
+          "label": "Success Outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-danger",
+          "label": "Contour Danger"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-warning",
+          "label": "Contour Avertissement"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-info",
+          "label": "Contour Info"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "notice",
+      "label": "Notice",
+      "default": "<p>En vous inscrivant pour recevoir des courriels, vous acceptez nos conditions général de vente et notre politique de confidentialité</p>"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "img_orientation",
+      "label": "Image orientation",
+      "default": "landscape",
+      "options": [
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "landscape",
+          "label": "Paysage"
+        },
+        {
+          "value": "potrait",
+          "label": "Portrait"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "img_crop",
+      "label": "Recadrage de l'image",
+      "default": "center",
+      "options": [
+        {
+          "value": "top",
+          "label": "Haut"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "bottom",
+          "label": "Bas"
+        },
+        {
+          "value": "left",
+          "label": "Gauche"
+        },
+        {
+          "value": "right",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": "img-thumbnail",
+      "options": [
+        {
+          "value": "",
+          "label": "Aucune"
+        },
+        {
+          "value": "img-thumbnail",
+          "label": "Bordure"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "border_color",
+      "label": "Border color",
+      "options": [
+        {
+          "value": "",
+          "label": "Default"
+        },
+        {
+          "value": "border-primary",
+          "label": "Primaire"
+        },
+        {
+          "value": "border-secondary",
+          "label": "Secondaire"
+        },
+        {
+          "value": "border-tertiary",
+          "label": "Tertiaire"
+        },
+        {
+          "value": "border-dark",
+          "label": "Dark"
+        },
+        {
+          "value": "border-success",
+          "label": "Success"
+        },
+        {
+          "value": "border-warning",
+          "label": "Avertissement"
+        },
+        {
+          "value": "border-danger",
+          "label": "Danger"
+        },
+        {
+          "value": "border-info",
+          "label": "Info"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "shadow_sp",
+      "label": "Ombre",
+      "options": [
+        {
+          "value": "shadow-none",
+          "label": "Aucune"
+        },
+        {
+          "value": "shadow-1",
+          "label": "Light shadow"
+        },
+        {
+          "value": "shadow-2",
+          "label": "Partial shadow"
+        },
+        {
+          "value": "shadow-3",
+          "label": "Deep shadow"
+        },
+        {
+          "value": "shadow-4",
+          "label": "Full shadow"
+        }
+      ],
+      "default": "shadow-1"
+    },
+    {
+      "type": "select",
+      "id": "img_align_desktop",
+      "label": "Alignement de l'image (bureau)",
+      "default": "flex-lg-row",
+      "options": [
+        {
+          "value": "flex-lg-row",
+          "label": "Gauche"
+        },
+        {
+          "value": "flex-lg-row-reverse",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Espacement de la section"
+    },
+    {
+      "type": "range",
+      "id": "pt",
+      "label": "Top padding",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "pb",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mt",
+      "label": "Top margin",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mb",
+      "label": "Bottom margin",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "🏆 Newsletter Popup",
+      "category": "Promotional"
+    }
+  ]
 }
 {% endschema %}

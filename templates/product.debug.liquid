@@ -35,7 +35,7 @@ Template produit de débogage - Version ultra simple
         <div class="row">
             <div class="col-lg-6">
                 {% if product.images.size > 0 %}
-                    <img src="{{ product.featured_image | img_url: 'master' }}"
+                    <img loading="lazy" src="{{ product.featured_image | image_url: width: 2048 }}"
                         alt="Image du produit : {{ product.title }}"
                         class="img-fluid rounded"
                         role="img"

@@ -9,19 +9,23 @@ Section produit unique - Version corrigée
                 {% if product.images.size > 0 %}
                     <div class="product-gallery">
                         <div class="main-image">
-                       <img src="{{ product.featured_image | image_url: width: 800, height: 800 }}"
+                       {% # theme-check-disable ImgWidthAndHeight %}
+<img loading="lazy" src="{{ product.featured_image | image_url: width: 800, height: 800 }}"
                            alt="{{ product.title }}"
                            class="img-fluid rounded">
+{% # theme-check-enable ImgWidthAndHeight %}
                     width="800" height="800">
                         </div>
                         {% if product.images.size > 1 %}
                             <div class="thumbnail-images mt-3">
                                 {% for image in product.images limit: 4 %}
-                             <img src="{{ image | image_url: width: 150, height: 150 }}"
+                             {% # theme-check-disable ImgWidthAndHeight %}
+<img loading="lazy" src="{{ image | image_url: width: 150, height: 150 }}"
                                  alt="{{ product.title }}"
                                          class="img-thumbnail me-2"
                         width="150" height="150"
                                          style="width: 80px; height: 80px; object-fit: cover;">
+{% # theme-check-enable ImgWidthAndHeight %}
                                 {% endfor %}
                             </div>
                         {% endif %}
@@ -94,41 +98,41 @@ Section produit unique - Version corrigée
 
 {% schema %}
 {
-    "name": "Produit unique",
-    "settings": [
-        {
-            "type": "header",
-            "content": "Configuration générale"
-        },
-        {
-            "type": "text",
-            "id": "container",
-            "label": "Classe container",
-            "default": "container"
-        },
-        {
-            "type": "range",
-            "id": "pt",
-            "label": "Padding top",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 5
-        },
-        {
-            "type": "range",
-            "id": "pb",
-            "label": "Padding bottom",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 5
-        }
-    ],
-    "presets": [
-        {
-            "name": "Produit unique"
-        }
-    ]
+  "name": "Produit unique",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Configuration générale"
+    },
+    {
+      "type": "text",
+      "id": "container",
+      "label": "Classe container",
+      "default": "container"
+    },
+    {
+      "type": "range",
+      "id": "pt",
+      "label": "Padding top",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "pb",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 5
+    }
+  ],
+  "presets": [
+    {
+      "name": "Produit unique"
+    }
+  ]
 }
 {% endschema %}

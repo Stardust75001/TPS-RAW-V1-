@@ -46,7 +46,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                 loading="lazy">
         {% endif %}
         <div class="mx-auto" style="max-width: {{ section.settings.max_width }}px">
-            {% unless article.title  == blank %}
+            {% unless article.title == blank %}
                 <{{ section.settings.heading_tag }} class="article-title title mb-4 {{ section.settings.title_size }} animate__animated animate__faster opacity-0"
                     {% if settings.effect_apply_title_enable %}
                       data-animate-class="{{ settings.animation_title_name }}"
@@ -156,272 +156,455 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 {% schema %}
 {
-    "name": "Article de Blog",
-    "settings": [
+  "name": "Article de Blog",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_img",
+      "label": "Afficher l'image",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "img_orientation",
+      "label": "Image orientation",
+      "default": "landscape-3",
+      "options": [
         {
-            "type": "checkbox",
-            "id": "show_img",
-            "label": "Afficher l'image",
-            "default": true
+          "value": "square",
+          "label": "Carré"
         },
         {
-            "type": "select",
-            "id": "img_orientation",
-            "label": "Image orientation",
-            "default": "landscape-3",
-            "options": [
-                { "value": "square", "label": "Carré" },
-                { "value": "landscape", "label": "Paysage" },
-                { "value": "landscape-2", "label": "Paysage 2x" },
-                { "value": "landscape-3", "label": "Paysage 3x" },
-                { "value": "potrait", "label": "Portrait" }
-            ]
+          "value": "landscape",
+          "label": "Paysage"
         },
         {
-            "type": "select",
-            "id": "img_thumbnail",
-            "label": "Bordure de l'image",
-            "default": "img-thumbnail",
-            "options": [
-                { "value": "", "label": "Aucune" },
-                { "value": "img-thumbnail", "label": "Bordure" }
-            ]
+          "value": "landscape-2",
+          "label": "Paysage 2x"
         },
         {
-            "type": "select",
-            "id": "border_color",
-            "label": "Couleur de la bordure",
-            "options": [
-                { "value": "", "label": "Default" },
-                { "value": "border-primary", "label": "Primaire" },
-                { "value": "border-secondary", "label": "Secondaire" },
-                { "value": "border-tertiary", "label": "Tertiaire" },
-                { "value": "border-dark", "label": "Sombre" },
-                { "value": "border-success", "label": "Succès" },
-                { "value": "border-warning", "label": "Avertissement" },
-                { "value": "border-danger", "label": "Danger" },
-                { "value": "border-info", "label": "Info" }
-            ],
-            "default": ""
+          "value": "landscape-3",
+          "label": "Paysage 3x"
         },
         {
-            "type": "range",
-            "id": "border_width",
-            "label": "Largeur de la bordure",
-            "min": 0,
-            "max": 10,
-            "step": 1,
-            "default": 1
-        },
-        {
-            "type": "select",
-            "id": "shadow_sp",
-            "label": "Ombre",
-            "options": [
-                { "value": "shadow-none", "label": "Aucune" },
-                { "value": "shadow-1", "label": "Ombre légère" },
-                { "value": "shadow-2", "label": "Ombre partiel" },
-                { "value": "shadow-3", "label": "Ombre profonde" },
-                { "value": "shadow-4", "label": "Ombre totale" }
-            ],
-            "default": "shadow-1"
-        },
-        {
-            "type": "select",
-            "id": "heading_tag",
-            "label": "Balise titre (SEO)",
-            "default": "h1",
-            "options": [
-                { "value": "h1", "label": "h1" },
-                { "value": "h2", "label": "h2" },
-                { "value": "h3", "label": "h3" },
-                { "value": "h4", "label": "h4" },
-                { "value": "h5", "label": "h5" },
-                { "value": "h6", "label": "h6" },
-                { "value": "span", "label": "Aucune" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "title_size",
-            "label": "Taille du titre",
-            "default": "h1",
-            "options": [
-                { "group": "Titre Supérieur", "value": "display-1", "label": "Extra Extra Grand" },
-                { "group": "Titre Supérieur", "value": "display-2", "label": "Extra Grand" },
-                { "group": "Titre Supérieur", "value": "display-3", "label": "Ultra Grand" },
-                { "group": "Titre Supérieur", "value": "display-4", "label": "Super Grand" },
-                { "group": "Titre Standard", "value": "h1", "label": "Très Grand" },
-                { "group": "Titre Standard", "value": "h2", "label": "Grand" },
-                { "group": "Titre Standard", "value": "h3", "label": "Moyen" },
-                { "group": "Titre Standard", "value": "h4", "label": "Petit" },
-                { "group": "Titre Standard", "value": "h5", "label": "Très Petit" },
-                { "group": "Titre Standard", "value": "h6", "label": "Super Petit" }
-            ]
-        },
-        {
-            "type": "text",
-            "id": "max_width",
-            "label": "Largeur max. (px)",
-            "default": "720"
-        },
-        {
-            "type": "checkbox",
-            "id": "article_meta_author",
-            "label": "Afficher l'auteur de l'article",
-            "info": "Auteur",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "article_meta_date",
-            "label": "Afficher la date de l'article",
-            "info": "Date",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_tags",
-            "label": "Afficher les tags",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_breadcrumbs",
-            "label": "Afficher le  Fil d'Ariane",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_share_btn",
-            "label": "Afficher le bouton Partager",
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": "🏆 Application Précédent/Suivant",
-            "info": "👉 Application Version Shopiweb Premium"
-        },
-        {
-            "type": "paragraph",
-            "content": "Affiche les articles précédents et suivants."
-        },
-        {
-            "type": "checkbox",
-            "id": "show_prev_next_nav",
-            "label": "Afficher la navigation \"Précédent/Suivant\"",
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "img_orientation_prev_next_nav",
-            "label": "Image orientation",
-            "default": "square",
-            "options": [
-                { "value": "square", "label": "Carré" },
-                { "value": "landscape", "label": "Paysage" },
-                { "value": "potrait", "label": "Portrait" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "img_thumbnail_prev_next_nav",
-            "label": "Bordure de l'image",
-            "default": "img-thumbnail",
-            "options": [
-                { "value": "", "label": "Aucune" },
-                { "value": "img-thumbnail", "label": "Bordure" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "border_color_prev_next_nav",
-            "label": "Couleur de la bordure",
-            "options": [
-                { "value": "", "label": "Default" },
-                { "value": "border-primary", "label": "Primaire" },
-                { "value": "border-secondary", "label": "Secondaire" },
-                { "value": "border-tertiary", "label": "Tertiaire" },
-                { "value": "border-dark", "label": "Sombre" },
-                { "value": "border-success", "label": "Succès" },
-                { "value": "border-warning", "label": "Avertissement" },
-                { "value": "border-danger", "label": "Danger" },
-                { "value": "border-info", "label": "Info" }
-            ],
-            "default": ""
-        },
-        {
-            "type": "select",
-            "id": "shadow_sp_prev_next_nav",
-            "label": "Ombre",
-            "options": [
-                { "value": "shadow-none", "label": "Aucune" },
-                { "value": "shadow-1", "label": "Ombre légère" },
-                { "value": "shadow-2", "label": "Ombre partiel" },
-                { "value": "shadow-3", "label": "Ombre profonde" },
-                { "value": "shadow-4", "label": "Ombre totale" }
-            ],
-            "default": "shadow-1"
-        },
-        {
-            "type": "header",
-            "content": "🏆 Application Progression Lecture",
-            "info": "👉 Application Version Shopiweb Premium"
-        },
-        {
-            "type": "checkbox",
-            "id": "show_scroll_progress_bar",
-            "label": "Afficher une barre de progression au défilement",
-            "info": "Utile pour les longs articles, permettant au visiteur de savoir combien il reste à lire",
-            "default": false
-        },
-        {
-            "type": "header",
-            "content": "Espacement de la section"
-        },
-        {
-            "type": "range",
-            "id": "pt",
-            "label": "Padding supérieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "pb",
-            "label": "Padding inférieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mt",
-            "label": "Marge supérieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mb",
-            "label": "Marge inférieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
+          "value": "potrait",
+          "label": "Portrait"
         }
-    ],
-    "templates": ["article"],
-    "presets": [
+      ]
+    },
+    {
+      "type": "select",
+      "id": "img_thumbnail",
+      "label": "Bordure de l'image",
+      "default": "img-thumbnail",
+      "options": [
         {
-            "name": "Article de Blog",
-            "category": "Blog"
+          "value": "",
+          "label": "Aucune"
+        },
+        {
+          "value": "img-thumbnail",
+          "label": "Bordure"
         }
-    ]
+      ]
+    },
+    {
+      "type": "select",
+      "id": "border_color",
+      "label": "Couleur de la bordure",
+      "options": [
+        {
+          "value": "",
+          "label": "Default"
+        },
+        {
+          "value": "border-primary",
+          "label": "Primaire"
+        },
+        {
+          "value": "border-secondary",
+          "label": "Secondaire"
+        },
+        {
+          "value": "border-tertiary",
+          "label": "Tertiaire"
+        },
+        {
+          "value": "border-dark",
+          "label": "Sombre"
+        },
+        {
+          "value": "border-success",
+          "label": "Succès"
+        },
+        {
+          "value": "border-warning",
+          "label": "Avertissement"
+        },
+        {
+          "value": "border-danger",
+          "label": "Danger"
+        },
+        {
+          "value": "border-info",
+          "label": "Info"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Largeur de la bordure",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "shadow_sp",
+      "label": "Ombre",
+      "options": [
+        {
+          "value": "shadow-none",
+          "label": "Aucune"
+        },
+        {
+          "value": "shadow-1",
+          "label": "Ombre légère"
+        },
+        {
+          "value": "shadow-2",
+          "label": "Ombre partiel"
+        },
+        {
+          "value": "shadow-3",
+          "label": "Ombre profonde"
+        },
+        {
+          "value": "shadow-4",
+          "label": "Ombre totale"
+        }
+      ],
+      "default": "shadow-1"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Balise titre (SEO)",
+      "default": "h1",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        },
+        {
+          "value": "h4",
+          "label": "h4"
+        },
+        {
+          "value": "h5",
+          "label": "h5"
+        },
+        {
+          "value": "h6",
+          "label": "h6"
+        },
+        {
+          "value": "span",
+          "label": "Aucune"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Taille du titre",
+      "default": "h1",
+      "options": [
+        {
+          "group": "Titre Supérieur",
+          "value": "display-1",
+          "label": "Extra Extra Grand"
+        },
+        {
+          "group": "Titre Supérieur",
+          "value": "display-2",
+          "label": "Extra Grand"
+        },
+        {
+          "group": "Titre Supérieur",
+          "value": "display-3",
+          "label": "Ultra Grand"
+        },
+        {
+          "group": "Titre Supérieur",
+          "value": "display-4",
+          "label": "Super Grand"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h1",
+          "label": "Très Grand"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h2",
+          "label": "Grand"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h3",
+          "label": "Moyen"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h4",
+          "label": "Petit"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h5",
+          "label": "Très Petit"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h6",
+          "label": "Super Petit"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "max_width",
+      "label": "Largeur max. (px)",
+      "default": "720"
+    },
+    {
+      "type": "checkbox",
+      "id": "article_meta_author",
+      "label": "Afficher l'auteur de l'article",
+      "info": "Auteur",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "article_meta_date",
+      "label": "Afficher la date de l'article",
+      "info": "Date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Afficher les tags",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Afficher le  Fil d'Ariane",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_btn",
+      "label": "Afficher le bouton Partager",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "🏆 Application Précédent/Suivant",
+      "info": "👉 Application Version Shopiweb Premium"
+    },
+    {
+      "type": "paragraph",
+      "content": "Affiche les articles précédents et suivants."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_prev_next_nav",
+      "label": "Afficher la navigation \"Précédent/Suivant\"",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "img_orientation_prev_next_nav",
+      "label": "Image orientation",
+      "default": "square",
+      "options": [
+        {
+          "value": "square",
+          "label": "Carré"
+        },
+        {
+          "value": "landscape",
+          "label": "Paysage"
+        },
+        {
+          "value": "potrait",
+          "label": "Portrait"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "img_thumbnail_prev_next_nav",
+      "label": "Bordure de l'image",
+      "default": "img-thumbnail",
+      "options": [
+        {
+          "value": "",
+          "label": "Aucune"
+        },
+        {
+          "value": "img-thumbnail",
+          "label": "Bordure"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "border_color_prev_next_nav",
+      "label": "Couleur de la bordure",
+      "options": [
+        {
+          "value": "",
+          "label": "Default"
+        },
+        {
+          "value": "border-primary",
+          "label": "Primaire"
+        },
+        {
+          "value": "border-secondary",
+          "label": "Secondaire"
+        },
+        {
+          "value": "border-tertiary",
+          "label": "Tertiaire"
+        },
+        {
+          "value": "border-dark",
+          "label": "Sombre"
+        },
+        {
+          "value": "border-success",
+          "label": "Succès"
+        },
+        {
+          "value": "border-warning",
+          "label": "Avertissement"
+        },
+        {
+          "value": "border-danger",
+          "label": "Danger"
+        },
+        {
+          "value": "border-info",
+          "label": "Info"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "shadow_sp_prev_next_nav",
+      "label": "Ombre",
+      "options": [
+        {
+          "value": "shadow-none",
+          "label": "Aucune"
+        },
+        {
+          "value": "shadow-1",
+          "label": "Ombre légère"
+        },
+        {
+          "value": "shadow-2",
+          "label": "Ombre partiel"
+        },
+        {
+          "value": "shadow-3",
+          "label": "Ombre profonde"
+        },
+        {
+          "value": "shadow-4",
+          "label": "Ombre totale"
+        }
+      ],
+      "default": "shadow-1"
+    },
+    {
+      "type": "header",
+      "content": "🏆 Application Progression Lecture",
+      "info": "👉 Application Version Shopiweb Premium"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_scroll_progress_bar",
+      "label": "Afficher une barre de progression au défilement",
+      "info": "Utile pour les longs articles, permettant au visiteur de savoir combien il reste à lire",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Espacement de la section"
+    },
+    {
+      "type": "range",
+      "id": "pt",
+      "label": "Padding supérieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "pb",
+      "label": "Padding inférieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mt",
+      "label": "Marge supérieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mb",
+      "label": "Marge inférieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "templates": [
+    "article"
+  ],
+  "presets": [
+    {
+      "name": "Article de Blog",
+      "category": "Blog"
+    }
+  ]
 }
 {% endschema %}

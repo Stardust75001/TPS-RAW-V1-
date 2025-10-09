@@ -107,240 +107,332 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 {% schema %}
 {
-    "name": "Texte Défilant",
-    "settings": [
+  "name": "Texte Défilant",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Documentation FR : [Texte défilant by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/sections/texte-defilant)"
+    },
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "select",
+      "id": "bg_color",
+      "label": "Couleur d'arrière-plan",
+      "default": "bg-dark text-white",
+      "options": [
         {
-            "type": "paragraph", 
-            "content": "Documentation FR : [Texte défilant by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/sections\/texte-defilant)"
+          "group": "Principal",
+          "value": "bg-primary text-white",
+          "label": "Primaire"
         },
         {
-            "type": "header",
-            "content": "General"
+          "group": "Principal",
+          "value": "bg-secondary text-white",
+          "label": "Secondaire"
         },
         {
-            "type": "select",
-            "id": "bg_color",
-            "label": "Couleur d'arrière-plan",
-            "default": "bg-dark text-white",
-            "options": [
-                { "group": "Principal", "value": "bg-primary text-white", "label": "Primaire" },
-                { "group": "Principal", "value": "bg-secondary text-white", "label": "Secondaire" },
-                { "group": "Principal", "value": "bg-tertiary text-white", "label": "Tertiaire" },
-                { "group": "Intermédiaire", "value": "bg-white text-dark", "label": "Blanc" },
-                { "group": "Intermédiaire", "value": "bg-light text-body", "label": "Claire" },
-                { "group": "Intermédiaire", "value": "bg-dark text-white", "label": "Sombre" },
-                { "group": "Par défaut", "value": "bg-body text-body", "label": "Corps (body)" },
-                { "group": "Alerte", "value": "bg-success text-white", "label": "Succès" },
-                { "group": "Alerte", "value": "bg-warning text-dark", "label": "Avertissement" },
-                { "group": "Alerte", "value": "bg-danger text-white", "label": "Danger" },
-                { "group": "Alerte", "value": "bg-info text-white", "label": "Info" }
-            ]
+          "group": "Principal",
+          "value": "bg-tertiary text-white",
+          "label": "Tertiaire"
         },
         {
-            "type": "checkbox",
-            "id": "bg_gradient",
-            "label": "Dégradé d'arrière-plan",
-            "default": false,
-            "info": "Ne s'applique pas aux couleurs claires"
+          "group": "Intermédiaire",
+          "value": "bg-white text-dark",
+          "label": "Blanc"
         },
         {
-            "type": "select",
-            "id": "font_size",
-            "label": "Taille du texte",
-            "default": "large",
-            "options": [
-                { "value": "xlarge", "label": "Super Grand" },
-                { "value": "large", "label": "Très Grand" },
-                { "value": "medium", "label": "Grand" },
-                { "value": "small", "label": "Moyen" },
-                { "value": "xsmall", "label": "Petit" }
-            ]
+          "group": "Intermédiaire",
+          "value": "bg-light text-body",
+          "label": "Claire"
         },
         {
-            "type": "text",
-            "id": "list_label",
-            "label": "Libellé de la liste",
-            "default": "Caractéristiques promotionnelles",
-            "info": "Utilisé à des fins d'accessibilité"
+          "group": "Intermédiaire",
+          "value": "bg-dark text-white",
+          "label": "Sombre"
         },
         {
-            "type": "header",
-            "content": "Effect"
+          "group": "Par défaut",
+          "value": "bg-body text-body",
+          "label": "Corps (body)"
         },
         {
-            "type": "range",
-            "id": "animation_duration",
-            "label": "Vitesse",
-            "min": 0,
-            "max": 120,
-            "step": 2,
-            "default": 60,
-            "unit": "sec",
-            "info": "Vitesse de défilement automatique"
+          "group": "Alerte",
+          "value": "bg-success text-white",
+          "label": "Succès"
         },
         {
-            "type": "select",
-            "id": "scrolling_direction",
-            "label": "Sens de défilement",
-            "default": "left",
-            "info": "Sens de défilement automatique",
-            "options": [
-                { "value": "left", "label": "Gauche" },
-                { "value": "right", "label": "Droite" }
-
-            ]
+          "group": "Alerte",
+          "value": "bg-warning text-dark",
+          "label": "Avertissement"
         },
         {
-            "type": "header",
-            "content": "Gap",
-            "info": "Espacement entre les éléments."
+          "group": "Alerte",
+          "value": "bg-danger text-white",
+          "label": "Danger"
         },
         {
-            "type": "range",
-            "id": "gap",
-            "label": "Espacement",
-            "min": 0,
-            "max": 12,
-            "step": 1,
-            "default": 6
-        },
-        {
-            "type": "header",
-            "content": "Espacement de la section"
-        },
-        {
-            "type": "range",
-            "id": "pt",
-            "label": "Padding supérieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "pb",
-            "label": "Padding inférieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mt",
-            "label": "Marge supérieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mb",
-            "label": "Marge inférieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
+          "group": "Alerte",
+          "value": "bg-info text-white",
+          "label": "Info"
         }
-    ],
-    "blocks": [
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "bg_gradient",
+      "label": "Dégradé d'arrière-plan",
+      "default": false,
+      "info": "Ne s'applique pas aux couleurs claires"
+    },
+    {
+      "type": "select",
+      "id": "font_size",
+      "label": "Taille du texte",
+      "default": "large",
+      "options": [
         {
-            "type": "item",
-            "name": "Item",
-            "limit": 5,
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "text",
-                    "label": "Texte"
-                },
-                {
-                    "type": "select",
-                    "id": "text_transform",
-                    "label": "Transformation de texte",
-                    "default": "text-capitalize",
-                    "options": [
-                        { "value": "", "label": "Normal" },
-                        { "value": "text-capitalize", "label": "Capitale" },
-                        { "value": "text-lowercase", "label": "Minuscule" },
-                        { "value": "text-uppercase", "label": "Majuscule" }
-        
-                    ]
-                },
-                {
-                    "type": "select",
-                    "id": "scrolling_text_font_family",
-                    "label": "Police d'écriture",
-                    "default": "",
-                    "options": [
-                        { "value": "", "label": "Par défaut" },
-                        { "value": "headings-font-family", "label": "Titres" }
-                    ]
-                },
-                {
-                    "type": "select",
-                    "id": "text_style",
-                    "label": "Style de texte",
-                    "default": "",
-                    "options": [
-                        { "value": "", "label": "Normal" },
-                        { "value": "text-flaming", "label": "Flamme" },
-                        { "value": "text-3d", "label": "3D" },
-                        { "value": "text-distant", "label": "Distant" }
-        
-                    ]
-                },
-                {
-                    "type": "header",
-                    "content": "Couleurs",
-                    "info": "Le dégradé remplace les couleurs unies lorsqu'il est défini. Le contour du texte dégradé et l'arrière-plan dégradé ne peuvent pas être combinés."
-                },
-                {
-                    "type": "color",
-                    "id": "text_color",
-                    "label": "Couleur du texte",
-                    "default": "#F56900"
-                },
-                {
-                    "type": "color",
-                    "id": "stroke_color",
-                    "label": "Couleur du contour texte"
-                },
-                {
-                    "type": "color_background",
-                    "id": "text_gradient",
-                    "label": "Dégradé du texte"
-                }
-            ]
-        }
-    ],
-    "presets": [
+          "value": "xlarge",
+          "label": "Super Grand"
+        },
         {
-            "name": "Texte Défilant",
-            "category": "General",
-            "blocks": [
-                {
-                    "type": "item",
-                    "settings": {
-                        "text": "Un message promotionnel"
-                    }
-                },
-                {
-                    "type": "item",
-                    "settings": {
-                        "text": "Encore un autre message promotionnel"
-                    }
-                },
-                {
-                    "type": "item",
-                    "settings": {
-                        "text": "Essayez d'être bref"
-                    }
-                }
-            ]
+          "value": "large",
+          "label": "Très Grand"
+        },
+        {
+          "value": "medium",
+          "label": "Grand"
+        },
+        {
+          "value": "small",
+          "label": "Moyen"
+        },
+        {
+          "value": "xsmall",
+          "label": "Petit"
         }
-    ]
+      ]
+    },
+    {
+      "type": "text",
+      "id": "list_label",
+      "label": "Libellé de la liste",
+      "default": "Caractéristiques promotionnelles",
+      "info": "Utilisé à des fins d'accessibilité"
+    },
+    {
+      "type": "header",
+      "content": "Effect"
+    },
+    {
+      "type": "range",
+      "id": "animation_duration",
+      "label": "Vitesse",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "default": 60,
+      "unit": "sec",
+      "info": "Vitesse de défilement automatique"
+    },
+    {
+      "type": "select",
+      "id": "scrolling_direction",
+      "label": "Sens de défilement",
+      "default": "left",
+      "info": "Sens de défilement automatique",
+      "options": [
+        {
+          "value": "left",
+          "label": "Gauche"
+        },
+        {
+          "value": "right",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Gap",
+      "info": "Espacement entre les éléments."
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Espacement",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Espacement de la section"
+    },
+    {
+      "type": "range",
+      "id": "pt",
+      "label": "Padding supérieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "pb",
+      "label": "Padding inférieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mt",
+      "label": "Marge supérieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mb",
+      "label": "Marge inférieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte"
+        },
+        {
+          "type": "select",
+          "id": "text_transform",
+          "label": "Transformation de texte",
+          "default": "text-capitalize",
+          "options": [
+            {
+              "value": "",
+              "label": "Normal"
+            },
+            {
+              "value": "text-capitalize",
+              "label": "Capitale"
+            },
+            {
+              "value": "text-lowercase",
+              "label": "Minuscule"
+            },
+            {
+              "value": "text-uppercase",
+              "label": "Majuscule"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "scrolling_text_font_family",
+          "label": "Police d'écriture",
+          "default": "",
+          "options": [
+            {
+              "value": "",
+              "label": "Par défaut"
+            },
+            {
+              "value": "headings-font-family",
+              "label": "Titres"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "label": "Style de texte",
+          "default": "",
+          "options": [
+            {
+              "value": "",
+              "label": "Normal"
+            },
+            {
+              "value": "text-flaming",
+              "label": "Flamme"
+            },
+            {
+              "value": "text-3d",
+              "label": "3D"
+            },
+            {
+              "value": "text-distant",
+              "label": "Distant"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Couleurs",
+          "info": "Le dégradé remplace les couleurs unies lorsqu'il est défini. Le contour du texte dégradé et l'arrière-plan dégradé ne peuvent pas être combinés."
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Couleur du texte",
+          "default": "#F56900"
+        },
+        {
+          "type": "color",
+          "id": "stroke_color",
+          "label": "Couleur du contour texte"
+        },
+        {
+          "type": "color_background",
+          "id": "text_gradient",
+          "label": "Dégradé du texte"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Texte Défilant",
+      "category": "General",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "text": "Un message promotionnel"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Encore un autre message promotionnel"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Essayez d'être bref"
+          }
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
