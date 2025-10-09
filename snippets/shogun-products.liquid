@@ -8,9 +8,9 @@ This file can be re-written at any time.
   <script type="text/javascript">
     window.__shgProducts = window.__shgProducts || {};
     {% for handle in handles %}
-      {% assign currentProduct = all_products[handle] %}
-      {% if currentProduct != blank %}
-        window.__shgProducts["{{ handle }}"] = {{ currentProduct | json }};
+      {% assign current_product = all_products[handle] %}
+      {% if current_product != blank %}
+        window.__shgProducts["{{ handle }}"] = {{ current_product | json }};
       {% endif %}
     {% endfor %}
   </script>
