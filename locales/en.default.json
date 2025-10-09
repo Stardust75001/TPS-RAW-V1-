@@ -248,9 +248,9 @@
     "pagination_page_of": ""
   },
   "404_page": {
-    "title": "",
-    "subtext": "",
-    "button": ""
+    "title": "Page not found",
+    "subtext": "The page you requested does not exist.",
+    "button": "Continue shopping"
   },
   "search_page": {
     "title": "",
@@ -541,7 +541,7 @@
       "no_results_found": "",
       "summary": ""
     },
-    "summary": ""
+    "summary": "Cart summary"
   },
   "collection": {
     "filters": {
@@ -551,7 +551,7 @@
       "view_more": "",
       "clear_all": "",
       "view_results": "",
-      "max_range_notice": ""
+      "max_range_notice": "Maximum range reached"
     },
     "load_more": "",
     "load_previous": "",
@@ -560,7 +560,7 @@
     "paginate_count": "",
     "empty_html": "",
     "custom_bundle": {
-      "add_to_bundle": "",
+      "add_to_bundle": "Add to bundle",
       "bundle_contents_empty_html": "",
       "bundle_contents_title": "",
       "bundle_price": "",
@@ -610,7 +610,7 @@
       "image_banner_btn_primary": "",
       "image_banner_btn_secondary": ""
     },
-    "image_banner_btn_primary": "",
+    "image_banner_btn_primary": "Primary action",
     "image_banner_btn_secondary": "",
     "image_banner_description": "",
     "image_banner_title": ""

@@ -69,6 +69,14 @@
       "title": "Página não encontrada",
       "subtext": "A página solicitada não existe.",
       "button": "Continuar comprando"
+    },
+    "all_rights_reserved": "Todos os direitos reservados",
+    "breadcrumbs": {
+      "home": "Início",
+      "label": "Você está aqui:"
+    },
+    "contact": {
+      "email": "E-mail"
     }
   },
   "policy": {

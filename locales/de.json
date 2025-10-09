@@ -27,7 +27,8 @@
       "model_3d_increase": "3D-Modellgröße erhöhen",
       "model_3d_fullscreen": "3D-Modell im Vollbildmodus anzeigen",
       "toggle_sound": "Ton umschalten",
-      "back_to_top": "Nach oben"
+      "back_to_top": "Nach oben",
+      "search": "Suchen"
     },
     "follow_us": "Folgen Sie uns",
     "menu": "Menü",
@@ -68,6 +69,11 @@
       "title": "Seite nicht gefunden",
       "subtext": "Die angeforderte Seite existiert nicht.",
       "button": "Weiter einkaufen"
+    },
+    "all_rights_reserved": "Alle Rechte vorbehalten",
+    "breadcrumbs": {
+      "home": "Startseite",
+      "label": "Sie sind hier:"
     }
   },
   "policy": {

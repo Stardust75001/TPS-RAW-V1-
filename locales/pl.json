@@ -50,6 +50,14 @@
       "title": "Strony nie znaleziono",
       "subtext": "Żądana strona nie istnieje.",
       "button": "Kontynuuj zakupy"
+    },
+    "all_rights_reserved": "Wszelkie prawa zastrzeżone",
+    "breadcrumbs": {
+      "home": "Strona główna",
+      "label": "Jesteś tutaj:"
+    },
+    "contact": {
+      "email": "E-mail"
     }
   },
   "policy": {

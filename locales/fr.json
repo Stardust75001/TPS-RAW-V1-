@@ -546,6 +546,12 @@
     }
   },
   "breadcrumbs": {
-    "home": "Accueil"
+    "home": "Accueil",
+    "label": "Vous êtes ici :"
+  },
+  "404_page": {
+    "title": "Page introuvable",
+    "subtext": "La page que vous avez demandée n'existe pas.",
+    "button": "Continuer vos achats"
   }
 }

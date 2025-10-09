@@ -50,6 +50,14 @@
       "title": "Pagina niet gevonden",
       "subtext": "De opgevraagde pagina bestaat niet.",
       "button": "Verder winkelen"
+    },
+    "all_rights_reserved": "Alle rechten voorbehouden",
+    "breadcrumbs": {
+      "home": "Home",
+      "label": "Je bent hier:"
+    },
+    "contact": {
+      "email": "E-mail"
     }
   },
   "policy": {

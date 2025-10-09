@@ -121,7 +121,8 @@
       "from": "Fra",
       "title": "Filtre",
       "to": "Til",
-      "view_more": "Se mere"
+      "view_more": "Se mere",
+      "max_range_notice": "Maksimalt interval nået"
     },
     "load_more": "Indlæs flere produkter",
     "load_previous": "Indlæs tidligere produkter"
@@ -545,6 +546,12 @@
     }
   },
   "breadcrumbs": {
-    "home": "Hjem"
+    "home": "Hjem",
+    "label": "Du er her:"
+  },
+  "404_page": {
+    "title": "Siden blev ikke fundet",
+    "subtext": "Siden du anmodede om findes ikke.",
+    "button": "Fortsæt med at shoppe"
   }
 }

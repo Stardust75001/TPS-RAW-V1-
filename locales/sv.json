@@ -50,6 +50,14 @@
       "title": "Sidan hittades inte",
       "subtext": "Sidan du begärde finns inte.",
       "button": "Fortsätt handla"
+    },
+    "all_rights_reserved": "Alla rättigheter förbehållna",
+    "breadcrumbs": {
+      "home": "Hem",
+      "label": "Du är här:"
+    },
+    "contact": {
+      "email": "E-post"
     }
   },
   "policy": {
