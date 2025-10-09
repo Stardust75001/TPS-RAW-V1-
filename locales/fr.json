@@ -131,11 +131,36 @@
       "hours": "Horaires",
       "phone": "Téléphone",
       "title": "Informations de contact"
-    }
+    },
+    "message": "Message",
+    "name": "Nom",
+    "phone": "Téléphone",
+    "send": "Envoyer le message",
+    "success": "Merci pour votre message. Nous vous répondrons bientôt."
+  },
+  "cookies": {
+    "consent": "Nous utilisons des cookies pour améliorer votre expérience."
+  },
+  "countdown_timer": {
+    "d": "j",
+    "days": "jours",
+    "expires": "L’offre expire dans",
+    "h": "h",
+    "hours": "heures",
+    "m": "min",
+    "minutes": "minutes",
+    "s": "s",
+    "seconds": "secondes"
   },
   "custom": {
     "description": "Personnalisez votre sélection",
+    "ref_variant_label": "Variante de référence",
     "title": "Personnaliser"
+  },
+  "custom_bundle": {
+    "add_to_bundle": "Ajouter au lot",
+    "bundle_contents_empty_html": "Votre lot est vide",
+    "bundle_contents_title": "Contenu du lot"
   },
   "custom_sections": {
     "banner": {

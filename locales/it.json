@@ -432,7 +432,38 @@
       "default_title": "Informativa",
       "last_updated": "Ultimo aggiornamento: {{ date }}"
     },
-    "share": "Condividi"
+    "quiz": {
+      "btn_previous": "Precedente",
+      "btn_reload_quiz": "Ricarica Quiz",
+      "question_of_html": "Domanda {{ count }} di {{ total }}"
+    },
+    "search_page": {
+      "form": {
+        "btn_text": "Cerca",
+        "input_label": "Cerca prodotti",
+        "select_label": "Tipo di ricerca"
+      },
+      "no_results": "Nessun risultato trovato",
+      "results_with_count_and_term": "{{ count }} risultati per \"{{ terms }}\"",
+      "title": "Cerca",
+      "title_search_performed": "Risultati di ricerca",
+      "types": {
+        "articles": "Articoli",
+        "pages": "Pagine",
+        "products": "Prodotti"
+      }
+    },
+    "secure_payments": "Pagamenti sicuri",
+    "share": "Condividi",
+    "tracking": {
+      "btn_text": "Traccia pacco",
+      "placeholder": "Inserisci il numero di tracciamento"
+    },
+    "wishlist": {
+      "add_to_wishlist": "Aggiungi alla lista dei desideri",
+      "btn_label": "Lista dei desideri",
+      "empty_html": "La tua lista dei desideri è vuota"
+    }
   },
   "gift_card": {
     "balance": "Saldo",

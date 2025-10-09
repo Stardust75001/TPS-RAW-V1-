@@ -131,11 +131,36 @@
       "hours": "Åbningstider",
       "phone": "Telefon",
       "title": "Kontaktinformation"
-    }
+    },
+    "message": "Besked",
+    "name": "Navn",
+    "phone": "Telefon",
+    "send": "Send besked",
+    "success": "Tak for din besked. Vi vender snart tilbage."
+  },
+  "cookies": {
+    "consent": "Vi bruger cookies til at forbedre din oplevelse."
+  },
+  "countdown_timer": {
+    "d": "d",
+    "days": "dage",
+    "expires": "Tilbuddet udløber om",
+    "h": "t",
+    "hours": "timer",
+    "m": "m",
+    "minutes": "minutter",
+    "s": "s",
+    "seconds": "sekunder"
   },
   "custom": {
     "description": "Tilpas dit valg",
+    "ref_variant_label": "Referencevariant",
     "title": "Tilpas"
+  },
+  "custom_bundle": {
+    "add_to_bundle": "Tilføj til pakke",
+    "bundle_contents_empty_html": "Din pakke er tom",
+    "bundle_contents_title": "Pakkens indhold"
   },
   "custom_sections": {
     "banner": {

@@ -432,7 +432,38 @@
       "default_title": "Policy",
       "last_updated": "Senast uppdaterad: {{ date }}"
     },
-    "share": "Dela"
+    "quiz": {
+      "btn_previous": "Föregående",
+      "btn_reload_quiz": "Ladda om quiz",
+      "question_of_html": "Fråga {{ count }} av {{ total }}"
+    },
+    "search_page": {
+      "form": {
+        "btn_text": "Sök",
+        "input_label": "Sök produkter",
+        "select_label": "Söktyp"
+      },
+      "no_results": "Inga resultat",
+      "results_with_count_and_term": "{{ count }} resultat för \"{{ terms }}\"",
+      "title": "Sök",
+      "title_search_performed": "Sökresultat",
+      "types": {
+        "articles": "Artiklar",
+        "pages": "Sidor",
+        "products": "Produkter"
+      }
+    },
+    "secure_payments": "Säkra betalningar",
+    "share": "Dela",
+    "tracking": {
+      "btn_text": "Spåra paket",
+      "placeholder": "Ange spårningsnummer"
+    },
+    "wishlist": {
+      "add_to_wishlist": "Lägg till i önskelista",
+      "btn_label": "Önskelista",
+      "empty_html": "Din önskelista är tom"
+    }
   },
   "gift_card": {
     "balance": "Saldo",

@@ -439,10 +439,29 @@
     },
     "search_page": {
       "form": {
-        "btn_text": "Buscar"
-      }
+        "btn_text": "Buscar",
+        "input_label": "Pesquisar produtos",
+        "select_label": "Tipo de pesquisa"
+      },
+      "no_results": "Nenhum resultado encontrado",
+      "results_with_count_and_term": "{{ count }} resultados para \"{{ terms }}\"",
+      "title": "Pesquisar",
+      "title_search_performed": "Resultados da pesquisa",
+      "types": {}
     },
-    "share": "Compartilhar"
+    "secure_payments": "Pagamentos seguros",
+    "share": "Compartilhar",
+    "tracking": {
+      "btn_text": "Rastrear encomenda",
+      "placeholder": "Introduza o número de rastreamento"
+    },
+    "wishlist": {
+      "add_to_wishlist": "Adicionar à lista de desejos",
+      "btn_label": "Lista de desejos",
+      "empty_html": "A sua lista de desejos está vazia",
+      "offcanvas_title": "A Minha Lista de Desejos",
+      "remove_from_wishlist": "Remover da lista de desejos"
+    }
   },
   "gift_card": {
     "balance": "Saldo",
@@ -467,6 +486,7 @@
     "name_placeholder": "Digite seu nome",
     "submit_button": "Inscrever-se"
   },
+  "no_reviews": "Sem avaliações",
   "offcanvas_menu": {
     "pagination_page_of": "Página {{ count }} de {{ total }}",
     "subtitle_customer_html": "Gerencie sua conta e pedidos",
@@ -536,6 +556,9 @@
     "color_swatches": "Amostras de cor",
     "in_stock": "Em estoque",
     "include_taxes": "Impostos inclusos",
+    "inventory_bar": {
+      "label": "Nível de stock"
+    },
     "out_of_stock": "Fora de estoque",
     "price_from": "A partir de ",
     "price_regular": "Preço regular",

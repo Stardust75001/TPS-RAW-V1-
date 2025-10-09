@@ -432,7 +432,38 @@
       "default_title": "Política",
       "last_updated": "Última actualización: {{ date }}"
     },
-    "share": "Compartir"
+    "quiz": {
+      "btn_previous": "Anterior",
+      "btn_reload_quiz": "Recargar Quiz",
+      "question_of_html": "Pregunta {{ count }} de {{ total }}"
+    },
+    "search_page": {
+      "form": {
+        "btn_text": "Buscar",
+        "input_label": "Buscar productos",
+        "select_label": "Tipo de búsqueda"
+      },
+      "no_results": "No se encontraron resultados",
+      "results_with_count_and_term": "{{ count }} resultados para \"{{ terms }}\"",
+      "title": "Buscar",
+      "title_search_performed": "Resultados de búsqueda",
+      "types": {
+        "articles": "Artículos",
+        "pages": "Páginas",
+        "products": "Productos"
+      }
+    },
+    "secure_payments": "Pagos seguros",
+    "share": "Compartir",
+    "tracking": {
+      "btn_text": "Rastrear paquete",
+      "placeholder": "Introduce el número de seguimiento"
+    },
+    "wishlist": {
+      "add_to_wishlist": "Añadir a lista de deseos",
+      "btn_label": "Lista de deseos",
+      "empty_html": "Tu lista de deseos está vacía"
+    }
   },
   "gift_card": {
     "balance": "Saldo",
