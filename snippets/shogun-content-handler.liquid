@@ -24,7 +24,6 @@ This file can be re-written at any time.
   {% comment %} capture content_for_body {% endcomment %}
     {{ content_for_layout }}
     {{ content.metafields.shogun.json_template_snippets.value['body'][template_suffix] }}
-  {% endcapture %}
 {% endif %}
 
 {% if content.metafields.shogun.json_template_html_wrapper %}
