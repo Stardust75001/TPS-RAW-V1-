@@ -10,4 +10,7 @@ ImgLazyLoading:
   enabled: false
 
 SchemaJsonFormat:
+  enabled: true
+
+ValidSchema:
   enabled: false

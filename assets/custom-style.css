@@ -416,9 +416,9 @@ main {
   max-width: 700px;
   margin: 0 auto;
 }
-
-/* Ajustements spécifiques pour les termes de la newsletter */
-.newsletter-terms {
+    .newsletter-name-input,
+    .newsletter-email-input {
+      flex: 1 1 50%;
   font-size: 11px;
   margin-top: 14px;
   text-align: center;
