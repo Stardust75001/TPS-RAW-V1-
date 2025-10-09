@@ -344,13 +344,22 @@
       "label": "Você está aqui:"
     },
     "contact": {
-      "email": "E-mail"
+      "email": "E-mail",
+      "message": "Mensagem",
+      "name": "Nome",
+      "phone": "Telefone",
+      "send": "Enviar mensagem",
+      "success": "Obrigado pela sua mensagem. Responderemos em breve."
     },
     "copied": "Copiado!",
     "copy": "Copiar",
     "countdown_timer": {
+      "d": "d",
       "days": "dias",
+      "expires": "A oferta termina em",
+      "h": "h",
       "hours": "horas",
+      "m": "min",
       "minutes": "minutos",
       "s": "s",
       "seconds": "segundos"

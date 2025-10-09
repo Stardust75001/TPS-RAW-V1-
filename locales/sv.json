@@ -344,10 +344,22 @@
       "label": "Du är här:"
     },
     "contact": {
-      "email": "E-post"
+      "email": "E-post",
+      "message": "Meddelande",
+      "name": "Namn",
+      "phone": "Telefon",
+      "send": "Skicka meddelande",
+      "success": "Tack för ditt meddelande. Vi återkommer till dig snart."
     },
     "copied": "Kopierad!",
     "copy": "Kopiera",
+    "countdown_timer": {
+      "d": "d",
+      "days": "dagar",
+      "expires": "Erbjudandet går ut om",
+      "h": "h",
+      "m": "m"
+    },
     "follow_us": "Följ oss",
     "map_address": "Adress",
     "map_api_key_missing": "Google Maps API-nyckel saknas",
