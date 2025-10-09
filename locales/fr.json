@@ -42,10 +42,10 @@
     },
     "section_1": "Section personnalisée 1",
     "section_2": "Section personnalisée 2",
-    "image_banner_title": "Découvrez un univers d'élégance et d'innovation pour vos animaux de compagnie",
-    "image_banner_description": "Sélections raffinées, gourmandises premium et soins d'exception vous attendent",
-    "image_banner_btn_primary": "JE DÉCOUVRE !",
-    "image_banner_btn_secondary": "QUI SOMMES-NOUS ?"
+    "image_banner_title": "Titre de la bannière image",
+    "image_banner_description": "Brève description de la bannière image",
+    "image_banner_btn_primary": "Action principale",
+    "image_banner_btn_secondary": "Action secondaire"
   },
   "sections": {
     "list_collections": {
@@ -63,9 +63,15 @@
       }
     },
     "colors": {
-      "white": { "label": "Blanc" },
-      "light": { "label": "Clair" },
-      "body": { "label": "Texte principal" }
+      "white": {
+        "label": "Blanc"
+      },
+      "light": {
+        "label": "Clair"
+      },
+      "body": {
+        "label": "Texte principal"
+      }
     },
     "alignment": {
       "left": "Gauche",
@@ -89,23 +95,24 @@
     "paginate_count": "{{ count }} sur {{ total }} produits affichés",
     "empty_html": "Cette collection est vide.",
     "custom_bundle": {
-      "add_to_bundle": "Ajouter au pack",
+      "add_to_bundle": "Ajouter au lot",
       "added_to_bundle": "Ajouté au pack",
-      "bundle_contents_empty_html": "Votre pack est vide.",
-      "bundle_contents_title": "Contenu du pack",
-      "bundle_price": "Prix du pack",
-      "button_atc_text": "Ajouter au panier",
-      "button_view_contents_text": "Voir le contenu du pack",
-      "progress_completed_text": "Offre complétée",
-      "progress_label": "Progression de l'offre",
-      "progress_uncompleted_text": "Offre incomplète",
+      "bundle_contents_empty_html": "Votre lot est vide",
+      "bundle_contents_title": "Contenu du lot",
+      "bundle_price": "Prix du lot",
+      "button_atc_text": "Ajouter le lot au panier",
+      "button_view_contents_text": "Voir le contenu du lot",
+      "progress_completed_text": "Lot complété",
+      "progress_label": "Avancement du lot",
+      "progress_uncompleted_text": "Complétez votre lot",
       "you_save": "Vous économisez"
     },
     "filters": {
       "from": "De",
       "title": "Filtres",
       "to": "À",
-      "view_more": "Voir plus"
+      "view_more": "Voir plus",
+      "max_range_notice": "Plage maximale atteinte"
     },
     "load_more": "Charger plus de produits",
     "load_previous": "Charger les produits précédents"
@@ -198,9 +205,9 @@
       "consent": "Nous utilisons des cookies pour améliorer votre expérience."
     },
     "404_page": {
-      "title": "404 - Page non trouvée",
-      "subtext": "La page que vous recherchez n'existe pas.",
-      "button": "Retour à l'accueil"
+      "title": "Page introuvable",
+      "subtext": "La page demandée n’existe pas.",
+      "button": "Continuer vos achats"
     },
     "search_page": {
       "title": "Rechercher dans la boutique",
@@ -373,13 +380,30 @@
     "remove": "Supprimer",
     "subtotal_discounted": "Sous-total promo",
     "subtotal_regular": "Sous-total",
-    "summary": "Récapitulatif",
+    "summary": "Résumé du panier",
     "view_cart": "Voir le panier"
   },
   "blogs": {
     "filter_by": "Filtrer par thème",
     "all_topics": "Tous les thèmes",
-    "posted_in": "Publié dans"
+    "posted_in": "Publié dans",
+    "back_to_blog": "Retour à {{ blog_title }}",
+    "comments": {
+      "email": "E-mail",
+      "error": "Une erreur est survenue lors de la publication de votre commentaire.",
+      "leave_comment": "Laisser un commentaire",
+      "message": "Message",
+      "name": "Nom",
+      "submit": "Publier le commentaire",
+      "success": "Votre commentaire a été publié avec succès.",
+      "title": "Commentaires"
+    },
+    "next_post": "Article suivant",
+    "posted_by": "Publié par",
+    "posted_on": "Publié le",
+    "previous_post": "Article précédent",
+    "read_more": "Lire la suite",
+    "recent_posts": "Articles récents"
   },
   "shopify": {
     "checkout": {
@@ -498,7 +522,9 @@
   "textWishlistRemove": "Retirer de ma liste",
   "textWishlistBtnLabel": "Ma liste d'envies",
   "shared": "Partagé",
-  "bundle": { "label": "Pack" },
+  "bundle": {
+    "label": "Pack"
+  },
   "custom": {
     "title": "Personnaliser",
     "description": "Personnalisez votre sélection"
@@ -518,5 +544,8 @@
     "about": {
       "description_html": "<p>UNE DIVISION FALCON TRADING</p><p>RCS PARIS 450 573 712</p>"
     }
+  },
+  "breadcrumbs": {
+    "home": "Accueil"
   }
 }

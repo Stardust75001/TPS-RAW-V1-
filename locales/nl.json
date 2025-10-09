@@ -45,7 +45,12 @@
     "offcanvas_search_title_products": "Producten",
     "offcanvas_search_title_collections": "Collecties",
     "offcanvas_search_title_pages": "Pagina's",
-    "offcanvas_search_title_articles": "Artikelen"
+    "offcanvas_search_title_articles": "Artikelen",
+    "404_page": {
+      "title": "Pagina niet gevonden",
+      "subtext": "De opgevraagde pagina bestaat niet.",
+      "button": "Verder winkelen"
+    }
   },
   "policy": {
     "title": "Beleid",
@@ -55,28 +60,27 @@
     "menu": "Menu",
     "all_rights_reserved": "Alle rechten voorbehouden",
     "secure_payments": "Veilige betalingen",
-    "loading": "Laden..."
-      ,
-      "offcanvas_search_title_articles": "Artikelen",
-      "newsletter": {
-        "name_placeholder": "Voer uw naam in",
-        "input_label": "Voer uw e-mail in",
-        "submit_button": "Abonneren",
-        "confirmation_text": "Bedankt voor je inschrijving!"
-      },
-      "countdown_timer": {
-        "s": "s",
-        "days": "dagen",
-        "hours": "uren",
-        "minutes": "minuten",
-        "seconds": "seconden"
-      },
-      "password_page": {
-        "password_form": {
-          "password_label": "Wachtwoord",
-          "btn_label": "Verzenden"
-        }
+    "loading": "Laden...",
+    "offcanvas_search_title_articles": "Artikelen",
+    "newsletter": {
+      "name_placeholder": "Voer uw naam in",
+      "input_label": "Voer uw e-mail in",
+      "submit_button": "Abonneren",
+      "confirmation_text": "Bedankt voor je inschrijving!"
+    },
+    "countdown_timer": {
+      "s": "s",
+      "days": "dagen",
+      "hours": "uren",
+      "minutes": "minuten",
+      "seconds": "seconden"
+    },
+    "password_page": {
+      "password_form": {
+        "password_label": "Wachtwoord",
+        "btn_label": "Verzenden"
       }
+    }
   },
   "newsletter": {
     "name_placeholder": "Voer uw naam in",
@@ -104,27 +108,26 @@
     "score": "Uw score: {{ score }}%",
     "correct_answer": "Juist antwoord",
     "your_answer": "Uw antwoord",
-    "try_again": "Probeer opnieuw"
-      ,
-      "offcanvas_search_title_articles": "Artikelen",
-      "newsletter": {
-        "confirmation_text": "Bedankt voor je inschrijving!",
-        "input_label": "Voer uw e-mail in",
-        "submit_button": "Abonneren"
-      },
-      "countdown_timer": {
-        "s": "s",
-        "days": "dagen",
-        "hours": "uren",
-        "minutes": "minuten",
-        "seconds": "seconden"
-      },
-      "password_page": {
-        "password_form": {
-          "password_label": "Wachtwoord",
-          "btn_label": "Verzenden"
-        }
+    "try_again": "Probeer opnieuw",
+    "offcanvas_search_title_articles": "Artikelen",
+    "newsletter": {
+      "confirmation_text": "Bedankt voor je inschrijving!",
+      "input_label": "Voer uw e-mail in",
+      "submit_button": "Abonneren"
+    },
+    "countdown_timer": {
+      "s": "s",
+      "days": "dagen",
+      "hours": "uren",
+      "minutes": "minuten",
+      "seconds": "seconden"
+    },
+    "password_page": {
+      "password_form": {
+        "password_label": "Wachtwoord",
+        "btn_label": "Verzenden"
       }
+    }
   },
   "offcanvas_menu": {
     "title_customer": "Hallo, {{ name }}",
@@ -418,7 +421,8 @@
       "modal_button_label": "Tarieven ophalen",
       "no_results_found": "Geen verzendtarieven beschikbaar",
       "summary": "Winkelwagen samenvatting"
-    }
+    },
+    "summary": "Winkelwagenoverzicht"
   },
   "collection": {
     "filters": {
@@ -427,14 +431,27 @@
       "to": "Tot",
       "view_more": "Meer bekijken",
       "clear_all": "Alles wissen",
-      "view_results": "Resultaten bekijken"
+      "view_results": "Resultaten bekijken",
+      "max_range_notice": "Maximum bereik bereikt"
     },
     "load_more": "Meer laden",
     "load_previous": "Vorige laden",
     "sort_by": "Sorteren op",
     "btn_filter_products": "Producten filteren",
     "paginate_count": "{{ count }} van {{ total }} producten weergegeven",
-    "empty_html": "Geen producten gevonden"
+    "empty_html": "Geen producten gevonden",
+    "custom_bundle": {
+      "add_to_bundle": "Toevoegen aan bundel",
+      "progress_label": "Bundelvoortgang",
+      "progress_uncompleted_text": "Maak je bundel compleet",
+      "progress_completed_text": "Bundel voltooid",
+      "bundle_price": "Bundelprijs",
+      "you_save": "Je bespaart",
+      "button_atc_text": "Bundel in winkelwagen",
+      "button_view_contents_text": "Bundelinhoud bekijken",
+      "bundle_contents_title": "Bundelinhoud",
+      "bundle_contents_empty_html": "Je bundel is leeg"
+    }
   },
   "custom_bundle": {
     "add_to_bundle": "Toevoegen aan bundel",
@@ -473,7 +490,11 @@
       "image_banner_description": "Korte beschrijving voor de afbeelding banner",
       "image_banner_btn_primary": "Primaire actie",
       "image_banner_btn_secondary": "Secundaire actie"
-    }
+    },
+    "image_banner_title": "Titel afbeeldingsbanner",
+    "image_banner_description": "Korte beschrijving voor de afbeeldingsbanner",
+    "image_banner_btn_primary": "Primaire actie",
+    "image_banner_btn_secondary": "Secundaire actie"
   },
   "testimonials": {
     "verified_review": "Geverifieerde beoordeling",

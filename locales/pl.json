@@ -45,7 +45,12 @@
     "offcanvas_search_title_products": "Produkty",
     "offcanvas_search_title_collections": "Kolekcje",
     "offcanvas_search_title_pages": "Strony",
-    "offcanvas_search_title_articles": "Artykuły"
+    "offcanvas_search_title_articles": "Artykuły",
+    "404_page": {
+      "title": "Strony nie znaleziono",
+      "subtext": "Żądana strona nie istnieje.",
+      "button": "Kontynuuj zakupy"
+    }
   },
   "policy": {
     "title": "Polityka",
@@ -55,48 +60,27 @@
     "menu": "Menu",
     "all_rights_reserved": "Wszelkie prawa zastrzeżone",
     "secure_payments": "Bezpieczne płatności",
-    "loading": "Ładowanie..."
-      ,
-      "offcanvas_search_title_articles": "Artykuły",
-      "newsletter": {
-        "name_placeholder": "Wprowadź swoje imię",
-        "input_label": "Wprowadź swój email",
-        "submit_button": "Subskrybuj",
-        "confirmation_text": "Dziękujemy za subskrypcję!"
-      },
-      "countdown_timer": {
-        "s": "s",
-        "days": "dni",
-        "hours": "godziny",
-        "minutes": "minuty",
-        "seconds": "sekundy"
-      },
-      "password_page": {
-        "password_form": {
-          "password_label": "Hasło",
-          "btn_label": "Wyślij"
-        }
+    "loading": "Ładowanie...",
+    "offcanvas_search_title_articles": "Artykuły",
+    "newsletter": {
+      "name_placeholder": "Wprowadź swoje imię",
+      "input_label": "Wprowadź swój email",
+      "submit_button": "Subskrybuj",
+      "confirmation_text": "Dziękujemy za subskrypcję!"
+    },
+    "countdown_timer": {
+      "s": "s",
+      "days": "dni",
+      "hours": "godziny",
+      "minutes": "minuty",
+      "seconds": "sekundy"
+    },
+    "password_page": {
+      "password_form": {
+        "password_label": "Hasło",
+        "btn_label": "Wyślij"
       }
-      ,
-      "newsletter": {
-        "name_placeholder": "Wprowadź swoje imię",
-        "input_label": "Wprowadź swój email",
-        "submit_button": "Subskrybuj",
-        "confirmation_text": "Dziękujemy za subskrypcję!"
-      },
-      "countdown_timer": {
-        "s": "s",
-        "days": "dni",
-        "hours": "godziny",
-        "minutes": "minuty",
-        "seconds": "sekundy"
-      },
-      "password_page": {
-        "password_form": {
-          "password_label": "Hasło",
-          "btn_label": "Wyślij"
-        }
-      }
+    }
   },
   "newsletter": {
     "name_placeholder": "Wprowadź swoje imię",
@@ -124,46 +108,26 @@
     "score": "Twój wynik: {{ score }}%",
     "correct_answer": "Poprawna odpowiedź",
     "your_answer": "Twoja odpowiedź",
-    "try_again": "Spróbuj ponownie"
-      ,
-      "offcanvas_search_title_articles": "Artykuły",
-      "newsletter": {
-        "confirmation_text": "Dziękujemy za subskrypcję!",
-        "input_label": "Wprowadź swój email",
-        "submit_button": "Subskrybuj"
-      },
-      "countdown_timer": {
-        "s": "s",
-        "days": "dni",
-        "hours": "godziny",
-        "minutes": "minuty",
-        "seconds": "sekundy"
-      },
-      "password_page": {
-        "password_form": {
-          "password_label": "Hasło",
-          "btn_label": "Wyślij"
-        }
+    "try_again": "Spróbuj ponownie",
+    "offcanvas_search_title_articles": "Artykuły",
+    "newsletter": {
+      "confirmation_text": "Dziękujemy za subskrypcję!",
+      "input_label": "Wprowadź swój email",
+      "submit_button": "Subskrybuj"
+    },
+    "countdown_timer": {
+      "s": "s",
+      "days": "dni",
+      "hours": "godziny",
+      "minutes": "minuty",
+      "seconds": "sekundy"
+    },
+    "password_page": {
+      "password_form": {
+        "password_label": "Hasło",
+        "btn_label": "Wyślij"
       }
-      ,
-      "countdown_timer": {
-        "s": "s",
-        "days": "dni",
-        "hours": "godziny",
-        "minutes": "minuty",
-        "seconds": "sekundy"
-      },
-      "newsletter": {
-        "confirmation_text": "Dziękujemy za subskrypcję!",
-        "input_label": "Wprowadź swój email",
-        "submit_button": "Subskrybuj"
-      },
-      "password_page": {
-        "password_form": {
-          "password_label": "Hasło",
-          "btn_label": "Wyślij"
-        }
-      }
+    }
   },
   "offcanvas_menu": {
     "title_customer": "Cześć, {{ name }}",
@@ -457,7 +421,8 @@
       "modal_button_label": "Pobierz stawki",
       "no_results_found": "Brak dostępnych stawek wysyłki",
       "summary": "Podsumowanie koszyka"
-    }
+    },
+    "summary": "Podsumowanie koszyka"
   },
   "collection": {
     "filters": {
@@ -466,14 +431,27 @@
       "to": "Do",
       "view_more": "Zobacz więcej",
       "clear_all": "Wyczyść wszystko",
-      "view_results": "Zobacz wyniki"
+      "view_results": "Zobacz wyniki",
+      "max_range_notice": "Osiągnięto maksymalny zakres"
     },
     "load_more": "Załaduj więcej",
     "load_previous": "Załaduj poprzednie",
     "sort_by": "Sortuj według",
     "btn_filter_products": "Filtruj produkty",
     "paginate_count": "Pokazano {{ count }} z {{ total }} produktów",
-    "empty_html": "Nie znaleziono produktów"
+    "empty_html": "Nie znaleziono produktów",
+    "custom_bundle": {
+      "add_to_bundle": "Dodaj do zestawu",
+      "progress_label": "Postęp zestawu",
+      "progress_uncompleted_text": "Uzupełnij swój zestaw",
+      "progress_completed_text": "Zestaw ukończony",
+      "bundle_price": "Cena zestawu",
+      "you_save": "Oszczędzasz",
+      "button_atc_text": "Dodaj zestaw do koszyka",
+      "button_view_contents_text": "Zobacz zawartość zestawu",
+      "bundle_contents_title": "Zawartość zestawu",
+      "bundle_contents_empty_html": "Twój zestaw jest pusty"
+    }
   },
   "custom_bundle": {
     "add_to_bundle": "Dodaj do zestawu",
@@ -512,7 +490,11 @@
       "image_banner_description": "Krótki opis banera obrazu",
       "image_banner_btn_primary": "Akcja główna",
       "image_banner_btn_secondary": "Akcja dodatkowa"
-    }
+    },
+    "image_banner_title": "Tytuł banera graficznego",
+    "image_banner_description": "Krótki opis banera graficznego",
+    "image_banner_btn_primary": "Działanie główne",
+    "image_banner_btn_secondary": "Działanie dodatkowe"
   },
   "testimonials": {
     "verified_review": "Zweryfikowana recenzja",

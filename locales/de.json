@@ -7,7 +7,6 @@
       "utility_icons": "Utility-Icons",
       "menu": "Menü",
       "cart": "Warenkorb",
-
       "wishlist": "Wunschliste",
       "account": "Konto",
       "previous": "Zurück",
@@ -45,27 +44,31 @@
     "offcanvas_search_title_products": "Produkte",
     "offcanvas_search_title_collections": "Kollektionen",
     "offcanvas_search_title_pages": "Seiten",
-    "offcanvas_search_title_articles": "Artikel"
-      ,"countdown_timer": {
-        "s": "s",
-        "days": "Tage",
-        "hours": "Stunden",
-        "minutes": "Minuten",
-        "seconds": "Sekunden"
+    "offcanvas_search_title_articles": "Artikel",
+    "countdown_timer": {
+      "s": "s",
+      "days": "Tage",
+      "hours": "Stunden",
+      "minutes": "Minuten",
+      "seconds": "Sekunden"
+    },
+    "password_page": {
+      "password_form": {
+        "password_label": "Passwort",
+        "btn_label": "Absenden"
       }
-      ,"password_page": {
-        "password_form": {
-          "password_label": "Passwort",
-          "btn_label": "Absenden"
-        }
-      }
-      ,
-      "newsletter": {
-        "name_placeholder": "Geben Sie Ihren Namen ein",
-        "input_label": "Geben Sie Ihre E-Mail ein",
-        "submit_button": "Abonnieren",
-        "confirmation_text": "Danke für Ihr Abonnement!"
-      }
+    },
+    "newsletter": {
+      "name_placeholder": "Geben Sie Ihren Namen ein",
+      "input_label": "Geben Sie Ihre E-Mail ein",
+      "submit_button": "Abonnieren",
+      "confirmation_text": "Danke für Ihr Abonnement!"
+    },
+    "404_page": {
+      "title": "Seite nicht gefunden",
+      "subtext": "Die angeforderte Seite existiert nicht.",
+      "button": "Weiter einkaufen"
+    }
   },
   "policy": {
     "title": "Richtlinie",
@@ -75,28 +78,27 @@
     "menu": "Menü",
     "all_rights_reserved": "Alle Rechte vorbehalten",
     "secure_payments": "Sichere Zahlungen",
-    "loading": "Laden..."
-      ,
-      "offcanvas_search_title_articles": "Artikel",
-      "newsletter": {
-        "name_placeholder": "Geben Sie Ihren Namen ein",
-        "input_label": "Geben Sie Ihre E-Mail ein",
-        "submit_button": "Abonnieren",
-        "confirmation_text": "Danke für Ihr Abonnement!"
-      },
-      "countdown_timer": {
-        "s": "s",
-        "days": "Tage",
-        "hours": "Stunden",
-        "minutes": "Minuten",
-        "seconds": "Sekunden"
-      },
-      "password_page": {
-        "password_form": {
-          "password_label": "Passwort",
-          "btn_label": "Absenden"
-        }
+    "loading": "Laden...",
+    "offcanvas_search_title_articles": "Artikel",
+    "newsletter": {
+      "name_placeholder": "Geben Sie Ihren Namen ein",
+      "input_label": "Geben Sie Ihre E-Mail ein",
+      "submit_button": "Abonnieren",
+      "confirmation_text": "Danke für Ihr Abonnement!"
+    },
+    "countdown_timer": {
+      "s": "s",
+      "days": "Tage",
+      "hours": "Stunden",
+      "minutes": "Minuten",
+      "seconds": "Sekunden"
+    },
+    "password_page": {
+      "password_form": {
+        "password_label": "Passwort",
+        "btn_label": "Absenden"
       }
+    }
   },
   "newsletter": {
     "name_placeholder": "Geben Sie Ihren Namen ein",
@@ -438,7 +440,8 @@
       "modal_button_label": "Tarife abrufen",
       "no_results_found": "Keine Versandtarife verfügbar",
       "summary": "Warenkorb-Zusammenfassung"
-    }
+    },
+    "summary": "Warenkorbübersicht"
   },
   "collection": {
     "filters": {
@@ -447,14 +450,27 @@
       "to": "Bis",
       "view_more": "Mehr anzeigen",
       "clear_all": "Alle löschen",
-      "view_results": "Ergebnisse anzeigen"
+      "view_results": "Ergebnisse anzeigen",
+      "max_range_notice": "Maximaler Bereich erreicht"
     },
     "load_more": "Mehr laden",
     "load_previous": "Vorherige laden",
     "sort_by": "Sortieren nach",
     "btn_filter_products": "Produkte filtern",
     "paginate_count": "{{ count }} von {{ total }} Produkten angezeigt",
-    "empty_html": "Keine Produkte gefunden"
+    "empty_html": "Keine Produkte gefunden",
+    "custom_bundle": {
+      "add_to_bundle": "Zum Bundle hinzufügen",
+      "progress_label": "Bundle-Fortschritt",
+      "progress_uncompleted_text": "Vervollständige dein Bundle",
+      "progress_completed_text": "Bundle abgeschlossen",
+      "bundle_price": "Bundle-Preis",
+      "you_save": "Du sparst",
+      "button_atc_text": "Bundle in den Warenkorb",
+      "button_view_contents_text": "Bundle-Inhalt anzeigen",
+      "bundle_contents_title": "Bundle-Inhalt",
+      "bundle_contents_empty_html": "Dein Bundle ist leer"
+    }
   },
   "custom_bundle": {
     "add_to_bundle": "Zum Bundle hinzufügen",
@@ -493,7 +509,11 @@
       "image_banner_description": "Kurze Beschreibung für das Bild-Banner",
       "image_banner_btn_primary": "Primäre Aktion",
       "image_banner_btn_secondary": "Sekundäre Aktion"
-    }
+    },
+    "image_banner_title": "Bildbanner-Titel",
+    "image_banner_description": "Kurze Beschreibung für den Bildbanner",
+    "image_banner_btn_primary": "Primäre Aktion",
+    "image_banner_btn_secondary": "Sekundäre Aktion"
   },
   "testimonials": {
     "verified_review": "Verifizierte Bewertung",

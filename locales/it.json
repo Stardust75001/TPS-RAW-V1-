@@ -19,7 +19,6 @@
       "cart_product_list": "Lista prodotti del carrello",
       "payment_methods": "Metodi di pagamento",
       "load_more_products": "Carica più prodotti",
-
       "product_media_gallery": "Galleria media del prodotto",
       "product_options": "Opzioni del prodotto",
       "slide_of": "Diapositiva {{ current }} di {{ total }}",
@@ -45,27 +44,31 @@
     "offcanvas_search_title_products": "Prodotti",
     "offcanvas_search_title_collections": "Collezioni",
     "offcanvas_search_title_pages": "Pagine",
-    "offcanvas_search_title_articles": "Articoli"
-      ,"countdown_timer": {
-        "s": "s",
-        "days": "giorni",
-        "hours": "ore",
-        "minutes": "minuti",
-        "seconds": "secondi"
+    "offcanvas_search_title_articles": "Articoli",
+    "countdown_timer": {
+      "s": "s",
+      "days": "giorni",
+      "hours": "ore",
+      "minutes": "minuti",
+      "seconds": "secondi"
+    },
+    "password_page": {
+      "password_form": {
+        "password_label": "Password",
+        "btn_label": "Invia"
       }
-      ,"password_page": {
-        "password_form": {
-          "password_label": "Password",
-          "btn_label": "Invia"
-        }
-      }
-      ,
-      "newsletter": {
-        "name_placeholder": "Inserisci il tuo nome",
-        "input_label": "Inserisci la tua email",
-        "submit_button": "Iscriviti",
-        "confirmation_text": "Grazie per esserti iscritto!"
-      }
+    },
+    "newsletter": {
+      "name_placeholder": "Inserisci il tuo nome",
+      "input_label": "Inserisci la tua email",
+      "submit_button": "Iscriviti",
+      "confirmation_text": "Grazie per esserti iscritto!"
+    },
+    "404_page": {
+      "title": "Pagina non trovata",
+      "subtext": "La pagina richiesta non esiste.",
+      "button": "Continua lo shopping"
+    }
   },
   "policy": {
     "title": "Politica",
@@ -75,28 +78,27 @@
     "menu": "Menu",
     "all_rights_reserved": "Tutti i diritti riservati",
     "secure_payments": "Pagamenti sicuri",
-    "loading": "Caricamento..."
-      ,
-      "offcanvas_search_title_articles": "Articoli",
-      "newsletter": {
-        "name_placeholder": "Inserisci il tuo nome",
-        "input_label": "Inserisci la tua email",
-        "submit_button": "Iscriviti",
-        "confirmation_text": "Grazie per esserti iscritto!"
-      },
-      "countdown_timer": {
-        "s": "s",
-        "days": "giorni",
-        "hours": "ore",
-        "minutes": "minuti",
-        "seconds": "secondi"
-      },
-      "password_page": {
-        "password_form": {
-          "password_label": "Password",
-          "btn_label": "Invia"
-        }
+    "loading": "Caricamento...",
+    "offcanvas_search_title_articles": "Articoli",
+    "newsletter": {
+      "name_placeholder": "Inserisci il tuo nome",
+      "input_label": "Inserisci la tua email",
+      "submit_button": "Iscriviti",
+      "confirmation_text": "Grazie per esserti iscritto!"
+    },
+    "countdown_timer": {
+      "s": "s",
+      "days": "giorni",
+      "hours": "ore",
+      "minutes": "minuti",
+      "seconds": "secondi"
+    },
+    "password_page": {
+      "password_form": {
+        "password_label": "Password",
+        "btn_label": "Invia"
       }
+    }
   },
   "newsletter": {
     "name_placeholder": "Inserisci il tuo nome",
@@ -124,27 +126,27 @@
     "score": "Il tuo punteggio: {{ score }}%",
     "correct_answer": "Risposta corretta",
     "your_answer": "La tua risposta",
-    "try_again": "Riprova"
-      ,"offcanvas_search_title_articles": "Articoli"
-      ,"newsletter": {
-        "name_placeholder": "Inserisci il tuo nome",
-        "input_label": "Inserisci la tua email",
-        "submit_button": "Iscriviti",
-        "confirmation_text": "Grazie per esserti iscritto!"
+    "try_again": "Riprova",
+    "offcanvas_search_title_articles": "Articoli",
+    "newsletter": {
+      "name_placeholder": "Inserisci il tuo nome",
+      "input_label": "Inserisci la tua email",
+      "submit_button": "Iscriviti",
+      "confirmation_text": "Grazie per esserti iscritto!"
+    },
+    "countdown_timer": {
+      "s": "s",
+      "days": "giorni",
+      "hours": "ore",
+      "minutes": "minuti",
+      "seconds": "secondi"
+    },
+    "password_page": {
+      "password_form": {
+        "password_label": "Password",
+        "btn_label": "Invia"
       }
-      ,"countdown_timer": {
-        "s": "s",
-        "days": "giorni",
-        "hours": "ore",
-        "minutes": "minuti",
-        "seconds": "secondi"
-      }
-      ,"password_page": {
-        "password_form": {
-          "password_label": "Password",
-          "btn_label": "Invia"
-        }
-      }
+    }
   },
   "offcanvas_menu": {
     "title_customer": "Ciao, {{ name }}",
@@ -438,7 +440,8 @@
       "modal_button_label": "Ottieni tariffe",
       "no_results_found": "Nessuna tariffa di spedizione disponibile",
       "summary": "Riepilogo carrello"
-    }
+    },
+    "summary": "Riepilogo carrello"
   },
   "collection": {
     "filters": {
@@ -447,14 +450,27 @@
       "to": "A",
       "view_more": "Visualizza altro",
       "clear_all": "Cancella tutto",
-      "view_results": "Visualizza risultati"
+      "view_results": "Visualizza risultati",
+      "max_range_notice": "Intervallo massimo raggiunto"
     },
     "load_more": "Carica altro",
     "load_previous": "Carica precedenti",
     "sort_by": "Ordina per",
     "btn_filter_products": "Filtra prodotti",
     "paginate_count": "Mostrando {{ count }} di {{ total }} prodotti",
-    "empty_html": "Nessun prodotto trovato"
+    "empty_html": "Nessun prodotto trovato",
+    "custom_bundle": {
+      "add_to_bundle": "Aggiungi al bundle",
+      "progress_label": "Avanzamento bundle",
+      "progress_uncompleted_text": "Completa il tuo bundle",
+      "progress_completed_text": "Bundle completato",
+      "bundle_price": "Prezzo bundle",
+      "you_save": "Risparmi",
+      "button_atc_text": "Aggiungi bundle al carrello",
+      "button_view_contents_text": "Vedi contenuto bundle",
+      "bundle_contents_title": "Contenuto bundle",
+      "bundle_contents_empty_html": "Il tuo bundle è vuoto"
+    }
   },
   "custom_bundle": {
     "add_to_bundle": "Aggiungi al bundle",
@@ -493,7 +509,11 @@
       "image_banner_description": "Breve descrizione per il banner immagine",
       "image_banner_btn_primary": "Azione principale",
       "image_banner_btn_secondary": "Azione secondaria"
-    }
+    },
+    "image_banner_title": "Titolo banner immagine",
+    "image_banner_description": "Breve descrizione del banner immagine",
+    "image_banner_btn_primary": "Azione principale",
+    "image_banner_btn_secondary": "Azione secondaria"
   },
   "testimonials": {
     "verified_review": "Recensione verificata",

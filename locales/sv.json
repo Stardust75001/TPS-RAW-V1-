@@ -45,7 +45,12 @@
     "offcanvas_search_title_products": "Produkter",
     "offcanvas_search_title_collections": "Samlingar",
     "offcanvas_search_title_pages": "Sidor",
-    "offcanvas_search_title_articles": "Artiklar"
+    "offcanvas_search_title_articles": "Artiklar",
+    "404_page": {
+      "title": "Sidan hittades inte",
+      "subtext": "Sidan du begärde finns inte.",
+      "button": "Fortsätt handla"
+    }
   },
   "policy": {
     "title": "Policy",
@@ -55,28 +60,27 @@
     "menu": "Meny",
     "all_rights_reserved": "Alla rättigheter förbehållna",
     "secure_payments": "Säkra betalningar",
-    "loading": "Laddar..."
-      ,
-      "offcanvas_search_title_articles": "Artiklar",
-      "newsletter": {
-        "name_placeholder": "Ange ditt namn",
-        "input_label": "Ange din e-post",
-        "submit_button": "Prenumerera",
-        "confirmation_text": "Tack för din prenumeration!"
-      },
-      "countdown_timer": {
-        "s": "s",
-        "days": "dagar",
-        "hours": "timmar",
-        "minutes": "minuter",
-        "seconds": "sekunder"
-      },
-      "password_page": {
-        "password_form": {
-          "password_label": "Lösenord",
-          "btn_label": "Skicka"
-        }
+    "loading": "Laddar...",
+    "offcanvas_search_title_articles": "Artiklar",
+    "newsletter": {
+      "name_placeholder": "Ange ditt namn",
+      "input_label": "Ange din e-post",
+      "submit_button": "Prenumerera",
+      "confirmation_text": "Tack för din prenumeration!"
+    },
+    "countdown_timer": {
+      "s": "s",
+      "days": "dagar",
+      "hours": "timmar",
+      "minutes": "minuter",
+      "seconds": "sekunder"
+    },
+    "password_page": {
+      "password_form": {
+        "password_label": "Lösenord",
+        "btn_label": "Skicka"
       }
+    }
   },
   "newsletter": {
     "name_placeholder": "Ange ditt namn",
@@ -104,27 +108,26 @@
     "score": "Din poäng: {{ score }}%",
     "correct_answer": "Rätt svar",
     "your_answer": "Ditt svar",
-    "try_again": "Försök igen"
-      ,
-      "offcanvas_search_title_articles": "Artiklar",
-      "newsletter": {
-        "confirmation_text": "Tack för din prenumeration!",
-        "input_label": "Ange din e-post",
-        "submit_button": "Prenumerera"
-      },
-      "countdown_timer": {
-        "s": "s",
-        "days": "dagar",
-        "hours": "timmar",
-        "minutes": "minuter",
-        "seconds": "sekunder"
-      },
-      "password_page": {
-        "password_form": {
-          "password_label": "Lösenord",
-          "btn_label": "Skicka"
-        }
+    "try_again": "Försök igen",
+    "offcanvas_search_title_articles": "Artiklar",
+    "newsletter": {
+      "confirmation_text": "Tack för din prenumeration!",
+      "input_label": "Ange din e-post",
+      "submit_button": "Prenumerera"
+    },
+    "countdown_timer": {
+      "s": "s",
+      "days": "dagar",
+      "hours": "timmar",
+      "minutes": "minuter",
+      "seconds": "sekunder"
+    },
+    "password_page": {
+      "password_form": {
+        "password_label": "Lösenord",
+        "btn_label": "Skicka"
       }
+    }
   },
   "offcanvas_menu": {
     "title_customer": "Hej, {{ name }}",
@@ -418,7 +421,8 @@
       "modal_button_label": "Hämta priser",
       "no_results_found": "Inga fraktpriser tillgängliga",
       "summary": "Kundvagnssammanfattning"
-    }
+    },
+    "summary": "Kundvagnssammanfattning"
   },
   "collection": {
     "filters": {
@@ -427,14 +431,27 @@
       "to": "Till",
       "view_more": "Visa mer",
       "clear_all": "Rensa alla",
-      "view_results": "Visa resultat"
+      "view_results": "Visa resultat",
+      "max_range_notice": "Maximalt intervall valt"
     },
     "load_more": "Ladda mer",
     "load_previous": "Ladda föregående",
     "sort_by": "Sortera efter",
     "btn_filter_products": "Filtrera produkter",
     "paginate_count": "Visar {{ count }} av {{ total }} produkter",
-    "empty_html": "Inga produkter hittades"
+    "empty_html": "Inga produkter hittades",
+    "custom_bundle": {
+      "add_to_bundle": "Lägg till i paket",
+      "progress_label": "Paketframsteg",
+      "progress_uncompleted_text": "Slutför ditt paket",
+      "progress_completed_text": "Paket slutfört",
+      "bundle_price": "Paketpris",
+      "you_save": "Du sparar",
+      "button_atc_text": "Lägg paket i kundvagn",
+      "button_view_contents_text": "Visa paketinnehåll",
+      "bundle_contents_title": "Paketinnehåll",
+      "bundle_contents_empty_html": "Ditt paket är tomt"
+    }
   },
   "custom_bundle": {
     "add_to_bundle": "Lägg till i paket",
@@ -473,7 +490,11 @@
       "image_banner_description": "Kort beskrivning för bildbanern",
       "image_banner_btn_primary": "Primär åtgärd",
       "image_banner_btn_secondary": "Sekundär åtgärd"
-    }
+    },
+    "image_banner_title": "Bildbanner titel",
+    "image_banner_description": "Kort beskrivning för bildbanern",
+    "image_banner_btn_primary": "Primär åtgärd",
+    "image_banner_btn_secondary": "Sekundär åtgärd"
   },
   "testimonials": {
     "verified_review": "Verifierad recension",

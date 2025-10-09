@@ -204,9 +204,9 @@
       "consent": "Vi bruger cookies til at forbedre din oplevelse."
     },
     "404_page": {
-      "title": "404 - Side ikke fundet",
-      "subtext": "Siden du leder efter findes ikke.",
-      "button": "Tilbage til hjemmesiden"
+      "title": "Siden blev ikke fundet",
+      "subtext": "Den anmodede side findes ikke.",
+      "button": "Fortsæt med at handle"
     },
     "search_page": {
       "title": "Søg i butikken",
@@ -383,9 +383,26 @@
     "view_cart": "Se kurv"
   },
   "blogs": {
-    "filter_by": "Filtrer efter emne",
+    "filter_by": "Filtrér efter",
     "all_topics": "Alle emner",
-    "posted_in": "Slået op i"
+    "posted_in": "Slået op i",
+    "back_to_blog": "Tilbage til {{ blog_title }}",
+    "comments": {
+      "email": "E-mail",
+      "error": "Der opstod en fejl under offentliggørelsen af din kommentar.",
+      "leave_comment": "Skriv en kommentar",
+      "message": "Besked",
+      "name": "Navn",
+      "submit": "Send kommentar",
+      "success": "Din kommentar er blevet offentliggjort.",
+      "title": "Kommentarer"
+    },
+    "next_post": "Næste indlæg",
+    "posted_by": "Udgivet af",
+    "posted_on": "Udgivet den",
+    "previous_post": "Forrige indlæg",
+    "read_more": "Læs mere",
+    "recent_posts": "Seneste indlæg"
   },
   "shopify": {
     "checkout": {
@@ -526,5 +543,8 @@
     "about": {
       "description_html": "<p>EN FALCON TRADING DIVISION</p><p>RCS PARIS 450 573 712</p>"
     }
+  },
+  "breadcrumbs": {
+    "home": "Hjem"
   }
 }
