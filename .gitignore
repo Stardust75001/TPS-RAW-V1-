@@ -8,3 +8,11 @@ venv/
 
 # i18n backups
 *.bak
+# macOS + editor
+.DS_Store
+*.code-workspace
+
+# temp
+/locales_backup/
+/3
+/file.yml
