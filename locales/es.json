@@ -1,4 +1,5 @@
 {
+  "-": "",
   "404_page": {
     "button": "Continuar comprando",
     "subtext": "La página que solicitaste no existe.",
@@ -462,7 +463,9 @@
     "wishlist": {
       "add_to_wishlist": "Añadir a lista de deseos",
       "btn_label": "Lista de deseos",
-      "empty_html": "Tu lista de deseos está vacía"
+      "empty_html": "Tu lista de deseos está vacía",
+      "offcanvas_title": "",
+      "remove_from_wishlist": ""
     }
   },
   "gift_card": {
@@ -488,6 +491,7 @@
     "name_placeholder": "Introduce tu nombre",
     "submit_button": "Suscribirse"
   },
+  "no_reviews": "",
   "offcanvas_menu": {
     "pagination_page_of": "Página {{ count }} de {{ total }}",
     "subtitle_customer_html": "Gestiona tu cuenta y pedidos",
@@ -557,6 +561,14 @@
     "color_swatches": "Muestras de color",
     "in_stock": "En stock",
     "include_taxes": "Impuestos incluidos",
+    "inventory_bar": {
+      "label": "",
+      "low_html": "",
+      "normal_html": "",
+      "sold_out": "",
+      "untracked": "",
+      "verylow_html": ""
+    },
     "out_of_stock": "Fuera de stock",
     "price_from": "Desde ",
     "price_regular": "Precio regular",
@@ -590,6 +602,9 @@
     "color_variants": {
       "choose_color": "Elegir color",
       "select_option": "Seleccionar un color"
+    },
+    "product": {
+      "add_to_cart": ""
     },
     "variant": {
       "in_stock": "En stock",
@@ -639,7 +654,13 @@
       "email_label": "Email del destinatario",
       "max_characters": "Máx {{ count }} caracteres",
       "message_label": "Mensaje (opcional)",
-      "name_label": "Nombre del destinatario"
+      "name_label": "Nombre del destinatario",
+      "properties": {
+        "date_properties": "",
+        "email_properties": "",
+        "message_properties": "",
+        "name_properties": ""
+      }
     },
     "properties": {
       "date_properties": "Fecha de entrega",

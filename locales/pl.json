@@ -1,4 +1,5 @@
 {
+  "-": "",
   "404_page": {
     "button": "Kontynuuj zakupy",
     "subtext": "Strona, której szukasz, nie istnieje.",
@@ -462,7 +463,9 @@
     "wishlist": {
       "add_to_wishlist": "Dodaj do listy życzeń",
       "btn_label": "Lista życzeń",
-      "empty_html": "Twoja lista życzeń jest pusta"
+      "empty_html": "Twoja lista życzeń jest pusta",
+      "offcanvas_title": "",
+      "remove_from_wishlist": ""
     }
   },
   "gift_card": {
@@ -488,6 +491,7 @@
     "name_placeholder": "Wprowadź swoje imię",
     "submit_button": "Subskrybuj"
   },
+  "no_reviews": "",
   "offcanvas_menu": {
     "pagination_page_of": "Strona {{ count }} z {{ total }}",
     "subtitle_customer_html": "Zarządzaj swoim kontem i zamówieniami",
@@ -557,6 +561,14 @@
     "color_swatches": "Próbki kolorów",
     "in_stock": "W magazynie",
     "include_taxes": "Podatki wliczone",
+    "inventory_bar": {
+      "label": "",
+      "low_html": "",
+      "normal_html": "",
+      "sold_out": "",
+      "untracked": "",
+      "verylow_html": ""
+    },
     "out_of_stock": "Brak w magazynie",
     "price_from": "Od ",
     "price_regular": "Cena regularna",
@@ -591,6 +603,9 @@
       "choose_color": "Wybierz kolor",
       "select_option": "Wybierz kolor"
     },
+    "product": {
+      "add_to_cart": ""
+    },
     "variant": {
       "in_stock": "W magazynie",
       "out_of_stock": "Brak w magazynie"
@@ -613,6 +628,7 @@
     "newsletter": {
       "confirmation_text": "Dziękujemy za subskrypcję!",
       "input_label": "Wprowadź swój email",
+      "name_placeholder": "",
       "submit_button": "Subskrybuj"
     },
     "offcanvas_search_title_articles": "Artykuły",
@@ -638,7 +654,13 @@
       "email_label": "Email odbiorcy",
       "max_characters": "Maks {{ count }} znaków",
       "message_label": "Wiadomość (opcjonalnie)",
-      "name_label": "Imię odbiorcy"
+      "name_label": "Imię odbiorcy",
+      "properties": {
+        "date_properties": "",
+        "email_properties": "",
+        "message_properties": "",
+        "name_properties": ""
+      }
     },
     "properties": {
       "date_properties": "Data dostawy",

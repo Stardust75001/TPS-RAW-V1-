@@ -1,4 +1,5 @@
 {
+  "-": "",
   "404_page": {
     "button": "Continuar comprando",
     "subtext": "A página que você solicitou não existe.",
@@ -447,7 +448,11 @@
       "results_with_count_and_term": "{{ count }} resultados para \"{{ terms }}\"",
       "title": "Pesquisar",
       "title_search_performed": "Resultados da pesquisa",
-      "types": {}
+      "types": {
+        "articles": "",
+        "pages": "",
+        "products": ""
+      }
     },
     "secure_payments": "Pagamentos seguros",
     "share": "Compartilhar",
@@ -557,7 +562,12 @@
     "in_stock": "Em estoque",
     "include_taxes": "Impostos inclusos",
     "inventory_bar": {
-      "label": "Nível de stock"
+      "label": "Nível de stock",
+      "low_html": "",
+      "normal_html": "",
+      "sold_out": "",
+      "untracked": "",
+      "verylow_html": ""
     },
     "out_of_stock": "Fora de estoque",
     "price_from": "A partir de ",
@@ -592,6 +602,9 @@
     "color_variants": {
       "choose_color": "Escolher cor",
       "select_option": "Selecionar uma cor"
+    },
+    "product": {
+      "add_to_cart": ""
     },
     "variant": {
       "in_stock": "Em estoque",
@@ -641,7 +654,13 @@
       "email_label": "Email do destinatário",
       "max_characters": "Máx {{ count }} caracteres",
       "message_label": "Mensagem (opcional)",
-      "name_label": "Nome do destinatário"
+      "name_label": "Nome do destinatário",
+      "properties": {
+        "date_properties": "",
+        "email_properties": "",
+        "message_properties": "",
+        "name_properties": ""
+      }
     },
     "properties": {
       "date_properties": "Data de entrega",

@@ -1,4 +1,5 @@
 {
+  "-": "",
   "404_page": {
     "button": "Fortsätt handla",
     "subtext": "Sidan du begärde finns inte.",
@@ -462,7 +463,9 @@
     "wishlist": {
       "add_to_wishlist": "Lägg till i önskelista",
       "btn_label": "Önskelista",
-      "empty_html": "Din önskelista är tom"
+      "empty_html": "Din önskelista är tom",
+      "offcanvas_title": "",
+      "remove_from_wishlist": ""
     }
   },
   "gift_card": {
@@ -488,6 +491,7 @@
     "name_placeholder": "Ange ditt namn",
     "submit_button": "Prenumerera"
   },
+  "no_reviews": "",
   "offcanvas_menu": {
     "pagination_page_of": "Sida {{ count }} av {{ total }}",
     "subtitle_customer_html": "Hantera ditt konto och beställningar",
@@ -557,6 +561,14 @@
     "color_swatches": "Färgprover",
     "in_stock": "I lager",
     "include_taxes": "Inkl. moms",
+    "inventory_bar": {
+      "label": "",
+      "low_html": "",
+      "normal_html": "",
+      "sold_out": "",
+      "untracked": "",
+      "verylow_html": ""
+    },
     "out_of_stock": "Slut i lager",
     "price_from": "Från ",
     "price_regular": "Ordinarie pris",
@@ -591,6 +603,9 @@
       "choose_color": "Välj färg",
       "select_option": "Välj en färg"
     },
+    "product": {
+      "add_to_cart": ""
+    },
     "variant": {
       "in_stock": "I lager",
       "out_of_stock": "Slut i lager"
@@ -613,6 +628,7 @@
     "newsletter": {
       "confirmation_text": "Tack för din prenumeration!",
       "input_label": "Ange din e-post",
+      "name_placeholder": "",
       "submit_button": "Prenumerera"
     },
     "offcanvas_search_title_articles": "Artiklar",
@@ -638,7 +654,13 @@
       "email_label": "Mottagarens e-post",
       "max_characters": "Max {{ count }} tecken",
       "message_label": "Meddelande (valfritt)",
-      "name_label": "Mottagarens namn"
+      "name_label": "Mottagarens namn",
+      "properties": {
+        "date_properties": "",
+        "email_properties": "",
+        "message_properties": "",
+        "name_properties": ""
+      }
     },
     "properties": {
       "date_properties": "Leveransdatum",

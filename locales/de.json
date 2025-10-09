@@ -1,4 +1,5 @@
 {
+  "-": "",
   "404_page": {
     "button": "Weiter einkaufen",
     "subtext": "Die angeforderte Seite existiert nicht.",
@@ -462,7 +463,9 @@
     "wishlist": {
       "add_to_wishlist": "Zur Wunschliste hinzufügen",
       "btn_label": "Wunschliste",
-      "empty_html": "Deine Wunschliste ist leer"
+      "empty_html": "Deine Wunschliste ist leer",
+      "offcanvas_title": "",
+      "remove_from_wishlist": ""
     }
   },
   "gift_card": {
@@ -488,6 +491,7 @@
     "name_placeholder": "Geben Sie Ihren Namen ein",
     "submit_button": "Abonnieren"
   },
+  "no_reviews": "",
   "offcanvas_menu": {
     "pagination_page_of": "Seite {{ count }} von {{ total }}",
     "subtitle_customer_html": "Verwalten Sie Ihr Konto und Ihre Bestellungen",
@@ -557,6 +561,14 @@
     "color_swatches": "Farbmuster",
     "in_stock": "Auf Lager",
     "include_taxes": "Inkl. Steuer",
+    "inventory_bar": {
+      "label": "",
+      "low_html": "",
+      "normal_html": "",
+      "sold_out": "",
+      "untracked": "",
+      "verylow_html": ""
+    },
     "out_of_stock": "Nicht vorrätig",
     "price_from": "Ab ",
     "price_regular": "Regulärer Preis",
@@ -590,6 +602,9 @@
     "color_variants": {
       "choose_color": "Farbe wählen",
       "select_option": "Eine Farbe auswählen"
+    },
+    "product": {
+      "add_to_cart": ""
     },
     "variant": {
       "in_stock": "Auf Lager",
@@ -639,7 +654,13 @@
       "email_label": "Empfänger-E-Mail",
       "max_characters": "Max {{ count }} Zeichen",
       "message_label": "Nachricht (optional)",
-      "name_label": "Empfängername"
+      "name_label": "Empfängername",
+      "properties": {
+        "date_properties": "",
+        "email_properties": "",
+        "message_properties": "",
+        "name_properties": ""
+      }
     },
     "properties": {
       "date_properties": "Lieferdatum",

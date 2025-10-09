@@ -1,4 +1,5 @@
 {
+  "-": "",
   "404_page": {
     "button": "Verder winkelen",
     "subtext": "De pagina die u zocht bestaat niet.",
@@ -462,7 +463,9 @@
     "wishlist": {
       "add_to_wishlist": "Toevoegen aan verlanglijst",
       "btn_label": "Verlanglijst",
-      "empty_html": "Je verlanglijst is leeg"
+      "empty_html": "Je verlanglijst is leeg",
+      "offcanvas_title": "",
+      "remove_from_wishlist": ""
     }
   },
   "gift_card": {
@@ -488,6 +491,7 @@
     "name_placeholder": "Voer uw naam in",
     "submit_button": "Abonneren"
   },
+  "no_reviews": "",
   "offcanvas_menu": {
     "pagination_page_of": "Pagina {{ count }} van {{ total }}",
     "subtitle_customer_html": "Beheer uw account en bestellingen",
@@ -557,6 +561,14 @@
     "color_swatches": "Kleurstalen",
     "in_stock": "Op voorraad",
     "include_taxes": "Inclusief belasting",
+    "inventory_bar": {
+      "label": "",
+      "low_html": "",
+      "normal_html": "",
+      "sold_out": "",
+      "untracked": "",
+      "verylow_html": ""
+    },
     "out_of_stock": "Niet op voorraad",
     "price_from": "Vanaf ",
     "price_regular": "Normale prijs",
@@ -591,6 +603,9 @@
       "choose_color": "Kies kleur",
       "select_option": "Selecteer een kleur"
     },
+    "product": {
+      "add_to_cart": ""
+    },
     "variant": {
       "in_stock": "Op voorraad",
       "out_of_stock": "Niet op voorraad"
@@ -613,6 +628,7 @@
     "newsletter": {
       "confirmation_text": "Bedankt voor je inschrijving!",
       "input_label": "Voer uw e-mail in",
+      "name_placeholder": "",
       "submit_button": "Abonneren"
     },
     "offcanvas_search_title_articles": "Artikelen",
@@ -638,7 +654,13 @@
       "email_label": "Ontvanger e-mail",
       "max_characters": "Max {{ count }} karakters",
       "message_label": "Bericht (optioneel)",
-      "name_label": "Ontvanger naam"
+      "name_label": "Ontvanger naam",
+      "properties": {
+        "date_properties": "",
+        "email_properties": "",
+        "message_properties": "",
+        "name_properties": ""
+      }
     },
     "properties": {
       "date_properties": "Leveringsdatum",
