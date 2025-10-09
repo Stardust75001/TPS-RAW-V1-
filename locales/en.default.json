@@ -1,78 +1,343 @@
 {
-  "general": {
-    "accessibility": {
-      "close": "",
-      "skip_content": "",
-      "skip_product_content": "",
-      "utility_icons": "",
-      "menu": "",
-      "cart": "",
-      "wishlist": "",
-      "account": "",
-      "previous": "",
-      "next": "",
-      "previous_page": "",
-      "next_page": "",
-      "decrease_qty": "",
-      "increase_qty": "",
-      "cart_product_list": "",
-      "payment_methods": "",
-      "load_more_products": "",
-      "sorted_by": "",
-      "product_media_gallery": "",
-      "product_options": "",
-      "slide_of": "",
-      "model_3d_list_label": "",
-      "model_3d_decrease": "",
-      "model_3d_increase": "",
-      "model_3d_fullscreen": "",
-      "toggle_sound": "",
-      "back_to_top": "",
-      "search": ""
+  "-": "",
+  "404_page": {
+    "button": "Continue shopping",
+    "subtext": "The page you requested does not exist.",
+    "title": "Page not found"
+  },
+  "announcement": {
+    "shipping_notice": "",
+    "text": "",
+    "title": ""
+  },
+  "blogs": {
+    "all_topics": "",
+    "back_to_blog": "",
+    "comments": {
+      "email": "",
+      "error": "",
+      "leave_comment": "",
+      "message": "",
+      "name": "",
+      "submit": "",
+      "success": "",
+      "title": ""
     },
-    "follow_us": "",
-    "menu": "",
-    "share": "",
-    "copy": "",
-    "copied": "",
-    "pagination_page_of": "",
-    "optional": "",
-    "map_address": "",
-    "map_phone": "",
-    "map_email": "",
-    "map_hours": "",
-    "map_api_key_missing": "",
-    "offcanvas_search_title_products": "",
-    "offcanvas_search_title_collections": "",
-    "offcanvas_search_title_pages": "",
-    "offcanvas_search_title_articles": "",
-    "countdown_timer": {
-      "s": "",
-      "days": "",
+    "filter_by": "",
+    "next_post": "",
+    "posted_by": "",
+    "posted_in": "",
+    "posted_on": "",
+    "previous_post": "",
+    "read_more": "",
+    "recent_posts": ""
+  },
+  "breadcrumbs": {
+    "home": "",
+    "label": ""
+  },
+  "cart": {
+    "alert_cart_updated": "",
+    "alert_item_added": "",
+    "alert_items_added": "",
+    "checkout": "",
+    "continue_shopping": "",
+    "empty_html": "",
+    "empty_products_title": "",
+    "note_button": "",
+    "note_label": "",
+    "note_placeholder": "",
+    "note_saved": "",
+    "quantity": "",
+    "remove": "",
+    "shipping_rates": {
+      "button_label": "",
+      "modal_button_label": "",
+      "modal_title": "",
+      "no_results_found": "",
+      "summary": ""
+    },
+    "subtotal": "",
+    "subtotal_discounted": "",
+    "subtotal_regular": "",
+    "summary": "Cart summary",
+    "taxes_shipping_at_checkout_html": "",
+    "title": "",
+    "view_cart": "",
+    "view_file": ""
+  },
+  "checkout": {
+    "order_status": {
+      "continue_shopping": "",
+      "date": "",
+      "email": "",
+      "order_confirmed": "",
+      "order_details": "",
+      "order_number": "",
+      "phone": "",
+      "shipping_address": "",
+      "thank_you": "",
+      "title": "",
+      "total": ""
+    }
+  },
+  "collection": {
+    "btn_filter_products": "",
+    "custom_bundle": {
+      "add_to_bundle": "Add to bundle",
+      "bundle_contents_empty_html": "",
+      "bundle_contents_title": "",
+      "bundle_price": "",
+      "button_atc_text": "",
+      "button_view_contents_text": "",
+      "progress_completed_text": "",
+      "progress_label": "",
+      "progress_uncompleted_text": "",
+      "you_save": ""
+    },
+    "empty_html": "",
+    "filters": {
+      "clear_all": "",
+      "from": "",
+      "max_range_notice": "Maximum range reached",
+      "title": "",
+      "to": "",
+      "view_more": "",
+      "view_results": ""
+    },
+    "load_more": "",
+    "load_previous": "",
+    "paginate_count": "",
+    "sort_by": ""
+  },
+  "contact": {
+    "email": "",
+    "form": {
+      "email": "",
+      "error": "",
+      "message": "",
+      "name": "",
+      "phone": "",
+      "submit": "",
+      "success": "",
+      "title": ""
+    },
+    "info": {
+      "address": "",
+      "email": "",
       "hours": "",
-      "minutes": "",
-      "seconds": "",
-      "d": "",
-      "expires": "",
-      "h": "",
-      "m": ""
+      "phone": "",
+      "title": ""
     },
-    "password_page": {
-      "password_form": {
-        "password_label": "",
-        "btn_label": ""
-      }
+    "message": "",
+    "name": "",
+    "phone": "",
+    "send": "",
+    "success": ""
+  },
+  "cookies": {
+    "consent": ""
+  },
+  "countdown_timer": {
+    "d": "",
+    "days": "",
+    "expires": "",
+    "h": "",
+    "hours": "",
+    "m": "",
+    "minutes": "",
+    "s": "",
+    "seconds": ""
+  },
+  "custom": {
+    "description": "",
+    "ref_variant_label": "",
+    "title": ""
+  },
+  "custom_bundle": {
+    "add_to_bundle": "",
+    "bundle_contents_empty_html": "",
+    "bundle_contents_title": "",
+    "bundle_price": "",
+    "button_atc_text": "",
+    "button_view_contents_text": "",
+    "no_reviews": "",
+    "progress_completed_text": "",
+    "progress_label": "",
+    "progress_uncompleted_text": "",
+    "you_save": ""
+  },
+  "custom_sections": {
+    "image_banner": {
+      "image_banner_btn_primary": "",
+      "image_banner_btn_secondary": "",
+      "image_banner_description": "",
+      "image_banner_title": "",
+      "primary_button": "",
+      "text": "",
+      "title": ""
     },
+    "image_banner_btn_primary": "Primary action",
+    "image_banner_btn_secondary": "",
+    "image_banner_description": "",
+    "image_banner_title": ""
+  },
+  "customer": {
+    "account": {
+      "account_details": "",
+      "logout": "",
+      "order_history": "",
+      "return": "",
+      "title": "",
+      "view_addresses": ""
+    },
+    "activate_account": {
+      "cancel": "",
+      "password": "",
+      "password_confirm": "",
+      "submit": "",
+      "subtext": "",
+      "title": ""
+    },
+    "addresses": {
+      "add": "",
+      "add_new": "",
+      "address1": "",
+      "address2": "",
+      "city": "",
+      "company": "",
+      "country": "",
+      "default": "",
+      "delete": "",
+      "delete_confirm": "",
+      "edit": "",
+      "edit_address": "",
+      "first_name": "",
+      "last_name": "",
+      "no_addresses": "",
+      "phone": "",
+      "province": "",
+      "set_default": "",
+      "tab_add_new": "",
+      "tab_addresses": "",
+      "title": "",
+      "update": "",
+      "zip": ""
+    },
+    "login": {
+      "create_account": "",
+      "email": "",
+      "forgot_password": "",
+      "new": "",
+      "password": "",
+      "submit": "",
+      "title": ""
+    },
+    "order": {
+      "billing_address": "",
+      "cancelled": "",
+      "cancelled_html": "",
+      "cancelled_reason": "",
+      "date": "",
+      "date_html": "",
+      "discount": "",
+      "fulfilled_at_html": "",
+      "fulfillment_status": "",
+      "note": "",
+      "payment_status": "",
+      "price": "",
+      "product": "",
+      "quantity": "",
+      "return": "",
+      "shipping": "",
+      "shipping_address": "",
+      "sku": "",
+      "subtotal": "",
+      "tax": "",
+      "title": "",
+      "total": "",
+      "track_shipment": "",
+      "tracking_company": "",
+      "tracking_number": "",
+      "tracking_url": ""
+    },
+    "orders": {
+      "date": "",
+      "fulfillment_status": "",
+      "none": "",
+      "order_number": "",
+      "payment_status": "",
+      "title": "",
+      "total": ""
+    },
+    "recover_password": {
+      "cancel": "",
+      "email": "",
+      "submit": "",
+      "subtext": "",
+      "success": "",
+      "title": ""
+    },
+    "register": {
+      "email": "",
+      "first_name": "",
+      "have_account": "",
+      "last_name": "",
+      "login": "",
+      "password": "",
+      "submit": "",
+      "title": ""
+    },
+    "reset_password": {
+      "password": "",
+      "password_confirm": "",
+      "submit": "",
+      "subtext": "",
+      "title": ""
+    }
+  },
+  "footer": {
     "newsletter": {
-      "name_placeholder": "",
-      "input_label": "",
-      "submit_button": "",
-      "confirmation_text": ""
-    },
+      "email_placeholder": "",
+      "first_name_placeholder": "",
+      "submit_button": ""
+    }
+  },
+  "general": {
     "404_page": {
       "button": "",
       "subtext": "",
       "title": ""
+    },
+    "accessibility": {
+      "account": "",
+      "back_to_top": "",
+      "cart": "",
+      "cart_product_list": "",
+      "close": "",
+      "decrease_qty": "",
+      "increase_qty": "",
+      "load_more_products": "",
+      "menu": "",
+      "model_3d_decrease": "",
+      "model_3d_fullscreen": "",
+      "model_3d_increase": "",
+      "model_3d_list_label": "",
+      "next": "",
+      "next_page": "",
+      "payment_methods": "",
+      "previous": "",
+      "previous_page": "",
+      "product_media_gallery": "",
+      "product_options": "",
+      "search": "",
+      "skip_content": "",
+      "skip_product_content": "",
+      "slide_of": "",
+      "sorted_by": "",
+      "toggle_sound": "",
+      "utility_icons": "",
+      "wishlist": ""
     },
     "all_rights_reserved": "",
     "breadcrumbs": {
@@ -87,6 +352,20 @@
       "send": "",
       "success": ""
     },
+    "copied": "",
+    "copy": "",
+    "countdown_timer": {
+      "d": "",
+      "days": "",
+      "expires": "",
+      "h": "",
+      "hours": "",
+      "m": "",
+      "minutes": "",
+      "s": "",
+      "seconds": ""
+    },
+    "follow_us": "",
     "general": {
       "copied": "",
       "copy": "",
@@ -102,6 +381,18 @@
       "email": "",
       "hours": "",
       "phone": ""
+    },
+    "map_address": "",
+    "map_api_key_missing": "",
+    "map_email": "",
+    "map_hours": "",
+    "map_phone": "",
+    "menu": "",
+    "newsletter": {
+      "confirmation_text": "",
+      "input_label": "",
+      "name_placeholder": "",
+      "submit_button": ""
     },
     "offcanvas_menu": {
       "subtitle_customer_html": "",
@@ -122,6 +413,18 @@
       "title_pages": "",
       "title_popular_products": "",
       "title_products": ""
+    },
+    "offcanvas_search_title_articles": "",
+    "offcanvas_search_title_collections": "",
+    "offcanvas_search_title_pages": "",
+    "offcanvas_search_title_products": "",
+    "optional": "",
+    "pagination_page_of": "",
+    "password_page": {
+      "password_form": {
+        "btn_label": "",
+        "password_label": ""
+      }
     },
     "policy": {
       "default_content": "",
@@ -150,6 +453,7 @@
       }
     },
     "secure_payments": "",
+    "share": "",
     "tracking": {
       "btn_text": "",
       "placeholder": ""
@@ -162,513 +466,15 @@
       "remove_from_wishlist": ""
     }
   },
-  "policy": {
-    "title": "",
-    "default_title": "",
-    "default_content": "",
-    "last_updated": "",
-    "menu": "",
-    "all_rights_reserved": "",
-    "secure_payments": "",
-    "loading": "",
-    "offcanvas_search_title_articles": "",
-    "newsletter": {
-      "name_placeholder": "",
-      "input_label": "",
-      "submit_button": "",
-      "confirmation_text": ""
-    },
-    "countdown_timer": {
-      "s": "",
-      "days": "",
-      "hours": "",
-      "minutes": "",
-      "seconds": ""
-    },
-    "password_page": {
-      "password_form": {
-        "password_label": "",
-        "btn_label": ""
-      }
-    }
-  },
-  "newsletter": {
-    "name_placeholder": "",
-    "input_label": "",
-    "submit_button": "",
-    "confirmation_text": ""
-  },
-  "breadcrumbs": {
-    "home": "",
-    "label": ""
-  },
-  "cookies": {
-    "consent": ""
-  },
-  "quiz": {
-    "question_of_html": "",
-    "btn_previous": "",
-    "btn_next": "",
-    "btn_restart": "",
-    "btn_reload_quiz": "",
-    "title": "",
-    "start": "",
-    "finish": "",
-    "results": "",
-    "score": "",
-    "correct_answer": "",
-    "your_answer": "",
-    "try_again": "",
-    "offcanvas_search_title_articles": "",
-    "newsletter": {
-      "name_placeholder": "",
-      "input_label": "",
-      "submit_button": "",
-      "confirmation_text": ""
-    },
-    "countdown_timer": {
-      "s": "",
-      "days": "",
-      "hours": "",
-      "minutes": "",
-      "seconds": ""
-    },
-    "password_page": {
-      "password_form": {
-        "password_label": "",
-        "btn_label": ""
-      }
-    }
-  },
-  "offcanvas_menu": {
-    "title_customer": "",
-    "title_guest": "",
-    "subtitle_guest_html": "",
-    "subtitle_customer_html": "",
-    "pagination_page_of": ""
-  },
-  "404_page": {
-    "title": "Page not found",
-    "subtext": "The page you requested does not exist.",
-    "button": "Continue shopping"
-  },
-  "search_page": {
-    "title": "",
-    "title_search_performed": "",
-    "no_results": "",
-    "results_with_count_and_term": "",
-    "form": {
-      "input_label": "",
-      "select_label": "",
-      "btn_text": "",
-      "types": {
-        "products": "",
-        "articles": "",
-        "pages": ""
-      }
-    }
-  },
-  "offcanvas_search": {
-    "title": "",
-    "input_label": "",
-    "search_by_voice": "",
-    "result_found": "",
-    "results_found": "",
-    "no_results": "",
-    "title_popular_products": "",
-    "search_for": ""
-  },
-  "wishlist": {
-    "offcanvas_title": "",
-    "empty_html": "",
-    "add_to_wishlist": "",
-    "remove_from_wishlist": "",
-    "btn_label": ""
-  },
-  "countdown_timer": {
-    "d": "",
-    "h": "",
-    "m": "",
-    "s": "",
-    "days": "",
-    "hours": "",
-    "minutes": "",
-    "seconds": "",
-    "expires": ""
-  },
-  "password_page": {
-    "password_form": {
-      "password_label": "",
-      "btn_label": ""
-    }
-  },
-  "tracking": {
-    "placeholder": "",
-    "btn_text": ""
-  },
-  "contact": {
-    "success": "",
-    "name": "",
-    "email": "",
-    "phone": "",
-    "message": "",
-    "send": "",
-    "form": {
-      "title": "",
-      "name": "",
-      "email": "",
-      "phone": "",
-      "message": "",
-      "submit": "",
-      "success": "",
-      "error": ""
-    },
-    "info": {
-      "title": "",
-      "address": "",
-      "phone": "",
-      "email": "",
-      "hours": ""
-    }
-  },
-  "product": {
-    "price_unit": "",
-    "sold_out": "",
-    "price_sale": "",
-    "price_regular": "",
-    "price_from": "",
-    "color_options": "",
-    "color_swatches": "",
-    "in_stock": "",
-    "out_of_stock": "",
-    "product": "",
-    "product_added_to_cart": "",
-    "remove": "",
-    "add": "",
-    "add_to_cart": "",
-    "buy_it_now": "",
-    "include_taxes": "",
-    "product_options": "",
-    "quantity": "",
-    "save": "",
-    "select_variant": "",
-    "article_title": "",
-    "blog_excerpt": "",
-    "bought_together": {
-      "this_item": "",
-      "select_this": "",
-      "total_price": "",
-      "add_selected_to_cart": ""
-    },
-    "purchase_options": {
-      "option_one_time": "",
-      "option_subscription": "",
-      "option_subscription_save": "",
-      "option_deliver_every": ""
-    },
-    "qty_breaks": {
-      "label_text_html": "",
-      "label_text_html_bundle_header": "",
-      "label_text_html_bundle": ""
-    },
-    "type": "",
-    "sku": "",
-    "view_details": "",
-    "stock_count": "",
-    "inventory_bar": {
-      "label": "",
-      "low_html": "",
-      "normal_html": "",
-      "sold_out": "",
-      "untracked": "",
-      "verylow_html": ""
-    }
-  },
-  "customer": {
-    "login": {
-      "title": "",
-      "password": "",
-      "forgot_password": "",
-      "submit": "",
-      "new": "",
-      "create_account": "",
-      "email": ""
-    },
-    "recover_password": {
-      "title": "",
-      "success": "",
-      "subtext": "",
-      "submit": "",
-      "email": "",
-      "cancel": ""
-    },
-    "register": {
-      "title": "",
-      "first_name": "",
-      "last_name": "",
-      "email": "",
-      "password": "",
-      "submit": "",
-      "have_account": "",
-      "login": ""
-    },
-    "reset_password": {
-      "title": "",
-      "subtext": "",
-      "password": "",
-      "password_confirm": "",
-      "submit": ""
-    },
-    "account": {
-      "title": "",
-      "logout": "",
-      "order_history": "",
-      "account_details": "",
-      "view_addresses": "",
-      "return": ""
-    },
-    "orders": {
-      "none": "",
-      "order_number": "",
-      "date": "",
-      "payment_status": "",
-      "fulfillment_status": "",
-      "total": "",
-      "title": ""
-    },
-    "activate_account": {
-      "title": "",
-      "subtext": "",
-      "password": "",
-      "password_confirm": "",
-      "submit": "",
-      "cancel": ""
-    },
-    "order": {
-      "title": "",
-      "date_html": "",
-      "cancelled_html": "",
-      "cancelled_reason": "",
-      "product": "",
-      "sku": "",
-      "price": "",
-      "quantity": "",
-      "total": "",
-      "discount": "",
-      "shipping": "",
-      "tax": "",
-      "subtotal": "",
-      "billing_address": "",
-      "shipping_address": "",
-      "payment_status": "",
-      "fulfillment_status": "",
-      "track_shipment": "",
-      "fulfilled_at_html": "",
-      "cancelled": "",
-      "date": "",
-      "tracking_url": "",
-      "tracking_company": "",
-      "tracking_number": "",
-      "note": "",
-      "return": ""
-    },
-    "addresses": {
-      "title": "",
-      "tab_addresses": "",
-      "tab_add_new": "",
-      "default": "",
-      "edit": "",
-      "delete": "",
-      "delete_confirm": "",
-      "no_addresses": "",
-      "add_new": "",
-      "edit_address": "",
-      "first_name": "",
-      "last_name": "",
-      "company": "",
-      "address1": "",
-      "address2": "",
-      "city": "",
-      "country": "",
-      "province": "",
-      "zip": "",
-      "phone": "",
-      "set_default": "",
-      "add": "",
-      "update": ""
-    }
-  },
-  "checkout": {
-    "order_status": {
-      "title": "",
-      "thank_you": "",
-      "order_confirmed": "",
-      "order_details": "",
-      "order_number": "",
-      "date": "",
-      "total": "",
-      "email": "",
-      "phone": "",
-      "shipping_address": "",
-      "continue_shopping": ""
-    }
-  },
-  "cart": {
-    "title": "",
-    "checkout": "",
-    "subtotal": "",
-    "subtotal_regular": "",
-    "subtotal_discounted": "",
-    "taxes_shipping_at_checkout_html": "",
-    "continue_shopping": "",
-    "view_cart": "",
-    "quantity": "",
-    "remove": "",
-    "note_label": "",
-    "note_placeholder": "",
-    "note_saved": "",
-    "note_button": "",
-    "empty_html": "",
-    "empty_products_title": "",
-    "alert_item_added": "",
-    "alert_items_added": "",
-    "alert_cart_updated": "",
-    "view_file": "",
-    "shipping_rates": {
-      "button_label": "",
-      "modal_title": "",
-      "modal_button_label": "",
-      "no_results_found": "",
-      "summary": ""
-    },
-    "summary": "Cart summary"
-  },
-  "collection": {
-    "filters": {
-      "from": "",
-      "title": "",
-      "to": "",
-      "view_more": "",
-      "clear_all": "",
-      "view_results": "",
-      "max_range_notice": "Maximum range reached"
-    },
-    "load_more": "",
-    "load_previous": "",
-    "sort_by": "",
-    "btn_filter_products": "",
-    "paginate_count": "",
-    "empty_html": "",
-    "custom_bundle": {
-      "add_to_bundle": "Add to bundle",
-      "bundle_contents_empty_html": "",
-      "bundle_contents_title": "",
-      "bundle_price": "",
-      "button_atc_text": "",
-      "button_view_contents_text": "",
-      "progress_completed_text": "",
-      "progress_label": "",
-      "progress_uncompleted_text": "",
-      "you_save": ""
-    }
-  },
-  "custom_bundle": {
-    "add_to_bundle": "",
-    "progress_label": "",
-    "progress_uncompleted_text": "",
-    "progress_completed_text": "",
-    "bundle_price": "",
-    "you_save": "",
-    "button_atc_text": "",
-    "button_view_contents_text": "",
-    "bundle_contents_title": "",
-    "bundle_contents_empty_html": "",
-    "no_reviews": ""
-  },
-  "announcement": {
-    "shipping_notice": "",
-    "title": "",
-    "text": ""
-  },
   "gift_card": {
-    "title": "",
-    "instructions": "",
-    "print": "",
-    "start_shopping": "",
+    "balance": "",
     "disabled": "",
     "expired_on": "",
     "expires_on": "",
-    "balance": ""
-  },
-  "custom_sections": {
-    "image_banner": {
-      "title": "",
-      "text": "",
-      "primary_button": "",
-      "image_banner_title": "",
-      "image_banner_description": "",
-      "image_banner_btn_primary": "",
-      "image_banner_btn_secondary": ""
-    },
-    "image_banner_btn_primary": "Primary action",
-    "image_banner_btn_secondary": "",
-    "image_banner_description": "",
-    "image_banner_title": ""
-  },
-  "testimonials": {
-    "verified_review": "",
-    "purchase": "",
-    "verified": ""
-  },
-  "recipient": {
-    "form": {
-      "btn_label": "",
-      "email_label": "",
-      "name_label": "",
-      "message_label": "",
-      "date_label": "",
-      "date_placeholder": "",
-      "max_characters": "",
-      "properties": {
-        "date_properties": "",
-        "email_properties": "",
-        "message_properties": "",
-        "name_properties": ""
-      }
-    },
-    "properties": {
-      "email_properties": "",
-      "name_properties": "",
-      "message_properties": "",
-      "date_properties": ""
-    }
-  },
-  "custom": {
-    "ref_variant_label": "",
-    "title": "",
-    "description": ""
-  },
-  "blogs": {
-    "posted_in": "",
-    "filter_by": "",
-    "all_topics": "",
-    "previous_post": "",
-    "next_post": "",
-    "read_more": "",
-    "posted_by": "",
-    "posted_on": "",
-    "back_to_blog": "",
-    "recent_posts": "",
-    "comments": {
-      "title": "",
-      "leave_comment": "",
-      "name": "",
-      "email": "",
-      "message": "",
-      "submit": "",
-      "success": "",
-      "error": ""
-    }
+    "instructions": "",
+    "print": "",
+    "start_shopping": "",
+    "title": ""
   },
   "map": {
     "address_error": "",
@@ -677,31 +483,225 @@
     "auth_error": "",
     "section_heading": ""
   },
-  "footer": {
-    "newsletter": {
-      "first_name_placeholder": "",
-      "email_placeholder": "",
-      "submit_button": ""
+  "newsletter": {
+    "confirmation_text": "",
+    "input_label": "",
+    "name_placeholder": "",
+    "submit_button": ""
+  },
+  "no_reviews": "",
+  "offcanvas_menu": {
+    "pagination_page_of": "",
+    "subtitle_customer_html": "",
+    "subtitle_guest_html": "",
+    "title_customer": "",
+    "title_guest": ""
+  },
+  "offcanvas_search": {
+    "input_label": "",
+    "no_results": "",
+    "result_found": "",
+    "results_found": "",
+    "search_by_voice": "",
+    "search_for": "",
+    "title": "",
+    "title_popular_products": ""
+  },
+  "password_page": {
+    "password_form": {
+      "btn_label": "",
+      "password_label": ""
     }
   },
-  "sections": {
-    "location": {
-      "section_heading": ""
-    }
+  "policy": {
+    "all_rights_reserved": "",
+    "countdown_timer": {
+      "days": "",
+      "hours": "",
+      "minutes": "",
+      "s": "",
+      "seconds": ""
+    },
+    "default_content": "",
+    "default_title": "",
+    "last_updated": "",
+    "loading": "",
+    "menu": "",
+    "newsletter": {
+      "confirmation_text": "",
+      "input_label": "",
+      "name_placeholder": "",
+      "submit_button": ""
+    },
+    "offcanvas_search_title_articles": "",
+    "password_page": {
+      "password_form": {
+        "btn_label": "",
+        "password_label": ""
+      }
+    },
+    "secure_payments": "",
+    "title": ""
+  },
+  "product": {
+    "add": "",
+    "add_to_cart": "",
+    "article_title": "",
+    "blog_excerpt": "",
+    "bought_together": {
+      "add_selected_to_cart": "",
+      "select_this": "",
+      "this_item": "",
+      "total_price": ""
+    },
+    "buy_it_now": "",
+    "color_options": "",
+    "color_swatches": "",
+    "in_stock": "",
+    "include_taxes": "",
+    "inventory_bar": {
+      "label": "",
+      "low_html": "",
+      "normal_html": "",
+      "sold_out": "",
+      "untracked": "",
+      "verylow_html": ""
+    },
+    "out_of_stock": "",
+    "price_from": "",
+    "price_regular": "",
+    "price_sale": "",
+    "price_unit": "",
+    "product": "",
+    "product_added_to_cart": "",
+    "product_options": "",
+    "purchase_options": {
+      "option_deliver_every": "",
+      "option_one_time": "",
+      "option_subscription": "",
+      "option_subscription_save": ""
+    },
+    "qty_breaks": {
+      "label_text_html": "",
+      "label_text_html_bundle": "",
+      "label_text_html_bundle_header": ""
+    },
+    "quantity": "",
+    "remove": "",
+    "save": "",
+    "select_variant": "",
+    "sku": "",
+    "sold_out": "",
+    "stock_count": "",
+    "type": "",
+    "view_details": ""
   },
   "products": {
     "color_variants": {
       "choose_color": "",
       "select_option": ""
     },
+    "product": {
+      "add_to_cart": ""
+    },
     "variant": {
       "in_stock": "",
       "out_of_stock": ""
-    },
-    "product": {
-      "add_to_cart": ""
     }
   },
-  "-": "",
-  "no_reviews": ""
+  "quiz": {
+    "btn_next": "",
+    "btn_previous": "",
+    "btn_reload_quiz": "",
+    "btn_restart": "",
+    "correct_answer": "",
+    "countdown_timer": {
+      "days": "",
+      "hours": "",
+      "minutes": "",
+      "s": "",
+      "seconds": ""
+    },
+    "finish": "",
+    "newsletter": {
+      "confirmation_text": "",
+      "input_label": "",
+      "name_placeholder": "",
+      "submit_button": ""
+    },
+    "offcanvas_search_title_articles": "",
+    "password_page": {
+      "password_form": {
+        "btn_label": "",
+        "password_label": ""
+      }
+    },
+    "question_of_html": "",
+    "results": "",
+    "score": "",
+    "start": "",
+    "title": "",
+    "try_again": "",
+    "your_answer": ""
+  },
+  "recipient": {
+    "form": {
+      "btn_label": "",
+      "date_label": "",
+      "date_placeholder": "",
+      "email_label": "",
+      "max_characters": "",
+      "message_label": "",
+      "name_label": "",
+      "properties": {
+        "date_properties": "",
+        "email_properties": "",
+        "message_properties": "",
+        "name_properties": ""
+      }
+    },
+    "properties": {
+      "date_properties": "",
+      "email_properties": "",
+      "message_properties": "",
+      "name_properties": ""
+    }
+  },
+  "search_page": {
+    "form": {
+      "btn_text": "",
+      "input_label": "",
+      "select_label": "",
+      "types": {
+        "articles": "",
+        "pages": "",
+        "products": ""
+      }
+    },
+    "no_results": "",
+    "results_with_count_and_term": "",
+    "title": "",
+    "title_search_performed": ""
+  },
+  "sections": {
+    "location": {
+      "section_heading": ""
+    }
+  },
+  "testimonials": {
+    "purchase": "",
+    "verified": "",
+    "verified_review": ""
+  },
+  "tracking": {
+    "btn_text": "",
+    "placeholder": ""
+  },
+  "wishlist": {
+    "add_to_wishlist": "",
+    "btn_label": "",
+    "empty_html": "",
+    "offcanvas_title": "",
+    "remove_from_wishlist": ""
+  }
 }
