@@ -34,7 +34,6 @@ This file can be re-written at any time.
         | replace: json_template_config.content_for_layout_placeholder, content_for_layout
         | replace: json_template_config.page_variant_id_placeholder, json_template_config.template_suffix_to_variant_id_map[template_suffix]
     }}
-  {% endcapture %}
 {% endif %}
 
 {% if content.metafields.shogun.json_template_optimizer %}
@@ -45,6 +44,5 @@ This file can be re-written at any time.
           {{ content_for_layout }}
         </template>
         {{ content.metafields.shogun.json_template_optimizer.value['body'] }}
-     {% endcapture %}
 {% endif %}
 
