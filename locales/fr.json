@@ -36,9 +36,6 @@
     "home": "",
     "label": ""
   },
-  "bundle": {
-    "label": "bundle.label"
-  },
   "cart": {
     "alert_cart_updated": "",
     "alert_item_added": "",
@@ -88,7 +85,6 @@
     "btn_filter_products": "",
     "custom_bundle": {
       "add_to_bundle": "Add to bundle",
-      "added_to_bundle": "collection.custom_bundle.added_to_bundle",
       "bundle_contents_empty_html": "",
       "bundle_contents_title": "",
       "bundle_price": "",
@@ -97,7 +93,8 @@
       "progress_completed_text": "",
       "progress_label": "",
       "progress_uncompleted_text": "",
-      "you_save": ""
+      "you_save": "",
+      "added_to_bundle": "collection.custom_bundle.added_to_bundle"
     },
     "empty_html": "",
     "filters": {
@@ -172,24 +169,24 @@
     "you_save": ""
   },
   "custom_sections": {
-    "banner": {
-      "heading": "custom_sections.banner.heading",
-      "text": "custom_sections.banner.text"
-    },
     "image_banner": {
       "image_banner_btn_primary": "",
       "image_banner_btn_secondary": "",
       "image_banner_description": "",
       "image_banner_title": "",
       "primary_button": "",
-      "secondary_button": "custom_sections.image_banner.secondary_button",
       "text": "",
-      "title": ""
+      "title": "",
+      "secondary_button": "custom_sections.image_banner.secondary_button"
     },
     "image_banner_btn_primary": "Primary action",
     "image_banner_btn_secondary": "",
     "image_banner_description": "",
     "image_banner_title": "",
+    "banner": {
+      "heading": "custom_sections.banner.heading",
+      "text": "custom_sections.banner.text"
+    },
     "image_but": {
       "description": "custom_sections.image_but.description",
       "primary_button_label": "custom_sections.image_but.primary_button_label",
@@ -229,7 +226,6 @@
       "add_new": "",
       "address1": "",
       "address2": "",
-      "cancel": "customer.addresses.cancel",
       "city": "",
       "company": "",
       "country": "",
@@ -243,13 +239,14 @@
       "no_addresses": "",
       "phone": "",
       "province": "",
-      "select_country": "customer.addresses.select_country",
       "set_default": "",
       "tab_add_new": "",
       "tab_addresses": "",
       "title": "",
       "update": "",
-      "zip": ""
+      "zip": "",
+      "cancel": "customer.addresses.cancel",
+      "select_country": "customer.addresses.select_country"
     },
     "login": {
       "create_account": "",
@@ -324,6 +321,14 @@
     }
   },
   "footer": {
+    "newsletter": {
+      "email_placeholder": "",
+      "first_name_placeholder": "",
+      "submit_button": "",
+      "description_html": "footer.newsletter.description_html",
+      "notice_html": "footer.newsletter.notice_html",
+      "title": "footer.newsletter.title"
+    },
     "about": {
       "description_html": "footer.about.description_html"
     },
@@ -331,14 +336,6 @@
       "help": "footer.menu.help",
       "legal": "footer.menu.legal",
       "store": "footer.menu.store"
-    },
-    "newsletter": {
-      "description_html": "footer.newsletter.description_html",
-      "email_placeholder": "",
-      "first_name_placeholder": "",
-      "notice_html": "footer.newsletter.notice_html",
-      "submit_button": "",
-      "title": "footer.newsletter.title"
     }
   },
   "general": {
@@ -382,7 +379,6 @@
       "home": "",
       "label": ""
     },
-    "btn_add_to_cart": "general.btn_add_to_cart",
     "contact": {
       "email": "",
       "message": "",
@@ -390,9 +386,6 @@
       "phone": "",
       "send": "",
       "success": ""
-    },
-    "cookies": {
-      "consent": "general.cookies.consent"
     },
     "copied": "",
     "copy": "",
@@ -498,8 +491,6 @@
     },
     "secure_payments": "",
     "share": "",
-    "text_btn_save": "general.text_btn_save",
-    "text_note_saved": "general.text_note_saved",
     "tracking": {
       "btn_text": "",
       "placeholder": ""
@@ -510,7 +501,13 @@
       "empty_html": "",
       "offcanvas_title": "",
       "remove_from_wishlist": ""
-    }
+    },
+    "btn_add_to_cart": "general.btn_add_to_cart",
+    "cookies": {
+      "consent": "general.cookies.consent"
+    },
+    "text_btn_save": "general.text_btn_save",
+    "text_note_saved": "general.text_note_saved"
   },
   "gift_card": {
     "balance": "",
@@ -600,21 +597,6 @@
       "this_item": "",
       "total_price": ""
     },
-    "bundle": {
-      "custom_bundle": {
-        "add_to_bundle": "product.bundle.custom_bundle.add_to_bundle",
-        "added_to_bundle": "product.bundle.custom_bundle.added_to_bundle",
-        "bundle_contents_empty_html": "product.bundle.custom_bundle.bundle_contents_empty_html",
-        "bundle_contents_title": "product.bundle.custom_bundle.bundle_contents_title",
-        "bundle_price": "product.bundle.custom_bundle.bundle_price",
-        "button_atc_text": "product.bundle.custom_bundle.button_atc_text",
-        "button_view_contents_text": "product.bundle.custom_bundle.button_view_contents_text",
-        "progress_completed_text": "product.bundle.custom_bundle.progress_completed_text",
-        "progress_label": "product.bundle.custom_bundle.progress_label",
-        "progress_uncompleted_text": "product.bundle.custom_bundle.progress_uncompleted_text",
-        "you_save": "product.bundle.custom_bundle.you_save"
-      }
-    },
     "buy_it_now": "",
     "color_options": "",
     "color_swatches": "",
@@ -656,6 +638,21 @@
     "stock_count": "",
     "type": "",
     "view_details": "",
+    "bundle": {
+      "custom_bundle": {
+        "add_to_bundle": "product.bundle.custom_bundle.add_to_bundle",
+        "added_to_bundle": "product.bundle.custom_bundle.added_to_bundle",
+        "bundle_contents_empty_html": "product.bundle.custom_bundle.bundle_contents_empty_html",
+        "bundle_contents_title": "product.bundle.custom_bundle.bundle_contents_title",
+        "bundle_price": "product.bundle.custom_bundle.bundle_price",
+        "button_atc_text": "product.bundle.custom_bundle.button_atc_text",
+        "button_view_contents_text": "product.bundle.custom_bundle.button_view_contents_text",
+        "progress_completed_text": "product.bundle.custom_bundle.progress_completed_text",
+        "progress_label": "product.bundle.custom_bundle.progress_label",
+        "progress_uncompleted_text": "product.bundle.custom_bundle.progress_uncompleted_text",
+        "you_save": "product.bundle.custom_bundle.you_save"
+      }
+    },
     "wishlist": {
       "add_to_wishlist": "product.wishlist.add_to_wishlist",
       "btn_label": "product.wishlist.btn_label",
@@ -749,8 +746,10 @@
     "title": "",
     "title_search_performed": ""
   },
-  "section": "section",
   "sections": {
+    "location": {
+      "section_heading": ""
+    },
     "alignment": {
       "center": "sections.alignment.center",
       "left": "sections.alignment.left"
@@ -790,11 +789,28 @@
           "label": "sections.list_collections.settings.text_align.label"
         }
       }
-    },
-    "location": {
-      "section_heading": ""
     }
   },
+  "testimonials": {
+    "purchase": "",
+    "verified": "",
+    "verified_review": ""
+  },
+  "tracking": {
+    "btn_text": "",
+    "placeholder": ""
+  },
+  "wishlist": {
+    "add_to_wishlist": "",
+    "btn_label": "",
+    "empty_html": "",
+    "offcanvas_title": "",
+    "remove_from_wishlist": ""
+  },
+  "bundle": {
+    "label": "bundle.label"
+  },
+  "section": "section",
   "shared": "shared",
   "shopify": {
     "checkout": {
@@ -808,23 +824,7 @@
       }
     }
   },
-  "testimonials": {
-    "purchase": "",
-    "verified": "",
-    "verified_review": ""
-  },
   "textWishlistAdd": "textWishlistAdd",
   "textWishlistBtnLabel": "textWishlistBtnLabel",
-  "textWishlistRemove": "textWishlistRemove",
-  "tracking": {
-    "btn_text": "",
-    "placeholder": ""
-  },
-  "wishlist": {
-    "add_to_wishlist": "",
-    "btn_label": "",
-    "empty_html": "",
-    "offcanvas_title": "",
-    "remove_from_wishlist": ""
-  }
+  "textWishlistRemove": "textWishlistRemove"
 }

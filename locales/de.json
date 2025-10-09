@@ -431,11 +431,11 @@
     },
     "no_reviews": "No reviews",
     "offcanvas_menu": {
-      "pagination_page_of": "general.offcanvas_menu.pagination_page_of",
       "subtitle_customer_html": "",
       "subtitle_guest_html": "",
       "title_customer": "",
-      "title_guest": ""
+      "title_guest": "",
+      "pagination_page_of": "general.offcanvas_menu.pagination_page_of"
     },
     "offcanvas_search": {
       "input_label": "",
