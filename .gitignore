@@ -17,3 +17,7 @@ venv/
 /3
 /file.yml
 backups/
+
+# local
+.env
+venv*/
