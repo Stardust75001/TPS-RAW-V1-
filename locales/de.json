@@ -354,16 +354,29 @@
     "copied": "Kopiert!",
     "copy": "Kopieren",
     "countdown_timer": {
+      "d": "T",
       "days": "Tage",
+      "expires": "Angebot endet in",
+      "h": "Std",
       "hours": "Stunden",
+      "m": "Min",
       "minutes": "Minuten",
       "s": "s",
       "seconds": "Sekunden"
     },
     "follow_us": "Folgen Sie uns",
+    "general": {
+      "copied": "Kopiert!",
+      "copy": "Kopieren",
+      "follow_us": "Folge uns",
+      "menu": "Menü",
+      "optional": "optional",
+      "share": "Teilen"
+    },
     "loading": "Laden...",
     "map": {
       "address": "Adresse",
+      "api_key_missing": "Google-Maps-API-Schlüssel fehlt",
       "email": "E-Mail",
       "hours": "Öffnungszeiten",
       "phone": "Telefon"
@@ -413,6 +426,11 @@
         "btn_label": "Absenden",
         "password_label": "Passwort"
       }
+    },
+    "policy": {
+      "default_content": "Diese Seite enthält unsere Shop-Richtlinie.",
+      "default_title": "Richtlinie",
+      "last_updated": "Zuletzt aktualisiert: {{ date }}"
     },
     "share": "Teilen"
   },

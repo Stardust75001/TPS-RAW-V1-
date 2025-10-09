@@ -365,9 +365,18 @@
       "seconds": "segundos"
     },
     "follow_us": "Siga-nos",
+    "general": {
+      "copied": "Copiado!",
+      "copy": "Copiar",
+      "follow_us": "Siga-nos",
+      "menu": "Menu",
+      "optional": "opcional",
+      "share": "Partilhar"
+    },
     "loading": "Carregando...",
     "map": {
       "address": "Endereço",
+      "api_key_missing": "A chave da API do Google Maps está ausente",
       "email": "Email",
       "hours": "Horários",
       "phone": "Telefone"
@@ -416,6 +425,21 @@
       "password_form": {
         "btn_label": "Enviar",
         "password_label": "Senha"
+      }
+    },
+    "policy": {
+      "default_content": "Esta página contém nossa política da loja.",
+      "default_title": "Política",
+      "last_updated": "Última atualização: {{ date }}"
+    },
+    "quiz": {
+      "btn_previous": "Anterior",
+      "btn_reload_quiz": "Recarregar Quiz",
+      "question_of_html": "Pergunta {{ count }} de {{ total }}"
+    },
+    "search_page": {
+      "form": {
+        "btn_text": "Buscar"
       }
     },
     "share": "Compartilhar"

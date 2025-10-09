@@ -358,12 +358,25 @@
       "days": "dagar",
       "expires": "Erbjudandet går ut om",
       "h": "h",
-      "m": "m"
+      "hours": "timmar",
+      "m": "m",
+      "minutes": "minuter",
+      "s": "s",
+      "seconds": "sekunder"
     },
     "follow_us": "Följ oss",
+    "general": {
+      "copied": "Kopierat!",
+      "copy": "Kopiera",
+      "follow_us": "Följ oss",
+      "menu": "Meny",
+      "optional": "valfritt",
+      "share": "Dela"
+    },
     "loading": "Laddar...",
     "map": {
       "address": "Adress",
+      "api_key_missing": "Google Maps API-nyckel saknas",
       "email": "E-post",
       "hours": "Öppettider",
       "phone": "Telefon"
@@ -413,6 +426,11 @@
         "btn_label": "Logga in",
         "password_label": "Ange butikslösenord"
       }
+    },
+    "policy": {
+      "default_content": "Den här sidan innehåller vår butikspolicy.",
+      "default_title": "Policy",
+      "last_updated": "Senast uppdaterad: {{ date }}"
     },
     "share": "Dela"
   },

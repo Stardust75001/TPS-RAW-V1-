@@ -354,16 +354,29 @@
     "copied": "Copiato!",
     "copy": "Copia",
     "countdown_timer": {
+      "d": "g",
       "days": "giorni",
+      "expires": "L'offerta scade tra",
+      "h": "h",
       "hours": "ore",
+      "m": "min",
       "minutes": "minuti",
       "s": "s",
       "seconds": "secondi"
     },
     "follow_us": "Seguici",
+    "general": {
+      "copied": "Copiato!",
+      "copy": "Copia",
+      "follow_us": "Seguici",
+      "menu": "Menu",
+      "optional": "opzionale",
+      "share": "Condividi"
+    },
     "loading": "Caricamento...",
     "map": {
       "address": "Indirizzo",
+      "api_key_missing": "Chiave API di Google Maps mancante",
       "email": "Email",
       "hours": "Orari",
       "phone": "Telefono"
@@ -413,6 +426,11 @@
         "btn_label": "Invia",
         "password_label": "Password"
       }
+    },
+    "policy": {
+      "default_content": "Questa pagina contiene la nostra informativa del negozio.",
+      "default_title": "Informativa",
+      "last_updated": "Ultimo aggiornamento: {{ date }}"
     },
     "share": "Condividi"
   },

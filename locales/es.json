@@ -354,16 +354,29 @@
     "copied": "¡Copiado!",
     "copy": "Copiar",
     "countdown_timer": {
+      "d": "d",
       "days": "días",
+      "expires": "La oferta expira en",
+      "h": "h",
       "hours": "horas",
+      "m": "min",
       "minutes": "minutos",
       "s": "s",
       "seconds": "segundos"
     },
     "follow_us": "Síguenos",
+    "general": {
+      "copied": "¡Copiado!",
+      "copy": "Copiar",
+      "follow_us": "Síguenos",
+      "menu": "Menú",
+      "optional": "opcional",
+      "share": "Compartir"
+    },
     "loading": "Cargando...",
     "map": {
       "address": "Dirección",
+      "api_key_missing": "Falta la clave API de Google Maps",
       "email": "Email",
       "hours": "Horarios",
       "phone": "Teléfono"
@@ -413,6 +426,11 @@
         "btn_label": "Enviar",
         "password_label": "Contraseña"
       }
+    },
+    "policy": {
+      "default_content": "Esta página contiene nuestra política de tienda.",
+      "default_title": "Política",
+      "last_updated": "Última actualización: {{ date }}"
     },
     "share": "Compartir"
   },

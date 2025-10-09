@@ -113,6 +113,26 @@
     "paginate_count": "{{ count }} sur {{ total }} produits affichés",
     "sort_by": "Trier par"
   },
+  "contact": {
+    "email": "E-mail",
+    "form": {
+      "email": "E-mail",
+      "error": "Une erreur est survenue lors de l’envoi du message. Veuillez réessayer.",
+      "message": "Message",
+      "name": "Nom",
+      "phone": "Téléphone",
+      "submit": "Envoyer le message",
+      "success": "Merci pour votre message. Nous vous répondrons bientôt.",
+      "title": "Nous contacter"
+    },
+    "info": {
+      "address": "Adresse",
+      "email": "E-mail",
+      "hours": "Horaires",
+      "phone": "Téléphone",
+      "title": "Informations de contact"
+    }
+  },
   "custom": {
     "description": "Personnalisez votre sélection",
     "title": "Personnaliser"

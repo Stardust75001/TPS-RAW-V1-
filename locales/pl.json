@@ -353,10 +353,30 @@
     },
     "copied": "Skopiowano!",
     "copy": "Kopiuj",
+    "countdown_timer": {
+      "d": "d",
+      "days": "dni",
+      "expires": "Oferta kończy się za",
+      "h": "g",
+      "hours": "godziny",
+      "m": "min",
+      "minutes": "minuty",
+      "s": "s",
+      "seconds": "sekundy"
+    },
     "follow_us": "Śledź nas",
+    "general": {
+      "copied": "Skopiowano!",
+      "copy": "Kopiuj",
+      "follow_us": "Obserwuj nas",
+      "menu": "Menu",
+      "optional": "opcjonalne",
+      "share": "Udostępnij"
+    },
     "loading": "Ładowanie...",
     "map": {
       "address": "Adres",
+      "api_key_missing": "Brak klucza API Google Maps",
       "email": "Email",
       "hours": "Godziny",
       "phone": "Telefon"
@@ -406,6 +426,11 @@
         "btn_label": "Wejdź",
         "password_label": "Wprowadź hasło sklepu"
       }
+    },
+    "policy": {
+      "default_content": "Ta strona zawiera naszą politykę sklepu.",
+      "default_title": "Polityka",
+      "last_updated": "Ostatnia aktualizacja: {{ date }}"
     },
     "share": "Udostępnij"
   },

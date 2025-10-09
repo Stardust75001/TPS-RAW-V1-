@@ -353,10 +353,30 @@
     },
     "copied": "Gekopieerd!",
     "copy": "Kopiëren",
+    "countdown_timer": {
+      "d": "d",
+      "days": "dagen",
+      "expires": "Aanbieding eindigt in",
+      "h": "u",
+      "hours": "uren",
+      "m": "m",
+      "minutes": "minuten",
+      "s": "s",
+      "seconds": "seconden"
+    },
     "follow_us": "Volg ons",
+    "general": {
+      "copied": "Gekopieerd!",
+      "copy": "Kopiëren",
+      "follow_us": "Volg ons",
+      "menu": "Menu",
+      "optional": "optioneel",
+      "share": "Delen"
+    },
     "loading": "Laden...",
     "map": {
       "address": "Adres",
+      "api_key_missing": "Google Maps API-sleutel ontbreekt",
       "email": "E-mail",
       "hours": "Openingstijden",
       "phone": "Telefoon"
@@ -406,6 +426,11 @@
         "btn_label": "Invoeren",
         "password_label": "Voer winkelwachtwoord in"
       }
+    },
+    "policy": {
+      "default_content": "Deze pagina bevat ons winkelbeleid.",
+      "default_title": "Beleid",
+      "last_updated": "Laatst bijgewerkt: {{ date }}"
     },
     "share": "Delen"
   },

@@ -113,6 +113,26 @@
     "paginate_count": "{{ count }} af {{ total }} produkter vist",
     "sort_by": "Sorter efter"
   },
+  "contact": {
+    "email": "Email",
+    "form": {
+      "email": "Email",
+      "error": "Der opstod en fejl under afsendelsen af din besked. Prøv igen.",
+      "message": "Besked",
+      "name": "Navn",
+      "phone": "Telefon",
+      "submit": "Send besked",
+      "success": "Tak for din besked. Vi vender snart tilbage.",
+      "title": "Kontakt os"
+    },
+    "info": {
+      "address": "Adresse",
+      "email": "Email",
+      "hours": "Åbningstider",
+      "phone": "Telefon",
+      "title": "Kontaktinformation"
+    }
+  },
   "custom": {
     "description": "Tilpas dit valg",
     "title": "Tilpas"
