@@ -402,12 +402,15 @@
     },
     "follow_us": "",
     "general": {
-      "copied": "",
-      "copy": "",
-      "follow_us": "",
-      "menu": "",
-      "optional": "",
-      "share": ""
+  "copied": "",
+  "copy": "",
+  "follow_us": "",
+  "menu": "",
+  "optional": "",
+  "share": "",
+  "loading": "Loading...",
+  "secure_payments": "Secure payments",
+  "pagination_page_of": "Page {{ count }} of {{ total }}"
     },
     "loading": "",
     "map": {
