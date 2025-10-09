@@ -8,3 +8,6 @@ RemoteAsset:
   enabled: false
 ImgLazyLoading:
   enabled: false
+
+SchemaJsonFormat:
+  enabled: false
