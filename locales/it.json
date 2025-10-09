@@ -19,7 +19,7 @@
       "cart_product_list": "Lista prodotti del carrello",
       "payment_methods": "Metodi di pagamento",
       "load_more_products": "Carica più prodotti",
-      "sorted_by": "Ordinato per",
+
       "product_media_gallery": "Galleria media del prodotto",
       "product_options": "Opzioni del prodotto",
       "slide_of": "Diapositiva {{ current }} di {{ total }}",
