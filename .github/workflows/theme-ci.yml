@@ -50,4 +50,4 @@ jobs:
       - name: Run theme-check
         uses: shopify/theme-check-action@v2
         with:
-          fail_level: error
+          flags: "--fail-level error"
