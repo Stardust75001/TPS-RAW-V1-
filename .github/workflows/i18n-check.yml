@@ -1,0 +1,59 @@
+name: i18n validation
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'locales/**'
+      - 'i18n-*.js'
+      - 'package.json'
+      - 'package-lock.json'
+
+jobs:
+  i18n-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: npm ci || npm i
+
+      - name: Sanity: parse all locale JSONs (tolerant)
+        run: |
+          node -e 'const fs=require("fs"),j=require("json5");
+          const files=fs.readdirSync("locales").filter(f=>f.endsWith(".json") && !f.endsWith(".schema.json") && f!=="untranslated_keys.csv");
+          let bad=0;
+          for(const f of files){
+            try{ j.parse(fs.readFileSync(`locales/${f}`,"utf8")); console.log("OK ",f); }
+            catch(e){ console.log("BAD",f,"@",e.lineNumber,e.columnNumber,"-",e.message); bad++; }
+          }
+          if(bad>0){ process.exit(1); }'
+
+      - name: Generate CSVs & fill (no commit in CI)
+        run: |
+          node i18n-fix-selfrefs.js || true
+          node i18n-fill-all.js || true
+          node i18n-empty-report.js || true
+
+      - name: Upload CSV artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: i18n-csv
+          path: |
+            i18n-missing-export.csv
+            i18n-empty-strings.csv
+          if-no-files-found: ignore
+
+      - name: Fail if repo dirty after fill (devs must run scripts locally)
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Repo has uncommitted changes after i18n fill. Run the i18n scripts locally and commit."
+            git status --porcelain
+            exit 42
+          fi
