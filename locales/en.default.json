@@ -110,6 +110,7 @@
             "to": "To",
             "view_more": "View more",
             "view_results": "View results"
+                    ,"max_range_notice": "Maximum range reached"
         },
         "load_more": "Load more products",
         "load_previous": "Load previous products",
@@ -272,8 +273,9 @@
         }
     },
     "custom": {
-        "description": "Customize your selection",
-        "title": "Customize"
+    "description": "Customize your selection",
+    "ref_variant_label": "Select a reference variant",
+    "title": "Customize"
     },
     "custom_bundle": {
         "add_to_bundle": "Add to bundle",
