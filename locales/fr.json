@@ -12,7 +12,7 @@
   },
   "blogs": {
     "all_topics": "Tous les sujets",
-    "back_to_blog": "Retour à {{ blog_title }}",
+    "back_to_blog": "Retour à ",
     "comments": {
       "email": "Email",
       "error": "Une erreur s'est produite lors de la publication de votre commentaire.",
@@ -77,7 +77,7 @@
       "phone": "Téléphone",
       "shipping_address": "Adresse de livraison",
       "thank_you": "Merci pour votre commande !",
-      "title": "Commande {{ order_number }}",
+      "title": "Commande ",
       "total": "Total"
     }
   },
@@ -108,7 +108,7 @@
     },
     "load_more": "Charger plus",
     "load_previous": "Charger les précédents",
-    "paginate_count": "Affichage de {{ count }} sur {{ total }} produits",
+    "paginate_count": "Affichage de  sur  produits",
     "sort_by": "Trier par"
   },
   "contact": {
@@ -260,12 +260,12 @@
     "order": {
       "billing_address": "Adresse de facturation",
       "cancelled": "Annulée",
-      "cancelled_html": "Commande annulée le {{ date }}",
-      "cancelled_reason": "Raison : {{ reason }}",
+      "cancelled_html": "Commande annulée le ",
+      "cancelled_reason": "Raison : ",
       "date": "Date",
-      "date_html": "Passée le {{ date }}",
+      "date_html": "Passée le ",
       "discount": "Remise",
-      "fulfilled_at_html": "Traitée le {{ date }}",
+      "fulfilled_at_html": "Traitée le ",
       "fulfillment_status": "Statut de traitement",
       "note": "Note de commande",
       "payment_status": "Statut du paiement",
@@ -278,7 +278,7 @@
       "sku": "SKU",
       "subtotal": "Sous-total",
       "tax": "Taxe",
-      "title": "Commande {{ name }}",
+      "title": "Commande ",
       "total": "Total",
       "track_shipment": "Suivre l'expédition",
       "tracking_company": "Transporteur",
@@ -316,7 +316,7 @@
       "password": "Nouveau mot de passe",
       "password_confirm": "Confirmer le mot de passe",
       "submit": "Réinitialiser le mot de passe",
-      "subtext": "Réinitialiser le mot de passe pour {{ email }}",
+      "subtext": "Réinitialiser le mot de passe pour ",
       "title": "Réinitialiser votre mot de passe"
     }
   },
@@ -368,7 +368,7 @@
       "search": "",
       "skip_content": "Passer au contenu",
       "skip_product_content": "Passer aux informations produit",
-      "slide_of": "Diapositive {{ current }} sur {{ total }}",
+      "slide_of": "Diapositive  sur ",
       "sorted_by": "Trié par",
       "toggle_sound": "Activer/désactiver le son",
       "utility_icons": "Icônes utilitaires",
@@ -410,7 +410,7 @@
       "share": "Share",
       "loading": "Chargement...",
       "secure_payments": "Paiements sécurisés",
-      "pagination_page_of": "Page {{ count }} sur {{ total }}"
+      "pagination_page_of": "Page  sur "
     },
     "loading": "",
     "map": {
@@ -460,7 +460,7 @@
     "offcanvas_search_title_pages": "Pages",
     "offcanvas_search_title_products": "Produits",
     "optional": "optionnel",
-    "pagination_page_of": "Page {{ count }} sur {{ total }}",
+    "pagination_page_of": "Page  sur ",
     "password_page": {
       "password_form": {
         "btn_label": "",
@@ -516,8 +516,8 @@
   "gift_card": {
     "balance": "Solde",
     "disabled": "Désactivée",
-    "expired_on": "Expirée le {{ date }}",
-    "expires_on": "Expire le {{ date }}",
+    "expired_on": "Expirée le ",
+    "expires_on": "Expire le ",
     "instructions": "Utilisez ce code lors du paiement pour utiliser votre carte cadeau.",
     "print": "Imprimer",
     "start_shopping": "Commencer vos achats",
@@ -538,10 +538,10 @@
   },
   "no_reviews": "",
   "offcanvas_menu": {
-    "pagination_page_of": "Page {{ count }} sur {{ total }}",
+    "pagination_page_of": "Page  sur ",
     "subtitle_customer_html": "Gérez votre compte et vos commandes",
     "subtitle_guest_html": "Veuillez <a href='#'>vous connecter</a> ou <a href='#'>créer un compte</a>",
-    "title_customer": "Bonjour, {{ name }}",
+    "title_customer": "Bonjour, ",
     "title_guest": "Bienvenue"
   },
   "offcanvas_search": {
@@ -571,7 +571,7 @@
     },
     "default_content": "Cette page contient notre politique de magasin.",
     "default_title": "Politique",
-    "last_updated": "Dernière mise à jour : {{ date }}",
+    "last_updated": "Dernière mise à jour : ",
     "loading": "Chargement...",
     "menu": "Menu",
     "newsletter": {
@@ -626,12 +626,12 @@
       "option_deliver_every": "Livrer tous les",
       "option_one_time": "Achat unique",
       "option_subscription": "S'abonner et économiser",
-      "option_subscription_save": "Économisez {{ value }}%"
+      "option_subscription_save": "Économisez %"
     },
     "qty_breaks": {
-      "label_text_html": "Achetez {{ qty }} pour {{ pricecash }} chacun (économisez {{ save }})",
-      "label_text_html_bundle": "Quantité : {{ qty }}",
-      "label_text_html_bundle_header": "Prix du lot : {{ pricecash }} (économisez {{ save }})"
+      "label_text_html": "Achetez  pour  chacun (économisez )",
+      "label_text_html_bundle": "Quantité : ",
+      "label_text_html_bundle_header": "Prix du lot :  (économisez )"
     },
     "quantity": "Quantité",
     "remove": "Retirer",
@@ -639,7 +639,7 @@
     "select_variant": "Sélectionner une variante",
     "sku": "SKU",
     "sold_out": "Épuisé",
-    "stock_count": "Plus que {{ count }} en stock",
+    "stock_count": "Plus que  en stock",
     "type": "Type",
     "view_details": "Voir les détails",
     "bundle": {
@@ -703,9 +703,9 @@
         "password_label": ""
       }
     },
-    "question_of_html": "Question {{ count }} sur {{ total }}",
+    "question_of_html": "Question  sur ",
     "results": "Résultats du quiz",
-    "score": "Votre score : {{ score }}%",
+    "score": "Votre score : %",
     "start": "Commencer le quiz",
     "title": "Quiz",
     "try_again": "Réessayer",
@@ -717,7 +717,7 @@
       "date_label": "Date de livraison (optionnel)",
       "date_placeholder": "AAAA-MM-JJ",
       "email_label": "Email du destinataire",
-      "max_characters": "Max {{ count }} caractères",
+      "max_characters": "Max  caractères",
       "message_label": "Message (optionnel)",
       "name_label": "Nom du destinataire",
       "properties": {
@@ -745,8 +745,8 @@
         "products": "Produits"
       }
     },
-    "no_results": "Aucun résultat trouvé pour \"{{ terms }}\"",
-    "results_with_count_and_term": "{{ count }} résultats pour \"{{ terms }}\"",
+    "no_results": "Aucun résultat trouvé pour \"\"",
+    "results_with_count_and_term": " résultats pour \"\"",
     "title": "Rechercher",
     "title_search_performed": "Résultats de recherche"
   },

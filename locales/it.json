@@ -12,7 +12,7 @@
   },
   "blogs": {
     "all_topics": "Tutti gli argomenti",
-    "back_to_blog": "Torna a {{ blog_title }}",
+    "back_to_blog": "Torna a ",
     "comments": {
       "email": "Email",
       "error": "Si è verificato un errore nella pubblicazione del tuo commento.",
@@ -77,7 +77,7 @@
       "phone": "Telefono",
       "shipping_address": "Indirizzo di spedizione",
       "thank_you": "Grazie per il tuo ordine!",
-      "title": "Ordine {{ order_number }}",
+      "title": "Ordine ",
       "total": "Totale"
     }
   },
@@ -108,7 +108,7 @@
     },
     "load_more": "Carica altro",
     "load_previous": "Carica precedenti",
-    "paginate_count": "Mostrando {{ count }} di {{ total }} prodotti",
+    "paginate_count": "Mostrando  di  prodotti",
     "sort_by": "Ordina per"
   },
   "contact": {
@@ -260,12 +260,12 @@
     "order": {
       "billing_address": "Indirizzo di fatturazione",
       "cancelled": "Annullato",
-      "cancelled_html": "Ordine annullato il {{ date }}",
-      "cancelled_reason": "Motivo: {{ reason }}",
+      "cancelled_html": "Ordine annullato il ",
+      "cancelled_reason": "Motivo: ",
       "date": "Data",
-      "date_html": "Effettuato il {{ date }}",
+      "date_html": "Effettuato il ",
       "discount": "Sconto",
-      "fulfilled_at_html": "Evaso il {{ date }}",
+      "fulfilled_at_html": "Evaso il ",
       "fulfillment_status": "Stato evasione",
       "note": "Nota ordine",
       "payment_status": "Stato pagamento",
@@ -278,7 +278,7 @@
       "sku": "SKU",
       "subtotal": "Subtotale",
       "tax": "Tassa",
-      "title": "Ordine {{ name }}",
+      "title": "Ordine ",
       "total": "Totale",
       "track_shipment": "Traccia spedizione",
       "tracking_company": "Corriere",
@@ -316,7 +316,7 @@
       "password": "Nuova password",
       "password_confirm": "Conferma password",
       "submit": "Reimposta password",
-      "subtext": "Reimposta password per {{ email }}",
+      "subtext": "Reimposta password per ",
       "title": "Reimposta la tua password"
     }
   },
@@ -369,7 +369,7 @@
       "search": "Cerca",
       "skip_content": "Salta al contenuto",
       "skip_product_content": "Passa alle informazioni sul prodotto",
-      "slide_of": "Diapositiva {{ current }} di {{ total }}",
+      "slide_of": "Diapositiva  di ",
       "sorted_by": "Ordinato per",
       "toggle_sound": "Attiva/disattiva suono",
       "utility_icons": "Icone di utilità",
@@ -411,7 +411,7 @@
       "share": "",
       "loading": "Caricamento...",
       "secure_payments": "Pagamenti sicuri",
-      "pagination_page_of": "Pagina {{ count }} di {{ total }}"
+      "pagination_page_of": "Pagina  di "
     },
     "map": {
       "address": "",
@@ -460,7 +460,7 @@
     "offcanvas_search_title_pages": "Pagine",
     "offcanvas_search_title_products": "Prodotti",
     "optional": "opzionale",
-    "pagination_page_of": "Pagina {{ count }} di {{ total }}",
+    "pagination_page_of": "Pagina  di ",
     "password_page": {
       "password_form": {
         "btn_label": "",
@@ -516,8 +516,8 @@
   "gift_card": {
     "balance": "Saldo",
     "disabled": "Disabilitata",
-    "expired_on": "Scaduta il {{ date }}",
-    "expires_on": "Scade il {{ date }}",
+    "expired_on": "Scaduta il ",
+    "expires_on": "Scade il ",
     "instructions": "Usa questo codice al checkout per riscattare la tua carta regalo.",
     "print": "Stampa",
     "start_shopping": "Inizia lo shopping",
@@ -538,10 +538,10 @@
   },
   "no_reviews": "",
   "offcanvas_menu": {
-    "pagination_page_of": "Pagina {{ count }} di {{ total }}",
+    "pagination_page_of": "Pagina  di ",
     "subtitle_customer_html": "Gestisci il tuo account e i tuoi ordini",
     "subtitle_guest_html": "Per favore <a href='#'>accedi</a> o <a href='#'>crea un account</a>",
-    "title_customer": "Ciao, {{ name }}",
+    "title_customer": "Ciao, ",
     "title_guest": "Benvenuto"
   },
   "offcanvas_search": {
@@ -571,7 +571,7 @@
     },
     "default_content": "Questa pagina contiene la nostra politica del negozio.",
     "default_title": "Politica",
-    "last_updated": "Ultimo aggiornamento: {{ date }}",
+    "last_updated": "Ultimo aggiornamento: ",
     "loading": "Caricamento...",
     "menu": "Menu",
     "newsletter": {
@@ -626,12 +626,12 @@
       "option_deliver_every": "Consegna ogni",
       "option_one_time": "Acquisto singolo",
       "option_subscription": "Abbonati e risparmia",
-      "option_subscription_save": "Risparmia {{ value }}%"
+      "option_subscription_save": "Risparmia %"
     },
     "qty_breaks": {
-      "label_text_html": "Acquista {{ qty }} per {{ pricecash }} ciascuno (risparmia {{ save }})",
-      "label_text_html_bundle": "Quantità: {{ qty }}",
-      "label_text_html_bundle_header": "Prezzo bundle: {{ pricecash }} (risparmia {{ save }})"
+      "label_text_html": "Acquista  per  ciascuno (risparmia )",
+      "label_text_html_bundle": "Quantità: ",
+      "label_text_html_bundle_header": "Prezzo bundle:  (risparmia )"
     },
     "quantity": "Quantità",
     "remove": "Rimuovi",
@@ -639,7 +639,7 @@
     "select_variant": "Seleziona variante",
     "sku": "SKU",
     "sold_out": "Esaurito",
-    "stock_count": "Solo {{ count }} rimasti in magazzino",
+    "stock_count": "Solo  rimasti in magazzino",
     "type": "Tipo",
     "view_details": "Visualizza dettagli",
     "bundle": {
@@ -703,9 +703,9 @@
         "password_label": ""
       }
     },
-    "question_of_html": "Domanda {{ count }} di {{ total }}",
+    "question_of_html": "Domanda  di ",
     "results": "Risultati Quiz",
-    "score": "Il tuo punteggio: {{ score }}%",
+    "score": "Il tuo punteggio: %",
     "start": "Inizia Quiz",
     "title": "Quiz",
     "try_again": "Riprova",
@@ -717,7 +717,7 @@
       "date_label": "Data di consegna (opzionale)",
       "date_placeholder": "AAAA-MM-GG",
       "email_label": "Email destinatario",
-      "max_characters": "Max {{ count }} caratteri",
+      "max_characters": "Max  caratteri",
       "message_label": "Messaggio (opzionale)",
       "name_label": "Nome destinatario",
       "properties": {
@@ -745,8 +745,8 @@
         "products": "Prodotti"
       }
     },
-    "no_results": "Nessun risultato trovato per \"{{ terms }}\"",
-    "results_with_count_and_term": "{{ count }} risultati per \"{{ terms }}\"",
+    "no_results": "Nessun risultato trovato per \"\"",
+    "results_with_count_and_term": " risultati per \"\"",
     "title": "Cerca",
     "title_search_performed": "Risultati di ricerca"
   },
