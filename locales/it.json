@@ -403,17 +403,16 @@
     },
     "follow_us": "Seguici",
     "general": {
-    "copied": "",
-    "copy": "",
-    "follow_us": "",
-    "menu": "",
-    "optional": "",
-    "share": "",
-    "loading": "Caricamento...",
-    "secure_payments": "Pagamenti sicuri",
-    "pagination_page_of": "Pagina {{ count }} di {{ total }}"
+      "copied": "",
+      "copy": "",
+      "follow_us": "",
+      "menu": "",
+      "optional": "",
+      "share": "",
+      "loading": "Caricamento...",
+      "secure_payments": "Pagamenti sicuri",
+      "pagination_page_of": "Pagina {{ count }} di {{ total }}"
     },
-  
     "map": {
       "address": "",
       "api_key_missing": "",
@@ -431,7 +430,8 @@
       "confirmation_text": "",
       "input_label": "",
       "name_placeholder": "",
-      "submit_button": ""
+      "submit_button": "",
+      "input_name_label": "Enter your first name"
     },
     "no_reviews": "No reviews",
     "offcanvas_menu": {

@@ -430,7 +430,8 @@
       "confirmation_text": "Tak for din tilmelding!",
       "input_label": "Din e-mailadresse",
       "name_placeholder": "Dit fornavn",
-      "submit_button": "Tilmeld"
+      "submit_button": "Tilmeld",
+      "input_name_label": "Enter your first name"
     },
     "no_reviews": "Ingen anmeldelser",
     "offcanvas_menu": {

@@ -528,6 +528,7 @@ main {
     line-height: 1.4 !important;
     box-sizing: border-box !important;
     background: #fff !important;
+    min-width: 0 !important;
   }
   
   /* Section newsletter plus compacte sur mobile */

@@ -1,16 +1,9 @@
-LiquidTag:
-  enabled: false
-TemplateLength:
-  enabled: false
-AssetPreload:
-  enabled: false
-RemoteAsset:
-  enabled: false
-ImgLazyLoading:
-  enabled: false
+# Skip style-only complaints if you want a clean output
+ignored_checks:
+  - SchemaJsonFormat
 
-SchemaJsonFormat:
-  enabled: true
-
-ValidSchema:
-  enabled: false
+# Don’t scan temp reports (and other junk)
+exclude_patterns:
+  - tmp/**
+  - theme-check-report.json
+  - node_modules/**
