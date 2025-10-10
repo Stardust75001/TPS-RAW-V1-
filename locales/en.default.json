@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "-": "",
   "404_page": {
@@ -402,15 +411,15 @@
     },
     "follow_us": "",
     "general": {
-  "copied": "",
-  "copy": "",
-  "follow_us": "",
-  "menu": "",
-  "optional": "",
-  "share": "",
-  "loading": "Loading...",
-  "secure_payments": "Secure payments",
-  "pagination_page_of": "Page {{ count }} of {{ total }}"
+      "copied": "",
+      "copy": "",
+      "follow_us": "",
+      "menu": "",
+      "optional": "",
+      "share": "",
+      "loading": "Loading...",
+      "secure_payments": "Secure payments",
+      "pagination_page_of": "Page {{ count }} of {{ total }}"
     },
     "loading": "",
     "map": {
@@ -427,11 +436,11 @@
     "map_phone": "",
     "menu": "",
     "newsletter": {
-  "confirmation_text": "",
-  "input_label": "Enter your email",
-  "name_placeholder": "Enter your first name",
-  "submit_button": "Subscribe",
-  "input_name_label": "Enter your first name"
+      "confirmation_text": "",
+      "input_label": "Enter your email",
+      "name_placeholder": "Enter your first name",
+      "submit_button": "Subscribe",
+      "input_name_label": "Enter your first name"
     },
     "no_reviews": "No reviews",
     "offcanvas_menu": {
@@ -536,7 +545,7 @@
     "name_placeholder": "",
     "submit_button": ""
   },
-  "no_reviews": "",
+  "no_reviews": "No reviews",
   "offcanvas_menu": {
     "pagination_page_of": "",
     "subtitle_customer_html": "",
