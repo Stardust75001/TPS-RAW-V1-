@@ -428,10 +428,10 @@
     "menu": "",
     "newsletter": {
       "confirmation_text": "",
-      "input_label": "Geben Sie Ihre E-Mail ein",
-      "name_placeholder": "Geben Sie Ihren Vornamen ein",
-      "submit_button": "Abonnieren",
-      "input_name_label": "Geben Sie Ihren Vornamen ein"
+      "input_label": "",
+      "name_placeholder": "",
+      "submit_button": "",
+      "input_name_label": "Enter your first name"
     },
     "no_reviews": "No reviews",
     "offcanvas_menu": {

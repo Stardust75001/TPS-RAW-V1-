@@ -2,7 +2,7 @@
 :root {
   --z-header: 15000;
   --z-offcanvas: 16000;
-/* End of media query and custom styles */
+}
 
 /* === Sticky Header Group === */
 .header-sticky-group {
@@ -245,64 +245,48 @@ main {
   display: none;
 }
 
-/* Newsletter section custom styles */
-.newsletter-form {
-  padding: 1rem 0.5rem;
-  background: var(--color-newsletter-bg, #e5d3c6);
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  min-height: 120px;
-  max-height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.newsletter-input-row {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-.newsletter-name-input,
-.newsletter-email-input {
-  flex: 1;
-  padding: 0.4rem 0.5rem;
-  font-size: 0.85rem;
-  border-radius: 0.25rem;
-  border: 1px solid #ccc;
-}
-.newsletter-btn-row {
-  display: flex;
-  justify-content: center;
-  margin-top: 0.5rem;
-}
-@media screen and (max-width: 768px) {
-  .newsletter-form {
-    padding: 0.5rem 0.25rem;
-    min-height: 80px;
-    max-height: 120px;
-  }
-  .newsletter-input-row {
-    flex-direction: row;
-    gap: 0.25rem;
-    margin-bottom: 0.25rem;
-  }
-  .newsletter-name-input,
-  .newsletter-email-input {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.3rem;
-  }
-  .newsletter-btn-row {
-    margin-top: 0.25rem;
-  }
+.only-desktop {
+  display: block;
 }
 
-/* Fix orphaned styles from previous edits */
-.newsletter-label {
-  left: 50%;
-  transform: translate(-50%, 0);
-  font-size: 12px;
-  padding: 4px 8px; /* Réduit */
-}
+@media screen and (max-width: 768px) {
+  .only-mobile {
+    display: block;
+  }
+
+  .only-desktop {
+    display: none;
+  }
+
+  /* Réduction de l'espace header pour mobile */
+  .top-social-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px; /* Réduit de 8px 10px */
+    height: 45px; /* Réduit de 60px */
+  }
+
+  .stories-bar {
+    padding: 3px 6px; /* Réduit de 4px 8px */
+  }
+
+  .stories-bar-wrapper {
+    padding: 6px 0; /* Réduit de 10px 0 */
+  }
+
+  .animated-stories-link img {
+    width: 45px; /* Réduit de 50px */
+    height: 45px; /* Réduit de 50px */
+  }
+
+  .tooltip-bubble {
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 12px;
+    padding: 4px 8px; /* Réduit */
+  }
 
   /* Optimisation hero image mobile */
   .image-banner-title {

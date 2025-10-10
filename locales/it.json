@@ -428,10 +428,10 @@
     "menu": "Menu",
     "newsletter": {
       "confirmation_text": "",
-      "input_label": "Inserisci la tua email",
+      "input_label": "",
       "name_placeholder": "Inserisci il tuo nome",
-      "submit_button": "Iscriviti",
-      "input_name_label": "Inserisci il tuo nome"
+      "submit_button": "",
+      "input_name_label": "Enter your first name"
     },
     "no_reviews": "No reviews",
     "offcanvas_menu": {
@@ -577,10 +577,9 @@
     "newsletter": {
       "confirmation_text": "",
       "input_label": "Inserisci la tua email",
-      "name_placeholder": "Inserisci il tuo nome",
+      "name_placeholder": "",
       "submit_button": "Iscriviti",
-      "input_name_label": "Inserisci il tuo nome"
-    },
+      "input_name_label": "Inserisci il tuo nome",
     "offcanvas_search_title_articles": "",
     "password_page": {
       "password_form": {
