@@ -429,7 +429,7 @@
     "newsletter": {
       "confirmation_text": "",
       "input_label": "",
-      "name_placeholder": "",
+      "name_placeholder": "Digite seu primeiro nome",
       "submit_button": "",
       "input_name_label": "Enter your first name"
     },
@@ -535,7 +535,7 @@
     "input_label": "Digite seu e-mail",
     "name_placeholder": "",
     "submit_button": "Inscrever-se",
-    "input_name_label": "Digite seu primeiro nome"
+    "input_name_label": "Digite seu primeiro nome",
   "no_reviews": "",
   "offcanvas_menu": {
     "pagination_page_of": "",

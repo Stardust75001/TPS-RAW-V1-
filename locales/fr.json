@@ -429,7 +429,7 @@
     "newsletter": {
       "confirmation_text": "",
       "input_label": "",
-      "name_placeholder": "",
+      "name_placeholder": "Entrez votre prénom",
       "submit_button": "",
       "input_name_label": "Enter your first name"
     },

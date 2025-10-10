@@ -429,7 +429,7 @@
     "newsletter": {
       "confirmation_text": "",
       "input_label": "",
-      "name_placeholder": "",
+      "name_placeholder": "Ange ditt förnamn",
       "submit_button": "",
       "input_name_label": "Enter your first name"
     },
@@ -535,7 +535,7 @@
     "input_label": "Ange din e-post",
     "name_placeholder": "",
     "submit_button": "Prenumerera",
-    "input_name_label": "Ange ditt förnamn"
+    "input_name_label": "Ange ditt förnamn",
   "no_reviews": "",
   "offcanvas_menu": {
     "pagination_page_of": "",

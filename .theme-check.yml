@@ -1,3 +1,17 @@
-checks:
-  SchemaJsonFormat:
-    enabled: false
+extends: theme-check:recommended
+
+# Keep these on
+ValidJson:
+  enabled: true
+ValidSchema:
+  enabled: true
+
+# Silence the “Use {% liquid %} …” nags
+LiquidTag:
+  enabled: false
+
+# (Optional) reduce TemplateLength to a suggestion instead of error
+TemplateLength:
+  enabled: true
+  severity: suggestion
+  max_length: 600
