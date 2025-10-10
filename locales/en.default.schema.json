@@ -407,7 +407,10 @@
       "follow_us": "",
       "menu": "",
       "optional": "",
-      "share": ""
+      "share": "",
+      "loading": "Loading...",
+      "secure_payments": "Secure payments",
+      "pagination_page_of": "Page {{ count }} of {{ total }}"
     },
     "loading": "",
     "map": {

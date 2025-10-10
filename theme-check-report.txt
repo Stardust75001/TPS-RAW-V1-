@@ -1,0 +1,7 @@
+[34msections/template-password.liquid:208[0m: [36mstyle[0m: [33mSchemaJsonFormat[0m: JSON formatting could be improved.
+	{% schema %}
+	   ^^^^^^^
+
+[34mtheme-check-report.json[0m: [31merror[0m: [33mValidJson[0m: Invalid syntax in JSON.
+
+347 files inspected, [31m2 offenses[0m detected, [33m1 offenses[0m auto-correctable
