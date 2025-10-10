@@ -56,7 +56,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
             </div>
         {% elsif section.settings.img_mobile or section.settings.img_desktop %}
             <div class="media-mobile">
-                <img loading="lazy" 
+                <img loading="eager" 
                   class="parallax-scroll-media"
                   src="{{ section.settings.img_mobile | image_url: width: '800' }}" 
                   alt="{{ section.settings.img_mobile.alt }}"

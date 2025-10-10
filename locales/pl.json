@@ -428,10 +428,10 @@
     "menu": "",
     "newsletter": {
       "confirmation_text": "",
-      "input_label": "",
+      "input_label": "Wpisz swój email",
       "name_placeholder": "Wpisz swoje imię",
-      "submit_button": "",
-      "input_name_label": "Enter your first name"
+      "submit_button": "Zapisz się",
+      "input_name_label": "Wpisz swoje imię"
     },
     "no_reviews": "No reviews",
     "offcanvas_menu": {
@@ -577,7 +577,7 @@
     "newsletter": {
       "confirmation_text": "",
       "input_label": "",
-      "name_placeholder": "",
+  "name_placeholder": "Wpisz swoje imię",
       "submit_button": ""
     },
     "offcanvas_search_title_articles": "",

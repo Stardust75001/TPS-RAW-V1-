@@ -428,10 +428,10 @@
     "menu": "",
     "newsletter": {
       "confirmation_text": "",
-      "input_label": "",
-      "name_placeholder": "Voer uw voornaam in",
-      "submit_button": "",
-      "input_name_label": "Enter your first name"
+      "input_label": "Vul uw e-mail in",
+      "name_placeholder": "Vul uw voornaam in",
+      "submit_button": "Abonneren",
+      "input_name_label": "Vul uw voornaam in"
     },
     "no_reviews": "No reviews",
     "offcanvas_menu": {
@@ -535,7 +535,8 @@
     "input_label": "Voer uw e-mail in",
     "name_placeholder": "",
     "submit_button": "Abonneren",
-    "input_name_label": "Voer uw voornaam in",
+    "input_name_label": "Voer uw voornaam in"
+  },
   "no_reviews": "",
   "offcanvas_menu": {
     "pagination_page_of": "",
@@ -577,7 +578,7 @@
     "newsletter": {
       "confirmation_text": "",
       "input_label": "",
-      "name_placeholder": "",
+  "name_placeholder": "Vul uw voornaam in",
       "submit_button": ""
     },
     "offcanvas_search_title_articles": "",
