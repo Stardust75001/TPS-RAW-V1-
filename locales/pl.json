@@ -532,10 +532,10 @@
   },
   "newsletter": {
     "confirmation_text": "",
-    "input_label": "",
+    "input_label": "Wpisz swój e-mail",
     "name_placeholder": "",
-    "submit_button": ""
-  },
+    "submit_button": "Zapisz się",
+    "input_name_label": "Wpisz swoje imię"
   "no_reviews": "",
   "offcanvas_menu": {
     "pagination_page_of": "",

@@ -428,9 +428,9 @@
     "menu": "",
     "newsletter": {
   "confirmation_text": "",
-  "input_label": "",
+  "input_label": "Enter your email",
   "name_placeholder": "",
-  "submit_button": "",
+  "submit_button": "Subscribe",
   "input_name_label": "Enter your first name"
     },
     "no_reviews": "No reviews",

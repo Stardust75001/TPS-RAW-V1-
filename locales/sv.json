@@ -532,10 +532,10 @@
   },
   "newsletter": {
     "confirmation_text": "",
-    "input_label": "",
+    "input_label": "Ange din e-post",
     "name_placeholder": "",
-    "submit_button": ""
-  },
+    "submit_button": "Prenumerera",
+    "input_name_label": "Ange ditt förnamn"
   "no_reviews": "",
   "offcanvas_menu": {
     "pagination_page_of": "",

@@ -576,10 +576,10 @@
     "menu": "Menu",
     "newsletter": {
       "confirmation_text": "",
-      "input_label": "",
+      "input_label": "Entrez votre email",
       "name_placeholder": "",
-      "submit_button": ""
-    },
+      "submit_button": "S'inscrire",
+      "input_name_label": "Entrez votre prénom",
     "offcanvas_search_title_articles": "",
     "password_page": {
       "password_form": {

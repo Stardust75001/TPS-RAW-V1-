@@ -532,10 +532,10 @@
   },
   "newsletter": {
     "confirmation_text": "",
-    "input_label": "",
+    "input_label": "Voer uw e-mail in",
     "name_placeholder": "",
-    "submit_button": ""
-  },
+    "submit_button": "Abonneren",
+    "input_name_label": "Voer uw voornaam in"
   "no_reviews": "",
   "offcanvas_menu": {
     "pagination_page_of": "",
