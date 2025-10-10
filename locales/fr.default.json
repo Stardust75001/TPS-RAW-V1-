@@ -538,7 +538,8 @@
     "confirmation_text": "Merci de vous être abonné !",
     "input_label": "Saisissez votre email",
     "name_placeholder": "Saisissez votre nom",
-    "submit_button": "S'abonner"
+    "submit_button": "S'abonner",
+    "input_name_label": "Entrez votre prénom"
   },
   "no_reviews": "",
   "offcanvas_menu": {

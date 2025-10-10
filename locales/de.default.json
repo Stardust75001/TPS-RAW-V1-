@@ -156,7 +156,7 @@
   },
   "custom": {
     "description": "",
-    "ref_variant_label": "",
+    "ref_variant_label": "Verknüpfte Variantenreferenz",
     "title": ""
   },
   "custom_bundle": {
@@ -538,7 +538,8 @@
     "confirmation_text": "",
     "input_label": "",
     "name_placeholder": "",
-    "submit_button": ""
+    "submit_button": "",
+    "input_name_label": "Geben Sie Ihren Vornamen ein"
   },
   "no_reviews": "",
   "offcanvas_menu": {

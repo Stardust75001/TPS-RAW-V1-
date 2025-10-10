@@ -70,7 +70,8 @@
     "taxes_shipping_at_checkout_html": "Impostos e envio calculados no checkout",
     "title": "O meu carrinho",
     "view_cart": "Ver carrinho",
-    "view_file": "Ver ficheiro"
+    "view_file": "Ver ficheiro",
+    "summary": "Resumo do carrinho"
   },
   "checkout": {
     "order_status": {
@@ -109,7 +110,8 @@
       "title": "Filtros",
       "to": "Para",
       "view_more": "Ver mais",
-      "view_results": "Ver resultados"
+      "view_results": "Ver resultados",
+      "max_range_notice": "Intervalo máximo atingido"
     },
     "load_more": "Carregar mais produtos",
     "load_previous": "Carregar produtos anteriores",
@@ -539,7 +541,8 @@
     "confirmation_text": "Texto de confirmação",
     "input_label": "Etiqueta de entrada",
     "name_placeholder": "Placeholder do nome",
-    "submit_button": "Botão de submissão"
+    "submit_button": "Botão de submissão",
+    "input_name_label": "Introduza o seu primeiro nome"
   },
   "no_reviews": "Sem avaliações",
   "offcanvas_menu": {

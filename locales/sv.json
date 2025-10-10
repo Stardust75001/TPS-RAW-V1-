@@ -70,7 +70,8 @@
     "taxes_shipping_at_checkout_html": "Frakt och skatter beräknas i kassan",
     "title": "Min varukorg",
     "view_cart": "Visa varukorg",
-    "view_file": "Visa fil"
+    "view_file": "Visa fil",
+    "summary": "Varukorgssammanfattning"
   },
   "checkout": {
     "order_status": {
@@ -540,7 +541,8 @@
     "confirmation_text": "Bekräftelsetext",
     "input_label": "Ange din e-post",
     "name_placeholder": "Ange ditt förnamn",
-    "submit_button": "Prenumerera"
+    "submit_button": "Prenumerera",
+    "input_name_label": "Ange ditt förnamn"
   },
   "no_reviews": "Inga recensioner",
   "offcanvas_menu": {

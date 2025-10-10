@@ -62,7 +62,9 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "i18n:fix": "node autofix-locales.js"
+    "i18n:fix": "node autofix-locales.js",
+    "theme:check": "theme-check",
+    "ci:verify": "npm run i18n:fix && npm run theme:check"
   },
   "repository": {
     "type": "git",

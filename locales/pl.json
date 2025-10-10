@@ -70,7 +70,8 @@
     "taxes_shipping_at_checkout_html": "Dostawa i podatki obliczane przy kasie",
     "title": "Mój koszyk",
     "view_cart": "Zobacz koszyk",
-    "view_file": "Zobacz plik"
+    "view_file": "Zobacz plik",
+    "summary": "Podsumowanie koszyka"
   },
   "checkout": {
     "order_status": {
@@ -109,7 +110,8 @@
       "title": "Filtry",
       "to": "Do",
       "view_more": "Zobacz więcej",
-      "view_results": "Zobacz wyniki"
+      "view_results": "Zobacz wyniki",
+      "max_range_notice": "Osiągnięto maksymalny zakres"
     },
     "load_more": "Załaduj więcej produktów",
     "load_previous": "Załaduj poprzednie produkty",
@@ -539,7 +541,8 @@
     "confirmation_text": "Tekst potwierdzenia",
     "input_label": "Wprowadź swój email",
     "name_placeholder": "Podaj swoje imię",
-    "submit_button": "Subskrybuj"
+    "submit_button": "Subskrybuj",
+    "input_name_label": "Wpisz swoje imię"
   },
   "no_reviews": "Brak recenzji",
   "offcanvas_menu": {
