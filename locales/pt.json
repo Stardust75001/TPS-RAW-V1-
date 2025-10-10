@@ -1,834 +1,836 @@
 {
   "-": "",
   "404_page": {
-    "button": "Fortsæt med at handle",
-    "subtext": "Siden du anmodede om findes ikke.",
-    "title": "Siden blev ikke fundet"
+    "share": "Partilhar",
+    "loading": "A carregar...",
+    "secure_payments": "Pagamentos seguros",
+    "pagination_page_of": "Página {{ count }} de {{ total }}",
+    "button": "Continuar a comprar",
+    "subtext": "A página que solicitou não existe.",
+    "title": "Página não encontrada"
   },
   "announcement": {
-    "shipping_notice": "",
-    "text": "",
-    "title": ""
+    "shipping_notice": "Envio grátis a partir de €50",
+    "text": "Descubra as nossas novas coleções",
+    "title": "Anúncio especial"
   },
   "blogs": {
-    "all_topics": "Alle emner",
-    "back_to_blog": "Tilbage til bloggen",
+    "all_topics": "Todos os temas",
+    "back_to_blog": "Voltar ao blog",
+    "filter_by": "Filtrar por",
+    "next_post": "Próxima publicação",
+    "posted_by": "Publicado por",
+    "posted_in": "Publicado em",
+    "posted_on": "Publicado em",
+    "previous_post": "Publicação anterior",
+    "read_more": "Ler mais",
+    "recent_posts": "Publicações recentes",
     "comments": {
-      "email": "E-mail",
-      "error": "Der opstod en fejl",
-      "leave_comment": "Skriv en kommentar",
-      "message": "Kommentar",
-      "name": "Navn",
-      "submit": "Indsend kommentar",
-      "success": "Kommentar sendt succesfuldt",
-      "title": "Kommentarer"
-    },
-    "filter_by": "Filtrer efter",
-    "next_post": "Næste indlæg",
-    "posted_by": "Forfatter",
-    "posted_in": "Kategori",
-    "posted_on": "Dato",
-    "previous_post": "Forrige indlæg",
-    "read_more": "Læs mere",
-    "recent_posts": "Seneste indlæg"
+      "email": "Email",
+      "error": "Ocorreu um erro",
+      "leave_comment": "Deixar comentário",
+      "message": "Mensagem",
+      "name": "Nome",
+      "submit": "Submeter comentário",
+      "success": "Comentário enviado com sucesso",
+      "title": "Comentários"
+    }
   },
   "breadcrumbs": {
-    "home": "",
-    "label": ""
+    "home": "Início",
+    "label": "Está aqui:"
+  },
+  "bundle": {
+    "label": "Pacote"
   },
   "cart": {
-    "alert_cart_updated": "Continue shopping",
-    "alert_item_added": "Item added to cart",
-    "alert_items_added": "",
-    "checkout": "",
-    "continue_shopping": "",
-    "empty_html": "",
-    "empty_products_title": "",
-    "note_button": "",
-    "note_label": "",
-    "note_placeholder": "",
-    "note_saved": "",
-    "quantity": "",
-    "remove": "",
+    "alert_cart_updated": "Carrinho atualizado",
+    "alert_item_added": "Item adicionado ao carrinho",
+    "alert_items_added": "Itens adicionados ao carrinho",
+    "checkout": "Finalizar compra",
+    "continue_shopping": "Continuar a comprar",
+    "empty_html": "O seu carrinho está vazio",
+    "empty_products_title": "Carrinho vazio",
+    "note_button": "Guardar",
+    "note_label": "Nota do pedido",
+    "note_placeholder": "Adicionar uma nota...",
+    "note_saved": "Nota guardada",
+    "quantity": "Quantidade",
+    "remove": "Remover",
     "shipping_rates": {
-      "button_label": "",
-      "modal_button_label": "",
-      "modal_title": "",
-      "no_results_found": "",
-      "summary": ""
+      "button_label": "Calcular custos",
+      "modal_button_label": "Calcular custos",
+      "modal_title": "Custos de envio",
+      "no_results_found": "Sem tarifas disponíveis para o seu endereço",
+      "summary": "Resumo do carrinho"
     },
-    "subtotal": "",
-    "subtotal_discounted": "",
-    "subtotal_regular": "",
-    "summary": "Cart summary",
-    "taxes_shipping_at_checkout_html": "",
-    "title": "",
-    "view_cart": "",
-    "view_file": ""
+    "subtotal": "Subtotal",
+    "subtotal_discounted": "Subtotal com desconto",
+    "subtotal_regular": "Subtotal",
+    "taxes_shipping_at_checkout_html": "Impostos e envio calculados no checkout",
+    "title": "O meu carrinho",
+    "view_cart": "Ver carrinho",
+    "view_file": "Ver ficheiro"
   },
   "checkout": {
     "order_status": {
-      "continue_shopping": "",
-      "date": "",
-      "email": "",
-      "order_confirmed": "",
-      "order_details": "",
-      "order_number": "",
-      "phone": "",
-      "shipping_address": "",
-      "thank_you": "",
-      "title": "",
-      "total": ""
+      "continue_shopping": "Continuar a comprar",
+      "date": "Data",
+      "email": "Email",
+      "order_confirmed": "O seu pedido foi confirmado",
+      "order_details": "Detalhes do pedido",
+      "order_number": "Número do pedido",
+      "phone": "Telefone",
+      "shipping_address": "Endereço de entrega",
+      "thank_you": "Obrigado pelo seu pedido!",
+      "title": "Pedido {{ order_number }}",
+      "total": "Total"
     }
   },
   "collection": {
-    "btn_filter_products": "",
+    "btn_filter_products": "Filtrar produtos",
     "custom_bundle": {
-      "add_to_bundle": "Add to bundle",
-      "bundle_contents_empty_html": "",
-      "bundle_contents_title": "",
-      "bundle_price": "",
-      "button_atc_text": "",
-      "button_view_contents_text": "",
-      "progress_completed_text": "",
-      "progress_label": "",
-      "progress_uncompleted_text": "",
-      "you_save": "",
-      "added_to_bundle": "collection.custom_bundle.added_to_bundle"
+      "add_to_bundle": "Adicionar ao pacote",
+      "added_to_bundle": "Adicionado ao pacote",
+      "bundle_contents_empty_html": "O seu pacote está vazio",
+      "bundle_contents_title": "Conteúdo do pacote",
+      "bundle_price": "Preço do pacote",
+      "button_atc_text": "Adicionar ao carrinho",
+      "button_view_contents_text": "Ver pacote",
+      "progress_completed_text": "Concluído",
+      "progress_label": "Estado da oferta",
+      "progress_uncompleted_text": "Não concluído",
+      "you_save": "Você economiza"
     },
-    "empty_html": "",
+    "empty_html": "Esta coleção está vazia.",
     "filters": {
-      "clear_all": "",
-      "from": "",
-      "max_range_notice": "Maximum range reached",
-      "title": "",
-      "to": "",
-      "view_more": "",
-      "view_results": ""
+      "clear_all": "Limpar tudo",
+      "from": "De",
+      "title": "Filtros",
+      "to": "Para",
+      "view_more": "Ver mais",
+      "view_results": "Ver resultados"
     },
-    "load_more": "",
-    "load_previous": "",
-    "paginate_count": "",
-    "sort_by": ""
+    "load_more": "Carregar mais produtos",
+    "load_previous": "Carregar produtos anteriores",
+    "paginate_count": "{{ count }} de {{ total }} produtos mostrados",
+    "sort_by": "Ordenar por"
   },
   "contact": {
-    "email": "",
+    "email": "Email",
     "form": {
-      "email": "",
-      "error": "",
-      "message": "",
-      "name": "",
-      "phone": "",
-      "submit": "",
-      "success": "",
-      "title": ""
+      "email": "Email",
+      "error": "Não foi possível enviar a mensagem",
+      "message": "Mensagem",
+      "name": "Nome",
+      "phone": "Telefone",
+      "submit": "Enviar mensagem",
+      "success": "Mensagem enviada com sucesso",
+      "title": "Contacte-nos"
     },
     "info": {
-      "address": "",
-      "email": "",
-      "hours": "",
-      "phone": "",
-      "title": ""
+      "address": "Endereço",
+      "email": "Email",
+      "hours": "Horário de funcionamento",
+      "phone": "Telefone",
+      "title": "Informações de contacto"
     },
-    "message": "",
-    "name": "",
-    "phone": "",
-    "send": "",
-    "success": ""
+    "message": "Mensagem",
+    "name": "Nome",
+    "phone": "Telefone",
+    "send": "Enviar mensagem",
+    "success": "Obrigado pela sua mensagem. Entraremos em contacto brevemente."
   },
   "cookies": {
-    "consent": ""
+    "consent": "Usamos cookies para melhorar a sua experiência."
   },
   "countdown_timer": {
-    "d": "",
-    "days": "",
-    "expires": "",
-    "h": "",
-    "hours": "",
-    "m": "",
-    "minutes": "",
-    "s": "",
-    "seconds": ""
+    "d": "d",
+    "days": "dias",
+    "expires": "Oferta expira em",
+    "h": "h",
+    "hours": "horas",
+    "m": "m",
+    "minutes": "minutos",
+    "s": "s",
+    "seconds": "segundos"
   },
   "custom": {
-    "description": "",
-    "ref_variant_label": "",
-    "title": ""
+    "description": "Personalize a sua seleção",
+    "ref_variant_label": "Etiqueta de variante de referência",
+    "title": "Personalizar"
   },
   "custom_bundle": {
-    "add_to_bundle": "",
-    "bundle_contents_empty_html": "",
-    "bundle_contents_title": "",
-    "bundle_price": "",
-    "button_atc_text": "",
-    "button_view_contents_text": "",
-    "no_reviews": "",
-    "progress_completed_text": "",
-    "progress_label": "",
-    "progress_uncompleted_text": "",
-    "you_save": ""
+    "add_to_bundle": "Adicionar ao pacote",
+    "bundle_contents_empty_html": "O seu pacote está vazio",
+    "bundle_contents_title": "Conteúdo do pacote",
+    "bundle_price": "Preço do pacote",
+    "button_atc_text": "Adicionar ao carrinho",
+    "button_view_contents_text": "Ver pacote",
+    "no_reviews": "Sem avaliações",
+    "progress_completed_text": "Concluído",
+    "progress_label": "Estado da oferta",
+    "progress_uncompleted_text": "Não concluído",
+    "you_save": "Você economiza"
   },
   "custom_sections": {
     "image_banner": {
-      "image_banner_btn_primary": "",
-      "image_banner_btn_secondary": "",
-      "image_banner_description": "",
-      "image_banner_title": "",
-      "primary_button": "",
-      "text": "",
-      "title": "",
-      "secondary_button": "custom_sections.image_banner.secondary_button"
+      "image_banner_btn_primary": "DESCOBRIR AGORA!",
+      "image_banner_btn_secondary": "SOBRE NÓS",
+      "image_banner_description": "Seleções refinadas, petiscos premium e cuidados excepcionais esperam por si",
+      "image_banner_title": "Descubra um mundo de elegância e inovação para os seus animais de estimação",
+      "primary_button": "DESCOBRIR AGORA!",
+      "text": "Seleções refinadas, petiscos premium e cuidados excepcionais esperam por si",
+      "title": "Descubra um mundo de elegância e inovação para os seus animais de estimação",
+      "secondary_button": "SOBRE NÓS"
     },
-    "image_banner_btn_primary": "Primary action",
-    "image_banner_btn_secondary": "",
-    "image_banner_description": "",
-    "image_banner_title": "",
+    "image_banner_btn_primary": "Ação principal",
+    "image_banner_btn_secondary": "SOBRE NÓS",
+    "image_banner_description": "Seleções refinadas, petiscos premium e cuidados excepcionais esperam por si",
+    "image_banner_title": "Descubra um mundo de elegância e inovação para os seus animais de estimação",
     "banner": {
-      "heading": "custom_sections.banner.heading",
-      "text": "custom_sections.banner.text"
+      "heading": "Título do banner",
+      "text": "Texto descritivo aqui"
     },
     "image_but": {
-      "description": "custom_sections.image_but.description",
-      "primary_button_label": "custom_sections.image_but.primary_button_label",
-      "secondary_button_label": "custom_sections.image_but.secondary_button_label",
-      "title": "custom_sections.image_but.title"
+      "description": "Seleções refinadas, petiscos premium e cuidados excepcionais esperam por si",
+      "primary_button_label": "DESCOBRIR AGORA!",
+      "secondary_button_label": "SOBRE NÓS",
+      "title": "Descubra um mundo de elegância e inovação para os seus animais de estimação"
     },
     "multicolumn": {
-      "text_1": "custom_sections.multicolumn.text_1",
-      "text_2": "custom_sections.multicolumn.text_2",
-      "text_3": "custom_sections.multicolumn.text_3",
-      "title_1": "custom_sections.multicolumn.title_1",
-      "title_2": "custom_sections.multicolumn.title_2",
-      "title_3": "custom_sections.multicolumn.title_3"
+      "text_1": "Texto 1",
+      "text_2": "Texto 2",
+      "text_3": "Texto 3",
+      "title_1": "Título 1",
+      "title_2": "Título 2",
+      "title_3": "Título 3"
     },
-    "section_1": "custom_sections.section_1",
-    "section_2": "custom_sections.section_2"
+    "section_1": "Secção personalizada 1",
+    "section_2": "Secção personalizada 2"
   },
   "customer": {
     "account": {
-      "account_details": "",
-      "logout": "",
-      "order_history": "",
-      "return": "",
-      "title": "",
-      "view_addresses": ""
+      "account_details": "Detalhes da conta",
+      "logout": "Terminar sessão",
+      "order_history": "Histórico de pedidos",
+      "return": "Voltar à conta",
+      "title": "A minha conta",
+      "view_addresses": "Ver endereços"
     },
     "activate_account": {
-      "cancel": "",
-      "password": "",
-      "password_confirm": "",
-      "submit": "",
-      "subtext": "",
-      "title": ""
+      "cancel": "Cancelar",
+      "password": "Palavra-passe",
+      "password_confirm": "Confirmar palavra-passe",
+      "submit": "Ativar conta",
+      "subtext": "Crie a sua palavra-passe para ativar a conta",
+      "title": "Ativar conta"
     },
     "addresses": {
-      "add": "",
-      "add_new": "",
-      "address1": "",
-      "address2": "",
-      "city": "",
-      "company": "",
-      "country": "",
-      "default": "",
-      "delete": "",
-      "delete_confirm": "",
-      "edit": "",
-      "edit_address": "",
-      "first_name": "",
-      "last_name": "",
-      "no_addresses": "",
-      "phone": "",
-      "province": "",
-      "set_default": "",
-      "tab_add_new": "",
-      "tab_addresses": "",
-      "title": "",
-      "update": "",
-      "zip": "",
-      "cancel": "customer.addresses.cancel",
-      "select_country": "customer.addresses.select_country"
+      "add": "Adicionar endereço",
+      "add_new": "Adicionar novo endereço",
+      "address1": "Endereço",
+      "address2": "Linha de endereço 2",
+      "city": "Cidade",
+      "company": "Empresa",
+      "country": "País",
+      "default": "Padrão",
+      "delete": "Eliminar",
+      "delete_confirm": "Tem a certeza de que deseja eliminar este endereço?",
+      "edit": "Editar",
+      "edit_address": "Editar endereço",
+      "first_name": "Nome",
+      "last_name": "Apelido",
+      "no_addresses": "Nenhum endereço guardado",
+      "phone": "Telefone",
+      "province": "Região",
+      "set_default": "Definir como endereço padrão",
+      "tab_add_new": "Adicionar novo",
+      "tab_addresses": "Endereços",
+      "title": "Os meus endereços",
+      "update": "Atualizar endereço",
+      "zip": "Código postal",
+      "cancel": "Cancelar",
+      "select_country": "Selecionar País"
     },
     "login": {
-      "create_account": "",
-      "email": "",
-      "forgot_password": "",
-      "new": "",
-      "password": "",
-      "submit": "",
-      "title": ""
+      "create_account": "Criar conta",
+      "email": "Email",
+      "forgot_password": "Esqueceu a palavra-passe?",
+      "new": "Novo cliente?",
+      "password": "Palavra-passe",
+      "submit": "Iniciar sessão",
+      "title": "Iniciar sessão"
     },
     "order": {
-      "billing_address": "",
-      "cancelled": "",
-      "cancelled_html": "",
-      "cancelled_reason": "",
-      "date": "",
-      "date_html": "",
-      "discount": "",
-      "fulfilled_at_html": "",
-      "fulfillment_status": "",
-      "note": "",
-      "payment_status": "",
-      "price": "",
-      "product": "",
-      "quantity": "",
-      "return": "",
-      "shipping": "",
-      "shipping_address": "",
-      "sku": "",
-      "subtotal": "",
-      "tax": "",
-      "title": "",
-      "total": "",
-      "track_shipment": "",
-      "tracking_company": "",
-      "tracking_number": "",
-      "tracking_url": ""
+      "billing_address": "Endereço de faturação",
+      "cancelled": "Cancelado",
+      "cancelled_html": "Cancelado em {{ date }}",
+      "cancelled_reason": "Motivo do cancelamento",
+      "date": "Data",
+      "date_html": "Data: {{ date }}",
+      "discount": "Desconto",
+      "fulfilled_at_html": "Processado em {{ date }}",
+      "fulfillment_status": "Estado de processamento",
+      "note": "Nota",
+      "payment_status": "Estado do pagamento",
+      "price": "Preço",
+      "product": "Produto",
+      "quantity": "Quantidade",
+      "return": "Voltar",
+      "shipping": "Envio",
+      "shipping_address": "Endereço de entrega",
+      "sku": "SKU",
+      "subtotal": "Subtotal",
+      "tax": "Imposto",
+      "title": "Detalhes do pedido",
+      "total": "Total",
+      "track_shipment": "Rastrear envio",
+      "tracking_company": "Empresa de transporte",
+      "tracking_number": "Número de rastreamento",
+      "tracking_url": "Link de rastreamento"
     },
     "orders": {
-      "date": "",
-      "fulfillment_status": "",
-      "none": "",
-      "order_number": "",
-      "payment_status": "",
-      "title": "",
-      "total": ""
+      "date": "Data",
+      "fulfillment_status": "Estado de processamento",
+      "none": "Nenhum pedido",
+      "order_number": "Número do pedido",
+      "payment_status": "Estado do pagamento",
+      "title": "Os meus pedidos",
+      "total": "Total"
     },
     "recover_password": {
-      "cancel": "",
-      "email": "",
-      "submit": "",
-      "subtext": "",
-      "success": "",
-      "title": ""
+      "cancel": "Cancelar",
+      "email": "Email",
+      "submit": "Repor palavra-passe",
+      "subtext": "Enviaremos um email para repor a sua palavra-passe",
+      "success": "Enviámos um email com um link para atualizar a sua palavra-passe.",
+      "title": "Repor palavra-passe"
     },
     "register": {
-      "email": "",
-      "first_name": "",
-      "have_account": "",
-      "last_name": "",
-      "login": "",
-      "password": "",
-      "submit": "",
-      "title": ""
+      "email": "Email",
+      "first_name": "Nome",
+      "have_account": "Já é cliente?",
+      "last_name": "Apelido",
+      "login": "Iniciar sessão",
+      "password": "Palavra-passe",
+      "submit": "Criar conta",
+      "title": "Criar conta"
     },
     "reset_password": {
-      "password": "",
-      "password_confirm": "",
-      "submit": "",
-      "subtext": "",
-      "title": ""
+      "password": "Nova palavra-passe",
+      "password_confirm": "Confirmar palavra-passe",
+      "submit": "Repor palavra-passe",
+      "subtext": "Introduza uma nova palavra-passe para a sua conta",
+      "title": "Nova palavra-passe"
     }
   },
   "footer": {
     "newsletter": {
-      "email_placeholder": "",
-      "first_name_placeholder": "",
-      "submit_button": "",
-      "description_html": "footer.newsletter.description_html",
-      "notice_html": "footer.newsletter.notice_html",
-      "title": "footer.newsletter.title"
+      "email_placeholder": "O seu endereço de email",
+      "first_name_placeholder": "O seu primeiro nome",
+      "submit_button": "Subscrever",
+      "description_html": "Descrição Html",
+      "notice_html": "Aviso Html",
+      "title": "Título"
     },
     "about": {
-      "description_html": "footer.about.description_html"
+      "description_html": "Descrição Html"
     },
     "menu": {
-      "help": "footer.menu.help",
-      "legal": "footer.menu.legal",
-      "store": "footer.menu.store"
+      "help": "Ajuda",
+      "legal": "Legal",
+      "store": "Loja"
     }
   },
   "general": {
     "404_page": {
-      "button": "",
-      "subtext": "",
-      "title": ""
+      "button": "Voltar à página inicial",
+      "subtext": "A página que procura não existe.",
+      "title": "404 - Página não encontrada"
     },
     "accessibility": {
-      "account": "",
-      "back_to_top": "",
-      "cart": "",
-      "cart_product_list": "",
-      "close": "",
-      "decrease_qty": "",
-      "increase_qty": "",
-      "load_more_products": "",
-      "menu": "",
-      "model_3d_decrease": "",
-      "model_3d_fullscreen": "",
-      "model_3d_increase": "",
-      "model_3d_list_label": "",
-      "next": "",
-      "next_page": "",
-      "payment_methods": "",
-      "previous": "",
-      "previous_page": "",
-      "product_media_gallery": "",
-      "product_options": "",
-      "search": "",
-      "skip_content": "",
-      "skip_product_content": "",
-      "slide_of": "",
-      "sorted_by": "",
-      "toggle_sound": "",
-      "utility_icons": "",
-      "wishlist": ""
+      "account": "A minha conta",
+      "back_to_top": "Voltar ao topo",
+      "cart": "Carrinho",
+      "cart_product_list": "Itens no carrinho",
+      "close": "Fechar",
+      "decrease_qty": "Diminuir quantidade",
+      "increase_qty": "Aumentar quantidade",
+      "load_more_products": "Carregar mais produtos",
+      "menu": "Menu",
+      "model_3d_decrease": "Diminuir modelo 3D",
+      "model_3d_fullscreen": "Ecrã completo",
+      "model_3d_increase": "Aumentar modelo 3D",
+      "model_3d_list_label": "Modelos 3D",
+      "next": "Seguinte",
+      "next_page": "Próxima página",
+      "payment_methods": "Métodos de pagamento",
+      "previous": "Anterior",
+      "previous_page": "Página anterior",
+      "product_media_gallery": "Galeria do produto",
+      "product_options": "Opções do produto",
+      "search": "Pesquisar",
+      "skip_content": "Saltar para o conteúdo",
+      "skip_product_content": "Saltar para o produto",
+      "slide_of": "Imagem {{ current }} de {{ total }}",
+      "sorted_by": "Ordenado por",
+      "toggle_sound": "Ativar/desativar som",
+      "utility_icons": "Ícones",
+      "wishlist": "A minha lista de desejos"
     },
-    "all_rights_reserved": "",
+    "all_rights_reserved": "Todos os direitos reservados",
     "breadcrumbs": {
-      "home": "",
-      "label": ""
+      "home": "Início",
+      "label": "Está aqui:"
     },
     "contact": {
-      "email": "",
-      "message": "",
-      "name": "",
-      "phone": "",
-      "send": "",
-      "success": ""
+      "email": "Email",
+      "message": "Mensagem",
+      "name": "Nome",
+      "phone": "Telefone",
+      "send": "Enviar mensagem",
+      "success": "Obrigado pela sua mensagem. Entraremos em contacto brevemente."
     },
-    "copied": "",
-    "copy": "",
+    "copied": "Copiado",
+    "copy": "Copiar",
     "countdown_timer": {
-      "d": "",
-      "days": "",
-      "expires": "",
-      "h": "",
-      "hours": "",
-      "m": "",
-      "minutes": "",
-      "s": "",
-      "seconds": ""
+      "d": "d",
+      "days": "dias",
+      "expires": "Expira em",
+      "h": "h",
+      "hours": "horas",
+      "m": "m",
+      "minutes": "minutos",
+      "s": "s",
+      "seconds": "segundos"
     },
-    "follow_us": "",
+    "follow_us": "Siga-nos",
     "general": {
-      "copied": "",
-      "copy": "",
-      "follow_us": "",
-      "menu": "",
-      "optional": "",
-      "share": "",
-      "loading": "Loading...",
-      "secure_payments": "Secure payments",
-      "pagination_page_of": "Page  of "
+      "copied": "Copiado",
+      "copy": "Copiar",
+      "follow_us": "Siga-nos",
+      "menu": "Menu",
+      "optional": "Opcional",
+      "share": "Partilhar",
+      "loading": "A carregar...",
+      "secure_payments": "Pagamentos seguros",
+      "pagination_page_of": "Página {{ count }} de {{ total }}"
     },
-    "loading": "",
+    "loading": "A carregar...",
     "map": {
-      "address": "",
-      "api_key_missing": "",
-      "email": "",
-      "hours": "",
-      "phone": ""
+      "address": "Endereço",
+      "api_key_missing": "Chave da API do Google Maps em falta",
+      "email": "Email",
+      "hours": "Horário de funcionamento",
+      "phone": "Telefone"
     },
-    "map_address": "",
-    "map_api_key_missing": "",
-    "map_email": "",
-    "map_hours": "",
-    "map_phone": "",
-    "menu": "",
+    "map_address": "Endereço",
+    "map_api_key_missing": "Chave da API do Google Maps em falta",
+    "map_email": "Email",
+    "map_hours": "Horário de funcionamento",
+    "map_phone": "Telefone",
+    "menu": "Menu",
     "newsletter": {
-      "confirmation_text": "",
-      "input_label": "",
-      "name_placeholder": "Digite seu primeiro nome",
-      "submit_button": "",
-      "input_name_label": "Enter your first name"
+      "confirmation_text": "Obrigado por subscrever!",
+      "input_label": "Introduza o seu email",
+      "name_placeholder": "Introduza o seu primeiro nome",
+      "submit_button": "Subscrever",
+      "input_name_label": "Introduza o seu primeiro nome"
     },
-    "no_reviews": "No reviews",
+    "no_reviews": "Sem avaliações",
     "offcanvas_menu": {
-      "subtitle_customer_html": "",
-      "subtitle_guest_html": "",
-      "title_customer": "",
-      "title_guest": "",
-      "pagination_page_of": "general.offcanvas_menu.pagination_page_of"
+      "subtitle_customer_html": "Bom vê-lo novamente",
+      "subtitle_guest_html": "Bem-vindo",
+      "title_customer": "A sua conta",
+      "title_guest": "A sua conta",
+      "pagination_page_of": "Página {{ count }} de {{ total }}"
     },
     "offcanvas_search": {
-      "input_label": "",
-      "no_results": "",
-      "result_found": "",
-      "results_found": "",
-      "search_by_voice": "",
-      "search_for": "",
-      "title": "",
-      "title_articles": "",
-      "title_collections": "",
-      "title_pages": "",
-      "title_popular_products": "",
-      "title_products": ""
+      "input_label": "O que procura?",
+      "no_results": "Sem resultados",
+      "result_found": "1 resultado encontrado",
+      "results_found": "{{ count }} resultados encontrados",
+      "search_by_voice": "Pesquisa por voz",
+      "search_for": "Pesquisar por",
+      "title": "Pesquisar",
+      "title_articles": "Artigos",
+      "title_collections": "Coleções",
+      "title_pages": "Páginas",
+      "title_popular_products": "Produtos populares",
+      "title_products": "Produtos"
     },
-    "offcanvas_search_title_articles": "",
-    "offcanvas_search_title_collections": "",
-    "offcanvas_search_title_pages": "",
-    "offcanvas_search_title_products": "",
-    "optional": "",
-    "pagination_page_of": "",
+    "offcanvas_search_title_articles": "Artigos",
+    "offcanvas_search_title_collections": "Coleções",
+    "offcanvas_search_title_pages": "Páginas",
+    "offcanvas_search_title_products": "Produtos",
+    "optional": "Opcional",
+    "pagination_page_of": "Página {{ current }} de {{ total }}",
     "password_page": {
       "password_form": {
-        "btn_label": "",
-        "password_label": ""
+        "btn_label": "Aceder",
+        "password_label": "Palavra-passe"
       }
     },
     "policy": {
-      "default_content": "",
-      "default_title": "",
-      "last_updated": ""
+      "default_content": "Adicione o seu conteúdo na administração.",
+      "default_title": "Informação legal",
+      "last_updated": "Última atualização: {{ date }}"
     },
     "quiz": {
-      "btn_previous": "",
-      "btn_reload_quiz": "",
-      "question_of_html": ""
+      "btn_previous": "Anterior",
+      "btn_reload_quiz": "Reiniciar",
+      "question_of_html": "Pergunta {{ current }} de {{ total }}"
     },
     "search_page": {
       "form": {
-        "btn_text": "",
-        "input_label": "",
-        "select_label": ""
+        "btn_text": "Pesquisar",
+        "input_label": "Pesquisar um produto...",
+        "select_label": "Tipo de pesquisa"
       },
-      "no_results": "",
-      "results_with_count_and_term": "",
-      "title": "",
-      "title_search_performed": "",
+      "no_results": "Sem resultados para '{{ terms }}'",
+      "results_with_count_and_term": "{{ count }} resultados para '{{ terms }}'",
+      "title": "Pesquisar na loja",
+      "title_search_performed": "Resultados da pesquisa",
       "types": {
-        "articles": "",
-        "pages": "",
-        "products": ""
+        "articles": "Artigos",
+        "pages": "Páginas",
+        "products": "Produtos"
       }
     },
-    "secure_payments": "",
-    "share": "",
+    "secure_payments": "Pagamentos Seguros",
+    "share": "Partilhar",
     "tracking": {
-      "btn_text": "",
-      "placeholder": ""
+      "btn_text": "Rastrear o meu pedido",
+      "placeholder": "Número de rastreamento"
     },
     "wishlist": {
-      "add_to_wishlist": "",
-      "btn_label": "",
-      "empty_html": "",
-      "offcanvas_title": "",
-      "remove_from_wishlist": ""
+      "add_to_wishlist": "Adicionar à minha lista de desejos",
+      "btn_label": "A minha lista de desejos",
+      "empty_html": "A sua lista de desejos está vazia.",
+      "offcanvas_title": "A minha lista de desejos",
+      "remove_from_wishlist": "Remover da minha lista de desejos"
     },
-    "btn_add_to_cart": "general.btn_add_to_cart",
+    "btn_add_to_cart": "Adicionar ao carrinho",
     "cookies": {
-      "consent": "general.cookies.consent"
+      "consent": "Consentimento"
     },
-    "text_btn_save": "general.text_btn_save",
-    "text_note_saved": "general.text_note_saved"
+    "text_btn_save": "Guardar",
+    "text_note_saved": "Nota guardada"
   },
   "gift_card": {
-    "balance": "",
-    "disabled": "",
-    "expired_on": "",
-    "expires_on": "",
-    "instructions": "",
-    "print": "",
-    "start_shopping": "",
-    "title": ""
+    "balance": "Saldo",
+    "disabled": "Desativado",
+    "expired_on": "Expirado em",
+    "expires_on": "Expira em",
+    "instructions": "Instruções",
+    "print": "Imprimir",
+    "start_shopping": "Começar a comprar",
+    "title": "Cartão-presente"
   },
   "map": {
-    "address_error": "",
-    "address_no_results": "",
-    "address_query_limit": "",
-    "auth_error": "",
-    "section_heading": ""
+    "address_error": "Erro de endereço",
+    "address_no_results": "Sem resultados",
+    "address_query_limit": "Limite de consulta atingido",
+    "auth_error": "Erro de autenticação",
+    "section_heading": "Cabeçalho da secção"
   },
   "newsletter": {
-    "confirmation_text": "",
-    "input_label": "Digite seu e-mail",
-    "name_placeholder": "",
-    "submit_button": "Inscrever-se",
-    "input_name_label": "Digite seu primeiro nome",
-  "no_reviews": "",
+    "confirmation_text": "Texto de confirmação",
+    "input_label": "Etiqueta de entrada",
+    "name_placeholder": "Placeholder do nome",
+    "submit_button": "Botão de submissão"
+  },
+  "no_reviews": "Sem avaliações",
   "offcanvas_menu": {
-    "pagination_page_of": "",
-    "subtitle_customer_html": "",
-    "subtitle_guest_html": "",
-    "title_customer": "",
-    "title_guest": ""
+    "pagination_page_of": "Página {{ count }} de {{ total }}",
+    "subtitle_customer_html": "Cliente",
+    "subtitle_guest_html": "Convidado",
+    "title_customer": "Menu do cliente",
+    "title_guest": "Menu do convidado"
   },
   "offcanvas_search": {
-    "input_label": "",
-    "no_results": "",
-    "result_found": "",
-    "results_found": "",
-    "search_by_voice": "",
-    "search_for": "",
-    "title": "",
-    "title_popular_products": ""
+    "input_label": "Etiqueta de entrada",
+    "no_results": "Sem resultados",
+    "result_found": "Resultado encontrado",
+    "results_found": "Resultados encontrados",
+    "search_by_voice": "Pesquisa por voz",
+    "search_for": "Pesquisar por",
+    "title": "Pesquisar",
+    "title_popular_products": "Produtos populares"
   },
   "password_page": {
     "password_form": {
-      "btn_label": "",
-      "password_label": ""
+      "btn_label": "Submeter",
+      "password_label": "Palavra-passe"
     }
   },
   "policy": {
-    "all_rights_reserved": "",
+    "all_rights_reserved": "Todos os direitos reservados",
     "countdown_timer": {
-      "days": "",
-      "hours": "",
-      "minutes": "",
-      "s": "",
-      "seconds": ""
+      "days": "dias",
+      "hours": "horas",
+      "minutes": "minutos",
+      "s": "s",
+      "seconds": "segundos"
     },
-    "default_content": "",
-    "default_title": "",
-    "last_updated": "",
-    "loading": "",
-    "menu": "",
+    "default_content": "Conteúdo padrão",
+    "default_title": "Título padrão",
+    "last_updated": "Última atualização",
+    "loading": "A carregar...",
+    "menu": "Menu",
     "newsletter": {
-      "confirmation_text": "",
-      "input_label": "",
-      "name_placeholder": "",
-      "submit_button": ""
+      "confirmation_text": "Obrigado por subscrever!",
+      "input_label": "O seu endereço de email",
+      "name_placeholder": "O seu primeiro nome",
+      "submit_button": "Subscrever"
     },
-    "offcanvas_search_title_articles": "",
+    "offcanvas_search_title_articles": "Artigos",
     "password_page": {
       "password_form": {
-        "btn_label": "",
-        "password_label": ""
+        "btn_label": "Aceder",
+        "password_label": "Palavra-passe"
       }
     },
-    "secure_payments": "",
-    "title": ""
+    "secure_payments": "Pagamentos seguros",
+    "title": "Política"
   },
   "product": {
-    "add": "",
-    "add_to_cart": "",
-    "article_title": "",
-    "blog_excerpt": "",
+    "add": "Adicionar",
+    "add_to_cart": "Adicionar ao carrinho",
+    "article_title": "Título do artigo",
+    "blog_excerpt": "Excerto do blog",
     "bought_together": {
-      "add_selected_to_cart": "",
-      "select_this": "",
-      "this_item": "",
-      "total_price": ""
+      "add_selected_to_cart": "Adicionar selecionados ao carrinho",
+      "select_this": "Selecionar",
+      "this_item": "Este item",
+      "total_price": "Preço total"
     },
-    "buy_it_now": "",
-    "color_options": "",
-    "color_swatches": "",
-    "in_stock": "",
-    "include_taxes": "",
+    "buy_it_now": "Comprar agora",
+    "color_options": "Opções de cor",
+    "color_swatches": "Amostras de cor",
+    "in_stock": "Em stock",
+    "include_taxes": "Impostos incluídos",
     "inventory_bar": {
-      "label": "",
-      "low_html": "",
-      "normal_html": "",
-      "sold_out": "",
-      "untracked": "",
-      "verylow_html": ""
+      "label": "Inventário",
+      "low_html": "{{ count }} unidades restantes",
+      "normal_html": "{{ count }} em stock",
+      "sold_out": "Esgotado",
+      "untracked": "Stock limitado",
+      "verylow_html": "Apenas {{ count }} restante!"
     },
-    "out_of_stock": "",
-    "price_from": "",
-    "price_regular": "",
-    "price_sale": "",
-    "price_unit": "",
-    "product": "",
-    "product_added_to_cart": "",
-    "product_options": "",
+    "out_of_stock": "Fora de stock",
+    "price_from": "Preço a partir de",
+    "price_regular": "Preço regular",
+    "price_sale": "Preço de venda",
+    "price_unit": "Preço unitário",
+    "product": "Produto",
+    "product_added_to_cart": "Produto adicionado ao carrinho",
+    "product_options": "Opções do produto",
     "purchase_options": {
-      "option_deliver_every": "",
-      "option_one_time": "",
-      "option_subscription": "",
-      "option_subscription_save": ""
+      "option_deliver_every": "Entregar a cada",
+      "option_one_time": "Compra única",
+      "option_subscription": "Subscrição",
+      "option_subscription_save": "Economize com subscrição"
     },
     "qty_breaks": {
-      "label_text_html": "",
-      "label_text_html_bundle": "",
-      "label_text_html_bundle_header": ""
+      "label_text_html": "Compre mais e economize",
+      "label_text_html_bundle": "Economias em pacote",
+      "label_text_html_bundle_header": "Oferta especial"
     },
-    "quantity": "",
-    "remove": "",
-    "save": "",
-    "select_variant": "",
-    "sku": "",
-    "sold_out": "",
-    "stock_count": "",
-    "type": "",
-    "view_details": "",
+    "quantity": "Quantidade",
+    "remove": "Remover",
+    "save": "Guardar",
+    "select_variant": "Selecionar variante",
+    "sku": "SKU",
+    "sold_out": "Esgotado",
+    "stock_count": "Contagem de stock",
+    "type": "Tipo",
+    "view_details": "Ver detalhes",
     "bundle": {
       "custom_bundle": {
-        "add_to_bundle": "product.bundle.custom_bundle.add_to_bundle",
-        "added_to_bundle": "product.bundle.custom_bundle.added_to_bundle",
-        "bundle_contents_empty_html": "product.bundle.custom_bundle.bundle_contents_empty_html",
-        "bundle_contents_title": "product.bundle.custom_bundle.bundle_contents_title",
-        "bundle_price": "product.bundle.custom_bundle.bundle_price",
-        "button_atc_text": "product.bundle.custom_bundle.button_atc_text",
-        "button_view_contents_text": "product.bundle.custom_bundle.button_view_contents_text",
-        "progress_completed_text": "product.bundle.custom_bundle.progress_completed_text",
-        "progress_label": "product.bundle.custom_bundle.progress_label",
-        "progress_uncompleted_text": "product.bundle.custom_bundle.progress_uncompleted_text",
-        "you_save": "product.bundle.custom_bundle.you_save"
+        "add_to_bundle": "Adicionar ao pacote",
+        "added_to_bundle": "Adicionado ao pacote",
+        "bundle_contents_empty_html": "O seu pacote está vazio",
+        "bundle_contents_title": "O seu pacote",
+        "bundle_price": "Preço do pacote",
+        "button_atc_text": "Adicionar ao carrinho",
+        "button_view_contents_text": "Ver pacote",
+        "progress_completed_text": "Concluído",
+        "progress_label": "Estado da oferta",
+        "progress_uncompleted_text": "Não concluído",
+        "you_save": "Você economiza"
       }
     },
     "wishlist": {
-      "add_to_wishlist": "product.wishlist.add_to_wishlist",
-      "btn_label": "product.wishlist.btn_label",
-      "remove_from_wishlist": "product.wishlist.remove_from_wishlist"
+      "add_to_wishlist": "Adicionar à minha lista de desejos",
+      "btn_label": "A minha lista de desejos",
+      "remove_from_wishlist": "Remover da minha lista de desejos"
     }
   },
   "products": {
     "color_variants": {
-      "choose_color": "",
-      "select_option": ""
+      "choose_color": "Escolher cor",
+      "select_option": "Selecionar opção"
     },
     "product": {
-      "add_to_cart": ""
+      "add_to_cart": "Adicionar ao carrinho"
     },
     "variant": {
-      "in_stock": "",
-      "out_of_stock": ""
+      "in_stock": "Em stock",
+      "out_of_stock": "Fora de stock"
     }
   },
   "quiz": {
-    "btn_next": "",
-    "btn_previous": "",
-    "btn_reload_quiz": "",
-    "btn_restart": "",
-    "correct_answer": "",
+    "btn_next": "Seguinte",
+    "btn_previous": "Anterior",
+    "btn_reload_quiz": "Reiniciar",
+    "btn_restart": "Começar de novo",
+    "correct_answer": "Resposta correta",
     "countdown_timer": {
-      "days": "",
-      "hours": "",
-      "minutes": "",
-      "s": "",
-      "seconds": ""
+      "days": "dias",
+      "hours": "horas",
+      "minutes": "minutos",
+      "s": "s",
+      "seconds": "segundos"
     },
-    "finish": "",
+    "finish": "Terminar",
     "newsletter": {
-      "confirmation_text": "",
-      "input_label": "",
-      "name_placeholder": "",
-      "submit_button": ""
+      "confirmation_text": "Obrigado por subscrever!",
+      "input_label": "O seu endereço de email",
+      "name_placeholder": "O seu primeiro nome",
+      "submit_button": "Subscrever"
     },
-    "offcanvas_search_title_articles": "",
+    "offcanvas_search_title_articles": "Artigos",
     "password_page": {
       "password_form": {
-        "btn_label": "",
-        "password_label": ""
+        "btn_label": "Aceder",
+        "password_label": "Palavra-passe"
       }
     },
-    "question_of_html": "",
-    "results": "",
-    "score": "",
-    "start": "",
-    "title": "",
-    "try_again": "",
-    "your_answer": ""
+    "question_of_html": "Pergunta {{ current }} de {{ total }}",
+    "results": "Resultados",
+    "score": "Pontuação",
+    "start": "Iniciar",
+    "title": "Quiz",
+    "try_again": "Tentar novamente",
+    "your_answer": "A sua resposta"
   },
   "recipient": {
     "form": {
-      "btn_label": "",
-      "date_label": "",
-      "date_placeholder": "",
-      "email_label": "",
-      "max_characters": "",
-      "message_label": "",
-      "name_label": "",
+      "btn_label": "Guardar",
+      "date_label": "Data",
+      "date_placeholder": "Selecionar uma data",
+      "email_label": "Email",
+      "max_characters": "Máximo {{ count }} caracteres",
+      "message_label": "Mensagem",
+      "name_label": "Nome",
       "properties": {
-        "date_properties": "",
-        "email_properties": "",
-        "message_properties": "",
-        "name_properties": ""
+        "date_properties": "Data de entrega",
+        "email_properties": "Email do destinatário",
+        "message_properties": "Mensagem pessoal",
+        "name_properties": "Nome do destinatário"
       }
     },
     "properties": {
-      "date_properties": "",
-      "email_properties": "",
-      "message_properties": "",
-      "name_properties": ""
+      "date_properties": "Data de entrega",
+      "email_properties": "Email do destinatário",
+      "message_properties": "Mensagem pessoal",
+      "name_properties": "Nome do destinatário"
     }
   },
   "search_page": {
     "form": {
-      "btn_text": "",
-      "input_label": "",
-      "select_label": "",
+      "btn_text": "Pesquisar",
+      "input_label": "Pesquisar um produto...",
+      "select_label": "Tipo de pesquisa",
       "types": {
-        "articles": "",
-        "pages": "",
-        "products": ""
+        "articles": "Artigos",
+        "pages": "Páginas",
+        "products": "Produtos"
       }
     },
-    "no_results": "",
-    "results_with_count_and_term": "",
-    "title": "",
-    "title_search_performed": ""
+    "no_results": "Sem resultados para '{{ terms }}'",
+    "results_with_count_and_term": "{{ count }} resultados para '{{ terms }}'",
+    "title": "Pesquisar na loja",
+    "title_search_performed": "Resultados da pesquisa"
   },
+  "section": "Secção",
   "sections": {
     "location": {
-      "section_heading": ""
+      "section_heading": "Encontrar loja"
     },
     "alignment": {
-      "center": "sections.alignment.center",
-      "left": "sections.alignment.left"
+      "center": "Centro",
+      "left": "Esquerda"
     },
     "colors": {
       "body": {
-        "label": "sections.colors.body.label"
+        "label": "Etiqueta"
       },
       "light": {
-        "label": "sections.colors.light.label"
+        "label": "Etiqueta"
       },
       "white": {
-        "label": "sections.colors.white.label"
+        "label": "Etiqueta"
       }
     },
     "featured_collections": {
       "settings": {
         "btn_text": {
-          "default": "sections.featured_collections.settings.btn_text.default",
-          "info": "sections.featured_collections.settings.btn_text.info",
-          "label": "sections.featured_collections.settings.btn_text.label"
+          "default": "Padrão",
+          "info": "Informação",
+          "label": "Etiqueta"
         }
       }
     },
-    "footer": "sections.footer",
-    "header": "sections.header",
+    "footer": "Rodapé",
+    "header": "Cabeçalho",
     "list_collections": {
-      "name": "sections.list_collections.name",
+      "name": "Nome",
       "settings": {
         "bg_color": {
-          "label": "sections.list_collections.settings.bg_color.label"
+          "label": "Etiqueta"
         },
         "show_breadcrumbs": {
-          "label": "sections.list_collections.settings.show_breadcrumbs.label"
+          "label": "Etiqueta"
         },
         "text_align": {
-          "label": "sections.list_collections.settings.text_align.label"
+          "label": "Etiqueta"
+        }
+      }
+    }
+  },
+  "shared": "Partilhado",
+  "shopify": {
+    "checkout": {
+      "payment": {
+        "payment_method_incompatible_with_payment_terms": "Método de pagamento incompatível com termos de pagamento"
+      },
+      "review": {
+        "blocks": {
+          "company_location": "Localização da empresa"
         }
       }
     }
   },
   "testimonials": {
-    "purchase": "",
-    "verified": "",
-    "verified_review": ""
+    "purchase": "Comprado",
+    "verified": "Verificado",
+    "verified_review": "Avaliação verificada"
   },
+  "textWishlistAdd": "Adicionar à lista de desejos",
+  "textWishlistBtnLabel": "A minha lista de desejos",
+  "textWishlistRemove": "Remover da lista de desejos",
   "tracking": {
-    "btn_text": "",
-    "placeholder": ""
+    "btn_text": "Rastrear o meu pedido",
+    "placeholder": "Número de rastreamento"
   },
   "wishlist": {
-    "add_to_wishlist": "",
-    "btn_label": "",
-    "empty_html": "",
-    "offcanvas_title": "",
-    "remove_from_wishlist": ""
-  },
-  "bundle": {
-    "label": "bundle.label"
-  },
-  "section": "section",
-  "shared": "shared",
-  "shopify": {
-    "checkout": {
-      "payment": {
-        "payment_method_incompatible_with_payment_terms": "shopify.checkout.payment.payment_method_incompatible_with_payment_terms"
-      },
-      "review": {
-        "blocks": {
-          "company_location": "shopify.checkout.review.blocks.company_location"
-        }
-      }
-    }
-  },
-  "textWishlistAdd": "textWishlistAdd",
-  "textWishlistBtnLabel": "textWishlistBtnLabel",
-  "textWishlistRemove": "textWishlistRemove"
+    "add_to_wishlist": "Adicionar à minha lista de desejos",
+    "btn_label": "A minha lista de desejos",
+    "empty_html": "A sua lista de desejos está vazia.",
+    "offcanvas_title": "A minha lista de desejos",
+    "remove_from_wishlist": "Remover da minha lista de desejos"
+  }
 }
