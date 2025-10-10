@@ -1,3 +1,43 @@
+/* Discount Sticker */
+.discount-sticker {
+  position: fixed;
+  left: 0;
+  top: 40%;
+  z-index: 9999;
+  background: rgba(34, 51, 34, 0.95);
+  color: #fff;
+  padding: 16px 8px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s;
+}
+.discount-sticker-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+.discount-sticker-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.discount-sticker.hide {
+  transform: translateX(-100%);
+}
+@media (max-width: 600px) {
+  .discount-sticker {
+    top: auto;
+    bottom: 80px;
+    padding: 10px 6px;
+  }
+}
 /* ========================================================================
    INFORMATIONS GÉNÉRALES SUR LE SITE
    Propriété de © 2019/2024 Shopiweb.fr

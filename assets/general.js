@@ -1,3 +1,27 @@
+// Discount sticker and newsletter popup logic
+document.addEventListener('DOMContentLoaded', function() {
+  var sticker = document.getElementById('discount-sticker');
+  var closeBtn = sticker && sticker.querySelector('.discount-sticker-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+      sticker.classList.add('hide');
+      localStorage.setItem('discountStickerClosed', '1');
+      e.stopPropagation();
+    });
+  }
+  if (localStorage.getItem('discountStickerClosed') === '1') {
+    sticker && sticker.classList.add('hide');
+  }
+  // Optionnel : au clic sur le sticker, ouvrir le popup newsletter
+  sticker && sticker.addEventListener('click', function(e) {
+    if (e.target.classList.contains('discount-sticker-close')) return;
+    var modal = document.getElementById('newsletter-popup-modal');
+    if (modal) {
+      var bsModal = new bootstrap.Modal(modal);
+      bsModal.show();
+    }
+  });
+});
 /* ========================================================================
    INFORMATIONS GÉNÉRALES SUR LE SITE
    Propriété de © 2019/2024 Shopiweb.fr
