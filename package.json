@@ -1,0 +1,44 @@
+{
+  "name": "tps-raw-v1-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "depd": "^2.0.0",
+    "http-errors": "^2.0.0",
+    "inherits": "^2.0.4",
+    "node-fetch": "^2.7.0",
+    "setprototypeof": "^1.2.0",
+    "statuses": "^2.0.1",
+    "toidentifier": "^1.0.1",
+    "tr46": "^0.0.3",
+    "webidl-conversions": "^3.0.1",
+    "whatwg-url": "^5.0.0"
+  },
+  "devDependencies": {
+    "fast-glob": "^3.3.3",
+    "glob": "^11.0.3",
+    "json5": "^2.2.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "i18n:promote": "node i18n-promote-locale-to-en.js",
+    "i18n:fix-selfrefs": "node i18n-fix-selfrefs.js",
+    "i18n:fill": "node i18n-fill-all.js",
+    "i18n:empty": "node i18n-empty-report.js",
+    "i18n:stats": "node i18n-stats.js",
+    "i18n:all": "npm run i18n:fix-selfrefs && npm run i18n:fill && npm run i18n:empty && npm run i18n:stats"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stardust75001/TPS-RAW-V1-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Stardust75001/TPS-RAW-V1-/issues"
+  },
+  "homepage": "https://github.com/Stardust75001/TPS-RAW-V1-#readme"
+}
