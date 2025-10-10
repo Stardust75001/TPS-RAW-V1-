@@ -2,6 +2,4 @@
 	{% schema %}
 	   ^^^^^^^
 
-[34mtheme-check-report.json[0m: [31merror[0m: [33mValidJson[0m: Invalid syntax in JSON.
-
-347 files inspected, [31m2 offenses[0m detected, [33m1 offenses[0m auto-correctable
+346 files inspected, [31m1 offenses[0m detected, [33m1 offenses[0m auto-correctable
