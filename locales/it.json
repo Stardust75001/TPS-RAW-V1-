@@ -70,7 +70,8 @@
     "taxes_shipping_at_checkout_html": "Tasse e spedizione calcolate al checkout",
     "title": "Carrello",
     "view_cart": "Visualizza carrello",
-    "view_file": "Visualizza file"
+    "view_file": "Visualizza file",
+    "summary": "Riepilogo carrello"
   },
   "checkout": {
     "order_status": {
@@ -158,7 +159,8 @@
   },
   "custom": {
     "description": "Personalizza la tua selezione",
-    "title": "Personalizzato"
+    "title": "Personalizzato",
+    "ref_variant_label": "Riferimento variante collegata"
   },
   "custom_bundle": {
     "add_to_bundle": "Aggiungi al bundle",
@@ -539,7 +541,8 @@
     "confirmation_text": "Grazie per esserti iscritto!",
     "input_label": "Inserisci la tua email",
     "name_placeholder": "Inserisci il tuo nome",
-    "submit_button": "Iscriviti"
+    "submit_button": "Iscriviti",
+    "input_name_label": "Inserisci il tuo nome"
   },
   "no_reviews": "Nessuna recensione",
   "offcanvas_menu": {

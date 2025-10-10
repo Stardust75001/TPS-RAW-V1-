@@ -70,7 +70,8 @@
     "taxes_shipping_at_checkout_html": "Taxes et frais de port calculés à la commande",
     "title": "Panier",
     "view_cart": "Voir le panier",
-    "view_file": "Voir le fichier"
+    "view_file": "Voir le fichier",
+    "summary": "Récapitulatif du panier"
   },
   "checkout": {
     "order_status": {
@@ -158,7 +159,8 @@
   },
   "custom": {
     "description": "Personnalisez votre sélection",
-    "title": "Personnalisé"
+    "title": "Personnalisé",
+    "ref_variant_label": "Référence variante liée"
   },
   "custom_bundle": {
     "add_to_bundle": "Ajouter au lot",
@@ -539,7 +541,8 @@
     "confirmation_text": "Merci de vous être abonné !",
     "input_label": "Saisissez votre email",
     "name_placeholder": "Saisissez votre nom",
-    "submit_button": "S'abonner"
+    "submit_button": "S'abonner",
+    "input_name_label": "Entrez votre prénom"
   },
   "no_reviews": "Aucun avis",
   "offcanvas_menu": {

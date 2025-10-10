@@ -21,3 +21,7 @@ backups/
 # local
 .env
 venv*/
+
+# i18n helpers
+*.bak
+i18n-*.csv

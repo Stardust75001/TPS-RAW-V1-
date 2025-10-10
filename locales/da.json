@@ -70,7 +70,8 @@
     "taxes_shipping_at_checkout_html": "Forsendelse og skatter beregnes ved kassen",
     "title": "Min kurv",
     "view_cart": "Se kurv",
-    "view_file": "Vis fil"
+    "view_file": "Vis fil",
+    "summary": "Kurvoversigt"
   },
   "checkout": {
     "order_status": {
@@ -158,7 +159,8 @@
   },
   "custom": {
     "description": "Tilpas dit valg",
-    "title": "Tilpas"
+    "title": "Tilpas",
+    "ref_variant_label": "Koblet variantreference"
   },
   "custom_bundle": {
     "add_to_bundle": "Tilføj til pakke",
@@ -539,7 +541,8 @@
     "confirmation_text": "Tak for din tilmelding!",
     "input_label": "Din e-mailadresse",
     "name_placeholder": "Dit fornavn",
-    "submit_button": "Tilmeld"
+    "submit_button": "Tilmeld",
+    "input_name_label": "Indtast dit fornavn"
   },
   "no_reviews": "Ingen anmeldelser",
   "offcanvas_menu": {
