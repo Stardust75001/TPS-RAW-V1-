@@ -9,8 +9,9 @@ while true; do
   echo "4. Push sur la branche dev (GitHub)"
   echo "5. Lancer theme-check"
   echo "6. Lancer tous les tests de métriques (Google Console, Cloudflare, Sentry, GA4, Facebook Meta, etc.)"
-  echo "7. Quitter"
-  echo "Choisissez une option (1-7) : "
+  echo "7. Commit, merge et vérifier les conflits"
+  echo "8. Quitter"
+  echo "Choisissez une option (1-8) : "
   read opt
   case $opt in
     1)
@@ -59,11 +60,29 @@ while true; do
       fi
       ;;
     7)
+      echo "Sur quelle branche voulez-vous effectuer le commit, merge et check des conflits ? (main/dev) : "
+      read BRANCH_CHOICE
+      if [ "$BRANCH_CHOICE" != "main" ] && [ "$BRANCH_CHOICE" != "DEV" ]; then
+        echo "Choix invalide. Opération annulée."
+      else
+        git checkout $BRANCH_CHOICE
+        git add .
+        git commit -m "Commit avant merge via menu ($BRANCH_CHOICE)" || echo "Aucun changement à commit."
+        git fetch origin $BRANCH_CHOICE
+        git merge origin/$BRANCH_CHOICE
+        if [ $? -eq 0 ]; then
+          echo "Merge réussi sur $BRANCH_CHOICE."
+        else
+          echo "Conflits détectés sur $BRANCH_CHOICE ! Veuillez les résoudre manuellement."
+        fi
+      fi
+      ;;
+    8)
       echo "Sortie du menu."
       break
       ;;
     *)
-      echo "Option invalide. Choisissez 1-7."
+      echo "Option invalide. Choisissez 1-8."
       ;;
   esac
 done
