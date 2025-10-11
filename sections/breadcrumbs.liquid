@@ -283,20 +283,18 @@
             </div>
         </div>
 
-        {% if section.settings.language_selector_show or section.settings.currency_selector_show %}
-            {% if localization.available_languages.size > 1 or shop.enabled_currencies.size > 1 %}
-                <div class="d-flex justify-content-center py-2 mx-4 mt-4 mt-lg-2 mb-2 mb-lg-0">
-                    {% if section.settings.language_selector_show %}
-                        {% render 'dropdown-localization', btn_color: section.settings.lang_currency_btn_color %}
-                    {% endif %}
-                    {% if section.settings.currency_selector_show %}
-                        {% render 'dropdown-currency', btn_color: section.settings.lang_currency_btn_color %}
-                    {% endif %}
-                </div>
-            {% endif %}
-          </div>
+    {% if section.settings.language_selector_show or section.settings.currency_selector_show %}
+      {% if localization.available_languages.size > 1 or shop.enabled_currencies.size > 1 %}
+        <div class="d-flex justify-content-center py-2 mx-4 mt-4 mt-lg-2 mb-2 mb-lg-0">
+          {% if section.settings.language_selector_show %}
+            {% render 'dropdown-localization', btn_color: section.settings.lang_currency_btn_color %}
+          {% endif %}
+          {% if section.settings.currency_selector_show %}
+            {% render 'dropdown-currency', btn_color: section.settings.lang_currency_btn_color %}
+          {% endif %}
         </div>
-        {% endif %}
+      {% endif %}
+    {% endif %}
 
 
     </div>
@@ -1159,7 +1157,3 @@
   ]
 }
 {% endschema %}
-{{ settings.logo | image_url: width: 300 | image_tag: alt: shop.name, class: 'footer-logo-img', loading: 'lazy' }}
-{{ settings.logo | image_url: width: 300 | image_tag: alt: shop.name, class: 'footer-logo-img', loading: 'lazy' }}
-
-{% endif %}
