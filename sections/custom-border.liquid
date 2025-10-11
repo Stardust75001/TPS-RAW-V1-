@@ -258,7 +258,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
   {% if section.settings.reverse %}
     {% assign reverse = "transform:rotate(180deg); transition: 0.3s; margin-top: -0.1vw;" %}
   {% else %}
-    {% assign reverse = "transition: 0.3s; margin-top: -0.1vw;" %}
+    {% render 'custom-border-wave', wave_type: section.settings.divider_option %}
   {% endif %}
   {% case section.settings.wave_custom %}
       {% when "1" %}

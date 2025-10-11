@@ -10,12 +10,12 @@
 
     assign about_bg_color = section.settings.about_bg_color
 
-    if section.settings.about_bg_gradient
-        assign about_bg_color = about_bg_color | append: ' bg-gradient'
     endif
 
+    </div>
     assign btn_shadow_sp = settings.btn_shadow_sp
 %}
+    </div>
 
 {% style %}
 /* Image2 SVG */
@@ -120,17 +120,17 @@
                                                 </a>
                                             {% endunless %}
                                         {% when 'menu' %}
-                                            <ul class="nav flex-column mb-0">
-                                                {% for link in linklists[block.settings.menu].links %}
-                                                    {% if link.title != ':' %}
-                                                        <li class="nav-item">
-                                                            <a class="nav-link px-0 py-3 py-lg-2" href="{{ link.url }}">
-                                                                {{ link.title }}
-                                                            </a>
-                                                        </li>
-                                                    {% endif %}
-                                                {% endfor %}
-                                            </ul>
+                      <ul class="nav flex-column mb-0">
+                        {% for link in linklists[block.settings.menu].links %}
+                          {% if link.title != ':' %}
+                            <li class="nav-item">
+                              <a class="nav-link px-0 py-3 py-lg-2" href="{{ link.url }}">
+                                {{ link.title }}
+                              </a>
+                            </li>
+                          {% endif %}
+                        {% endfor %}
+                      </ul>
 
                                         {%- when 'image' -%}
                                             {% unless block.settings.description == blank %}
@@ -206,23 +206,14 @@
       </div>
     {% endunless %}
   {% endform %}
+          </div>
+        {% endif %}
 
-                                    {% endcase %}
-                                </div>
-                            </div>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-
-        <hr class="d-none d-sm-block mb-7">
-
-        <div id="footer-copyright" class="small text-center">
-            <div class="row align-items-center">
-                <div class="col-lg-4"></div>
-                <div class="col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center">
-                  <div class="footer-social-icons">
+      <div id="footer-copyright" class="small text-center">
+        <div class="row align-items-center">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center">
+            <div class="footer-social-icons">
                     <a href="https://www.instagram.com/spencerandthecity/" target="_blank" rel="noopener" aria-label="Instagram">
     {% # theme-check-disable ImgWidthAndHeight %}
 {% # theme-check-disable ImgWidthAndHeight %}
@@ -296,7 +287,9 @@
             {% endif %}
           </div>
         </div>
-        {% endif %}
+      {% endif %}
+    </div>
+    </div>
 
 
     </div>
@@ -397,118 +390,7 @@
     {
       "type": "checkbox",
       "id": "show_theme_by",
-      "label": "Afficher Thème créé par Shopiweb",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "language_selector_show",
-      "label": "Show language selector",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "currency_selector_show",
-      "label": "Show currency selector",
-      "default": true
-    },
-    {
-      "type": "select",
-      "id": "lang_currency_btn_color",
-      "label": "Button color langue/devise",
-      "default": "btn-outline-light",
-      "options": [
-        {
-          "group": "Normal",
-          "value": "btn-link",
-          "label": "Link"
-        },
-        {
-          "group": "Normal",
-          "value": "btn-light",
-          "label": "Light"
-        },
-        {
-          "group": "Normal",
-          "value": "btn-dark",
-          "label": "Dark"
-        },
-        {
-          "group": "Normal",
-          "value": "btn-primary",
-          "label": "Primaire"
-        },
-        {
-          "group": "Normal",
-          "value": "btn-secondary",
-          "label": "Secondaire"
-        },
-        {
-          "group": "Normal",
-          "value": "btn-tertiary",
-          "label": "Tertiaire"
-        },
-        {
-          "group": "Normal",
-          "value": "btn-success",
-          "label": "Success"
-        },
-        {
-          "group": "Normal",
-          "value": "btn-danger",
-          "label": "Danger"
-        },
-        {
-          "group": "Normal",
-          "value": "btn-warning",
-          "label": "Avertissement"
-        },
-        {
-          "group": "Normal",
-          "value": "btn-info",
-          "label": "Info"
-        },
-        {
-          "group": "Outline",
-          "value": "btn-outline-light",
-          "label": "Contour Claire"
-        },
-        {
-          "group": "Outline",
-          "value": "btn-outline-dark",
-          "label": "Contour Sombre"
-        },
-        {
-          "group": "Outline",
-          "value": "btn-outline-primary",
-          "label": "Contour Primaire"
-        },
-        {
-          "group": "Outline",
-          "value": "btn-outline-secondary",
-          "label": "Contour Secondaire"
-        },
-        {
-          "group": "Outline",
-          "value": "btn-outline-tertiary",
-          "label": "Contour Tertiaire"
-        },
-        {
-          "group": "Outline",
-          "value": "btn-outline-success",
-          "label": "Success Outline"
-        },
-        {
-          "group": "Outline",
-          "value": "btn-outline-danger",
-          "label": "Contour Danger"
-        },
-        {
-          "group": "Outline",
-          "value": "btn-outline-warning",
-          "label": "Contour Avertissement"
-        },
-        {
+        // ...existing code...
           "group": "Outline",
           "value": "btn-outline-info",
           "label": "Contour Info"
@@ -1159,8 +1041,5 @@
   ]
 }
 {% endschema %}
-{{ settings.logo | image_url: width: 300 | image_tag: alt: shop.name, class: 'footer-logo-img', loading: 'lazy' }}
-{{ settings.logo | image_url: width: 300 | image_tag: alt: shop.name, class: 'footer-logo-img', loading: 'lazy' }}
-
+  </div>
 {% endif %}
-
