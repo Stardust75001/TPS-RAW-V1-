@@ -1,0 +1,11 @@
+locale,key,reference_value,actual_value
+fr.json,cart.alert_cart_updated,Continue shopping,
+de.json,cart.alert_cart_updated,Continue shopping,
+es.json,cart.alert_cart_updated,Continue shopping,
+it.json,cart.alert_cart_updated,Continue shopping,
+nl.json,cart.alert_cart_updated,Continue shopping,
+pl.json,cart.alert_cart_updated,Continue shopping,
+pt.json,cart.alert_cart_updated,Continue shopping,
+sv.json,cart.alert_cart_updated,Continue shopping,
+da.json,cart.alert_cart_updated,Continue shopping,
+...

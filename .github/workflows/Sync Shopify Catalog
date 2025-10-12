@@ -1,0 +1,26 @@
+name: Sync Shopify Catalog
+
+on:
+  push:
+    paths:
+      - 'CSV dropshipper.csv'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Run SKU sync script
+        run: python generate_sku.py
+      - name: Sync to Shopify
+        env:
+          SHOPIFY_API_KEY: ${{ secrets.SHOPIFY_API_KEY }}
+          SHOPIFY_PASSWORD: ${{ secrets.SHOPIFY_PASSWORD }}
+          SHOPIFY_STORE: ${{ secrets.SHOPIFY_STORE }}
+        run: python shopify_import.py

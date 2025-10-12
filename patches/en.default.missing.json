@@ -1,0 +1,21 @@
+{
+  "404_page": {
+    "title": "Page not found",
+    "subtext": "The page you requested does not exist.",
+    "button": "Continue shopping"
+  },
+  "cart": {
+    "summary": "Cart summary"
+  },
+  "collection": {
+    "filters": {
+      "max_range_notice": "Maximum range reached"
+    },
+    "custom_bundle": {
+      "add_to_bundle": "Add to bundle"
+    }
+  },
+  "custom_sections": {
+    "image_banner_btn_primary": "Primary action"
+  }
+}

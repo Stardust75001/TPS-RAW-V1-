@@ -358,10 +358,7 @@ h6 {
   --bs-btn-border-radius: var(--bs-border-radius);
 }
 /* ❌ à retirer : ça écrase le contenu */
-.footer-logo-wrapper,
-#footer-blocks {
-  /* transform: scaleY(0.67); transform-origin: top center; */
-}
+/* (règle supprimée, vide inutile) */
 
 /* ===== Footer compact (≈ moitié de la hauteur, proportions conservées) ===== */
 #footer {
@@ -426,6 +423,7 @@ h6 {
 /* newsletter compacte */
 #footer .newsletter-form {
   margin-top: 0.25rem;
+
 }
 #footer .newsletter-input-row {
   gap: 0.5rem;

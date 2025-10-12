@@ -1,0 +1,53 @@
+name: Theme CI (structure + sanity + JSON)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  theme-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: "Sanity: theme structure at repo root"
+        shell: bash
+        run: |
+          set -euo pipefail
+          for p in layout/theme.liquid config/settings_schema.json; do
+            if [[ ! -f "$p" ]]; then
+              echo "::error file=$p::missing required file $p"
+              exit 1
+            fi
+          done
+          for d in assets sections snippets templates locales; do
+            if [[ ! -d "$d" ]]; then
+              echo "::error file=$d::missing required folder $d"
+              exit 1
+            fi
+          done
+          echo "Theme structure OK ✅"
+
+      - name: Validate JSON files
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -y && sudo apt-get install -y jq
+          # Validate all locale JSON files
+          find locales -type f -name '*.json' -print0 | while IFS= read -r -d '' f; do
+            echo "Checking $f"
+            if ! jq empty "$f" >/dev/null 2>&1; then
+              echo "::error file=$f::Invalid JSON syntax"
+              exit 1
+            fi
+          done
+          echo "✅ All locale JSON files valid"
+
+      - name: Run theme-check
+        uses: shopify/theme-check-action@v2
+        with:
+          flags: "--fail-level error"

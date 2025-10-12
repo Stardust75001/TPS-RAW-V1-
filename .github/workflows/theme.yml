@@ -1,0 +1,31 @@
+name: Theme CI
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
+
+      - name: Install Node deps
+        run: npm ci || npm i
+
+      - name: Run locale autofix
+        run: npm run i18n:fix
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - name: Install theme-check
+        run: gem install theme-check
+
+      - name: Theme check
+        run: npm run theme:check

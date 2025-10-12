@@ -1,0 +1,27 @@
+.DS_Store
+Thumbs.db
+node_modules/
+
+# Ignore virtualenvs
+.venv*/
+venv/
+
+# i18n backups
+*.bak
+# macOS + editor
+.DS_Store
+*.code-workspace
+
+# temp
+/locales_backup/
+/3
+/file.yml
+backups/
+
+# local
+.env
+venv*/
+
+# i18n helpers
+*.bak
+i18n-*.csv

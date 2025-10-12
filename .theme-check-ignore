@@ -1,0 +1,4 @@
+locales_backup/*
+node_modules/*
+vendor/*
+backups/*
