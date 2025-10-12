@@ -153,11 +153,15 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                         </div>
                     </div>
                 {% elsif block.type == 'submit_btn' %}
-                    <div class="form-group mb-4" {{ block.shopify_attributes }}>
-                        <button 
-                            type="submit" 
-                            class="btn w-100 {{ block.settings.btn_color }} {{ btn_shadow_sp }} {{ section.settings.form_fields_size | prepend: 'btn-' }}">
-                            {{ block.settings.btn_text }}
+          <div class="form-group mb-4" {{ block.shopify_attributes }}>
+            <!-- Cloudflare Turnstile CAPTCHA -->
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAB6Gxaj2i1fS_Vcb"></div>
+            <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+            <!-- End Cloudflare Turnstile CAPTCHA -->
+            <button 
+              type="submit" 
+              class="btn w-100 {{ block.settings.btn_color }} {{ btn_shadow_sp }} {{ section.settings.form_fields_size | prepend: 'btn-' }}">
+              {{ block.settings.btn_text }}
                         </button>
                     </div>
                 {% elsif block.type == 'separator' %}
