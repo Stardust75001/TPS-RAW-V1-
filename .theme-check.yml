@@ -15,3 +15,7 @@ TemplateLength:
   enabled: true
   severity: suggestion
   max_length: 600
+
+# Suppress orphaned snippet warnings
+OrphanedSnippet:
+  enabled: false
