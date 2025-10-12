@@ -146,7 +146,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 </div>
 </div>
 </div>
-
+</section>
 
 <!-- Script pour synchroniser swatches et galerie -->
 <script>
@@ -401,8 +401,7 @@ document.addEventListener("change",function(e){if(e.target.matches('select[name^
   ],
   "blocks": [
     {
-  "type": "@app",
-  "name": ""
+      "type": "@app"
     },
     {
       "type": "vendor",
@@ -2934,7 +2933,10 @@ document.addEventListener("change",function(e){if(e.target.matches('select[name^
         {
           "type": "video_url",
           "id": "external_video",
-          "label": "Video"
+          "label": "Video",
+          "accept": [
+            "youtube"
+          ]
         },
         {
           "type": "header",
@@ -5226,7 +5228,9 @@ document.addEventListener("change",function(e){if(e.target.matches('select[name^
       ]
     }
   ],
-
+  "templates": [
+    "product"
+  ],
   "presets": [
     {
       "name": "Product (template)",
