@@ -1,0 +1,16 @@
+{% comment %}
+Default article template for Shopify theme. Basic accessible and responsive structure.
+{% endcomment %}
+
+<article class="article-template container py-5">
+  <header>
+    <h1 class="h2 mb-3">{{ article.title }}</h1>
+    {% if article.image %}
+  <img src="{{ article.image | image_url: width: 1200, height: 800 }}" alt="Image de l'article : {{ article.title }}" class="img-fluid mb-4" width="1200" height="800" loading="eager" role="img" aria-label="Image de l'article : {{ article.title }}">
+    {% endif %}
+    <p class="text-muted">{{ article.published_at | date: "%B %d, %Y" }}</p>
+  </header>
+  <section class="article-content">
+    {{ article.content }}
+  </section>
+</article>

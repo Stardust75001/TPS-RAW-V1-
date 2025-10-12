@@ -6,12 +6,15 @@ Section : Image + boutons (Mobile uniquement < 768px)
   assign custom_class = section.settings.custom_class
 %}
 
-<section class="image-banner-mobile-only {{ custom_class }}">
+<section class="image-banner-mobile-only {{ custom_class }}" role="region" aria-label="Mobile Hero Banner">
   {% if section.settings.image_mobile %}
     <img src="{{ section.settings.image_mobile | image_url: width: 800 }}"
-         alt="{{ section.settings.title | escape }}"
-         loading="lazy"
-         class="image-banner-img">
+      alt="{{ section.settings.title | escape }}"
+      loading="lazy"
+      class="image-banner-img"
+      role="img"
+      aria-describedby="image-banner-desc-{{ section.id }}"
+      width="800" height="600">
   {% endif %}
 
   <div class="image-banner-overlay">
@@ -19,14 +22,14 @@ Section : Image + boutons (Mobile uniquement < 768px)
       <h2 class="image-banner-title">{{ section.settings.title }}</h2>
     {% endif %}
     {% if section.settings.text %}
-      <p class="image-banner-description">{{ section.settings.text }}</p>
+  <p id="image-banner-desc-{{ section.id }}" class="image-banner-description">{{ section.settings.text }}</p>
     {% endif %}
     <div class="btn-group">
       {% if section.settings.btn_primary_label and section.settings.btn_primary_url %}
-        <a href="{{ section.settings.btn_primary_url }}" class="btn btn-primary">{{ section.settings.btn_primary_label }}</a>
+  <a href="{{ section.settings.btn_primary_url }}" class="btn btn-primary" role="button" tabindex="0">{{ section.settings.btn_primary_label }}</a>
       {% endif %}
       {% if section.settings.btn_secondary_label and section.settings.btn_secondary_url %}
-        <a href="{{ section.settings.btn_secondary_url }}" class="btn btn-secondary">{{ section.settings.btn_secondary_label }}</a>
+  <a href="{{ section.settings.btn_secondary_url }}" class="btn btn-secondary" role="button" tabindex="0">{{ section.settings.btn_secondary_label }}</a>
       {% endif %}
     </div>
   </div>
@@ -96,14 +99,51 @@ Section : Image + boutons (Mobile uniquement < 768px)
 {
   "name": "Image Mobile + Boutons",
   "settings": [
-    { "type": "image_picker", "id": "image_mobile", "label": "Image mobile" },
-    { "type": "text", "id": "title", "label": "Titre", "default": "Un espace dédié à l’élégance et l’innovation." },
-    { "type": "textarea", "id": "text", "label": "Description", "default": "Sélections raffinées, soins premium et gourmandises uniques." },
-    { "type": "text", "id": "btn_primary_label", "label": "Texte du bouton principal", "default": "ENTREZ" },
-    { "type": "url", "id": "btn_primary_url", "label": "Lien du bouton principal" },
-    { "type": "text", "id": "btn_secondary_label", "label": "Texte du second bouton", "default": "À PROPOS" },
-    { "type": "url", "id": "btn_secondary_url", "label": "Lien du second bouton" },
-    { "type": "text", "id": "custom_class", "label": "Classe CSS personnalisée", "default": "image-banner" }
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image mobile"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Un espace dédié à l’élégance et l’innovation."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Description",
+      "default": "Sélections raffinées, soins premium et gourmandises uniques."
+    },
+    {
+      "type": "text",
+      "id": "btn_primary_label",
+      "label": "Texte du bouton principal",
+      "default": "ENTREZ"
+    },
+    {
+      "type": "url",
+      "id": "btn_primary_url",
+      "label": "Lien du bouton principal"
+    },
+    {
+      "type": "text",
+      "id": "btn_secondary_label",
+      "label": "Texte du second bouton",
+      "default": "À PROPOS"
+    },
+    {
+      "type": "url",
+      "id": "btn_secondary_url",
+      "label": "Lien du second bouton"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Classe CSS personnalisée",
+      "default": "image-banner"
+    }
   ],
   "presets": [
     {

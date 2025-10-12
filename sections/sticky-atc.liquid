@@ -176,111 +176,198 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 {% schema %}
 {
-    "name": "🏆 Sticky ATC",
-    "settings": [
+  "name": "🏆 Sticky ATC",
+  "settings": [
+    {
+      "type": "header",
+      "content": "🏆 Application Sticky ATC",
+      "info": "👉 Application Version Shopiweb Premium"
+    },
+    {
+      "type": "paragraph",
+      "content": "Documentation FR : [Sticky ATC by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/page-produit/sticky-atc)"
+    },
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "select",
+      "id": "bg_color",
+      "label": "Couleur de l'arrière plan",
+      "default": "bg-white text-body",
+      "options": [
         {
-            "type": "header",
-            "content": "🏆 Application Sticky ATC",
-            "info": "👉 Application Version Shopiweb Premium"
+          "group": "Principal",
+          "value": "bg-primary text-white",
+          "label": "Primaire"
         },
         {
-            "type": "paragraph",
-            "content": "Documentation FR : [Sticky ATC by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/page-produit\/sticky-atc)"
+          "group": "Principal",
+          "value": "bg-secondary text-white",
+          "label": "Secondaire"
         },
         {
-            "type": "header",
-            "content": "General"
+          "group": "Principal",
+          "value": "bg-tertiary text-white",
+          "label": "Tertiaire"
         },
         {
-            "type": "select",
-            "id": "bg_color",
-            "label": "Couleur de l'arrière plan",
-            "default": "bg-white text-body",
-            "options": [
-                { "group": "Principal", "value": "bg-primary text-white", "label": "Primaire" },
-                { "group": "Principal", "value": "bg-secondary text-white", "label": "Secondaire" },
-                { "group": "Principal", "value": "bg-tertiary text-white", "label": "Tertiaire" },
-                { "group": "Intermédiaire", "value": "bg-white text-body", "label": "Blanc" },
-                { "group": "Intermédiaire", "value": "bg-light text-body", "label": "Claire" },
-                { "group": "Intermédiaire", "value": "bg-dark text-white", "label": "Sombre" },
-                { "group": "Par défaut", "value": "bg-body text-body", "label": "Corps (body)" }
-            ]
+          "group": "Intermédiaire",
+          "value": "bg-white text-body",
+          "label": "Blanc"
         },
         {
-            "type": "checkbox",
-            "id": "bg_gradient",
-            "label": "Dégradé d'arrière-plan",
-            "default": false,
-            "info": "Ne s'applique pas aux couleurs claires"
+          "group": "Intermédiaire",
+          "value": "bg-light text-body",
+          "label": "Claire"
         },
         {
-            "type": "text",
-            "id": "max_width",
-            "label": "Largeur max. (px)",
-            "default": "600"
+          "group": "Intermédiaire",
+          "value": "bg-dark text-white",
+          "label": "Sombre"
         },
         {
-            "type": "header",
-            "content": "Produit"
-        },
-        {
-            "type": "select",
-            "id": "product_img_orientation",
-            "label": "Image orientation",
-            "default": "square",
-            "options": [
-                { "value": "square", "label": "Carré" },
-                { "value": "landscape", "label": "Paysage" },
-                { "value": "portrait", "label": "Portrait" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "product_img_thumbnail",
-            "label": "Bordure de l'image",
-            "default": "img-thumbnail",
-            "options": [
-                { "value": "", "label": "Aucune" },
-                { "value": "img-thumbnail", "label": "Bordure" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "product_border_color",
-            "label": "Couleur de la bordure",
-            "options": [
-                { "value": "", "label": "Default" },
-                { "value": "border-primary", "label": "Primaire" },
-                { "value": "border-secondary", "label": "Secondaire" },
-                { "value": "border-tertiary", "label": "Tertiaire" },
-                { "value": "border-dark", "label": "Sombre" },
-                { "value": "border-success", "label": "Succès" },
-                { "value": "border-warning", "label": "Avertissement" },
-                { "value": "border-danger", "label": "Danger" },
-                { "value": "border-info", "label": "Info" }
-            ],
-            "default": ""
-        },
-        {
-            "type": "select",
-            "id": "product_shadow_sp",
-            "label": "Ombre",
-            "options": [
-                { "value": "shadow-none", "label": "Aucune" },
-                { "value": "shadow-1", "label": "Ombre légère" },
-                { "value": "shadow-2", "label": "Ombre partiel" },
-                { "value": "shadow-3", "label": "Ombre profonde" },
-                { "value": "shadow-4", "label": "Ombre totale" }
-            ],
-            "default": "shadow-1"
+          "group": "Par défaut",
+          "value": "bg-body text-body",
+          "label": "Corps (body)"
         }
-    ],
-    "templates": ["product"],
-    "presets": [
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "bg_gradient",
+      "label": "Dégradé d'arrière-plan",
+      "default": false,
+      "info": "Ne s'applique pas aux couleurs claires"
+    },
+    {
+      "type": "text",
+      "id": "max_width",
+      "label": "Largeur max. (px)",
+      "default": "600"
+    },
+    {
+      "type": "header",
+      "content": "Produit"
+    },
+    {
+      "type": "select",
+      "id": "product_img_orientation",
+      "label": "Image orientation",
+      "default": "square",
+      "options": [
         {
-            "name": "🏆 Sticky ATC",
-            "category": "Product"
+          "value": "square",
+          "label": "Carré"
+        },
+        {
+          "value": "landscape",
+          "label": "Paysage"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
         }
-    ]
+      ]
+    },
+    {
+      "type": "select",
+      "id": "product_img_thumbnail",
+      "label": "Bordure de l'image",
+      "default": "img-thumbnail",
+      "options": [
+        {
+          "value": "",
+          "label": "Aucune"
+        },
+        {
+          "value": "img-thumbnail",
+          "label": "Bordure"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "product_border_color",
+      "label": "Couleur de la bordure",
+      "options": [
+        {
+          "value": "",
+          "label": "Default"
+        },
+        {
+          "value": "border-primary",
+          "label": "Primaire"
+        },
+        {
+          "value": "border-secondary",
+          "label": "Secondaire"
+        },
+        {
+          "value": "border-tertiary",
+          "label": "Tertiaire"
+        },
+        {
+          "value": "border-dark",
+          "label": "Sombre"
+        },
+        {
+          "value": "border-success",
+          "label": "Succès"
+        },
+        {
+          "value": "border-warning",
+          "label": "Avertissement"
+        },
+        {
+          "value": "border-danger",
+          "label": "Danger"
+        },
+        {
+          "value": "border-info",
+          "label": "Info"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "product_shadow_sp",
+      "label": "Ombre",
+      "options": [
+        {
+          "value": "shadow-none",
+          "label": "Aucune"
+        },
+        {
+          "value": "shadow-1",
+          "label": "Ombre légère"
+        },
+        {
+          "value": "shadow-2",
+          "label": "Ombre partiel"
+        },
+        {
+          "value": "shadow-3",
+          "label": "Ombre profonde"
+        },
+        {
+          "value": "shadow-4",
+          "label": "Ombre totale"
+        }
+      ],
+      "default": "shadow-1"
+    }
+  ],
+  "templates": [
+    "product"
+  ],
+  "presets": [
+    {
+      "name": "🏆 Sticky ATC",
+      "category": "Product"
+    }
+  ]
 }
 {% endschema %}

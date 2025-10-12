@@ -1629,14 +1629,15 @@ body.sticky-header-active {
 .newsletter-form {
   max-width: 400px;
   margin: 0 auto;
+  min-height: 48px;
 }
 
 /* Container pour les champs nom et email côte à côte */
 .newsletter-input-row {
   display: flex;
-  gap: 10px;
+  gap: 6px;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 /* Cas où seul le champ email est présent */
@@ -1646,12 +1647,12 @@ body.sticky-header-active {
 }
 
 .newsletter-name-input,
-.newsletter-email-input {
+  .newsletter-email-input {
   flex: 1;
-  padding: 15px 20px;
+  padding: 8px 12px;
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: 13px;
   background: #fff;
   border-radius: 8px;
 }
@@ -1666,10 +1667,10 @@ body.sticky-header-active {
 
 .newsletter-form input[type="email"] {
   flex: 1;
-  padding: 15px 20px;
+  padding: 8px 12px;
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: 13px;
   background: #fff;
 }
 
@@ -1678,12 +1679,13 @@ body.sticky-header-active {
 }
 
 .newsletter-form button {
-  padding: 15px 25px;
+  padding: 8px 16px;
   background: #007bff;
   color: #fff;
   border: none;
   cursor: pointer;
   font-weight: 600;
+  font-size: 13px;
   transition: background-color 0.3s ease;
 }
 
@@ -1763,17 +1765,18 @@ body.sticky-header-active {
 
   .newsletter-form {
     max-width: 100%;
+    min-height: 44px;
   }
 
   .newsletter-input-row {
-    gap: 8px;
-    margin-bottom: 8px;
+    gap: 4px;
+    margin-bottom: 4px;
   }
 
   .newsletter-name-input,
   .newsletter-email-input {
-    padding: 12px 15px;
-    font-size: 14px;
+    padding: 6px 8px;
+    font-size: 12px;
   }
 
   .newsletter-input-group {
@@ -1782,7 +1785,8 @@ body.sticky-header-active {
 
   .newsletter-form input[type="email"],
   .newsletter-form button {
-    padding: 12px 15px;
+    padding: 6px 8px;
+    font-size: 12px;
   }
 }
 

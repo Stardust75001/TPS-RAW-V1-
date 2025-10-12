@@ -60,7 +60,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                 a:hover span { transform: scale(1.1); }
                             </style>
                             <a href=https://www.youtube.com/embed/{{ section.settings.external_video.id }}?autoplay=1&mute=1>
-                                <img 
+                                <img loading="lazy" 
                                     src=https://img.youtube.com/vi/{{ section.settings.external_video.id }}/maxresdefault.jpg 
                                     alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'>
                                 <span>
@@ -78,164 +78,244 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 {% schema %}
 {
-    "name": "Video Externe",
-    "settings": [
+  "name": "Video Externe",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Documentation FR : [Video Externe by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/sections/video-externe)"
+    },
+    {
+      "type": "video_url",
+      "id": "external_video",
+      "label": "Lien de la video",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    },
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "select",
+      "id": "bg_color",
+      "label": "Couleur de l'arrière plan",
+      "default": "bg-body text-body",
+      "options": [
         {
-            "type": "paragraph", 
-            "content": "Documentation FR : [Video Externe by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/sections\/video-externe)"
+          "group": "Principal",
+          "value": "bg-primary text-white",
+          "label": "Primaire"
         },
         {
-            "type": "video_url",
-            "id": "external_video",
-            "label": "Lien de la video",
-            "accept": [
-                "youtube", "vimeo"
-            ],
-            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          "group": "Principal",
+          "value": "bg-secondary text-white",
+          "label": "Secondaire"
         },
         {
-            "type": "header",
-            "content": "General"
+          "group": "Principal",
+          "value": "bg-tertiary text-white",
+          "label": "Tertiaire"
         },
         {
-            "type": "select",
-            "id": "bg_color",
-            "label": "Couleur de l'arrière plan",
-            "default": "bg-body text-body",
-            "options": [
-                { "group": "Principal", "value": "bg-primary text-white", "label": "Primaire" },
-                { "group": "Principal", "value": "bg-secondary text-white", "label": "Secondaire" },
-                { "group": "Principal", "value": "bg-tertiary text-white", "label": "Tertiaire" },
-                { "group": "Intermédiaire", "value": "bg-white text-dark", "label": "Blanc" },
-                { "group": "Intermédiaire", "value": "bg-light text-body", "label": "Claire" },
-                { "group": "Intermédiaire", "value": "bg-dark text-white", "label": "Sombre" },
-                { "group": "Par défaut", "value": "bg-body text-body", "label": "Corps (body)" }
-            ]
+          "group": "Intermédiaire",
+          "value": "bg-white text-dark",
+          "label": "Blanc"
         },
         {
-            "type": "checkbox",
-            "id": "bg_gradient",
-            "label": "Dégradé d'arrière-plan",
-            "default": false,
-            "info": "Ne s'applique pas aux couleurs claires"
+          "group": "Intermédiaire",
+          "value": "bg-light text-body",
+          "label": "Claire"
         },
         {
-            "type": "select",
-            "id": "container",
-            "label": "Conteneur",
-            "default": "container",
-            "options": [
-                { "value": "container", "label": "Conteneur" },
-                { "value": "container-fluid", "label": "Pleine largeur" }
-            ]
+          "group": "Intermédiaire",
+          "value": "bg-dark text-white",
+          "label": "Sombre"
         },
         {
-            "type": "text",
-            "id": "max_width",
-            "label": "Largeur max. (px)",
-            "default": "991"
-        },
-        {
-            "type": "select",
-            "id": "img_thumbnail",
-            "label": "Bordure de la vidéo",
-            "default": "img-thumbnail",
-            "options": [
-                { "value": "", "label": "Aucune" },
-                { "value": "img-thumbnail", "label": "Bordure" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "border_color",
-            "label": "Couleur de la bordure",
-            "options": [
-                { "value": "", "label": "Default" },
-                { "value": "border-primary", "label": "Primaire" },
-                { "value": "border-secondary", "label": "Secondaire" },
-                { "value": "border-dark", "label": "Sombre" },
-                { "value": "border-success", "label": "Succès" },
-                { "value": "border-warning", "label": "Avertissement" },
-                { "value": "border-danger", "label": "Danger" },
-                { "value": "border-info", "label": "Info" }
-            ],
-            "default": ""
-        },
-        {
-            "type": "range",
-            "id": "border_width",
-            "label": "Largeur de la bordure",
-            "min": 0,
-            "max": 10,
-            "step": 1,
-            "default": 1
-        },
-        {
-            "type": "select",
-            "id": "shadow_sp",
-            "label": "Ombre",
-            "options": [
-                { "value": "shadow-none", "label": "Aucune" },
-                { "value": "shadow-1", "label": "Ombre légère" },
-                { "value": "shadow-2", "label": "Ombre partiel" },
-                { "value": "shadow-3", "label": "Ombre profonde" },
-                { "value": "shadow-4", "label": "Ombre totale" }
-            ],
-            "default": "shadow-1"
-        },
-        {
-            "type": "checkbox",
-            "id": "force_lazyload",
-            "label": "Forcer le Lazyload",
-            "info": "Remarque: S'applique uniquement aux vidéos YouTube. Les navigateurs modernes prennent en charge la fonction native de chargement paresseux, mais lorsque ce paramètre est activé, les iframes de YouTube bénéficient d'une meilleure implémentation du chargement paresseux, car seule la capture d'écran de la vidéo est chargée.",
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": "Espacement de la section"
-        },
-        {
-            "type": "range",
-            "id": "pt",
-            "label": "Padding supérieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "pb",
-            "label": "Padding inférieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mt",
-            "label": "Marge supérieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mb",
-            "label": "Marge inférieure",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "default": 0
+          "group": "Par défaut",
+          "value": "bg-body text-body",
+          "label": "Corps (body)"
         }
-    ],
-    "presets": [
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "bg_gradient",
+      "label": "Dégradé d'arrière-plan",
+      "default": false,
+      "info": "Ne s'applique pas aux couleurs claires"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Conteneur",
+      "default": "container",
+      "options": [
         {
-            "name": "Video Externe",
-            "category": "Media"
+          "value": "container",
+          "label": "Conteneur"
+        },
+        {
+          "value": "container-fluid",
+          "label": "Pleine largeur"
         }
-    ]
+      ]
+    },
+    {
+      "type": "text",
+      "id": "max_width",
+      "label": "Largeur max. (px)",
+      "default": "991"
+    },
+    {
+      "type": "select",
+      "id": "img_thumbnail",
+      "label": "Bordure de la vidéo",
+      "default": "img-thumbnail",
+      "options": [
+        {
+          "value": "",
+          "label": "Aucune"
+        },
+        {
+          "value": "img-thumbnail",
+          "label": "Bordure"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "border_color",
+      "label": "Couleur de la bordure",
+      "options": [
+        {
+          "value": "",
+          "label": "Default"
+        },
+        {
+          "value": "border-primary",
+          "label": "Primaire"
+        },
+        {
+          "value": "border-secondary",
+          "label": "Secondaire"
+        },
+        {
+          "value": "border-dark",
+          "label": "Sombre"
+        },
+        {
+          "value": "border-success",
+          "label": "Succès"
+        },
+        {
+          "value": "border-warning",
+          "label": "Avertissement"
+        },
+        {
+          "value": "border-danger",
+          "label": "Danger"
+        },
+        {
+          "value": "border-info",
+          "label": "Info"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Largeur de la bordure",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "shadow_sp",
+      "label": "Ombre",
+      "options": [
+        {
+          "value": "shadow-none",
+          "label": "Aucune"
+        },
+        {
+          "value": "shadow-1",
+          "label": "Ombre légère"
+        },
+        {
+          "value": "shadow-2",
+          "label": "Ombre partiel"
+        },
+        {
+          "value": "shadow-3",
+          "label": "Ombre profonde"
+        },
+        {
+          "value": "shadow-4",
+          "label": "Ombre totale"
+        }
+      ],
+      "default": "shadow-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "force_lazyload",
+      "label": "Forcer le Lazyload",
+      "info": "Remarque: S'applique uniquement aux vidéos YouTube. Les navigateurs modernes prennent en charge la fonction native de chargement paresseux, mais lorsque ce paramètre est activé, les iframes de YouTube bénéficient d'une meilleure implémentation du chargement paresseux, car seule la capture d'écran de la vidéo est chargée.",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Espacement de la section"
+    },
+    {
+      "type": "range",
+      "id": "pt",
+      "label": "Padding supérieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "pb",
+      "label": "Padding inférieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mt",
+      "label": "Marge supérieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mb",
+      "label": "Marge inférieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Externe",
+      "category": "Media"
+    }
+  ]
 }
 {% endschema %}

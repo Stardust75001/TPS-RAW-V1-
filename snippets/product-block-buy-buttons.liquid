@@ -14,7 +14,7 @@
 </style>
 
 <div class="product-buy-buttons {{ mt }} {{ mb }}" {{ block.shopify_attributes }}>
-    <form method="post" action="/cart/add" class="w-100">
+    <form method="post" action="{{ routes.cart_add_url }}" class="w-100">
         <input type="hidden" name="id" value="{{ current_variant.id }}">
         <div class="d-flex">
             {% if block.settings.show_qty_field %}
@@ -74,7 +74,7 @@
     {% endif %}
 
     {% if block.settings.show_buy_btn or settings.wishlist_enable %}
-        <form method="post" action="/cart/add" class="w-100">
+    <form method="post" action="{{ routes.cart_add_url }}" class="w-100">
             <input type="hidden" name="id" value="{{ current_variant.id }}">
             <div class="d-flex mt-4">
                 {% if block.settings.show_buy_btn %}
@@ -95,7 +95,7 @@
   data-wishlist-button
   data-id="{{ current_variant.id }}"
   data-title="{{ product.title }}"
-  data-image="{{ product.featured_image | img_url: 'medium' }}"
+  data-image="{{ product.featured_image | image_url: width: 240, height: 240 }}"
   data-price="{{ current_variant.price | money }}"
   data-url="{{ product.url }}"
   data-add-label="{{ 'general.wishlist.add_to_wishlist' | t }}"
@@ -108,5 +108,6 @@
                 </button>
             {% endif %}
         </div>
-    {% endif %}
-</div>
+    </form>
+{% endif %}
+

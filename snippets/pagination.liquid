@@ -11,7 +11,7 @@
             </a>
         {% endif %}
         <small class="paginate-count d-block text-muted mt-3">
-            {{ 'general.general.pagination_page_of' | t: count: paginate.current_page, total: paginate.pages }}
+            {{ 'general.pagination_page_of' | t: count: paginate.current_page, total: paginate.pages }}
         </small>
     </div>
 {% endif %}

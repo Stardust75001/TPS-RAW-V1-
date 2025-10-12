@@ -122,21 +122,21 @@
         {% endif %}
 
         {% if block.settings.img_mobile != blank or block.settings.img_desktop != blank %}
-          <img class="carousel-item-img d-lg-none"
+          <img loading="lazy" class="carousel-item-img d-lg-none"
                src="{{ block.settings.img_mobile | image_url: width: 960, crop: 'center' }}"
                alt="{{ block.settings.img_mobile.alt | escape }}"
                width="960"
                height="{{ 960 | divided_by: block.settings.img_mobile.aspect_ratio | round }}"
-               style="opacity: {{ block.settings.img_mobile_opacity | default: 0.7 }}; height: {% if block.settings.img_mobile_height > 0 %}{{ block.settings.img_mobile_height }}px{% else %}auto{% endif %};"
+               style="opacity: {{ block.settings.img_mobile_opacity | default: 0.7 }}; height: {% if block.settings.img_mobile_height and block.settings.img_mobile_height > 0 %}{{ block.settings.img_mobile_height }}px{% else %}auto{% endif %};"
                loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
                fetchpriority="{% if forloop.first %}high{% else %}low{% endif %}">
 
-          <img class="carousel-item-img d-none d-lg-block"
+          <img loading="lazy" class="carousel-item-img d-none d-lg-block"
                src="{{ block.settings.img_desktop | image_url: width: 1920, crop: 'center' }}"
                alt="{{ block.settings.img_desktop.alt | escape }}"
                width="1920"
                height="{{ 1920 | divided_by: block.settings.img_desktop.aspect_ratio | round }}"
-               style="opacity: {{ block.settings.img_desktop_opacity | default: 0.7 }}; height: {% if block.settings.img_desktop_height > 0 %}{{ block.settings.img_desktop_height }}px{% else %}auto{% endif %};"
+               style="opacity: {{ block.settings.img_desktop_opacity | default: 0.7 }}; height: {% if block.settings.img_desktop_height and block.settings.img_desktop_height > 0 %}{{ block.settings.img_desktop_height }}px{% else %}auto{% endif %};"
                loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
                fetchpriority="{% if forloop.first %}high{% else %}low{% endif %}">
         {% else %}

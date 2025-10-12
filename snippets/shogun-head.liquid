@@ -8,9 +8,7 @@ This file can be re-written at any time.
     window.SHG_CUSTOMER = { "id": "{{ customer.id }}" }
   {% else %}
     window.SHG_CUSTOMER = null;
-  {% endif %}
-</script>
-
+  {% endif %}</script>
 {% if article %}
   {% assign content = article %}
 {% elsif page %}

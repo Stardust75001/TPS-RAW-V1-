@@ -39,22 +39,27 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
   <header class="collection-header collection-header-img py-12 py-xl-14 mb-8 mb-lg-9 enter-view">
 
     <!-- Image mobile -->
-    <img
+    {% # theme-check-disable ImgWidthAndHeight %}
+<img
       class="collection-header-img img-mobile d-lg-none"
       src="{{ collection.image.src | image_url: width: 960 }}"
       alt="{{ collection.image.alt | escape }}"
       loading="lazy"
       style="display: block; margin: 0 auto; max-width: 100%; height: auto; object-fit: contain; opacity: {{ section.settings.img_opacity }};"
     />
+{% # theme-check-enable ImgWidthAndHeight %}
 
     <!-- Image desktop -->
-    <img
+    {% # theme-check-disable ImgWidthAndHeight %}
+<img
       class="collection-header-img img-desktop d-none d-lg-block"
       src="{{ collection.image.src | image_url: width: 1920 }}"
       alt="{{ collection.image.alt | escape }}"
       loading="lazy"
       style="display: block; margin: 0 auto; max-width: 100%; height: auto; object-fit: contain; opacity: {{ section.settings.img_opacity }};"
     />
+{% # theme-check-enable ImgWidthAndHeight %}
+{% # theme-check-disable ImgWidthAndHeight %}
 <img
   class="collection-header-img img-desktop d-none d-lg-block"
   src="{{ collection.image.src | image_url: width: 1920 }}"
@@ -62,6 +67,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
   loading="lazy"
   style="width: 100%; height: auto; object-fit: contain !important; opacity: {{ section.settings.img_opacity }};"
 />
+{% # theme-check-enable ImgWidthAndHeight %}
             {% if section.settings.img_blur > 0 %}
                 <div class="collection-header-img-blur" style="backdrop-filter: blur({{ section.settings.img_blur }}px);">
                 </div>
@@ -179,7 +185,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                 href="{{ link.url }}" 
                                 class="nav-link link-dark {% if link.active %}active{% endif %}"
                                 aria-current="{% if link.active %}page{% endif %}">
-                                <img
+                                {% # theme-check-disable ImgWidthAndHeight %}
+<img
                                     src="{{ image | image_url: width: img_width, height: img_height, crop: 'center' }}"
                                     alt="{{ image.alt }}"
                                     class="img-fluid mb-2 rounded {{ section.settings.collections_menu_img_thumbnail }} {{ section.settings.collections_menu_border_color }} {{ section.settings.collections_menu_shadow_sp }}"
@@ -187,6 +194,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                     width="{{ img_width }}"
                                     height="{{ img_height }}"
                                     loading="lazy">
+{% # theme-check-enable ImgWidthAndHeight %}
                                 {{ link.title }}
                             </a>
                         </li>
@@ -337,729 +345,1225 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 {% schema %}
 {
-    "name": "Collection (modèle)",
-    "settings": [
+  "name": "Collection (modèle)",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Conteneur",
+      "default": "container",
+      "options": [
         {
-            "type": "header",
-            "content": "General"
+          "value": "container",
+          "label": "Conteneur"
         },
         {
-            "type": "select",
-            "id": "container",
-            "label": "Conteneur",
-            "default": "container",
-            "options": [
-                { "value": "container", "label": "Conteneur" },
-                { "value": "container-fluid", "label": "Pleine largeur" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "text_align",
-            "label": "Alignement du texte",
-            "default": "text-center",
-            "options": [
-                { "value": "text-start", "label": "Gauche" },
-                { "value": "text-center", "label": "Centre" }
-            ]
-        },
-        {
-            "type": "range",
-            "id": "limit",
-            "label": "Produits par page",
-            "min": 10,
-            "max": 50,
-            "default": 48,
-            "step": 1
-        },
-        {
-            "type": "checkbox",
-            "id": "show_breadcrumbs",
-            "label": "Afficher le fil d'Ariane",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "enable_infinite_pagination",
-            "label": "Activer la pagination infinie",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_filters",
-            "label": "Afficher les filtres",
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "filters_btn_color",
-            "label": "Couleur du bouton",
-            "default": "btn-outline-secondary",
-            "options": [
-                { "group": "Normal", "value": "btn-link", "label": "Lien" },
-                { "group": "Normal", "value": "btn-light", "label": "Claire" },
-                { "group": "Normal", "value": "btn-dark", "label": "Sombre" },
-                { "group": "Normal", "value": "btn-primary", "label": "Primaire" },
-                { "group": "Normal", "value": "btn-secondary", "label": "Secondaire" },
-                { "group": "Normal", "value": "btn-tertiary", "label": "Tertiaire" },
-                { "group": "Normal", "value": "btn-success", "label": "Succès" },
-                { "group": "Normal", "value": "btn-danger", "label": "Danger" },
-                { "group": "Normal", "value": "btn-warning", "label": "Avertissement" },
-                { "group": "Normal", "value": "btn-info", "label": "Info" },
-                { "group": "Contour", "value": "btn-outline-light", "label": "Contour Claire" },
-                { "group": "Contour", "value": "btn-outline-dark", "label": "Contour Sombre" },
-                { "group": "Contour", "value": "btn-outline-primary", "label": "Contour Primaire" },
-                { "group": "Contour", "value": "btn-outline-secondary", "label": "Contour Secondaire" },
-                { "group": "Contour", "value": "btn-outline-tertiary", "label": "Contour Tertiaire" },
-                { "group": "Contour", "value": "btn-outline-success", "label": "Contour Succès" },
-                { "group": "Contour", "value": "btn-outline-danger", "label": "Contour Danger" },
-                { "group": "Contour", "value": "btn-outline-warning", "label": "Contour Avertissement" },
-                { "group": "Contour", "value": "btn-outline-info", "label": "Contour Info" }
-            ]
-        },
-        {
-            "type": "checkbox",
-            "id": "show_sort_by",
-            "label": "Afficher 'Trier par'",
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": "En-tête"
-        },
-        {
-            "type": "checkbox",
-            "id": "show_collection_img",
-            "label": "Afficher l'image",
-            "default": true
-        },
-        {
-            "type": "range",
-            "id": "img_opacity",
-            "label": "Opacité de l'image",
-            "min": 0,
-            "max": 1,
-            "step": 0.1,
-            "default": 0.7
-        },
-        {
-            "type": "range",
-            "id": "img_blur",
-            "label": "Flou de l'image",
-            "min": 0,
-            "max": 10,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "select",
-            "id": "title_size",
-            "label": "Taille du titre",
-            "default": "h1",
-            "options": [
-                { "group": "Titre Supérieur", "value": "display-1", "label": "Extra Extra Grand" },
-                { "group": "Titre Supérieur", "value": "display-2", "label": "Extra Grand" },
-                { "group": "Titre Supérieur", "value": "display-3", "label": "Ultra Grand" },
-                { "group": "Titre Supérieur", "value": "display-4", "label": "Super Grand" },
-                { "group": "Titre Standard", "value": "h1", "label": "Très Grand" },
-                { "group": "Titre Standard", "value": "h2", "label": "Grand" },
-                { "group": "Titre Standard", "value": "h3", "label": "Moyen" },
-                { "group": "Titre Standard", "value": "h4", "label": "Petit" },
-                { "group": "Titre Standard", "value": "h5", "label": "Très Petit" },
-                { "group": "Titre Standard", "value": "h6", "label": "Super Petit" }
-            ]
-        },
-        {
-            "type": "checkbox",
-            "id": "show_collection_description",
-            "label": "Afficher la description de la collection",
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "description_size",
-            "label": "Taille de description",
-            "default": "fs-5",
-            "options": [
-                { "group": "Description Standard", "value": "fs-1", "label": "Extra Grand" },
-                { "group": "Description Standard", "value": "fs-2", "label": "Super Grand" },
-                { "group": "Description Standard", "value": "fs-3", "label": "Très Grand" },
-                { "group": "Description Standard", "value": "fs-4", "label": "Grand" },
-                { "group": "Description Standard", "value": "fs-5", "label": "Moyen" },
-                { "group": "Description Standard", "value": "fs-6", "label": "Petit" } 
-            ]
-        },
-        {
-            "type": "header",
-            "content": "Menu collections"
-        },
-        {
-            "type": "link_list",
-            "id": "collections_menu",
-            "label": "Menu collections"
-        },
-        {
-            "type": "select",
-            "id": "collections_menu_align",
-            "label": "Alignement",
-            "default": "justify-content-center",
-            "options": [
-                { "value": "justify-content-start", "label": "Gauche" },
-                { "value": "justify-content-center", "label": "Centre" },
-                { "value": "justify-content-end", "label": "Droite" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "collections_menu_img_orientation",
-            "label": "Image orientation",
-            "default": "landscape",
-            "options": [
-                { "value": "square", "label": "Carré" },
-                { "value": "landscape", "label": "Paysage" },
-                { "value": "potrait", "label": "Portrait" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "collections_menu_img_thumbnail",
-            "label": "Bordure de l'image",
-            "default": "img-thumbnail",
-            "options": [
-                { "value": "", "label": "Aucune" },
-                { "value": "img-thumbnail", "label": "Bordure" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "collections_menu_border_color",
-            "label": "Couleur de la bordure",
-            "options": [
-                { "value": "", "label": "Default" },
-                { "value": "border-primary", "label": "Primaire" },
-                { "value": "border-secondary", "label": "Secondaire" },
-                { "value": "border-tertiary", "label": "Tertiaire" },
-                { "value": "border-dark", "label": "Sombre" },
-                { "value": "border-success", "label": "Succès" },
-                { "value": "border-warning", "label": "Avertissement" },
-                { "value": "border-danger", "label": "Danger" },
-                { "value": "border-info", "label": "Info" }
-            ],
-            "default": ""
-        },
-        {
-            "type": "select",
-            "id": "collections_menu_shadow_sp",
-            "label": "Ombre",
-            "options": [
-                { "value": "shadow-none", "label": "Aucune" },
-                { "value": "shadow-1", "label": "Ombre légère" },
-                { "value": "shadow-2", "label": "Ombre partiel" },
-                { "value": "shadow-3", "label": "Ombre profonde" },
-                { "value": "shadow-4", "label": "Ombre totale" }
-            ],
-            "default": "shadow-1"
-        },
-        {
-            "type": "header",
-            "content": "Produits"
-        },
-        {
-            "type": "select",
-            "id": "product_img_mode",
-            "label": "Mode image",
-            "options": [
-                { "value": "simple", "label": "Simple image" },
-                { "value": "hover", "label": "Changement au hover" },
-                { "value": "gallery", "label": "Gallerie d'images" }
-            ],
-            "default": "gallery"
-        },
-        {
-            "type": "select",
-            "id": "product_img_orientation",
-            "label": "Image orientation",
-            "default": "square",
-            "options": [
-                { "value": "square", "label": "Carré" },
-                { "value": "landscape", "label": "Paysage" },
-                { "value": "potrait", "label": "Portrait" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "product_img_thumbnail",
-            "label": "Bordure de l'image",
-            "default": "img-thumbnail",
-            "options": [
-                { "value": "", "label": "Aucune" },
-                { "value": "img-thumbnail", "label": "Bordure" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "product_border_color",
-            "label": "Couleur de la bordure",
-            "options": [
-                { "value": "", "label": "Default" },
-                { "value": "border-primary", "label": "Primaire" },
-                { "value": "border-secondary", "label": "Secondaire" },
-                { "value": "border-tertiary", "label": "Tertiaire" },
-                { "value": "border-dark", "label": "Sombre" },
-                { "value": "border-success", "label": "Succès" },
-                { "value": "border-warning", "label": "Avertissement" },
-                { "value": "border-danger", "label": "Danger" },
-                { "value": "border-info", "label": "Info" }
-            ],
-            "default": ""
-        },
-        {
-            "type": "select",
-            "id": "product_shadow_sp",
-            "label": "Ombre",
-            "options": [
-                { "value": "shadow-none", "label": "Aucune" },
-                { "value": "shadow-1", "label": "Ombre légère" },
-                { "value": "shadow-2", "label": "Ombre partiel" },
-                { "value": "shadow-3", "label": "Ombre profonde" },
-                { "value": "shadow-4", "label": "Ombre totale" }
-            ],
-            "default": "shadow-1"
-        },
-        {
-            "type": "checkbox",
-            "id": "product_show_sale_badge",
-            "label": "Afficher le badge de vente",
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "product_sale_badge_color",
-            "label": "Couleur du badge de vente",
-            "default": "bg-success text-white",
-            "options": [
-                { "group": "Principal", "value": "bg-primary text-white", "label": "Primaire" },
-                { "group": "Principal", "value": "bg-secondary text-white", "label": "Secondaire" },
-                { "group": "Principal", "value": "bg-tertiary text-white", "label": "Tertiaire" },
-                { "group": "Intermédiaire", "value": "bg-white text-dark", "label": "Blanc" },
-                { "group": "Intermédiaire", "value": "bg-light text-body", "label": "Claire" },
-                { "group": "Intermédiaire", "value": "bg-dark text-white", "label": "Sombre" },
-                { "group": "Par défaut", "value": "", "label": "Corps (body)" },
-                { "group": "Alerte", "value": "bg-success text-white", "label": "Succès" },
-                { "group": "Alerte", "value": "bg-warning text-dark", "label": "Avertissement" },
-                { "group": "Alerte", "value": "bg-danger text-white", "label": "Danger" },
-                { "group": "Alerte", "value": "bg-info text-white", "label": "Info" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "product_title_size",
-            "label": "Taille du titre",
-            "default": "h6",
-            "options": [
-                { "group": "Titre Standard", "value": "h1", "label": "Très Grand" },
-                { "group": "Titre Standard", "value": "h2", "label": "Grand" },
-                { "group": "Titre Standard", "value": "h3", "label": "Moyen" },
-                { "group": "Titre Standard", "value": "h4", "label": "Petit" },
-                { "group": "Titre Standard", "value": "h5", "label": "Très Petit" },
-                { "group": "Titre Standard", "value": "h6", "label": "Super Petit" }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "product_title_truncate",
-            "label": "Tronquer le titre",
-            "default": "",
-            "info": "Utile si les titres de vos produits sont longs",
-            "options": [
-                { "value": "", "label": "Non (default)" },
-                { "value": "text-truncate", "label": "Une ligne" }
-            ]
-        },
-        {
-            "type": "checkbox",
-            "id": "product_show_vendor",
-            "label": "Afficher le distributeur",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "product_show_atc_form",
-            "label": "Afficher le bouton 'Ajouter au panier'",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "product_form_show_inventory",
-            "label": "Afficher l'inventaire dans le bouton 'Ajouter au panier'",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "product_show_wishlist_btn",
-            "label": "Afficher le bouton 'liste de souhaits'",
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": "Points d'arrêt",
-            "info": "Ajuster les éléments par diapositive en fonction de la résolution de l'écran"
-        },
-        {
-            "type": "range",
-            "id": "breakpoint_xs",
-            "label": "Éléments par slide / xs",
-            "info": "Largeur d'écran : moins de 576px",
-            "min": 1,
-            "max": 3,
-            "step": 1,
-            "default": 2
-        },
-        {
-            "type": "range",
-            "id": "breakpoint_sm",
-            "label": "Éléments par slide / sm",
-            "info": "Largeur d'écran : ≥576px",
-            "min": 1,
-            "max": 3,
-            "step": 1,
-            "default": 2
-        },
-        {
-            "type": "range",
-            "id": "breakpoint_md",
-            "label": "Éléments par slide / md",
-            "info": "Largeur d'écran : ≥768px",
-            "min": 1,
-            "max": 4,
-            "step": 1,
-            "default": 3
-        },
-        {
-            "type": "range",
-            "id": "breakpoint_lg",
-            "label": "Éléments par slide / lg",
-            "info": "Largeur d'écran : ≥992px",
-            "min": 1,
-            "max": 6,
-            "step": 1,
-            "default": 3
-        },
-        {
-            "type": "range",
-            "id": "breakpoint_xl",
-            "label": "Éléments par slide / xl",
-            "info": "Largeur d'écran : ≥1200px",
-            "min": 1,
-            "max": 6,
-            "step": 1,
-            "default": 4
-        },
-        {
-            "type": "range",
-            "id": "breakpoint_xxl",
-            "label": "Éléments par slide / xxl",
-            "info": "Largeur d'écran : ≥1400px",
-            "min": 1,
-            "max": 8,
-            "step": 1,
-            "default": 4
+          "value": "container-fluid",
+          "label": "Pleine largeur"
         }
-    ],
-    "blocks": [
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Alignement du texte",
+      "default": "text-center",
+      "options": [
         {
-            "type": "mobile",
-            "name": "Mobile",
-            "settings": [
-                {
-                    "type": "header",
-                    "content": "General"
-                },
-                {
-                    "type": "range",
-                    "id": "inject",
-                    "label": "Injecter comme élément",
-                    "info": "Sélectionnez la position dans la liste des produits où la bannière s'affichera.",
-                    "min": 1,
-                    "max": 40,
-                    "default": 5,
-                    "step": 1
-                },
-                {
-                    "type": "select",
-                    "id": "bg_color",
-                    "label": "Couleur de l'arrière plan",
-                    "default": "bg-dark text-white",
-                    "options": [
-                        { "group": "Principal", "value": "bg-primary text-white", "label": "Primaire" },
-                        { "group": "Principal", "value": "bg-secondary text-white", "label": "Secondaire" },
-                        { "group": "Principal", "value": "bg-tertiary text-white", "label": "Tertiaire" },
-                        { "group": "Intermédiaire", "value": "bg-white text-body", "label": "Blanc" },
-                        { "group": "Intermédiaire", "value": "bg-light text-body", "label": "Claire" },
-                        { "group": "Intermédiaire", "value": "bg-dark text-white", "label": "Sombre" },
-                        { "group": "Par défaut", "value": "bg-body text-body", "label": "Corps (body)" },
-                        { "group": "Alerte", "value": "bg-success text-white", "label": "Succès" },
-                        { "group": "Alerte", "value": "bg-warning text-white", "label": "Avertissement" },
-                        { "group": "Alerte", "value": "bg-danger text-white", "label": "Danger" },
-                        { "group": "Alerte", "value": "bg-info text-white", "label": "Info" }
-                    ]
-                },
-                {
-                    "type": "url",
-                    "id": "url",
-                    "label": "URL"
-                },
-                {
-                    "type": "header",
-                    "content": "Image"
-                },
-                {
-                    "type": "image_picker",
-                    "id": "img",
-                    "label": "Image"
-                },
-                {
-                    "type": "range",
-                    "id": "img_opacity",
-                    "label": "Opacité image",
-                    "min": 0,
-                    "max": 1,
-                    "step": 0.1,
-                    "default": 0.7
-                },
-                {
-                    "type": "header",
-                    "content": "Vidéo"
-                },
-                {
-                    "type": "video",
-                    "id": "video",
-                    "label": "Vidéo"
-                },
-                {
-                    "type": "range",
-                    "id": "vid_opacity",
-                    "label": "Opacité vidéo",
-                    "min": 0,
-                    "max": 1,
-                    "step": 0.1,
-                    "default": 0.7
-                },
-                {
-                    "type": "checkbox",
-                    "id": "autoplay",
-                    "label": "Autoplay",
-                    "default": true
-                },
-                {
-                    "type": "checkbox",
-                    "id": "loop",
-                    "label": "Loop",
-                    "info": "(Vidéo en boucle)",
-                    "default": true
-                },
-                {
-                    "type": "checkbox",
-                    "id": "muted",
-                    "label": "Mute",
-                    "info": "(Vidéo muette)",
-                    "default": true
-                },
-                {
-                    "type": "checkbox",
-                    "id": "controls",
-                    "label": "Contrôles",
-                    "default": true
-                },
-                {
-                    "type": "header",
-                    "content": "Texte"
-                },
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": "Titre",
-                    "default": "Nouvelle Collection"
-                },
-                {
-                    "type": "select",
-                    "id": "title_size",
-                    "label": "Taille du titre",
-                    "default": "h4",
-                    "options": [
-                        { "group": "Titre Standard", "value": "h1", "label": "Très Grand" },
-                        { "group": "Titre Standard", "value": "h2", "label": "Grand" },
-                        { "group": "Titre Standard", "value": "h3", "label": "Moyen" },
-                        { "group": "Titre Standard", "value": "h4", "label": "Petit" },
-                        { "group": "Titre Standard", "value": "h5", "label": "Très Petit" },
-                        { "group": "Titre Standard", "value": "h6", "label": "Super Petit" }
-                    ]
-                },
-                {
-                    "type": "richtext",
-                    "id": "description",
-                    "label": "Description (facultatif)",
-                    "default": "<p>Ajouter une description facultative à cette section</p>"
-                },
-                {
-                    "type": "text",
-                    "id": "btn_text",
-                    "label": "Texte du bouton",
-                    "default": "En savoir plus",
-                    "info": "Laisser vide pour désactiver"
-                }
-            ]
+          "value": "text-start",
+          "label": "Gauche"
         },
         {
-            "type": "desktop",
-            "name": "Bureau",
-            "settings": [
-                {
-                    "type": "header",
-                    "content": "General"
-                },
-                {
-                    "type": "range",
-                    "id": "inject",
-                    "label": "Injecter comme élément",
-                    "info": "Sélectionnez la position dans la liste des produits où la bannière s'affichera.",
-                    "min": 1,
-                    "max": 40,
-                    "default": 5,
-                    "step": 1
-                },
-                {
-                    "type": "select",
-                    "id": "bg_color",
-                    "label": "Couleur de l'arrière plan",
-                    "default": "bg-dark text-white",
-                    "options": [
-                        { "group": "Principal", "value": "bg-primary text-white", "label": "Primaire" },
-                        { "group": "Principal", "value": "bg-secondary text-white", "label": "Secondaire" },
-                        { "group": "Principal", "value": "bg-tertiary text-white", "label": "Tertiaire" },
-                        { "group": "Intermédiaire", "value": "bg-white text-body", "label": "Blanc" },
-                        { "group": "Intermédiaire", "value": "bg-light text-body", "label": "Claire" },
-                        { "group": "Intermédiaire", "value": "bg-dark text-white", "label": "Sombre" },
-                        { "group": "Par défaut", "value": "bg-body text-body", "label": "Corps (body)" },
-                        { "group": "Alerte", "value": "bg-success text-white", "label": "Succès" },
-                        { "group": "Alerte", "value": "bg-warning text-white", "label": "Avertissement" },
-                        { "group": "Alerte", "value": "bg-danger text-white", "label": "Danger" },
-                        { "group": "Alerte", "value": "bg-info text-white", "label": "Info" }
-                    ]
-                },
-                {
-                    "type": "url",
-                    "id": "url",
-                    "label": "URL"
-                },
-                {
-                    "type": "header",
-                    "content": "Image"
-                },
-                {
-                    "type": "image_picker",
-                    "id": "img",
-                    "label": "Image"
-                },
-                {
-                    "type": "range",
-                    "id": "img_opacity",
-                    "label": "Opacité image",
-                    "min": 0,
-                    "max": 1,
-                    "step": 0.1,
-                    "default": 0.7
-                },
-                {
-                    "type": "header",
-                    "content": "Vidéo"
-                },
-                {
-                    "type": "video",
-                    "id": "video",
-                    "label": "Vidéo"
-                },
-                {
-                    "type": "range",
-                    "id": "vid_opacity",
-                    "label": "Opacité vidéo",
-                    "min": 0,
-                    "max": 1,
-                    "step": 0.1,
-                    "default": 0.7
-                },
-                {
-                    "type": "checkbox",
-                    "id": "autoplay",
-                    "label": "Autoplay",
-                    "default": true
-                },
-                {
-                    "type": "checkbox",
-                    "id": "loop",
-                    "label": "Loop",
-                    "info": "(Vidéo en boucle)",
-                    "default": true
-                },
-                {
-                    "type": "checkbox",
-                    "id": "muted",
-                    "label": "Mute",
-                    "info": "(Vidéo muette)",
-                    "default": true
-                },
-                {
-                    "type": "checkbox",
-                    "id": "controls",
-                    "label": "Contrôles",
-                    "default": true
-                },
-                {
-                    "type": "header",
-                    "content": "Texte"
-                },
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": "Titre",
-                    "default": "Nouvelle Collection"
-                },
-                {
-                    "type": "select",
-                    "id": "title_size",
-                    "label": "Taille du titre",
-                    "default": "h4",
-                    "options": [
-                        { "group": "Titre Standard", "value": "h1", "label": "Très Grand" },
-                        { "group": "Titre Standard", "value": "h2", "label": "Grand" },
-                        { "group": "Titre Standard", "value": "h3", "label": "Moyen" },
-                        { "group": "Titre Standard", "value": "h4", "label": "Petit" },
-                        { "group": "Titre Standard", "value": "h5", "label": "Très Petit" },
-                        { "group": "Titre Standard", "value": "h6", "label": "Super Petit" }
-                    ]
-                },
-                {
-                    "type": "richtext",
-                    "id": "description",
-                    "label": "Description (facultatif)",
-                    "default": "<p>Ajouter une description facultative à cette section</p>"
-                },
-                {
-                    "type": "text",
-                    "id": "btn_text",
-                    "label": "Texte du bouton",
-                    "default": "En savoir plus",
-                    "info": "Laisser vide pour désactiver"
-                }
-            ]
+          "value": "text-center",
+          "label": "Centre"
         }
-    ],
-    "templates": ["collection"],
-    "presets": [
+      ]
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Produits par page",
+      "min": 10,
+      "max": 50,
+      "default": 48,
+      "step": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Afficher le fil d'Ariane",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_infinite_pagination",
+      "label": "Activer la pagination infinie",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_filters",
+      "label": "Afficher les filtres",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "filters_btn_color",
+      "label": "Couleur du bouton",
+      "default": "btn-outline-secondary",
+      "options": [
         {
-            "name": "Collection (modèle)",
-            "category": "Template"
+          "group": "Normal",
+          "value": "btn-link",
+          "label": "Lien"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-light",
+          "label": "Claire"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-dark",
+          "label": "Sombre"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-primary",
+          "label": "Primaire"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-secondary",
+          "label": "Secondaire"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-tertiary",
+          "label": "Tertiaire"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-success",
+          "label": "Succès"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-danger",
+          "label": "Danger"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-warning",
+          "label": "Avertissement"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-info",
+          "label": "Info"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-light",
+          "label": "Contour Claire"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-dark",
+          "label": "Contour Sombre"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-primary",
+          "label": "Contour Primaire"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-secondary",
+          "label": "Contour Secondaire"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-tertiary",
+          "label": "Contour Tertiaire"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-success",
+          "label": "Contour Succès"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-danger",
+          "label": "Contour Danger"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-warning",
+          "label": "Contour Avertissement"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-info",
+          "label": "Contour Info"
         }
-    ]
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sort_by",
+      "label": "Afficher 'Trier par'",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "En-tête"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_img",
+      "label": "Afficher l'image",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "img_opacity",
+      "label": "Opacité de l'image",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.7
+    },
+    {
+      "type": "range",
+      "id": "img_blur",
+      "label": "Flou de l'image",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Taille du titre",
+      "default": "h1",
+      "options": [
+        {
+          "group": "Titre Supérieur",
+          "value": "display-1",
+          "label": "Extra Extra Grand"
+        },
+        {
+          "group": "Titre Supérieur",
+          "value": "display-2",
+          "label": "Extra Grand"
+        },
+        {
+          "group": "Titre Supérieur",
+          "value": "display-3",
+          "label": "Ultra Grand"
+        },
+        {
+          "group": "Titre Supérieur",
+          "value": "display-4",
+          "label": "Super Grand"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h1",
+          "label": "Très Grand"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h2",
+          "label": "Grand"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h3",
+          "label": "Moyen"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h4",
+          "label": "Petit"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h5",
+          "label": "Très Petit"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h6",
+          "label": "Super Petit"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "label": "Afficher la description de la collection",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "description_size",
+      "label": "Taille de description",
+      "default": "fs-5",
+      "options": [
+        {
+          "group": "Description Standard",
+          "value": "fs-1",
+          "label": "Extra Grand"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-2",
+          "label": "Super Grand"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-3",
+          "label": "Très Grand"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-4",
+          "label": "Grand"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-5",
+          "label": "Moyen"
+        },
+        {
+          "group": "Description Standard",
+          "value": "fs-6",
+          "label": "Petit"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Menu collections"
+    },
+    {
+      "type": "link_list",
+      "id": "collections_menu",
+      "label": "Menu collections"
+    },
+    {
+      "type": "select",
+      "id": "collections_menu_align",
+      "label": "Alignement",
+      "default": "justify-content-center",
+      "options": [
+        {
+          "value": "justify-content-start",
+          "label": "Gauche"
+        },
+        {
+          "value": "justify-content-center",
+          "label": "Centre"
+        },
+        {
+          "value": "justify-content-end",
+          "label": "Droite"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "collections_menu_img_orientation",
+      "label": "Image orientation",
+      "default": "landscape",
+      "options": [
+        {
+          "value": "square",
+          "label": "Carré"
+        },
+        {
+          "value": "landscape",
+          "label": "Paysage"
+        },
+        {
+          "value": "potrait",
+          "label": "Portrait"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "collections_menu_img_thumbnail",
+      "label": "Bordure de l'image",
+      "default": "img-thumbnail",
+      "options": [
+        {
+          "value": "",
+          "label": "Aucune"
+        },
+        {
+          "value": "img-thumbnail",
+          "label": "Bordure"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "collections_menu_border_color",
+      "label": "Couleur de la bordure",
+      "options": [
+        {
+          "value": "",
+          "label": "Default"
+        },
+        {
+          "value": "border-primary",
+          "label": "Primaire"
+        },
+        {
+          "value": "border-secondary",
+          "label": "Secondaire"
+        },
+        {
+          "value": "border-tertiary",
+          "label": "Tertiaire"
+        },
+        {
+          "value": "border-dark",
+          "label": "Sombre"
+        },
+        {
+          "value": "border-success",
+          "label": "Succès"
+        },
+        {
+          "value": "border-warning",
+          "label": "Avertissement"
+        },
+        {
+          "value": "border-danger",
+          "label": "Danger"
+        },
+        {
+          "value": "border-info",
+          "label": "Info"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "collections_menu_shadow_sp",
+      "label": "Ombre",
+      "options": [
+        {
+          "value": "shadow-none",
+          "label": "Aucune"
+        },
+        {
+          "value": "shadow-1",
+          "label": "Ombre légère"
+        },
+        {
+          "value": "shadow-2",
+          "label": "Ombre partiel"
+        },
+        {
+          "value": "shadow-3",
+          "label": "Ombre profonde"
+        },
+        {
+          "value": "shadow-4",
+          "label": "Ombre totale"
+        }
+      ],
+      "default": "shadow-1"
+    },
+    {
+      "type": "header",
+      "content": "Produits"
+    },
+    {
+      "type": "select",
+      "id": "product_img_mode",
+      "label": "Mode image",
+      "options": [
+        {
+          "value": "simple",
+          "label": "Simple image"
+        },
+        {
+          "value": "hover",
+          "label": "Changement au hover"
+        },
+        {
+          "value": "gallery",
+          "label": "Gallerie d'images"
+        }
+      ],
+      "default": "gallery"
+    },
+    {
+      "type": "select",
+      "id": "product_img_orientation",
+      "label": "Image orientation",
+      "default": "square",
+      "options": [
+        {
+          "value": "square",
+          "label": "Carré"
+        },
+        {
+          "value": "landscape",
+          "label": "Paysage"
+        },
+        {
+          "value": "potrait",
+          "label": "Portrait"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "product_img_thumbnail",
+      "label": "Bordure de l'image",
+      "default": "img-thumbnail",
+      "options": [
+        {
+          "value": "",
+          "label": "Aucune"
+        },
+        {
+          "value": "img-thumbnail",
+          "label": "Bordure"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "product_border_color",
+      "label": "Couleur de la bordure",
+      "options": [
+        {
+          "value": "",
+          "label": "Default"
+        },
+        {
+          "value": "border-primary",
+          "label": "Primaire"
+        },
+        {
+          "value": "border-secondary",
+          "label": "Secondaire"
+        },
+        {
+          "value": "border-tertiary",
+          "label": "Tertiaire"
+        },
+        {
+          "value": "border-dark",
+          "label": "Sombre"
+        },
+        {
+          "value": "border-success",
+          "label": "Succès"
+        },
+        {
+          "value": "border-warning",
+          "label": "Avertissement"
+        },
+        {
+          "value": "border-danger",
+          "label": "Danger"
+        },
+        {
+          "value": "border-info",
+          "label": "Info"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "product_shadow_sp",
+      "label": "Ombre",
+      "options": [
+        {
+          "value": "shadow-none",
+          "label": "Aucune"
+        },
+        {
+          "value": "shadow-1",
+          "label": "Ombre légère"
+        },
+        {
+          "value": "shadow-2",
+          "label": "Ombre partiel"
+        },
+        {
+          "value": "shadow-3",
+          "label": "Ombre profonde"
+        },
+        {
+          "value": "shadow-4",
+          "label": "Ombre totale"
+        }
+      ],
+      "default": "shadow-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_show_sale_badge",
+      "label": "Afficher le badge de vente",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "product_sale_badge_color",
+      "label": "Couleur du badge de vente",
+      "default": "bg-success text-white",
+      "options": [
+        {
+          "group": "Principal",
+          "value": "bg-primary text-white",
+          "label": "Primaire"
+        },
+        {
+          "group": "Principal",
+          "value": "bg-secondary text-white",
+          "label": "Secondaire"
+        },
+        {
+          "group": "Principal",
+          "value": "bg-tertiary text-white",
+          "label": "Tertiaire"
+        },
+        {
+          "group": "Intermédiaire",
+          "value": "bg-white text-dark",
+          "label": "Blanc"
+        },
+        {
+          "group": "Intermédiaire",
+          "value": "bg-light text-body",
+          "label": "Claire"
+        },
+        {
+          "group": "Intermédiaire",
+          "value": "bg-dark text-white",
+          "label": "Sombre"
+        },
+        {
+          "group": "Par défaut",
+          "value": "",
+          "label": "Corps (body)"
+        },
+        {
+          "group": "Alerte",
+          "value": "bg-success text-white",
+          "label": "Succès"
+        },
+        {
+          "group": "Alerte",
+          "value": "bg-warning text-dark",
+          "label": "Avertissement"
+        },
+        {
+          "group": "Alerte",
+          "value": "bg-danger text-white",
+          "label": "Danger"
+        },
+        {
+          "group": "Alerte",
+          "value": "bg-info text-white",
+          "label": "Info"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "product_title_size",
+      "label": "Taille du titre",
+      "default": "h6",
+      "options": [
+        {
+          "group": "Titre Standard",
+          "value": "h1",
+          "label": "Très Grand"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h2",
+          "label": "Grand"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h3",
+          "label": "Moyen"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h4",
+          "label": "Petit"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h5",
+          "label": "Très Petit"
+        },
+        {
+          "group": "Titre Standard",
+          "value": "h6",
+          "label": "Super Petit"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "product_title_truncate",
+      "label": "Tronquer le titre",
+      "default": "",
+      "info": "Utile si les titres de vos produits sont longs",
+      "options": [
+        {
+          "value": "",
+          "label": "Non (default)"
+        },
+        {
+          "value": "text-truncate",
+          "label": "Une ligne"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "product_show_vendor",
+      "label": "Afficher le distributeur",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product_show_atc_form",
+      "label": "Afficher le bouton 'Ajouter au panier'",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product_form_show_inventory",
+      "label": "Afficher l'inventaire dans le bouton 'Ajouter au panier'",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product_show_wishlist_btn",
+      "label": "Afficher le bouton 'liste de souhaits'",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Points d'arrêt",
+      "info": "Ajuster les éléments par diapositive en fonction de la résolution de l'écran"
+    },
+    {
+      "type": "range",
+      "id": "breakpoint_xs",
+      "label": "Éléments par slide / xs",
+      "info": "Largeur d'écran : moins de 576px",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "breakpoint_sm",
+      "label": "Éléments par slide / sm",
+      "info": "Largeur d'écran : ≥576px",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "breakpoint_md",
+      "label": "Éléments par slide / md",
+      "info": "Largeur d'écran : ≥768px",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "breakpoint_lg",
+      "label": "Éléments par slide / lg",
+      "info": "Largeur d'écran : ≥992px",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "breakpoint_xl",
+      "label": "Éléments par slide / xl",
+      "info": "Largeur d'écran : ≥1200px",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "breakpoint_xxl",
+      "label": "Éléments par slide / xxl",
+      "info": "Largeur d'écran : ≥1400px",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mobile",
+      "name": "Mobile",
+      "settings": [
+        {
+          "type": "header",
+          "content": "General"
+        },
+        {
+          "type": "range",
+          "id": "inject",
+          "label": "Injecter comme élément",
+          "info": "Sélectionnez la position dans la liste des produits où la bannière s'affichera.",
+          "min": 1,
+          "max": 40,
+          "default": 5,
+          "step": 1
+        },
+        {
+          "type": "select",
+          "id": "bg_color",
+          "label": "Couleur de l'arrière plan",
+          "default": "bg-dark text-white",
+          "options": [
+            {
+              "group": "Principal",
+              "value": "bg-primary text-white",
+              "label": "Primaire"
+            },
+            {
+              "group": "Principal",
+              "value": "bg-secondary text-white",
+              "label": "Secondaire"
+            },
+            {
+              "group": "Principal",
+              "value": "bg-tertiary text-white",
+              "label": "Tertiaire"
+            },
+            {
+              "group": "Intermédiaire",
+              "value": "bg-white text-body",
+              "label": "Blanc"
+            },
+            {
+              "group": "Intermédiaire",
+              "value": "bg-light text-body",
+              "label": "Claire"
+            },
+            {
+              "group": "Intermédiaire",
+              "value": "bg-dark text-white",
+              "label": "Sombre"
+            },
+            {
+              "group": "Par défaut",
+              "value": "bg-body text-body",
+              "label": "Corps (body)"
+            },
+            {
+              "group": "Alerte",
+              "value": "bg-success text-white",
+              "label": "Succès"
+            },
+            {
+              "group": "Alerte",
+              "value": "bg-warning text-white",
+              "label": "Avertissement"
+            },
+            {
+              "group": "Alerte",
+              "value": "bg-danger text-white",
+              "label": "Danger"
+            },
+            {
+              "group": "Alerte",
+              "value": "bg-info text-white",
+              "label": "Info"
+            }
+          ]
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        },
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "img_opacity",
+          "label": "Opacité image",
+          "min": 0,
+          "max": 1,
+          "step": 0.1,
+          "default": 0.7
+        },
+        {
+          "type": "header",
+          "content": "Vidéo"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Vidéo"
+        },
+        {
+          "type": "range",
+          "id": "vid_opacity",
+          "label": "Opacité vidéo",
+          "min": 0,
+          "max": 1,
+          "step": 0.1,
+          "default": 0.7
+        },
+        {
+          "type": "checkbox",
+          "id": "autoplay",
+          "label": "Autoplay",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "loop",
+          "label": "Loop",
+          "info": "(Vidéo en boucle)",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "muted",
+          "label": "Mute",
+          "info": "(Vidéo muette)",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "controls",
+          "label": "Contrôles",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Texte"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Nouvelle Collection"
+        },
+        {
+          "type": "select",
+          "id": "title_size",
+          "label": "Taille du titre",
+          "default": "h4",
+          "options": [
+            {
+              "group": "Titre Standard",
+              "value": "h1",
+              "label": "Très Grand"
+            },
+            {
+              "group": "Titre Standard",
+              "value": "h2",
+              "label": "Grand"
+            },
+            {
+              "group": "Titre Standard",
+              "value": "h3",
+              "label": "Moyen"
+            },
+            {
+              "group": "Titre Standard",
+              "value": "h4",
+              "label": "Petit"
+            },
+            {
+              "group": "Titre Standard",
+              "value": "h5",
+              "label": "Très Petit"
+            },
+            {
+              "group": "Titre Standard",
+              "value": "h6",
+              "label": "Super Petit"
+            }
+          ]
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description (facultatif)",
+          "default": "<p>Ajouter une description facultative à cette section</p>"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Texte du bouton",
+          "default": "En savoir plus",
+          "info": "Laisser vide pour désactiver"
+        }
+      ]
+    },
+    {
+      "type": "desktop",
+      "name": "Bureau",
+      "settings": [
+        {
+          "type": "header",
+          "content": "General"
+        },
+        {
+          "type": "range",
+          "id": "inject",
+          "label": "Injecter comme élément",
+          "info": "Sélectionnez la position dans la liste des produits où la bannière s'affichera.",
+          "min": 1,
+          "max": 40,
+          "default": 5,
+          "step": 1
+        },
+        {
+          "type": "select",
+          "id": "bg_color",
+          "label": "Couleur de l'arrière plan",
+          "default": "bg-dark text-white",
+          "options": [
+            {
+              "group": "Principal",
+              "value": "bg-primary text-white",
+              "label": "Primaire"
+            },
+            {
+              "group": "Principal",
+              "value": "bg-secondary text-white",
+              "label": "Secondaire"
+            },
+            {
+              "group": "Principal",
+              "value": "bg-tertiary text-white",
+              "label": "Tertiaire"
+            },
+            {
+              "group": "Intermédiaire",
+              "value": "bg-white text-body",
+              "label": "Blanc"
+            },
+            {
+              "group": "Intermédiaire",
+              "value": "bg-light text-body",
+              "label": "Claire"
+            },
+            {
+              "group": "Intermédiaire",
+              "value": "bg-dark text-white",
+              "label": "Sombre"
+            },
+            {
+              "group": "Par défaut",
+              "value": "bg-body text-body",
+              "label": "Corps (body)"
+            },
+            {
+              "group": "Alerte",
+              "value": "bg-success text-white",
+              "label": "Succès"
+            },
+            {
+              "group": "Alerte",
+              "value": "bg-warning text-white",
+              "label": "Avertissement"
+            },
+            {
+              "group": "Alerte",
+              "value": "bg-danger text-white",
+              "label": "Danger"
+            },
+            {
+              "group": "Alerte",
+              "value": "bg-info text-white",
+              "label": "Info"
+            }
+          ]
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        },
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "img_opacity",
+          "label": "Opacité image",
+          "min": 0,
+          "max": 1,
+          "step": 0.1,
+          "default": 0.7
+        },
+        {
+          "type": "header",
+          "content": "Vidéo"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Vidéo"
+        },
+        {
+          "type": "range",
+          "id": "vid_opacity",
+          "label": "Opacité vidéo",
+          "min": 0,
+          "max": 1,
+          "step": 0.1,
+          "default": 0.7
+        },
+        {
+          "type": "checkbox",
+          "id": "autoplay",
+          "label": "Autoplay",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "loop",
+          "label": "Loop",
+          "info": "(Vidéo en boucle)",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "muted",
+          "label": "Mute",
+          "info": "(Vidéo muette)",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "controls",
+          "label": "Contrôles",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Texte"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Nouvelle Collection"
+        },
+        {
+          "type": "select",
+          "id": "title_size",
+          "label": "Taille du titre",
+          "default": "h4",
+          "options": [
+            {
+              "group": "Titre Standard",
+              "value": "h1",
+              "label": "Très Grand"
+            },
+            {
+              "group": "Titre Standard",
+              "value": "h2",
+              "label": "Grand"
+            },
+            {
+              "group": "Titre Standard",
+              "value": "h3",
+              "label": "Moyen"
+            },
+            {
+              "group": "Titre Standard",
+              "value": "h4",
+              "label": "Petit"
+            },
+            {
+              "group": "Titre Standard",
+              "value": "h5",
+              "label": "Très Petit"
+            },
+            {
+              "group": "Titre Standard",
+              "value": "h6",
+              "label": "Super Petit"
+            }
+          ]
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description (facultatif)",
+          "default": "<p>Ajouter une description facultative à cette section</p>"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Texte du bouton",
+          "default": "En savoir plus",
+          "info": "Laisser vide pour désactiver"
+        }
+      ]
+    }
+  ],
+  "templates": [
+    "collection"
+  ],
+  "presets": [
+    {
+      "name": "Collection (modèle)",
+      "category": "Template"
+    }
+  ]
 }
 {% endschema %}

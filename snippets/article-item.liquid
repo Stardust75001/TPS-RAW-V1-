@@ -45,10 +45,12 @@
                 <img
                     class="img-fluid card-img-top"
                     src="{{ article.image.src | image_url: width: img_width, height: img_height }}"
-                    alt="{{ article.image.alt | escape }}"
+                    alt="Image de l'article : {{ article.title }}"
                     width="{{ img_width }}"
                     height="{{ img_height }}"
-                    loading="lazy">
+                    loading="lazy"
+                    role="img"
+                    aria-label="Image de l'article : {{ article.title }}">
             </a>
             <div class="card-body">
                 <h3 class="title {{ section.settings.article_title_size }} mb-0">

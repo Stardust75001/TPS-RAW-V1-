@@ -5,5 +5,7 @@ This file can be re-written at any time.
 
 {% render 'shogun-products', content: page %}
 <div class="shg-clearfix"></div>
-{{ page.content }}
+<section role="region" aria-label="Contenu personnalisé">
+	{{ page.content }}
+</section>
 {{ page.metafields.shogun.optimizer }}

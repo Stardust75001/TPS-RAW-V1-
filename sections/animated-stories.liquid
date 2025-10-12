@@ -174,225 +174,471 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
   "name": "🏆 Stories Animées",
   "settings": [
     {
-        "type": "header",
-        "content": "🏆 Application Stories Animées",
-        "info": "👉 Application Version Shopiweb Premium"
+      "type": "header",
+      "content": "🏆 Application Stories Animées",
+      "info": "👉 Application Version Shopiweb Premium"
     },
     {
-        "type": "paragraph",
-        "content": "Documentation FR : [Stories Animées by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/sections\/stories-animees)"
+      "type": "paragraph",
+      "content": "Documentation FR : [Stories Animées by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/sections/stories-animees)"
     },
     {
-        "type": "header",
-        "content": "Général"
+      "type": "header",
+      "content": "Général"
     },
     {
-        "type": "select",
-        "id": "bg_color",
-        "label": "Couleur de l'arrière plan",
-        "default": "bg-body text-body",
-        "options": [
-            { "group": "Principal", "value": "bg-primary text-white", "label": "Primaire" },
-            { "group": "Principal", "value": "bg-secondary text-white", "label": "Secondaire" },
-            { "group": "Principal", "value": "bg-tertiary text-white", "label": "Tertiaire" },
-            { "group": "Intermédiaire", "value": "bg-white text-dark", "label": "Blanc" },
-            { "group": "Intermédiaire", "value": "bg-light text-body", "label": "Claire" },
-            { "group": "Intermédiaire", "value": "bg-dark text-white", "label": "Sombre" },
-            { "group": "Par défaut", "value": "bg-body text-body", "label": "Corps (body)" }
-        ]
+      "type": "select",
+      "id": "bg_color",
+      "label": "Couleur de l'arrière plan",
+      "default": "bg-body text-body",
+      "options": [
+        {
+          "group": "Principal",
+          "value": "bg-primary text-white",
+          "label": "Primaire"
+        },
+        {
+          "group": "Principal",
+          "value": "bg-secondary text-white",
+          "label": "Secondaire"
+        },
+        {
+          "group": "Principal",
+          "value": "bg-tertiary text-white",
+          "label": "Tertiaire"
+        },
+        {
+          "group": "Intermédiaire",
+          "value": "bg-white text-dark",
+          "label": "Blanc"
+        },
+        {
+          "group": "Intermédiaire",
+          "value": "bg-light text-body",
+          "label": "Claire"
+        },
+        {
+          "group": "Intermédiaire",
+          "value": "bg-dark text-white",
+          "label": "Sombre"
+        },
+        {
+          "group": "Par défaut",
+          "value": "bg-body text-body",
+          "label": "Corps (body)"
+        }
+      ]
     },
     {
-        "type": "checkbox",
-        "id": "bg_gradient",
-        "label": "Dégradé d'arrière-plan",
-        "default": false,
-        "info": "Ne s'applique pas aux couleurs claires"
+      "type": "checkbox",
+      "id": "bg_gradient",
+      "label": "Dégradé d'arrière-plan",
+      "default": false,
+      "info": "Ne s'applique pas aux couleurs claires"
     },
     {
-        "type": "text",
-        "id": "list_label",
-        "label": "Libellé de la liste",
-        "default": "Collections en vedette",
-        "info": "Utilisé à des fins d'accessibilité"
+      "type": "text",
+      "id": "list_label",
+      "label": "Libellé de la liste",
+      "default": "Collections en vedette",
+      "info": "Utilisé à des fins d'accessibilité"
     },
     {
-        "type": "header",
-        "content": "Item"
+      "type": "header",
+      "content": "Item"
     },
     {
-        "type": "text",
-        "id": "item_img_size",
-        "label": "Largeur/hauteur de l'image (px)",
-        "default": "70"
+      "type": "text",
+      "id": "item_img_size",
+      "label": "Largeur/hauteur de l'image (px)",
+      "default": "70"
     },
     {
-        "type": "range",
-        "id": "item_stroke_width",
-        "label": "Largeur du trait",
-        "default": 2,
-        "min": 1,
-        "max": 4,
-        "step": 1
+      "type": "range",
+      "id": "item_stroke_width",
+      "label": "Largeur du trait",
+      "default": 2,
+      "min": 1,
+      "max": 4,
+      "step": 1
     },
     {
-        "type": "color",
-        "id": "item_stroke_color_start",
-        "label": "Début de la couleur du trait",
-        "default": "#F56900"
+      "type": "color",
+      "id": "item_stroke_color_start",
+      "label": "Début de la couleur du trait",
+      "default": "#F56900"
     },
     {
-        "type": "color",
-        "id": "item_stroke_color_end",
-        "label": "Fin de la couleur du trait",
-        "default": "#C99700"
+      "type": "color",
+      "id": "item_stroke_color_end",
+      "label": "Fin de la couleur du trait",
+      "default": "#C99700"
     },
     {
-        "type": "select",
-        "id": "item_title_size",
-        "label": "Taille du titre",
-        "default": "fs-6",
-        "options": [
-            { "group": "Texte Standard", "value": "fs-1", "label": "Extra Grand" },
-            { "group": "Texte Standard", "value": "fs-2", "label": "Super Grand" },
-            { "group": "Texte Standard", "value": "fs-3", "label": "Très Grand" },
-            { "group": "Texte Standard", "value": "fs-4", "label": "Grand" },
-            { "group": "Texte Standard", "value": "fs-5", "label": "Moyen" },
-            { "group": "Texte Standard", "value": "fs-6", "label": "Petit" },
-            { "group": "Texte Standard", "value": "extra-small", "label": "Très petit" }
-        ]
+      "type": "select",
+      "id": "item_title_size",
+      "label": "Taille du titre",
+      "default": "fs-6",
+      "options": [
+        {
+          "group": "Texte Standard",
+          "value": "fs-1",
+          "label": "Extra Grand"
+        },
+        {
+          "group": "Texte Standard",
+          "value": "fs-2",
+          "label": "Super Grand"
+        },
+        {
+          "group": "Texte Standard",
+          "value": "fs-3",
+          "label": "Très Grand"
+        },
+        {
+          "group": "Texte Standard",
+          "value": "fs-4",
+          "label": "Grand"
+        },
+        {
+          "group": "Texte Standard",
+          "value": "fs-5",
+          "label": "Moyen"
+        },
+        {
+          "group": "Texte Standard",
+          "value": "fs-6",
+          "label": "Petit"
+        },
+        {
+          "group": "Texte Standard",
+          "value": "extra-small",
+          "label": "Très petit"
+        }
+      ]
     },
     {
-        "type": "header",
-        "content": "Visibilité",
-        "info": "Afficher/masquer cette section en fonction de la résolution de l'écran"
+      "type": "header",
+      "content": "Visibilité",
+      "info": "Afficher/masquer cette section en fonction de la résolution de l'écran"
     },
     {
-        "type": "checkbox",
-        "id": "visibility_xs",
-        "label": "Afficher sur mobile",
-        "default": true
+      "type": "checkbox",
+      "id": "visibility_xs",
+      "label": "Afficher sur mobile",
+      "default": true
     },
     {
-        "type": "checkbox",
-        "id": "visibility_md",
-        "label": "Afficher sur tablette",
-        "default": true
+      "type": "checkbox",
+      "id": "visibility_md",
+      "label": "Afficher sur tablette",
+      "default": true
     },
     {
-        "type": "checkbox",
-        "id": "visibility_lg",
-        "label": "Afficher sur le bureau",
-        "default": true
+      "type": "checkbox",
+      "id": "visibility_lg",
+      "label": "Afficher sur le bureau",
+      "default": true
     },
     {
-        "type": "header",
-        "content": "Animation"
+      "type": "header",
+      "content": "Animation"
     },
     {
-        "type": "select",
-        "id": "animation",
-        "label": "Effet d'animation",
-        "default": "animate__fadeInRightBig",
-        "options": [
-            { "group": "Désactivé", "value": "", "label": "Pas d'animation" },
-            { "group": "Retour", "value": "animate__backInDown", "label": "Back In Down" },
-            { "group": "Retour", "value": "animate__backInLeft", "label": "Back In Left" },
-            { "group": "Retour", "value": "animate__backInRight", "label": "Back In Right" },
-            { "group": "Retour", "value": "animate__backInUp", "label": "Back In Up" },
-            { "group": "Rebond", "value": "animate__bounceIn", "label": "Bounce In" },
-            { "group": "Rebond", "value": "animate__bounceInDown", "label": "Bounce-in-down" },
-            { "group": "Rebond", "value": "animate__bounceInLeft", "label": "Bounce-in-left" },
-            { "group": "Rebond", "value": "animate__bounceInRight", "label": "Bounce-in-right" },
-            { "group": "Rebond", "value": "animate__bounceInUp", "label": "Bounce-in-up" },
-            { "group": "Fondu", "value": "animate__fadeIn", "label": "Fade In" },
-            { "group": "Fondu", "value": "animate__fadeInDown", "label": "Fade-in-down" },
-            { "group": "Fondu", "value": "animate__fadeInDownBig", "label": "Fade-in-down Big" },
-            { "group": "Fondu", "value": "animate__fadeInLeft", "label": "Fade-in-left" },
-            { "group": "Fondu", "value": "animate__fadeInLeftBig", "label": "Fade-in-left Big" },
-            { "group": "Fondu", "value": "animate__fadeInRight", "label": "Fade-in-right" },
-            { "group": "Fondu", "value": "animate__fadeInRightBig", "label": "Fade-in-right Big" },
-            { "group": "Fondu", "value": "animate__fadeInUp", "label": "Fade-in-up" },
-            { "group": "Fondu", "value": "animate__fadeInUpBig", "label": "Fade-in-up Big" },
-            { "group": "Fondu", "value": "animate__fadeInTopLeft", "label": "Fade-in Top Left" },
-            { "group": "Fondu", "value": "animate__fadeInTopRight", "label": "Fade-in Top Right" },
-            { "group": "Fondu", "value": "animate__fadeInBottomLeft", "label": "Fade-in Bottom Left" },
-            { "group": "Fondu", "value": "animate__fadeInBottomRight", "label": "Fade-in Bottom Right" },
-            { "group": "Flip", "value": "animate__flip", "label": "Flip" },
-            { "group": "Flip", "value": "animate__flipInX", "label": "Flip In X" },
-            { "group": "Flip", "value": "animate__flipInY", "label": "Flip In Y" },
-            { "group": "Flip", "value": "animate__flipOutX", "label": "Flip Out X" },
-            { "group": "Flip", "value": "animate__flipOutY", "label": "Flip Out Y" },
-            { "group": "Vitesse Lumière", "value": "animate__lightSpeedInRight", "label": "Light Speed In Right" },
-            { "group": "Vitesse Lumière", "value": "animate__lightSpeedInLeft", "label": "Light Speed In Left" },
-            { "group": "Rotation", "value": "animate__rotateIn", "label": "Rotate In" },
-            { "group": "Rotation", "value": "animate__rotateInDownLeft", "label": "Rotate In Down Left" },
-            { "group": "Rotation", "value": "animate__rotateInDownRight", "label": "Rotate In Down Right" },
-            { "group": "Rotation", "value": "animate__rotateInUpLeft", "label": "Rotate In Up Left" },
-            { "group": "Rotation", "value": "animate__rotateInUpRight", "label": "Rotate In Up Right" },
-            { "group": "Zoom", "value": "animate__zoomIn", "label": "Zoom In" },
-            { "group": "Zoom", "value": "animate__zoomInDown", "label": "Zoom In Down" },
-            { "group": "Zoom", "value": "animate__zoomInLeft", "label": "Zoom In Left" },
-            { "group": "Zoom", "value": "animate__zoomInRight", "label": "Zoom In Right" },
-            { "group": "Zoom", "value": "animate__zoomInUp", "label": "Zoom In Up" },
-            { "group": "Glissement", "value": "animate__slideInDown", "label": "Slide In Down" },
-            { "group": "Glissement", "value": "animate__slideInLeft", "label": "Slide In Left" },
-            { "group": "Glissement", "value": "animate__slideInRight", "label": "Slide In Right" },
-            { "group": "Glissement", "value": "animate__slideInUp", "label": "Slide In Up" }
-        ]
+      "type": "select",
+      "id": "animation",
+      "label": "Effet d'animation",
+      "default": "animate__fadeInRightBig",
+      "options": [
+        {
+          "group": "Désactivé",
+          "value": "",
+          "label": "Pas d'animation"
+        },
+        {
+          "group": "Retour",
+          "value": "animate__backInDown",
+          "label": "Back In Down"
+        },
+        {
+          "group": "Retour",
+          "value": "animate__backInLeft",
+          "label": "Back In Left"
+        },
+        {
+          "group": "Retour",
+          "value": "animate__backInRight",
+          "label": "Back In Right"
+        },
+        {
+          "group": "Retour",
+          "value": "animate__backInUp",
+          "label": "Back In Up"
+        },
+        {
+          "group": "Rebond",
+          "value": "animate__bounceIn",
+          "label": "Bounce In"
+        },
+        {
+          "group": "Rebond",
+          "value": "animate__bounceInDown",
+          "label": "Bounce-in-down"
+        },
+        {
+          "group": "Rebond",
+          "value": "animate__bounceInLeft",
+          "label": "Bounce-in-left"
+        },
+        {
+          "group": "Rebond",
+          "value": "animate__bounceInRight",
+          "label": "Bounce-in-right"
+        },
+        {
+          "group": "Rebond",
+          "value": "animate__bounceInUp",
+          "label": "Bounce-in-up"
+        },
+        {
+          "group": "Fondu",
+          "value": "animate__fadeIn",
+          "label": "Fade In"
+        },
+        {
+          "group": "Fondu",
+          "value": "animate__fadeInDown",
+          "label": "Fade-in-down"
+        },
+        {
+          "group": "Fondu",
+          "value": "animate__fadeInDownBig",
+          "label": "Fade-in-down Big"
+        },
+        {
+          "group": "Fondu",
+          "value": "animate__fadeInLeft",
+          "label": "Fade-in-left"
+        },
+        {
+          "group": "Fondu",
+          "value": "animate__fadeInLeftBig",
+          "label": "Fade-in-left Big"
+        },
+        {
+          "group": "Fondu",
+          "value": "animate__fadeInRight",
+          "label": "Fade-in-right"
+        },
+        {
+          "group": "Fondu",
+          "value": "animate__fadeInRightBig",
+          "label": "Fade-in-right Big"
+        },
+        {
+          "group": "Fondu",
+          "value": "animate__fadeInUp",
+          "label": "Fade-in-up"
+        },
+        {
+          "group": "Fondu",
+          "value": "animate__fadeInUpBig",
+          "label": "Fade-in-up Big"
+        },
+        {
+          "group": "Fondu",
+          "value": "animate__fadeInTopLeft",
+          "label": "Fade-in Top Left"
+        },
+        {
+          "group": "Fondu",
+          "value": "animate__fadeInTopRight",
+          "label": "Fade-in Top Right"
+        },
+        {
+          "group": "Fondu",
+          "value": "animate__fadeInBottomLeft",
+          "label": "Fade-in Bottom Left"
+        },
+        {
+          "group": "Fondu",
+          "value": "animate__fadeInBottomRight",
+          "label": "Fade-in Bottom Right"
+        },
+        {
+          "group": "Flip",
+          "value": "animate__flip",
+          "label": "Flip"
+        },
+        {
+          "group": "Flip",
+          "value": "animate__flipInX",
+          "label": "Flip In X"
+        },
+        {
+          "group": "Flip",
+          "value": "animate__flipInY",
+          "label": "Flip In Y"
+        },
+        {
+          "group": "Flip",
+          "value": "animate__flipOutX",
+          "label": "Flip Out X"
+        },
+        {
+          "group": "Flip",
+          "value": "animate__flipOutY",
+          "label": "Flip Out Y"
+        },
+        {
+          "group": "Vitesse Lumière",
+          "value": "animate__lightSpeedInRight",
+          "label": "Light Speed In Right"
+        },
+        {
+          "group": "Vitesse Lumière",
+          "value": "animate__lightSpeedInLeft",
+          "label": "Light Speed In Left"
+        },
+        {
+          "group": "Rotation",
+          "value": "animate__rotateIn",
+          "label": "Rotate In"
+        },
+        {
+          "group": "Rotation",
+          "value": "animate__rotateInDownLeft",
+          "label": "Rotate In Down Left"
+        },
+        {
+          "group": "Rotation",
+          "value": "animate__rotateInDownRight",
+          "label": "Rotate In Down Right"
+        },
+        {
+          "group": "Rotation",
+          "value": "animate__rotateInUpLeft",
+          "label": "Rotate In Up Left"
+        },
+        {
+          "group": "Rotation",
+          "value": "animate__rotateInUpRight",
+          "label": "Rotate In Up Right"
+        },
+        {
+          "group": "Zoom",
+          "value": "animate__zoomIn",
+          "label": "Zoom In"
+        },
+        {
+          "group": "Zoom",
+          "value": "animate__zoomInDown",
+          "label": "Zoom In Down"
+        },
+        {
+          "group": "Zoom",
+          "value": "animate__zoomInLeft",
+          "label": "Zoom In Left"
+        },
+        {
+          "group": "Zoom",
+          "value": "animate__zoomInRight",
+          "label": "Zoom In Right"
+        },
+        {
+          "group": "Zoom",
+          "value": "animate__zoomInUp",
+          "label": "Zoom In Up"
+        },
+        {
+          "group": "Glissement",
+          "value": "animate__slideInDown",
+          "label": "Slide In Down"
+        },
+        {
+          "group": "Glissement",
+          "value": "animate__slideInLeft",
+          "label": "Slide In Left"
+        },
+        {
+          "group": "Glissement",
+          "value": "animate__slideInRight",
+          "label": "Slide In Right"
+        },
+        {
+          "group": "Glissement",
+          "value": "animate__slideInUp",
+          "label": "Slide In Up"
+        }
+      ]
     },
     {
-        "type": "select",
-        "id": "animation_speed",
-        "label": "Vitesse d'animation",
-        "default": "animate__fast",
-        "options": [
-            { "value": "animate__slower", "label": "Plus lent" },
-            { "value": "animate__slow", "label": "Lent" },
-            { "value": "", "label": "Normal" },
-            { "value": "animate__fast", "label": "Rapide" },
-            { "value": "animate__faster", "label": "Plus rapide" }
-
-        ]
+      "type": "select",
+      "id": "animation_speed",
+      "label": "Vitesse d'animation",
+      "default": "animate__fast",
+      "options": [
+        {
+          "value": "animate__slower",
+          "label": "Plus lent"
+        },
+        {
+          "value": "animate__slow",
+          "label": "Lent"
+        },
+        {
+          "value": "",
+          "label": "Normal"
+        },
+        {
+          "value": "animate__fast",
+          "label": "Rapide"
+        },
+        {
+          "value": "animate__faster",
+          "label": "Plus rapide"
+        }
+      ]
     },
     {
-        "type": "header",
-        "content": "Espacement de la section"
+      "type": "header",
+      "content": "Espacement de la section"
     },
     {
-        "type": "range",
-        "id": "pt",
-        "label": "Padding supérieure",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "default": 0
+      "type": "range",
+      "id": "pt",
+      "label": "Padding supérieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
     },
     {
-        "type": "range",
-        "id": "pb",
-        "label": "Padding inférieure",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "default": 0
+      "type": "range",
+      "id": "pb",
+      "label": "Padding inférieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
     },
     {
-        "type": "range",
-        "id": "mt",
-        "label": "Marge supérieure",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "default": 0
+      "type": "range",
+      "id": "mt",
+      "label": "Marge supérieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
     },
     {
-        "type": "range",
-        "id": "mb",
-        "label": "Marge inférieure",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "default": 0
+      "type": "range",
+      "id": "mb",
+      "label": "Marge inférieure",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
     }
   ],
   "blocks": [
@@ -401,51 +647,72 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "name": "Media",
       "settings": [
         {
-            "type": "header",
-            "content": "🏆 Bloc Media",
-            "info": "👉 Bloc Version Shopiweb Premium"
+          "type": "header",
+          "content": "🏆 Bloc Media",
+          "info": "👉 Bloc Version Shopiweb Premium"
         },
         {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
         },
         {
-            "type": "text",
-            "id": "title",
-            "label": "Titre"
+          "type": "text",
+          "id": "title",
+          "label": "Titre"
         },
         {
-            "type": "select",
-            "id": "heading_tag",
-            "label": "Balise titre (SEO)",
-            "default": "h6",
-            "options": [
-                { "value": "h1", "label": "h1" },
-                { "value": "h2", "label": "h2" },
-                { "value": "h3", "label": "h3" },
-                { "value": "h4", "label": "h4" },
-                { "value": "h5", "label": "h5" },
-                { "value": "h6", "label": "h6" },
-                { "value": "span", "label": "Aucune" }
-            ]
+          "type": "select",
+          "id": "heading_tag",
+          "label": "Balise titre (SEO)",
+          "default": "h6",
+          "options": [
+            {
+              "value": "h1",
+              "label": "h1"
+            },
+            {
+              "value": "h2",
+              "label": "h2"
+            },
+            {
+              "value": "h3",
+              "label": "h3"
+            },
+            {
+              "value": "h4",
+              "label": "h4"
+            },
+            {
+              "value": "h5",
+              "label": "h5"
+            },
+            {
+              "value": "h6",
+              "label": "h6"
+            },
+            {
+              "value": "span",
+              "label": "Aucune"
+            }
+          ]
         },
         {
-            "type": "url",
-            "id": "url",
-            "label": "URL"
+          "type": "url",
+          "id": "url",
+          "label": "URL"
         },
         {
-            "type": "video",
-            "id": "video",
-            "label": "Vidéo"
+          "type": "video",
+          "id": "video",
+          "label": "Vidéo"
         },
         {
-            "type": "checkbox",
-            "id": "autoplay",
-            "label": "Autoplay",
-            "default": true,
-            "info": "Si activé, la vidéo démarrera automatiquement et l'icône de lecture ne s'affichera pas."
+          "type": "checkbox",
+          "id": "autoplay",
+          "label": "Autoplay",
+          "default": true,
+          "info": "Si activé, la vidéo démarrera automatiquement et l'icône de lecture ne s'affichera pas."
         }
       ]
     }

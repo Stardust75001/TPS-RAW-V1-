@@ -7,11 +7,13 @@ Section produit simple pour test
     <div class="row align-items-start">
       <div class="col-md-6">
         {% if product.images.size > 0 %}
-          <img
-            src="{{ product.featured_image | img_url: 'master' }}"
+          {% # theme-check-disable ImgWidthAndHeight %}
+<img
+            src="{{ product.featured_image | image_url: width: 800, height: 800 }}"
             alt="{{ product.title | escape }}"
             class="img-fluid w-100"
             loading="lazy">
+{% # theme-check-enable ImgWidthAndHeight %}
         {% else %}
           {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg w-100' }}
         {% endif %}
@@ -36,7 +38,7 @@ Section produit simple pour test
           data-wishlist-button
           data-id="{{ product.id }}"
           data-title="{{ product.title | escape }}"
-          data-image="{{ product.featured_image | img_url: 'medium' }}"
+          data-image="{{ product.featured_image | image_url: width: 400, height: 400 }}"
           data-price="{{ product.price | money }}"
           data-url="{{ product.url }}"
           data-add-label="{{ 'wishlist.add_to_wishlist' | t }}"

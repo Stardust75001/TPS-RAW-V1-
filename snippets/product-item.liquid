@@ -11,21 +11,20 @@
             assign img_height = 600
     endcase
 
-    assign btn_shadow_sp = settings.btn_shadow_sp
 %}
 
 <li class="product-item splide__slide p-3 p-lg-4 mb-5 {% unless section.settings.product_card_style == 'card' %}mb-4{% endunless %}">
     <div class="{% if section.settings.product_card_style == 'card' %}card {{ section.settings.product_shadow_sp }} {{ section.settings.product_border_color }}{% endif %}">
-        <a  
-            class="product-link position-relative d-block link-dark" 
+        <a
+            class="product-link position-relative d-block link-dark"
             href="{{ product.url | within: collection }}">
             {% unless product.metafields.shopiweb.custom_badge == blank %}
-                <span 
-                    class="img-badge-custom badge" 
+                <span
+                    class="img-badge-custom badge"
                     style="background: {{ product.metafields.shopiweb.custom_badge | split: ':' | last }};">
                     {{ product.metafields.shopiweb.custom_badge | split: ':' | first }}
                 </span>
-            {% endunless %}  
+            {% endunless %}
             {% if section.settings.product_show_sale_badge and product.available and product.compare_at_price > product.price %}
               <div class="badge-ribbon">
                 <span class="badge-ribbon-sale {{ section.settings.product_sale_badge_color }}">
@@ -38,12 +37,12 @@
             {% unless product.available %}
                 <span class="img-badge-sold-out badge">
                     {{ 'product.sold_out' | t }}
-                </span>        
+                </span>
             {% endunless %}
             {% if section.settings.product_img_mode == 'gallery' %}
-                <div 
-                    id="product-carousel-{{ section.id }}-{{ product.id }}" 
-                    class="product-carousel carousel slide mb-4" 
+                <div
+                    id="product-carousel-{{ section.id }}-{{ product.id }}"
+                    class="product-carousel carousel slide mb-4"
                     data-bs-interval="false"
                     data-bs-touch="false">
                     <div class="carousel-inner {% unless section.settings.product_card_style == 'card' %} {{ section.settings.product_shadow_sp }} {% endunless %}">
@@ -52,28 +51,30 @@
                                 <img
                                     class="product-item-img img-fluid rounded {{ section.settings.product_img_thumbnail }} {{ section.settings.product_shadow_sp }} {{ section.settings.product_border_color }}"
                                     src="{{ image.src | image_url: width: img_width, height: img_height, crop: 'center' }}"
-                                    alt="{{ image.alt | escape }}"
+                                    alt="Image du produit : {{ product.title }}"
                                     width="{{ img_width }}"
                                     height="{{ img_height }}"
-                                    loading="lazy">
+                                    loading="lazy"
+                                    role="img"
+                                    aria-label="Image du produit : {{ product.title }}">
                             </div>
                         {% endfor %}
                     </div>
                     {% if product.images.size > 1 %}
                         <div class="carousel-controls">
-                            <button 
-                                class="carousel-control carousel-control-prev" 
-                                type="button" 
-                                data-bs-target="#product-carousel-{{ section.id }}-{{ product.id }}" 
-                                data-bs-slide="prev" 
+                            <button
+                                class="carousel-control carousel-control-prev"
+                                type="button"
+                                data-bs-target="#product-carousel-{{ section.id }}-{{ product.id }}"
+                                data-bs-slide="prev"
                                 aria-label="{{ 'general.accessibility.previous' | t }}">
                                 <span class="carousel-control-icon carousel-control-prev-icon"></span>
                             </button>
-                            <button 
-                                class="carousel-control carousel-control-next" 
-                                type="button" 
-                                data-bs-target="#product-carousel-{{ section.id }}-{{ product.id }}" 
-                                data-bs-slide="next" 
+                            <button
+                                class="carousel-control carousel-control-next"
+                                type="button"
+                                data-bs-target="#product-carousel-{{ section.id }}-{{ product.id }}"
+                                data-bs-slide="next"
                                 aria-label="{{ 'general.accessibility.next' | t }}">
                                 <span class="carousel-control-icon carousel-control-next-icon"></span>
                             </button>
@@ -81,26 +82,26 @@
                     {% endif %}
                 </div>
             {% elsif section.settings.product_img_mode == 'hover' %}
-                <img 
+                <img
                     class="product-item-img img-fluid mb-4 rounded {% unless section.settings.product_card_style == 'card' %} {{ section.settings.product_img_thumbnail }} {{ section.settings.product_shadow_sp }} {{ section.settings.product_border_color }}{% endunless %}"
-                    src="{{ product.featured_image.src | image_url: width: img_width, height: img_height, crop: 'center' }}" 
+                    src="{{ product.featured_image.src | image_url: width: img_width, height: img_height, crop: 'center' }}"
                     alt="{{ product.featured_image.alt | escape }}"
                     width="{{ img_width }}"
                     height="{{ img_height }}"
                     loading="lazy">
                 {% if product.images.size > 1 %}
-                    <img 
+                    <img
                         class="product-item-img product-item-img-hover img-fluid mb-4 rounded {{ section.settings.product_img_thumbnail }} {% unless section.settings.product_card_style == 'card' %} {{ section.settings.product_shadow_sp }} {{ section.settings.product_border_color }}{% endunless %}"
-                        src="{{ product.images[1].src | image_url: width: img_width, height: img_height, crop: 'center' }}" 
+                        src="{{ product.images[1].src | image_url: width: img_width, height: img_height, crop: 'center' }}"
                         alt="{{ product.images[1].alt | escape }}"
                         width="{{ img_width }}"
                         height="{{ img_height }}"
                         loading="lazy">
                 {% endif %}
             {% else %}
-                <img 
+                <img
                     class="product-item-img img-fluid mb-4 rounded {{ section.settings.product_img_thumbnail }} {% unless section.settings.product_card_style == 'card' %} {{ section.settings.product_shadow_sp }} {{ section.settings.product_border_color }}{% endunless %}"
-                    src="{{ product.featured_image.src | image_url: width: img_width, height: img_height, crop: 'center' }}" 
+                    src="{{ product.featured_image.src | image_url: width: img_width, height: img_height, crop: 'center' }}"
                     alt="{{ product.featured_image.alt | escape }}"
                     width="{{ img_width }}"
                     height="{{ img_height }}"

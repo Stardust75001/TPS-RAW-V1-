@@ -46,7 +46,7 @@
                     {% liquid
                         assign key = media.metafields.global.color_key.value
                         if key == blank and media.alt contains '[' and media.alt contains ']'
-                          assign key = media.alt | split:'[' | last | split:']' | first | downcase | strip
+                          assign key = media.alt | split: '[' | last | split: ']' | first | downcase | strip
                         endif
                     %}
                     <li class="splide__slide media-item" data-color-key="{{ key }}">
@@ -142,7 +142,7 @@
                     {% liquid
                         assign key = media.metafields.global.color_key.value
                         if key == blank and media.preview_image.alt contains '[' and media.preview_image.alt contains ']' 
-                          assign key = media.preview_image.alt | split:'[' | last | split:']' | first | downcase | strip
+                          assign key = media.preview_image.alt | split: '[' | last | split: ']' | first | downcase | strip
                         endif
                     %}
                     <li class="splide__slide {% if media.media_type contains 'video' %}is-video{% endif %} {% if media.media_type == 'model' %}is-model{% endif %}" 

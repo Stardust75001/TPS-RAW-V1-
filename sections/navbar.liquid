@@ -257,16 +257,22 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                 </a>
             </div>
             <div class="{% if section.settings.layout_desktop == 'navbar-desktop-logo-left' %}col-6{% else %}col-5 order-0{% endif %}">
-                {% render 'navbar-megamenu' %}
+                {% # theme-check-disable NestedSnippet %}
+{% render 'navbar-megamenu' %}
+{% # theme-check-enable NestedSnippet %}
             </div>
             <div class="{% if section.settings.layout_desktop == 'navbar-desktop-logo-left' %}col-3{% else %}col-5 order-2{% endif %}">
-                {% render 'navbar-desktop-icons' %}
+                {% # theme-check-disable NestedSnippet %}
+{% render 'navbar-desktop-icons' %}
+{% # theme-check-enable NestedSnippet %}
             </div>
         </div>
     </div>
 </nav>
 
+{% # theme-check-disable NestedSnippet %}
 {% render 'offcanvas-menu' %}
+{% # theme-check-enable NestedSnippet %}
 
 <script type="application/ld+json">
     {
@@ -326,13 +332,41 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "id": "bg_color",
       "label": "Couleur de l'arrière plan",
       "options": [
-        { "group": "Principal", "value": "bg-primary text-white", "label": "Primaire" },
-        { "group": "Principal", "value": "bg-secondary text-white", "label": "Secondaire" },
-        { "group": "Principal", "value": "bg-tertiary text-white", "label": "Tertiaire" },
-        { "group": "Intermédiaire", "value": "bg-white text-body", "label": "Blanc" },
-        { "group": "Intermédiaire", "value": "bg-light text-body", "label": "Claire" },
-        { "group": "Intermédiaire", "value": "bg-dark text-white", "label": "Sombre" },
-        { "group": "Par défaut", "value": "bg-body text-body", "label": "Corps (body)" }
+        {
+          "group": "Principal",
+          "value": "bg-primary text-white",
+          "label": "Primaire"
+        },
+        {
+          "group": "Principal",
+          "value": "bg-secondary text-white",
+          "label": "Secondaire"
+        },
+        {
+          "group": "Principal",
+          "value": "bg-tertiary text-white",
+          "label": "Tertiaire"
+        },
+        {
+          "group": "Intermédiaire",
+          "value": "bg-white text-body",
+          "label": "Blanc"
+        },
+        {
+          "group": "Intermédiaire",
+          "value": "bg-light text-body",
+          "label": "Claire"
+        },
+        {
+          "group": "Intermédiaire",
+          "value": "bg-dark text-white",
+          "label": "Sombre"
+        },
+        {
+          "group": "Par défaut",
+          "value": "bg-body text-body",
+          "label": "Corps (body)"
+        }
       ],
       "default": "bg-body text-body"
     },
@@ -350,9 +384,18 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "default": "",
       "info": "S'applique uniquement à la page d'accueil.",
       "options": [
-        { "value": "", "label": "Aucune" },
-        { "value": "navbar-transparent", "label": "Transparent" },
-        { "value": "navbar-backdrop", "label": "Floue" }
+        {
+          "value": "",
+          "label": "Aucune"
+        },
+        {
+          "value": "navbar-transparent",
+          "label": "Transparent"
+        },
+        {
+          "value": "navbar-backdrop",
+          "label": "Floue"
+        }
       ]
     },
     {
@@ -368,8 +411,14 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "label": "Conteneur",
       "default": "container",
       "options": [
-        { "value": "container", "label": "Conteneur" },
-        { "value": "container-fluid", "label": "Pleine largeur" }
+        {
+          "value": "container",
+          "label": "Conteneur"
+        },
+        {
+          "value": "container-fluid",
+          "label": "Pleine largeur"
+        }
       ]
     },
     {
@@ -377,10 +426,22 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "id": "shadow",
       "label": "Ombrage",
       "options": [
-        { "value": "shadow-none", "label": "Pas d'ombre" },
-        { "value": "shadow-sm", "label": "Ombre légère" },
-        { "value": "shadow", "label": "Ombre partiel" },
-        { "value": "shadow-lg", "label": "Ombre profonde" }
+        {
+          "value": "shadow-none",
+          "label": "Pas d'ombre"
+        },
+        {
+          "value": "shadow-sm",
+          "label": "Ombre légère"
+        },
+        {
+          "value": "shadow",
+          "label": "Ombre partiel"
+        },
+        {
+          "value": "shadow-lg",
+          "label": "Ombre profonde"
+        }
       ],
       "default": "shadow-sm"
     },
@@ -393,8 +454,14 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "id": "layout_desktop",
       "label": "Position logo - bureau",
       "options": [
-        { "value": "navbar-desktop-logo-left", "label": "Gauche" },
-        { "value": "navbar-desktop-logo-center", "label": "Centre" }
+        {
+          "value": "navbar-desktop-logo-left",
+          "label": "Gauche"
+        },
+        {
+          "value": "navbar-desktop-logo-center",
+          "label": "Centre"
+        }
       ],
       "default": "navbar-desktop-logo-left"
     },
@@ -472,8 +539,14 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "label": "Police d'écriture",
       "default": "",
       "options": [
-        { "value": "", "label": "Par défaut" },
-        { "value": "headings-font-family", "label": "Titres" }
+        {
+          "value": "",
+          "label": "Par défaut"
+        },
+        {
+          "value": "headings-font-family",
+          "label": "Titres"
+        }
       ]
     },
     {
@@ -485,11 +558,26 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "id": "shadow_sp_img_megamenu",
       "label": "Ombre image",
       "options": [
-        { "value": "shadow-none", "label": "Aucune" },
-        { "value": "shadow-1", "label": "Ombre légère" },
-        { "value": "shadow-2", "label": "Ombre partiel" },
-        { "value": "shadow-3", "label": "Ombre profonde" },
-        { "value": "shadow-4", "label": "Ombre totale" }
+        {
+          "value": "shadow-none",
+          "label": "Aucune"
+        },
+        {
+          "value": "shadow-1",
+          "label": "Ombre légère"
+        },
+        {
+          "value": "shadow-2",
+          "label": "Ombre partiel"
+        },
+        {
+          "value": "shadow-3",
+          "label": "Ombre profonde"
+        },
+        {
+          "value": "shadow-4",
+          "label": "Ombre totale"
+        }
       ],
       "default": "shadow-1"
     },
@@ -498,15 +586,42 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "id": "border_color_img_megamenu",
       "label": "Couleur de la bordure",
       "options": [
-        { "value": "", "label": "Default" },
-        { "value": "border-primary", "label": "Primaire" },
-        { "value": "border-secondary", "label": "Secondaire" },
-        { "value": "border-tertiary", "label": "Tertiaire" },
-        { "value": "border-dark", "label": "Foncé" },
-        { "value": "border-success", "label": "Succès" },
-        { "value": "border-warning", "label": "Avertissement" },
-        { "value": "border-danger", "label": "Danger" },
-        { "value": "border-info", "label": "Info" }
+        {
+          "value": "",
+          "label": "Default"
+        },
+        {
+          "value": "border-primary",
+          "label": "Primaire"
+        },
+        {
+          "value": "border-secondary",
+          "label": "Secondaire"
+        },
+        {
+          "value": "border-tertiary",
+          "label": "Tertiaire"
+        },
+        {
+          "value": "border-dark",
+          "label": "Foncé"
+        },
+        {
+          "value": "border-success",
+          "label": "Succès"
+        },
+        {
+          "value": "border-warning",
+          "label": "Avertissement"
+        },
+        {
+          "value": "border-danger",
+          "label": "Danger"
+        },
+        {
+          "value": "border-info",
+          "label": "Info"
+        }
       ],
       "default": ""
     },
@@ -515,8 +630,14 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "id": "menu_desktop_trigger",
       "label": "Déclencheur",
       "options": [
-        { "value": "menu-desktop-click", "label": "Click (recommandé)" },
-        { "value": "menu-desktop-hover", "label": "Survol" }
+        {
+          "value": "menu-desktop-click",
+          "label": "Click (recommandé)"
+        },
+        {
+          "value": "menu-desktop-hover",
+          "label": "Survol"
+        }
       ],
       "default": "menu-desktop-click"
     },
@@ -542,8 +663,14 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "label": "Police d'écriture",
       "default": "",
       "options": [
-        { "value": "", "label": "Par défaut" },
-        { "value": "headings-font-family", "label": "Titres" }
+        {
+          "value": "",
+          "label": "Par défaut"
+        },
+        {
+          "value": "headings-font-family",
+          "label": "Titres"
+        }
       ]
     },
     {
@@ -580,28 +707,104 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "lang_currency_btn_color",
-      "label": "Couleur du bouton langue\/devise",
+      "label": "Couleur du bouton langue/devise",
       "default": "btn-outline-secondary",
       "options": [
-        { "group": "Normal", "value": "btn-link", "label": "Lien" },
-        { "group": "Normal", "value": "btn-light", "label": "Claire" },
-        { "group": "Normal", "value": "btn-dark", "label": "Sombre" },
-        { "group": "Normal", "value": "btn-primary", "label": "Primaire" },
-        { "group": "Normal", "value": "btn-secondary", "label": "Secondaire" },
-        { "group": "Normal", "value": "btn-tertiary", "label": "Tertiaire" },
-        { "group": "Normal", "value": "btn-success", "label": "Succès" },
-        { "group": "Normal", "value": "btn-danger", "label": "Danger" },
-        { "group": "Normal", "value": "btn-warning", "label": "Avertissement" },
-        { "group": "Normal", "value": "btn-info", "label": "Info" },
-        { "group": "Contour", "value": "btn-outline-light", "label": "Contour Claire" },
-        { "group": "Contour", "value": "btn-outline-dark", "label": "Contour Sombre" },
-        { "group": "Contour", "value": "btn-outline-primary", "label": "Contour Primaire" },
-        { "group": "Contour", "value": "btn-outline-secondary", "label": "Contour Secondaire" },
-        { "group": "Contour", "value": "btn-outline-tertiary", "label": "Contour Tertiaire" },
-        { "group": "Contour", "value": "btn-outline-success", "label": "Contour Succès" },
-        { "group": "Contour", "value": "btn-outline-danger", "label": "Contour Danger" },
-        { "group": "Contour", "value": "btn-outline-warning", "label": "Contour Avertissement" },
-        { "group": "Contour", "value": "btn-outline-info", "label": "Contour Info" }
+        {
+          "group": "Normal",
+          "value": "btn-link",
+          "label": "Lien"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-light",
+          "label": "Claire"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-dark",
+          "label": "Sombre"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-primary",
+          "label": "Primaire"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-secondary",
+          "label": "Secondaire"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-tertiary",
+          "label": "Tertiaire"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-success",
+          "label": "Succès"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-danger",
+          "label": "Danger"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-warning",
+          "label": "Avertissement"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-info",
+          "label": "Info"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-light",
+          "label": "Contour Claire"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-dark",
+          "label": "Contour Sombre"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-primary",
+          "label": "Contour Primaire"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-secondary",
+          "label": "Contour Secondaire"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-tertiary",
+          "label": "Contour Tertiaire"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-success",
+          "label": "Contour Succès"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-danger",
+          "label": "Contour Danger"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-warning",
+          "label": "Contour Avertissement"
+        },
+        {
+          "group": "Contour",
+          "value": "btn-outline-info",
+          "label": "Contour Info"
+        }
       ]
     },
     {
@@ -640,105 +843,209 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "limit": 1,
       "settings": [
         {
-            "type": "header",
-            "content": "🏆 Application Micro Menu",
-            "info": "👉 Application Version Shopiweb Premium"
+          "type": "header",
+          "content": "🏆 Application Micro Menu",
+          "info": "👉 Application Version Shopiweb Premium"
         },
         {
-            "type": "paragraph", 
-            "content": "Documentation FR : [Micro menu by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/en-tete\/en-tete-navigation\/micro-menu)"
+          "type": "paragraph",
+          "content": "Documentation FR : [Micro menu by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/en-tete/en-tete-navigation/micro-menu)"
         },
         {
-            "type": "paragraph",
-            "content": "Visible seulement sur ordinateur."
+          "type": "paragraph",
+          "content": "Visible seulement sur ordinateur."
         },
         {
-            "type": "header",
-            "content": "General"
+          "type": "header",
+          "content": "General"
         },
         {
-            "type": "select",
-            "id": "bg_color",
-            "label": "Couleur de l'arrière plan",
-            "default": "bg-light text-body",
-            "options": [
-                { "group": "Principal", "value": "bg-primary text-white", "label": "Primaire" },
-                { "group": "Principal", "value": "bg-secondary text-white", "label": "Secondaire" },
-                { "group": "Principal", "value": "bg-tertiary text-white", "label": "Tertiaire" },
-                { "group": "Intermédiaire", "value": "bg-white text-dark", "label": "Blanc" },
-                { "group": "Intermédiaire", "value": "bg-light text-body", "label": "Claire" },
-                { "group": "Intermédiaire", "value": "bg-dark text-white", "label": "Sombre" },
-                { "group": "Par défaut", "value": "bg-body text-body", "label": "Corps (body)" }
-            ]
+          "type": "select",
+          "id": "bg_color",
+          "label": "Couleur de l'arrière plan",
+          "default": "bg-light text-body",
+          "options": [
+            {
+              "group": "Principal",
+              "value": "bg-primary text-white",
+              "label": "Primaire"
+            },
+            {
+              "group": "Principal",
+              "value": "bg-secondary text-white",
+              "label": "Secondaire"
+            },
+            {
+              "group": "Principal",
+              "value": "bg-tertiary text-white",
+              "label": "Tertiaire"
+            },
+            {
+              "group": "Intermédiaire",
+              "value": "bg-white text-dark",
+              "label": "Blanc"
+            },
+            {
+              "group": "Intermédiaire",
+              "value": "bg-light text-body",
+              "label": "Claire"
+            },
+            {
+              "group": "Intermédiaire",
+              "value": "bg-dark text-white",
+              "label": "Sombre"
+            },
+            {
+              "group": "Par défaut",
+              "value": "bg-body text-body",
+              "label": "Corps (body)"
+            }
+          ]
         },
         {
-            "type": "checkbox",
-            "id": "bg_gradient",
-            "label": "Dégradé d'arrière-plan",
-            "default": false,
-            "info": "Ne s'applique pas aux couleurs claires"
+          "type": "checkbox",
+          "id": "bg_gradient",
+          "label": "Dégradé d'arrière-plan",
+          "default": false,
+          "info": "Ne s'applique pas aux couleurs claires"
         },
         {
-            "type": "link_list",
-            "id": "toolbar_menu",
-            "label": "Menu",
-            "default": "main-menu"
+          "type": "link_list",
+          "id": "toolbar_menu",
+          "label": "Menu",
+          "default": "main-menu"
         },
         {
-            "type": "checkbox",
-            "id": "option-outils",
-            "label": "Remplacer les icônes par un lien",
-            "default": true
+          "type": "checkbox",
+          "id": "option-outils",
+          "label": "Remplacer les icônes par un lien",
+          "default": true
         },
         {
-            "type": "text",
-            "id": "option_text",
-            "label": "Titre du lien",
-            "default": "Service client 7j/7"
+          "type": "text",
+          "id": "option_text",
+          "label": "Titre du lien",
+          "default": "Service client 7j/7"
         },
         {
-            "type": "url",
-            "id": "option_link",
-            "label": "Lien de redirection"
+          "type": "url",
+          "id": "option_link",
+          "label": "Lien de redirection"
         },
         {
-            "type": "checkbox",
-            "id": "language_selector_show",
-            "label": "Afficher le sélecteur de language",
-            "default": true
+          "type": "checkbox",
+          "id": "language_selector_show",
+          "label": "Afficher le sélecteur de language",
+          "default": true
         },
         {
-            "type": "checkbox",
-            "id": "currency_selector_show",
-            "label": "Afficher le sélecteur de devise",
-            "default": true
+          "type": "checkbox",
+          "id": "currency_selector_show",
+          "label": "Afficher le sélecteur de devise",
+          "default": true
         },
         {
-            "type": "select",
-            "id": "lang_currency_btn_color",
-            "label": "Couleur du bouton langue\/devise",
-            "default": "btn-outline-dark",
-            "options": [
-                { "group": "Normal", "value": "btn-link", "label": "Lien" },
-                { "group": "Normal", "value": "btn-light", "label": "Claire" },
-                { "group": "Normal", "value": "btn-dark", "label": "Sombre" },
-                { "group": "Normal", "value": "btn-primary", "label": "Primaire" },
-                { "group": "Normal", "value": "btn-secondary", "label": "Secondaire" },
-                { "group": "Normal", "value": "btn-tertiary", "label": "Tertiaire" },
-                { "group": "Normal", "value": "btn-success", "label": "Succès" },
-                { "group": "Normal", "value": "btn-danger", "label": "Danger" },
-                { "group": "Normal", "value": "btn-warning", "label": "Avertissement" },
-                { "group": "Normal", "value": "btn-info", "label": "Info" },
-                { "group": "Contour", "value": "btn-outline-light", "label": "Contour Claire" },
-                { "group": "Contour", "value": "btn-outline-dark", "label": "Contour Sombre" },
-                { "group": "Contour", "value": "btn-outline-primary", "label": "Contour Primaire" },
-                { "group": "Contour", "value": "btn-outline-secondary", "label": "Contour Secondaire" },
-                { "group": "Contour", "value": "btn-outline-tertiary", "label": "Contour Tertiaire" },
-                { "group": "Contour", "value": "btn-outline-success", "label": "Contour Succès" },
-                { "group": "Contour", "value": "btn-outline-danger", "label": "Contour Danger" },
-                { "group": "Contour", "value": "btn-outline-warning", "label": "Contour Avertissement" },
-                { "group": "Contour", "value": "btn-outline-info", "label": "Contour Info" }
-            ]
+          "type": "select",
+          "id": "lang_currency_btn_color",
+          "label": "Couleur du bouton langue/devise",
+          "default": "btn-outline-dark",
+          "options": [
+            {
+              "group": "Normal",
+              "value": "btn-link",
+              "label": "Lien"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-light",
+              "label": "Claire"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-dark",
+              "label": "Sombre"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-primary",
+              "label": "Primaire"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-secondary",
+              "label": "Secondaire"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-tertiary",
+              "label": "Tertiaire"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-success",
+              "label": "Succès"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-danger",
+              "label": "Danger"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-warning",
+              "label": "Avertissement"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-info",
+              "label": "Info"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-light",
+              "label": "Contour Claire"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-dark",
+              "label": "Contour Sombre"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-primary",
+              "label": "Contour Primaire"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-secondary",
+              "label": "Contour Secondaire"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-tertiary",
+              "label": "Contour Tertiaire"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-success",
+              "label": "Contour Succès"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-danger",
+              "label": "Contour Danger"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-warning",
+              "label": "Contour Avertissement"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-info",
+              "label": "Contour Info"
+            }
+          ]
         }
       ]
     },
@@ -748,62 +1055,144 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "limit": 1,
       "settings": [
         {
-            "type": "header",
-            "content": "🏆 Application Bouton Navigation",
-            "info": "👉 Application Version Shopiweb Premium"
+          "type": "header",
+          "content": "🏆 Application Bouton Navigation",
+          "info": "👉 Application Version Shopiweb Premium"
         },
         {
-            "type": "paragraph", 
-            "content": "Documentation FR : [Bouton by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/en-tete\/en-tete-navigation\/bouton)"
+          "type": "paragraph",
+          "content": "Documentation FR : [Bouton by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/en-tete/en-tete-navigation/bouton)"
         },
         {
-            "type": "text",
-            "id": "btn_text",
-            "label": "Texte du bouton",
-            "default": "Commander",
-            "info": "Laisser vide pour désactiver"
+          "type": "text",
+          "id": "btn_text",
+          "label": "Texte du bouton",
+          "default": "Commander",
+          "info": "Laisser vide pour désactiver"
         },
         {
-            "type": "url",
-            "id": "btn_url",
-            "label": "URL du bouton"
+          "type": "url",
+          "id": "btn_url",
+          "label": "URL du bouton"
         },
         {
-            "type": "select",
-            "id": "btn_color",
-            "label": "Couleur du bouton",
-            "default": "btn-primary",
-            "options": [
-                { "group": "Normal", "value": "btn-link", "label": "Lien" },
-                { "group": "Normal", "value": "btn-light", "label": "Claire" },
-                { "group": "Normal", "value": "btn-dark", "label": "Sombre" },
-                { "group": "Normal", "value": "btn-primary", "label": "Primaire" },
-                { "group": "Normal", "value": "btn-secondary", "label": "Secondaire" },
-                { "group": "Normal", "value": "btn-tertiary", "label": "Tertiaire" },
-                { "group": "Normal", "value": "btn-success", "label": "Succès" },
-                { "group": "Normal", "value": "btn-danger", "label": "Danger" },
-                { "group": "Normal", "value": "btn-warning", "label": "Avertissement" },
-                { "group": "Normal", "value": "btn-info", "label": "Info" },
-                { "group": "Contour", "value": "btn-outline-light", "label": "Contour Claire" },
-                { "group": "Contour", "value": "btn-outline-dark", "label": "Contour Sombre" },
-                { "group": "Contour", "value": "btn-outline-primary", "label": "Contour Primaire" },
-                { "group": "Contour", "value": "btn-outline-secondary", "label": "Contour Secondaire" },
-                { "group": "Contour", "value": "btn-outline-tertiary", "label": "Contour Tertiaire" },
-                { "group": "Contour", "value": "btn-outline-success", "label": "Contour Succès" },
-                { "group": "Contour", "value": "btn-outline-danger", "label": "Contour Danger" },
-                { "group": "Contour", "value": "btn-outline-warning", "label": "Contour Avertissement" },
-                { "group": "Contour", "value": "btn-outline-info", "label": "Contour Info" }
-            ]
+          "type": "select",
+          "id": "btn_color",
+          "label": "Couleur du bouton",
+          "default": "btn-primary",
+          "options": [
+            {
+              "group": "Normal",
+              "value": "btn-link",
+              "label": "Lien"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-light",
+              "label": "Claire"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-dark",
+              "label": "Sombre"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-primary",
+              "label": "Primaire"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-secondary",
+              "label": "Secondaire"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-tertiary",
+              "label": "Tertiaire"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-success",
+              "label": "Succès"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-danger",
+              "label": "Danger"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-warning",
+              "label": "Avertissement"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-info",
+              "label": "Info"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-light",
+              "label": "Contour Claire"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-dark",
+              "label": "Contour Sombre"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-primary",
+              "label": "Contour Primaire"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-secondary",
+              "label": "Contour Secondaire"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-tertiary",
+              "label": "Contour Tertiaire"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-success",
+              "label": "Contour Succès"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-danger",
+              "label": "Contour Danger"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-warning",
+              "label": "Contour Avertissement"
+            },
+            {
+              "group": "Contour",
+              "value": "btn-outline-info",
+              "label": "Contour Info"
+            }
+          ]
         },
         {
-            "type": "select",
-            "id": "btn_size",
-            "label": "Taille du bouton",
-            "default": "btn-sm",
-            "options": [
-                { "value": "btn-sm", "label": "Petit" },
-                { "value": "btn-md", "label": "Normal" }
-            ]
+          "type": "select",
+          "id": "btn_size",
+          "label": "Taille du bouton",
+          "default": "btn-sm",
+          "options": [
+            {
+              "value": "btn-sm",
+              "label": "Petit"
+            },
+            {
+              "value": "btn-md",
+              "label": "Normal"
+            }
+          ]
         }
       ]
     }
@@ -814,7 +1203,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         "type": "button"
       }
     ],
-    "settings": {}
+    "settings": {
+    }
   }
 }
 {% endschema %}

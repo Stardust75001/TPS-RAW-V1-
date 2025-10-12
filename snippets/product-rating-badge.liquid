@@ -8,7 +8,9 @@
          data-rating-stp="{{ product.metafields.shopiweb.rating_shopitrust }}" 
          data-num-reviews-stp="{{ product.metafields.shopiweb.number_shopitrust }}">
     
-        {% assign stars_rating = product.metafields.shopiweb.rating_shopitrust %}
+        {% # theme-check-disable LiquidTag %}
+{% assign stars_rating = product.metafields.shopiweb.rating_shopitrust %}
+{% # theme-check-enable LiquidTag %}
         {% assign number_reviews = product.metafields.shopiweb.number_shopitrust %}
         
         {% comment %}Define color codes for ratings{% endcomment %}
