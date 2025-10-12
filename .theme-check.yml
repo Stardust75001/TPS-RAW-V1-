@@ -1,5 +1,17 @@
 extends: theme-check:recommended
 
+# Example: customize rules for your theme
+# AssetSize: limit asset file size (e.g., 500KB)
+# SectionSchemaTag: ensure section files have schema tags
+# LiquidSyntax: enable Liquid syntax validation
+
+# AssetSize:
+#   max_size: 500KB
+# SectionSchemaTag:
+#   enabled: true
+# LiquidSyntax:
+#   enabled: true
+
 # Keep these on
 ValidJson:
   enabled: true

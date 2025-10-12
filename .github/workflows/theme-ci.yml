@@ -51,3 +51,32 @@ jobs:
         uses: shopify/theme-check-action@v2
         with:
           flags: "--fail-level error"
+          # Uncomment the next line and create .theme-check.yml for custom rules
+          # config: ".theme-check.yml"
+
+      - name: Validate Liquid syntax
+        run: |
+          npm install -g @shopify/liquid-linter
+          liquid-linter "sections/*.liquid" "snippets/*.liquid" "layout/*.liquid" "templates/*.liquid"
+
+      - name: Check asset file sizes
+        run: |
+          find assets -type f -size +500k -print | while read file; do
+            echo "::error file=$file::Asset file too large: $file"
+            exit 1
+          done
+
+      - name: Validate section schemas
+        run: |
+          for file in sections/*.liquid; do
+            if ! grep -q '{% schema %}' "$file"; then
+              echo "::error file=$file::Missing schema tag in $file"
+              exit 1
+            fi
+          done
+            for file in sections/*.liquid; do
+              if ! grep -q '{% schema %}' "$file"; then
+                echo "::error file=$file::Missing schema tag in $file"
+                exit 1
+              fi
+            done
