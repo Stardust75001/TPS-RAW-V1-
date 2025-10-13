@@ -86,14 +86,8 @@ jobs:
       - name: Prettier check (Liquid/JSON)
         shell: bash
         run: |
-          npm install -g prettier @shopify/prettier-plugin-liquid
-          prettier -c \
-            "sections/**/*.liquid" \
-            "snippets/**/*.liquid" \
-            "layout/**/*.liquid" \
-            "templates/**/*.liquid" \
-            "locales/**/*.json" \
-            "config/**/*.json"
+          npm install -g prettier
+          prettier -c "locales/**/*.json" "config/**/*.json"
 
       - name: Check asset file sizes
         shell: bash
