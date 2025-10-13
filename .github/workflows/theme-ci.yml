@@ -74,12 +74,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-            gem install theme-check -N --user-install
-            export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+          gem install theme-check -N --user-install
+          export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+          GEM_BIN="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
           echo "Using GEM_BIN=$GEM_BIN"
-          # Install & run
-          hash -r # refresh command hash table
-          which theme-check || true # debug
+          hash -r
+          which theme-check || true
           theme-check --version
           theme-check --fail-level error
 
