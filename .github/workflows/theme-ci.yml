@@ -18,16 +18,31 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Ensure toolchain (jq + node/npm + ruby)
+      # Installe Node proprement (sans apt)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Ensure toolchain (jq + ruby)
         shell: bash
         run: |
           set -euo pipefail
           sudo apt-get update -y
-          sudo apt-get install -y jq nodejs npm ruby-full build-essential
+          sudo apt-get install -y jq ruby-full build-essential
           node -v
           npm -v
           ruby -v
           gem -v
+
+      - name: Cache Ruby gems
+        uses: actions/cache@v4
+        with:
+          path: ~/.gem
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
 
       - name: Sanity | theme structure at repo root
         shell: bash
@@ -51,26 +66,22 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          find locales -type f -name '*.json' -print0 \
-          | while IFS= read -r -d '' f; do
-              echo "Checking $f"
-              jq empty "$f"
-            done
+          find locales -type f -name '*.json' -print0 |
+          while IFS= read -r -d '' f; do
+            echo "Checking $f"
+            jq empty "$f"
+          done
           echo "✅ All locale JSON files valid"
 
-      # Remplace l'action officielle cassée par la CLI Ruby stable
       - name: Run theme-check (Ruby CLI)
         shell: bash
         run: |
-          set -euo pipefail
           gem install theme_check -N
           theme-check --fail-level error
 
-      # (Optionnel) Format check avec Prettier + plugin Liquid
       - name: Prettier check (Liquid/JSON)
         shell: bash
         run: |
-          set -euo pipefail
           npm install -g prettier @shopify/prettier-plugin-liquid
           prettier -c \
             "sections/**/*.liquid" \
@@ -83,7 +94,6 @@ jobs:
       - name: Check asset file sizes
         shell: bash
         run: |
-          set -euo pipefail
           large_files=$(find assets -type f -size +500k || true)
           if [[ -n "$large_files" ]]; then
             echo "::error::Found asset files > 500KB:"
@@ -95,7 +105,6 @@ jobs:
       - name: Validate section schemas (presence only)
         shell: bash
         run: |
-          set -euo pipefail
           shopt -s nullglob
           for file in sections/*.liquid; do
             if ! grep -q '{% schema %}' "$file"; then
