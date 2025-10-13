@@ -1,33 +1,88 @@
-extends: theme-check:recommended
+name: Theme CI (structure + sanity + JSON)
 
-# Example: customize rules for your theme
-# AssetSize: limit asset file size (e.g., 500KB)
-# SectionSchemaTag: ensure section files have schema tags
-# LiquidSyntax: enable Liquid syntax validation
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 
-# AssetSize:
-#   max_size: 500KB
-# SectionSchemaTag:
-#   enabled: true
-# LiquidSyntax:
-#   enabled: true
+jobs:
+  theme-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-# Keep these on
-ValidJson:
-  enabled: true
-ValidSchema:
-  enabled: true
+      - name: "Sanity: theme structure at repo root"
+        shell: bash
+        run: |
+          set -euo pipefail
+          for p in layout/theme.liquid config/settings_schema.json; do
+            if [[ ! -f "$p" ]]; then
+              echo "::error file=$p::missing required file $p"
+              exit 1
+            fi
+          done
+          for d in assets sections snippets templates locales; do
+            if [[ ! -d "$d" ]]; then
+              echo "::error file=$d::missing required folder $d"
+              exit 1
+            fi
+          done
+          echo "Theme structure OK ✅"
 
-# Silence the “Use {% liquid %} …” nags
-LiquidTag:
-  enabled: false
+      - name: Validate JSON files
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -y && sudo apt-get install -y jq
+          # Validate all locale JSON files
+          find locales -type f -name '*.json' -print0 | while IFS= read -r -d '' f; do
+            echo "Checking $f"
+            if ! jq empty "$f" >/dev/null 2>&1; then
+              echo "::error file=$f::Invalid JSON syntax"
+              exit 1
+            fi
+          done
+          echo "✅ All locale JSON files valid"
 
-# (Optional) reduce TemplateLength to a suggestion instead of error
-TemplateLength:
-  enabled: true
-  severity: suggestion
-  max_length: 600
+      - name: Run theme-check
+        uses: shopify/theme-check-action@v2
+        with:
+          flags: "--fail-level error"
+          # Uncomment the next line and create .theme-check.yml for custom rules
+          # config: ".theme-check.yml"
 
-# Suppress orphaned snippet warnings
-OrphanedSnippet:
-  enabled: false
+      - name: Validate Liquid syntax
+        shell: bash
+        run: |
+          npm install -g @shopify/liquid-linter
+          liquid-linter "sections/*.liquid" "snippets/*.liquid" "layout/*.liquid" "templates/*.liquid"
+
+      - name: Check asset file sizes
+        shell: bash
+        run: |
+          # Check for assets larger than 500KB
+          large_files=$(find assets -type f -size +500k)
+          if [ -n "$large_files" ]; then
+            echo "::error::Found large asset files:"
+            echo "$large_files"
+            exit 1
+          fi
+          echo "✅ All asset files are under 500KB"
+
+      - name: Validate section schemas
+        shell: bash
+        run: |
+          # Check that all section files contain schema tags
+          for file in sections/*.liquid; do
+            if [ ! -f "$file" ]; then
+              continue
+            fi
+            if ! grep -q '{% schema %}' "$file"; then
+              echo "::error file=$file::Missing schema tag in $file"
+              exit 1
+            fi
+          done
+          echo "✅ All section files contain schema tags"

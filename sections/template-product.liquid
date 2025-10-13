@@ -126,6 +126,11 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                   {% endform %}
 </div>
 
+  {%- assign whatsapp_phone_e164 = '33769238799' -%}
+  {%- capture wa_msg -%}Bonjour {{ product.title }}\nSKU {{ product.selected_or_first_available_variant.sku | default: 'N/A' }}.\nPage : https://{{ request.host }}{{ request.path }}{%- endcapture -%}
+  {%- assign wa_msg_encoded = wa_msg | strip | url_encode -%}
+  <a class="btn btn-primary btn-whatsapp" href="https://wa.me/{{ whatsapp_phone_e164 }}?text={{ wa_msg_encoded }}" target="_blank" rel="noopener">Discuter sur WhatsApp</a>
+
 {% liquid
     render 'bought-product-together'
 %}

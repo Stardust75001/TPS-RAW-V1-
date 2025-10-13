@@ -1,0 +1,84 @@
+{% comment %}
+WhatsApp Business Smart Button — Global version
+Affiché sur toutes les pages (produit, collection, accueil…)
+Ajoute automatiquement le titre, SKU, et URL dans le message.
+{% endcomment %}
+
+{% liquid
+  assign phone = '33769238799'
+  assign prefix = 'Bonjour The Pet Society 👋'
+  assign suffix = 'Merci 🙏'
+
+  assign context_title = nil
+  if product
+    assign context_title = product.title
+  elsif article
+    assign context_title = article.title
+  else
+    assign context_title = page_title
+  endif
+
+  assign sku_val = nil
+  if product and product.selected_or_first_available_variant
+    assign sku_val = product.selected_or_first_available_variant.sku | default: blank
+  endif
+
+  assign url_val = 'https://' | append: request.host | append: request.path
+
+  capture msg
+    echo prefix
+    if context_title != blank
+      echo ' | Sujet: ' | append: context_title
+    endif
+    if sku_val != blank
+      echo ' | SKU: ' | append: sku_val
+    endif
+    echo ' | Page: ' | append: url_val
+    echo ' | ' | append: suffix
+  endcapture
+
+  assign msg_enc = msg | strip | url_encode
+%}
+
+<a class="wa-float-btn" href="https://wa.me/{{ phone }}?text={{ msg_enc }}" target="_blank" rel="noopener" aria-label="Discuter sur WhatsApp">
+  <img src="https://cdn.shopify.com/s/files/1/0861/3180/2466/files/whatsApp.png?v=1745524527"
+       alt="WhatsApp" width="56" height="56" loading="lazy">
+</a>
+
+<style>
+.wa-float-btn {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  box-shadow: 0 6px 20px rgba(0,0,0,.18);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.wa-float-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.22);
+}
+.wa-float-btn img {
+  width: 32px;
+  height: 32px;
+}
+@media (max-width: 767px) {
+  .wa-float-btn {
+    right: 12px;
+    bottom: 12px;
+    width: 52px;
+    height: 52px;
+  }
+  .wa-float-btn img {
+    width: 28px;
+    height: 28px;
+  }
+}
+</style>

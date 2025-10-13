@@ -1,0 +1,18 @@
+{%- comment -%} WhatsApp Business button, fully customizable via settings {%- endcomment -%}
+{% if section.settings.whatsapp_business_enable %}
+	{% assign show_whatsapp = false %}
+	{% if section.settings.whatsapp_business_visibility == 'all' %}
+		{% assign show_whatsapp = true %}
+	{% elsif section.settings.whatsapp_business_visibility == 'mobile' and request.device_type == 'mobile' %}
+		{% assign show_whatsapp = true %}
+	{% elsif section.settings.whatsapp_business_visibility == 'desktop' and request.device_type == 'desktop' %}
+		{% assign show_whatsapp = true %}
+	{% endif %}
+	{% if show_whatsapp %}
+		<a href="https://wa.me/{{ section.settings.whatsapp_business_number | remove: '+' }}"
+			 target="_blank"
+			 class="btn {{ section.settings.whatsapp_business_btn_style }} whatsapp-business-btn">
+			{{ section.settings.whatsapp_business_text }}
+		</a>
+	{% endif %}
+{% endif %}

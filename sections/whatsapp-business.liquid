@@ -1,0 +1,101 @@
+{% comment %}
+WhatsApp Business Section – Editable via Shopify Admin
+Allows admin to set phone number, enable/disable auto reply, and edit welcome/auto reply messages.
+{% endcomment %}
+
+{% schema %}
+{
+  "name": "WhatsApp Business Button",
+  "settings": [
+    {
+      "type": "text",
+      "id": "wa_phone_e164",
+      "label": "WhatsApp Phone Number (E.164)",
+      "default": "33769238799"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_auto_reply",
+      "label": "Enable Automatic Reply",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "welcome_message",
+      "label": "Welcome Message",
+      "default": "Merci pour votre message, je vous réponds vite 🐾"
+    },
+    {
+      "type": "textarea",
+      "id": "auto_reply_message",
+      "label": "Automatic Reply Message",
+      "default": "Nous avons bien reçu votre demande et reviendrons vers vous rapidement."
+    }
+  ],
+  "presets": [
+    {
+      "name": "WhatsApp Business Button",
+      "category": "Contact"
+    }
+  ]
+}
+{% endschema %}
+
+{% liquid
+  assign wa_phone_e164 = section.settings.wa_phone_e164 | strip
+  assign enable_auto_reply = section.settings.enable_auto_reply
+  assign welcome_message = section.settings.welcome_message | strip
+  assign auto_reply_message = section.settings.auto_reply_message | strip
+
+  assign wa_message = welcome_message
+  if enable_auto_reply
+    assign wa_message = wa_message | append: ' ' | append: auto_reply_message
+  endif
+  assign wa_message_encoded = wa_message | url_encode
+%}
+
+<a class="wa-float-btn"
+   href="https://wa.me/{{ wa_phone_e164 }}?text={{ wa_message_encoded }}"
+   target="_blank" rel="noopener"
+   aria-label="Discuter sur WhatsApp">
+  <img src="https://cdn.shopify.com/s/files/1/0861/3180/2466/files/whatsApp.png?v=1745524527"
+       alt="WhatsApp" width="56" height="56" loading="lazy">
+</a>
+
+<style>
+.wa-float-btn {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.wa-float-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+.wa-float-btn img {
+  width: 32px;
+  height: 32px;
+}
+@media (max-width: 767px) {
+  .wa-float-btn {
+    right: 12px;
+    bottom: 12px;
+    width: 52px;
+    height: 52px;
+  }
+  .wa-float-btn img {
+    width: 28px;
+    height: 28px;
+  }
+}
+</style>

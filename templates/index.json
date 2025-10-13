@@ -104,20 +104,12 @@
         "color_scheme": "background-1"
       }
     },
-    "email_signup": {
-      "type": "email-signup",
-      "settings": {
-        "color_scheme": "background-1",
-        "heading": "Get 10% off your first order",
-        "text": "Join the newsletter for early access and deals."
-      }
-    }
+    
   },
   "order": [
-    "hero",
-    "featured_collection",
-    "value_props",
-    "feature_band",
-    "email_signup"
+  "hero",
+  "featured_collection",
+  "value_props",
+  "feature_band"
   ]
 }
