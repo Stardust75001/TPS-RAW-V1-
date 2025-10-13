@@ -18,14 +18,16 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Ensure toolchain (jq + node/npm)
+      - name: Ensure toolchain (jq + node/npm + ruby)
         shell: bash
         run: |
           set -euo pipefail
           sudo apt-get update -y
-          sudo apt-get install -y jq nodejs npm
+          sudo apt-get install -y jq nodejs npm ruby-full build-essential
           node -v
           npm -v
+          ruby -v
+          gem -v
 
       - name: Sanity | theme structure at repo root
         shell: bash
@@ -56,23 +58,27 @@ jobs:
             done
           echo "✅ All locale JSON files valid"
 
-      - name: Run theme-check (skip when ACT=true)
-        if: ${{ env.ACT != 'true' }}
-        uses: shopify/theme-check-action@v2
-        with:
-          flags: --fail-level error
-          # config: .theme-check.yml
-
-      - name: Validate Liquid syntax
+      # Remplace l'action officielle cassée par la CLI Ruby stable
+      - name: Run theme-check (Ruby CLI)
         shell: bash
         run: |
           set -euo pipefail
-          npm install -g @shopify/liquid-linter
-          liquid-linter \
+          gem install theme_check -N
+          theme-check --fail-level error
+
+      # (Optionnel) Format check avec Prettier + plugin Liquid
+      - name: Prettier check (Liquid/JSON)
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install -g prettier @shopify/prettier-plugin-liquid
+          prettier -c \
             "sections/**/*.liquid" \
             "snippets/**/*.liquid" \
             "layout/**/*.liquid" \
-            "templates/**/*.liquid"
+            "templates/**/*.liquid" \
+            "locales/**/*.json" \
+            "config/**/*.json"
 
       - name: Check asset file sizes
         shell: bash
