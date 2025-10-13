@@ -55,28 +55,34 @@ jobs:
           # config: ".theme-check.yml"
 
       - name: Validate Liquid syntax
+        shell: bash
         run: |
           npm install -g @shopify/liquid-linter
           liquid-linter "sections/*.liquid" "snippets/*.liquid" "layout/*.liquid" "templates/*.liquid"
 
       - name: Check asset file sizes
+        shell: bash
         run: |
-          find assets -type f -size +500k -print | while read file; do
-            echo "::error file=$file::Asset file too large: $file"
+          # Check for assets larger than 500KB
+          large_files=$(find assets -type f -size +500k)
+          if [ -n "$large_files" ]; then
+            echo "::error::Found large asset files:"
+            echo "$large_files"
             exit 1
-          done
+          fi
+          echo "✅ All asset files are under 500KB"
 
       - name: Validate section schemas
+        shell: bash
         run: |
+          # Check that all section files contain schema tags
           for file in sections/*.liquid; do
+            if [ ! -f "$file" ]; then
+              continue
+            fi
             if ! grep -q '{% schema %}' "$file"; then
               echo "::error file=$file::Missing schema tag in $file"
               exit 1
             fi
           done
-            for file in sections/*.liquid; do
-              if ! grep -q '{% schema %}' "$file"; then
-                echo "::error file=$file::Missing schema tag in $file"
-                exit 1
-              fi
-            done
+          echo "✅ All section files contain schema tags"
