@@ -76,7 +76,7 @@ jobs:
       - name: Run theme-check (Ruby CLI)
         shell: bash
         run: |
-          gem install theme_check -N
+          gem install theme-check -N
           theme-check --fail-level error
 
       - name: Prettier check (Liquid/JSON)
