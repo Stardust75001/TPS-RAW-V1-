@@ -87,6 +87,8 @@ jobs:
         shell: bash
         run: |
           npm install -g prettier
+          echo "Prettier version:" $(prettier --version)
+          echo "Prettier config:" $(prettier --find-config-path locales/da.json)
           prettier -c "locales/**/*.json" "config/**/*.json"
 
       - name: Check asset file sizes

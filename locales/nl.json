@@ -155,9 +155,9 @@
     "seconds": "seconden"
   },
   "custom": {
-  "description": "Pas uw selectie aan",
-  "ref_variant_label": "Selecteer een referentievariant",
-  "title": "Aanpassen"
+    "description": "Pas uw selectie aan",
+    "ref_variant_label": "Selecteer een referentievariant",
+    "title": "Aanpassen"
   },
   "custom_bundle": {
     "add_to_bundle": "Toevoegen aan bundel",

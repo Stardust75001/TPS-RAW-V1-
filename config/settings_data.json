@@ -80,9 +80,7 @@
             }
           }
         },
-        "block_order": [
-          "navbar-0"
-        ],
+        "block_order": ["navbar-0"],
         "settings": {
           "bg_color": "bg-tertiary text-white",
           "bg_gradient": false,
@@ -119,8 +117,7 @@
       },
       "stories-bar-sticky": {
         "type": "stories-bar-sticky",
-        "settings": {
-        }
+        "settings": {}
       },
       "discount-bar": {
         "type": "discount-bar",
@@ -229,15 +226,12 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "15789145905799289410": {
         "type": "shopify://apps/redirect-pro-404-seo/blocks/tracker/68d49184-0465-4c21-8d3d-e051f7921c3f",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       }
     }
   }
