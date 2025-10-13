@@ -1,6 +1,7 @@
+---
 name: Theme CI (structure + sanity + JSON)
 
-on:
+'on':
   push:
     branches: [main]
   pull_request:
@@ -32,12 +33,14 @@ jobs:
           set -euo pipefail
           for p in layout/theme.liquid config/settings_schema.json; do
             if [[ ! -f "$p" ]]; then
-              echo "::error file=$p::missing required file $p"; exit 1
+              echo "::error file=$p::missing required file $p"
+              exit 1
             fi
           done
           for d in assets sections snippets templates locales; do
             if [[ ! -d "$d" ]]; then
-              echo "::error file=$d::missing required folder $d"; exit 1
+              echo "::error file=$d::missing required folder $d"
+              exit 1
             fi
           done
           echo "Theme structure OK ✅"
@@ -46,24 +49,30 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          find locales -type f -name '*.json' -print0 | while IFS= read -r -d '' f; do
-            echo "Checking $f"
-            jq empty "$f"
-          done
+          find locales -type f -name '*.json' -print0 \
+          | while IFS= read -r -d '' f; do
+              echo "Checking $f"
+              jq empty "$f"
+            done
           echo "✅ All locale JSON files valid"
 
-      - name: Run theme-check
+      - name: Run theme-check (skip when ACT=true)
+        if: ${{ env.ACT != 'true' }}
         uses: shopify/theme-check-action@v2
         with:
           flags: --fail-level error
-          # config: .theme-check.yml  # ← décommente si tu as un fichier custom
+          # config: .theme-check.yml
 
       - name: Validate Liquid syntax
         shell: bash
         run: |
           set -euo pipefail
           npm install -g @shopify/liquid-linter
-          liquid-linter "sections/**/*.liquid" "snippets/**/*.liquid" "layout/**/*.liquid" "templates/**/*.liquid"
+          liquid-linter \
+            "sections/**/*.liquid" \
+            "snippets/**/*.liquid" \
+            "layout/**/*.liquid" \
+            "templates/**/*.liquid"
 
       - name: Check asset file sizes
         shell: bash
@@ -71,7 +80,9 @@ jobs:
           set -euo pipefail
           large_files=$(find assets -type f -size +500k || true)
           if [[ -n "$large_files" ]]; then
-            echo "::error::Found asset files > 500KB:"; echo "$large_files"; exit 1
+            echo "::error::Found asset files > 500KB:"
+            echo "$large_files"
+            exit 1
           fi
           echo "✅ All asset files are under 500KB"
 
@@ -82,7 +93,8 @@ jobs:
           shopt -s nullglob
           for file in sections/*.liquid; do
             if ! grep -q '{% schema %}' "$file"; then
-              echo "::error file=$file::Missing schema tag in $file"; exit 1
+              echo "::error file=$file::Missing schema tag"
+              exit 1
             fi
           done
           echo "✅ All section files contain schema tags"
