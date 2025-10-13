@@ -66,11 +66,21 @@ jobs:
           done
           echo "✅ All locale JSON files valid"
 
+      - name: Add gem bin path to PATH for later steps
+        run: echo "$(ruby -r rubygems -e 'puts Gem.user_dir')/bin" >> "$GITHUB_PATH"
+
       - name: Run theme-check (Ruby CLI)
         shell: bash
         run: |
-          echo "$(ruby -e 'puts Gem.user_dir')/bin" >> "$GITHUB_PATH"
+          set -euo pipefail
+          # Compute gem user dir and expose its bin/ for THIS step
+          GEM_BIN="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
+          export PATH="$GEM_BIN:$PATH"
+          echo "Using GEM_BIN=$GEM_BIN"
+          # Install & run
           gem install --user-install theme-check -N
+          hash -r # refresh command hash table
+          which theme-check || true # debug
           theme-check --version
           theme-check --fail-level error
 
