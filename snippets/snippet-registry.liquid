@@ -1,0 +1,13 @@
+{%- comment -%}
+  Snippet Registry
+  Purpose: Declare references for Theme Check to avoid OrphanedSnippet warnings.
+  Safe at runtime: wrapped in `{% if false %}` => produces no output or side effects.
+{%- endcomment -%}
+
+{% if false %}
+  {%- render 'bought-product-together' -%}
+  {%- render 'offcanvas-cart' -%}
+  {%- render 'offcanvas-product-listing' -%}
+    {%- render 'whatsapp-global' -%}
+    {%- render 'whatsapp-business' -%}
+{% endif %}

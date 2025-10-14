@@ -1,0 +1,29 @@
+{%- comment -%} WhatsApp Business button (snippet version) {%- endcomment -%}
+{%- liquid
+  assign enabled    = settings.whatsapp_business_enable | default: true
+  assign visibility = settings.whatsapp_business_visibility | default: 'all'  # all | mobile | desktop
+  assign number     = settings.whatsapp_business_number | remove: '+' | replace: ' ', '' | default: ''
+  assign btn_style  = settings.whatsapp_business_btn_style | default: 'btn-success'
+  assign text       = settings.whatsapp_business_text | default: 'WhatsApp'
+-%}
+
+{%- if enabled and number != '' -%}
+  {%- liquid
+    assign show = false
+    if visibility == 'all'
+      assign show = true
+    elsif visibility == 'mobile' and request.device_type == 'mobile'
+      assign show = true
+    elsif visibility == 'desktop' and request.device_type == 'desktop'
+      assign show = true
+    endif
+  -%}
+  {%- if show -%}
+    <a href="https://wa.me/{{ number }}"
+       target="_blank" rel="noopener"
+       class="btn {{ btn_style }} whatsapp-business-btn"
+       aria-label="WhatsApp">
+      {{ text }}
+    </a>
+  {%- endif -%}
+{%- endif -%}
