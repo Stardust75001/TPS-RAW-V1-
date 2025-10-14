@@ -15,22 +15,24 @@ Copyright © 2019/2024 Theme Shopiweb Premium. Tous droits réservés.
   id="list-collections-{{ section.id }}"
   class="list-collections enter-view overflow-hidden {{ section.settings.bg_color }} {{ section.settings.text_align }} {{ pt }} {{ pb }} {{ mt }} {{ mb }}">
   <div class="container">
-    {% if section.settings.show_breadcrumbs %}
-      <div class="breadcrumbs-wrapper mt-n6 mb-6">
-        {% render 'breadcrumbs' %}
-      </div>
-    {% endif %}
-
-    {% render 'section-header' %}
-
+    {% liquid
+      if section.settings.show_breadcrumbs
+        render 'breadcrumbs'
+      endif
+      render 'section-header'
+      for block in section.blocks
+        unless block.disabled
+          assign handle = block.settings.collection
+          if handle != blank
+            assign collection = collections[handle]
+            if collection and collection.all_products_count > 0
+              render 'collection-item', collection: collection, index: forloop.index
+            endif
+          endif
+        endunless
+      endfor
+    %}
     <ul class="collection-list list-unstyled row mx-n3 mx-lg-n4 mb-0 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-      {% for block in section.blocks %}
-        {% unless block.disabled %}
-          {% assign handle = block.settings.collection %}
-          {% if handle != blank %}
-            {% assign collection = collections[handle] %}
-            {% if collection and collection.all_products_count > 0 %}
-              {% render 'collection-item', collection: collection, index: forloop.index %}
             {% endif %}
           {% endif %}
         {% endunless %}
