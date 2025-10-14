@@ -22,7 +22,7 @@ const initializeBundle = () => {
     0
   );
 
-  document.querySelectorAll(".bd-pss").forEach((progress) => {
+  document.querySelectorAll(".bd-pss").forEach(progress => {
     const progressBar = progress.querySelector(".progress-bar");
     const progressText = progress
       .closest(".bd-pss-wrapper")
@@ -37,7 +37,7 @@ const initializeBundle = () => {
       progressBar.classList.add(progressBar.dataset.colorUncompleted);
 
       const tier = tiers.find(
-        (elem) => Number(elem.split(":")[0] * 100) > totalPrice
+        elem => Number(elem.split(":")[0] * 100) > totalPrice
       );
       const tierValue = Number(tier.split(":")[0] * 100);
       const remaining = Shopify.formatMoney(tierValue - totalPrice);
@@ -76,15 +76,15 @@ const initializeBundle = () => {
     }
   });
 
-  document.querySelectorAll(".bd-button-atc").forEach((btn) => {
+  document.querySelectorAll(".bd-button-atc").forEach(btn => {
     btn.disabled = totalPrice === 0;
   });
 
-  document.querySelectorAll("[data-bundle-price]").forEach((elem) => {
+  document.querySelectorAll("[data-bundle-price]").forEach(elem => {
     const tier = tiers
       .slice()
       .reverse()
-      .find((elem) => Number(elem.split(":")[0] * 100) <= totalPrice);
+      .find(elem => Number(elem.split(":")[0] * 100) <= totalPrice);
 
     if (tier) {
       const tierDiscount = Number(tier.split(":")[1]);
@@ -96,11 +96,11 @@ const initializeBundle = () => {
     }
   });
 
-  document.querySelectorAll("[data-bundle-discount]").forEach((elem) => {
+  document.querySelectorAll("[data-bundle-discount]").forEach(elem => {
     const tier = tiers
       .slice()
       .reverse()
-      .find((elem) => Number(elem.split(":")[0] * 100) < totalPrice);
+      .find(elem => Number(elem.split(":")[0] * 100) < totalPrice);
 
     let tierDiscount = 0;
 
@@ -145,8 +145,8 @@ window.onSubmitBundleForm = async (form, event) => {
 
   const bundleContents = getStorageBundle();
 
-  if (bundleContents.find((elem) => elem.variant_id === variantId)) {
-    bundleContents.map((elem) => {
+  if (bundleContents.find(elem => elem.variant_id === variantId)) {
+    bundleContents.map(elem => {
       if (elem.variant_id === variantId) {
         elem.quantity += 1;
       }
@@ -160,7 +160,7 @@ window.onSubmitBundleForm = async (form, event) => {
       variant_title: variantTitle,
       variant_price: variantPrice,
       variant_image: variantImage,
-      quantity: 1,
+      quantity: 1
     });
   }
 
@@ -188,7 +188,7 @@ window.onClickBundleFormVariant = async (btn, event) => {
 /* =====================
    Ajouter le contenu de l'offre groupée au panier
    ===================== */
-window.addBundleContentsToCart = async (btn) => {
+window.addBundleContentsToCart = async btn => {
   btn.innerHTML = `
         <div class="spinner-border spinner-border-sm" role="status">
             <span class="visually-hidden">Loading...</span>
@@ -198,7 +198,7 @@ window.addBundleContentsToCart = async (btn) => {
   const items = getStorageBundle().reduce((accumulator, currentValue) => {
     accumulator.push({
       id: currentValue.variant_id,
-      quantity: currentValue.quantity,
+      quantity: currentValue.quantity
     });
     return accumulator;
   }, []);
@@ -209,8 +209,8 @@ window.addBundleContentsToCart = async (btn) => {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      items,
-    }),
+      items
+    })
   });
 
   const modal = bootstrap.Modal.getOrCreateInstance("#modal-bundle-contents");
@@ -286,7 +286,7 @@ function initializeBundleContents() {
 
   let listHtml = "";
 
-  getStorageBundle().forEach((elem) => {
+  getStorageBundle().forEach(elem => {
     listHtml += `
             <li class="product-item py-3">
                 <div class="row align-items-center mx-n3">
@@ -386,10 +386,10 @@ window.onChangeBundleItemQty = (input, event) => {
 
   if (Number(input.value) === 0) {
     bundleContents = bundleContents.filter(
-      (elem) => elem.variant_id !== Number(input.dataset.variantId)
+      elem => elem.variant_id !== Number(input.dataset.variantId)
     );
   } else {
-    bundleContents.map((elem) => {
+    bundleContents.map(elem => {
       if (elem.variant_id === Number(input.dataset.variantId)) {
         elem.quantity = Number(input.value);
       }
@@ -409,7 +409,7 @@ window.handleBundleItemRemoval = (btn, event) => {
   let bundleContents = getStorageBundle();
 
   bundleContents = bundleContents.filter(
-    (elem) => elem.variant_id !== Number(btn.dataset.variantId)
+    elem => elem.variant_id !== Number(btn.dataset.variantId)
   );
 
   localStorage.setItem("shopiweb-bundle-v2", JSON.stringify(bundleContents));
@@ -425,7 +425,7 @@ const mobileStickyBundleCardInit = async () => {
 
   if (!wrapper) return;
 
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise(resolve => setTimeout(resolve, 1000));
 
   const threshold =
     document.querySelector("#card-bundle").getBoundingClientRect().bottom +

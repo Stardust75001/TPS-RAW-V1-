@@ -16,12 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function isInWishlist(productId) {
-    return getWishlist().some((item) => item.id === Number(productId));
+    return getWishlist().some(item => item.id === Number(productId));
   }
 
   function updateWishlistBadge() {
     const count = getWishlist().length;
-    document.querySelectorAll(".wishlist-count-badge").forEach((badge) => {
+    document.querySelectorAll(".wishlist-count-badge").forEach(badge => {
       if (count > 0) {
         badge.textContent = count;
         badge.removeAttribute("hidden");
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function removeFromWishlist(productId) {
     const id = Number(productId);
-    const wishlist = getWishlist().filter((item) => item.id !== id);
+    const wishlist = getWishlist().filter(item => item.id !== id);
     saveWishlist(wishlist);
   }
 
@@ -63,12 +63,12 @@ document.addEventListener("DOMContentLoaded", function () {
     list.removeAttribute("hidden");
     emptyState.setAttribute("hidden", true);
 
-    wishlist.forEach((item) => {
+    wishlist.forEach(item => {
       const li = document.createElement("li");
       li.className = "mb-4";
       li.innerHTML = `
         <div class="d-flex align-items-start">
-          <img src="${item.image || '/placeholder.png'}" width="80" height="80" alt="${item.title}" class="me-3" style="object-fit: cover;">
+          <img src="${item.image || "/placeholder.png"}" width="80" height="80" alt="${item.title}" class="me-3" style="object-fit: cover;">
           <div class="flex-grow-1">
             <h6 class="mb-1">${item.title}</h6>
             <p class="mb-2">${item.price}</p>
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Boutons "Retirer" attachés
-    document.querySelectorAll(".remove-from-wishlist").forEach((btn) => {
+    document.querySelectorAll(".remove-from-wishlist").forEach(btn => {
       btn.addEventListener("click", function () {
         removeFromWishlist(this.getAttribute("data-id"));
         renderWishlist();
@@ -93,16 +93,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateToggleStates() {
-    document.querySelectorAll("[data-wishlist-button]").forEach((button) => {
+    document.querySelectorAll("[data-wishlist-button]").forEach(button => {
       const productId = button.dataset.id;
       const span = button.querySelector("span");
 
       if (isInWishlist(productId)) {
         button.classList.add("active");
-        if (span) span.textContent = button.dataset.removeLabel || "Retirer des favoris";
+        if (span)
+          span.textContent =
+            button.dataset.removeLabel || "Retirer des favoris";
       } else {
         button.classList.remove("active");
-        if (span) span.textContent = button.dataset.addLabel || "Ajouter aux favoris";
+        if (span)
+          span.textContent = button.dataset.addLabel || "Ajouter aux favoris";
       }
     });
   }
@@ -114,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
       title: el.dataset.title,
       image: el.dataset.image,
       price: el.dataset.price,
-      url: el.dataset.url,
+      url: el.dataset.url
     };
 
     if (isInWishlist(product.id)) {

@@ -11,12 +11,12 @@ const reloadCollection = async () => {
   const productListing = document.querySelector(".collection .product-listing");
 
   if (productListing) {
-    productListing.style.opacity = "0.2"; 
+    productListing.style.opacity = "0.2";
   }
 
-  window.scrollTo({ top: 0, behavior: "smooth" }); 
+  window.scrollTo({ top: 0, behavior: "smooth" });
 
-  const response = await fetch(window.location.href); 
+  const response = await fetch(window.location.href);
   const htmlContent = await response.text();
   const parser = new DOMParser();
   const updatedDocument = parser.parseFromString(htmlContent, "text/html");
@@ -34,7 +34,7 @@ const reloadCollection = async () => {
   // Reinitialize Bootstrap popovers in the collection
   document
     .querySelectorAll('.collection [data-bs-toggle="popover"]')
-    .forEach((el) => {
+    .forEach(el => {
       bootstrap.Popover.getOrCreateInstance(el);
     });
 
@@ -43,11 +43,11 @@ const reloadCollection = async () => {
 };
 
 // Updates filter components and other interactive elements within the offcanvas filters
-const updateUIComponents = (updatedDocument) => {
+const updateUIComponents = updatedDocument => {
   // Update collapsible filter internals
   document
     .querySelectorAll("#offcanvas-filters .collapse-inner")
-    .forEach((collapse) => {
+    .forEach(collapse => {
       const collapseId = collapse.closest(".collapse").getAttribute("id");
       const newCollapseContent = updatedDocument.querySelector(
         `#offcanvas-filters #${collapseId} .collapse-inner`
@@ -61,9 +61,9 @@ const updateUIComponents = (updatedDocument) => {
   const uiSelectors = [
     "#offcanvas-filters .offcanvas-footer",
     "#offcanvas-filters .btn-filters-clear-all",
-    '#offcanvas-filters [name="sort_by"]',
+    '#offcanvas-filters [name="sort_by"]'
   ];
-  uiSelectors.forEach((selector) => {
+  uiSelectors.forEach(selector => {
     const newElement = updatedDocument.querySelector(selector);
     document.querySelector(selector)?.replaceWith(newElement);
   });
@@ -72,7 +72,7 @@ const updateUIComponents = (updatedDocument) => {
 /* =====================
    Utilitaire pour mettre à jour l'URL avec de nouveaux paramètres de requête
    ===================== */
-const updateUrlWithQueryParams = (form) => {
+const updateUrlWithQueryParams = form => {
   const params = new URLSearchParams(new FormData(form));
   const newUrl = `${window.location.pathname}?${params.toString()}`;
   window.history.replaceState({}, "", newUrl);
@@ -81,7 +81,7 @@ const updateUrlWithQueryParams = (form) => {
 /* =====================
    Mise à jour de la collection en fonction des changements de filtre
    ===================== */
-window.onChangeCollectionFilter = async (inputElement) => {
+window.onChangeCollectionFilter = async inputElement => {
   const form = inputElement.closest("form");
   updateUrlWithQueryParams(form);
   await reloadCollection();
@@ -91,7 +91,7 @@ window.onChangeCollectionFilter = async (inputElement) => {
    Gestion des changements de filtres de prix de la collection
    ===================== */
 const setupPriceFilterListeners = () => {
-  document.querySelectorAll(".filter-amounts input").forEach((input) => {
+  document.querySelectorAll(".filter-amounts input").forEach(input => {
     input.addEventListener(
       "input",
       window.debounce(async () => {
@@ -110,11 +110,11 @@ window.addEventListener(
 /* =====================
    Développe tous les filtres cachés en cliquant sur le bouton
    ===================== */
-window.onClickFiltersViewMore = (button) => {
+window.onClickFiltersViewMore = button => {
   button
     .closest(".collapse")
     .querySelectorAll(".form-check")
-    .forEach((check) => {
+    .forEach(check => {
       check.removeAttribute("hidden");
     });
   button.remove();
@@ -123,7 +123,7 @@ window.onClickFiltersViewMore = (button) => {
 /* =====================
    Efface tous les filtres et recharge la collection
    ===================== */
-window.onClickClearAllFilters = async (button) => {
+window.onClickClearAllFilters = async button => {
   const form = button.closest("form");
   const sortValue = form.querySelector('[name="sort_by"]').value;
   const params = new URLSearchParams();
@@ -140,7 +140,7 @@ window.onClickClearAllFilters = async (button) => {
    Initialise les curseurs du filtre de prix
    ===================== */
 const initializePriceFilterSliders = () => {
-  document.querySelectorAll(".amount-selection-slider").forEach((slider) => {
+  document.querySelectorAll(".amount-selection-slider").forEach(slider => {
     const minValueField = slider
       .closest("form")
       .querySelector('[name="filter.v.price.gte"]');
@@ -157,11 +157,11 @@ const initializePriceFilterSliders = () => {
       connect: true,
       range: {
         min: Number(slider.dataset.rangeMin),
-        max: Number(slider.dataset.rangeMax),
-      },
+        max: Number(slider.dataset.rangeMax)
+      }
     });
 
-    slider.noUiSlider.on("update", (values) => {
+    slider.noUiSlider.on("update", values => {
       minValueField.value = values[0];
       maxValueField.value = values[1];
     });
@@ -190,7 +190,7 @@ const updateQueryParameters = (key, value) => {
 /* =====================
    Gère les changements dans le tri de la collection
    ===================== */
-window.onChangeCollectionSortBy = (sortByValue) => {
+window.onChangeCollectionSortBy = sortByValue => {
   const updatedUrl = updateQueryParameters("sort_by", sortByValue);
   window.history.replaceState({}, "", updatedUrl);
   reloadCollection();
@@ -199,7 +199,7 @@ window.onChangeCollectionSortBy = (sortByValue) => {
 /* =====================
    Fonctions permettant de charger d'autres produits dans une collection à la suite d'une action de l'utilisateur.
    ===================== */
-const showLoadingIndicator = (button) => {
+const showLoadingIndicator = button => {
   button.style.width = `${button.offsetWidth + 2}px`;
   button.style.height = `${button.offsetHeight + 2}px`;
   button.innerHTML = `
@@ -234,7 +234,7 @@ const updateCollectionContent = async (button, direction) => {
 
   document
     .querySelectorAll('.collection [data-bs-toggle="popover"]')
-    .forEach((el) => {
+    .forEach(el => {
       bootstrap.Popover.getOrCreateInstance(el);
     });
 
@@ -261,8 +261,8 @@ const initializeAutoPagination = () => {
   if (!pagination) return;
 
   const observerOptions = { threshold: 0, rootMargin: "0px 0px -100px 0px" };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
         const loadMoreButton = pagination.querySelector(".button-loading-more");
         if (loadMoreButton) loadMoreButton.click();
@@ -326,7 +326,7 @@ window.addEventListener("onCollectionShopiwebUpdate", () => {
 // This function reveals all color swatches for a product and removes the trigger button
 window.showCompleteSwatchSet = (triggerButton, event) => {
   const swatchContainer = triggerButton.closest(".color-swatches");
-  swatchContainer.querySelectorAll("li").forEach((swatch) => {
+  swatchContainer.querySelectorAll("li").forEach(swatch => {
     swatch.removeAttribute("hidden");
   });
   triggerButton.remove();
@@ -341,9 +341,9 @@ const initializeCollectionBanners = () => {
   if (!productListing) return;
 
   // Process each banner and insert it before the specified product item
-  document.querySelectorAll(".collection-card").forEach((b) => {
-    const injectionIndex = Number(b.dataset.inject) - 1; 
-    const targetItem = productListing.children[injectionIndex]; 
+  document.querySelectorAll(".collection-card").forEach(b => {
+    const injectionIndex = Number(b.dataset.inject) - 1;
+    const targetItem = productListing.children[injectionIndex];
 
     if (targetItem) {
       targetItem.insertAdjacentElement("beforebegin", b);
@@ -353,7 +353,7 @@ const initializeCollectionBanners = () => {
 initializeCollectionBanners();
 
 // Handle the loading of Shopify sections which might include collection banners
-document.addEventListener("shopify:section:load", (event) => {
+document.addEventListener("shopify:section:load", event => {
   if (event.target.querySelector(".collection-card")) {
     // Re-initialize banners upon dynamic content loading to ensure correct placement
     initializeCollectionBanners();

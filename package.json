@@ -56,21 +56,19 @@
     "which": "^2.0.2",
     "wrap-ansi": "^8.1.0"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "i18n:fix": "node autofix-locales.js",
     "theme:check": "theme-check",
-    "ci:verify": "npm run i18n:fix && npm run theme:check"
+    "ci:verify": "npm run i18n:fix && npm run theme:check",
+    "lint": "prettier --write \"**/*.{js,css,json}\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Stardust75001/TPS-RAW-V1-.git"
   },
-  "keywords": [
-
-  ],
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",

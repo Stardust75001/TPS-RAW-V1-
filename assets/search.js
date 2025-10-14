@@ -24,7 +24,7 @@ if (!customElements.get("search-predictive")) {
 
       this.input.addEventListener(
         "input",
-        this.debounce((event) => {
+        this.debounce(event => {
           this.onChange();
         }, 300).bind(this)
       );
@@ -43,7 +43,7 @@ if (!customElements.get("search-predictive")) {
         this.speechBtn?.remove();
       }
 
-      document.querySelectorAll("#offcanvas-search .btn-atc").forEach((btn) => {
+      document.querySelectorAll("#offcanvas-search .btn-atc").forEach(btn => {
         btn.addEventListener("click", () => {
           setTimeout(() => {
             bootstrap.Offcanvas.getOrCreateInstance("#offcanvas-search").hide();
@@ -55,7 +55,8 @@ if (!customElements.get("search-predictive")) {
     open() {
       this.results.style.display = "block";
 
-      const countResults = this.results.querySelectorAll(".product-item").length;
+      const countResults =
+        this.results.querySelectorAll(".product-item").length;
 
       switch (countResults) {
         case 0:
@@ -115,7 +116,8 @@ if (!customElements.get("search-predictive")) {
       const searchTerm = this.input.value.trim();
 
       this.footer.querySelector('[name="q"]').value = searchTerm;
-      this.footer.querySelector(".btn").textContent = `${this.footer.querySelector(".btn").dataset.textSearchFor} "${searchTerm}"`;
+      this.footer.querySelector(".btn").textContent =
+        `${this.footer.querySelector(".btn").dataset.textSearchFor} "${searchTerm}"`;
 
       if (!searchTerm.length) {
         this.close();
@@ -134,7 +136,8 @@ if (!customElements.get("search-predictive")) {
     }
 
     speechRecognition() {
-      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
       const recognition = new SpeechRecognition();
 
       recognition.onstart = () => {
@@ -148,7 +151,7 @@ if (!customElements.get("search-predictive")) {
         this.speechBtn.classList.remove("speech-started");
       };
 
-      recognition.onresult = (event) => {
+      recognition.onresult = event => {
         if (event.results) {
           this.input.value = event.results[0][0].transcript;
           this.onChange();

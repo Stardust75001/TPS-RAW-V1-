@@ -2,23 +2,46 @@
   {
     "name": "WhatsApp",
     "settings": [
-      { "type": "checkbox", "id": "whatsapp_business_enable", "label": "Enable WhatsApp button", "default": true },
-      { "type": "text", "id": "whatsapp_business_number", "label": "Phone number (international, digits only)", "default": "33600000000" },
-      { "type": "select", "id": "whatsapp_business_visibility", "label": "Visibility", "default": "all",
+      {
+        "type": "checkbox",
+        "id": "whatsapp_business_enable",
+        "label": "Enable WhatsApp button",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_business_number",
+        "label": "Phone number (international, digits only)",
+        "default": "33600000000"
+      },
+      {
+        "type": "select",
+        "id": "whatsapp_business_visibility",
+        "label": "Visibility",
+        "default": "all",
         "options": [
           { "value": "all", "label": "All devices" },
           { "value": "mobile", "label": "Mobile only" },
           { "value": "desktop", "label": "Desktop only" }
         ]
       },
-      { "type": "select", "id": "whatsapp_business_btn_style", "label": "Button style", "default": "btn-success",
+      {
+        "type": "select",
+        "id": "whatsapp_business_btn_style",
+        "label": "Button style",
+        "default": "btn-success",
         "options": [
           { "value": "btn-success", "label": "Success" },
           { "value": "btn-primary", "label": "Primary" },
           { "value": "btn-dark", "label": "Dark" }
         ]
       },
-      { "type": "text", "id": "whatsapp_business_text", "label": "Button text", "default": "Chat on WhatsApp" }
+      {
+        "type": "text",
+        "id": "whatsapp_business_text",
+        "label": "Button text",
+        "default": "Chat on WhatsApp"
+      }
     ]
   },
   {

@@ -1,5 +1,5 @@
 function displayDefaultBanner() {
-  const banner = document.getElementById('privacy-banner');
+  const banner = document.getElementById("privacy-banner");
   if (banner) {
     banner.innerHTML = `
       <div class="default-privacy-banner">
@@ -7,18 +7,20 @@ function displayDefaultBanner() {
         <button onclick="this.parentElement.remove()">Close</button>
       </div>
     `;
-    banner.style.display = 'block';
+    banner.style.display = "block";
   } else {
-    console.warn('[Privacy Banner] Element #privacy-banner introuvable dans le DOM.');
+    console.warn(
+      "[Privacy Banner] Element #privacy-banner introuvable dans le DOM."
+    );
   }
 }
 
 function isValidData(data) {
   return (
-    typeof data === 'object' &&
+    typeof data === "object" &&
     data !== null &&
-    typeof data.eventName === 'string' &&
-    typeof data.payload === 'object' &&
+    typeof data.eventName === "string" &&
+    typeof data.payload === "object" &&
     data.payload !== null &&
     Object.keys(data.payload).length > 0
   );
@@ -33,7 +35,10 @@ async function fetchData(url, retries = 3) {
     return await response.json();
   } catch (error) {
     if (retries > 0) {
-      console.warn(`[Privacy Banner] Retry #${4 - retries} after failure:`, error.message);
+      console.warn(
+        `[Privacy Banner] Retry #${4 - retries} after failure:`,
+        error.message
+      );
       await new Promise(resolve => setTimeout(resolve, 1000));
       return fetchData(url, retries - 1);
     } else {
@@ -46,7 +51,7 @@ function sendToMonorail(data) {
   try {
     if (isValidData(data)) {
       navigator.sendBeacon(
-        'https://monorail-edge.shopifysvc.com/v1/produce',
+        "https://monorail-edge.shopifysvc.com/v1/produce",
         JSON.stringify(data)
       );
       console.log("✅ Consent data sent to Monorail Edge.");
@@ -65,9 +70,7 @@ function triggerWebPixelEvent(name, payload = {}) {
       typeof window.webPixelsManagerAPI.publishCustomEvent === "function"
     ) {
       window.webPixelsManagerAPI.publishCustomEvent(name, payload);
-    } else if (
-      window.Shopify?.analytics?.replayQueue
-    ) {
+    } else if (window.Shopify?.analytics?.replayQueue) {
       window.Shopify.analytics.replayQueue.push([name, payload]);
     }
   } catch (err) {
@@ -75,42 +78,53 @@ function triggerWebPixelEvent(name, payload = {}) {
   }
 }
 
-const elementName = 'privacy-banner-element';
-const fallbackName = 'shopiweb-privacy-banner-element';
+const elementName = "privacy-banner-element";
+const fallbackName = "shopiweb-privacy-banner-element";
 
 if (!customElements.get(elementName)) {
   try {
-    customElements.define(elementName, class extends HTMLElement {
-      connectedCallback() {
-        // logique au montage (principal)
+    customElements.define(
+      elementName,
+      class extends HTMLElement {
+        connectedCallback() {
+          // logique au montage (principal)
+        }
       }
-    });
+    );
   } catch (error) {
     console.warn(`⚠️ Failed to define ${elementName}:`, error);
     try {
-      customElements.define(fallbackName, class extends HTMLElement {
-        connectedCallback() {
-          // fallback logique
+      customElements.define(
+        fallbackName,
+        class extends HTMLElement {
+          connectedCallback() {
+            // fallback logique
+          }
         }
-      });
+      );
       console.log(`✅ Defined fallback custom element: ${fallbackName}`);
     } catch (innerError) {
-      console.error('❌ Could not define custom element with any name:', innerError);
+      console.error(
+        "❌ Could not define custom element with any name:",
+        innerError
+      );
     }
   }
 } else {
   console.log(`ℹ️ ${elementName} is already defined.`);
 }
 
-fetchData('https://cdn.shopify.com/s/files/1/0861/3180/2460/files/privacy_settings.json?v=1748186789')
+fetchData(
+  "https://cdn.shopify.com/s/files/1/0861/3180/2460/files/privacy_settings.json?v=1748186789"
+)
   .then(data => {
-    console.log('✅ Privacy settings loaded:', data);
+    console.log("✅ Privacy settings loaded:", data);
 
     const eventData = {
       eventName: "consent_banner_displayed",
       payload: {
-        consent_state: data.consent_state || 'unknown',
-        shop_id: window.Shopify?.shop || 'unknown'
+        consent_state: data.consent_state || "unknown",
+        shop_id: window.Shopify?.shop || "unknown"
       }
     };
 
@@ -118,7 +132,7 @@ fetchData('https://cdn.shopify.com/s/files/1/0861/3180/2460/files/privacy_settin
     triggerWebPixelEvent("page_viewed", {});
   })
   .catch(error => {
-    console.error('⚠️ Privacy settings fetch failed after retries:', error);
+    console.error("⚠️ Privacy settings fetch failed after retries:", error);
     displayDefaultBanner();
   });
 

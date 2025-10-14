@@ -2,15 +2,12 @@
   "sections": {
     "template-cart": {
       "type": "template-cart",
-      "settings": {
-      }
+      "settings": {}
     },
     "cec97695-70cf-4ad3-9308-d5839ef3066f": {
       "type": "featured-products",
       "settings": {
-        "products": [
-
-        ],
+        "products": [],
         "collection": "",
         "limit": 12,
         "bg_color": "bg-light text-body",
@@ -61,8 +58,5 @@
       }
     }
   },
-  "order": [
-    "template-cart",
-    "cec97695-70cf-4ad3-9308-d5839ef3066f"
-  ]
+  "order": ["template-cart", "cec97695-70cf-4ad3-9308-d5839ef3066f"]
 }

@@ -4,7 +4,7 @@
 }
 #wave_custom {
   padding: 0;
-  left: calc(-0%/2);
+  left: calc(-0% / 2);
   width: calc(100% + 0%);
   height: var(--wave-fixe-height-desktop, 40px);
 }
@@ -37,11 +37,11 @@
   transform: rotate(180deg);
 }
 .sp-waves-parallax2 {
-  animation: sp-waves-animation 25s cubic-bezier(.55, .5, .45, .5) infinite;
+  animation: sp-waves-animation 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
   animation-duration: calc(var(--wave-animation-speed, 25s) * 0.5);
 }
-.sp-waves-parallax>use {
-  animation: sp-waves-animation 25s cubic-bezier(.55, .5, .45, .5) infinite;
+.sp-waves-parallax > use {
+  animation: sp-waves-animation 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
 .sp-waves-parallax > use:nth-child(1) {
   animation-delay: -2s;

@@ -1,6 +1,6 @@
 function debug(...args) {
-  if (typeof isDev !== 'undefined' && isDev) {
-    console.debug('[Stories Tooltip]', ...args);
+  if (typeof isDev !== "undefined" && isDev) {
+    console.debug("[Stories Tooltip]", ...args);
   }
 }
 
@@ -14,17 +14,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Desktop : hover = tooltip, clic = navigation directe
     if (!isMobile) {
-      link.addEventListener("mouseenter", () => {
-        tooltip.classList.add("hover-visible");
-        debug("Hover enter on", link);
-        setTimeout(() => adjustTooltipPosition(tooltip), 0);
-      }, { passive: true });
+      link.addEventListener(
+        "mouseenter",
+        () => {
+          tooltip.classList.add("hover-visible");
+          debug("Hover enter on", link);
+          setTimeout(() => adjustTooltipPosition(tooltip), 0);
+        },
+        { passive: true }
+      );
 
-      link.addEventListener("mouseleave", () => {
-        tooltip.classList.remove("hover-visible");
-        debug("Hover leave on", link);
-        resetTooltipPosition(tooltip);
-      }, { passive: true });
+      link.addEventListener(
+        "mouseleave",
+        () => {
+          tooltip.classList.remove("hover-visible");
+          debug("Hover leave on", link);
+          resetTooltipPosition(tooltip);
+        },
+        { passive: true }
+      );
 
       // Pas besoin de bloquer le clic → navigation normale
     }
@@ -39,9 +47,11 @@ document.addEventListener("DOMContentLoaded", function () {
           debug("1er tap on", link);
 
           // Cache autres infobulles
-          document.querySelectorAll(".tooltip-bubble.tap-visible").forEach(el => {
-            el.classList.remove("tap-visible");
-          });
+          document
+            .querySelectorAll(".tooltip-bubble.tap-visible")
+            .forEach(el => {
+              el.classList.remove("tap-visible");
+            });
 
           tooltip.classList.add("tap-visible");
           setTimeout(() => adjustTooltipPosition(tooltip), 0);

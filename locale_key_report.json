@@ -1132,12 +1132,8 @@
     "file": "locales/fr.json",
     "missing_count": 0,
     "extra_count": 0,
-    "missing_keys": [
-
-    ],
-    "extra_keys": [
-
-    ]
+    "missing_keys": [],
+    "extra_keys": []
   },
   {
     "file": "locales/it.json",

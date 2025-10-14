@@ -257,10 +257,10 @@ ul.timer-countdown {
 }
 
 ul.timer-countdown li {
-  border-radius: .25rem;
-  padding: .075rem .35rem;
+  border-radius: 0.25rem;
+  padding: 0.075rem 0.35rem;
   margin: 0 0.125rem;
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: bold;
   min-width: 20px;
   min-height: 18px;
@@ -338,7 +338,8 @@ ul.timer-countdown li {
 }
 
 #offcanvas-wishlist-empty svg {
-  animation: offcanvas-animation-liste-de-souhaits-vide 1s linear infinite alternate;
+  animation: offcanvas-animation-liste-de-souhaits-vide 1s linear infinite
+    alternate;
 }
 
 @keyframes offcanvas-animation-liste-de-souhaits-vide {
@@ -752,17 +753,20 @@ body .shopify_subscriptions_app_policy {
 @keyframes animation-eg-typage-spinner {
   0% {
     background-color: rgba(0, 0, 0, 1);
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2),
+    box-shadow:
+      12px 0px 0px 0px rgba(0, 0, 0, 0.2),
       24px 0px 0px 0px rgba(0, 0, 0, 0.2);
   }
   25% {
     background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 2),
+    box-shadow:
+      12px 0px 0px 0px rgba(0, 0, 0, 2),
       24px 0px 0px 0px rgba(0, 0, 0, 0.2);
   }
   75% {
     background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2),
+    box-shadow:
+      12px 0px 0px 0px rgba(0, 0, 0, 0.2),
       24px 0px 0px 0px rgba(0, 0, 0, 2);
   }
 }
@@ -1035,7 +1039,9 @@ body .shopify_subscriptions_app_policy {
   align-items: center;
   justify-content: center;
   min-height: 3em;
-  box-shadow: rgb(0 0 0 / 15%) 0px 4px 24px, rgb(0 0 0 / 5%) 0px 2px 6px;
+  box-shadow:
+    rgb(0 0 0 / 15%) 0px 4px 24px,
+    rgb(0 0 0 / 5%) 0px 2px 6px;
 }
 @media (min-width: 450px) {
   .cookie-popup {
@@ -1107,7 +1113,7 @@ body .shopify_subscriptions_app_policy {
 
 /* =====================
    Pop-up Premium modal
-   ===================== */  
+   ===================== */
 @keyframes shopibtns {
   0% {
     box-shadow: 0 0 5px #198754;

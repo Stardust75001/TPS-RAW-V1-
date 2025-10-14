@@ -80,9 +80,7 @@
     "3f99cec1-9952-4176-b640-6d7d85438f02": {
       "type": "featured-products",
       "settings": {
-        "products": [
-
-        ],
+        "products": [],
         "collection": "collection-airpods-pro",
         "limit": 12,
         "bg_color": "bg-light text-body",
@@ -134,8 +132,7 @@
     "86f3aeff-d336-43dd-9439-d3a1ad9c3eae": {
       "type": "latest-articles",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

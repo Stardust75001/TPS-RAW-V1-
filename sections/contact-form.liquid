@@ -27,7 +27,8 @@ Copyright © 2019/2024 Theme Shopiweb Premium. Tous droits réservés.
         {% if form.posted_successfully? %}
           <div class="form-success rte alert alert-success mb-6" role="alert">
             {{ section.settings.form_success_msg }}
-            {% endif %}
+          </div>
+        {% endif %}
         {{ form.errors | default_errors }}
 
         {% for block in section.blocks %}

@@ -13,8 +13,7 @@
     },
     "product_simple": {
       "type": "product-simple",
-      "settings": {
-      }
+      "settings": {}
     },
     "recommended_products": {
       "type": "recommended-products",
@@ -28,9 +27,5 @@
       }
     }
   },
-  "order": [
-    "breadcrumbs",
-    "product_simple",
-    "recommended_products"
-  ]
+  "order": ["breadcrumbs", "product_simple", "recommended_products"]
 }

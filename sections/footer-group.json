@@ -89,11 +89,7 @@
           }
         }
       },
-      "block_order": [
-        "menu_xVQw8g",
-        "menu_6Cqn9w",
-        "menu_g8wJjy"
-      ],
+      "block_order": ["menu_xVQw8g", "menu_6Cqn9w", "menu_g8wJjy"],
       "settings": {
         "bg_color": "bg-tertiary text-white",
         "bg_gradient": false,
@@ -124,9 +120,5 @@
       }
     }
   },
-  "order": [
-    "bf5e08e7-a4d4-484a-9229-05d359a62590",
-    "newsletter",
-    "footer"
-  ]
+  "order": ["bf5e08e7-a4d4-484a-9229-05d359a62590", "newsletter", "footer"]
 }

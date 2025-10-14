@@ -45,7 +45,5 @@
       }
     }
   },
-  "order": [
-    "template-collection"
-  ]
+  "order": ["template-collection"]
 }

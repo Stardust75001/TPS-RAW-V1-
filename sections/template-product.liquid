@@ -138,6 +138,12 @@ document.addEventListener("change",function(e){if(e.target.matches('select[name^
         "image": [
             {{ seo_media | image_url: width: seo_media.preview_image.width | prepend: "https:" | json }}
         ],
+        "presets": [
+          {
+            "name": "Product (template)",
+            "category": "Product page"
+          }
+        ]
     {%- endif %}
     "description": {{ product.description | strip_html | json }},
     {% if product.selected_or_first_available_variant.sku != blank -%}

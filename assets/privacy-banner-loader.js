@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  if (localStorage.getItem("cookieAccepted") || localStorage.getItem("cookieRefused")) return;
+  if (
+    localStorage.getItem("cookieAccepted") ||
+    localStorage.getItem("cookieRefused")
+  )
+    return;
 
   const locale = document.documentElement.lang || "en";
 
@@ -19,7 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
       policyUrl: "/policies/privacy-policy"
     },
     de: {
-      message: "Diese Website verwendet Cookies, um Ihr Erlebnis zu verbessern.",
+      message:
+        "Diese Website verwendet Cookies, um Ihr Erlebnis zu verbessern.",
       accept: "OK",
       reject: "Ablehnen",
       policy: "Mehr erfahren",
@@ -89,13 +94,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.body.appendChild(banner);
 
-  document.getElementById("accept-cookies").addEventListener("click", function () {
-    localStorage.setItem("cookieAccepted", "true");
-    banner.remove();
-  });
+  document
+    .getElementById("accept-cookies")
+    .addEventListener("click", function () {
+      localStorage.setItem("cookieAccepted", "true");
+      banner.remove();
+    });
 
-  document.getElementById("reject-cookies").addEventListener("click", function () {
-    localStorage.setItem("cookieRefused", "true");
-    banner.remove();
-  });
+  document
+    .getElementById("reject-cookies")
+    .addEventListener("click", function () {
+      localStorage.setItem("cookieRefused", "true");
+      banner.remove();
+    });
 });

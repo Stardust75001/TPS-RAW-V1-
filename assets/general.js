@@ -9,7 +9,7 @@
    ===================== */
 document
   .querySelectorAll("#navbar-desktop .dropdown-toggle")
-  .forEach((dropdown) => {
+  .forEach(dropdown => {
     const init = () => {
       if (document.querySelector("#navbar-desktop .dropdown-menu.show")) {
         document.querySelector("#main").classList.add("main-hidden");
@@ -26,7 +26,7 @@ document
    ===================== */
 document
   .querySelectorAll("#navbar-desktop.menu-desktop-hover .nav-item.dropdown")
-  .forEach((dropdown) => {
+  .forEach(dropdown => {
     const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(
       dropdown.querySelector(".nav-link")
     );
@@ -34,7 +34,7 @@ document
     dropdown.addEventListener("mouseover", () => {
       document
         .querySelectorAll("#navbar-desktop.menu-desktop-hover .dropdown-menu")
-        .forEach((menu) => {
+        .forEach(menu => {
           if (
             menu.previousElementSibling.dataset.index !==
             dropdown.querySelector(".nav-link").dataset.index
@@ -57,7 +57,7 @@ document
 /* =====================
    Quantité de paliers (plus/moins)
    ===================== */
-window.onClickQtyPlusMinus = (btn) => {
+window.onClickQtyPlusMinus = btn => {
   const input = btn.closest(".quantity-wrapper").querySelector("input");
   const inputValue = Number(input.value);
 
@@ -77,11 +77,11 @@ window.onClickQtyPlusMinus = (btn) => {
    Barre de navigation transparente
    ===================== */
 const fixTransparentNavbarHeader = () => {
-  document.querySelectorAll(".navbar.navbar-transparent").forEach((navbar) => {
+  document.querySelectorAll(".navbar.navbar-transparent").forEach(navbar => {
     const hasTextBody = navbar.classList.contains("text-body");
 
     if (navbar && hasTextBody) {
-      window.addEventListener("scroll", (event) => {
+      window.addEventListener("scroll", event => {
         if (window.scrollY > 0) {
           navbar.classList.add("text-body");
           navbar.classList.remove("text-white");
@@ -102,7 +102,7 @@ window.onLinkShare = (btn, e) => {
   if (navigator.share) {
     navigator.share({
       title: btn.dataset.shareTitle,
-      url: window.location.href,
+      url: window.location.href
     });
   } else {
     const popover = bootstrap.Popover.getOrCreateInstance(btn, {
@@ -114,17 +114,15 @@ window.onLinkShare = (btn, e) => {
             `,
       html: true,
       sanitize: false,
-      placement: "top",
+      placement: "top"
     });
 
     popover.show();
 
-    document
-      .querySelector("#btn-share-copy")
-      ?.addEventListener("click", (e) => {
-        navigator.clipboard.writeText(window.location.href);
-        e.target.textContent = btn.dataset.textCopied;
-      });
+    document.querySelector("#btn-share-copy")?.addEventListener("click", e => {
+      navigator.clipboard.writeText(window.location.href);
+      e.target.textContent = btn.dataset.textCopied;
+    });
 
     setTimeout(() => {
       popover.hide();
@@ -154,7 +152,7 @@ initializeSelectedSearchPage();
    Comptes à rebours
    ===================== */
 const initializeCountdownTimers = () => {
-  document.querySelectorAll(".timer-countdown").forEach((elem) => {
+  document.querySelectorAll(".timer-countdown").forEach(elem => {
     if (elem.classList.contains("init")) return;
 
     elem.classList.add("init");
@@ -188,9 +186,8 @@ const initializeCountdownTimers = () => {
       const s = Math.floor((difference % minutes) / seconds);
 
       if (d > 0) {
-        elem.querySelector(
-          "[data-days]"
-        ).innerText = `${d}${elem.dataset.textD}`;
+        elem.querySelector("[data-days]").innerText =
+          `${d}${elem.dataset.textD}`;
         elem
           .querySelector("[data-days]")
           .setAttribute("aria-label", `${d} ${elem.dataset.textDays}`);
@@ -203,15 +200,13 @@ const initializeCountdownTimers = () => {
       elem
         .querySelector("[data-hours")
         .setAttribute("aria-label", `${h} ${elem.dataset.textHours}`);
-      elem.querySelector(
-        "[data-minutes"
-      ).innerText = `${m}${elem.dataset.textM}`;
+      elem.querySelector("[data-minutes").innerText =
+        `${m}${elem.dataset.textM}`;
       elem
         .querySelector("[data-minutes")
         .setAttribute("aria-label", `${m} ${elem.dataset.textMinutes}`);
-      elem.querySelector(
-        "[data-seconds"
-      ).innerText = `${s}${elem.dataset.textS}`;
+      elem.querySelector("[data-seconds").innerText =
+        `${s}${elem.dataset.textS}`;
       elem
         .querySelector("[data-seconds")
         .setAttribute("aria-label", `${s} ${elem.dataset.textSeconds}`);
@@ -224,7 +219,7 @@ const initializeCountdownTimers = () => {
 };
 initializeCountdownTimers();
 
-document.addEventListener("shopify:section:load", (e) => {
+document.addEventListener("shopify:section:load", e => {
   if (e.target.querySelector(".timer-countdown")) {
     initializeCountdownTimers();
   }
@@ -237,14 +232,12 @@ const scrollAnimationsFix = () => {
   const isSettingEnabled = document.querySelector(".scroll-on-animations");
 
   if (!isSettingEnabled) {
-    document
-      .querySelectorAll(".animate__animated.opacity-0")
-      .forEach((elem) => {
-        elem.classList.remove("animate__animated", "opacity-0");
-      });
+    document.querySelectorAll(".animate__animated.opacity-0").forEach(elem => {
+      elem.classList.remove("animate__animated", "opacity-0");
+    });
     document
       .querySelectorAll(".dropdown-megamenu .animate__animated")
-      .forEach((elem) => {
+      .forEach(elem => {
         elem.classList.remove("animate__animated");
       });
   }
@@ -259,7 +252,7 @@ const initializePrevNextArticleButtons = async () => {
 
   if (!wrapper) return;
 
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise(resolve => setTimeout(resolve, 1000));
 
   const threshold = 600;
 
@@ -288,12 +281,12 @@ initializeRivyoReviews();
 if (window.location.href.includes("shopiweb")) {
   document
     .querySelectorAll(".dropdown-megamenu .dropdown-item.active")
-    .forEach((item) => {
+    .forEach(item => {
       item.classList.remove("active");
     });
   document
     .querySelectorAll("#offcanvas-menu .dropdown-item.active")
-    .forEach((item) => {
+    .forEach(item => {
       item.classList.remove("active");
     });
 }
@@ -368,7 +361,7 @@ if (scrollProgressBar) {
    ===================== */
 document
   .querySelectorAll(".shopify-section > .shopify-app-block")
-  .forEach((elem) => {
+  .forEach(elem => {
     elem.classList.add("container");
   });
 
@@ -377,7 +370,7 @@ document
    ===================== */
 document
   .querySelectorAll('.shopify_subscriptions_fieldset input[type="radio"]')
-  .forEach((input) => {
+  .forEach(input => {
     input.classList.add("form-check-input");
   });
 
@@ -418,12 +411,10 @@ initializeInactiveTabTitle();
 /* =====================
    Formulaire de localisation
    ===================== */
-document
-  .querySelectorAll(".shopify-localization-form button")
-  .forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.closest("form").querySelector('[name="country_code"]').value =
-        btn.dataset.isoCode;
-      btn.closest("form").submit();
-    });
+document.querySelectorAll(".shopify-localization-form button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.closest("form").querySelector('[name="country_code"]').value =
+      btn.dataset.isoCode;
+    btn.closest("form").submit();
   });
+});

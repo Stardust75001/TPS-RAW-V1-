@@ -34,9 +34,5 @@
       }
     }
   },
-  "order": [
-    "breadcrumbs",
-    "contact_form",
-    "contact_info"
-  ]
+  "order": ["breadcrumbs", "contact_form", "contact_info"]
 }

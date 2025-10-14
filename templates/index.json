@@ -71,11 +71,7 @@
           }
         }
       },
-      "block_order": [
-        "v1",
-        "v2",
-        "v3"
-      ],
+      "block_order": ["v1", "v2", "v3"],
       "settings": {
         "title": "",
         "heading_size": "h3",
@@ -105,10 +101,5 @@
       }
     }
   },
-  "order": [
-    "hero",
-    "featured_collection",
-    "value_props",
-    "feature_band"
-  ]
+  "order": ["hero", "featured_collection", "value_props", "feature_band"]
 }

@@ -19,8 +19,7 @@
         "about_bg_color": "bg-secondary text-white",
         "lang_currency_btn_color": "btn-dark"
       },
-      "blocks": {
-      }
+      "blocks": {}
     }
   }
 }

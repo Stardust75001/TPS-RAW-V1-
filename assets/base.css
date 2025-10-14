@@ -423,7 +423,6 @@ h6 {
 /* newsletter compacte */
 #footer .newsletter-form {
   margin-top: 0.25rem;
-
 }
 #footer .newsletter-input-row {
   gap: 0.5rem;
@@ -766,11 +765,15 @@ h6 {
 }
 
 .form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+  box-shadow:
+    0 0 0 1px #fff,
+    0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
 }
 
 .form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+  box-shadow:
+    0 0 0 1px #fff,
+    0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
 }
 
 .form-range::-webkit-slider-thumb {
@@ -1206,23 +1209,29 @@ hr,
    ===================== */
 .shadow-1 {
   border-radius: var(--bs-border-radius) !important;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
+  box-shadow:
+    rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
 }
 
 .shadow-2 {
   border-radius: var(--bs-border-radius) !important;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
+  box-shadow:
+    rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
 }
 
 .shadow-3 {
   border-radius: var(--bs-border-radius) !important;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px !important;
 }
 
 .shadow-4 {
   border-radius: var(--bs-border-radius) !important;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+  box-shadow:
+    rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px !important;
 }
 
@@ -1231,23 +1240,29 @@ hr,
    ===================== */
 .shadow-pill-1 {
   border-radius: var(--bs-border-radius-pill) !important;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
+  box-shadow:
+    rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
 }
 
 .shadow-pill-2 {
   border-radius: var(--bs-border-radius-pill) !important;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
+  box-shadow:
+    rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
 }
 
 .shadow-pill-3 {
   border-radius: var(--bs-border-radius-pill) !important;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px !important;
 }
 
 .shadow-pill-4 {
   border-radius: var(--bs-border-radius-pill) !important;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+  box-shadow:
+    rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px !important;
 }
 
@@ -1645,7 +1660,7 @@ body.sticky-header-active {
 }
 
 .newsletter-name-input,
-  .newsletter-email-input {
+.newsletter-email-input {
   flex: 1;
   padding: 8px 12px;
   border: none;

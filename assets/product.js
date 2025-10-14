@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!swatchContainer || !window.productVariants) return;
 
   const colorsDone = new Set();
-  window.productVariants.forEach((variant) => {
+  window.productVariants.forEach(variant => {
     const colorName = variant.option1?.trim().toLowerCase();
     if (!colorName || colorsDone.has(colorName)) return;
 
     // Cherche la couleur dans la liste Pantone
-    const pantone = pantoneColors.find((c) =>
+    const pantone = pantoneColors.find(c =>
       c.name.toLowerCase().includes(colorName)
     );
     if (!pantone) return;
@@ -86,7 +86,7 @@ window.handleAddToCartFormSubmit = async (form, event) => {
 
   const response = await fetch("/cart/add.js", {
     method: "POST",
-    body: new FormData(form),
+    body: new FormData(form)
   });
 
   form.classList.remove("loading");
@@ -117,7 +117,7 @@ window.handleAddToCartFormSubmit = async (form, event) => {
 /* =====================
    Mise à jour de divers éléments en cas de changement de variante nécessitant une nouvelle recherche de documents
    ===================== */
-window.addEventListener("variantChange.shopiweb.product", async (event) => {
+window.addEventListener("variantChange.shopiweb.product", async event => {
   const inventoryBar = document.querySelector("#inventory-bar");
 
   if (inventoryBar) {
@@ -150,11 +150,11 @@ window.addEventListener("variantChange.shopiweb.product", async (event) => {
     initializeInventoryBar();
     initializeQuantityBreaks(); // Correction du nom de la fonction
 
-    document.querySelectorAll('[role="tooltip"]').forEach((el) => el.remove());
+    document.querySelectorAll('[role="tooltip"]').forEach(el => el.remove());
 
     document
       .querySelectorAll('.product-options [data-bs-toggle="tooltip"]')
-      .forEach((el) => new bootstrap.Tooltip(el));
+      .forEach(el => new bootstrap.Tooltip(el));
   } catch (error) {
     console.error("Erreur lors de la mise à jour de la variante :", error);
   }
@@ -167,7 +167,7 @@ const initializePurchaseOptions = () => {
 
   if (!wrapper) return;
 
-  wrapper.querySelectorAll('[name="purchase_option"]').forEach((input) => {
+  wrapper.querySelectorAll('[name="purchase_option"]').forEach(input => {
     input.addEventListener("change", () => {
       if (input.id === "purchase-options-one-time") {
         wrapper
@@ -232,13 +232,13 @@ initializePurchaseOptions();
 /* =====================
    Sélecteur d'options de produits - Écouter les événements de changement
    ===================== */
-window.handleProductOptionChange = async (input) => {
+window.handleProductOptionChange = async input => {
   const selectedOptions = [];
 
   input
     .closest("form")
     .querySelectorAll(".product-option")
-    .forEach((elem) => {
+    .forEach(elem => {
       if (elem.type === "radio") {
         if (elem.checked) {
           selectedOptions.push(elem.value);
@@ -249,7 +249,7 @@ window.handleProductOptionChange = async (input) => {
     });
 
   const variantSelected = window.productVariants.find(
-    (variant) =>
+    variant =>
       JSON.stringify(variant.options) === JSON.stringify(selectedOptions)
   );
 
@@ -308,8 +308,11 @@ window.handleProductOptionChange = async (input) => {
           `
                   <span class="price-badge-sale badge">
                       ${window.theme.product.save}: ${Math.round(
-            (1 - variantSelected.price / variantSelected.compare_at_price) * 100
-          )}%
+                        (1 -
+                          variantSelected.price /
+                            variantSelected.compare_at_price) *
+                          100
+                      )}%
                   </span>
               `
         );
@@ -362,7 +365,7 @@ window.handleProductOptionChange = async (input) => {
     }
 
     const customEvent = new CustomEvent("variantChange.shopiweb.product", {
-      detail: variantSelected,
+      detail: variantSelected
     });
     window.dispatchEvent(customEvent);
   } else {
@@ -383,7 +386,7 @@ window.handleProductOptionChange = async (input) => {
     input
       .closest("form")
       .querySelectorAll(".product-option")
-      .forEach((elem) => {
+      .forEach(elem => {
         if (elem.type === "radio") {
           if (elem.checked) {
             selectedOptions.push(elem.value);
@@ -393,7 +396,7 @@ window.handleProductOptionChange = async (input) => {
         }
       });
     const variantSelected = window.productVariants.find(
-      (variant) =>
+      variant =>
         JSON.stringify(variant.options) === JSON.stringify(selectedOptions)
     );
     if (variantSelected) {
@@ -481,7 +484,7 @@ window.handleBuyButtonClick = async (btn, event) => {
   const qty = Number(form.querySelector('input[name="quantity"]')?.value || 1);
   await fetch("/cart/add.js", {
     method: "POST",
-    body: new FormData(form),
+    body: new FormData(form)
   });
   window.location.href = "/checkout";
 };
@@ -490,169 +493,163 @@ window.handleBuyButtonClick = async (btn, event) => {
    Galerie de produits
    ===================== */
 const initializeProductGallery = () => {
-  document
-    .querySelectorAll(".product-gallery:not(.init)")
-    .forEach((gallery) => {
-      gallery.classList.add("init");
+  document.querySelectorAll(".product-gallery:not(.init)").forEach(gallery => {
+    gallery.classList.add("init");
 
-      const main = new Splide(gallery.querySelector(".main-splide"), {
-        start: Number(gallery.dataset.start),
-        rewind: true,
-        arrows: false,
-        rewindByDrag: true,
-        pagination: false,
-        noDrag: "model-viewer",
-        mediaQuery: "min",
-        breakpoints: {
-          0: {
-            padding: {
-              right: gallery.dataset.showThumbsMobile === "false" ? "4rem" : 0,
-            },
-          },
-          992: { padding: 0 },
-        },
-        direction: document.documentElement.getAttribute("dir"),
-      });
-
-      const totalSlides = gallery.querySelectorAll(
-        ".main-splide .splide__slide"
-      ).length;
-
-      const thumbs = new Splide(gallery.querySelector(".thumbs-splide"), {
-        start: Number(gallery.dataset.start),
-        arrows: Number(gallery.dataset.mediaCount > 3),
-        gap: ".5rem",
-        rewind: true,
-        rewindByDrag: true,
-        pagination: false,
-        isNavigation: true,
-        focus: totalSlides > 5 ? "center" : 0,
-        mediaQuery: "min",
-        breakpoints: {
-          0: { perPage: 5 },
-          576: { perPage: 5 },
-          768: { perPage: 5 },
-          992: { perPage: 5 },
-          1200: { perPage: 5 },
-          1400: { perPage: 5 },
-        },
-        direction: document.documentElement.getAttribute("dir"),
-      });
-
-      main.on("move", (newIndex, prevIndex) => {
-        const iframe = gallery.querySelector(
-          `.splide__slide:nth-child(${prevIndex + 1}) iframe`
-        );
-        const video = gallery.querySelector(
-          `.splide__slide:nth-child(${prevIndex + 1}) video`
-        );
-        if (iframe) {
-          // eslint-disable-next-line no-self-assign
-          iframe.src = iframe.src;
-        }
-        if (video) {
-          video.pause();
-        }
-      });
-
-      window.addEventListener(
-        "variantChange.shopiweb.product",
-        (event) => {
-          const variantSelected = event.detail;
-
-          if (variantSelected.featured_media) {
-            main.go(variantSelected.featured_media.position - 1);
+    const main = new Splide(gallery.querySelector(".main-splide"), {
+      start: Number(gallery.dataset.start),
+      rewind: true,
+      arrows: false,
+      rewindByDrag: true,
+      pagination: false,
+      noDrag: "model-viewer",
+      mediaQuery: "min",
+      breakpoints: {
+        0: {
+          padding: {
+            right: gallery.dataset.showThumbsMobile === "false" ? "4rem" : 0
           }
         },
-        false
+        992: { padding: 0 }
+      },
+      direction: document.documentElement.getAttribute("dir")
+    });
+
+    const totalSlides = gallery.querySelectorAll(
+      ".main-splide .splide__slide"
+    ).length;
+
+    const thumbs = new Splide(gallery.querySelector(".thumbs-splide"), {
+      start: Number(gallery.dataset.start),
+      arrows: Number(gallery.dataset.mediaCount > 3),
+      gap: ".5rem",
+      rewind: true,
+      rewindByDrag: true,
+      pagination: false,
+      isNavigation: true,
+      focus: totalSlides > 5 ? "center" : 0,
+      mediaQuery: "min",
+      breakpoints: {
+        0: { perPage: 5 },
+        576: { perPage: 5 },
+        768: { perPage: 5 },
+        992: { perPage: 5 },
+        1200: { perPage: 5 },
+        1400: { perPage: 5 }
+      },
+      direction: document.documentElement.getAttribute("dir")
+    });
+
+    main.on("move", (newIndex, prevIndex) => {
+      const iframe = gallery.querySelector(
+        `.splide__slide:nth-child(${prevIndex + 1}) iframe`
       );
-
-      main.sync(thumbs);
-      main.mount();
-      thumbs.mount();
-
-      if (window.matchMedia("(min-width: 992px)").matches) {
-        const navbarHeight =
-          document.querySelector('[id*="__navbar"].sticky-top')?.clientHeight ||
-          0;
-        const announcementBarHeight =
-          document.querySelector('[id*="__announcement-bar"].sticky-top')
-            ?.clientHeight || 0;
-
-        const galleryWrapper = gallery.closest(".product-gallery-wrapper");
-        if (!galleryWrapper) return;
-        galleryWrapper.style.position = "sticky";
-        galleryWrapper.style.top = `${
-          navbarHeight + announcementBarHeight + 20
-        }px`;
-        galleryWrapper.style.zIndex = "1";
+      const video = gallery.querySelector(
+        `.splide__slide:nth-child(${prevIndex + 1}) video`
+      );
+      if (iframe) {
+        // eslint-disable-next-line no-self-assign
+        iframe.src = iframe.src;
       }
-
-      if (window.GLightbox) {
-        // eslint-disable-next-line no-unused-vars
-        const lightbox = GLightbox({
-          selector: `[data-gallery="product-gallery-${gallery.dataset.productId}"]`,
-          videosWidth: "1290px",
-          loop: true,
-        });
-        lightbox.on("open", () => {
-          gallery.querySelectorAll("video").forEach((video) => {
-            video.pause();
-          });
-        });
-        lightbox.on("slide_changed", ({ prev, current }) => {
-          main.go(current.index);
-        });
-      }
-
-      const modelViewer = gallery.querySelector("model-viewer");
-
-      if (modelViewer) {
-        const increaseBtn = gallery.querySelector(
-          "[data-model-3d-increase-zoom]"
-        );
-        const decreaseBtn = gallery.querySelector(
-          "[data-model-3d-decrease-zoom]"
-        );
-        const fullscreenBtn = gallery.querySelector(
-          "[data-model-3d-fullscreen]"
-        );
-
-        increaseBtn.addEventListener("click", () => {
-          modelViewer.zoom(1);
-        });
-
-        decreaseBtn.addEventListener("click", () => {
-          modelViewer.zoom(-1);
-        });
-
-        fullscreenBtn.addEventListener("click", () => {
-          if (document.fullscreenElement) {
-            document.exitFullscreen();
-            fullscreenBtn
-              .querySelector(".bi-fullscreen")
-              .removeAttribute("hidden");
-            fullscreenBtn
-              .querySelector(".bi-fullscreen-exit")
-              .setAttribute("hidden", "hidden");
-          } else {
-            modelViewer
-              .closest(".product-gallery-model-3d")
-              .requestFullscreen();
-            fullscreenBtn
-              .querySelector(".bi-fullscreen")
-              .setAttribute("hidden", "hidden");
-            fullscreenBtn
-              .querySelector(".bi-fullscreen-exit")
-              .removeAttribute("hidden");
-          }
-        });
+      if (video) {
+        video.pause();
       }
     });
+
+    window.addEventListener(
+      "variantChange.shopiweb.product",
+      event => {
+        const variantSelected = event.detail;
+
+        if (variantSelected.featured_media) {
+          main.go(variantSelected.featured_media.position - 1);
+        }
+      },
+      false
+    );
+
+    main.sync(thumbs);
+    main.mount();
+    thumbs.mount();
+
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      const navbarHeight =
+        document.querySelector('[id*="__navbar"].sticky-top')?.clientHeight ||
+        0;
+      const announcementBarHeight =
+        document.querySelector('[id*="__announcement-bar"].sticky-top')
+          ?.clientHeight || 0;
+
+      const galleryWrapper = gallery.closest(".product-gallery-wrapper");
+      if (!galleryWrapper) return;
+      galleryWrapper.style.position = "sticky";
+      galleryWrapper.style.top = `${
+        navbarHeight + announcementBarHeight + 20
+      }px`;
+      galleryWrapper.style.zIndex = "1";
+    }
+
+    if (window.GLightbox) {
+      // eslint-disable-next-line no-unused-vars
+      const lightbox = GLightbox({
+        selector: `[data-gallery="product-gallery-${gallery.dataset.productId}"]`,
+        videosWidth: "1290px",
+        loop: true
+      });
+      lightbox.on("open", () => {
+        gallery.querySelectorAll("video").forEach(video => {
+          video.pause();
+        });
+      });
+      lightbox.on("slide_changed", ({ prev, current }) => {
+        main.go(current.index);
+      });
+    }
+
+    const modelViewer = gallery.querySelector("model-viewer");
+
+    if (modelViewer) {
+      const increaseBtn = gallery.querySelector(
+        "[data-model-3d-increase-zoom]"
+      );
+      const decreaseBtn = gallery.querySelector(
+        "[data-model-3d-decrease-zoom]"
+      );
+      const fullscreenBtn = gallery.querySelector("[data-model-3d-fullscreen]");
+
+      increaseBtn.addEventListener("click", () => {
+        modelViewer.zoom(1);
+      });
+
+      decreaseBtn.addEventListener("click", () => {
+        modelViewer.zoom(-1);
+      });
+
+      fullscreenBtn.addEventListener("click", () => {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+          fullscreenBtn
+            .querySelector(".bi-fullscreen")
+            .removeAttribute("hidden");
+          fullscreenBtn
+            .querySelector(".bi-fullscreen-exit")
+            .setAttribute("hidden", "hidden");
+        } else {
+          modelViewer.closest(".product-gallery-model-3d").requestFullscreen();
+          fullscreenBtn
+            .querySelector(".bi-fullscreen")
+            .setAttribute("hidden", "hidden");
+          fullscreenBtn
+            .querySelector(".bi-fullscreen-exit")
+            .removeAttribute("hidden");
+        }
+      });
+    }
+  });
 };
 initializeProductGallery();
 
-document.addEventListener("shopify:section:load", (e) => {
+document.addEventListener("shopify:section:load", e => {
   if (e.target.querySelector(".product-gallery")) {
     initializeProductGallery();
   }
@@ -679,7 +676,7 @@ const initializeInventoryBar = () => {
 };
 initializeInventoryBar();
 
-document.addEventListener("shopify:section:load", (e) => {
+document.addEventListener("shopify:section:load", e => {
   if (e.target.querySelector("#inventory-bar")) {
     initializeInventoryBar();
   }
@@ -699,12 +696,12 @@ const initializeUpsellModal = () => {
 
   form.setAttribute("data-shopiweb-upsell-modal", "true");
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", e => {
     const modal = bootstrap.Modal.getOrCreateInstance("#modal-upsell-product");
     modal.show();
   });
 
-  document.querySelectorAll("#modal-upsell-product .btn-atc").forEach((btn) => {
+  document.querySelectorAll("#modal-upsell-product .btn-atc").forEach(btn => {
     btn.addEventListener("click", () => {
       const footerBtn = document.querySelector(
         "#modal-upsell-product .modal-footer .btn"
@@ -736,7 +733,7 @@ initializeUpsellModal();
 document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelectorAll(".color-swatch[data-variant-image]")
-    .forEach((swatch) => {
+    .forEach(swatch => {
       const imgUrl = swatch.getAttribute("data-variant-image");
       if (!imgUrl) return;
       const img = new Image();

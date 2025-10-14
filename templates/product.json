@@ -2,13 +2,11 @@
   "sections": {
     "shogun-helper": {
       "type": "shogun-helper",
-      "settings": {
-      }
+      "settings": {}
     },
     "shogun-above": {
       "type": "shogun-above",
-      "settings": {
-      }
+      "settings": {}
     },
     "template-product": {
       "type": "template-product",
@@ -503,8 +501,7 @@
     },
     "16724093711e2e0ee2": {
       "type": "apps",
-      "settings": {
-      }
+      "settings": {}
     },
     "2c476676-0361-4eae-a5b1-292b9b2e0bdc": {
       "type": "icon-blocks",
@@ -915,13 +912,11 @@
     },
     "shogun-below": {
       "type": "shogun-below",
-      "settings": {
-      }
+      "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

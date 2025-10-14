@@ -70,7 +70,9 @@ main {
   padding: 4px;
   border: 1px solid #ccc;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
   cursor: pointer;
 }
 
@@ -175,7 +177,9 @@ main {
   text-overflow: ellipsis;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
   z-index: 99999;
   opacity: 0;
   pointer-events: none;
@@ -416,16 +420,15 @@ main {
   max-width: 700px;
   margin: 0 auto;
 }
-    .newsletter-name-input,
-    .newsletter-email-input {
-      flex: 1 1 50%;
+.newsletter-name-input,
+.newsletter-email-input {
+  flex: 1 1 50%;
   font-size: 11px;
   margin-top: 14px;
   text-align: center;
   color: #eee;
   max-width: 100%;
 }
-
 
 /* === NEWSLETTER DESKTOP === */
 .newsletter-input-row {
@@ -457,7 +460,6 @@ main {
 }
 
 .newsletter-form .newsletter-btn-row {
-
   display: flex;
   justify-content: center;
   width: 100%;
@@ -486,7 +488,7 @@ main {
     padding: 12px 15px !important;
     min-height: 48px !important;
   }
-  
+
   .newsletter-name-input::placeholder,
   .newsletter-email-input::placeholder {
     font-size: 12px;
@@ -516,7 +518,7 @@ main {
     margin-bottom: 10px !important;
     align-items: stretch !important;
   }
-  
+
   .newsletter-name-input,
   .newsletter-email-input {
     flex: 1 !important;
@@ -530,12 +532,12 @@ main {
     background: #fff !important;
     min-width: 0 !important;
   }
-  
+
   /* Section newsletter plus compacte sur mobile */
   .newsletter-wrapper {
     padding: 24px 16px !important; /* Réduit de 32px à 24px */
   }
-  
+
   .newsletter-form {
     gap: 8px !important; /* Réduit de 10px à 8px */
   }
@@ -595,145 +597,162 @@ main {
    Wishlist Share Buttons
    ===================== */
 #wishlist-share-dropdown .dropdown-menu {
-    min-width: 180px;
+  min-width: 180px;
 }
 
 #wishlist-share-dropdown .dropdown-item {
-    padding: 0.5rem 1rem;
-    transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
 }
 
 #wishlist-share-dropdown .dropdown-item:hover {
-    background-color: var(--bs-light);
-    transform: translateX(2px);
+  background-color: var(--bs-light);
+  transform: translateX(2px);
 }
 
 #wishlist-share-dropdown .dropdown-item svg {
-    transition: all 0.2s ease;
-    opacity: 0.7;
+  transition: all 0.2s ease;
+  opacity: 0.7;
 }
 
 #wishlist-share-dropdown .dropdown-item:hover svg {
-    opacity: 1;
-    transform: scale(1.1);
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 /* États de chargement pour les boutons de partage */
 .btn[data-share-copy].btn-success {
-    background-color: var(--bs-success) !important;
-    border-color: var(--bs-success) !important;
-    color: white !important;
+  background-color: var(--bs-success) !important;
+  border-color: var(--bs-success) !important;
+  color: white !important;
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 1024px) {
-    #wishlist-share-dropdown .dropdown-menu {
-        min-width: 160px;
-        font-size: 0.9rem;
-    }
-    
-    #wishlist-share-dropdown .dropdown-item {
-        padding: 0.4rem 0.8rem;
-    }
-    
-    #wishlist-share-dropdown .dropdown-item svg {
-        width: 14px;
-        height: 14px;
-    }
+  #wishlist-share-dropdown .dropdown-menu {
+    min-width: 160px;
+    font-size: 0.9rem;
+  }
+
+  #wishlist-share-dropdown .dropdown-item {
+    padding: 0.4rem 0.8rem;
+  }
+
+  #wishlist-share-dropdown .dropdown-item svg {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 /* Focus visible pour accessibilité */
 #wishlist-share-dropdown .dropdown-item:focus-visible {
-    box-shadow: 0 0 0 .25rem rgba(var(--bs-primary-rgb),.25);
-    outline: none;
-    background-color: var(--bs-primary);
-    color: white;
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+  outline: none;
+  background-color: var(--bs-primary);
+  color: white;
 }
 
 #wishlist-share-dropdown .dropdown-item:focus-visible svg {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* =====================
    États visuels améliorés pour les boutons de partage
    ===================== */
 .dropdown-item.loading {
-    opacity: 0.6;
-    pointer-events: none;
-    position: relative;
+  opacity: 0.6;
+  pointer-events: none;
+  position: relative;
 }
 
 .dropdown-item.loading::after {
-    content: '';
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 12px;
-    border: 2px solid #dee2e6;
-    border-top: 2px solid #6c757d;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border: 2px solid #dee2e6;
+  border-top: 2px solid #6c757d;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: translateY(-50%) rotate(0deg); }
-    100% { transform: translateY(-50%) rotate(360deg); }
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
 }
 
 .dropdown-item.btn-success {
-    background-color: var(--bs-success) !important;
-    color: white !important;
-    animation: successPulse 0.3s ease-out;
+  background-color: var(--bs-success) !important;
+  color: white !important;
+  animation: successPulse 0.3s ease-out;
 }
 
 .dropdown-item.btn-danger {
-    background-color: var(--bs-danger) !important;
-    color: white !important;
-    animation: errorShake 0.5s ease-out;
+  background-color: var(--bs-danger) !important;
+  color: white !important;
+  animation: errorShake 0.5s ease-out;
 }
 
 @keyframes successPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes errorShake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-2px); }
-    75% { transform: translateX(2px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
 }
 
 /* Message de confirmation accessible */
 .share-feedback {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 10000;
-    padding: 12px 16px;
-    background: var(--bs-success);
-    color: white;
-    border-radius: 6px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    font-size: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  padding: 12px 16px;
+  background: var(--bs-success);
+  color: white;
+  border-radius: 6px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .share-feedback.show {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .share-feedback.error {
-    background: var(--bs-danger);
+  background: var(--bs-danger);
 }
 
 /* Animation pour le bouton de partage principal */
 .offcanvas-header .dropdown .btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* === ÉLIMINATION DES ESPACES ENTRE SECTIONS === */
@@ -1012,7 +1031,9 @@ main {
   padding: 4px;
   border: 1px solid #ccc;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
   cursor: pointer;
 }
 
@@ -1117,7 +1138,9 @@ main {
   text-overflow: ellipsis;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
   z-index: 99999;
   opacity: 0;
   pointer-events: none;
@@ -1368,7 +1391,6 @@ main {
   max-width: 100%;
 }
 
-
 /* === NEWSLETTER DESKTOP === */
 .newsletter-input-row {
   display: flex;
@@ -1378,14 +1400,12 @@ main {
   align-items: stretch;
 }
 
-
 .newsletter-name-input::placeholder,
 .newsletter-email-input::placeholder {
   font-size: 12px !important;
 }
 
 .newsletter-form .newsletter-btn-row {
-
   display: flex;
   justify-content: center;
   width: 100%;
@@ -1414,7 +1434,7 @@ main {
     padding: 12px 15px !important;
     min-height: 48px !important;
   }
-  
+
   .newsletter-name-input::placeholder,
   .newsletter-email-input::placeholder {
     font-size: 12px;
@@ -1444,7 +1464,7 @@ main {
     margin-bottom: 10px !important;
     align-items: stretch !important;
   }
-  
+
   .newsletter-name-input,
   .newsletter-email-input {
     flex: 1 !important;
@@ -1457,12 +1477,12 @@ main {
     box-sizing: border-box !important;
     background: #fff !important;
   }
-  
+
   /* Section newsletter plus compacte sur mobile */
   .newsletter-wrapper {
     padding: 24px 16px !important; /* Réduit de 32px à 24px */
   }
-  
+
   .newsletter-form {
     gap: 8px !important; /* Réduit de 10px à 8px */
   }
@@ -1522,145 +1542,162 @@ main {
    Wishlist Share Buttons
    ===================== */
 #wishlist-share-dropdown .dropdown-menu {
-    min-width: 180px;
+  min-width: 180px;
 }
 
 #wishlist-share-dropdown .dropdown-item {
-    padding: 0.5rem 1rem;
-    transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
 }
 
 #wishlist-share-dropdown .dropdown-item:hover {
-    background-color: var(--bs-light);
-    transform: translateX(2px);
+  background-color: var(--bs-light);
+  transform: translateX(2px);
 }
 
 #wishlist-share-dropdown .dropdown-item svg {
-    transition: all 0.2s ease;
-    opacity: 0.7;
+  transition: all 0.2s ease;
+  opacity: 0.7;
 }
 
 #wishlist-share-dropdown .dropdown-item:hover svg {
-    opacity: 1;
-    transform: scale(1.1);
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 /* États de chargement pour les boutons de partage */
 .btn[data-share-copy].btn-success {
-    background-color: var(--bs-success) !important;
-    border-color: var(--bs-success) !important;
-    color: white !important;
+  background-color: var(--bs-success) !important;
+  border-color: var(--bs-success) !important;
+  color: white !important;
 }
 
 /* Responsive adjustments */
 @media (max-width: 576px) {
-    #wishlist-share-dropdown .dropdown-menu {
-        min-width: 160px;
-        font-size: 0.9rem;
-    }
-    
-    #wishlist-share-dropdown .dropdown-item {
-        padding: 0.4rem 0.8rem;
-    }
-    
-    #wishlist-share-dropdown .dropdown-item svg {
-        width: 14px;
-        height: 14px;
-    }
+  #wishlist-share-dropdown .dropdown-menu {
+    min-width: 160px;
+    font-size: 0.9rem;
+  }
+
+  #wishlist-share-dropdown .dropdown-item {
+    padding: 0.4rem 0.8rem;
+  }
+
+  #wishlist-share-dropdown .dropdown-item svg {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 /* Focus visible pour accessibilité */
 #wishlist-share-dropdown .dropdown-item:focus-visible {
-    box-shadow: 0 0 0 .25rem rgba(var(--bs-primary-rgb),.25);
-    outline: none;
-    background-color: var(--bs-primary);
-    color: white;
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+  outline: none;
+  background-color: var(--bs-primary);
+  color: white;
 }
 
 #wishlist-share-dropdown .dropdown-item:focus-visible svg {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* =====================
    États visuels améliorés pour les boutons de partage
    ===================== */
 .dropdown-item.loading {
-    opacity: 0.6;
-    pointer-events: none;
-    position: relative;
+  opacity: 0.6;
+  pointer-events: none;
+  position: relative;
 }
 
 .dropdown-item.loading::after {
-    content: '';
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 12px;
-    border: 2px solid #dee2e6;
-    border-top: 2px solid #6c757d;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border: 2px solid #dee2e6;
+  border-top: 2px solid #6c757d;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: translateY(-50%) rotate(0deg); }
-    100% { transform: translateY(-50%) rotate(360deg); }
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
 }
 
 .dropdown-item.btn-success {
-    background-color: var(--bs-success) !important;
-    color: white !important;
-    animation: successPulse 0.3s ease-out;
+  background-color: var(--bs-success) !important;
+  color: white !important;
+  animation: successPulse 0.3s ease-out;
 }
 
 .dropdown-item.btn-danger {
-    background-color: var(--bs-danger) !important;
-    color: white !important;
-    animation: errorShake 0.5s ease-out;
+  background-color: var(--bs-danger) !important;
+  color: white !important;
+  animation: errorShake 0.5s ease-out;
 }
 
 @keyframes successPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes errorShake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-2px); }
-    75% { transform: translateX(2px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
 }
 
 /* Message de confirmation accessible */
 .share-feedback {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 10000;
-    padding: 12px 16px;
-    background: var(--bs-success);
-    color: white;
-    border-radius: 6px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    font-size: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  padding: 12px 16px;
+  background: var(--bs-success);
+  color: white;
+  border-radius: 6px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .share-feedback.show {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .share-feedback.error {
-    background: var(--bs-danger);
+  background: var(--bs-danger);
 }
 
 /* Animation pour le bouton de partage principal */
 .offcanvas-header .dropdown .btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* === ÉLIMINATION DES ESPACES ENTRE SECTIONS === */
@@ -1913,7 +1950,7 @@ main {
   top: 0;
   right: 0;
   bottom: 0;
-}/* ===========================
+} /* ===========================
    Product options – COLORS
    =========================== */
 .color-swatches {
@@ -1928,9 +1965,12 @@ main {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(0,0,0,.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   background: #fff;
-  transition: transform .15s, box-shadow .15s, border-color .15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    border-color 0.15s;
   cursor: pointer;
 }
 .color-swatches img,
@@ -1949,7 +1989,7 @@ main {
 }
 /* Disabled (variante non disponible) */
 .color-swatches input:disabled + label {
-  opacity: .4;
+  opacity: 0.4;
   cursor: not-allowed;
   filter: grayscale(100%);
   transform: none;
@@ -1969,11 +2009,14 @@ main {
   justify-content: center;
   min-width: 44px;
   padding: 6px 10px;
-  border: 1px solid rgba(0,0,0,.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 6px;
   background: #fff;
   cursor: pointer;
-  transition: transform .15s, box-shadow .15s, border-color .15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    border-color 0.15s;
   font-size: 14px;
   line-height: 1.2;
 }
@@ -1987,7 +2030,7 @@ main {
 }
 /* Disabled (taille non dispo) */
 .size-buttons input:disabled + label {
-  opacity: .4;
+  opacity: 0.4;
   cursor: not-allowed;
   background: #f5f5f5;
   filter: grayscale(100%);
@@ -2024,21 +2067,21 @@ main {
 /* Footer about - Tablette */
 @media (max-width: 768px) {
   #footer-about {
-    padding: 18px;           
-    max-width: 90%;          
-    margin: 0 auto;          
+    padding: 18px;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   #footer-about .navbar-brand img {
-    max-width: 180px;        
+    max-width: 180px;
     height: auto;
   }
 
   #footer-about .description,
   #footer-about .rte,
   #footer-about a {
-    font-size: 0.9rem;       
-    line-height: 1.4;        
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
 
   #footer-about svg {
@@ -2051,21 +2094,21 @@ main {
 /* Footer about - Smartphone */
 @media (max-width: 480px) {
   #footer-about {
-    padding: 12px;           
-    max-width: 95%;          
-    margin: 0 auto;          
+    padding: 12px;
+    max-width: 95%;
+    margin: 0 auto;
   }
 
   #footer-about .navbar-brand img {
-    max-width: 140px;        
+    max-width: 140px;
     height: auto;
   }
 
   #footer-about .description,
   #footer-about .rte,
   #footer-about a {
-    font-size: 0.8rem;       
-    line-height: 1.3;        
+    font-size: 0.8rem;
+    line-height: 1.3;
   }
 
   #footer-about svg {
@@ -2079,21 +2122,21 @@ main {
 /* Méga-menu (dropdown large) */
 .dropdown-megamenu .social-icons,
 .dropdown-megamenu .footer-social-icons {
-  max-width: 320px;     /* largeur max de la barre */
-  margin: 0 auto;       /* centre la barre */
-  padding: 6px 8px;     /* un peu de “respiration” autour */
+  max-width: 320px; /* largeur max de la barre */
+  margin: 0 auto; /* centre la barre */
+  padding: 6px 8px; /* un peu de “respiration” autour */
   border-radius: 8px;
-  background: rgba(0,0,0,0.08); /* optionnel: bandeau discret */
+  background: rgba(0, 0, 0, 0.08); /* optionnel: bandeau discret */
 }
 
 /* Menu off-canvas (mobile/tablette) */
 .offcanvas-footer .social-icons,
 .offcanvas-footer .footer-social-icons {
-  max-width: 290px;     /* un poil plus étroit sur mobile */
+  max-width: 290px; /* un poil plus étroit sur mobile */
   margin: 0.25rem auto 0.5rem;
   padding: 6px 8px;
   border-radius: 8px;
-  background: rgba(0,0,0,0.06);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 /* Compacter l’espacement entre icônes */
@@ -2102,7 +2145,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;             /* espace horizontal entre icônes */
+  gap: 8px; /* espace horizontal entre icônes */
 }
 
 /* Si vos icônes sont des <img> (comme dans le footer) */
@@ -2124,280 +2167,566 @@ main {
 }
 
 /* Ajustements réactifs supplémentaires */
-@media (max-width: 991.98px) {           /* tablettes & mobiles */
+@media (max-width: 991.98px) {
+  /* tablettes & mobiles */
   .dropdown-megamenu .social-icons,
   .dropdown-megamenu .footer-social-icons {
     max-width: 300px;
   }
 }
 
-@media (max-width: 575.98px) {           /* smartphones */
+@media (max-width: 575.98px) {
+  /* smartphones */
   .offcanvas-footer .social-icons,
   .offcanvas-footer .footer-social-icons {
-    max-width: 260px;   /* encore un peu plus étroit sur petits écrans */
+    max-width: 260px; /* encore un peu plus étroit sur petits écrans */
   }
-  .social-img-icon { width: 24px; height: 24px; }
-  .social-icons a, .footer-social-icons a { width: 32px; height: 32px; }
-}/* autoriser les clics quand ouvert */
-#offcanvas-wishlist { pointer-events: none; }
-#offcanvas-wishlist.show { pointer-events: auto; }
+  .social-img-icon {
+    width: 24px;
+    height: 24px;
+  }
+  .social-icons a,
+  .footer-social-icons a {
+    width: 32px;
+    height: 32px;
+  }
+} /* autoriser les clics quand ouvert */
+#offcanvas-wishlist {
+  pointer-events: none;
+}
+#offcanvas-wishlist.show {
+  pointer-events: auto;
+}
 
 /* empêcher tout pseudo-overlay de capter le clic */
-#offcanvas-wishlist::before { pointer-events: none !important; }
+#offcanvas-wishlist::before {
+  pointer-events: none !important;
+}
 
 /* liens produits cliquables même s’il y a des layers internes */
-#offcanvas-wishlist .product-listing a { position: relative; z-index: 2; pointer-events: auto; }
-#offcanvas-wishlist .card, 
-#offcanvas-wishlist li { position: relative; }
+#offcanvas-wishlist .product-listing a {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+#offcanvas-wishlist .card,
+#offcanvas-wishlist li {
+  position: relative;
+}
 /* === Helper: selector pour un nom de couleur (FR/EN), insensible à la casse === */
 @supports selector(:is(*)) {
   /* Utilitaire pour réduire la verbosité */
-  :root { --swatch-ring: inset 0 0 0 1px rgba(0,0,0,.12); }
+  :root {
+    --swatch-ring: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+  }
 }
 
 /* Utilise TOUJOURS !important car certains thèmes appliquent un bg inline */
-.swatch, .color-swatch, .variant-swatch, .swatch__item, .color-dot {
+.swatch,
+.color-swatch,
+.variant-swatch,
+.swatch__item,
+.color-dot {
   box-shadow: var(--swatch-ring);
 }
 
 /* ---------- Neutres ---------- */
-[data-swatch="Noir" i], [data-value="Noir" i],
-[data-swatch="Black" i], [data-value="Black" i],
-.color-swatch--Noir, .color-swatch--Black { background:#000000 !important; }
+[data-swatch="Noir" i],
+[data-value="Noir" i],
+[data-swatch="Black" i],
+[data-value="Black" i],
+.color-swatch--Noir,
+.color-swatch--Black {
+  background: #000000 !important;
+}
 
-[data-swatch="Blanc" i], [data-value="Blanc" i],
-[data-swatch="White" i], [data-value="White" i],
-.color-swatch--Blanc, .color-swatch--White { background:#FFFFFF !important; }
+[data-swatch="Blanc" i],
+[data-value="Blanc" i],
+[data-swatch="White" i],
+[data-value="White" i],
+.color-swatch--Blanc,
+.color-swatch--White {
+  background: #ffffff !important;
+}
 
-[data-swatch="Gris très clair" i], [data-value="Gris très clair" i],
-[data-swatch="Light Gray" i], [data-value="Light Gray" i],
-.color-swatch--Gris-très-clair, .color-swatch--Light-Gray { background:#ECECEC !important; }
+[data-swatch="Gris très clair" i],
+[data-value="Gris très clair" i],
+[data-swatch="Light Gray" i],
+[data-value="Light Gray" i],
+.color-swatch--Gris-très-clair,
+.color-swatch--Light-Gray {
+  background: #ececec !important;
+}
 
-[data-swatch="Gris clair" i], [data-value="Gris clair" i],
-[data-swatch="Silver" i], [data-value="Silver" i],
-.color-swatch--Gris-clair, .color-swatch--Silver { background:#CFCFCF !important; }
+[data-swatch="Gris clair" i],
+[data-value="Gris clair" i],
+[data-swatch="Silver" i],
+[data-value="Silver" i],
+.color-swatch--Gris-clair,
+.color-swatch--Silver {
+  background: #cfcfcf !important;
+}
 
-[data-swatch="Gris" i], [data-value="Gris" i],
-[data-swatch="Gray" i], [data-value="Gray" i],
-.color-swatch--Gris, .color-swatch--Gray { background:#9E9E9E !important; }
+[data-swatch="Gris" i],
+[data-value="Gris" i],
+[data-swatch="Gray" i],
+[data-value="Gray" i],
+.color-swatch--Gris,
+.color-swatch--Gray {
+  background: #9e9e9e !important;
+}
 
-[data-swatch="Gris foncé" i], [data-value="Gris foncé" i],
-[data-swatch="Dark Gray" i], [data-value="Dark Gray" i],
-.color-swatch--Gris-foncé, .color-swatch--Dark-Gray { background:#616161 !important; }
+[data-swatch="Gris foncé" i],
+[data-value="Gris foncé" i],
+[data-swatch="Dark Gray" i],
+[data-value="Dark Gray" i],
+.color-swatch--Gris-foncé,
+.color-swatch--Dark-Gray {
+  background: #616161 !important;
+}
 
-[data-swatch="Anthracite" i], [data-value="Anthracite" i],
-.color-swatch--Anthracite { background:#2F2F2F !important; }
+[data-swatch="Anthracite" i],
+[data-value="Anthracite" i],
+.color-swatch--Anthracite {
+  background: #2f2f2f !important;
+}
 
-[data-swatch="Écru" i], [data-value="Ecru" i],
-[data-swatch="Ecru" i], [data-value="Ecru" i],
-.color-swatch--Ecru { background:#F3EFEB !important; }
+[data-swatch="Écru" i],
+[data-value="Ecru" i],
+[data-swatch="Ecru" i],
+[data-value="Ecru" i],
+.color-swatch--Ecru {
+  background: #f3efeb !important;
+}
 
 /* ---------- Beiges / bruns ---------- */
 /* Beige plus visible */
-[data-swatch="Beige" i], [data-value="Beige" i],
+[data-swatch="Beige" i],
+[data-value="Beige" i],
 .color-swatch--Beige {
-  background: #C8A#165 !important;   /* beige sable chaud */
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.15) !important;
+  background: #C8A#165 !important; /* beige sable chaud */
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Contour renforcé pour le BLANC (et variantes très claires) */
-[data-swatch="Blanc" i], [data-value="Blanc" i],
+[data-swatch="Blanc" i],
+[data-value="Blanc" i],
 .color-swatch--Blanc {
-  background: #FFFFFF !important;
-  box-shadow: inset 0 0 0 2px #C8C8C8 !important;  /* bord gris net */
+  background: #ffffff !important;
+  box-shadow: inset 0 0 0 2px #c8c8c8 !important; /* bord gris net */
 }
 
 /* Optionnel : ajoute un léger bord aux tons très clairs pour éviter la confusion */
-[data-swatch="Ivoire" i], [data-value="Ivoire" i], .color-swatch--Ivoire,
-[data-swatch="Crème" i],  [data-value="Crème" i],  .color-swatch--Crème,
-[data-swatch="Écru" i],   [data-value="Ecru"  i],  .color-swatch--Ecru,
-[data-swatch="Gris très clair" i], [data-value="Gris très clair" i], .color-swatch--Gris-très-clair {
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.18) !important;
+[data-swatch="Ivoire" i],
+[data-value="Ivoire" i],
+.color-swatch--Ivoire,
+[data-swatch="Crème" i],
+[data-value="Crème" i],
+.color-swatch--Crème,
+[data-swatch="Écru" i],
+[data-value="Ecru" i],
+.color-swatch--Ecru,
+[data-swatch="Gris très clair" i],
+[data-value="Gris très clair" i],
+.color-swatch--Gris-très-clair {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18) !important;
 }
 
-[data-swatch="Sable" i], [data-value="Sable" i],
-[data-swatch="Sand" i], [data-value="Sand" i],
-.color-swatch--Sable, .color-swatch--Sand { background:#E6D8B6 !important; }
+[data-swatch="Sable" i],
+[data-value="Sable" i],
+[data-swatch="Sand" i],
+[data-value="Sand" i],
+.color-swatch--Sable,
+.color-swatch--Sand {
+  background: #e6d8b6 !important;
+}
 
-[data-swatch="Crème" i], [data-value="Crème" i],
-[data-swatch="Cream" i], [data-value="Cream" i],
-.color-swatch--Crème, .color-swatch--Cream { background:#FFF1D6 !important; }
+[data-swatch="Crème" i],
+[data-value="Crème" i],
+[data-swatch="Cream" i],
+[data-value="Cream" i],
+.color-swatch--Crème,
+.color-swatch--Cream {
+  background: #fff1d6 !important;
+}
 
-[data-swatch="Ivoire" i], [data-value="Ivoire" i],
-[data-swatch="Ivory" i], [data-value="Ivory" i],
-.color-swatch--Ivoire, .color-swatch--Ivory { background:#FFF8E7 !important; }
+[data-swatch="Ivoire" i],
+[data-value="Ivoire" i],
+[data-swatch="Ivory" i],
+[data-value="Ivory" i],
+.color-swatch--Ivoire,
+.color-swatch--Ivory {
+  background: #fff8e7 !important;
+}
 
-[data-swatch="Champagne" i], [data-value="Champagne" i],
-.color-swatch--Champagne { background:#F0E0C2 !important; }
+[data-swatch="Champagne" i],
+[data-value="Champagne" i],
+.color-swatch--Champagne {
+  background: #f0e0c2 !important;
+}
 
-[data-swatch="Camel" i], [data-value="Camel" i],
-.color-swatch--Camel { background:#C49A6C !important; }
+[data-swatch="Camel" i],
+[data-value="Camel" i],
+.color-swatch--Camel {
+  background: #c49a6c !important;
+}
 
-[data-swatch="Taupe" i], [data-value="Taupe" i],
-.color-swatch--Taupe { background:#8B7765 !important; }
+[data-swatch="Taupe" i],
+[data-value="Taupe" i],
+.color-swatch--Taupe {
+  background: #8b7765 !important;
+}
 
-[data-swatch="Marron" i], [data-value="Marron" i],
-[data-swatch="Brown" i], [data-value="Brown" i],
-.color-swatch--Marron, .color-swatch--Brown { background:#6B4F3A !important; }
+[data-swatch="Marron" i],
+[data-value="Marron" i],
+[data-swatch="Brown" i],
+[data-value="Brown" i],
+.color-swatch--Marron,
+.color-swatch--Brown {
+  background: #6b4f3a !important;
+}
 
-[data-swatch="Chocolat" i], [data-value="Chocolat" i],
-[data-swatch="Chocolate" i], [data-value="Chocolate" i],
-.color-swatch--Chocolat, .color-swatch--Chocolate { background:#4E342E !important; }
+[data-swatch="Chocolat" i],
+[data-value="Chocolat" i],
+[data-swatch="Chocolate" i],
+[data-value="Chocolate" i],
+.color-swatch--Chocolat,
+.color-swatch--Chocolate {
+  background: #4e342e !important;
+}
 
 /* ---------- Jaunes / Oranges ---------- */
-[data-swatch="Jaune" i], [data-value="Jaune" i],
-[data-swatch="Yellow" i], [data-value="Yellow" i],
-.color-swatch--Jaune, .color-swatch--Yellow { background:#FFD93B !important; }
+[data-swatch="Jaune" i],
+[data-value="Jaune" i],
+[data-swatch="Yellow" i],
+[data-value="Yellow" i],
+.color-swatch--Jaune,
+.color-swatch--Yellow {
+  background: #ffd93b !important;
+}
 
-[data-swatch="Moutarde" i], [data-value="Moutarde" i],
-[data-swatch="Mustard" i], [data-value="Mustard" i],
-.color-swatch--Moutarde, .color-swatch--Mustard { background:#C9A227 !important; }
+[data-swatch="Moutarde" i],
+[data-value="Moutarde" i],
+[data-swatch="Mustard" i],
+[data-value="Mustard" i],
+.color-swatch--Moutarde,
+.color-swatch--Mustard {
+  background: #c9a227 !important;
+}
 
-[data-swatch="Or" i], [data-value="Or" i],
-[data-swatch="Gold" i], [data-value="Gold" i],
-.color-swatch--Or, .color-swatch--Gold { background:#D4AF37 !important; }
+[data-swatch="Or" i],
+[data-value="Or" i],
+[data-swatch="Gold" i],
+[data-value="Gold" i],
+.color-swatch--Or,
+.color-swatch--Gold {
+  background: #d4af37 !important;
+}
 
-[data-swatch="Orange" i], [data-value="Orange" i],
-.color-swatch--Orange { background:#FF8A00 !important; }
+[data-swatch="Orange" i],
+[data-value="Orange" i],
+.color-swatch--Orange {
+  background: #ff8a00 !important;
+}
 
-[data-swatch="Abricot" i], [data-value="Abricot" i],
-[data-swatch="Apricot" i], [data-value="Apricot" i],
-.color-swatch--Abricot, .color-swatch--Apricot { background:#FFB27A !important; }
+[data-swatch="Abricot" i],
+[data-value="Abricot" i],
+[data-swatch="Apricot" i],
+[data-value="Apricot" i],
+.color-swatch--Abricot,
+.color-swatch--Apricot {
+  background: #ffb27a !important;
+}
 
-[data-swatch="Terracotta" i], [data-value="Terracotta" i],
-[data-swatch="Terre cuite" i], [data-value="Terre cuite" i],
-.color-swatch--Terracotta, .color-swatch--Terre-cuite { background:#C75B39 !important; }
+[data-swatch="Terracotta" i],
+[data-value="Terracotta" i],
+[data-swatch="Terre cuite" i],
+[data-value="Terre cuite" i],
+.color-swatch--Terracotta,
+.color-swatch--Terre-cuite {
+  background: #c75b39 !important;
+}
 
-[data-swatch="Brique" i], [data-value="Brique" i],
-.color-swatch--Brique { background:#A23E2C !important; }
+[data-swatch="Brique" i],
+[data-value="Brique" i],
+.color-swatch--Brique {
+  background: #a23e2c !important;
+}
 
 /* ---------- Rouges / Roses ---------- */
-[data-swatch="Rouge" i], [data-value="Rouge" i],
-[data-swatch="Red" i], [data-value="Red" i],
-.color-swatch--Rouge, .color-swatch--Red { background:#E53935 !important; }
+[data-swatch="Rouge" i],
+[data-value="Rouge" i],
+[data-swatch="Red" i],
+[data-value="Red" i],
+.color-swatch--Rouge,
+.color-swatch--Red {
+  background: #e53935 !important;
+}
 
-[data-swatch="Bordeaux" i], [data-value="Bordeaux" i],
-[data-swatch="Burgundy" i], [data-value="Burgundy" i],
-.color-swatch--Bordeaux, .color-swatch--Burgundy { background:#781F2B !important; }
+[data-swatch="Bordeaux" i],
+[data-value="Bordeaux" i],
+[data-swatch="Burgundy" i],
+[data-value="Burgundy" i],
+.color-swatch--Bordeaux,
+.color-swatch--Burgundy {
+  background: #781f2b !important;
+}
 
-[data-swatch="Lie de vin" i], [data-value="Lie de vin" i],
-.color-swatch--Lie-de-vin { background:#5A1A22 !important; }
+[data-swatch="Lie de vin" i],
+[data-value="Lie de vin" i],
+.color-swatch--Lie-de-vin {
+  background: #5a1a22 !important;
+}
 
-[data-swatch="Corail" i], [data-value="Corail" i],
-[data-swatch="Coral" i], [data-value="Coral" i],
-.color-swatch--Corail, .color-swatch--Coral { background:#FF6F61 !important; }
+[data-swatch="Corail" i],
+[data-value="Corail" i],
+[data-swatch="Coral" i],
+[data-value="Coral" i],
+.color-swatch--Corail,
+.color-swatch--Coral {
+  background: #ff6f61 !important;
+}
 
-[data-swatch="Rose" i], [data-value="Rose" i],
-[data-swatch="Pink" i], [data-value="Pink" i],
-.color-swatch--Rose, .color-swatch--Pink { background:#FFC0CB !important; }
+[data-swatch="Rose" i],
+[data-value="Rose" i],
+[data-swatch="Pink" i],
+[data-value="Pink" i],
+.color-swatch--Rose,
+.color-swatch--Pink {
+  background: #ffc0cb !important;
+}
 
-[data-swatch="Vieux rose" i], [data-value="Vieux rose" i],
-[data-swatch="Dusty Pink" i], [data-value="Dusty Pink" i],
-.color-swatch--Vieux-rose, .color-swatch--Dusty-Pink { background:#D8A0A6 !important; }
+[data-swatch="Vieux rose" i],
+[data-value="Vieux rose" i],
+[data-swatch="Dusty Pink" i],
+[data-value="Dusty Pink" i],
+.color-swatch--Vieux-rose,
+.color-swatch--Dusty-Pink {
+  background: #d8a0a6 !important;
+}
 
-[data-swatch="Fuchsia" i], [data-value="Fuchsia" i],
-[data-swatch="Magenta" i], [data-value="Magenta" i],
-.color-swatch--Fuchsia, .color-swatch--Magenta { background:#FF00A8 !important; }
+[data-swatch="Fuchsia" i],
+[data-value="Fuchsia" i],
+[data-swatch="Magenta" i],
+[data-value="Magenta" i],
+.color-swatch--Fuchsia,
+.color-swatch--Magenta {
+  background: #ff00a8 !important;
+}
 
 /* ---------- Violets ---------- */
-[data-swatch="Violet" i], [data-value="Violet" i],
-[data-swatch="Purple" i], [data-value="Purple" i],
-.color-swatch--Violet, .color-swatch--Purple { background:#7E57C2 !important; }
+[data-swatch="Violet" i],
+[data-value="Violet" i],
+[data-swatch="Purple" i],
+[data-value="Purple" i],
+.color-swatch--Violet,
+.color-swatch--Purple {
+  background: #7e57c2 !important;
+}
 
-[data-swatch="Lavande" i], [data-value="Lavande" i],
-[data-swatch="Lavender" i], [data-value="Lavender" i],
-.color-swatch--Lavande, .color-swatch--Lavender { background:#C5B3E6 !important; }
+[data-swatch="Lavande" i],
+[data-value="Lavande" i],
+[data-swatch="Lavender" i],
+[data-value="Lavender" i],
+.color-swatch--Lavande,
+.color-swatch--Lavender {
+  background: #c5b3e6 !important;
+}
 
-[data-swatch="Lilas" i], [data-value="Lilas" i],
-[data-swatch="Lilac" i], [data-value="Lilac" i],
-.color-swatch--Lilas, .color-swatch--Lilac { background:#BCA4D7 !important; }
+[data-swatch="Lilas" i],
+[data-value="Lilas" i],
+[data-swatch="Lilac" i],
+[data-value="Lilac" i],
+.color-swatch--Lilas,
+.color-swatch--Lilac {
+  background: #bca4d7 !important;
+}
 
-[data-swatch="Prune" i], [data-value="Prune" i],
-[data-swatch="Plum" i], [data-value="Plum" i],
-.color-swatch--Prune, .color-swatch--Plum { background:#5C2A4A !important; }
+[data-swatch="Prune" i],
+[data-value="Prune" i],
+[data-swatch="Plum" i],
+[data-value="Plum" i],
+.color-swatch--Prune,
+.color-swatch--Plum {
+  background: #5c2a4a !important;
+}
 
 /* ---------- Bleus ---------- */
-[data-swatch="Bleu" i], [data-value="Bleu" i],
-[data-swatch="Blue" i], [data-value="Blue" i],
-.color-swatch--Bleu, .color-swatch--Blue { background:#2196F3 !important; }
+[data-swatch="Bleu" i],
+[data-value="Bleu" i],
+[data-swatch="Blue" i],
+[data-value="Blue" i],
+.color-swatch--Bleu,
+.color-swatch--Blue {
+  background: #2196f3 !important;
+}
 
-[data-swatch="Bleu clair" i], [data-value="Bleu clair" i],
-[data-swatch="Light Blue" i], [data-value="Light Blue" i],
-.color-swatch--Bleu-clair, .color-swatch--Light-Blue { background:#90CAF9 !important; }
+[data-swatch="Bleu clair" i],
+[data-value="Bleu clair" i],
+[data-swatch="Light Blue" i],
+[data-value="Light Blue" i],
+.color-swatch--Bleu-clair,
+.color-swatch--Light-Blue {
+  background: #90caf9 !important;
+}
 
-[data-swatch="Bleu ciel" i], [data-value="Bleu ciel" i],
-[data-swatch="Sky Blue" i], [data-value="Sky Blue" i],
-.color-swatch--Bleu-ciel, .color-swatch--Sky-Blue { background:#87CEEB !important; }
+[data-swatch="Bleu ciel" i],
+[data-value="Bleu ciel" i],
+[data-swatch="Sky Blue" i],
+[data-value="Sky Blue" i],
+.color-swatch--Bleu-ciel,
+.color-swatch--Sky-Blue {
+  background: #87ceeb !important;
+}
 
-[data-swatch="Bleu marine" i], [data-value="Bleu marine" i],
-[data-swatch="Navy" i], [data-value="Navy" i],
-.color-swatch--Bleu-marine, .color-swatch--Navy { background:#0B1F3A !important; }
+[data-swatch="Bleu marine" i],
+[data-value="Bleu marine" i],
+[data-swatch="Navy" i],
+[data-value="Navy" i],
+.color-swatch--Bleu-marine,
+.color-swatch--Navy {
+  background: #0b1f3a !important;
+}
 
-[data-swatch="Bleu roi" i], [data-value="Bleu roi" i],
-[data-swatch="Royal Blue" i], [data-value="Royal Blue" i],
-.color-swatch--Bleu-roi, .color-swatch--Royal-Blue { background:#4169E1 !important; }
+[data-swatch="Bleu roi" i],
+[data-value="Bleu roi" i],
+[data-swatch="Royal Blue" i],
+[data-value="Royal Blue" i],
+.color-swatch--Bleu-roi,
+.color-swatch--Royal-Blue {
+  background: #4169e1 !important;
+}
 
-[data-swatch="Indigo" i], [data-value="Indigo" i],
-.color-swatch--Indigo { background:#3F51B5 !important; }
+[data-swatch="Indigo" i],
+[data-value="Indigo" i],
+.color-swatch--Indigo {
+  background: #3f51b5 !important;
+}
 
-[data-swatch="Turquoise" i], [data-value="Turquoise" i],
-[data-swatch="Turquoise" i], [data-value="Turquoise" i],
-.color-swatch--Turquoise { background:#40E0D0 !important; }
+[data-swatch="Turquoise" i],
+[data-value="Turquoise" i],
+[data-swatch="Turquoise" i],
+[data-value="Turquoise" i],
+.color-swatch--Turquoise {
+  background: #40e0d0 !important;
+}
 
-[data-swatch="Canard" i], [data-value="Canard" i],
-[data-swatch="Teal" i], [data-value="Teal" i],
-.color-swatch--Canard, .color-swatch--Teal { background:#008080 !important; }
+[data-swatch="Canard" i],
+[data-value="Canard" i],
+[data-swatch="Teal" i],
+[data-value="Teal" i],
+.color-swatch--Canard,
+.color-swatch--Teal {
+  background: #008080 !important;
+}
 
-[data-swatch="Cyan" i], [data-value="Cyan" i],
-.color-swatch--Cyan { background:#00BCD4 !important; }
+[data-swatch="Cyan" i],
+[data-value="Cyan" i],
+.color-swatch--Cyan {
+  background: #00bcd4 !important;
+}
 
 /* ---------- Verts ---------- */
-[data-swatch="Vert" i], [data-value="Vert" i],
-[data-swatch="Green" i], [data-value="Green" i],
-.color-swatch--Vert, .color-swatch--Green { background:#43A047 !important; }
+[data-swatch="Vert" i],
+[data-value="Vert" i],
+[data-swatch="Green" i],
+[data-value="Green" i],
+.color-swatch--Vert,
+.color-swatch--Green {
+  background: #43a047 !important;
+}
 
-[data-swatch="Kaki" i], [data-value="Kaki" i],
-[data-swatch="Khaki" i], [data-value="Khaki" i],
-.color-swatch--Kaki, .color-swatch--Khaki { background:#B2A56B !important; }
+[data-swatch="Kaki" i],
+[data-value="Kaki" i],
+[data-swatch="Khaki" i],
+[data-value="Khaki" i],
+.color-swatch--Kaki,
+.color-swatch--Khaki {
+  background: #b2a56b !important;
+}
 
-[data-swatch="Olive" i], [data-value="Olive" i],
-.color-swatch--Olive { background:#6B8E23 !important; }
+[data-swatch="Olive" i],
+[data-value="Olive" i],
+.color-swatch--Olive {
+  background: #6b8e23 !important;
+}
 
-[data-swatch="Sauge" i], [data-value="Sauge" i],
-[data-swatch="Sage" i], [data-value="Sage" i],
-.color-swatch--Sauge, .color-swatch--Sage { background:#AEC3B0 !important; }
+[data-swatch="Sauge" i],
+[data-value="Sauge" i],
+[data-swatch="Sage" i],
+[data-value="Sage" i],
+.color-swatch--Sauge,
+.color-swatch--Sage {
+  background: #aec3b0 !important;
+}
 
-[data-swatch="Menthe" i], [data-value="Menthe" i],
-[data-swatch="Mint" i], [data-value="Mint" i],
-.color-swatch--Menthe, .color-swatch--Mint { background:#98FF98 !important; }
+[data-swatch="Menthe" i],
+[data-value="Menthe" i],
+[data-swatch="Mint" i],
+[data-value="Mint" i],
+.color-swatch--Menthe,
+.color-swatch--Mint {
+  background: #98ff98 !important;
+}
 
-[data-swatch="Émeraude" i], [data-value="Emeraude" i],
-[data-swatch="Emerald" i], [data-value="Emerald" i],
-.color-swatch--Emeraude, .color-swatch--Emerald { background:#2ECC71 !important; }
+[data-swatch="Émeraude" i],
+[data-value="Emeraude" i],
+[data-swatch="Emerald" i],
+[data-value="Emerald" i],
+.color-swatch--Emeraude,
+.color-swatch--Emerald {
+  background: #2ecc71 !important;
+}
 
-[data-swatch="Vert forêt" i], [data-value="Vert forêt" i],
-[data-swatch="Forest Green" i], [data-value="Forest Green" i],
-.color-swatch--Vert-forêt, .color-swatch--Forest-Green { background:#1B5E20 !important; }
+[data-swatch="Vert forêt" i],
+[data-value="Vert forêt" i],
+[data-swatch="Forest Green" i],
+[data-value="Forest Green" i],
+.color-swatch--Vert-forêt,
+.color-swatch--Forest-Green {
+  background: #1b5e20 !important;
+}
 
 /* ---------- Métalliques / spéciaux ---------- */
-[data-swatch="Argent" i], [data-value="Argent" i],
-[data-swatch="Silver" i], [data-value="Silver" i],
-.color-swatch--Argent, .color-swatch--Silver { background:#C0C0C0 !important; }
+[data-swatch="Argent" i],
+[data-value="Argent" i],
+[data-swatch="Silver" i],
+[data-value="Silver" i],
+.color-swatch--Argent,
+.color-swatch--Silver {
+  background: #c0c0c0 !important;
+}
 
-[data-swatch="Doré" i], [data-value="Doré" i],
-[data-swatch="Gold" i], [data-value="Gold" i],
-.color-swatch--Doré, .color-swatch--Gold { background:#D4AF37 !important; }
+[data-swatch="Doré" i],
+[data-value="Doré" i],
+[data-swatch="Gold" i],
+[data-value="Gold" i],
+.color-swatch--Doré,
+.color-swatch--Gold {
+  background: #d4af37 !important;
+}
 
-[data-swatch="Cuivré" i], [data-value="Cuivré" i],
-[data-swatch="Copper" i], [data-value="Copper" i],
-.color-swatch--Cuivré, .color-swatch--Copper { background:#B87333 !important; }
+[data-swatch="Cuivré" i],
+[data-value="Cuivré" i],
+[data-swatch="Copper" i],
+[data-value="Copper" i],
+.color-swatch--Cuivré,
+.color-swatch--Copper {
+  background: #b87333 !important;
+}
 
-[data-swatch="Bronze" i], [data-value="Bronze" i],
-.color-swatch--Bronze { background:#CD7F32 !important; }
+[data-swatch="Bronze" i],
+[data-value="Bronze" i],
+.color-swatch--Bronze {
+  background: #cd7f32 !important;
+}
 
-[data-swatch="Transparent" i], [data-value="Transparent" i],
-[data-swatch="Clear" i], [data-value="Clear" i],
-.color-swatch--Transparent, .color-swatch--Clear {
+[data-swatch="Transparent" i],
+[data-value="Transparent" i],
+[data-swatch="Clear" i],
+[data-value="Clear" i],
+.color-swatch--Transparent,
+.color-swatch--Clear {
   background: repeating-conic-gradient(#eee 0% 25%, #fff 0% 50%) 50% / 10px 10px !important;
   box-shadow: inset 0 0 0 1px #ccc;
 }
@@ -2406,8 +2735,9 @@ main {
 .swatch:not([style*="background"])::after,
 .color-swatch:not([style*="background"])::after {
   content: "";
-  position: absolute; inset: 0;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.2);
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
   border-radius: inherit;
   pointer-events: none;
 }
@@ -2418,5 +2748,5 @@ main {
   bottom: 1rem;
   z-index: 1000;
   border-radius: 999px;
-  padding: .6rem 1rem;
+  padding: 0.6rem 1rem;
 }

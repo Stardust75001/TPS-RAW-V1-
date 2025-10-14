@@ -9,16 +9,24 @@ function debug(...args) {
   if (isDev) console.debug(...args);
 }
 
-log("Shopiweb Theme - Premium Shopify Theme by shopiweb.fr | En savoir plus sur https://www.shopiweb.fr");
+log(
+  "Shopiweb Theme - Premium Shopify Theme by shopiweb.fr | En savoir plus sur https://www.shopiweb.fr"
+);
 
 window.addEventListener("scroll", () => {
   document.documentElement.classList.toggle("has-scrolled", window.scrollY > 0);
   debug("Scroll event triggered. Y:", window.scrollY);
 });
 
-document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
-document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
-document.querySelector(".btn.shopify-challenge__button")?.classList.add("btn-primary");
+document
+  .querySelectorAll('[data-bs-toggle="tooltip"]')
+  .forEach(el => new bootstrap.Tooltip(el));
+document
+  .querySelectorAll('[data-bs-toggle="popover"]')
+  .forEach(el => new bootstrap.Popover(el));
+document
+  .querySelector(".btn.shopify-challenge__button")
+  ?.classList.add("btn-primary");
 
 debug("Tooltip and popover initialized");
 
@@ -30,7 +38,10 @@ if (errors) {
 
 Shopify.resizeImage = (src, size, crop = "") => {
   return src
-    .replace(/_(pico|icon|thumb|small|compact|medium|large|grande|original|1024x1024|2048x2048|master)+\./g, ".")
+    .replace(
+      /_(pico|icon|thumb|small|compact|medium|large|grande|original|1024x1024|2048x2048|master)+\./g,
+      "."
+    )
     .replace(/\.(jpg|png|gif|jpeg)/g, match => {
       if (crop.length) crop = `_crop_${crop}`;
       return `_${size}${crop}${match}`;
@@ -97,20 +108,26 @@ window.throttle = (cb, time = 200) => {
 };
 
 // Gestion IntersectionObserver avec fallback observeAll
-const intersectionCallback = (entries) => {
+const intersectionCallback = entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("entered");
 
-      entry.target.querySelectorAll(".animate__animated.opacity-0").forEach(el => {
-        el.classList.remove("opacity-0");
+      entry.target
+        .querySelectorAll(".animate__animated.opacity-0")
+        .forEach(el => {
+          el.classList.remove("opacity-0");
 
-        const animateClass = el.dataset.animateClass;
-        if (animateClass && typeof animateClass === 'string' && animateClass.trim() !== '') {
-          el.classList.add(animateClass);
-          debug("Added animation class:", animateClass);
-        }
-      });
+          const animateClass = el.dataset.animateClass;
+          if (
+            animateClass &&
+            typeof animateClass === "string" &&
+            animateClass.trim() !== ""
+          ) {
+            el.classList.add(animateClass);
+            debug("Added animation class:", animateClass);
+          }
+        });
     }
   });
 };
@@ -121,11 +138,19 @@ const observerOptions = {
 };
 
 if (IntersectionObserver.prototype.observeAll) {
-  const observer = new IntersectionObserver(intersectionCallback, observerOptions);
+  const observer = new IntersectionObserver(
+    intersectionCallback,
+    observerOptions
+  );
   observer.observeAll(document.querySelectorAll(".enter-view"));
 } else {
-  console.warn('observeAll is not available. Falling back to individual observation.');
-  const observer = new IntersectionObserver(intersectionCallback, observerOptions);
+  console.warn(
+    "observeAll is not available. Falling back to individual observation."
+  );
+  const observer = new IntersectionObserver(
+    intersectionCallback,
+    observerOptions
+  );
   document.querySelectorAll(".enter-view").forEach(el => observer.observe(el));
 }
 
@@ -150,7 +175,10 @@ const initializeScrollToTopButton = () => {
     "scroll",
     window.throttle(() => {
       const scrollThreshold = parseInt(btn.dataset.scroll, 10);
-      btn.classList.toggle("btn-show", !isNaN(scrollThreshold) && window.scrollY > scrollThreshold);
+      btn.classList.toggle(
+        "btn-show",
+        !isNaN(scrollThreshold) && window.scrollY > scrollThreshold
+      );
       debug("ScrollToTop toggle, Y:", window.scrollY);
     }, 700)
   );
