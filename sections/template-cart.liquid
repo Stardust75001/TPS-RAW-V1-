@@ -1,34 +1,29 @@
+
 {% comment %}
----------------------------------------------------------
 Copyright © 2019/2024 Theme Shopiweb Premium. Tous droits réservés.
-La copie, la modification, la distribution ou l'utilisation
-non autorisée de ce code ou de toute partie de celui-ci est formellement interdite.
+La copie, la modification, la distribution ou l'utilisation non autorisée de ce code ou de toute partie de celui-ci est formellement interdite.
 Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
----------------------------------------------------------
 {% endcomment %}
 
-{% liquid
-    assign pt = section.settings.pt | prepend: 'pt-'
-    assign pb = section.settings.pb | prepend: 'pb-'
-    assign mt = section.settings.mt | prepend: 'mt-'
-    assign mb = section.settings.mb | prepend: 'mb-'
 
-    case section.settings.product_img_orientation
-        when 'square'
-            assign img_width  = 600
-            assign img_height = 600
-        when 'landscape'
-            assign img_width  = 600
-            assign img_height = 480
-        when 'portrait'
-            assign img_width  = 480
-            assign img_height = 600
-    endcase
-%}
+{% assign pt = section.settings.pt | prepend: 'pt-' %}
+{% assign pb = section.settings.pb | prepend: 'pb-' %}
+{% assign mt = section.settings.mt | prepend: 'mt-' %}
+{% assign mb = section.settings.mb | prepend: 'mb-' %}
+{% if section.settings.product_img_orientation == 'square' %}
+    {% assign img_width = 600 %}
+    {% assign img_height = 600 %}
+{% elsif section.settings.product_img_orientation == 'landscape' %}
+    {% assign img_width = 600 %}
+    {% assign img_height = 480 %}
+{% elsif section.settings.product_img_orientation == 'portrait' %}
+    {% assign img_width = 480 %}
+    {% assign img_height = 600 %}
+{% endif %}
 
 <div
-    id="cart"
-    class="{{ section.settings.bg_color }} {{ pt }} {{ pb }} {{ mt }} {{ mb }}">
+        id="cart"
+        class="{{ section.settings.bg_color }} {{ pt }} {{ pb }} {{ mt }} {{ mb }}">
     <div class="container">
         <div class="mx-auto" style="max-width: {{ section.settings.max_width }}px;">
                         {% liquid
@@ -49,14 +44,11 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                     endif
                                 endif
                                 echo '</h1>'
-                                echo '<div class="mb-6 rte lead">'
-                                echo 'cart.empty_html' | t
-                                echo '</div>'
-                                echo '<a href="' | append: routes.all_products_collection_url | append: '" class="btn btn-primary mb-5">'
-                                echo '← '
-                                echo 'cart.continue_shopping' | t
-                                echo '</a>'
-                                echo '</div>'
+                                <div class="mb-6 rte lead">
+                                    {{ 'cart.empty_html' | t }}
+                                </div>
+                                <a href="{{ routes.all_products_collection_url }}" class="btn btn-primary mb-5">← {{ 'cart.continue_shopping' | t }}</a>
+                                </div>
                             else
                                 echo '<div class="text-center mb-10">'
                                 echo '<h1 class="mb-3">'
@@ -82,23 +74,17 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                 echo '<div class="row">'
                                 echo '<div class="col-lg-7">'
                                 echo '<ul class="product-listing list-unstyled mb-6">'
-                                for line_item in cart.items
-                                    echo '<li class="product-item pb-6 mb-6 '
-                                    unless forloop.last
-                                        echo 'border-bottom'
-                                    endunless
-                                    echo '" data-cart-line-item data-product-id="' | append: line_item.product.id | append: '" data-product-handle="' | append: line_item.product.handle | append: '">' 
-                                    # ...existing code...
-                    <a class="" href="{{ line_item.url }}">
-                                                <img
-                                                    class="product-item-img img-fluid me-4 rounded {{ section.settings.product_img_thumbnail }} {{ section.settings.product_shadow_sp }} {{ section.settings.product_border_color }}"
-                                                    style="border-width: {{ section.settings.product_border_width }}px;"
-                                                    src="{{ line_item.image | image_url: width: img_width, height: img_height, crop: 'center' }}"
-                                                    alt="Image du produit : {{ line_item.product.title }}"
-                                                    width="{{ img_width }}"
-                                                    height="{{ img_height }}"
-                                                    loading="lazy"
-                                                    role="img"
+                                {% for line_item in cart.items %}
+                                    <li class="product-item pb-6 mb-6 {% unless forloop.last %}border-bottom{% endunless %}" data-cart-line-item data-product-id="{{ line_item.product.id }}" data-product-handle="{{ line_item.product.handle }}">
+                                        <img
+                                            class="product-item-img img-fluid me-4 rounded {{ section.settings.product_img_thumbnail }} {{ section.settings.product_shadow_sp }} {{ section.settings.product_border_color }}"
+                                            style="border-width: {{ section.settings.product_border_width }}px;"
+                                            src="{{ line_item.image | image_url: width: img_width, height: img_height, crop: 'center' }}"
+                                            alt="Image du produit : {{ line_item.product.title }}"
+                                            width="{{ img_width }}"
+                                            height="{{ img_height }}"
+                                            loading="lazy"
+                                            role="img"
                                                     aria-label="Image du produit : {{ line_item.product.title }}">
                                             </a>
                                         <div class="col-7 col-lg-8 px-3">

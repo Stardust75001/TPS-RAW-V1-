@@ -69,7 +69,7 @@
 
     {% if block.settings.show_dynamic_buttons %}
         <div class="product-form-dynamic-buttons mt-5 pb-2">
-            {{ form | payment_button }}
+                <!-- Removed payment_button due to missing form object -->
         </div>
     {% endif %}
 

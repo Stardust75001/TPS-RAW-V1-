@@ -178,80 +178,75 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                     <th scope="row" class="text-center">
                                         {{ block.settings.title }}
                                     </th>
-                                    {% for cell in header_cells %}
-                                        {% unless forloop.first %}
-                                            <td class="{% if forloop.index == 2 %}{{ section.settings.table_second_col_color }} {{ section.settings.table_second_bg_color }}{% endif %}">
-                                                {% comment %}theme-check-disable{% endcomment %}
-                                                {% liquid
-                                                  if forloop.index == 2
-                                                    if block.settings.cell_2_display == 'icon'
-                                                      if block.settings.cell_2
-                                                        echo icon_checked_circle
-                                                      else
-                                                        echo icon_unchecked
-                                                      endif
-                                                    endif
-                                                  endif
-                                                %}
-                                                        {% endunless %}
-                                                    {% else %}
-                                                        {{ block.settings.cell_2_text }}
-                                                    {% endif %}
-                                                {% elsif forloop.index == 3 %}
-                                                    {% if block.settings.cell_3_display == 'icon' %}
-                                                        {% if block.settings.cell_3 %}
-                                                            {{ icon_checked }}
-                                                        {% else %}
-                                                            {{ icon_unchecked }}
-                                                        {% endif %}
-                                                    {% else %}
-                                                        {{ block.settings.cell_3_text }}
-                                                    {% endif %}
-                                                {% elsif forloop.index == 4 %}
-                                                    {% if block.settings.cell_4_display == 'icon' %}
-                                                        {% if block.settings.cell_4 %}
-                                                            {{ icon_checked }}
-                                                        {% else %}
-                                                            {{ icon_unchecked }}
-                                                        {% endif %}
-                                                    {% else %}
-                                                        {{ block.settings.cell_4_text }}
-                                                    {% endif %}
-                                                {% elsif forloop.index == 5 %}
-                                                    {% if block.settings.cell_5_display == 'icon' %}
-                                                        {% if block.settings.cell_5 %}
-                                                            {{ icon_checked }}
-                                                        {% else %}
-                                                            {{ icon_unchecked }}
-                                                        {% endif %}
-                                                    {% else %}
-                                                        {{ block.settings.cell_5_text }}
-                                                    {% endif %}
-                                                {% elsif forloop.index == 6 %}
-                                                    {% if block.settings.cell_6_display == 'icon' %}
-                                                        {% if block.settings.cell_6 %}
-                                                            {{ icon_checked }}
-                                                        {% else %}
-                                                            {{ icon_unchecked }}
-                                                        {% endif %}
-                                                    {% else %}
-                                                        {{ block.settings.cell_6_text }}
-                                                    {% endif %}
-                                                {% elsif forloop.index == 7 %}
-                                                    {% if block.settings.cell_7_display == 'icon' %}
-                                                        {% if block.settings.cell_7 %}
-                                                            {{ icon_checked }}
-                                                        {% else %}
-                                                            {{ icon_unchecked }}
-                                                        {% endif %}
-                                                    {% else %}
-                                                        {{ block.settings.cell_7_text }}
-                                                    {% endif %}
-                                                {% endif %}
-                                                {% comment %}theme-check-enable{% endcomment %}
-                                            </td>
-                                        {% endunless %}
-                                    {% endfor %}
+                  {% for cell in header_cells %}
+                    {% unless forloop.first %}
+                      <td class="{% if forloop.index == 2 %}{{ section.settings.table_second_col_color }} {{ section.settings.table_second_bg_color }}{% endif %}">
+                        {% comment %}theme-check-disable{% endcomment %}
+                        {% if forloop.index == 2 %}
+                          {% if block.settings.cell_2_display == 'icon' %}
+                            {% if block.settings.cell_2 %}
+                              {{ icon_checked_circle }}
+                            {% else %}
+                              {{ icon_unchecked }}
+                            {% endif %}
+                          {% else %}
+                            {{ block.settings.cell_2_text }}
+                          {% endif %}
+                        {% elsif forloop.index == 3 %}
+                          {% if block.settings.cell_3_display == 'icon' %}
+                            {% if block.settings.cell_3 %}
+                              {{ icon_checked }}
+                            {% else %}
+                              {{ icon_unchecked }}
+                            {% endif %}
+                          {% else %}
+                            {{ block.settings.cell_3_text }}
+                          {% endif %}
+                        {% elsif forloop.index == 4 %}
+                          {% if block.settings.cell_4_display == 'icon' %}
+                            {% if block.settings.cell_4 %}
+                              {{ icon_checked }}
+                            {% else %}
+                              {{ icon_unchecked }}
+                            {% endif %}
+                          {% else %}
+                            {{ block.settings.cell_4_text }}
+                          {% endif %}
+                        {% elsif forloop.index == 5 %}
+                          {% if block.settings.cell_5_display == 'icon' %}
+                            {% if block.settings.cell_5 %}
+                              {{ icon_checked }}
+                            {% else %}
+                              {{ icon_unchecked }}
+                            {% endif %}
+                          {% else %}
+                            {{ block.settings.cell_5_text }}
+                          {% endif %}
+                        {% elsif forloop.index == 6 %}
+                          {% if block.settings.cell_6_display == 'icon' %}
+                            {% if block.settings.cell_6 %}
+                              {{ icon_checked }}
+                            {% else %}
+                              {{ icon_unchecked }}
+                            {% endif %}
+                          {% else %}
+                            {{ block.settings.cell_6_text }}
+                          {% endif %}
+                        {% elsif forloop.index == 7 %}
+                          {% if block.settings.cell_7_display == 'icon' %}
+                            {% if block.settings.cell_7 %}
+                              {{ icon_checked }}
+                            {% else %}
+                              {{ icon_unchecked }}
+                            {% endif %}
+                          {% else %}
+                            {{ block.settings.cell_7_text }}
+                          {% endif %}
+                        {% endif %}
+                        {% comment %}theme-check-enable{% endcomment %}
+                      </td>
+                    {% endunless %}
+                  {% endfor %}
                                 </tr>
                             {% endunless %}
                         {% endfor %}

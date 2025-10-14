@@ -27,46 +27,43 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                 <span class="visually-hidden">
                                     {{ 'general.countdown_timer.expires' | t }}
                                 </span>
-                              {% capture countdown_timer %}
-                                <span class="visually-hidden">
-                                  {{ 'general.countdown_timer.expires' | t }}
-                                </span>
-                                <ul class="timer-countdown list-unstyled"
-                                    data-time="{{ block_expiration_time }}"
-                                    data-text-d="{{ 'general.countdown_timer.d' | t }}"
-                                    data-text-h="{{ 'general.countdown_timer.h' | t }}"
-                                    data-text-m="{{ 'general.countdown_timer.m' | t }}"
-                                    hidden>
-                                    <li data-days></li>
-                                    <li data-hours></li>
-                                    <li data-minutes></li>
-                                    <li data-seconds></li>
-                                </ul>
-                              {% endcapture %}
-                        <div
-                            class="carousel-item {% if forloop.first == true %}active{% endif %}"
-                            data-index="{{ forloop.index0 }}"
-                            {{ block.shopify_attributes }}>
-                            {% if block.settings.url == blank %}
-                                <div class="rte text-center lh-sm {{ pt }} {{ pb }}">
-                                    {{ block.settings.description }}
-                                    {{ countdown_timer }}
-                                </div>
-                            {% else %}
-                                <a href="{{ block.settings.url }}" class="d-block {{ pt }} {{ pb }}">
-                                    <div class="rte text-center lh-sm">
-                                        {{ block.settings.description }}
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="ms-2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M5 12h13M12 5l7 7-7 7"/>
-                                        </svg>
-                                        {{ countdown_timer }}
-                                    </div>
-                                </a>
-                            {% endif %}
-                        </div>
-                    {% endcapture %}
-                                        {% endif %}
-                                        {% endcapture %}
+{% capture countdown_timer %}
+  <span class="visually-hidden">
+    {{ 'general.countdown_timer.expires' | t }}
+  </span>
+  <ul class="timer-countdown list-unstyled"
+      data-time="{{ block_expiration_time }}"
+      data-text-d="{{ 'general.countdown_timer.d' | t }}"
+      data-text-h="{{ 'general.countdown_timer.h' | t }}"
+      data-text-m="{{ 'general.countdown_timer.m' | t }}"
+      hidden>
+    <li data-days></li>
+    <li data-hours></li>
+    <li data-minutes></li>
+    <li data-seconds></li>
+  </ul>
+{% endcapture %}
+            <div
+              class="carousel-item {% if forloop.first == true %}active{% endif %}"
+              data-index="{{ forloop.index0 }}"
+              {{ block.shopify_attributes }}>
+              {% if block.settings.url == blank %}
+                <div class="rte text-center lh-sm {{ pt }} {{ pb }}">
+                  {{ block.settings.description }}
+                  {{ countdown_timer }}
+                </div>
+              {% else %}
+                <a href="{{ block.settings.url }}" class="d-block {{ pt }} {{ pb }}">
+                  <div class="rte text-center lh-sm">
+                    {{ block.settings.description }}
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ms-2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h13M12 5l7 7-7 7"/>
+                    </svg>
+                    {{ countdown_timer }}
+                  </div>
+                </a>
+              {% endif %}
+            </div>
                     <button
                         class="carousel-control carousel-control-prev"
                         type="button"
@@ -88,7 +85,6 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                             {{ 'general.accessibility.next' | t }}
                         </span>
                     </button>
-                {% endif %}
             </div>
         </div>
     </section>
