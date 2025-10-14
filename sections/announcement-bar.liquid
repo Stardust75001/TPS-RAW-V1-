@@ -27,8 +27,11 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                 <span class="visually-hidden">
                                     {{ 'general.countdown_timer.expires' | t }}
                                 </span>
-                                <ul
-                                    class="timer-countdown list-unstyled"
+                              {% capture countdown_timer %}
+                                <span class="visually-hidden">
+                                  {{ 'general.countdown_timer.expires' | t }}
+                                </span>
+                                <ul class="timer-countdown list-unstyled"
                                     data-time="{{ block_expiration_time }}"
                                     data-text-d="{{ 'general.countdown_timer.d' | t }}"
                                     data-text-h="{{ 'general.countdown_timer.h' | t }}"
@@ -39,7 +42,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                     <li data-minutes></li>
                                     <li data-seconds></li>
                                 </ul>
-  {% endcapture %}
+                              {% endcapture %}
                         <div
                             class="carousel-item {% if forloop.first == true %}active{% endif %}"
                             data-index="{{ forloop.index0 }}"

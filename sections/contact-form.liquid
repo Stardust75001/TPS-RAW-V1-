@@ -51,14 +51,13 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                     echo '</div>'
                   endunless
                     echo '</div>'
-                {% elsif block.type == 'input_field' %}
-                    {% liquid 
-                        assign input_name = block.settings.label | handleize
-
-                        if input_name contains 'mail'
-                            assign input_name = 'email'
-                        endif
-                    %}
+        {% elsif block.type == 'input_field' %}
+          {% liquid 
+            assign input_name = block.settings.label | handleize
+            if input_name contains 'mail'
+              assign input_name = 'email'
+            endif
+          %}
                     <div class="form-group mb-4" {{ block.shopify_attributes }}>
                         {% if block.settings.type == 'date' or block.settings.type == 'time' %}
                             <label for="input-{{ block.id }}" class="form-label mb-2">
