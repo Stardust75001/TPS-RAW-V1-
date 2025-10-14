@@ -28,26 +28,24 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     <div class="container" style="max-width: {{ section.settings.max_width }}px">
         
         <div class="text-center">
-            {% render 'section-header' %}
-        </div>
-
-        {% form 'contact', class: 'contact-form my-4' %}
-            {% if form.posted_successfully? %}
-                <div class="form-success rte alert alert-success mb-6" role="alert">
-                    {{ section.settings.form_success_msg }}
-                </div>
-            {% endif %}
-            {{ form.errors | default_errors }}
-            
-            {% for block in section.blocks %}
-                {% if block.type == 'text' %}
-                    <div class="form-group mb-5" {{ block.shopify_attributes }}>
-                        {% unless block.settings.title == blank %}
-                            <{{ block.settings.heading_tag }} class="title mb-2 {{ block.settings.title_size }}">
-                                {{ block.settings.title }}
-                            </{{ block.settings.heading_tag }}>
-                        {% endunless %}
-                        {% unless block.settings.description == blank %}
+            {% liquid
+              render 'section-header'
+              form 'contact', class: 'contact-form my-4'
+              if form.posted_successfully?
+                echo '<div class="form-success rte alert alert-success mb-6" role="alert">'
+                echo section.settings.form_success_msg
+                echo '</div>'
+              endif
+              echo form.errors | default_errors
+              for block in section.blocks
+                if block.type == 'text'
+                  echo '<div class="form-group mb-5" ' | append: block.shopify_attributes | append: '>'
+                  unless block.settings.title == blank
+                    echo '<' | append: block.settings.heading_tag | append: ' class="title mb-2 ' | append: block.settings.title_size | append: '">' 
+                    echo block.settings.title
+                    echo '</' | append: block.settings.heading_tag | append: '>'
+                  endunless
+                  unless block.settings.description == blank
                             <div class="description rte text-muted {{ block.settings.description_size }}">
                                 {{ block.settings.description }}
                             </div>
