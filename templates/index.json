@@ -106,9 +106,9 @@
     }
   },
   "order": [
-  "hero",
-  "featured_collection",
-  "value_props",
-  "feature_band"
+    "hero",
+    "featured_collection",
+    "value_props",
+    "feature_band"
   ]
 }

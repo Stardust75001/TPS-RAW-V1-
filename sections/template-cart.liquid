@@ -89,7 +89,6 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                     endunless
                                     echo '" data-cart-line-item data-product-id="' | append: line_item.product.id | append: '" data-product-handle="' | append: line_item.product.handle | append: '">' 
                                     # ...existing code...
-                                        <div class="col-5 col-lg-4 px-3">
                                             <a class="" href="{{ line_item.url }}">
                                                 <img
                                                     class="product-item-img img-fluid me-4 rounded {{ section.settings.product_img_thumbnail }} {{ section.settings.product_shadow_sp }} {{ section.settings.product_border_color }}"
@@ -102,7 +101,6 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                                     role="img"
                                                     aria-label="Image du produit : {{ line_item.product.title }}">
                                             </a>
-                                        </div>
                                         <div class="col-7 col-lg-8 px-3">
                                             <h3 class="product-item-title mb-3 {{ section.settings.product_title_size }}">
                                                 <a class="" href="{{ line_item.url }}">
@@ -225,7 +223,6 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                     </div>
                     <div class="col-lg-5">
                         <div class="px-xl-8 h-100">
-                            <div id="cart-summary" class="card {{ section.settings.product_shadow_sp }} {{ section.settings.product_border_color }}"
                                   style="border-width: {{ section.settings.product_border_width }}px;">
                                 <h2 class="h4 card-header">
                                     {{ 'cart.summary' | t }}

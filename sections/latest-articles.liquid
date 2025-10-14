@@ -22,14 +22,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     if section.settings.breakpoint_xs_scroll
         assign row_xs = 'xs-scroll'
     else
-        assign row_xs = section.settings.breakpoint_xs | prepend: 'row-cols-'
     endif
 
-    assign row_sm = section.settings.breakpoint_sm | prepend: 'row-cols-sm-'
-    assign row_md = section.settings.breakpoint_md | prepend: 'row-cols-md-'
-    assign row_lg = section.settings.breakpoint_lg | prepend: 'row-cols-lg-'
-    assign row_xl = section.settings.breakpoint_xl | prepend: 'row-cols-xl-'
-    assign row_xxl = section.settings.breakpoint_xxl | prepend: 'row-cols-xxl-'
 %}
 
 <section

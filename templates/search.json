@@ -1,1 +1,13 @@
-{"sections":{"template-search":{"type":"template-search","settings":{"limit":48}}},"order":["template-search"]}
+{
+  "sections": {
+    "template-search": {
+      "type": "template-search",
+      "settings": {
+        "limit": 48
+      }
+    }
+  },
+  "order": [
+    "template-search"
+  ]
+}

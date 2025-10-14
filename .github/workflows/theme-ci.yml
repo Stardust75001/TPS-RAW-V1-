@@ -1,12 +1,13 @@
 ---
 name: Theme CI (structure + sanity + JSON)
 
-'on':
+
+on:
+  workflow_dispatch:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-  workflow_dispatch:
 
 jobs:
   theme-ci:

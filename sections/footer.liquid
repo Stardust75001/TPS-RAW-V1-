@@ -190,188 +190,670 @@ Footer section – version corrigée (JSON schema valide)
 {
   "name": "Footer",
   "settings": [
-    { "type": "select", "id": "bg_color", "label": "Couleur de fond", "default": "", "options": [
-      { "value": "", "label": "Body" },
-      { "value": "bg-light", "label": "Light" },
-      { "value": "bg-dark text-white", "label": "Dark" }
-    ]},
-    { "type": "checkbox", "id": "bg_gradient", "label": "Dégradé de fond", "default": false },
-
-    { "type": "checkbox", "id": "language_selector_show", "label": "Afficher sélecteur de langue", "default": true },
-    { "type": "checkbox", "id": "currency_selector_show", "label": "Afficher sélecteur de devise", "default": true },
-    { "type": "select", "id": "lang_currency_btn_color", "label": "Couleur bouton langue/devise", "default": "btn-outline-info", "options": [
-      { "value": "btn-outline-light", "label": "Contour Clair" },
-      { "value": "btn-outline-dark", "label": "Contour Sombre" },
-      { "value": "btn-outline-primary", "label": "Contour Primaire" },
-      { "value": "btn-outline-secondary", "label": "Contour Secondaire" },
-      { "value": "btn-outline-info", "label": "Contour Info" }
-    ]},
-
-    { "type": "header", "content": "À propos de nous" },
-    { "type": "checkbox", "id": "show_about_area", "label": "Afficher la zone \"À propos\"", "default": true },
-    { "type": "select", "id": "about_bg_color", "label": "Couleur fond zone À propos", "default": "bg-dark text-white", "options": [
-      { "value": "bg-primary text-white", "label": "Primaire" },
-      { "value": "bg-secondary text-white", "label": "Secondaire" },
-      { "value": "bg-tertiary text-white", "label": "Tertiaire" },
-      { "value": "bg-white text-dark", "label": "White" },
-      { "value": "bg-light text-dark", "label": "Light" },
-      { "value": "bg-dark text-white", "label": "Dark" },
-      { "value": "", "label": "Body" }
-    ]},
-    { "type": "checkbox", "id": "about_bg_gradient", "label": "Dégradé de fond (À propos)", "default": false, "info": "Ne s'applique pas aux couleurs claires" },
-    { "type": "checkbox", "id": "about_bg_transparent", "label": "Arrière-plan transparent (À propos)", "default": false },
-    { "type": "image_picker", "id": "about_logo", "label": "Logo" },
-    { "type": "range", "id": "about_logo_height", "label": "Taille du logo image", "min": 20, "max": 100, "step": 2, "default": 40 },
-
-    { "type": "header", "content": "SVG Logo" },
-    { "type": "html", "id": "svg_logo_footer", "label": "Logo SVG (recommandé)" },
-    { "type": "range", "id": "logo_svg_height", "label": "Taille du logo SVG (%)", "min": 1, "max": 100, "step": 1, "default": 50 },
-
-    { "type": "richtext", "id": "about_description", "label": "Description" },
-    { "type": "text", "id": "about_phone_text", "label": "Numéro de téléphone", "default": "+33769238799" },
-    { "type": "url", "id": "about_phone_url", "label": "Lien téléphone (tel:...)" },
-    { "type": "text", "id": "about_email_text", "label": "Adresse e-mail", "default": "hello@thepetsociety.paris" },
-    { "type": "url", "id": "about_email_url", "label": "Lien adresse e-mail" },
-    { "type": "text", "id": "about_adresse_text", "label": "Adresse", "default": "229 rue Saint Honoré - 75001 PARIS" },
-
-    { "type": "header", "content": "Espacements" },
-    { "type": "range", "id": "pt", "label": "Top padding", "min": 0, "max": 20, "step": 1, "default": 10 },
-    { "type": "range", "id": "pb", "label": "Bottom padding", "min": 0, "max": 20, "step": 1, "default": 10 }
-      ,
-      { "type": "header", "content": "WhatsApp Business" },
-      { "type": "checkbox", "id": "whatsapp_business_enable", "label": "Afficher le bouton WhatsApp Business", "default": true },
-      { "type": "text", "id": "whatsapp_business_number", "label": "Numéro WhatsApp Business", "default": "+33769238799" },
-      { "type": "text", "id": "whatsapp_business_text", "label": "Texte du bouton", "default": "Contactez-nous sur WhatsApp" },
-      { "type": "select", "id": "whatsapp_business_btn_style", "label": "Style du bouton", "default": "btn-success", "options": [
-        { "value": "btn-success", "label": "Vert" },
-        { "value": "btn-primary", "label": "Bleu" },
-        { "value": "btn-outline-success", "label": "Contour Vert" }
-      ] },
-      { "type": "select", "id": "whatsapp_business_visibility", "label": "Visibilité", "default": "all", "options": [
-        { "value": "all", "label": "Tous" },
-        { "value": "mobile", "label": "Mobile uniquement" },
-        { "value": "desktop", "label": "Desktop uniquement" }
-      ] }
+    {
+      "type": "select",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "",
+      "options": [
+        {
+          "value": "",
+          "label": "Body"
+        },
+        {
+          "value": "bg-light",
+          "label": "Light"
+        },
+        {
+          "value": "bg-dark text-white",
+          "label": "Dark"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "bg_gradient",
+      "label": "Dégradé de fond",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "language_selector_show",
+      "label": "Afficher sélecteur de langue",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "currency_selector_show",
+      "label": "Afficher sélecteur de devise",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "lang_currency_btn_color",
+      "label": "Couleur bouton langue/devise",
+      "default": "btn-outline-info",
+      "options": [
+        {
+          "value": "btn-outline-light",
+          "label": "Contour Clair"
+        },
+        {
+          "value": "btn-outline-dark",
+          "label": "Contour Sombre"
+        },
+        {
+          "value": "btn-outline-primary",
+          "label": "Contour Primaire"
+        },
+        {
+          "value": "btn-outline-secondary",
+          "label": "Contour Secondaire"
+        },
+        {
+          "value": "btn-outline-info",
+          "label": "Contour Info"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "À propos de nous"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_about_area",
+      "label": "Afficher la zone \"À propos\"",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "about_bg_color",
+      "label": "Couleur fond zone À propos",
+      "default": "bg-dark text-white",
+      "options": [
+        {
+          "value": "bg-primary text-white",
+          "label": "Primaire"
+        },
+        {
+          "value": "bg-secondary text-white",
+          "label": "Secondaire"
+        },
+        {
+          "value": "bg-tertiary text-white",
+          "label": "Tertiaire"
+        },
+        {
+          "value": "bg-white text-dark",
+          "label": "White"
+        },
+        {
+          "value": "bg-light text-dark",
+          "label": "Light"
+        },
+        {
+          "value": "bg-dark text-white",
+          "label": "Dark"
+        },
+        {
+          "value": "",
+          "label": "Body"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "about_bg_gradient",
+      "label": "Dégradé de fond (À propos)",
+      "default": false,
+      "info": "Ne s'applique pas aux couleurs claires"
+    },
+    {
+      "type": "checkbox",
+      "id": "about_bg_transparent",
+      "label": "Arrière-plan transparent (À propos)",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "about_logo",
+      "label": "Logo"
+    },
+    {
+      "type": "range",
+      "id": "about_logo_height",
+      "label": "Taille du logo image",
+      "min": 20,
+      "max": 100,
+      "step": 2,
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "SVG Logo"
+    },
+    {
+      "type": "html",
+      "id": "svg_logo_footer",
+      "label": "Logo SVG (recommandé)"
+    },
+    {
+      "type": "range",
+      "id": "logo_svg_height",
+      "label": "Taille du logo SVG (%)",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 50
+    },
+    {
+      "type": "richtext",
+      "id": "about_description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "about_phone_text",
+      "label": "Numéro de téléphone",
+      "default": "+33769238799"
+    },
+    {
+      "type": "url",
+      "id": "about_phone_url",
+      "label": "Lien téléphone (tel:...)"
+    },
+    {
+      "type": "text",
+      "id": "about_email_text",
+      "label": "Adresse e-mail",
+      "default": "hello@thepetsociety.paris"
+    },
+    {
+      "type": "url",
+      "id": "about_email_url",
+      "label": "Lien adresse e-mail"
+    },
+    {
+      "type": "text",
+      "id": "about_adresse_text",
+      "label": "Adresse",
+      "default": "229 rue Saint Honoré - 75001 PARIS"
+    },
+    {
+      "type": "header",
+      "content": "Espacements"
+    },
+    {
+      "type": "range",
+      "id": "pt",
+      "label": "Top padding",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "pb",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "WhatsApp Business"
+    },
+    {
+      "type": "checkbox",
+      "id": "whatsapp_business_enable",
+      "label": "Afficher le bouton WhatsApp Business",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_business_number",
+      "label": "Numéro WhatsApp Business",
+      "default": "+33769238799"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_business_text",
+      "label": "Texte du bouton",
+      "default": "Contactez-nous sur WhatsApp"
+    },
+    {
+      "type": "select",
+      "id": "whatsapp_business_btn_style",
+      "label": "Style du bouton",
+      "default": "btn-success",
+      "options": [
+        {
+          "value": "btn-success",
+          "label": "Vert"
+        },
+        {
+          "value": "btn-primary",
+          "label": "Bleu"
+        },
+        {
+          "value": "btn-outline-success",
+          "label": "Contour Vert"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "whatsapp_business_visibility",
+      "label": "Visibilité",
+      "default": "all",
+      "options": [
+        {
+          "value": "all",
+          "label": "Tous"
+        },
+        {
+          "value": "mobile",
+          "label": "Mobile uniquement"
+        },
+        {
+          "value": "desktop",
+          "label": "Desktop uniquement"
+        }
+      ]
+    }
   ],
-
   "blocks": [
     {
       "type": "richtext",
       "name": "Texte",
       "settings": [
-        { "type": "text", "id": "title", "label": "Titre" },
-        { "type": "select", "id": "title_size", "label": "Taille du titre", "default": "h6", "options": [
-          { "value": "h1", "label": "Very Large" },
-          { "value": "h2", "label": "Large" },
-          { "value": "h3", "label": "Medium" },
-          { "value": "h4", "label": "Small" },
-          { "value": "h5", "label": "Very Small" },
-          { "value": "h6", "label": "Super Petit" }
-        ]},
-        { "type": "richtext", "id": "description", "label": "Description" },
-        { "type": "text", "id": "btn_text", "label": "Texte du bouton" },
-        { "type": "url", "id": "btn_url", "label": "URL du bouton" },
-        { "type": "select", "id": "btn_color", "label": "Couleur du bouton", "default": "btn-primary", "options": [
-          { "value": "btn-link", "label": "Link" },
-          { "value": "btn-light", "label": "Light" },
-          { "value": "btn-dark", "label": "Dark" },
-          { "value": "btn-primary", "label": "Primaire" },
-          { "value": "btn-secondary", "label": "Secondaire" },
-          { "value": "btn-tertiary", "label": "Tertiaire" },
-          { "value": "btn-success", "label": "Success" },
-          { "value": "btn-danger", "label": "Danger" },
-          { "value": "btn-warning", "label": "Avertissement" },
-          { "value": "btn-info", "label": "Info" },
-          { "value": "btn-outline-light", "label": "Contour Clair" },
-          { "value": "btn-outline-dark", "label": "Contour Sombre" },
-          { "value": "btn-outline-primary", "label": "Contour Primaire" },
-          { "value": "btn-outline-secondary", "label": "Contour Secondaire" },
-          { "value": "btn-outline-tertiary", "label": "Contour Tertiaire" },
-          { "value": "btn-outline-success", "label": "Success Outline" },
-          { "value": "btn-outline-danger", "label": "Contour Danger" },
-          { "value": "btn-outline-warning", "label": "Contour Avertissement" },
-          { "value": "btn-outline-info", "label": "Contour Info" }
-        ]},
-        { "type": "select", "id": "btn_size", "label": "Taille du bouton", "default": "btn-sm", "options": [
-          { "value": "btn-sm", "label": "Small" },
-          { "value": "btn-md", "label": "Normal" },
-          { "value": "btn-lg", "label": "Large" }
-        ]}
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre"
+        },
+        {
+          "type": "select",
+          "id": "title_size",
+          "label": "Taille du titre",
+          "default": "h6",
+          "options": [
+            {
+              "value": "h1",
+              "label": "Very Large"
+            },
+            {
+              "value": "h2",
+              "label": "Large"
+            },
+            {
+              "value": "h3",
+              "label": "Medium"
+            },
+            {
+              "value": "h4",
+              "label": "Small"
+            },
+            {
+              "value": "h5",
+              "label": "Very Small"
+            },
+            {
+              "value": "h6",
+              "label": "Super Petit"
+            }
+          ]
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Texte du bouton"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "URL du bouton"
+        },
+        {
+          "type": "select",
+          "id": "btn_color",
+          "label": "Couleur du bouton",
+          "default": "btn-primary",
+          "options": [
+            {
+              "value": "btn-link",
+              "label": "Link"
+            },
+            {
+              "value": "btn-light",
+              "label": "Light"
+            },
+            {
+              "value": "btn-dark",
+              "label": "Dark"
+            },
+            {
+              "value": "btn-primary",
+              "label": "Primaire"
+            },
+            {
+              "value": "btn-secondary",
+              "label": "Secondaire"
+            },
+            {
+              "value": "btn-tertiary",
+              "label": "Tertiaire"
+            },
+            {
+              "value": "btn-success",
+              "label": "Success"
+            },
+            {
+              "value": "btn-danger",
+              "label": "Danger"
+            },
+            {
+              "value": "btn-warning",
+              "label": "Avertissement"
+            },
+            {
+              "value": "btn-info",
+              "label": "Info"
+            },
+            {
+              "value": "btn-outline-light",
+              "label": "Contour Clair"
+            },
+            {
+              "value": "btn-outline-dark",
+              "label": "Contour Sombre"
+            },
+            {
+              "value": "btn-outline-primary",
+              "label": "Contour Primaire"
+            },
+            {
+              "value": "btn-outline-secondary",
+              "label": "Contour Secondaire"
+            },
+            {
+              "value": "btn-outline-tertiary",
+              "label": "Contour Tertiaire"
+            },
+            {
+              "value": "btn-outline-success",
+              "label": "Success Outline"
+            },
+            {
+              "value": "btn-outline-danger",
+              "label": "Contour Danger"
+            },
+            {
+              "value": "btn-outline-warning",
+              "label": "Contour Avertissement"
+            },
+            {
+              "value": "btn-outline-info",
+              "label": "Contour Info"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "btn_size",
+          "label": "Taille du bouton",
+          "default": "btn-sm",
+          "options": [
+            {
+              "value": "btn-sm",
+              "label": "Small"
+            },
+            {
+              "value": "btn-md",
+              "label": "Normal"
+            },
+            {
+              "value": "btn-lg",
+              "label": "Large"
+            }
+          ]
+        }
       ]
     },
-
     {
       "type": "menu",
       "name": "Menu",
       "settings": [
-        { "type": "link_list", "id": "menu", "label": "Menu" },
-        { "type": "text", "id": "title", "label": "Titre" },
-        { "type": "select", "id": "title_size", "label": "Taille du titre", "default": "h6", "options": [
-          { "value": "h1", "label": "Very Large" },
-          { "value": "h2", "label": "Large" },
-          { "value": "h3", "label": "Medium" },
-          { "value": "h4", "label": "Small" },
-          { "value": "h5", "label": "Very Small" },
-          { "value": "h6", "label": "Super Petit" }
-        ]}
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre"
+        },
+        {
+          "type": "select",
+          "id": "title_size",
+          "label": "Taille du titre",
+          "default": "h6",
+          "options": [
+            {
+              "value": "h1",
+              "label": "Very Large"
+            },
+            {
+              "value": "h2",
+              "label": "Large"
+            },
+            {
+              "value": "h3",
+              "label": "Medium"
+            },
+            {
+              "value": "h4",
+              "label": "Small"
+            },
+            {
+              "value": "h5",
+              "label": "Very Small"
+            },
+            {
+              "value": "h6",
+              "label": "Super Petit"
+            }
+          ]
+        }
       ]
     },
-
     {
       "type": "image",
       "name": "Image",
       "limit": 1,
       "settings": [
-        { "type": "text", "id": "title", "label": "Titre" },
-        { "type": "select", "id": "title_size", "label": "Taille du titre", "default": "h6", "options": [
-          { "value": "h1", "label": "Very Large" },
-          { "value": "h2", "label": "Large" },
-          { "value": "h3", "label": "Medium" },
-          { "value": "h4", "label": "Small" },
-          { "value": "h5", "label": "Very Small" },
-          { "value": "h6", "label": "Super Petit" }
-        ]},
-        { "type": "richtext", "id": "description", "label": "Description" },
-        { "type": "image_picker", "id": "image_footer", "label": "Image" },
-        { "type": "range", "id": "image_footer_height", "label": "Hauteur de l'image", "min": 20, "max": 200, "step": 2, "default": 100 },
-        { "type": "url", "id": "image_link_url", "label": "URL de l'image" }
-        ]
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre"
+        },
+        {
+          "type": "select",
+          "id": "title_size",
+          "label": "Taille du titre",
+          "default": "h6",
+          "options": [
+            {
+              "value": "h1",
+              "label": "Very Large"
+            },
+            {
+              "value": "h2",
+              "label": "Large"
+            },
+            {
+              "value": "h3",
+              "label": "Medium"
+            },
+            {
+              "value": "h4",
+              "label": "Small"
+            },
+            {
+              "value": "h5",
+              "label": "Very Small"
+            },
+            {
+              "value": "h6",
+              "label": "Super Petit"
+            }
+          ]
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_footer",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_footer_height",
+          "label": "Hauteur de l'image",
+          "min": 20,
+          "max": 200,
+          "step": 2,
+          "default": 100
+        },
+        {
+          "type": "url",
+          "id": "image_link_url",
+          "label": "URL de l'image"
+        }
+      ]
     },
-
     {
       "type": "newsletter",
       "name": "Newsletter",
       "limit": 1,
       "settings": [
-        { "type": "text", "id": "title", "label": "Titre", "default": "Newsletter" },
-        { "type": "select", "id": "title_size", "label": "Taille du titre", "default": "h6", "options": [
-          { "value": "h1", "label": "Very Large" },
-          { "value": "h2", "label": "Large" },
-          { "value": "h3", "label": "Medium" },
-          { "value": "h4", "label": "Small" },
-          { "value": "h5", "label": "Very Small" },
-          { "value": "h6", "label": "Super Petit" }
-        ]},
-        { "type": "richtext", "id": "description", "label": "Description" },
-        { "type": "select", "id": "btn_color", "label": "Couleur du bouton", "default": "btn-primary", "options": [
-          { "value": "btn-link", "label": "Link" },
-          { "value": "btn-primary", "label": "Primaire" },
-          { "value": "btn-secondary", "label": "Secondaire" },
-          { "value": "btn-dark", "label": "Dark" },
-          { "value": "btn-outline-info", "label": "Contour Info" }
-        ]},
-        { "type": "select", "id": "btn_size", "label": "Taille du bouton", "default": "btn-sm", "options": [
-          { "value": "btn-sm", "label": "Small" },
-          { "value": "btn-md", "label": "Normal" },
-          { "value": "btn-lg", "label": "Large" }
-        ]},
-        { "type": "richtext", "id": "notice", "label": "Notice", "default": "<p>En vous inscrivant, vous acceptez nos CGV et notre politique de confidentialité.</p>" }
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Newsletter"
+        },
+        {
+          "type": "select",
+          "id": "title_size",
+          "label": "Taille du titre",
+          "default": "h6",
+          "options": [
+            {
+              "value": "h1",
+              "label": "Very Large"
+            },
+            {
+              "value": "h2",
+              "label": "Large"
+            },
+            {
+              "value": "h3",
+              "label": "Medium"
+            },
+            {
+              "value": "h4",
+              "label": "Small"
+            },
+            {
+              "value": "h5",
+              "label": "Very Small"
+            },
+            {
+              "value": "h6",
+              "label": "Super Petit"
+            }
+          ]
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "select",
+          "id": "btn_color",
+          "label": "Couleur du bouton",
+          "default": "btn-primary",
+          "options": [
+            {
+              "value": "btn-link",
+              "label": "Link"
+            },
+            {
+              "value": "btn-primary",
+              "label": "Primaire"
+            },
+            {
+              "value": "btn-secondary",
+              "label": "Secondaire"
+            },
+            {
+              "value": "btn-dark",
+              "label": "Dark"
+            },
+            {
+              "value": "btn-outline-info",
+              "label": "Contour Info"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "btn_size",
+          "label": "Taille du bouton",
+          "default": "btn-sm",
+          "options": [
+            {
+              "value": "btn-sm",
+              "label": "Small"
+            },
+            {
+              "value": "btn-md",
+              "label": "Normal"
+            },
+            {
+              "value": "btn-lg",
+              "label": "Large"
+            }
+          ]
+        },
+        {
+          "type": "richtext",
+          "id": "notice",
+          "label": "Notice",
+          "default": "<p>En vous inscrivant, vous acceptez nos CGV et notre politique de confidentialité.</p>"
+        }
       ]
     }
   ],
-
   "presets": [
-    { "name": "Footer", "category": "Footer" }
+    {
+      "name": "Footer",
+      "category": "Footer"
+    }
   ]
 }
 {% endschema %}

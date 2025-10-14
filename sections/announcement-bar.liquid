@@ -39,8 +39,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                     <li data-minutes></li>
                                     <li data-seconds></li>
                                 </ul>
-              {% endif %}
-            {% endcapture %}
+        {% endcapture %}
                         <div
                             class="carousel-item {% if forloop.first == true %}active{% endif %}"
                             data-index="{{ forloop.index0 }}"
@@ -63,8 +62,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                             {% endif %}
                         </div>
                     {% endfor %}
-                </div>
-                {% if section.settings.controls and section.blocks.size > 1 %}
+                                        {% endif %}
+                                        {% endcapture %}
                     <button
                         class="carousel-control carousel-control-prev"
                         type="button"
@@ -72,6 +71,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                         data-bs-slide="prev">
                         <span class="carousel-control-icon carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">
+                                                    {{ countdown_timer }}
                             {{ 'general.accessibility.previous' | t }}
                         </span>
                     </button>

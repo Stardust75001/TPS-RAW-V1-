@@ -8,20 +8,69 @@ WhatsApp Business – Smart Button (auto context)
 {
   "name": "WhatsApp Smart Btn",
   "settings": [
-    { "type": "text", "id": "wa_phone_e164", "label": "Phone (E.164)", "default": "33769238799" },
-
-    { "type": "header", "content": "Message options" },
-    { "type": "textarea", "id": "prefill_prefix", "label": "Prefix", "default": "Bonjour The Pet Society 👋" },
-    { "type": "checkbox", "id": "include_context", "label": "Inclure le titre de la page/produit", "default": true },
-    { "type": "checkbox", "id": "include_sku", "label": "Inclure SKU (si fiche produit)", "default": true },
-    { "type": "checkbox", "id": "include_url", "label": "Inclure l’URL de la page", "default": true },
-    { "type": "textarea", "id": "prefill_suffix", "label": "Suffix", "default": "Merci 🙏" },
-
-    { "type": "header", "content": "Affichage" },
-    { "type": "checkbox", "id": "hide_on_mobile", "label": "Cacher sur mobile", "default": false },
-    { "type": "checkbox", "id": "hide_on_desktop", "label": "Cacher sur desktop", "default": false }
+    {
+      "type": "text",
+      "id": "wa_phone_e164",
+      "label": "Phone (E.164)",
+      "default": "33769238799"
+    },
+    {
+      "type": "header",
+      "content": "Message options"
+    },
+    {
+      "type": "textarea",
+      "id": "prefill_prefix",
+      "label": "Prefix",
+      "default": "Bonjour The Pet Society 👋"
+    },
+    {
+      "type": "checkbox",
+      "id": "include_context",
+      "label": "Inclure le titre de la page/produit",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "include_sku",
+      "label": "Inclure SKU (si fiche produit)",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "include_url",
+      "label": "Inclure l’URL de la page",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "prefill_suffix",
+      "label": "Suffix",
+      "default": "Merci 🙏"
+    },
+    {
+      "type": "header",
+      "content": "Affichage"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_mobile",
+      "label": "Cacher sur mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_desktop",
+      "label": "Cacher sur desktop",
+      "default": false
+    }
   ],
-  "presets": [{ "name": "WhatsApp Smart Btn", "category": "Contact" }]
+  "presets": [
+    {
+      "name": "WhatsApp Smart Btn",
+      "category": "Contact"
+    }
+  ]
 }
 {% endschema %}
 
