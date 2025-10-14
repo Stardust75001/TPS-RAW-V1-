@@ -36,13 +36,17 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     id="latest-articles-{{ section.id }}"
     class="latest-articles enter-view position-relative overflow-hidden {{ bg_color }} {{ section.settings.text_align }} {{ pt }} {{ pb }} {{ mt }} {{ mb }}">
     <div class="{{ section.settings.container }}" style="max-width: {{ section.settings.max_width }}px">
-        {% render 'section-header' %}
+        {% liquid
+          render 'section-header'
+          if section.settings.blog.articles == blank
+            render 'article-item', article: blank
+          else
+            for article in section.settings.blog.articles limit: section.settings.limit
+              render 'article-item', article: article
+            endfor
+          endif
+        %}
         <ul class="blog-list list-unstyled row mx-n3 mx-lg-n4 {{ row_xs }} {{ row_sm }} {{ row_md }} {{ row_lg }} {{ row_xl }} {{ row_xxl }}">
-            {% if section.settings.blog.articles == blank %}
-                {% render 'article-item', article: blank %}
-            {% else %}
-                {% for article in section.settings.blog.articles limit: section.settings.limit %}
-                    {% render 'article-item', article: article %}
                 {% endfor %}
             {% endif %}
         </ul>
