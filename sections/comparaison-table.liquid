@@ -31,9 +31,9 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         assign header_cells = header_cells | append: header_block.settings.cell_2 | append: ', '
     endunless
 
-    unless header_block.settings.cell_3 == blank
-        assign header_cells = header_cells | append: header_block.settings.cell_3 | append: ', '
-    endunless
+  unless header_block.settings.cell_3 == blank
+    assign header_cells = header_cells | append: header_block.settings.cell_3 | append: ', '
+  endunless
 
     unless header_block.settings.cell_4 == blank
         assign header_cells = header_cells | append: header_block.settings.cell_4 | append: ', '
@@ -115,155 +115,141 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {% render 'section-header' %}
             <div class="table-responsive {{ section.settings.img_thumbnail }} {{ section.settings.shadow_sp }} {{ section.settings.border_color }}"
                   style="border-width: {{ section.settings.border_width }}px;">
-                <table 
-                    class="
-                        table align-middle mb-0
-                        bg-white text-body
-                        {{ section.settings.table_border_color }}
-                        {% if section.settings.table_bordered %}
-                            table-bordered
-                        {% else %}
-                            rounded
-                        {% endif %}
-                        {% if section.settings.table_striped %}
-                            table-striped
-                        {% endif %}
-                    ">
-                    <thead class="{{ section.settings.table_thead_color }}">
-                        {% assign header_block = section.blocks.first %}
+                {% liquid
+                  assign table_classes = 'table align-middle mb-0 bg-white text-body '
+                  assign table_classes = table_classes | append: section.settings.table_border_color
+                  if section.settings.table_bordered
+                    assign table_classes = table_classes | append: ' table-bordered'
+                  endif
+                %}
+                <table class="{{ table_classes }}">
+                  <thead>
+                    <tr>
+                      {% for cell in header_cells %}
+                        <th class="py-5 text-nowrap {% if forloop.index == 2 %}{{ section.settings.table_second_col_color }} {{ section.settings.table_second_bg_color }}{% endif %}">
+                          {% liquid
+                            unless cell == '#'
+                              echo cell
+                            endunless
+                            case forloop.index
+                              when 2
+                                unless header_block.settings.cell_2_img == blank
+                                  render 'comparison-table-header-img', image: header_block.settings.cell_2_img
+                                endunless
+                              when 3
+                                unless header_block.settings.cell_3_img == blank
+                                  render 'comparison-table-header-img', image: header_block.settings.cell_3_img
+                                endunless
+                              when 4
+                                unless header_block.settings.cell_4_img == blank
+                                  render 'comparison-table-header-img', image: header_block.settings.cell_4_img
+                                endunless
+                              when 5
+                                unless header_block.settings.cell_5_img == blank
+                                  render 'comparison-table-header-img', image: header_block.settings.cell_5_img
+                                endunless
+                              when 6
+                                unless header_block.settings.cell_6_img == blank
+                                  render 'comparison-table-header-img', image: header_block.settings.cell_6_img
+                                endunless
+                              when 7
+                                unless header_block.settings.cell_7_img == blank
+                                  render 'comparison-table-header-img', image: header_block.settings.cell_7_img
+                                endunless
+                            endcase
+                          %}
+                        </th>
+                      {% endfor %}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for block in section.blocks %}
+                      {% if block.type == 'item' %}
                         <tr>
-                            {% for cell in header_cells %}
-                                <th 
-                        {%- comment -%} Removed unused assignment for 'table' per theme-check suggestion {%- endcomment -%}
-                                    class="py-5 text-nowrap {% if forloop.index == 2 %}{{ section.settings.table_second_col_color }} {{ section.settings.table_second_bg_color }}{% endif %}">
-                                    {% liquid
-                                      unless cell == '#'
-                                        echo cell
-                                      endunless
-                                    %}
-                                    {% liquid
-                                      case forloop.index
-                                        when 2
-                                          unless header_block.settings.cell_2_img == blank
-                                            render 'comparison-table-header-img', image: header_block.settings.cell_2_img
-                                          endunless
-                                        when 3
-                                          unless header_block.settings.cell_3_img == blank
-                                            render 'comparison-table-header-img', image: header_block.settings.cell_3_img
-                                          endunless
-                                        when 4
-                                          unless header_block.settings.cell_4_img == blank
-                                            render 'comparison-table-header-img', image: header_block.settings.cell_4_img
-                                          endunless
-                                        when 5
-                                          unless header_block.settings.cell_5_img == blank
-                                            render 'comparison-table-header-img', image: header_block.settings.cell_5_img
-                                          endunless
-                                        when 6
-                                          unless header_block.settings.cell_6_img == blank
-                                            render 'comparison-table-header-img', image: header_block.settings.cell_6_img
-                                          endunless
-                                        when 7
-                                          unless header_block.settings.cell_7_img == blank
-                                            render 'comparison-table-header-img', image: header_block.settings.cell_7_img
-                                          endunless
-                                      endcase
-                                    %}
-                                </th>
-                            {% endfor %}
+                          {% for cell in header_cells %}
+                            <td>
+                              {% liquid
+                                if forloop.index == 2
+                                  if block.settings.cell_2_display == 'icon'
+                                    if block.settings.cell_2
+                                      echo icon_checked_circle
+                                    else
+                                      echo icon_unchecked
+                                    endif
+                                  else
+                                    echo block.settings.cell_2_text
+                                  endif
+                                elsif forloop.index == 3
+                                  if block.settings.cell_3_display == 'icon'
+                                    if block.settings.cell_3
+                                      echo icon_checked
+                                    else
+                                      echo icon_unchecked
+                                    endif
+                                  else
+                                    echo block.settings.cell_3_text
+                                  endif
+                                elsif forloop.index == 4
+                                  if block.settings.cell_4_display == 'icon'
+                                    if block.settings.cell_4
+                                      echo icon_checked
+                                    else
+                                      echo icon_unchecked
+                                    endif
+                                  else
+                                    echo block.settings.cell_4_text
+                                  endif
+                                elsif forloop.index == 5
+                                  if block.settings.cell_5_display == 'icon'
+                                    if block.settings.cell_5
+                                      echo icon_checked
+                                    else
+                                      echo icon_unchecked
+                                    endif
+                                  else
+                                    echo block.settings.cell_5_text
+                                  endif
+                                elsif forloop.index == 6
+                                  if block.settings.cell_6_display == 'icon'
+                                    if block.settings.cell_6
+                                      echo icon_checked
+                                    else
+                                      echo icon_unchecked
+                                    endif
+                                  else
+                                    echo block.settings.cell_6_text
+                                  endif
+                                elsif forloop.index == 7
+                                  if block.settings.cell_7_display == 'icon'
+                                    if block.settings.cell_7
+                                      echo icon_checked
+                                    else
+                                      echo icon_unchecked
+                                    endif
+                                  else
+                                    echo block.settings.cell_7_text
+                                  endif
+                                endif
+                              %}
+                            </td>
+                          {% endfor %}
                         </tr>
-                    </thead>
-                    <tbody>
-                        {% for block in section.blocks %}
-                            {% unless block.type == 'header' or block.type == 'footer' %}
-                                <tr>
-                                    <th scope="row" class="text-center">
-                                        {{ block.settings.title }}
-                                    </th>
-                  {% for cell in header_cells %}
-                    {% unless forloop.first %}
-                      <td class="{% if forloop.index == 2 %}{{ section.settings.table_second_col_color }} {{ section.settings.table_second_bg_color }}{% endif %}">
-                        {% comment %}theme-check-disable{% endcomment %}
-                        {% liquid
-                          if forloop.index == 2
-                            if block.settings.cell_2_display == 'icon'
-                              if block.settings.cell_2
-                                echo icon_checked_circle
-                              else
-                                echo icon_unchecked
-                              endif
-                            else
-                              echo block.settings.cell_2_text
-                            endif
-                          elsif forloop.index == 3
-                            if block.settings.cell_3_display == 'icon'
-                              if block.settings.cell_3
-                                echo icon_checked
-                              else
-                                echo icon_unchecked
-                              endif
-                            else
-                              echo block.settings.cell_3_text
-                            endif
-                          elsif forloop.index == 4
-                            if block.settings.cell_4_display == 'icon'
-                              if block.settings.cell_4
-                                echo icon_checked
-                              else
-                                echo icon_unchecked
-                              endif
-                            else
-                              echo block.settings.cell_4_text
-                            endif
-                          elsif forloop.index == 5
-                            if block.settings.cell_5_display == 'icon'
-                              if block.settings.cell_5
-                                echo icon_checked
-                              else
-                                echo icon_unchecked
-                              endif
-                            else
-                              echo block.settings.cell_5_text
-                            endif
-                          elsif forloop.index == 6
-                            if block.settings.cell_6_display == 'icon'
-                              if block.settings.cell_6
-                                echo icon_checked
-                              else
-                                echo icon_unchecked
-                              endif
-                            else
-                              echo block.settings.cell_6_text
-                            endif
-                          elsif forloop.index == 7
-                            if block.settings.cell_7_display == 'icon'
-                              if block.settings.cell_7
-                                echo icon_checked
-                              else
-                                echo icon_unchecked
-                              endif
-                            else
-                              echo block.settings.cell_7_text
-                            endif
-                          endif
-                        %}
-                        {% comment %}theme-check-enable{% endcomment %}
-                      </td>
-                    {% endunless %}
-                  {% endfor %}
-                                </tr>
-                            {% endunless %}
-                        {% endfor %}
-                    </tbody>
+                      {% endif %}
+                    {% endfor %}
+          </tbody>
                     <tfoot class="{{ section.settings.table_tfoot_color }}">
                         <tr>
                             {% for fcell in footer_cells %}
-                                <th 
-                                    scope="col" 
-                                    class="py-5 text-nowrap {% if forloop.index == 2 %}{{ section.settings.table_second_col_color }} {{ section.settings.table_second_bg_color }}{% endif %}">
-                                    {% unless fcell == '#' %}
-                                        {{ fcell }}
-                                    {% endunless %}
+                                {% liquid
+                                  assign th_class = 'py-5 text-nowrap'
+                                  if forloop.index == 2
+                                    assign th_class = th_class | append: ' ' | append: section.settings.table_second_col_color | append: ' ' | append: section.settings.table_second_bg_color
+                                  endif
+                                %}
+                                <th scope="col" class="{{ th_class }}">
+                                  {% unless fcell == '#' %}
+                                    {{ fcell }}
+                                  {% endunless %}
                                 </th>
                             {% endfor %}
                         </tr>
