@@ -194,14 +194,16 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     </div>
 </section>
 
-{% assign global_max = 0 %}
-{% for block in section.blocks %}
-    {% assign text_length = block.settings.text | split: '' %}
-    {% assign text_length = block.settings.text | size %}
-    {% if text_length > global_max %}
-        {% assign global_max = text_length %}
-    {% endif %}
-{% endfor %}
+{% liquid
+  assign global_max = 0
+  for block in section.blocks
+    assign text_length = block.settings.text | split: ''
+    assign text_length = block.settings.text | size
+    if text_length > global_max
+      assign global_max = text_length
+    endif
+  endfor
+%}
 
 <script>
   function handleTickInit(tick) {

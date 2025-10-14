@@ -134,7 +134,9 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                         <tr>
                             {% for cell in header_cells %}
                                 <th 
-                                    scope="col" 
+                        {% liquid
+                          assign table = section.settings.table
+                        %}
                                     class="py-5 text-nowrap {% if forloop.index == 2 %}{{ section.settings.table_second_col_color }} {{ section.settings.table_second_bg_color }}{% endif %}">
                                     {% unless cell == '#' %}
                                         {{ cell }}

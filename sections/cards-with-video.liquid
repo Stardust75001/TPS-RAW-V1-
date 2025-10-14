@@ -50,10 +50,12 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                             class="card {{ block.settings.bg_color }} {% if block.settings.bg_gradient %}bg-gradient {% endif %} {{ block.settings.shadow_sp }} {{ block.settings.border_color }}"
                             style="border-width: {{ block.settings.border_width }}px;">
               
-                            {% assign video_classes = 'card-img-top' %}
-                            {% if block.settings.title == blank and block.settings.description == blank and block.settings.btn_text == blank %}
-                                {% assign video_classes = video_classes | append: ' card-img-bottom' %}
-                            {% endif %}
+                            {% liquid
+                              assign video_classes = 'card-img-top'
+                              if block.settings.title == blank and block.settings.description == blank and block.settings.btn_text == blank
+                                assign video_classes = video_classes | append: ' card-img-bottom'
+                              endif
+                            %}
                             
                             {% unless block.settings.video == blank %}
                                 {{ block.settings.video | video_tag: 

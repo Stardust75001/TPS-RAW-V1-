@@ -162,7 +162,9 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                   <rect x="0" y="0" width="100" height="10" fill="url(#pulsing-gradient)" />
                 </svg>
             {% when "3" %}
-                {% assign adjusted_animation_speed = section.settings.animation_speed | divided_by: 2 %}
+                {% liquid
+                  assign adjusted_animation_speed = section.settings.animation_speed | divided_by: 2
+                %}
                 <svg class="wave-animated3-{{ section.id }} sp-waves {{ section.settings.waves_position }}" style="--wave-height-mobile: {{ section.settings.wave_height_mobile }}vh; --wave-height-desktop: {{ section.settings.wave_height_desktop }}vh;" viewBox="0 0 100 100" preserveAspectRatio="none">
                   <defs>
                     <linearGradient id="smoothAnimatedGradient" x1="0%" y1="0%" x2="0%" y2="0%">
