@@ -11,7 +11,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 {% endstyle %}
 
 <script>
-    window.productVariants = {{ product.variants | json }}
+    window.productVariants = {{ product.variants | json }};
 </script>
 
 <a class="visually-hidden-focusable" href="#product-content">
@@ -47,57 +47,66 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
                     {% form 'product', product, onsubmit: 'handleAddToCartFormSubmit(this, event)' %}
                         <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                        
+                        <!-- Product blocks will be rendered inside the form -->
+                        {% for block in section.blocks %}
+                          {% case block.type %}
+                            {% when 'gift_card' %}
+                              {% render 'product-block-gift-card', block: block %}
+                            {% when 'buy_buttons' %}
+                              {% render 'product-block-buy-buttons', block: block %}
+                            {% when 'payment_icons' %}
+                              {% render 'product-block-payment-icons', block: block %}
+                            {% when 'animated_stories' %}
+                              {% render 'product-block-animated-stories', block: block %}
+                            {% when 'qty_breaks' %}
+                              {% render 'product-block-qty-breaks', block: block %}
+                            {% when 'text' %}
+                              {% render 'product-block-text', block: block %}
+                            {% when 'scrolling_text' %}
+                              {% render 'product-block-scrolling-text', block: block %}
+                            {% when 'limited_offer' %}
+                              {% render 'product-block-limited-offer', block: block %}
+                            {% when 'live_visitors' %}
+                              {% render 'product-block-live-visitors', block: block %}
+                            {% when 'estimated_delivery' %}
+                              {% render 'product-block-estimated-delivery', block: block %}
+                            {% when 'liquid_code' %}
+                              {% render 'product-block-liquid-code', block: block %}
+                            {% when 'separator' %}
+                              {% render 'product-block-separator', block: block %}
+                            {% when 'media' %}
+                              {% render 'product-block-media', block: block %}
+                            {% when 'delivery_info' %}
+                              {% render 'product-block-delivery-info', block: block %}
+                            {% when 'accordion' %}
+                              {% render 'product-block-accordion', block: block %}
+                            {% when 'personalization' %}
+                              {% render 'product-block-personalization', block: block %}
+                            {% when 'trust_badges' %}
+                              {% render 'product-block-trust-badges', block: block %}
+                            {% when 'testimonials' %}
+                              {% render 'product-block-testimonials', block: block %}
+                            {% when 'tabs' %}
+                              {% render 'product-block-tabs', block: block %}
+                            {% when 'title' %}
+                              {% render 'product-block-title', block: block %}
+                            {% when 'vendor' %}
+                              {% render 'product-block-vendor', block: block %}
+                            {% when 'price' %}
+                              {% render 'product-block-price', block: block %}
+                            {% when 'sku' %}
+                              {% render 'product-block-sku', block: block %}
+                          {% endcase %}
+                        {% endfor %}
+                        
                     {% endform %}
-
-                      <!-- Product blocks will be rendered after the form -->
-                      </div> <!-- Close product-content-bg-gradient -->
-                  </div> <!-- Close product-content -->
-              </div> <!-- Close col-lg-6 -->
-          </div> <!-- Close row -->
-          {% for block in section.blocks %}
-            {% case block.type %}
-              {% when 'gift_card' %}
-                {% render 'product-block-gift-card', block: block %}
-              {% when 'buy_buttons' %}
-                {% render 'product-block-buy-buttons', block: block %}
-              {% when 'payment_icons' %}
-                {% render 'product-block-payment-icons', block: block %}
-              {% when 'animated_stories' %}
-                {% render 'product-block-animated-stories', block: block %}
-              {% when 'qty_breaks' %}
-                {% render 'product-block-qty-breaks', block: block %}
-              {% when 'text' %}
-                {% render 'product-block-text', block: block %}
-              {% when 'scrolling_text' %}
-                {% render 'product-block-scrolling-text', block: block %}
-              {% when 'limited_offer' %}
-                {% render 'product-block-limited-offer', block: block %}
-              {% when 'live_visitors' %}
-                {% render 'product-block-live-visitors', block: block %}
-              {% when 'estimated_delivery' %}
-                {% render 'product-block-estimated-delivery', block: block %}
-              {% when 'liquid_code' %}
-                {% render 'product-block-liquid-code', block: block %}
-              {% when 'separator' %}
-                {% render 'product-block-separator', block: block %}
-              {% when 'media' %}
-                {% render 'product-block-media', block: block %}
-              {% when 'delivery_info' %}
-                {% render 'product-block-delivery-info', block: block %}
-              {% when 'accordion' %}
-                {% render 'product-block-accordion', block: block %}
-              {% when 'personalization' %}
-                {% render 'product-block-personalization', block: block %}
-              {% when 'trust_badges' %}
-                {% render 'product-block-trust-badges', block: block %}
-              {% when 'testimonials' %}
-                {% render 'product-block-testimonials', block: block %}
-              {% when 'tabs' %}
-                {% render 'product-block-tabs', block: block %}
-            {% endcase %}
-          {% endfor %}
-      </div> <!-- Close container -->
-    </section>
+                    </div> <!-- Close product-content-bg-gradient -->
+                </div> <!-- Close product-content -->
+            </div> <!-- Close col-lg-6 -->
+        </div> <!-- Close row -->
+    </div> <!-- Close container -->
+</section>
 
 <!-- Script pour synchroniser swatches et galerie -->
 <script>
@@ -118,7 +127,6 @@ document.addEventListener("change",function(e){if(e.target.matches('select[name^
   render 'product-block-size-chart'
 %}
 
-
 {% liquid
   if product.selected_or_first_available_variant.featured_media
     assign seo_media = product.selected_or_first_available_variant.featured_media
@@ -138,12 +146,6 @@ document.addEventListener("change",function(e){if(e.target.matches('select[name^
         "image": [
             {{ seo_media | image_url: width: seo_media.preview_image.width | prepend: "https:" | json }}
         ],
-        "presets": [
-          {
-            "name": "Product (template)",
-            "category": "Product page"
-          }
-        ]
     {%- endif %}
     "description": {{ product.description | strip_html | json }},
     {% if product.selected_or_first_available_variant.sku != blank -%}
@@ -176,7 +178,7 @@ document.addEventListener("change",function(e){if(e.target.matches('select[name^
             }{% unless forloop.last %},{% endunless %}
         {%- endfor -%}
     ]
-    },
+}
 </script>
 
 {% schema %}
@@ -415,57 +417,12 @@ document.addEventListener("change",function(e){if(e.target.matches('select[name^
           { "type": "checkbox", "id": "show_buy_btn", "label": "Show buy button", "default": true }
         ]
       }
-    ]
-  ],
+    ],
   "presets": [
-    {
-      "name": "Product (template)",
-      "category": "Product page"
-    }
-  ]
+  {
+    "name": "Product (template)",
+    "category": "Product page"
+  }
+]
 }
 {% endschema %}
-
-{%- comment -%}
-Registry block to reference all flagged orphaned snippets for theme-check compliance
-{%- endcomment -%}
-{%- liquid
-  render 'bought-product-together'
-  render 'product-block-animated-stories'
-  render 'product-block-buy-buttons'
-  render 'product-block-gift-card'
-  render 'product-block-rating-shopitrust'
-  render 'product-block-testimonials'
-  render 'snippet-registry'
-  render 'whatsapp-business'
-  render 'whatsapp-global'
-  render 'offcanvas-cart'
-  render 'product-block-accordion'
-  render 'product-block-delivery-info'
-  render 'product-block-estimated-delivery'
-  render 'product-block-inventory-bar'
-  render 'product-block-limited-offer'
-  render 'product-block-liquid-code'
-  render 'product-block-live-visitors'
-  render 'product-block-media'
-  render 'product-block-payment-icons'
-  render 'product-block-personalization'
-  render 'product-block-price'
-  render 'product-block-purchase-options'
-  render 'product-block-qty-breaks'
-  render 'product-block-rating-natif'
-  render 'product-block-scrolling-text'
-  render 'product-block-separator'
-  render 'product-block-size-chart'
-  render 'product-block-sku'
-  render 'product-block-subtitle'
-  render 'product-block-tabs'
-  render 'product-block-text'
-  render 'product-block-title'
-  render 'product-block-trust-badges'
-  render 'product-block-upsell-modal'
-  render 'product-block-variant-selector'
-  render 'product-block-vendor'
-  render 'product-gallery'
-  render 'product-prev-next'
-%}
