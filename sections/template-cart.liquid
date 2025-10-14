@@ -31,56 +31,64 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     class="{{ section.settings.bg_color }} {{ pt }} {{ pb }} {{ mt }} {{ mb }}">
     <div class="container">
         <div class="mx-auto" style="max-width: {{ section.settings.max_width }}px;">
-            {% if cart.item_count == 0 %}
-                <div id="template-cart-empty" class="text-center">
-                    <h1 class=" {{ section.settings.title_size }}">
-                        {{ 'cart.title' | t }}
-                        {% if settings.custom_svg_h2 != blank %}
-                          <div class="h2_svg">
-                            <span style="fill:{{ settings.color_svg_h2 }}; width:{{ settings.width_svg_h2 }}rem;"> {{ settings.custom_svg_h2 }}</span>
-                          </div>
-                        {% else %}
-                          {% if settings.svg_h2 != 'none' %}
-                            <div class="h2_svg mb-4">
-                              <span style="fill:{{ settings.color_svg_h2 }}; width:{{ settings.width_svg_h2 }}rem;"> {% render 'svg-subtitle', svg_h2: settings.svg_h2 %}</span>
-                            </div>
-                          {% endif %}
-                        {% endif %}
-                    </h1>
-                    <div class="mb-6 rte lead">
-                        {{ 'cart.empty_html' | t }}
-                    </div>
-                    <a href="{{ routes.all_products_collection_url }}" class="btn btn-primary mb-5">
-                        ← {{ 'cart.continue_shopping' | t }}
-                    </a>
-                </div>
-            {% else %}
-                <div class="text-center mb-10">
-                    <h1 class="mb-3">
-                        {{ 'cart.title' | t }}
-                        {% if settings.custom_svg_h2 != blank %}
-                          <div class="h2_svg">
-                            <span style="fill:{{ settings.color_svg_h2 }}; width:{{ settings.width_svg_h2 }}rem;"> {{ settings.custom_svg_h2 }}</span>
-                          </div>
-                        {% else %}
-                          {% if settings.svg_h2 != 'none' %}
-                            <div class="h2_svg mb-4">
-                              <span style="fill:{{ settings.color_svg_h2 }}; width:{{ settings.width_svg_h2 }}rem;"> {% render 'svg-subtitle', svg_h2: settings.svg_h2 %}</span>
-                            </div>
-                          {% endif %}
-                        {% endif %}
-                    </h1>
-                    <a
-                        href="{{ routes.all_products_collection_url }}"
-                        class="btn btn-outline-secondary btn-sm">
-                        ← {{ 'cart.continue_shopping' | t }}
-                    </a>
-                </div>
-                <div class="row">
-                    <div class="col-lg-7">
-                        <ul class="product-listing list-unstyled mb-6">
-                            {% for line_item in cart.items %}
-                                <li class="product-item pb-6 mb-6 {% unless forloop.last %}border-bottom{% endunless %}"
+                        {% liquid
+                            if cart.item_count == 0
+                                echo '<div id="template-cart-empty" class="text-center">'
+                                echo '<h1 class="' | append: section.settings.title_size | append: '">' 
+                                echo 'cart.title' | t
+                                if settings.custom_svg_h2 != blank
+                                    echo '<div class="h2_svg">'
+                                    echo '<span style="fill:' | append: settings.color_svg_h2 | append: '; width:' | append: settings.width_svg_h2 | append: 'rem;">' | append: settings.custom_svg_h2 | append: '</span>'
+                                    echo '</div>'
+                                else
+                                    if settings.svg_h2 != 'none'
+                                        echo '<div class="h2_svg mb-4">'
+                                        echo '<span style="fill:' | append: settings.color_svg_h2 | append: '; width:' | append: settings.width_svg_h2 | append: 'rem;">'
+                                        render 'svg-subtitle', svg_h2: settings.svg_h2
+                                        echo '</span></div>'
+                                    endif
+                                endif
+                                echo '</h1>'
+                                echo '<div class="mb-6 rte lead">'
+                                echo 'cart.empty_html' | t
+                                echo '</div>'
+                                echo '<a href="' | append: routes.all_products_collection_url | append: '" class="btn btn-primary mb-5">'
+                                echo '← '
+                                echo 'cart.continue_shopping' | t
+                                echo '</a>'
+                                echo '</div>'
+                            else
+                                echo '<div class="text-center mb-10">'
+                                echo '<h1 class="mb-3">'
+                                echo 'cart.title' | t
+                                if settings.custom_svg_h2 != blank
+                                    echo '<div class="h2_svg">'
+                                    echo '<span style="fill:' | append: settings.color_svg_h2 | append: '; width:' | append: settings.width_svg_h2 | append: 'rem;">' | append: settings.custom_svg_h2 | append: '</span>'
+                                    echo '</div>'
+                                else
+                                    if settings.svg_h2 != 'none'
+                                        echo '<div class="h2_svg mb-4">'
+                                        echo '<span style="fill:' | append: settings.color_svg_h2 | append: '; width:' | append: settings.width_svg_h2 | append: 'rem;">'
+                                        render 'svg-subtitle', svg_h2: settings.svg_h2
+                                        echo '</span></div>'
+                                    endif
+                                endif
+                                echo '</h1>'
+                                echo '<a href="' | append: routes.all_products_collection_url | append: '" class="btn btn-outline-secondary btn-sm">'
+                                echo '← '
+                                echo 'cart.continue_shopping' | t
+                                echo '</a>'
+                                echo '</div>'
+                                echo '<div class="row">'
+                                echo '<div class="col-lg-7">'
+                                echo '<ul class="product-listing list-unstyled mb-6">'
+                                for line_item in cart.items
+                                    echo '<li class="product-item pb-6 mb-6 '
+                                    unless forloop.last
+                                        echo 'border-bottom'
+                                    endunless
+                                    echo '" data-cart-line-item data-product-id="' | append: line_item.product.id | append: '" data-product-handle="' | append: line_item.product.handle | append: '">' 
+                                    # ...existing code...
                                     data-cart-line-item
                                     data-product-id="{{ line_item.product.id }}"
                                     data-product-handle="{{ line_item.product.handle }}">
