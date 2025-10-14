@@ -1,0 +1,22 @@
+{% comment %}
+Reusable SVG wave snippet for custom-border and other sections.
+Usage: {% render 'wave-svg', wave_type: 'animated', id: section.id, color: section.settings.color_border_svg %}
+{% endcomment %}
+
+{% case wave_type %}
+  {% when 'animated' %}
+    <svg class="wave-animated-{{ id }} sp-waves {{ position }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="sp-waves-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="{{ color }}" opacity="0.8"></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="{{ color }}" opacity="0.6"></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="{{ color }}" opacity="0.4"></use>
+      </g>
+    </svg>
+  {% when 'custom' %}
+    <svg id="wave_custom-{{ id }}" ...>...custom wave logic here...</svg>
+  {% else %}
+    <!-- Default or fallback SVG -->
+  {% endcase %}

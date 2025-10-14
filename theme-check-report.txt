@@ -1,149 +1,76 @@
-[34mlayout/theme.liquid:92[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% render 'right-clic' %}
-	   ^^^^^^^^^^^^^^^^^^^^
-
-[34mlayout/theme.liquid:148[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% sections 'footer-group' %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^
-
-[34msections/cards-with-video.liquid:53[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% assign video_classes = 'card-img-top' %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-[34msections/comparaison-table.liquid:139[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% unless cell == '#' %}
-	   ^^^^^^^^^^^^^^^^^^^
-
-[34msections/comparaison-table.liquid:183[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% if forloop.index == 2 %}
-	   ^^^^^^^^^^^^^^^^^^^^^^
-
-[34msections/custom-border.liquid:257[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% if section.settings.divider_option == 'wave_custom' %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-[34msections/flip-flap-text.liquid:197[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% assign global_max = 0 %}
-	   ^^^^^^^^^^^^^^^^^^^^^^
-
-[34msections/flip-flap-text.liquid:210[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% for block in section.blocks %}{% assign text_length = block.settings.text | split: '' %}{% assign text_length = bl...
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-[34msections/shogun-helper.liquid:6[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% if article %}
-	   ^^^^^^^^^^^
-
-[34msections/shogun-optimizer.liquid:6[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% if article %}
-	   ^^^^^^^^^^^
-
-[34msections/stories-bar-sticky-dynamic.liquid:52[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% assign lang = request.locale.iso_code %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-[34msections/stories-bar-sticky.liquid:8[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% assign stories = section.blocks %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-[34msections/template-list-collections.liquid:27[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
+[34msections/template-product.liquid:57[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
 	{% for block in section.blocks %}
 	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-[34msections/template-product.liquid:59[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{%- for block in section.blocks -%}
-	    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[34msections/testimonials.liquid:137[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
+	{% assign full_stars = stars_rating | floor %}
+	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-[34msections/testimonials.liquid:130[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% assign stars_rating = block.settings.stars_rating %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-[34msnippets/navbar-desktop-icons.liquid:8[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% for link in linklists[section.settings.menu_desktop].links %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-[34msnippets/navbar-desktop-icons.liquid:34[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% if link.levels > 1 %}
-	   ^^^^^^^^^^^^^^^^^^^
-
-[34msnippets/navbar-megamenu-dropdown.liquid:1[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% assign current_level = level | default: 1 %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-[34msnippets/navbar-megamenu-dropdown.liquid:122[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% for link in linklists[section.settings.menu_desktop].links %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-[34msnippets/navbar-megamenu-dropdown.liquid:148[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% if link.levels > 1 and current_level < max_level %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-[34msnippets/product-block-animated-stories.liquid:59[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% assign total_video_count = 0 %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-[34msnippets/product-block-qty-breaks.liquid:153[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% if forloop.last %}
-	   ^^^^^^^^^^^^^^^^
-
-[34msnippets/product-block-rating-shopitrust.liquid:11[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
+[34msnippets/cart-upsell.liquid:76[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
 	{% assign stars_rating = product.metafields.shopiweb.rating_shopitrust %}
 	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-[34msnippets/product-block-testimonials.liquid:64[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% assign stars_rating = block.settings.stars_rating %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[34mlayout/theme.liquid:118[0m: [35msuggestion[0m: [33mNestedSnippet[0m: Too many nested snippets.
+	{% render 'offcanvas-cart' %}
+	   ^^^^^^^^^^^^^^^^^^^^^^^^
 
-[34msnippets/product-block-testimonials.liquid:178[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% assign stars_rating_1 = block.settings.stars_rating_1 %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[34msections/contact-form.liquid:54[0m: [31merror[0m: [33mSyntaxError[0m: Unknown tag '        {% case block.type '.
+	{% case block.type %}
 
-[34msnippets/product-block-testimonials.liquid:293[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% assign stars_rating_2 = block.settings.stars_rating_2 %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[34msections/custom-border.liquid:1075[0m: [31merror[0m: [33mSyntaxError[0m: 'style' tag was never closed.
+	{% endschema %}
 
-[34msnippets/product-color-swatches.liquid:24[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{%- assign color_opt_index = nil -%}
-	    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[34msections/template-cart.liquid:47[0m: [31merror[0m: [33mSyntaxError[0m: Unknown tag '                                <div class="mb-6 rte lead">'.
+	<div class="mb-6 rte lead">
 
-[34msnippets/product-color-swatches.liquid:35[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{%- for v in product_color_swatches.variants -%}
-	    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[34msnippets/navbar-desktop-icons.liquid:16[0m: [31merror[0m: [33mSyntaxError[0m: Unknown tag '                <li class="nav-item">'.
+	<li class="nav-item">
 
-[34msnippets/shogun-content-handler.liquid:6[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% assign template_suffix = template.suffix %}
-	   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[34msnippets/navbar-megamenu-dropdown.liquid:69[0m: [31merror[0m: [33mSyntaxError[0m: Unexpected outer 'else' tag.
+	{% else %}
 
-[34msnippets/shogun-head.liquid:12[0m: [35msuggestion[0m: [33mLiquidTag[0m: Use {% liquid ... %} to write multiple tags.
-	{% if article %}
-	   ^^^^^^^^^^^
+[34msnippets/product-block-qty-breaks.liquid:81[0m: [31merror[0m: [33mSyntaxError[0m: 'endfor' is not a valid delimiter for if tags. use endif.
+	{% endfor %}
 
-[34msections/custom-border.liquid[0m: [35msuggestion[0m: [33mTemplateLength[0m: Template has too many lines [884/600].
+[34msnippets/product-color-swatches.liquid:54[0m: [31merror[0m: [33mSyntaxError[0m: Unknown tag 'endfor'.
+	{%- endfor -%}
 
-[34msnippets/offcanvas-search.liquid[0m: [35msuggestion[0m: [33mTemplateLength[0m: Template has too many lines [899/600].
+[34msnippets/offcanvas-search.liquid[0m: [35msuggestion[0m: [33mTemplateLength[0m: Template has too many lines [896/600].
 
-[34msnippets/svg-subtitle.liquid[0m: [35msuggestion[0m: [33mTemplateLength[0m: Template has too many lines [837/600].
+[34msections/announcement-bar.liquid:22[0m: [35msuggestion[0m: [33mUnusedAssign[0m: `expiration_time` is never used.
+	assign expiration_time = section.settings.expiration_time | date: '%s'
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-[34msections/template-product.liquid:225[0m: [31merror[0m: [33mValidSchema[0m: Invalid syntax in JSON.
+[34msnippets/cart-upsell.liquid:174[0m: [35msuggestion[0m: [33mUnusedAssign[0m: `mo` is never used.
+	assign mo = shop.metaobjects.color_swatch[key]
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+[34msnippets/bought-product-together.liquid[0m: [35msuggestion[0m: [33mUnusedSnippet[0m: This snippet is not used.
+
+[34msnippets/cart-countdown-timer.liquid[0m: [35msuggestion[0m: [33mUnusedSnippet[0m: This snippet is not used.
+
+[34msnippets/cart-goal.liquid[0m: [35msuggestion[0m: [33mUnusedSnippet[0m: This snippet is not used.
+
+[34msnippets/cart-testimonials.liquid[0m: [35msuggestion[0m: [33mUnusedSnippet[0m: This snippet is not used.
+
+[34msnippets/custom-border-wave.liquid[0m: [35msuggestion[0m: [33mUnusedSnippet[0m: This snippet is not used.
+
+[34msnippets/wave-svg.liquid[0m: [35msuggestion[0m: [33mUnusedSnippet[0m: This snippet is not used.
+
+[34msnippets/product-block-testimonials.liquid:55[0m: [31merror[0m: [33mTranslationKeyExists[0m: '<span class="extra-small me-2"><em>' does not have a matching entry in 'locales/de.default.json'.
+	echo '<span class="extra-small me-2"><em>' | append: 'testimonials.verified_review' | t | append: '</em></span>'
+	      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+[34msnippets/product-block-testimonials.liquid:57[0m: [31merror[0m: [33mTranslationKeyExists[0m: '<span class="extra-small me-2"><em>' does not have a matching entry in 'locales/de.default.json'.
+	echo '<span class="extra-small me-2"><em>' | append: 'testimonials.purchase' | t | append: ' <span class="small verif...
+	      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+[34msections/announcement-bar.liquid:35[0m: [31merror[0m: [33mUndefinedObject[0m: Undefined object `block_expiration_time`.
+	data-time="{{ block_expiration_time }}"
+	             ^^^^^^^^^^^^^^^^^^^^^^^
+
+[34msections/template-product.liquid:196[0m: [36mstyle[0m: [33mSchemaJsonFormat[0m: JSON formatting could be improved.
 	{% schema %}
 	   ^^^^^^^
 
-[34msections/template-password.liquid:217[0m: [36mstyle[0m: [33mSchemaJsonFormat[0m: JSON formatting could be improved.
-	{% schema %}
-	   ^^^^^^^
-
-[34mlayout/theme.liquid:75[0m: [35msuggestion[0m: [33mRemoteAsset[0m: Asset should be served by the Shopify CDN for better performance..
-	<script src="https://js.sentry-cdn.com/7749477b70b2d5464b4d6e0c692d4d2f.min.js" crossorigin="anonymous" defer></script>
-	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-[34mlayout/theme.liquid:108[0m: [35msuggestion[0m: [33mImgLazyLoading[0m: Use loading="eager" for images visible in the viewport on load and loading="lazy" for others.
-	<img src="{{ 'flag-fr.png' | asset_url }}" class="flag-icon" alt="FR" width="32" height="20">
-	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-[34msections/parallax-scroll.liquid:59[0m: [35msuggestion[0m: [33mImgLazyLoading[0m: Use loading="eager" for images visible in the viewport on load and loading="lazy" for others.
-	<img
-
-[34msections/parallax-scroll.liquid:68[0m: [35msuggestion[0m: [33mImgLazyLoading[0m: Use loading="eager" for images visible in the viewport on load and loading="lazy" for others.
-	<img
-
-346 files inspected, [31m39 offenses[0m detected, [33m1 offenses[0m auto-correctable
+351 files inspected, [31m24 offenses[0m detected, [33m11 offenses[0m auto-correctable

@@ -43,7 +43,50 @@
             </div>
 
             {% if settings.show_compte_rebours_panier and cart.item_count > 0 %}
-                {% render 'cart-countdown-timer' %}
+                                <div class="d-flex align-items-center justify-content-center border-bottom rte small text-center bg-light px-3 py-3 ">
+                                        <span id="text_before">{{ settings.text_after }}&nbsp;</span>
+                                        <div style="font-weight: bold; color:{{ settings.clock_color }};">
+                                                <span id="clockdiv"></span>
+                                        </div>
+                                        <span id="text_after">&nbsp;{{ settings.text_before }}</span>
+                                </div>
+                                <script>
+                                    var time_in_minutes = parseInt("{{ settings.timer_minutes }}");
+                                    var current_time = Date.parse(new Date());
+                                    var deadline = new Date(current_time + time_in_minutes * 60 * 1000);
+                                    var endMessage = "{{ settings.end_message }}";
+                                    function time_remaining(endtime) {
+                                        var t = Date.parse(endtime) - Date.parse(new Date());
+                                        var seconds = Math.floor((t / 1000) % 60);
+                                        var minutes = Math.floor((t / 1000 / 60) % 60);
+                                        return {
+                                            'total': t,
+                                            'minutes': minutes,
+                                            'seconds': seconds
+                                        };
+                                    }
+                                    function run_clock(id, endtime) {
+                                        var clock = document.querySelector(id);
+                                        var textBefore = document.getElementById('text_before');
+                                        var textAfter = document.getElementById('text_after');
+                                        function update_clock() {
+                                            var t = time_remaining(endtime);
+                                            if (t.seconds <= 9) {
+                                                t.seconds = "0" + t.seconds;
+                                            }
+                                            clock.innerHTML = t.minutes + ':' + t.seconds;
+                                            if(t.total <= 0){
+                                                clearInterval(timeinterval);
+                                                clock.innerHTML = endMessage;
+                                                textBefore.style.display = 'none';
+                                                textAfter.style.display = 'none';
+                                            }
+                                        }
+                                        update_clock();
+                                        var timeinterval = setInterval(update_clock, 1000);
+                                    }
+                                    run_clock('#clockdiv', deadline);
+                                </script>
             {% endif %}
 
             <div class="offcanvas-body">
@@ -53,8 +96,70 @@
                     </div>
                     <hr class="my-4">
                 {% endif %}
-                {% render 'cart-goal' %}
-                {% render 'cart-testimonials' %}
+                {% if settings.cart_goal_enable and cart.item_count > 0 %}
+                    {% liquid
+                        assign goal_value_with_cents = 0
+                        assign cart_goal_value = settings.cart_goal_value
+                        assign goal_value_with_cents = settings.cart_goal_value | times: 100
+                        assign cart_total_price = cart.total_price
+                        if settings.cart_goal_free_product
+                            for line_item in cart.items
+                                if line_item.product.handle == settings.cart_goal_free_product.handle
+                                    assign cart_total_price = cart_total_price | minus: line_item.final_line_price
+                                endif
+                            endfor
+                        endif
+                        if cart_total_price < goal_value_with_cents
+                            assign percentage = cart_total_price | divided_by: cart_goal_value
+                            assign goal_remaining_money = goal_value_with_cents | minus: cart_total_price | money
+                            assign desc = settings.cart_goal_description_before | replace: '[amount]', goal_remaining_money
+                            assign bg_color =  settings.cart_goal_bg_color_before
+                        else
+                            assign percentage = 100
+                            assign desc = settings.cart_goal_description_after
+                            assign bg_color =  settings.cart_goal_bg_color_after
+                        endif
+                    %}
+                    <div id="cart-goal" class="cart-goal text-center mb-6" data-goal-completed="{% if cart_total_price >= goal_value_with_cents %}true{% else %}false{% endif %}" data-free-product-handle="{{ settings.cart_goal_free_product.handle }}" data-free-product-variant-id="{{ settings.cart_goal_free_product.first_available_variant.id }}">
+                        <div class="rte small mb-3 {{ color | prepend: 'text-' }}">
+                            {{ desc }}
+                        </div>
+                        <div class="progress" style="height: .5rem;">
+                            <div class="progress-bar progress-bar progress-bar-animated progress-bar-striped {{ bg_color }}" role="progressbar" aria-valuenow="{{ cart_total_price | money }}" aria-valuemin="0" aria-valuemax="{{ goal_value_with_cents | money }}" data-width="{{ percentage }}%" style="width: 0%;">
+                            </div>
+                            {% if settings.show_icon == 'show_truck' or settings.show_icon == 'show_gift' %}
+                                <div class="cart-goal-icon {% if cart_total_price >= goal_value_with_cents %}{{ bg_color }} text-white {% endif %}">
+                                    {% if settings.show_icon == 'show_truck' %}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16" aria-hidden="true">
+                                            <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                                        </svg>
+                                    {% elsif settings.show_icon == 'show_gift'%}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gift" viewBox="0 0 16 16" aria-hidden="true">
+                                            <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zM1 4v2h6V4H1zm8 0v2h6V4H9zm5 3H9v8h4.5a.5.5 0 0 0 .5-.5V7zm-7 8V7H2v7.5a.5.5 0 0 0 .5.5H7z"/>
+                                        </svg>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+                {% liquid 
+                    if request.page_type == 'cart' 
+                        assign show_testimonial = section.settings.show_testimonial
+                    else
+                        assign show_testimonial = settings.cart_show_testimonial
+                    endif
+                %}
+                {% if show_testimonial %}
+                    <div id="cart-testimonial" class="rounded bg-light mb-3 {% if settings.cart_testimonial_img %}has-testimonial-img{% endif %}">
+                        {% unless settings.cart_testimonial_img == blank %}
+                            <img class="img-fluid rounded me-3" src="{{ settings.cart_testimonial_img.src | image_url: width: 90, height: 90, crop: 'center' }}" alt="{{ settings.cart_testimonial_img.alt | escape }}" width="60" height="60" loading="lazy">
+                        {% endunless %}
+                        <div class="rte description text-center fs-6">
+                            {{ settings.cart_testimonial }}
+                        </div>
+                    </div>
+                {% endif %}
                 <div
                     id="offcanvas-cart-alert-error"
                     class="offcanvas-cart-alert alert alert-danger fw-500 lh-sm py-3 mb-4"
@@ -109,7 +214,54 @@
                         <h3 class="h6 border-bottom pb-3 mb-4">
                             {{ 'cart.empty_products_title' | t }}
                         </h3>
-                        {% render 'offcanvas-product-listing', products: settings.cart_drawer_empty_product_list %}
+                        <ul class="product-listing list-unstyled mb-0">
+                            {% for product in settings.cart_drawer_empty_product_list %}
+                                <li class="product-item py-3">
+                                    <div class="row align-items-center mx-n3">
+                                        <div class="col-4 px-3">
+                                            <a href="{{ product.url }}" class="">
+                                                <img 
+                                                    class="product-item-img img-fluid me-3 rounded {{ settings.offcanvas_img_thumbnail }} {{ settings.offcanvas_shadow_sp }} {{ settings.offcanvas_border_color }}"
+                                                    src="{{ product.featured_image | image_url: width: 600, height: 600, crop: 'center' }}"
+                                                    alt="{{ product.featured_image.alt }}"
+                                                    width="600"
+                                                    height="600"
+                                                    loading="lazy">
+                                            </a>
+                                        </div>
+                                        <div class="col-8 px-3">
+                                            <h4 class="product-item-title h6 mb-1 {{ settings.search_title_truncate }}">
+                                                <a href="{{ product.url }}" class="link-dark">
+                                                    {{ product.title }}
+                                                </a>
+                                            </h4>
+                                            <p class="product-item-price small mb-3">
+                                                {% if product.first_available_variant.compare_at_price > product.price %}
+                                                    <span class="product-item-price-final me-1">
+                                                        <span class="visually-hidden">
+                                                            {{ 'product.price_sale' | t }} &nbsp;
+                                                        </span>
+                                                        {{ product.first_available_variant.price | money }}
+                                                    </span>
+                                                    <span class="product-item-price-compare text-muted">
+                                                        <span class="visually-hidden">
+                                                            {{ 'product.price_regular' | t }} &nbsp;
+                                                        </span>
+                                                        <s>
+                                                            {{ product.first_available_variant.compare_at_price | money }}
+                                                        </s>
+                                                    </span>
+                                                {% else %}
+                                                    <span class="product-item-price-final">
+                                                        {{ product.first_available_variant.price | money }}
+                                                    </span>
+                                                {% endif %}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
                     {% else %}
                         <div id="offcanvas-cart-empty" class="text-muted">
                             <svg xmlns="http://www.w3.org/2000/svg" class="opacity-75 mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -261,7 +413,41 @@
                         {% endfor %}
                     </ul>
                     {%- comment -%} Directly uses flattened cart-upsell snippet (inlined product-rating-badge and cart-upsell-product-form) {%- endcomment -%}
-                    {% render 'cart-upsell' %}
+                    {% if settings.cart_upsell_enable %}
+                        <div id="cart-upsell" class="">
+                            <h3 id="cart-upsell-title" class="h6 mb-4">
+                                {{ settings.cart_upsell_title }}
+                            </h3>
+                            <ul id="cart-upsell-list" class="cart-upsell-list-horizontal product-listing list-unstyled">
+                                {% assign upsell_handles = '' %}
+                                {% for product in settings.cart_upsell_collection.products %}
+                                    {% unless cart.items contains product.handle %}
+                                        {% if product.available %}
+                                            {% assign upsell_handles = upsell_handles | append: product.handle | append: ',' %}
+                                        {% endif %}
+                                    {% endunless %}
+                                {% endfor %}
+                                {% assign upsell_handles = upsell_handles | split: ',' %}
+                                {% for handle in upsell_handles limit: settings.cart_upsell_limit %}
+                                    {% assign product = all_products[handle] %}
+                                    <li class="product-item text-center px-3">
+                                        <a class="link-dark" href="{{ product.url }}">
+                                            <img 
+                                                class="product-item-img img-fluid mb-3 rounded {{ settings.offcanvas_img_thumbnail }} {{ settings.offcanvas_shadow_sp }} {{ settings.offcanvas_border_color }}"
+                                                src="{{ product.featured_image | image_url: width: 600, height: 600, crop: 'center' }}" 
+                                                alt="{{ product.featured_image.alt | escape }}"
+                                                width="600"
+                                                height="600" 
+                                                loading="lazy">
+                                            <h3 class="product-item-title h6 mb-2 {{ settings.cart_upsell_product_title_truncate }}" title="{{ product.title }}">
+                                                {{ product.title }}
+                                            </h3>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
                     <hr class="">
                     {% render 'cart-note' %}
 

@@ -19,7 +19,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 %}
 
 {% liquid
-  assign expiration_time = section.settings.expiration_time | date: '%s'
+  assign block_expiration_time = section.settings.expiration_time | date: '%s'
   if section.settings.homepage == false or template.name == 'index'
     # The following HTML remains unchanged, but all logic is now inside the liquid block
   endif
@@ -32,11 +32,11 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {{ 'general.countdown_timer.expires' | t }}
   </span>
   <ul class="timer-countdown list-unstyled"
-      data-time="{{ block_expiration_time }}"
-      data-text-d="{{ 'general.countdown_timer.d' | t }}"
-      data-text-h="{{ 'general.countdown_timer.h' | t }}"
-      data-text-m="{{ 'general.countdown_timer.m' | t }}"
-      hidden>
+    data-time="{{ block_expiration_time }}"
+    data-text-d="{{ 'general.countdown_timer.d' | t }}"
+    data-text-h="{{ 'general.countdown_timer.h' | t }}"
+    data-text-m="{{ 'general.countdown_timer.m' | t }}"
+    hidden>
     <li data-days></li>
     <li data-hours></li>
     <li data-minutes></li>

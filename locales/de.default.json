@@ -801,9 +801,9 @@
     }
   },
   "testimonials": {
-    "purchase": "",
-    "verified": "",
-    "verified_review": ""
+    "purchase": "Kauf bestätigt",
+    "verified": "Verifiziert",
+    "verified_review": "Verifizierte Bewertung"
   },
   "tracking": {
     "btn_text": "",

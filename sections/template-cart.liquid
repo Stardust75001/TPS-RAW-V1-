@@ -6,20 +6,22 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 {% endcomment %}
 
 
-{% assign pt = section.settings.pt | prepend: 'pt-' %}
-{% assign pb = section.settings.pb | prepend: 'pb-' %}
-{% assign mt = section.settings.mt | prepend: 'mt-' %}
-{% assign mb = section.settings.mb | prepend: 'mb-' %}
-{% if section.settings.product_img_orientation == 'square' %}
-    {% assign img_width = 600 %}
-    {% assign img_height = 600 %}
-{% elsif section.settings.product_img_orientation == 'landscape' %}
-    {% assign img_width = 600 %}
-    {% assign img_height = 480 %}
-{% elsif section.settings.product_img_orientation == 'portrait' %}
-    {% assign img_width = 480 %}
-    {% assign img_height = 600 %}
-{% endif %}
+{% liquid
+    assign pt = section.settings.pt | prepend: 'pt-'
+    assign pb = section.settings.pb | prepend: 'pb-'
+    assign mt = section.settings.mt | prepend: 'mt-'
+    assign mb = section.settings.mb | prepend: 'mb-'
+    if section.settings.product_img_orientation == 'square'
+        assign img_width = 600
+        assign img_height = 600
+    elsif section.settings.product_img_orientation == 'landscape'
+        assign img_width = 600
+        assign img_height = 480
+    elsif section.settings.product_img_orientation == 'portrait'
+        assign img_width = 480
+        assign img_height = 600
+    endif
+%}
 
 <div
         id="cart"

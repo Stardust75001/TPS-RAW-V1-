@@ -38,138 +38,138 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
               endif
               echo form.errors | default_errors
               for block in section.blocks
-                if block.type == 'text'
-                  echo '<div class="form-group mb-5" ' | append: block.shopify_attributes | append: '>'
-                  unless block.settings.title == blank
-                    echo '<' | append: block.settings.heading_tag | append: ' class="title mb-2 ' | append: block.settings.title_size | append: '">' 
-                    echo block.settings.title
-                    echo '</' | append: block.settings.heading_tag | append: '>'
-                  endunless
-                  unless block.settings.description == blank
-                    echo '<div class="description rte text-muted ' | append: block.settings.description_size | append: '">' 
-                    echo block.settings.description
+                case block.type
+                  when 'text'
+                    echo '<div class="form-group mb-5" ' | append: block.shopify_attributes | append: '>'
+                    unless block.settings.title == blank
+                      echo '<' | append: block.settings.heading_tag | append: ' class="title mb-2 ' | append: block.settings.title_size | append: '">' 
+                      echo block.settings.title
+                      echo '</' | append: block.settings.heading_tag | append: '>'
+                    endunless
+                    unless block.settings.description == blank
+                      echo '<div class="description rte text-muted ' | append: block.settings.description_size | append: '">' 
+                      echo block.settings.description
+                      echo '</div>'
+                    endunless
                     echo '</div>'
-                  endunless
+                  when 'input_field'
+                    assign input_name = block.settings.label | handleize
+                    if input_name contains 'mail'
+                      assign input_name = 'email'
+                    endif
+                    echo '<div class="form-group mb-4" ' | append: block.shopify_attributes | append: '>'
+                    if block.settings.type == 'date' or block.settings.type == 'time'
+                      echo '<label for="input-' | append: block.id | append: '" class="form-label mb-2">'
+                      echo block.settings.label
+                      unless block.settings.required
+                        echo ' (' | append: 'general.general.optional' | t | append: ')'
+                      endunless
+                      echo '</label>'
+                    endif
+                    echo '<input id="input-' | append: block.id | append: '" class="form-control form-control-' | append: section.settings.form_fields_size | append: '" type="' | append: block.settings.type | append: '" name="contact[' | append: input_name | append: ']" placeholder="' | append: block.settings.label
+                    unless block.settings.required
+                      echo ' (' | append: 'general.general.optional' | t | append: ')'
+                    endunless
+                    echo '" aria-label="' | append: block.settings.label
+                    unless block.settings.required
+                      echo ' (' | append: 'general.general.optional' | t | append: ')'
+                    endunless
+                    echo '"'
+                    if block.settings.required
+                      echo ' required'
+                    endif
+                    echo '>'
                     echo '</div>'
-        {% elsif block.type == 'input_field' %}
-          {% liquid
-            assign input_name = block.settings.label | handleize
-            if input_name contains 'mail'
-              assign input_name = 'email'
-            endif
-          %}
-                    <div class="form-group mb-4" {{ block.shopify_attributes }}>
-                        {% if block.settings.type == 'date' or block.settings.type == 'time' %}
-                            <label for="input-{{ block.id }}" class="form-label mb-2">
-                                {{ block.settings.label }} {% unless block.settings.required %}({{ 'general.general.optional' | t }}){% endunless %}
-                            </label>
-                        {% endif %}
-                        <input 
-                            id="input-{{ block.id }}"
-                            class="form-control form-control-{{ section.settings.form_fields_size }}" 
-                            type="{{ block.settings.type }}" 
-                            name="contact[{{ input_name }}]"
-                            placeholder="{{ block.settings.label }} {% unless block.settings.required %}({{ 'general.general.optional' | t }}){% endunless %}"
-                            aria-label=" {{ block.settings.label }} {% unless block.settings.required %}({{ 'general.general.optional' | t }}){% endunless %}"
-                            {% if block.settings.required %}required{% endif %}>
-                    </div>
-                {% elsif block.type == 'textarea' %}
-                    <div class="form-group mb-4" {{ block.shopify_attributes }}>
-                        <textarea 
-                            class="form-control form-control-{{ section.settings.form_fields_size }}"
-                            rows="{{ block.settings.rows }}"
-                            name="contact[{{ block.settings.label | handleize }}]"
-                            placeholder="{{ block.settings.label }} {% unless block.settings.required %}({{ 'general.general.optional' | t }}){% endunless %}" 
-                            aria-label="{{ block.settings.label }} {% unless block.settings.required %}({{ 'general.general.optional' | t }}){% endunless %}" 
-                            {% if block.settings.required %}required{% endif %}></textarea>
-                    </div>
-                {% elsif block.type == 'select' %}
-                    {% assign options = block.settings.options | split: ',' %}
-                    <div class="form-group mb-4" {{ block.shopify_attributes }}>
-                        <select 
-                            class="form-select form-select-{{ section.settings.form_fields_size }}"
-                            name="contact[{{ block.settings.label | handleize }}]"
-                            placeholder="{{ block.settings.label }} {% unless block.settings.required %}({{ 'general.general.optional' | t }}){% endunless %}" 
-                            aria-label="{{ block.settings.label }} {% unless block.settings.required %}({{ 'general.general.optional' | t }}){% endunless %}" 
-                            {% if block.settings.required %}required{% endif %}>
-                            <option>
-                                {{ block.settings.label }} {% unless block.settings.required %}({{ 'general.general.optional' | t }}){% endunless %}
-                            </option>
-                            {% for option in options %}
-                                <option value="{{ option | handleize }}">
-                                    {{ option }}
-                                </option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                {% elsif block.type == 'checkbox_radio' %}
-                    {% assign options = block.settings.options | split: ',' %}
-                    <div class="form-group mb-5" {{ block.shopify_attributes }}>
-                        <p class="mb-3 h5 fw-500">
-                            {{ block.settings.label }} {% unless block.settings.required %}({{ 'general.general.optional' | t }}){% endunless %}
-                        </p>
-                        {% for option in options %}
-                            <div class="form-check">
-                                <input 
-                                    id="input-{{ block.id }}-{{ forloop.index }}"
-                                    class="form-check-input" 
-                                    type="{{ block.settings.type }}" 
-                                    name="contact[{{ block.settings.label | handleize }}]"
-                                    {% if block.settings.type == 'checkbox' %}
-                                    name="contact[{{ block.settings.label | handleize }}-{{ forloop.index }}]"
-                                    {% else %}
-                                    name="contact[{{ block.settings.label | handleize }}]"
-                                    {% endif %}
-                                    value="{{ option }}">
-                                <label for="input-{{ block.id }}-{{ forloop.index }}" class="form-check-label">
-                                    {{ option }}
-                                </label>
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% elsif block.type == 'range' %}
-                    <div class="form-group mb-4" {{ block.shopify_attributes }}>
-                        <label for="input-{{ block.id }}" class="form-label h5 mb-1">
-                            {{ block.settings.label }} {% unless block.settings.required %}({{ 'general.general.optional' | t }}){% endunless %}
-                        </label>
-                        <div class="d-flex align-items center">
-                            <input 
-                                id="input-{{ block.id }}"
-                                class="form-range" 
-                                type="range" 
-                                name="contact[{{ block.settings.label | handleize }}]"
-                                min="{{ block.settings.min_value }}"
-                                max="{{ block.settings.max_value }}"
-                                step="{{ block.settings.step }}"
-                                {% if block.settings.required %}required{% endif %}
-                                oninput="this.nextElementSibling.value = this.value">
-                                <output class="ms-3">
-                                    {{ block.settings.max_value | divided_by: 2 }}
-                                </output>
-                                /{{ block.settings.max_value }}
-                        </div>
-                    </div>
-                {% elsif block.type == 'submit_btn' %}
-          <div class="form-group mb-4" {{ block.shopify_attributes }}>
-            <!-- Cloudflare Turnstile CAPTCHA -->
-                        <div class="cf-turnstile" data-sitekey="0x4AAAAAB6Gxaj2i1fS_Vcb"></div>
-            <!-- Theme-check: External scripts should be served by Shopify CDN. Remove or self-host if possible. -->
-            <!-- End Cloudflare Turnstile CAPTCHA -->
-            <button 
-              type="submit" 
-              class="btn w-100 {{ block.settings.btn_color }} {{ btn_shadow_sp }} {{ section.settings.form_fields_size | prepend: 'btn-' }}">
-              {{ block.settings.btn_text }}
-                        </button>
-                    </div>
-                {% elsif block.type == 'separator' %}
-                    {% liquid 
-                        assign mt = block.settings.mt | prepend: 'mt-'
-                        assign mb = block.settings.mb | prepend: 'mb-'
-                    %}
-                    <hr class="{{ mt }} {{ mb }}" style="opacity: {{ block.settings.opacity }}; color: {{ block.settings.separator_color }};">
-                {% endif %}
-            {% endfor %}
-        {% endform %}
+                  when 'textarea'
+                    echo '<div class="form-group mb-4" ' | append: block.shopify_attributes | append: '>'
+                    echo '<textarea class="form-control form-control-' | append: section.settings.form_fields_size | append: '" rows="' | append: block.settings.rows | append: '" name="contact[' | append: block.settings.label | handleize | append: ']" placeholder="' | append: block.settings.label
+                    unless block.settings.required
+                      echo ' (' | append: 'general.general.optional' | t | append: ')'
+                    endunless
+                    echo '" aria-label="' | append: block.settings.label
+                    unless block.settings.required
+                      echo ' (' | append: 'general.general.optional' | t | append: ')'
+                    endunless
+                    echo '"'
+                    if block.settings.required
+                      echo ' required'
+                    endif
+                    echo '></textarea>'
+                    echo '</div>'
+                  when 'select'
+                    assign options = block.settings.options | split: ','
+                    echo '<div class="form-group mb-4" ' | append: block.shopify_attributes | append: '>'
+                    echo '<select class="form-select form-select-' | append: section.settings.form_fields_size | append: '" name="contact[' | append: block.settings.label | handleize | append: ']" placeholder="' | append: block.settings.label
+                    unless block.settings.required
+                      echo ' (' | append: 'general.general.optional' | t | append: ')'
+                    endunless
+                    echo '" aria-label="' | append: block.settings.label
+                    unless block.settings.required
+                      echo ' (' | append: 'general.general.optional' | t | append: ')'
+                    endunless
+                    echo '"'
+                    if block.settings.required
+                      echo ' required'
+                    endif
+                    echo '>'
+                    echo '<option>'
+                    echo block.settings.label
+                    unless block.settings.required
+                      echo ' (' | append: 'general.general.optional' | t | append: ')'
+                    endunless
+                    echo '</option>'
+                    for option in options
+                      echo '<option value="' | append: option | handleize | append: '">' | append: option | append: '</option>'
+                    endfor
+                    echo '</select>'
+                    echo '</div>'
+                  when 'checkbox_radio'
+                    assign options = block.settings.options | split: ','
+                    echo '<div class="form-group mb-5" ' | append: block.shopify_attributes | append: '>'
+                    echo '<p class="mb-3 h5 fw-500">' | append: block.settings.label
+                    unless block.settings.required
+                      echo ' (' | append: 'general.general.optional' | t | append: ')'
+                    endunless
+                    echo '</p>'
+                    for option in options
+                      echo '<div class="form-check">'
+                      echo '<input id="input-' | append: block.id | append: '-' | append: forloop.index | append: '" class="form-check-input" type="' | append: block.settings.type | append: '" name="contact[' | append: block.settings.label | handleize
+                      if block.settings.type == 'checkbox'
+                        echo '-' | append: forloop.index
+                      endif
+                      echo ']" value="' | append: option | append: '">' 
+                      echo '<label for="input-' | append: block.id | append: '-' | append: forloop.index | append: '" class="form-check-label">' | append: option | append: '</label>'
+                      echo '</div>'
+                    endfor
+                    echo '</div>'
+                  when 'range'
+                    echo '<div class="form-group mb-4" ' | append: block.shopify_attributes | append: '>'
+                    echo '<label for="input-' | append: block.id | append: '" class="form-label h5 mb-1">' | append: block.settings.label
+                    unless block.settings.required
+                      echo ' (' | append: 'general.general.optional' | t | append: ')'
+                    endunless
+                    echo '</label>'
+                    echo '<div class="d-flex align-items center">'
+                    echo '<input id="input-' | append: block.id | append: '" class="form-range" type="range" name="contact[' | append: block.settings.label | handleize | append: ']" min="' | append: block.settings.min_value | append: '" max="' | append: block.settings.max_value | append: '" step="' | append: block.settings.step | append: '"'
+                    if block.settings.required
+                      echo ' required'
+                    endif
+                    echo ' oninput="this.nextElementSibling.value = this.value">'
+                    echo '<output class="ms-3">' | append: block.settings.max_value | divided_by: 2 | append: '</output>'
+                    echo '/' | append: block.settings.max_value
+                    echo '</div>'
+                    echo '</div>'
+                  when 'submit_btn'
+                    echo '<div class="form-group mb-4" ' | append: block.shopify_attributes | append: '>'
+                    echo '<div class="cf-turnstile" data-sitekey="0x4AAAAAB6Gxaj2i1fS_Vcb"></div>'
+                    echo '<button type="submit" class="btn w-100 ' | append: block.settings.btn_color | append: ' ' | append: btn_shadow_sp | append: ' btn-' | append: section.settings.form_fields_size | append: '">' | append: block.settings.btn_text | append: '</button>'
+                    echo '</div>'
+                  when 'separator'
+                    assign mt = block.settings.mt | prepend: 'mt-'
+                    assign mb = block.settings.mb | prepend: 'mb-'
+                    echo '<hr class="' | append: mt | append: ' ' | append: mb | append: '" style="opacity: ' | append: block.settings.opacity | append: '; color: ' | append: block.settings.separator_color | append: ';">'
+                endcase
+              endfor
     </div>
 </section>
 

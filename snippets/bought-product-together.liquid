@@ -28,11 +28,9 @@
         assign metafield_key = block.settings.metafield | split: '.' | last
 
         assign product_handles = product.handle | append: ','
-
         for product in product.metafields[metafield_namespace][metafield_key].value
             assign product_handles = product_handles | append: product.handle | append: ','
         endfor
-        
         assign product_handles = product_handles | split: ','
 
         assign mt = block.settings.mt | prepend: 'mt-'

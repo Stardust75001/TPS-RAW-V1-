@@ -1,7 +1,7 @@
 {%- comment -%}
 SNIPPET: product-color-swatches.liquid
-Affiche des pastilles couleur (swatches) basées sur le metaobjet `color_swatch`
-et sur le metafield de variante `global.ref_variant_id`.
+Affiche des pastilles couleur (swatches) basées sur le métaobjet `color_swatch`
+et le metafield de variante `global.ref_variant_id`.
 {%- endcomment -%}
 
 {% liquid
@@ -9,18 +9,33 @@ et sur le metafield de variante `global.ref_variant_id`.
   if product_color_swatches == blank
     assign product_color_swatches = all_products[request.handle]
   endif
+
+  assign color_opt_index = nil
   if product_color_swatches != blank
-    assign color_opt_index = nil
     for opt in product_color_swatches.options_with_values
       assign opt_name = opt.name | downcase
       if opt_name contains 'couleur' or opt_name contains 'color'
         assign color_opt_index = forloop.index0
       endif
     endfor
-    if color_opt_index != nil
-      assign seen = ''
-      for v in product_color_swatches.variants
-        assign key = v.metafields.global.ref_variant_id.value | default: v.options[color_opt_index] | downcase | strip
+  endif
+%}
+
+{% if product_color_swatches and color_opt_index != nil %}
+  {%- liquid
+    assign selected_v = product_color_swatches.selected_or_first_available_variant
+    assign selected_key = selected_v.metafields.global.ref_variant_id.value
+      | default: selected_v.options[color_opt_index]
+      | downcase | strip
+  -%}
+
+  <div class="color-swatches" role="listbox" aria-label="Color swatches">
+    {%- liquid assign seen = '' -%}
+    {%- for v in product_color_swatches.variants -%}
+      {%- liquid
+        assign key = v.metafields.global.ref_variant_id.value
+          | default: v.options[color_opt_index]
+          | downcase | strip
         if key == blank
           continue
         endif
@@ -28,42 +43,51 @@ et sur le metafield de variante `global.ref_variant_id`.
         if seen contains needle
           continue
         endif
-        assign seen = seen | append: '|' | append: key | append: '|'
+        assign seen = seen | append: needle
+
         assign mo = shop.metaobjects.color_swatch[key]
         assign label = mo.label | default: v.options[color_opt_index]
         assign hex = mo.hex
-        assign img = mo.image_1x | default: mo.image | default: ''
-      endfor
-    endif
-  endif
-%}
-       data-variant-option-index="{{ color_opt_index }}"
-       value="{{ label | escape }}"
-       {% if product_color_swatches.selected_or_first_available_variant.metafields.global.ref_variant_id.value == key %}checked{% endif %}>
-          <span class="swatch-chip">
-            {%- if img != blank -%}
-              <img src="{{ img | image_url: width: 48, height: 48, crop: 'center' }}" alt="{{ label }}" width="24" height="24" loading="lazy">
-            {%- elsif hex != blank -%}
-              <span class="swatch-dot" style="background: {{ hex }};"></span>
-            {%- else -%}
-              <span class="swatch-fallback">{{ label }}</span>
-            {%- endif -%}
-          </span>
-          <span class="swatch-label">{{ label }}</span>
-        </label>
-      {%- endfor -%}
-    </div>
+        assign img = mo.image_1x | default: mo.image
+        assign is_checked = selected_key == key
+      -%}
 
-    <style>
-      .color-swatches { display: flex; flex-wrap: wrap; gap: .5rem; }
-      .swatch { display: flex; align-items: center; gap: .5rem; cursor: pointer; position: relative; }
-      .swatch input { position: absolute; opacity: 0; pointer-events: none; }
-      .swatch-chip { width: 28px; height: 28px; border-radius: 50%; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(0,0,0,.12); }
-      .swatch-dot { width: 100%; height: 100%; border-radius: 50%; }
-      .swatch-fallback { font-size: .75rem; padding: 0 .4rem; }
-      .swatch[aria-checked="true"] .swatch-chip,
-      .color-swatches .swatch input:checked + .swatch-chip { outline: 2px solid currentColor; outline-offset: 2px; }
-      .swatch-label { font-size: .85rem; }
-    </style>
-  {%- endif -%}
-{%- endif -%}
+      <label class="swatch" for="swatch-{{ section.id }}-{{ forloop.index }}" aria-checked="{{ is_checked }}">
+        <input
+          id="swatch-{{ section.id }}-{{ forloop.index }}"
+          type="radio"
+          name="product-color-swatch"
+          class="visually-hidden"
+          data-variant-id="{{ v.id }}"
+          data-variant-option-index="{{ color_opt_index }}"
+          value="{{ label | escape }}"
+          {% if is_checked %}checked{% endif %}>
+
+        <span class="swatch-chip">
+          {%- if img -%}
+            <img src="{{ img | image_url: width: 48, height: 48, crop: 'center' }}"
+                 alt="{{ label | escape }}" width="24" height="24" loading="lazy">
+          {%- elsif hex -%}
+            <span class="swatch-dot" style="background: {{ hex }};"></span>
+          {%- else -%}
+            <span class="swatch-fallback">{{ label }}</span>
+          {%- endif -%}
+        </span>
+
+        <span class="swatch-label">{{ label }}</span>
+      </label>
+    {%- endfor -%}
+  </div>
+
+  <style>
+    .color-swatches { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .swatch { display: flex; align-items: center; gap: .5rem; cursor: pointer; position: relative; }
+    .swatch input { position: absolute; opacity: 0; pointer-events: none; }
+    .swatch-chip { width: 28px; height: 28px; border-radius: 50%; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(0,0,0,.12); }
+    .swatch-dot { width: 100%; height: 100%; border-radius: 50%; }
+    .swatch-fallback { font-size: .75rem; padding: 0 .4rem; }
+    .swatch[aria-checked="true"] .swatch-chip,
+    .color-swatches .swatch input:checked + .swatch-chip { outline: 2px solid currentColor; outline-offset: 2px; }
+    .swatch-label { font-size: .85rem; }
+  </style>
+{% endif %}

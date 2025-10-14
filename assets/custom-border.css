@@ -1,0 +1,75 @@
+/* Custom border and wave styles extracted from custom-border.liquid */
+.divider_wide {
+  padding-top: var(--space-two-element, 0px);
+}
+#wave_custom {
+  padding: 0;
+  left: calc(-0%/2);
+  width: calc(100% + 0%);
+  height: var(--wave-fixe-height-desktop, 40px);
+}
+@media (max-width: 768px) {
+  #wave_custom {
+    height: var(--wave-fixe-height-mobile, 20px);
+    min-height: 20px;
+  }
+}
+.sp-waves-section {
+  position: relative;
+  height: 0px;
+  background-color: transparent;
+}
+.sp-waves {
+  position: absolute;
+  width: 100%;
+  height: var(--wave-height-desktop, 40px);
+  min-height: 20px;
+  max-height: 150px;
+  z-index: 1019;
+}
+.sp-waves-top {
+  bottom: 0;
+  left: 0;
+}
+.sp-waves-bottom {
+  top: 0;
+  left: 0;
+  transform: rotate(180deg);
+}
+.sp-waves-parallax2 {
+  animation: sp-waves-animation 25s cubic-bezier(.55, .5, .45, .5) infinite;
+  animation-duration: calc(var(--wave-animation-speed, 25s) * 0.5);
+}
+.sp-waves-parallax>use {
+  animation: sp-waves-animation 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+.sp-waves-parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: calc(var(--wave-animation-speed, 25s) * 0.5);
+}
+.sp-waves-parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: calc(var(--wave-animation-speed, 25s) * 1);
+}
+.sp-waves-parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: calc(var(--wave-animation-speed, 25s) * 1.5);
+}
+.sp-waves-parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: calc(var(--wave-animation-speed, 25s) * 2);
+}
+@keyframes sp-waves-animation {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+@media (max-width: 768px) {
+  .sp-waves {
+    height: var(--wave-height-mobile, 20px);
+    min-height: 20px;
+  }
+}

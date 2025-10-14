@@ -1,6 +1,6 @@
 {% if settings.cart_upsell_enable %}
     {% liquid
-        assign layout = layout | default: settings.cart_upsell_layout
+    assign layout = settings.cart_upsell_layout
       
         case settings.offcanvas_img_orientation
             when 'square'
@@ -45,7 +45,7 @@
     %}
 
     {% unless upsell_handles == blank %}
-        {% assign upsell_handles = upsell_handles | split: ',' %}
+    {% assign upsell_handles = upsell_handles | split: ',' %}
         <div id="cart-upsell" class="">
             <h3 id="cart-upsell-title" class="h6 mb-4">
                 {{ settings.cart_upsell_title }}
@@ -74,7 +74,6 @@
                                      data-rating-stp="{{ product.metafields.shopiweb.rating_shopitrust }}" 
                                      data-num-reviews-stp="{{ product.metafields.shopiweb.number_shopitrust }}">
                                     {% assign stars_rating = product.metafields.shopiweb.rating_shopitrust %}
-                                    {% assign number_reviews = product.metafields.shopiweb.number_shopitrust %}
                                     {% assign colors = "#e8e8eb,#ff3722,#ff8622,#ffce00,#73cf11,#00b67a" | split: "," %}
                                     {% assign full_stars = stars_rating | floor %}
                                     {% assign half_star_present = stars_rating | modulo: 1 %}
@@ -173,9 +172,7 @@
                                                                                                 endif
                                                                                                 assign seen = seen | append: '|' | append: key | append: '|'
                                                                                                 assign mo = shop.metaobjects.color_swatch[key]
-                                                                                                assign label = mo.label | default: v.options[color_opt_index]
-                                                                                                assign hex = mo.hex
-                                                                                                assign img = mo.image_1x | default: mo.image | default: ''
+                                                                                                
                                                                                             endfor
                                                                                         endif
                                                                                     endif
