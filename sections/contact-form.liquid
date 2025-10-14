@@ -46,10 +46,10 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                     echo '</' | append: block.settings.heading_tag | append: '>'
                   endunless
                   unless block.settings.description == blank
-                            <div class="description rte text-muted {{ block.settings.description_size }}">
-                                {{ block.settings.description }}
-                            </div>
-                        {% endunless %}
+                    echo '<div class="description rte text-muted ' | append: block.settings.description_size | append: '">' 
+                    echo block.settings.description
+                    echo '</div>'
+                  endunless
                     </div>
                 {% elsif block.type == 'input_field' %}
                     {% liquid 
