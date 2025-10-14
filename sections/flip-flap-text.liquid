@@ -209,7 +209,26 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
   function handleTickInit(tick) {
 
         var rotation = [
-          {% for block in section.blocks %}{% assign text_length = block.settings.text | split: '' %}{% assign text_length = block.settings.text | size %}{% assign count = global_max | minus: text_length %}{% if forloop.last %}'{{ block.settings.text }}{% for i in (1..count) %}{{ ' ' }}{% endfor %}'{% else %}'{{block.settings.text}}{% for i in (1..count) %}{{ ' ' }}{% endfor %}',{% endif %}{% endfor %}
+          {% liquid
+            for block in section.blocks
+              assign text_length = block.settings.text | split: ''
+              assign text_length = block.settings.text | size
+              assign count = global_max | minus: text_length
+              if forloop.last
+                echo "'" | append: block.settings.text | append: ""
+                for i in (1..count)
+                  echo ' '
+                endfor
+                echo "'"
+              else
+                echo "'" | append: block.settings.text | append: ""
+                for i in (1..count)
+                  echo ' '
+                endfor
+                echo "',"
+              endif
+            endfor
+          %}
         ];
 
         // Index de rotation actuel (commence au premier mot)

@@ -19,14 +19,17 @@
 <div class="dropdown-megamenu dropdown-menu {{ bg_color }}">
     <div class="{{ section.settings.container }}">
         <ul class="list-unstyled row">
-            {% for child_link in link.links %}
-                {% if child_link.title contains '.jpg' or child_link.title contains '.png' or child_link.title contains 'product' %}
-                    <li
-                        class="col megamenu-col animate__animated animate__faster animate__fadeInRight"
-                        style="animation-delay: {{ forloop.index0 | times: 100 }}ms">
-                        <a href="{{ child_link.url }}">
-                            {% if child_link.title contains 'product' %}
-                                {% assign product = child_link.object %}
+                        {% liquid
+                            for child_link in link.links
+                                if child_link.title contains '.jpg' or child_link.title contains '.png' or child_link.title contains 'product'
+                                    echo '<li class="col megamenu-col animate__animated animate__faster animate__fadeInRight" style="animation-delay: ' | append: forloop.index0 | times: 100 | append: 'ms">'
+                                    echo '<a href="' | append: child_link.url | append: '">' 
+                                    if child_link.title contains 'product'
+                                        assign product = child_link.object
+                                    endif
+                                endif
+                            endfor
+                        %}
                                 <img
                                     src="{{ product.featured_image | image_url: width: 480, height: 360, crop: 'center' }}"
                                     class="img-fluid mb-3 rounded img-thumbnail {{ section.settings.shadow_sp_img_megamenu }} {{ section.settings.border_color_img_megamenu }}"

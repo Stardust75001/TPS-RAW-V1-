@@ -56,22 +56,24 @@
 
 <div id="product-block-animated-stories-{{ block.id }}" 
      class="animated-stories-x text-center position-relative overflow-hidden {{ mt }} {{ mb }}" {{ block.shopify_attributes }}>
-    {% assign total_video_count = 0 %}
-    {% if block.settings.video != blank %}
-        {% assign total_video_count = total_video_count | plus: 1 %}
-    {% endif %}
-    {% if block.settings.video_1 != blank %}
-        {% assign total_video_count = total_video_count | plus: 1 %}
-    {% endif %}
-    {% if block.settings.video_2 != blank %}
-        {% assign total_video_count = total_video_count | plus: 1 %}
-    {% endif %}
-    {% if block.settings.video_3 != blank %}
-        {% assign total_video_count = total_video_count | plus: 1 %}
-    {% endif %}
-    {% if block.settings.video_4 != blank %}
-        {% assign total_video_count = total_video_count | plus: 1 %}
-    {% endif %}
+        {% liquid
+            assign total_video_count = 0
+            if block.settings.video != blank
+                assign total_video_count = total_video_count | plus: 1
+            endif
+            if block.settings.video_1 != blank
+                assign total_video_count = total_video_count | plus: 1
+            endif
+            if block.settings.video_2 != blank
+                assign total_video_count = total_video_count | plus: 1
+            endif
+            if block.settings.video_3 != blank
+                assign total_video_count = total_video_count | plus: 1
+            endif
+            if block.settings.video_4 != blank
+                assign total_video_count = total_video_count | plus: 1
+            endif
+        %}
 
     {% assign item_img_size_numeric = block.settings.item_img_size | replace: 'px', '' | plus: 0 %}
   

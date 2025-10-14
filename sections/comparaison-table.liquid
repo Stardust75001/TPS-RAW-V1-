@@ -134,13 +134,13 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                         <tr>
                             {% for cell in header_cells %}
                                 <th 
-                        {% liquid
-                          assign table = section.settings.table
-                        %}
+                        {%- comment -%} Removed unused assignment for 'table' per theme-check suggestion {%- endcomment -%}
                                     class="py-5 text-nowrap {% if forloop.index == 2 %}{{ section.settings.table_second_col_color }} {{ section.settings.table_second_bg_color }}{% endif %}">
-                                    {% unless cell == '#' %}
-                                        {{ cell }}
-                                    {% endunless %}
+                                    {% liquid
+                                      unless cell == '#'
+                                        echo cell
+                                      endunless
+                                    %}
                                     {% case forloop.index %}
                                         {% when 2 %}
                                             {% unless header_block.settings.cell_2_img == blank %}
@@ -182,12 +182,17 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                         {% unless forloop.first %}
                                             <td class="{% if forloop.index == 2 %}{{ section.settings.table_second_col_color }} {{ section.settings.table_second_bg_color }}{% endif %}">
                                                 {% comment %}theme-check-disable{% endcomment %}
-                                                {% if forloop.index == 2 %}
-                                                    {% if block.settings.cell_2_display == 'icon' %}
-                                                        {% if block.settings.cell_2 %}
-                                                            {{ icon_checked_circle }}
-                                                        {% else %}
-                                                            {{ icon_unchecked }}
+                                                {% liquid
+                                                  if forloop.index == 2
+                                                    if block.settings.cell_2_display == 'icon'
+                                                      if block.settings.cell_2
+                                                        echo icon_checked_circle
+                                                      else
+                                                        echo icon_unchecked
+                                                      endif
+                                                    endif
+                                                  endif
+                                                %}
                                                         {% endif %}
                                                     {% else %}
                                                         {{ block.settings.cell_2_text }}

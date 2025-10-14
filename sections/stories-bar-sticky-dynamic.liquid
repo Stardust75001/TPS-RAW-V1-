@@ -49,12 +49,17 @@ Section : Stories Bar Sticky Configurable (dynamique via blocks)
   </style>
 
   <div class="stories-bar">
-    {% assign lang = request.locale.iso_code %}
-    {% case lang %}
-      {% when 'fr' %}{% assign base_url = '/fr/collections/' %}
-      {% when 'de' %}{% assign base_url = '/de/collections/' %}
-      {% else %}{% assign base_url = '/collections/' %}
-    {% endcase %}
+    {% liquid
+      assign lang = request.locale.iso_code
+      case lang
+        when 'fr'
+          assign base_url = '/fr/collections/'
+        when 'de'
+          assign base_url = '/de/collections/'
+        else
+          assign base_url = '/collections/'
+      endcase
+    %}
 
     {% for block in section.blocks %}
       {% assign title = block.settings.title %}

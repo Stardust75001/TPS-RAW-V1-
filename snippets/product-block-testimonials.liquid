@@ -45,19 +45,19 @@
                         
                         {% unless block.settings.text_author == blank %}
                             <div class="fw-semibold d-flex flex-wrap align-items-center mt-0 mb-0">
-                                <p class="text-start">
-                                  <span class="small me-2">
-                                      {{ block.settings.text_author }}
-                                  </span>
-                                    {% if block.settings.show_verified == 'show_avis_verified' %}
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#00b67a" class="bi bi-check-circle-fill" viewbox="0 0 16 16">
-                                          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
-                                        </svg> 
-                                        <span class="extra-small me-2"><em>{{ 'testimonials.verified_review' | t }}</em></span>
-                                    {% elsif block.settings.show_verified == 'show_achat_verified'%}
-                                        <span class="extra-small me-2"><em>{{ 'testimonials.purchase' | t }} <span class="small verified-block">{{ 'testimonials.verified' | t }}</span></em></span>
-                                    {% endif %}
-                                </p>
+                                                                <p class="text-start">
+                                                                    <span class="small me-2">
+                                                                            {{ block.settings.text_author }}
+                                                                    </span>
+                                                                    {% liquid
+                                                                        if block.settings.show_verified == 'show_avis_verified'
+                                                                            echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#00b67a" class="bi bi-check-circle-fill" viewbox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg>'
+                                                                            echo '<span class="extra-small me-2"><em>' | append: 'testimonials.verified_review' | t | append: '</em></span>'
+                                                                        elsif block.settings.show_verified == 'show_achat_verified'
+                                                                            echo '<span class="extra-small me-2"><em>' | append: 'testimonials.purchase' | t | append: ' <span class="small verified-block">' | append: 'testimonials.verified' | t | append: '</span></em></span>'
+                                                                        endif
+                                                                    %}
+                                                                </p>
                                 {% if block.settings.show_stars %}
                                     {% if block.settings.star_style == 'shopitrust' %}
                                         <div class="d-flex mt-1 mb-0">

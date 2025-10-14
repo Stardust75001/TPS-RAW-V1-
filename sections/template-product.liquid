@@ -56,18 +56,22 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                     {% form 'product', product, onsubmit: 'handleAddToCartFormSubmit(this, event)' %}
                         <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
-                          {%- for block in section.blocks -%}
-                              {%- case block.type -%}
-                                  {%- when '@app' -%}
-                                      {% render block %}
-                                  {%- when 'vendor' -%}
-                                      {% render 'product-block-vendor', block: block %}
-                                  {%- when 'title' -%}
-                                      {% render 'product-block-title', block: block %}
-                                  {%- when 'sku' -%}
-                                      {% render 'product-block-sku', block: block %}
-                                  {%- when 'subtitle' -%}
-                                      {% render 'product-block-subtitle', block: block %}
+                          {% liquid
+                            for block in section.blocks
+                              case block.type
+                                when '@app'
+                                  render block
+                                when 'vendor'
+                                  render 'product-block-vendor', block: block
+                                when 'title'
+                                  render 'product-block-title', block: block
+                                when 'sku'
+                                  render 'product-block-sku', block: block
+                                when 'subtitle'
+                                  render 'product-block-subtitle', block: block
+                              endcase
+                            endfor
+                          %}
                                   {%- when 'rating_shopitrust' -%}
                                       {% render 'product-block-rating-shopitrust', block: block %}
                                   {%- when 'rating_natif' -%}

@@ -48,18 +48,19 @@
                 <div class="splide__track mb-8">
                     <ul class="splide__list">
                         {% for block in section.blocks %}
-                            {% liquid 
-                                case block.settings.img_orientation
-                                    when 'square'
-                                        assign img_width  = 600
-                                        assign img_height = 600
-                                    when 'landscape'
-                                        assign img_width  = 600
-                                        assign img_height = 480
-                                    when 'potrait'
-                                        assign img_width  = 480
-                                        assign img_height = 600
-                                endcase %}
+                            {% liquid
+                              case block.settings.img_orientation
+                                when 'square'
+                                  assign img_width = 600
+                                  assign img_height = 600
+                                when 'landscape'
+                                  assign img_width = 600
+                                  assign img_height = 480
+                                when 'potrait'
+                                  assign img_width = 480
+                                  assign img_height = 600
+                              endcase
+                            %}
                             <li class="splide__slide p-3 p-lg-4" {{ block.shopify_attributes }}>
                                 <div 
                                     class="card text-body {{ block.settings.shadow_sp }} {{ block.settings.border_color }} {% unless section.settings.animation == '' %}animate__animated opacity-0 {{ section.settings.animation_speed }}{% endunless %}"

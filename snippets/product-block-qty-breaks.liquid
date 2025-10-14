@@ -39,15 +39,17 @@
                 id="product-qty-breaks-list"
                 class="list-unstyled mb-0" 
                 aria-labelledby="product-qty-breaks-title">
-                {% for item in metafield_value %}
-                    {% liquid
-                        assign qty = item | split: ':' | first | plus: 0
-                        assign discount = item | split: ':' | last | plus: 0
-                        assign save = discount | append: '%'
-                        assign price_per_item = current_variant.price
-                        assign total_price_before_discount = price_per_item | times: qty
-                        assign total_discount_amount = total_price_before_discount | times: discount | divided_by: 100.0
-                        assign total_price_after_discount = total_price_before_discount | minus: total_discount_amount
+                                {% liquid
+                                    for item in metafield_value
+                                        assign qty = item | split: ':' | first | plus: 0
+                                        assign discount = item | split: ':' | last | plus: 0
+                                        assign save = discount | append: '%'
+                                        assign price_per_item = current_variant.price
+                                        assign total_price_before_discount = price_per_item | times: qty
+                                        assign total_discount_amount = total_price_before_discount | times: discount | divided_by: 100.0
+                                        assign total_price_after_discount = total_price_before_discount | minus: total_discount_amount
+                                    endfor
+                                %}
                         assign price = total_price_after_discount | money
                         assign price_compare = total_price_before_discount | money
                         assign price_cash = total_discount_amount | money

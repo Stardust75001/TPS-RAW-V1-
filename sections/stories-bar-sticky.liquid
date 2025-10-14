@@ -2,15 +2,16 @@
 Section : Stories Bar Sticky Configurable (préremplie)
 {% endcomment %}
 
-{% assign sort_order = section.settings.sort_order %}
+{% liquid
+  assign sort_order = section.settings.sort_order
+  assign stories = section.blocks
+  if sort_order == 'alphabetical'
+    assign stories = section.blocks | sort: 'settings.title'
+  endif
+  assign size = section.settings.icon_size | default: 90
+%}
 <div class="stories-bar-wrapper{% if request.page_type == 'index' %} animate-slide-in{% endif %}">
   <div class="stories-bar">
-    {% assign stories = section.blocks %}
-    {% if sort_order == 'alphabetical' %}
-      {% assign stories = section.blocks | sort: 'settings.title' %}
-    {% endif %}
-
-    {% assign size = section.settings.icon_size | default: 90 %}
     {% for block in stories %}
       <a href="{{ block.settings.link }}" class="animated-stories-link" style="--i:{{ forloop.index }}">
         {% if block.settings.image != blank %}

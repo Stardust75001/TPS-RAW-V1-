@@ -4,50 +4,39 @@ Affiche des pastilles couleur (swatches) basées sur le metaobjet `color_swatch`
 et sur le metafield de variante `global.ref_variant_id`.
 {%- endcomment -%}
 
-{%- assign product_color_swatches = product | default: section.settings.product -%}
-{%- if product_color_swatches == blank -%}
-  {%- assign product_color_swatches = all_products[request.handle] -%}
-{%- endif -%}
-
-{%- if product_color_swatches != blank -%}
-
-  {%- comment -%} Expose une map variant.id -> ref_variant_id pour le JS {%- endcomment -%}
-  <script type="application/json" id="variant-ref-map">
-  {
-  {%- for v in product_color_swatches.variants -%}
-    "{{ v.id }}": "{{ v.metafields.global.ref_variant_id.value | default: '' | strip | downcase }}"{% unless forloop.last %},{% endunless %}
-  {%- endfor -%}  }
-  </script>
-  <script>window.__productVariantsJSON = {{ product_color_swatches.variants | json }};</script>
-
-  {%- comment -%} Détecte l’index de l’option "Couleur/Color" {%- endcomment -%}
-  {%- assign color_opt_index = nil -%}
-  {%- for opt in product_color_swatches.options_with_values -%}
-    {%- assign opt_name = opt.name | downcase -%}
-    {%- if opt_name contains 'couleur' or opt_name contains 'color' -%}
-      {%- assign color_opt_index = forloop.index0 -%}
-    {%- endif -%}
-  {%- endfor -%}
-
-  {%- if color_opt_index != nil -%}
-    {%- assign seen = '' -%}
-    <div class="color-swatches" role="group" aria-label="Choose color">
-  {%- for v in product_color_swatches.variants -%}
-        {%- assign key = v.metafields.global.ref_variant_id.value | default: v.options[color_opt_index] | downcase | strip -%}
-        {%- if key == blank -%}{% continue %}{%- endif -%}
-        {%- assign needle = '|' | append: key | append: '|' -%}
-        {%- if seen contains needle %}
-          {% continue %}
-        {%- endif %}
-        {%- assign seen = seen | append: '|' | append: key | append: '|' -%}
-
-        {%- assign mo = shop.metaobjects.color_swatch[key] -%}
-        {%- assign label = mo.label | default: v.options[color_opt_index] -%}
-        {%- assign hex = mo.hex -%}
-        {%- assign img = mo.image_1x | default: mo.image | default: '' -%}
-
-        <label class="swatch" data-color-key="{{ key }}">
-     <input type="radio" name="color_swatch"
+{% liquid
+  assign product_color_swatches = product | default: section.settings.product
+  if product_color_swatches == blank
+    assign product_color_swatches = all_products[request.handle]
+  endif
+  if product_color_swatches != blank
+    assign color_opt_index = nil
+    for opt in product_color_swatches.options_with_values
+      assign opt_name = opt.name | downcase
+      if opt_name contains 'couleur' or opt_name contains 'color'
+        assign color_opt_index = forloop.index0
+      endif
+    endfor
+    if color_opt_index != nil
+      assign seen = ''
+      for v in product_color_swatches.variants
+        assign key = v.metafields.global.ref_variant_id.value | default: v.options[color_opt_index] | downcase | strip
+        if key == blank
+          continue
+        endif
+        assign needle = '|' | append: key | append: '|'
+        if seen contains needle
+          continue
+        endif
+        assign seen = seen | append: '|' | append: key | append: '|'
+        assign mo = shop.metaobjects.color_swatch[key]
+        assign label = mo.label | default: v.options[color_opt_index]
+        assign hex = mo.hex
+        assign img = mo.image_1x | default: mo.image | default: ''
+      endfor
+    endif
+  endif
+%}
        data-variant-option-index="{{ color_opt_index }}"
        value="{{ label | escape }}"
        {% if product_color_swatches.selected_or_first_available_variant.metafields.global.ref_variant_id.value == key %}checked{% endif %}>
