@@ -55,27 +55,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
               </div> <!-- Close col-lg-6 -->
           </div> <!-- Close row -->
           {% for block in section.blocks %}
-            {% case block.type %}
-              {% when 'vendor' %}
-                {% render 'product-block-vendor', block: block %}
-              {% when 'title' %}
-                {% render 'product-block-title', block: block %}
-              {% when 'sku' %}
-                {% render 'product-block-sku', block: block %}
-              {% when 'subtitle' %}
-                {% render 'product-block-subtitle', block: block %}
-              {% when 'rating_shopitrust' %}
-                {% render 'product-block-rating-shopitrust', block: block %}
-              {% when 'rating_natif' %}
-                {% render 'product-block-rating-natif', block: block %}
-              {% when 'price' %}
-                {% render 'product-block-price', block: block %}
-              {% when 'variant_selector' %}
-                {% render 'product-block-variant-selector', block: block %}
-              {% when 'purchase_options' %}
-                {% render 'product-block-purchase-options', block: block %}
-              {% when 'inventory_bar' %}
-                {% render 'product-block-inventory-bar', block: block %}
+            {% schema %}
               {% when 'gift_card' %}
                 {% render 'product-block-gift-card', block: block %}
               {% when 'buy_buttons' %}
