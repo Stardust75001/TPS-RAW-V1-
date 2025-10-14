@@ -139,11 +139,13 @@ document.addEventListener("change",function(e){if(e.target.matches('select[name^
 %}
 
 
-{% if product.selected_or_first_available_variant.featured_media %}
-  {% assign seo_media = product.selected_or_first_available_variant.featured_media %}
-{% else %}
-  {% assign seo_media = product.featured_media %}
-{% endif %}
+{% liquid
+  if product.selected_or_first_available_variant.featured_media
+    assign seo_media = product.selected_or_first_available_variant.featured_media
+  else
+    assign seo_media = product.featured_media
+  endif
+%}
 
 <!-- Structured data for SEO -->
 <script type="application/ld+json">
@@ -427,9 +429,10 @@ document.addEventListener("change",function(e){if(e.target.matches('select[name^
           { "type": "checkbox", "id": "show_buy_btn", "label": "Show buy button", "default": true }
         ]
       }
-      // Add more blocks as needed for your theme
-  ],
-  "presets": [
+    // Add more blocks as needed for your theme
+    ]
+    ,
+    "presets": [
     {
       "name": "Product (template)",
       "category": "Product page"
