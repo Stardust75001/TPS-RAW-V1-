@@ -4,10 +4,5 @@
   Safe at runtime: wrapped in `{% if false %}` => produces no output or side effects.
 {%- endcomment -%}
 
-{% if false %}
+{% comment %}
   {%- render 'bought-product-together' -%}
-  {%- render 'offcanvas-cart' -%}
-  {%- render 'offcanvas-product-listing' -%}
-    {%- render 'whatsapp-global' -%}
-    {%- render 'whatsapp-business' -%}
-{% endif %}

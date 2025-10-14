@@ -73,7 +73,9 @@
                                      data-id="{{ product.id }}"
                                      data-rating-stp="{{ product.metafields.shopiweb.rating_shopitrust }}" 
                                      data-num-reviews-stp="{{ product.metafields.shopiweb.number_shopitrust }}">
-                                    {% assign stars_rating = product.metafields.shopiweb.rating_shopitrust %}
+                                            {% liquid
+                                                assign stars_rating = product.metafields.shopiweb.rating_shopitrust
+                                            %}
                                     {% assign colors = "#e8e8eb,#ff3722,#ff8622,#ffce00,#73cf11,#00b67a" | split: "," %}
                                     {% assign full_stars = stars_rating | floor %}
                                     {% assign half_star_present = stars_rating | modulo: 1 %}
@@ -171,7 +173,6 @@
                                                                                                     continue
                                                                                                 endif
                                                                                                 assign seen = seen | append: '|' | append: key | append: '|'
-                                                                                                assign mo = shop.metaobjects.color_swatch[key]
                                                                                                 
                                                                                             endfor
                                                                                         endif

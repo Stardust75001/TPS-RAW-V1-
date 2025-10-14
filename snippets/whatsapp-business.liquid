@@ -2,7 +2,9 @@
 {%- liquid
   assign enabled    = settings.whatsapp_business_enable | default: true
   assign visibility = settings.whatsapp_business_visibility | default: 'all'
-  assign number     = settings.whatsapp_business_number | remove: '+' | replace: ' ', '' | default: ''
+  # accept either 'whatsapp_business_number' or legacy 'whatsapp_number'
+  assign number_raw = settings.whatsapp_business_number | default: settings.whatsapp_number | default: ''
+  assign number     = number_raw | remove: '+' | replace: ' ', ''
   assign btn_style  = settings.whatsapp_business_btn_style | default: 'btn-success'
   assign text       = settings.whatsapp_business_text | default: 'WhatsApp'
 -%}

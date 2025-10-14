@@ -1,4 +1,5 @@
-{% liquid 
+{% comment %} Keep 'potrait' spelling if the schema uses that exact value {% endcomment %}
+{% liquid
   case block.settings.img_orientation
     when 'square'
       assign img_width  = 300
@@ -6,7 +7,7 @@
     when 'landscape'
       assign img_width  = 300
       assign img_height = 240
-    when 'potrait'     # gardé tel quel si le schema utilise bien "potrait"
+    when 'potrait'
       assign img_width  = 240
       assign img_height = 300
   endcase
@@ -14,50 +15,43 @@
   assign current_variant = product.selected_or_first_available_variant
 
   assign metafield_namespace = block.settings.metafield | split: '.' | first
-  assign metafield_key = block.settings.metafield | split: '.' | last
-  assign metafield_value = product.metafields[metafield_namespace][metafield_key].value
+  assign metafield_key       = block.settings.metafield | split: '.' | last
+  assign metafield_value     = product.metafields[metafield_namespace][metafield_key].value
 
   assign mt = block.settings.mt | prepend: 'mt-'
   assign mb = block.settings.mb | prepend: 'mb-'
 
-  assign all_texts = block.settings.text_offer_all_blocks | split: ','
+  assign all_texts        = block.settings.text_offer_all_blocks | split: ','
   assign enable_animation = block.settings.enable_animation_last_block
 %}
 
 {% if metafield_value %}
   {% if block.settings.style_packs == 'inline' %}
-    <div 
-      id="product-qty-breaks"
-      class="{{ mt }} {{ mb }}" {{ block.shopify_attributes }}>
-      <h2 
-        id="product-qty-breaks-title"
-        class="title {{ block.settings.title_size }}">
+    <div id="product-qty-breaks" class="{{ mt }} {{ mb }}" {{ block.shopify_attributes }}>
+      <h2 id="product-qty-breaks-title" class="title {{ block.settings.title_size }}">
         {{ block.settings.title }}
       </h2>
 
-      <ul 
-        id="product-qty-breaks-list"
-        class="list-unstyled mb-0" 
-        aria-labelledby="product-qty-breaks-title">
+      <ul id="product-qty-breaks-list" class="list-unstyled mb-0" aria-labelledby="product-qty-breaks-title">
         {% for item in metafield_value %}
           {% liquid
-            assign qty = item | split: ':' | first  | plus: 0
-            assign discount = item | split: ':' | last | plus: 0
-            assign save = discount | append: '%'
+            assign qty   = item | split: ':' | first | plus: 0
+            assign discount = item | split: ':' | last  | plus: 0
+            assign save  = discount | append: '%'
 
-            assign price_per_item = current_variant.price
+            assign price_per_item              = current_variant.price
             assign total_price_before_discount = price_per_item | times: qty
-            assign total_discount_amount = total_price_before_discount | times: discount | divided_by: 100
-            assign total_price_after_discount = total_price_before_discount | minus: total_discount_amount
+            assign total_discount_amount       = total_price_before_discount | times: discount | divided_by: 100
+            assign total_price_after_discount  = total_price_before_discount | minus: total_discount_amount
 
-            assign price = total_price_after_discount | money
+            assign price         = total_price_after_discount | money
             assign price_compare = total_price_before_discount | money
-            assign price_cash = total_discount_amount | money
+            assign price_cash    = total_discount_amount | money
           %}
           <li class="form-check">
-            <input 
+            <input
               id="product-qty-breaks-{{ forloop.index }}"
-              class="form-check-input" 
+              class="form-check-input"
               type="radio"
               name="product-qty-breaks"
               data-qty="{{ qty }}"
@@ -70,46 +64,38 @@
             <label class="form-check-label" for="product-qty-breaks-{{ forloop.index }}">
               {{ 'product.qty_breaks.label_text_html' | t: qty: qty, pricecash: price_cash, save: save }}
               <br>
-              <span class="product-item-price-final me-1">
-                {{ price }}
-              </span>
-              <span class="text-muted">
-                <s>{{ price_compare }}</s>
-              </span> 
+              <span class="product-item-price-final me-1">{{ price }}</span>
+              <span class="text-muted"><s>{{ price_compare }}</s></span>
             </label>
           </li>
         {% endfor %}
       </ul>
     </div>
   {% else %}
-    <div 
-      id="product-qty-breaks"
-      class="{{ mt }} {{ mb }}" {{ block.shopify_attributes }}>
-      <h2 
-        id="product-qty-breaks-title"
-        class="title {{ block.settings.title_size }}">
+    <div id="product-qty-breaks" class="{{ mt }} {{ mb }}" {{ block.shopify_attributes }}>
+      <h2 id="product-qty-breaks-title" class="title {{ block.settings.title_size }}">
         {{ block.settings.title }}
       </h2>
 
-      <ul 
+      <ul
         id="product-qty-breaks-list"
-        class="product-listing list-unstyled row row-cols-1 row-cols-xl-2 mx-n2 mb-3" 
+        class="product-listing list-unstyled row row-cols-1 row-cols-xl-2 mx-n2 mb-3"
         aria-labelledby="product-qty-breaks-title">
 
         {% for item in metafield_value %}
           {% liquid
-            assign qty = item | split: ':' | first  | plus: 0
-            assign discount = item | split: ':' | last | plus: 0
-            assign save = discount | append: '%'
+            assign qty   = item | split: ':' | first | plus: 0
+            assign discount = item | split: ':' | last  | plus: 0
+            assign save  = discount | append: '%'
 
-            assign price_per_item = current_variant.price
+            assign price_per_item              = current_variant.price
             assign total_price_before_discount = price_per_item | times: qty
-            assign total_discount_amount = total_price_before_discount | times: discount | divided_by: 100
-            assign total_price_after_discount = total_price_before_discount | minus: total_discount_amount
+            assign total_discount_amount       = total_price_before_discount | times: discount | divided_by: 100
+            assign total_price_after_discount  = total_price_before_discount | minus: total_discount_amount
 
-            assign price = total_price_after_discount | money
+            assign price         = total_price_after_discount | money
             assign price_compare = total_price_before_discount | money
-            assign price_cash = total_discount_amount | money
+            assign price_cash    = total_discount_amount | money
           %}
 
           <li class="product-item pb-5">
@@ -120,9 +106,9 @@
             <div class="row align-items-center border rounded-bottom bg-light pb-3 mx-n3">
               <div class="col-1 col-xl-1 px-3">
                 <div class="form-check">
-                  <input 
+                  <input
                     id="product-qty-breaks-{{ forloop.index }}"
-                    class="form-check-input" 
+                    class="form-check-input"
                     type="radio"
                     name="product-qty-breaks"
                     data-qty="{{ qty }}"
@@ -150,7 +136,7 @@
                       alt="{{ product.title | escape }}"
                     {% endif %}
                     width="{{ img_width }}"
-                    height="{{ img_height }}" 
+                    height="{{ img_height }}"
                     loading="lazy">
                 </label>
               </div>
@@ -158,19 +144,21 @@
               <div class="col-7 col-xl-7 px-3">
                 <div>
                   <label class="form-check-label" for="product-qty-breaks-{{ forloop.index }}">
-                    {% if forloop.last %}
-                      {% assign block_text = all_texts | last | strip %}
-                      {% assign text_color = block.settings.offer_color_last %}
-                      {% if enable_animation %}
-                        {% assign additional_styles = "animation: flash 3s infinite;" %}
-                      {% else %}
-                        {% assign additional_styles = "" %}
-                      {% endif %}
-                    {% else %}
-                      {% assign block_text = all_texts[forloop.index0] | strip %}
-                      {% assign text_color = block.settings.offer_color_all_blocks %}
-                      {% assign additional_styles = "" %}
-                    {% endif %}
+                    {% liquid
+                      if forloop.last
+                        assign block_text = all_texts | last | strip
+                        assign text_color = block.settings.offer_color_last
+                        if enable_animation
+                          assign additional_styles = "animation: flash 3s infinite;"
+                        else
+                          assign additional_styles = ""
+                        endif
+                      else
+                        assign block_text = all_texts[forloop.index0] | strip
+                        assign text_color = block.settings.offer_color_all_blocks
+                        assign additional_styles = ""
+                      endif
+                    %}
 
                     {% unless block_text == blank %}
                       <div class="small fw-semibold mb-1 mt-3">
@@ -181,12 +169,8 @@
                     <b>{{ 'product.qty_breaks.label_text_html_bundle' | t: qty: qty }}</b>
                     <br> {{ product.title }}
                     <br>
-                    <span class="product-item-price-final me-1">
-                      {{ price }}
-                    </span>
-                    <span class="text-muted">
-                      <s>{{ price_compare }}</s>
-                    </span> 
+                    <span class="product-item-price-final me-1">{{ price }}</span>
+                    <span class="text-muted"><s>{{ price_compare }}</s></span>
                   </label>
                 </div>
               </div>

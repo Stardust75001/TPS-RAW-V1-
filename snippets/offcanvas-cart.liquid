@@ -419,7 +419,9 @@
                                 {{ settings.cart_upsell_title }}
                             </h3>
                             <ul id="cart-upsell-list" class="cart-upsell-list-horizontal product-listing list-unstyled">
-                                {% assign upsell_handles = '' %}
+                                        {% liquid
+                                            assign upsell_handles = ''
+                                        %}
                                 {% for product in settings.cart_upsell_collection.products %}
                                     {% unless cart.items contains product.handle %}
                                         {% if product.available %}

@@ -1,7 +1,6 @@
-{%- assign current_level = level | default: 1 -%}
-
 {% liquid
   assign bg_color = section.settings.bg_color
+  assign current_level = current_level | default: 1
 %}
 
 <ul class="nav nav-icons justify-content-end" aria-label="{{ 'general.accessibility.utility_icons' | t }}">
@@ -33,7 +32,6 @@
           </a>
 
           {%- if link.levels > 1 -%}
-            {%- comment -%} Prevent deep recursion by controlling `level` {%- endcomment -%}
             {% render 'navbar-megamenu-dropdown', link: link, level: current_level | plus: 1 %}
           {%- else -%}
             <ul class="dropdown-menu {{ bg_color }}">
@@ -78,10 +76,8 @@
         aria-controls="offcanvas-search"
         role="button"
         aria-label="{{ 'general.accessibility.search' | t }}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
+        <!-- search icon SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </a>
     </li>
   {%- endif -%}
@@ -93,10 +89,8 @@
         aria-current="{% if template.name == 'login' or template.name == 'account' %}page{% endif %}"
         href="{{ routes.account_url }}"
         aria-label="{{ 'general.accessibility.account' | t }}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
-        </svg>
+        <!-- user icon SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </a>
     </li>
   {%- endif -%}
@@ -110,15 +104,13 @@
         aria-controls="offcanvas-wishlist"
         aria-label="{{ 'general.accessibility.wishlist' | t }}"
         role="button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-        </svg>
+        <!-- heart icon SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         <span
           class="wishlist-count-badge badge {% if section.settings.bg_color contains 'bg-primary' %}bg-white text-dark{% else %}bg-primary{% endif %}"
           aria-live="polite"
           aria-atomic="true"
-          hidden>
-        </span>
+          hidden></span>
       </a>
     </li>
   {%- endif -%}
@@ -138,9 +130,7 @@
       {% render 'icon-cart' %}
       <span
         class="cart-count-badge badge {% if section.settings.bg_color contains 'bg-primary' %}bg-white text-body{% else %}bg-primary{% endif %}"
-        {% if cart.item_count == 0 %}hidden{% endif %}>
-        {{ cart.item_count }}
-      </span>
+        {% if cart.item_count == 0 %}hidden{% endif %}>{{ cart.item_count }}</span>
     </a>
   </li>
 </ul>

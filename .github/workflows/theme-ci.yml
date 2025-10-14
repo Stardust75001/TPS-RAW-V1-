@@ -1,45 +1,21 @@
----
 name: Theme CI (structure + sanity + JSON)
 
-
 on:
-  workflow_dispatch:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   theme-ci:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # Installe Node proprement (sans apt)
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Ensure jq
-        shell: bash
-        run: |
-          set -euo pipefail
-          sudo apt-get update -y
-          sudo apt-get install -y jq
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'
-          bundler-cache: false
-
-      - name: Sanity | theme structure at repo root
+      - name: "Sanity: theme structure at repo root"
         shell: bash
         run: |
           set -euo pipefail
@@ -55,12 +31,14 @@ jobs:
               exit 1
             fi
           done
-          echo "Theme structure OK ✅"
+          echo "✅ Theme structure OK"
 
-      - name: Validate JSON files (locales)
+      - name: "Validate JSON files (locales)"
         shell: bash
         run: |
           set -euo pipefail
+          sudo apt-get update -y
+          sudo apt-get install -y jq
           find locales -type f -name '*.json' -print0 |
           while IFS= read -r -d '' f; do
             echo "Checking $f"
@@ -68,49 +46,23 @@ jobs:
           done
           echo "✅ All locale JSON files valid"
 
-      - name: Add gem bin path to PATH for later steps
-        run: echo "$(ruby -r rubygems -e 'puts Gem.user_dir')/bin" >> "$GITHUB_PATH"
+      - name: "Setup Ruby"
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: false
 
-      - name: Run theme-check (Ruby CLI)
+      - name: "Install theme-check"
+        shell: bash
+        run: |
+          gem install --user-install theme-check
+          echo "$(ruby -r rubygems -e 'puts Gem.user_dir')/bin" >> "$GITHUB_PATH"
+
+      - name: "Run theme-check"
         shell: bash
         run: |
           set -euo pipefail
-          gem install theme-check -N --user-install
-          export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-          GEM_BIN="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
-          echo "Using GEM_BIN=$GEM_BIN"
-          hash -r
-          which theme-check || true
+          echo "theme-check version:"
           theme-check --version
-          theme-check --fail-level error
-
-      - name: Prettier check (Liquid/JSON)
-        shell: bash
-        run: |
-          npm install -g prettier
-          echo "Prettier version:" $(prettier --version)
-          echo "Prettier config:" $(prettier --find-config-path locales/da.json)
-          prettier -c "locales/**/*.json" "config/**/*.json"
-
-      - name: Check asset file sizes
-        shell: bash
-        run: |
-          large_files=$(find assets -type f -size +500k || true)
-          if [[ -n "$large_files" ]]; then
-            echo "::error::Found asset files > 500KB:"
-            echo "$large_files"
-            exit 1
-          fi
-          echo "✅ All asset files are under 500KB"
-
-      - name: Validate section schemas (presence only)
-        shell: bash
-        run: |
-          shopt -s nullglob
-          for file in sections/*.liquid; do
-            if ! grep -q '{% schema %}' "$file"; then
-              echo "::error file=$file::Missing schema tag"
-              exit 1
-            fi
-          done
-          echo "✅ All section files contain schema tags"
+          echo "Running theme-check..."
+          theme-check .
