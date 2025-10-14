@@ -52,7 +52,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                   endunless
                     echo '</div>'
         {% elsif block.type == 'input_field' %}
-          {% liquid 
+          {% liquid
             assign input_name = block.settings.label | handleize
             if input_name contains 'mail'
               assign input_name = 'email'

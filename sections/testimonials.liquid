@@ -131,7 +131,9 @@
                                                             {% liquid
                                                               assign stars_rating = block.settings.stars_rating
                                                             %}
-                                                            {% assign colors = "#e8e8eb,#ff3722,#ff8622,#ffce00,#73cf11,#00b67a" | split: "," %}
+                                                            {% liquid
+                                                              assign colors = "#e8e8eb,#ff3722,#ff8622,#ffce00,#73cf11,#00b67a" | split: ","
+                                                            %}
                                                             {% assign full_stars = stars_rating | floor %}
                                                             {% assign half_star_present = stars_rating | modulo: 1 %}
                                                             {% assign next_star = full_stars | plus: 1 %}

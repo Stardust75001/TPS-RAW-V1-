@@ -14,7 +14,9 @@
     {% assign number_reviews = product.metafields.shopiweb.number_shopitrust %}
     
     {% comment %}Define color codes for ratings{% endcomment %}
-    {% assign colors = "#e8e8eb,#ff3722,#ff8622,#ffce00,#73cf11,#00b67a" | split: "," %}
+        {% liquid
+            assign colors = "#e8e8eb,#ff3722,#ff8622,#ffce00,#73cf11,#00b67a" | split: ","
+        %}
     {% assign full_stars = stars_rating | floor %}
     {% assign half_star_present = stars_rating | modulo: 1 %}
     {% assign next_star = full_stars | plus: 1 %}
