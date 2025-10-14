@@ -1,4 +1,3 @@
-fail_level: error
 ignore:
   - node_modules/**
   - vendor/**
