@@ -38,9 +38,10 @@ jobs:
 
       - name: Generate CSVs & fill (no commit in CI)
         run: |
-          node i18n-fix-selfrefs.js || true
-          node i18n-fill-all.js || true
-          node i18n-empty-report.js || true
+          node i18n-fix-selfrefs.js
+          node i18n-fill-all.js
+          node i18n-empty-report.js
+        continue-on-error: true
 
       - name: Upload CSV artifacts
         uses: actions/upload-artifact@v4
@@ -57,3 +58,16 @@ jobs:
             echo "Repo has uncommitted changes after i18n fill. Run the i18n scripts locally and commit."
             git status --porcelain
             exit 42
+
+      # Notification on failure
+      - name: Notify on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '[i18n-check] Workflow Failure',
+              body: `The i18n-check workflow failed. Please review the logs: ${process.env.GITHUB_RUN_URL}`
+            })
