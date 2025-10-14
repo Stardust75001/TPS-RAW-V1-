@@ -1,4 +1,3 @@
-
 name: i18n validation
 
 on:
@@ -47,10 +46,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: i18n-csv
+          if-no-files-found: ignore
           path: |
             i18n-missing-export.csv
             i18n-empty-strings.csv
-          if-no-files-found: ignore
 
       - name: Fail if repo dirty after fill (devs must run scripts locally)
         run: |
@@ -58,4 +57,3 @@ jobs:
             echo "Repo has uncommitted changes after i18n fill. Run the i18n scripts locally and commit."
             git status --porcelain
             exit 42
-          fi
