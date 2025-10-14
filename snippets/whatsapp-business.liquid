@@ -9,6 +9,7 @@
 		{% assign show_whatsapp = true %}
 	{% endif %}
 	{% if show_whatsapp %}
+{%- comment -%}
 		<a href="https://wa.me/{{ section.settings.whatsapp_business_number | remove: '+' }}"
 			 target="_blank"
 			 class="btn {{ section.settings.whatsapp_business_btn_style }} whatsapp-business-btn">
@@ -16,3 +17,7 @@
 		</a>
 	{% endif %}
 {% endif %}
+		</a>
+		{% endif %}
+	{% endif %}
+{%- endcomment -%}
