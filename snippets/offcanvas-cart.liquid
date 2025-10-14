@@ -260,6 +260,7 @@
                             {% endunless %}
                         {% endfor %}
                     </ul>
+                    {%- comment -%} Directly uses flattened cart-upsell snippet (inlined product-rating-badge and cart-upsell-product-form) {%- endcomment -%}
                     {% render 'cart-upsell' %}
                     <hr class="">
                     {% render 'cart-note' %}
