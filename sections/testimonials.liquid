@@ -128,7 +128,9 @@
                                                 {% if block.settings.show_stars %}
                                                     {% if section.settings.star_style == 'shopitrust' %}
                                                         <div class="d-flex {{ block.settings.title_align }} mt-2 mb-0">
-                                                            {% assign stars_rating = block.settings.stars_rating %}
+                                                            {% liquid
+                                                              assign stars_rating = block.settings.stars_rating
+                                                            %}
                                                             {% assign colors = "#e8e8eb,#ff3722,#ff8622,#ffce00,#73cf11,#00b67a" | split: "," %}
                                                             {% assign full_stars = stars_rating | floor %}
                                                             {% assign half_star_present = stars_rating | modulo: 1 %}

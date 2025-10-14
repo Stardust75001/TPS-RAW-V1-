@@ -8,7 +8,9 @@
      data-rating-stp="{{ product.metafields.shopiweb.rating_shopitrust }}" 
      data-num-reviews-stp="{{ product.metafields.shopiweb.number_shopitrust }}" {{ block.shopify_attributes }}>
     
-    {% assign stars_rating = product.metafields.shopiweb.rating_shopitrust %}
+        {% liquid
+            assign stars_rating = product.metafields.shopiweb.rating_shopitrust
+        %}
     {% assign number_reviews = product.metafields.shopiweb.number_shopitrust %}
     
     {% comment %}Define color codes for ratings{% endcomment %}
