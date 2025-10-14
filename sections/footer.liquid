@@ -36,7 +36,7 @@ Footer section – version corrigée (JSON schema valide)
       <div class="footer-about py-4 {{ about_bg_color }}">
         {%- if section.settings.about_logo != blank -%}
     <img src="{{ section.settings.about_logo | image_url: width: 300 }}"
-      alt="{{ shop.name }}" width="300" height="auto" class="img-fluid mb-3">
+      alt="{{ shop.name }}" width="300" height="auto" class="img-fluid mb-3" loading="lazy">
         {%- endif -%}
 
         {%- unless section.settings.svg_logo_footer == blank -%}
