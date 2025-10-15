@@ -1,11 +1,8 @@
-cd "$HOME/Shopify/TPS RAW V1"
-
-cat > .github/workflows/security-check.yml <<'YAML'
 name: Security check
 
 on:
   workflow_dispatch:
-    push:
+  push:
     branches: [ main, dev, staging, production ]
   pull_request:
     branches: [ main, dev, staging, production ]
@@ -71,4 +68,3 @@ jobs:
           fi
 
           echo "✅ No tokens detected. Safe to proceed."
-YAML
