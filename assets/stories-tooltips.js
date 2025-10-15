@@ -1,87 +1,221 @@
-function debug(...args) {
-  if (typeof isDev !== "undefined" && isDev) {
-    console.debug("[Stories Tooltip]", ...args);
+/**
+ * stories-tooltips.js
+ * - Desktop: hover => affiche le tooltip, mouseout => cache
+ * - Mobile (pointer: coarse): 1er tap => affiche, 2e tap => navigue
+ * - Auto-hide après 2.2s
+ * - Ré-init sur shopify:section:load
+ */
+(function () {
+  const SELECTOR_CONTAINER = ".stories-bar-sticky, .stories-bar-sticky-dynamic";
+  const SELECTOR_ITEM = ".story-icon";
+  const SELECTOR_TOOLTIP = ".tooltip-bubble";
+  const ATTR_ACTIVE = "data-tooltip-active";
+  const HIDE_DELAY = 2200; // 2.2s
+
+  // Eviter les doublons d'écouteurs si le fichier est chargé plusieurs fois
+  // on marque la racine document quand le bind global est fait.
+  const BIND_MARK = "__tps_tooltips_bound__";
+
+  // Timers par tooltip
+  const hideTimers = new WeakMap();
+
+  function isTouch() {
+    return window.matchMedia("(pointer: coarse)").matches;
   }
-}
 
-document.addEventListener("DOMContentLoaded", function () {
-  const isMobile = window.matchMedia("(hover: none)").matches;
-  debug("isMobile:", isMobile);
+  function getTooltip(el) {
+    return el ? el.querySelector(SELECTOR_TOOLTIP) : null;
+  }
 
-  document.querySelectorAll(".animated-stories-link").forEach(link => {
-    const tooltip = link.querySelector(".tooltip-bubble");
-    if (!tooltip) return;
+  function showTooltip(item) {
+    const tip = getTooltip(item);
+    if (!tip) return;
+    tip.setAttribute("aria-hidden", "false");
+    item.setAttribute(ATTR_ACTIVE, "true");
+    if (hideTimers.has(tip)) clearTimeout(hideTimers.get(tip));
+    hideTimers.set(
+      tip,
+      setTimeout(() => hideTooltip(item), HIDE_DELAY)
+    );
+  }
 
-    // Desktop : hover = tooltip, clic = navigation directe
-    if (!isMobile) {
-      link.addEventListener(
-        "mouseenter",
-        () => {
-          tooltip.classList.add("hover-visible");
-          debug("Hover enter on", link);
-          setTimeout(() => adjustTooltipPosition(tooltip), 0);
-        },
-        { passive: true }
-      );
+  function hideTooltip(item) {
+    const tip = getTooltip(item);
+    if (!tip) return;
+    tip.setAttribute("aria-hidden", "true");
+    item.removeAttribute(ATTR_ACTIVE);
+    if (hideTimers.has(tip)) {
+      clearTimeout(hideTimers.get(tip));
+      hideTimers.delete(tip);
+    }
+  }
 
-      link.addEventListener(
-        "mouseleave",
-        () => {
-          tooltip.classList.remove("hover-visible");
-          debug("Hover leave on", link);
-          resetTooltipPosition(tooltip);
-        },
-        { passive: true }
-      );
+  function bindHover(container) {
+    // Desktop seulement
+    container.addEventListener("mouseover", (e) => {
+      if (isTouch()) return;
+      const item = e.target.closest(SELECTOR_ITEM);
+      if (!item || !container.contains(item)) return;
+      showTooltip(item);
+    });
+    container.addEventListener("mouseout", (e) => {
+      if (isTouch()) return;
+      const item = e.target.closest(SELECTOR_ITEM);
+      if (!item || !container.contains(item)) return;
+      hideTooltip(item);
+    });
+  }
 
-      // Pas besoin de bloquer le clic → navigation normale
+  function bindTap(container) {
+    // Mobile seulement
+    container.addEventListener("click", (e) => {
+      if (!isTouch()) return;
+      const item = e.target.closest(SELECTOR_ITEM);
+      if (!item || !container.contains(item)) return;
+
+      // On cherche un lien/cliquable à l'intérieur de l'item
+      const link = e.target.closest("a, button");
+      if (!link) return; // ne gère que le cas 'tap pour aller quelque part'
+
+      const active = item.hasAttribute(ATTR_ACTIVE);
+      if (!active) {
+        // 1er tap: afficher le tooltip, bloquer la nav
+        e.preventDefault();
+        showTooltip(item);
+      } else {
+        // 2e tap: laisser naviguer (aucun preventDefault)
+      }
+    });
+  }
+
+  function bindOutsideToHide() {
+    // Cacher si on tape/click en dehors (mobile)
+    document.addEventListener("click", (e) => {
+      if (!isTouch()) return;
+      const inside = e.target.closest(SELECTOR_ITEM);
+      if (inside) return;
+      document
+        .querySelectorAll(`${SELECTOR_ITEM}[${ATTR_ACTIVE}]`)
+        .forEach((el) => hideTooltip(el));
+    });
+  }
+
+  function initInRoot(root = document) {
+    const containers = root.querySelectorAll(SELECTOR_CONTAINER);
+    containers.forEach((c) => {
+      // Pour éviter double-bind si la section se recharge et que le conteneur persiste
+      if (c.__tps_bound) return;
+      c.__tps_bound = true;
+      bindHover(c);
+      bindTap(c);
+    });
+  }
+
+  function bindGlobal() {
+    if (document[BIND_MARK]) return;
+    document[BIND_MARK] = true;
+    bindOutsideToHide();
+
+    // Init au chargement
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => initInRoot(document));
+    } else {
+      initInRoot(document);
     }
 
-    // Mobile : 1er clic affiche tooltip, 2e clic déclenche navigation
-    else {
-      let tappedOnce = false;
+    // Ré-init lors de reload d'une section Shopify
+    document.addEventListener("shopify:section:load", (ev) => {
+      initInRoot(ev.target);
+    });
+  }
 
-      link.addEventListener("click", e => {
-        if (!tappedOnce) {
-          e.preventDefault();
-          debug("1er tap on", link);
+  bindGlobal();
+})();
+(() => {
+  const SELECTOR_ITEM = ".story-icon";
+  const SELECTOR_TOOLTIP = ".tooltip-bubble";
+  const ATTR_ACTIVE = "data-tooltip-active";
+  const HIDE_DELAY = 2200; // 2.2s
 
-          // Cache autres infobulles
-          document
-            .querySelectorAll(".tooltip-bubble.tap-visible")
-            .forEach(el => {
-              el.classList.remove("tap-visible");
-            });
+  let hideTimers = new WeakMap();
 
-          tooltip.classList.add("tap-visible");
-          setTimeout(() => adjustTooltipPosition(tooltip), 0);
-          tappedOnce = true;
+  function showTooltip(el) {
+    const tip = el.querySelector(SELECTOR_TOOLTIP);
+    if (!tip) return;
+    tip.setAttribute("aria-hidden", "false");
+    el.setAttribute(ATTR_ACTIVE, "true");
 
-          // Reset si pas de second clic
-          setTimeout(() => {
-            tooltip.classList.remove("tap-visible");
-            tappedOnce = false;
-            resetTooltipPosition(tooltip);
-          }, 2000);
-        } else {
-          debug("2e tap - navigating");
-          // Laisse le lien s'ouvrir normalement
-        }
-      });
+    // reset timer
+    if (hideTimers.has(tip)) clearTimeout(hideTimers.get(tip));
+    const t = setTimeout(() => hideTooltip(el), HIDE_DELAY);
+    hideTimers.set(tip, t);
+  }
+
+  function hideTooltip(el) {
+    const tip = el.querySelector(SELECTOR_TOOLTIP);
+    if (!tip) return;
+    tip.setAttribute("aria-hidden", "true");
+    el.removeAttribute(ATTR_ACTIVE);
+    if (hideTimers.has(tip)) {
+      clearTimeout(hideTimers.get(tip));
+      hideTimers.delete(tip);
     }
-  });
-});
+  }
 
-// Ajustement position tooltip (évite débordement)
-function adjustTooltipPosition(tooltip) {
-  // Positionne toujours au centre de l’icône
-  tooltip.style.left = "50%";
-  tooltip.style.top = "50%";
-  tooltip.style.transform = "translate(-50%, -50%)";
-}
+  function isTouch() {
+    return window.matchMedia("(pointer: coarse)").matches;
+  }
 
-function resetTooltipPosition(tooltip) {
-  tooltip.style.left = "50%";
-  tooltip.style.top = "50%";
-  tooltip.style.transform = "translate(-50%, -50%)";
-}
+  // Desktop: hover
+  function bindHover(container) {
+    container.addEventListener("mouseover", (e) => {
+      const item = e.target.closest(SELECTOR_ITEM);
+      if (!item || isTouch()) return;
+      showTooltip(item);
+    });
+    container.addEventListener("mouseout", (e) => {
+      const item = e.target.closest(SELECTOR_ITEM);
+      if (!item || isTouch()) return;
+      hideTooltip(item);
+    });
+  }
+
+  // Mobile: 1er tap = tooltip, 2e tap = navigation
+  function bindTap(container) {
+    container.addEventListener("click", (e) => {
+      if (!isTouch()) return; // ne gêne pas desktop
+      const link = e.target.closest(`${SELECTOR_ITEM} a, ${SELECTOR_ITEM} button`);
+      const item = e.target.closest(SELECTOR_ITEM);
+      if (!item || !link) return;
+
+      const active = item.hasAttribute(ATTR_ACTIVE);
+      if (!active) {
+        e.preventDefault(); // premier tap → afficher seulement
+        showTooltip(item);
+      } else {
+        // laisser naviguer au 2e tap (pas de preventDefault)
+      }
+    });
+
+    // cacher si on tape ailleurs
+    document.addEventListener("click", (e) => {
+      if (!isTouch()) return;
+      const inside = e.target.closest(SELECTOR_ITEM);
+      if (!inside) {
+        document.querySelectorAll(`${SELECTOR_ITEM}[${ATTR_ACTIVE}]`).forEach(hideTooltip);
+      }
+    });
+  }
+
+  function init(root = document) {
+    const containers = root.querySelectorAll(".stories-bar-sticky, .stories-bar-sticky-dynamic");
+    containers.forEach((c) => {
+      bindHover(c);
+      bindTap(c);
+    });
+  }
+
+  // Ré-init après render dynamique Shopify
+  document.addEventListener("shopify:section:load", (e) => init(e.target));
+  document.addEventListener("DOMContentLoaded", () => init());
+})();

@@ -65,16 +65,17 @@ Section : Stories Bar Sticky Configurable (dynamique via blocks)
       {% assign title = block.settings.title %}
   {% assign image = block.settings.image | image_url: width: 800, height: 800 %}
       {% assign link = block.settings.link %}
-      <a href="{{ link | prepend: base_url }}" class="animated-stories-link">
-        {% # theme-check-disable ImgWidthAndHeight %}{% # theme-check-disable RemoteAsset %}
-
-<img loading="lazy" src="{{ image }}" alt="{{ title }}">
-{% # theme-check-enable RemoteAsset %}
-{% # theme-check-enable ImgWidthAndHeight %}
-        <div class="tooltip-bubble" role="tooltip">
+      <div class="story-icon">
+        <a href="{{ link | prepend: base_url }}" class="story-link">
+          {% # theme-check-disable ImgWidthAndHeight %}{% # theme-check-disable RemoteAsset %}
+          <img loading="lazy" decoding="async" src="{{ image }}" alt="{{ title }}">
+          {% # theme-check-enable RemoteAsset %}
+          {% # theme-check-enable ImgWidthAndHeight %}
+        </a>
+        <span class="tooltip-bubble" role="tooltip" aria-hidden="true">
           {{ title }}
-        </div>
-      </a>
+        </span>
+      </div>
     {% endfor %}
   </div>
 </div>

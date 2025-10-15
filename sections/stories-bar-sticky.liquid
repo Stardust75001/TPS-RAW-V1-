@@ -13,23 +13,22 @@ Section : Stories Bar Sticky Configurable (préremplie)
 <div class="stories-bar-wrapper{% if request.page_type == 'index' %} animate-slide-in{% endif %}">
   <div class="stories-bar">
     {% for block in stories %}
-      <a href="{{ block.settings.link }}" class="animated-stories-link" style="--i:{{ forloop.index }}">
-        {% if block.settings.image != blank %}
-          <img
-            src="{{ block.settings.image | image_url: width: size, height: size, crop: 'center' }}"
-            alt="{{ block.settings.title | escape }}"
-            width="{{ size }}"
-            height="{{ size }}"
-            loading="lazy"
-          >
-        {% endif %}
-        <div
-          class="tooltip-bubble"
-          role="tooltip"
-          style="background-color: {{ section.settings.tooltip_bg }}; opacity: {{ section.settings.tooltip_opacity }};">
+      <div class="story-icon">
+        <a href="{{ block.settings.link }}" class="story-link" style="--i:{{ forloop.index }}">
+          {% if block.settings.image != blank %}
+            <img
+              src="{{ block.settings.image | image_url: width: size, height: size, crop: 'center' }}"
+              alt="{{ block.settings.title | escape }}"
+              width="{{ size }}"
+              height="{{ size }}"
+              loading="lazy" decoding="async"
+            >
+          {% endif %}
+        </a>
+        <span class="tooltip-bubble" role="tooltip" aria-hidden="true" style="background-color: {{ section.settings.tooltip_bg }}; opacity: {{ section.settings.tooltip_opacity }};">
           {{ block.settings.title }}
-        </div>
-      </a>
+        </span>
+      </div>
     {% endfor %}
   </div>
 </div>
