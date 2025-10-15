@@ -1,0 +1,177 @@
+{% comment %}
+---------------------------------------------------------
+Copyright © 2019/2024 Theme Shopiweb Premium. Tous droits réservés.
+La copie, la modification, la distribution ou l'utilisation
+non autorisée de ce code ou de toute partie de celui-ci est formellement interdite.
+Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
+---------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+    assign pt = section.settings.pt | prepend: 'pt-'
+    assign pb = section.settings.pb | prepend: 'pb-'
+    assign mt = section.settings.mt | prepend: 'mt-'
+    assign mb = section.settings.mb | prepend: 'mb-'
+
+    assign row_xs = section.settings.breakpoint_xs | prepend: 'row-cols-'
+    assign row_sm = section.settings.breakpoint_sm | prepend: 'row-cols-sm-'
+    assign row_md = section.settings.breakpoint_md | prepend: 'row-cols-md-'
+    assign row_lg = section.settings.breakpoint_lg | prepend: 'row-cols-lg-'
+    assign row_xl = section.settings.breakpoint_xl | prepend: 'row-cols-xl-'
+    assign row_xxl = section.settings.breakpoint_xxl | prepend: 'row-cols-xxl-'
+%}
+
+<section
+    id="search"
+    class="{{ pt }} {{ pb }} {{ mt }} {{ mb }}">
+    <div id="search-header" class="mb-9 bg-light overflow-hidden">
+        <div class="container">
+            <div
+                class="mx-auto text-center py-10"
+                style="max-width: {{ section.settings.form_max_width }}px">
+                <{{ section.settings.heading_tag }} class="title mb-4 {{ section.settings.title_size }}">
+                    {% if search.performed %}
+                        {{ 'general.search_page.title_search_performed' | t }}
+                        {% if settings.custom_svg_h2 != blank %}
+                          <div class="h2_svg">
+                            <span style="fill:{{ settings.color_svg_h2 }}; width:{{ settings.width_svg_h2 }}rem;"> {{ settings.custom_svg_h2 }}</span>
+                          </div>
+                        {% else %}
+                          {% if settings.svg_h2 != 'none' %}
+                            <div class="h2_svg mb-4">
+                              <span style="fill:{{ settings.color_svg_h2 }}; width:{{ settings.width_svg_h2 }}rem;"> {% render 'svg-subtitle', svg_h2: settings.svg_h2 %}</span>
+                            </div>
+                          {% endif %}
+                        {% endif %}
+                    {% else %}
+                        {{ 'general.search_page.title' | t }}
+                        {% if settings.custom_svg_h2 != blank %}
+                          <div class="h2_svg">
+                            <span style="fill:{{ settings.color_svg_h2 }}; width:{{ settings.width_svg_h2 }}rem;"> {{ settings.custom_svg_h2 }}</span>
+                          </div>
+                        {% else %}
+                          {% if settings.svg_h2 != 'none' %}
+                            <div class="h2_svg mb-4">
+                              <span style="fill:{{ settings.color_svg_h2 }}; width:{{ settings.width_svg_h2 }}rem;"> {% render 'svg-subtitle', svg_h2: settings.svg_h2 %}</span>
+                            </div>
+                          {% endif %}
+                        {% endif %}
+                    {% endif %}
+                </{{ section.settings.heading_tag }}>
+                <form action="{{ routes.search_url }}">
+                    <div class="d-lg-flex">
+                        <input
+                            class="form-control mb-3 mb-lg-0 me-lg-3"
+                            type="search"
+                            placeholder="{{ 'general.search_page.form.input_label' | t }}"
+                            aria-label="{{ 'general.search_page.form.input_label' | t }}"
+                            name="q"
+                            value="{{ search.terms | escape }}">
+                        {% if section.settings.show_search_types_select %}
+                            <select
+                                name="type"
+                                class="form-select mb-3 mb-lg-0 me-lg-3"
+                                aria-label="{{ 'general.search_page.form.select_label' | t }}">
+                                <option value="product">
+                                    {{ 'general.search_page.types.products' | t }}
+                                </option>
+                                <option value="article">
+                                    {{ 'general.search_page.types.articles' | t }}
+                                </option>
+                                <option value="page">
+                                    {{ 'general.search_page.types.pages' | t }}
+                                </option>
+                            </select>
+                        {% else %}
+                            <input type="hidden" name="type" value="product">
+                        {% endif %}
+                        <button
+                            type="submit"
+                            class="btn btn-primary">
+                            {{ 'general.search_page.form.btn_text' | t }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% if search.performed %}
+        <div class="{{ section.settings.container }}">
+            {% if search.results_count == 0 %}
+                <p class="alert alert-warning py-3" role="status">
+                    {{ 'general.search_page.no_results' | t: terms: search.terms }}
+                </p>
+            {% else %}
+                <p class="alert alert-success py-3" role="status">
+                    {{ 'general.search_page.results_with_count_and_term' | t: terms: search.terms, count: search.results_count }}
+                </p>
+                {% paginate search.results by section.settings.limit %}
+                    {% if search.results.first.object_type == 'product' %}
+                        <ul class="product-listing list-unstyled row mx-n3 mx-lg-n4 mb-0 {{ section.settings.text_align }} {{ row_xs }} {{ row_sm }} {{ row_md }} {{ row_lg }} {{ row_xl }} {{ row_xxl }}">
+                            {% for item in search.results %}
+                                {% render 'product-item', product: item %}
+                            {% endfor %}
+                        </ul>
+                    {% elsif search.results.first.object_type == 'article' %}
+                        <ul class="article-list list-unstyled row mx-n3 mx-lg-n4 mb-0 {{ row_xs }} {{ row_sm }} {{ row_md }} {{ row_lg }} {{ row_xl }} {{ row_xxl }}">
+                            {% for item in search.results %}
+                                {% render 'article-item', article: item %}
+                            {% endfor %}
+                        </ul>
+                    {% elsif search.results.first.object_type == 'page' %}
+                        <ul class="page-list list-unstyled row mx-n3 mx-lg-n4 mb-0 {{ row_xs }} {{ row_sm }} {{ row_md }} {{ row_lg }} {{ row_xl }} {{ row_xxl }}">
+                            {% for page in search.results %}
+                                <li class="page-item p-3 p-lg-4">
+                                    <div class="card h-100 {{ section.settings.shadow_sp }} {{ section.settings.border_color }}">
+                                        <div class="card-body">
+                                            <h3 class="title {{ section.settings.page_title_size }} mb-0">
+                                                <a href="{{ page.url }}" class="">
+                                                    {{ page.title }}
+                                                </a>
+                                            </h3>
+                                            {% if section.settings.page_excerpt %}
+                                                <div class="page-excerpt rte small mt-3">
+                                                    {{ page.content | strip_html | truncatewords: 20 }}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {% render 'pagination' with paginate: paginate %}
+                {% endpaginate %}
+            {% endif %}
+        </div>
+    {% endif %}
+
+</section>
+
+
+
+{% schema %}
+{
+  "name": "Search",
+  "settings": [
+    {
+      "type": "range",
+      "id": "limit",
+      "min": 4,
+      "max": 48,
+      "step": 4,
+      "label": "Results per page",
+      "default": 24
+    }
+  ],
+  "blocks": [
+
+  ],
+  "presets": [
+    {
+      "name": "Search"
+    }
+  ]
+}
+{% endschema %}

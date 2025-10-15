@@ -1,0 +1,56 @@
+{% liquid
+    assign mt = block.settings.mt | prepend: 'mt-'
+    assign mb = block.settings.mb | prepend: 'mb-'
+%}
+
+{% liquid
+    assign current_variant = product.selected_or_first_available_variant
+
+    if current_variant.available == false
+        assign title = 'product.inventory_bar.sold_out' | t
+  
+    elsif current_variant.inventory_quantity < 0
+        assign title = 'product.inventory_bar.untracked' | t
+        assign color = block.settings.inventory_bar_color_normal
+        assign width = '75%'
+
+     elsif current_variant.inventory_quantity <= block.settings.inventory_bar_verylow_threshold
+        assign title = 'product.inventory_bar.verylow_html' | t: count: current_variant.inventory_quantity
+        assign color = block.settings.inventory_bar_color_verylow
+        assign width = block.settings.inventory_bar_max_threshold | minus: current_variant.inventory_quantity | times: 100 | divided_by: block.settings.inventory_bar_max_threshold | minus: 100 | remove: '-' | append: '%'
+
+  
+    elsif current_variant.inventory_quantity <= block.settings.inventory_bar_low_threshold
+        assign title = 'product.inventory_bar.low_html' | t: count: current_variant.inventory_quantity
+        assign color = block.settings.inventory_bar_color_low
+        assign width = block.settings.inventory_bar_max_threshold | minus: current_variant.inventory_quantity | times: 100 | divided_by: block.settings.inventory_bar_max_threshold | minus: 100 | remove: '-' | append: '%'
+    
+    elsif current_variant.inventory_quantity < block.settings.inventory_bar_max_threshold
+        assign title = 'product.inventory_bar.normal_html' | t: count: current_variant.inventory_quantity
+        assign color = block.settings.inventory_bar_color_normal
+        assign width = block.settings.inventory_bar_max_threshold | minus: current_variant.inventory_quantity | times: 100 | divided_by: block.settings.inventory_bar_max_threshold | minus: 100 | remove: '-' | append: '%'
+    
+    else
+        assign title = 'product.inventory_bar.normal_html' | t: count: current_variant.inventory_quantity
+        assign color = block.settings.inventory_bar_color_normal
+        assign width = '100%'
+    endif
+%}
+
+<div id="inventory-bar" class="{{ mt }} {{ mb }}" {{ block.shopify_attributes }}>
+    <p class="title small mb-2">
+        {{ title }}
+    </p>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated {{ color | prepend: 'bg-' }}" 
+            aria-valuemin="0" 
+            aria-valuenow="{{ current_variant.inventory_quantity }}" 
+            aria-valuemax="{{ block.settings.inventory_bar_max_threshold }}" 
+            role="progressbar" 
+            aria-label="{{ 'product.inventory_bar.label' | t }}"
+            data-width="{{ width }}"
+            style="width: 0%">
+        </div>
+    </div>
+</div>
+
