@@ -18,53 +18,54 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # (optional) set 0 if you later want to scan history
+          fetch-depth: 0
 
-      - name: Scan for common secrets
+      - name: Scan for common secrets (no heredocs, YAML-safe)
         shell: bash
         run: |
+          set -euo pipefail
           echo "🔍 Scanning workspace for secrets…"
 
-          # Add/adjust patterns as needed
-          REGEX=$(
-            cat <<'EOF'
-            (
-              github_pat_[A-Za-z0-9_]+       # GitHub fine-grained tokens
-              |ghp_[A-Za-z0-9]{36,}          # GitHub classic token
-              |gho_[A-Za-z0-9]{36,}          # GitHub OAuth token
-              |ghu_[A-Za-z0-9]{36,}
-              |ghs_[A-Za-z0-9]{36,}
-              |shpat_[A-Za-z0-9]{32,}        # Shopify Admin API token
-              |shpss_[A-Za-z0-9]{32,}        # Shopify API secret
-              |shppa_[A-Za-z0-9]{32,}        # Shopify private app pwd (legacy)
-              |shpua_[A-Za-z0-9]{32,}        # Shopify Storefront token
-              |AKIA[0-9A-Z]{16}              # AWS access key
-              |ASIA[0-9A-Z]{16}              # AWS temp key
-              |AIza[0-9A-Za-z\-_]{35}        # Google API key
-              |xox[baprs]-[A-Za-z0-9-]{10,48}# Slack tokens
-              |sk_live_[A-Za-z0-9]{24,}      # Stripe live secret
-              |-----BEGIN( RSA)? PRIVATE KEY-----  # any private key
-            )
-            EOF
-          )
+          # Exclusions kept minimal
+          EXCLUDES=( ':!**/.env' ':!**/.gitignore' ':!**/.github/workflows/security-check.yml' )
 
-          # Paths to exclude from scan (keep minimal)
-          EXCLUDES=(
-            ':!**/.env'
-            ':!**/.gitignore'
-            ':!**/.github/workflows/security-check.yml'
-          )
+          had=0
+          scan() {
+            local pat="$1"
+            local out
+            # Use -nI to avoid binary and show line numbers; capture output safely
+            out="$(git grep -nI -E "$pat" -- . "${EXCLUDES[@]}" || true)"
+            if [[ -n "$out" ]]; then
+              had=1
+              echo "❌ Hit for pattern: $pat"
+              echo "$out" | sed 's/^/  • /'
+            fi
+          }
 
-          set +e
-          MATCHES=$(git grep -nI -E "$REGEX" -- . "${EXCLUDES[@]}")
-          STATUS=$?
-          set -e
+          # GitHub tokens
+          scan 'github_pat_[A-Za-z0-9_]+'
+          scan 'ghp_[A-Za-z0-9]{36,}'
+          scan 'gho_[A-Za-z0-9]{36,}'
+          scan 'ghu_[A-Za-z0-9]{36,}'
+          scan 'ghs_[A-Za-z0-9]{36,}'
 
-          if [ $STATUS -eq 0 ] && [ -n "$MATCHES" ]; then
-            echo "❌ SECURITY ALERT: Potential secrets detected:"
-            echo "$MATCHES" | sed 's/^/  • /'
-            echo "::error title=Secret leak detected::One or more potential secrets were found. Remove them and force-push if needed."
+          # Shopify
+          scan 'shpat_[A-Za-z0-9]{32,}'
+          scan 'shpss_[A-Za-z0-9]{32,}'
+          scan 'shppa_[A-Za-z0-9]{32,}'
+          scan 'shpua_[A-Za-z0-9]{32,}'
+
+          # Cloud/API keys (common)
+          scan 'AKIA[0-9A-Z]{16}'                # AWS access key
+          scan 'ASIA[0-9A-Z]{16}'                # AWS temp key
+          scan 'AIza[0-9A-Za-z_-]{35}'           # Google API key
+          scan 'xox[baprs]-[A-Za-z0-9-]{10,48}'  # Slack
+          scan 'sk_live_[A-Za-z0-9]{24,}'        # Stripe
+          scan '-----BEGIN( RSA)? PRIVATE KEY-----'
+
+          if [[ "$had" -eq 1 ]]; then
+            echo "::error title=Secret leak detected::Potential secrets found. Remove them and push again."
             exit 1
-          else
-            echo "✅ No tokens detected. Safe to proceed."
           fi
+
+          echo "✅ No tokens detected. Safe to proceed."
