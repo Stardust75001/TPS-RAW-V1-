@@ -1,3 +1,15 @@
+name: i18n validation
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'locales/**'
+      - 'i18n-*.js'
+      - 'package.json'
+      - 'package-lock.json'
+
 jobs:
   i18n-check:
     runs-on: ubuntu-latest
