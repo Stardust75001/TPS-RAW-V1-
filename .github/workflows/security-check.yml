@@ -1,4 +1,4 @@
-name: Security – Prevent GitHub PAT leaks
+name: Security – Prevent secret leaks
 
 on:
   push:
@@ -6,21 +6,64 @@ on:
   pull_request:
     branches: [ main, dev, staging, production ]
 
+concurrency:
+  group: security-check-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  detect-pat-leaks:
-    name: Detect exposed GitHub tokens
+  detect-secret-leaks:
+    name: Detect exposed tokens & secrets
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # (optional) set 0 if you later want to scan history
 
-      - name: Scan for GitHub personal access tokens
+      - name: Scan for common secrets
+        shell: bash
         run: |
-          echo "🔍 Scanning for github_pat_ patterns..."
-          if git grep -n "github_pat_" -- . ':!**/.env' ':!**/.gitignore' ':!**/.github/workflows/security-check.yml'; then
-            echo "❌ SECURITY ALERT: A GitHub PAT-like token was detected in the repository."
-            echo "Push cancelled. Remove any token and re-commit safely."
+          echo "🔍 Scanning workspace for secrets…"
+
+          # Add/adjust patterns as needed
+          REGEX=$(
+            cat <<'EOF'
+            (
+              github_pat_[A-Za-z0-9_]+       # GitHub fine-grained tokens
+              |ghp_[A-Za-z0-9]{36,}          # GitHub classic token
+              |gho_[A-Za-z0-9]{36,}          # GitHub OAuth token
+              |ghu_[A-Za-z0-9]{36,}
+              |ghs_[A-Za-z0-9]{36,}
+              |shpat_[A-Za-z0-9]{32,}        # Shopify Admin API token
+              |shpss_[A-Za-z0-9]{32,}        # Shopify API secret
+              |shppa_[A-Za-z0-9]{32,}        # Shopify private app pwd (legacy)
+              |shpua_[A-Za-z0-9]{32,}        # Shopify Storefront token
+              |AKIA[0-9A-Z]{16}              # AWS access key
+              |ASIA[0-9A-Z]{16}              # AWS temp key
+              |AIza[0-9A-Za-z\-_]{35}        # Google API key
+              |xox[baprs]-[A-Za-z0-9-]{10,48}# Slack tokens
+              |sk_live_[A-Za-z0-9]{24,}      # Stripe live secret
+              |-----BEGIN( RSA)? PRIVATE KEY-----  # any private key
+            )
+            EOF
+          )
+
+          # Paths to exclude from scan (keep minimal)
+          EXCLUDES=(
+            ':!**/.env'
+            ':!**/.gitignore'
+            ':!**/.github/workflows/security-check.yml'
+          )
+
+          set +e
+          MATCHES=$(git grep -nI -E "$REGEX" -- . "${EXCLUDES[@]}")
+          STATUS=$?
+          set -e
+
+          if [ $STATUS -eq 0 ] && [ -n "$MATCHES" ]; then
+            echo "❌ SECURITY ALERT: Potential secrets detected:"
+            echo "$MATCHES" | sed 's/^/  • /'
+            echo "::error title=Secret leak detected::One or more potential secrets were found. Remove them and force-push if needed."
             exit 1
           else
             echo "✅ No tokens detected. Safe to proceed."
