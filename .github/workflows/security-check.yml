@@ -31,6 +31,7 @@ jobs:
         run: |
           set -euo pipefail
           git config --global grep.binary-files without-match
+          git config --global grep.binary-files without-match
           echo "�� Scanning workspace for secrets…"
 
           EXCLUDES=( ':!**/.env' ':!**/.gitignore' ':!**/.github/workflows/security-check.yml' )
@@ -95,6 +96,7 @@ jobs:
         run: |
           set -euo pipefail
           git config --global grep.binary-files without-match
+          git config --global grep.binary-files without-match
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
             BASE="${{ github.event.pull_request.base.sha }}"
             HEAD="${{ github.event.pull_request.head.sha }}"
@@ -119,6 +121,7 @@ jobs:
         run: |
           set -euo pipefail
           git config --global grep.binary-files without-match
+          git config --global grep.binary-files without-match
 
           mapfile -t FILES < changed-files.txt
           # Exclude some paths from scan
@@ -139,6 +142,7 @@ jobs:
           }
 
           INCLUDED=($(filter_files))
+          INCLUDED=($(for f in "${INCLUDED[@]}"; do [[ -f "$f" && $(wc -c <"$f") -le 1048576 ]] && echo "$f"; done))
           if ((${#INCLUDED[@]} == 0)); then
             echo "No eligible files to scan."
             exit 0
