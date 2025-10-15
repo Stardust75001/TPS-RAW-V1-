@@ -1,6 +1,8 @@
 name: Security check
 
 on:
+  schedule:
+    - cron: "17 2 * * *"
   workflow_dispatch:
   push:
     branches: [ main, dev, staging, production ]
@@ -28,6 +30,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          git config --global grep.binary-files without-match
           echo "�� Scanning workspace for secrets…"
 
           EXCLUDES=( ':!**/.env' ':!**/.gitignore' ':!**/.github/workflows/security-check.yml' )
@@ -91,6 +94,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          git config --global grep.binary-files without-match
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
             BASE="${{ github.event.pull_request.base.sha }}"
             HEAD="${{ github.event.pull_request.head.sha }}"
@@ -114,6 +118,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          git config --global grep.binary-files without-match
 
           mapfile -t FILES < changed-files.txt
           # Exclude some paths from scan
