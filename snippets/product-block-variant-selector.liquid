@@ -15,6 +15,7 @@
             class="product-options list-unstyled mb-6" 
             aria-label="{{ 'product.product_options' | t }}">
             {% for option in product.options_with_values %}
+                {% unless option.name == 'Material' %}
                 <div class="product-option-wrapper">
                     {% if settings.color_swatches_names contains option.name and settings.color_swatches_show %}
                         <h4 
@@ -168,6 +169,7 @@
                     {% endif %}
                 </div>
             {% endfor %}
+                {% endunless %}
         </ul>
     </div>
 {% endunless %}
