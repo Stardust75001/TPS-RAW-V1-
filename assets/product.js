@@ -27,12 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Ajoute un écouteur pour mettre à jour le label au clic
     swatch.addEventListener("click", function () {
+      // Find the color label span (option position 1 is usually color)
       const label = swatchContainer
         .closest(".product-option-wrapper")
-        ?.querySelector(".color-swatches-title span");
+        ?.querySelector('.color-swatches-title .js-option-selected[data-option-position="1"]');
       if (label) {
-        label.textContent =
-          swatch.title || swatch.getAttribute("data-value") || colorName;
+        label.textContent = swatch.title || swatch.getAttribute("data-value") || colorName;
       }
     });
 
@@ -51,6 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
       firstSwatch.getAttribute("data-value") ||
       firstSwatch.textContent;
   }
+
+  // Ensure color label updates on any product option change
+  document.querySelectorAll('.product-option').forEach((input) => {
+    input.addEventListener('change', function() {
+      window.handleProductOptionChange(input);
+    });
+  });
 });
 /* ========================================================================
    INFORMATIONS GÉNÉRALES SUR LE SITE
