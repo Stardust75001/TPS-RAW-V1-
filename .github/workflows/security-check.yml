@@ -1,0 +1,27 @@
+name: Security – Prevent GitHub PAT leaks
+
+on:
+  push:
+    branches: [ main, dev, staging, production ]
+  pull_request:
+    branches: [ main, dev, staging, production ]
+
+jobs:
+  detect-pat-leaks:
+    name: Detect exposed GitHub tokens
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Scan for GitHub personal access tokens
+        run: |
+          echo "🔍 Scanning for github_pat_ patterns..."
+          if git grep -n "github_pat_" -- . ':!**/.env' ':!**/.gitignore' ':!**/.github/workflows/security-check.yml'; then
+            echo "❌ SECURITY ALERT: A GitHub PAT-like token was detected in the repository."
+            echo "Push cancelled. Remove any token and re-commit safely."
+            exit 1
+          else
+            echo "✅ No tokens detected. Safe to proceed."
+          fi
