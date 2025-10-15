@@ -33,7 +33,7 @@ jobs:
           scan() {
             local pat="$1"
             local out
-            out="$(git grep -nI -E "$pat" -- . "${EXCLUDES[@]}" || true)"
+            out="$(git grep -nI -E -e "$pat" -- . "${EXCLUDES[@]}" || true)"
             if [[ -n "$out" ]]; then
               had=1
               echo "❌ Hit for pattern: $pat"
