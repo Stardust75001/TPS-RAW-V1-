@@ -32,6 +32,7 @@
                         height="{{ 800 | divided_by: block.settings.img.aspect_ratio | round }}"
                         loading="lazy"
                         style="opacity: {{ block.settings.img_opacity }};">
+                            decoding="async"
                 {% endif %}
                 <div class="position-relative px-4">
                     {% unless block.settings.title == blank %}

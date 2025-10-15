@@ -1,0 +1,186 @@
+name: Security check
+
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+  push:
+    branches: [ main, dev, staging, production ]
+  pull_request:
+    branches: [ main, dev, staging, production ]
+
+concurrency:
+  group: security-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ----------------------------
+  # Full repo scan (as before)
+  # ----------------------------
+  detect-secret-leaks:
+    name: Detect exposed tokens & secrets (full scan)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan for common secrets (no heredocs, YAML-safe)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config --global grep.binary-files without-match
+          echo "�� Scanning workspace for secrets…"
+
+          EXCLUDES=( ':!**/.env' ':!**/.gitignore' ':!**/.github/workflows/security-check.yml' )
+
+          had=0
+          scan() {
+            local pat="$1"
+            local out
+            # NOTE: use -e so patterns that start with dashes aren't misread as options
+            out="$(git grep -nI -E -e "$pat" -- . "${EXCLUDES[@]}" || true)"
+            if [[ -n "$out" ]]; then
+              had=1
+              echo "❌ Hit for pattern: $pat"
+              echo "$out" | sed 's/^/  • /'
+            fi
+          }
+
+          # GitHub
+          scan 'github_pat_[A-Za-z0-9_]+'
+          scan 'ghp_[A-Za-z0-9]{36,}'
+          scan 'gho_[A-Za-z0-9]{36,}'
+          scan 'ghu_[A-Za-z0-9]{36,}'
+          scan 'ghs_[A-Za-z0-9]{36,}'
+
+          # Shopify
+          scan 'shpat_[A-Za-z0-9]{32,}'
+          scan 'shpss_[A-Za-z0-9]{32,}'
+          scan 'shppa_[A-Za-z0-9]{32,}'
+          scan 'shpua_[A-Za-z0-9]{32,}'
+
+          # Cloud/API
+          scan 'AKIA[0-9A-Z]{16}'
+          scan 'ASIA[0-9A-Z]{16}'
+          scan 'AIza[0-9A-Za-z_-]{35}'
+          scan 'xox[baprs]-[A-Za-z0-9-]{10,48}'
+          scan 'sk_live_[A-Za-z0-9]{24,}'
+          scan '-----BEGIN( RSA)? PRIVATE KEY-----'
+
+          if [[ "$had" -eq 1 ]]; then
+            echo "::error title=Secret leak detected::Potential secrets found. Remove them and push again."
+            exit 1
+          fi
+
+          echo "✅ No tokens detected. Safe to proceed."
+
+  # ---------------------------------------
+  # Fast scan: only files changed in diff
+  # ---------------------------------------
+  detect-secret-leaks-diff:
+    name: Detect exposed tokens & secrets (diff-only)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Compute changed files
+        id: diff
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config --global grep.binary-files without-match
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            BASE="${{ github.event.pull_request.base.sha }}"
+            HEAD="${{ github.event.pull_request.head.sha }}"
+          else
+            BASE="${{ github.event.before }}"
+            HEAD="${{ github.sha }}"
+          fi
+
+          echo "BASE=$BASE"
+          echo "HEAD=$HEAD"
+
+          # Added/Changed/Renamed (skip deletions)
+          git diff --name-only --diff-filter=ACMR "$BASE" "$HEAD" > changed-files.txt || true
+          COUNT=$(wc -l < changed-files.txt | tr -d ' ')
+          echo "changed_count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "Changed files ($COUNT):"
+          sed 's/^/  • /' changed-files.txt || true
+
+      - name: Fast scan on changed files
+        if: steps.diff.outputs.changed_count != '0'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config --global grep.binary-files without-match
+
+          mapfile -t FILES < changed-files.txt
+          # Exclude some paths from scan
+          EXCLUDES=( '.env' '.gitignore' '.github/workflows/security-check.yml' )
+
+          filter_files() {
+            local out=()
+            for f in "${FILES[@]}"; do
+              # skip excluded
+              skip=0
+              for ex in "${EXCLUDES[@]}"; do
+                [[ "$f" == "$ex" ]] && skip=1
+              done
+              # only existing regular files
+              [[ $skip -eq 0 && -f "$f" ]] && out+=("$f")
+            done
+            printf '%s\n' "${out[@]}"
+          }
+
+          INCLUDED=($(filter_files))
+          if ((${#INCLUDED[@]} == 0)); then
+            echo "No eligible files to scan."
+            exit 0
+          fi
+          echo "Scanning ${#INCLUDED[@]} file(s) in diff…"
+
+          had=0
+          scan() {
+            local pat="$1"
+            local out
+            out="$(git grep -nI -E -e "$pat" -- "${INCLUDED[@]}" || true)"
+            if [[ -n "$out" ]]; then
+              had=1
+              echo "❌ Hit for pattern: $pat"
+              echo "$out" | sed 's/^/  • /'
+            fi
+          }
+
+          # GitHub
+          scan 'github_pat_[A-Za-z0-9_]+'
+          scan 'ghp_[A-Za-z0-9]{36,}'
+          scan 'gho_[A-Za-z0-9]{36,}'
+          scan 'ghu_[A-Za-z0-9]{36,}'
+          scan 'ghs_[A-Za-z0-9]{36,}'
+
+          # Shopify
+          scan 'shpat_[A-Za-z0-9]{32,}'
+          scan 'shpss_[A-Za-z0-9]{32,}'
+          scan 'shppa_[A-Za-z0-9]{32,}'
+          scan 'shpua_[A-Za-z0-9]{32,}'
+
+          # Cloud/API
+          scan 'AKIA[0-9A-Z]{16}'
+          scan 'ASIA[0-9A-Z]{16}'
+          scan 'AIza[0-9A-Za-z_-]{35}'
+          scan 'xox[baprs]-[A-Za-z0-9-]{10,48}'
+          scan 'sk_live_[A-Za-z0-9]{24,}'
+          scan '-----BEGIN( RSA)? PRIVATE KEY-----'
+
+          if [[ "$had" -eq 1 ]]; then
+            echo "::error title=Secret leak detected (diff-only)::Secrets found in changed files. Remove them and push again."
+            exit 1
+          fi
+
+          echo "✅ No tokens detected in changed files."

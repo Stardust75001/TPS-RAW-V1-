@@ -42,6 +42,7 @@
                     width="{{ img_width }}"
                     height="{{ img_height }}"
                     loading="lazy">
+                        decoding="async">
             {% endif %}
             {% if section.settings.collection_show_title %}
                 <{{ block.settings.heading_tag }} class="collection-item-title mb-0 {{ block.settings.title_size | default: 'h5' }}">
