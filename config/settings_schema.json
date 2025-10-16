@@ -1,489 +1,52 @@
 [
   {
     "name": "theme_info",
+    "theme_support_email": "support@example.com",
     "theme_name": "Shopiweb Premium",
-    "theme_version": "1.6.0",
-    "theme_author": "Équipe Shopiweb",
-    "theme_documentation_url": "https://docs.shopiweb.fr/theme-premium",
-    "theme_support_url": "https://docs.shopiweb.fr/theme-premium"
-  },
-  {
-    "name": "Écosystème du thème",
+    "theme_author": "Shopiweb",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://www.docs.shopiweb.fr/theme-premium",
     "settings": [
-      {
-        "type": "paragraph",
-        "content": "📚 Afficher la notice d'utilisation. [Documentation](https://docs.shopiweb.fr/theme-premium)."
-      },
-      {
-        "type": "paragraph",
-        "content": "🙋🏻‍♂️ Besoin d'aide ? Passez 1 ou 2 heures en visio avec Xavier. Posez-lui vos questions. [Réserver](https://theme.shopiweb.fr/coaching-technique-design)."
-      },
-      {
-        "type": "paragraph",
-        "content": "🔔 Besoin d'une assistance ? Rejoigner notre [Groupe Privé Facebook](https://www.facebook.com/groups/133448203019703)."
-      }
-    ]
-  },
-  {
-    "name": "Code personnalisé",
-    "settings": [
-      {
-        "type": "textarea",
-        "id": "code_head",
-        "label": "Head",
-        "info": "Intégration de pixel"
-      },
-      {
-        "type": "textarea",
-        "id": "code_css",
-        "label": "CSS",
-        "info": "Personnalisation sur-mesure"
-      },
-      {
-        "type": "textarea",
-        "id": "code_javascript",
-        "label": "JavaScript",
-        "info": "Automatisation spécifique"
-      }
-    ]
-  },
-  {
-    "name": "Couleurs",
-    "settings": [
-      {
-        "type": "paragraph",
-        "content": "Documentation FR : [Couleurs by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/parametres-du-theme/couleurs)"
-      },
-      {
-        "type": "header",
-        "content": "=== Couleur Principal ==="
-      },
-      {
-        "type": "color",
-        "id": "color_primary",
-        "label": "Primaire",
-        "default": "#d32f2f"
-      },
-      {
-        "type": "color",
-        "id": "color_secondary",
-        "label": "Secondaire",
-        "default": "#455a64"
-      },
-      {
-        "type": "color",
-        "id": "color_tertiary",
-        "label": "Tertiaire",
-        "default": "#0F6378"
-      },
-      {
-        "type": "header",
-        "content": "=== Couleur Intermédiaire ==="
-      },
-      {
-        "type": "color",
-        "id": "color_light",
-        "label": "Claire",
-        "default": "#f8f9fa"
-      },
-      {
-        "type": "color",
-        "id": "color_dark",
-        "label": "Sombre",
-        "default": "#212529"
-      },
-      {
-        "type": "header",
-        "content": "=== Couleur par défaut ==="
-      },
-      {
-        "type": "color",
-        "id": "color_body_bg",
-        "label": "Corps (Body)",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "color_body_text",
-        "label": "Texte (Body)",
-        "default": "#212529"
-      },
-      {
-        "type": "header",
-        "content": "=== Couleur Prix ==="
-      },
-      {
-        "type": "color",
-        "id": "color_price",
-        "label": "Couleur Prix",
-        "default": "#198754"
-      },
-      {
-        "type": "header",
-        "content": "=== Couleur Alerte ==="
-      },
-      {
-        "type": "paragraph",
-        "content": "Les couleurs ALERTE font partie des couleurs système de Shopify. Il est vivement conseillé de ne pas les modifier pour assurer un affichage optimal et une expérience utilisateur cohérente."
-      },
-      {
-        "type": "color",
-        "id": "color_success",
-        "label": "Succès",
-        "default": "#198754"
-      },
-      {
-        "type": "color",
-        "id": "color_danger",
-        "label": "Danger",
-        "default": "#dc3545"
-      },
-      {
-        "type": "color",
-        "id": "color_warning",
-        "label": "Avertissement",
-        "default": "#ffc107"
-      },
-      {
-        "type": "color",
-        "id": "color_info",
-        "label": "Info",
-        "default": "#0dcaf0"
-      }
-    ]
-  },
-  {
-    "name": "Style",
-    "settings": [
-      {
-        "type": "header",
-        "content": "=== Favicon ==="
-      },
-      {
-        "type": "image_picker",
-        "id": "favicon",
-        "label": "Image favicon",
-        "info": "Sera réduit à 32x32 px"
-      },
-      {
-        "type": "header",
-        "content": "=== Général ==="
-      },
-      {
-        "type": "select",
-        "id": "border_radius",
-        "label": "Rayon des bordures",
-        "default": "0.375rem",
-        "info": "S'applique à divers éléments tels que les images, les boutons, les cartes, les listes déroulantes, etc.",
-        "options": [
-          {
-            "value": "0",
-            "label": "Aucun"
-          },
-          {
-            "value": "0.25rem",
-            "label": "Arrondi s"
-          },
-          {
-            "value": "0.375rem",
-            "label": "Arrondi m"
-          },
-          {
-            "value": "0.5rem",
-            "label": "Arrondi l"
-          },
-          {
-            "value": "1rem",
-            "label": "Arrondi xl"
-          },
-          {
-            "value": "2rem",
-            "label": "Arrondi xxl"
-          }
-        ]
-      },
-      {
-        "type": "header",
-        "content": "🏆 Application SVG Sous-titre",
-        "info": "👉 Application Version Shopiweb Premium"
-      },
-      {
-        "type": "select",
-        "id": "svg_h2",
-        "label": "SVG Sous-titre (prédéfinis)",
-        "default": "h2svg1",
-        "info": "Vous disposez de sous-titres prédéfinis au format SVG.",
-        "options": [
-          {
-            "value": "none",
-            "label": "Aucun"
-          },
-          {
-            "group": "Géométrique",
-            "value": "h2svg1",
-            "label": "Svg 1"
-          },
-          {
-            "group": "Géométrique",
-            "value": "h2svg2",
-            "label": "Svg 2"
-          },
-          {
-            "group": "Géométrique",
-            "value": "h2svg3",
-            "label": "Svg 3"
-          },
-          {
-            "group": "Abstrait",
-            "value": "h2svg4",
-            "label": "Svg 4"
-          },
-          {
-            "group": "Géométrique",
-            "value": "h2svg5",
-            "label": "Svg 5"
-          },
-          {
-            "group": "Abstrait",
-            "value": "h2svg6",
-            "label": "Svg 6"
-          },
-          {
-            "group": "Géométrique",
-            "value": "h2svg7",
-            "label": "Svg 7"
-          },
-          {
-            "group": "Géométrique",
-            "value": "h2svg8",
-            "label": "Svg 8"
-          },
-          {
-            "group": "Géométrique",
-            "value": "h2svg9",
-            "label": "Svg 9"
-          },
-          {
-            "group": "Géométrique",
-            "value": "h2svg10",
-            "label": "Svg 10"
-          },
-          {
-            "group": "Animaux",
-            "value": "h2svg11",
-            "label": "Svg 11"
-          },
-          {
-            "group": "Fleurs",
-            "value": "h2svg12",
-            "label": "Svg 12"
-          },
-          {
-            "group": "Géométrique",
-            "value": "h2svg13",
-            "label": "Svg 13"
-          },
-          {
-            "group": "Géométrique",
-            "value": "h2svg14",
-            "label": "Svg 14"
-          },
-          {
-            "group": "Abstrait",
-            "value": "h2svg15",
-            "label": "Svg 15"
-          },
-          {
-            "group": "Géométrique",
-            "value": "h2svg16",
-            "label": "Svg 16"
-          },
-          {
-            "group": "Cuisine",
-            "value": "h2svg17",
-            "label": "Svg 17"
-          },
-          {
-            "group": "Géométrique",
-            "value": "h2svg18",
-            "label": "Svg 18"
-          },
-          {
-            "group": "Abstrait",
-            "value": "h2svg19",
-            "label": "Svg 19"
-          },
-          {
-            "group": "Abstrait",
-            "value": "h2svg20",
-            "label": "Svg 20"
-          },
-          {
-            "group": "Musique",
-            "value": "h2svg21",
-            "label": "Svg 21"
-          }
-        ]
-      },
-      {
-        "type": "html",
-        "id": "custom_svg_h2",
-        "label": "SVG personnalisé",
-        "info": "Laisser vide pour désactiver."
-      },
-      {
-        "type": "color",
-        "id": "color_svg_h2",
-        "label": "Couleur du SVG",
-        "default": "#000"
-      },
-      {
-        "type": "range",
-        "id": "width_svg_h2",
-        "min": 0,
-        "max": 100,
-        "step": 2,
-        "unit": "rem",
-        "label": "Taille du SVG",
-        "default": 20
-      },
-      {
-        "type": "header",
-        "content": "=== Boutons ==="
-      },
-      {
-        "type": "range",
-        "id": "buttons_padding_x",
-        "label": "Padding horizontal",
-        "default": 0.8,
-        "min": 0.5,
-        "max": 2.0,
-        "step": 0.1,
-        "unit": "rem"
-      },
-      {
-        "type": "range",
-        "id": "buttons_padding_y",
-        "label": "Padding vertical",
-        "default": 0.4,
-        "min": 0.2,
-        "max": 1.0,
-        "step": 0.1,
-        "unit": "rem"
-      },
-      {
-        "type": "range",
-        "id": "buttons_letter_spacing",
-        "label": "Espacement des lettres",
-        "default": 0.0,
-        "min": 0.0,
-        "max": 0.4,
-        "step": 0.1,
-        "unit": "rem"
-      },
-      {
-        "type": "select",
-        "id": "buttons_text_transform",
-        "label": "Transformation du texte",
-        "default": "",
-        "options": [
-          {
-            "value": "",
-            "label": "Normal"
-          },
-          {
-            "value": "capitalize",
-            "label": "Capitale"
-          },
-          {
-            "value": "lowercase",
-            "label": "Minuscules"
-          },
-          {
-            "value": "uppercase",
-            "label": "Majuscules"
-          }
-        ]
-      },
       {
         "type": "select",
         "id": "buttons_font_weight",
-        "label": "Poids de la police",
+  "label": "Font weight",
         "default": "500",
         "options": [
-          {
-            "value": "400",
-            "label": "Normal"
-          },
-          {
-            "value": "500",
-            "label": "Medium"
-          },
-          {
-            "value": "600",
-            "label": "Semi-bold"
-          },
-          {
-            "value": "700",
-            "label": "Bold"
-          }
+          { "value": "400", "label": "Normal" },
+          { "value": "500", "label": "Medium" },
+          { "value": "700", "label": "Bold" }
         ]
       },
       {
-        "type": "checkbox",
-        "id": "buttons_bg_gradient",
-        "label": "Dégradé des boutons",
-        "default": false
+        "type": "header",
+  "content": "=== Sliding panels ==="
       },
       {
         "type": "select",
         "id": "btn_shadow_sp",
-        "label": "Ombre du bouton",
+  "label": "Button shadow",
         "options": [
-          {
-            "value": "shadow-none",
-            "label": "Aucune"
-          },
-          {
-            "value": "btn-shadow-1",
-            "label": "Ombre légère"
-          },
-          {
-            "value": "btn-shadow-2",
-            "label": "Ombre partiel"
-          },
-          {
-            "value": "btn-shadow-3",
-            "label": "Ombre profonde"
-          },
-          {
-            "value": "btn-shadow-4",
-            "label": "Ombre totale"
-          }
-        ],
-        "default": "btn-shadow-1"
-      },
-      {
-        "type": "header",
-        "content": "🏆 Application Avis ShopiTrust",
-        "info": "👉 Application Version Shopiweb Premium"
+          { "value": "btn-shadow-1", "label": "Light shadow" },
+          { "value": "btn-shadow-2", "label": "Partial shadow" },
+          { "value": "btn-shadow-3", "label": "Deep shadow" },
+          { "value": "btn-shadow-4", "label": "Full shadow" }
+        ]
       },
       {
         "type": "select",
         "id": "star_style",
-        "label": "Style d'étoiles",
+  "label": "Star style",
         "options": [
-          {
-            "value": "default",
-            "label": "Par défaut"
-          },
-          {
-            "value": "shopitrust",
-            "label": "ShopiTrust"
-          }
-        ],
-        "default": "default"
-      },
+          { "value": "default", "label": "Default" },
+          { "value": "shopitrust", "label": "ShopiTrust" }
+        ]
+      }
+    ]
+  },
+  {
+  "name": "Sliding panels",
+    "settings": [
       {
         "type": "header",
         "content": "=== Panneaux coulissant ==="
@@ -491,74 +54,74 @@
       {
         "type": "select",
         "id": "offcanvas_opening_direction",
-        "label": "Direction d'ouverture des panneaux coulissant",
-        "info": "S'applique à divers éléments tels que le panier, la wishlist, la recherche, le filtre, etc.",
+  "label": "Sliding panel opening direction",
+  "info": "Applies to various elements such as cart, wishlist, search, filter, etc.",
         "default": "",
         "options": [
           {
             "value": "",
-            "label": "Default (depuis le côté)"
+            "label": "Default (from the side)"
           },
           {
             "value": "offcanvas-from-top",
-            "label": "Depuis le haut"
+            "label": "From the top"
           },
           {
             "value": "offcanvas-from-bottom",
-            "label": "Depuis le bas"
+            "label": "From the bottom"
           }
         ]
       },
       {
         "type": "select",
         "id": "offcanvas_header_bg",
-        "label": "Couleur de l'arrière plan de l'en-tête",
+  "label": "Header background color",
         "default": "bg-dark text-white",
         "options": [
           {
-            "group": "Hériter",
+            "group": "Inherit",
             "value": "",
             "label": "Body"
           },
           {
             "group": "Light",
             "value": "bg-white text-dark",
-            "label": "Blanc"
+            "label": "White"
           },
           {
-            "group": "Clair",
+            "group": "Light",
             "value": "bg-light text-body",
-            "label": "Claire"
+            "label": "Light"
           },
           {
-            "group": "Sombre",
+            "group": "Dark",
             "value": "bg-primary text-white",
-            "label": "Primaire"
+            "label": "Primary"
           },
           {
-            "group": "Sombre",
+            "group": "Dark",
             "value": "bg-secondary text-white",
-            "label": "Secondaire"
+            "label": "Secondary"
           },
           {
             "group": "Sombre",
             "value": "bg-tertiary text-white",
-            "label": "Tertiaire"
+            "label": "Tertiary"
           },
           {
             "group": "Sombre",
             "value": "bg-dark text-white",
-            "label": "Sombre"
+            "label": "Dark"
           },
           {
-            "group": "Alerte",
+            "group": "Alert",
             "value": "bg-success text-white",
-            "label": "Succès"
+            "label": "Success"
           },
           {
-            "group": "Alerte",
+            "group": "Alert",
             "value": "bg-warning text-dark",
-            "label": "Avertissement"
+            "label": "Warning"
           },
           {
             "group": "Alerte",
@@ -575,192 +138,49 @@
       {
         "type": "select",
         "id": "offcanvas_header_title_size",
-        "label": "Taille du titre de l'en-tête",
+  "label": "Header title size",
         "default": "h5",
         "options": [
           {
-            "group": "Titre Standard",
+            "group": "Standard Title",
             "value": "h1",
-            "label": "Très Grand"
+            "label": "Very Large"
           },
           {
-            "group": "Titre Standard",
+            "group": "Standard Title",
             "value": "h2",
-            "label": "Grand"
+            "label": "Large"
           },
           {
             "group": "Titre Standard",
             "value": "h3",
-            "label": "Moyen"
+            "label": "Medium"
           },
           {
             "group": "Titre Standard",
             "value": "h4",
-            "label": "Petit"
+            "label": "Small"
           },
           {
             "group": "Titre Standard",
             "value": "h5",
-            "label": "Très Petit"
+            "label": "Very Small"
           },
           {
             "group": "Titre Standard",
             "value": "h6",
-            "label": "Super Petit"
+            "label": "Super Small"
           }
         ]
       },
       {
         "type": "range",
         "id": "offcanvas_backdrop_opacity",
-        "label": "Opacité en toile de fond (%)",
+  "label": "Backdrop opacity (%)",
         "default": 50,
         "min": 0,
         "max": 100,
-        "step": 1
-      },
-      {
-        "type": "checkbox",
-        "id": "offcanvas_backdrop_blur",
-        "label": "Activer le flou en toile de fond",
-        "default": true
-      },
-      {
-        "type": "select",
-        "id": "offcanvas_img_orientation",
-        "label": "Orientation des images dans les panneaux coulissant",
-        "default": "square",
-        "options": [
-          {
-            "value": "square",
-            "label": "Carré"
-          },
-          {
-            "value": "landscape",
-            "label": "Paysage"
-          },
-          {
-            "value": "potrait",
-            "label": "Portrait"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "id": "offcanvas_img_thumbnail",
-        "label": "Bordure de l'image",
-        "default": "img-thumbnail",
-        "options": [
-          {
-            "value": "",
-            "label": "Aucune"
-          },
-          {
-            "value": "img-thumbnail",
-            "label": "Bordure"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "id": "offcanvas_border_color",
-        "label": "Couleur de la bordure",
-        "options": [
-          {
-            "value": "",
-            "label": "Default"
-          },
-          {
-            "value": "border-primary",
-            "label": "Primaire"
-          },
-          {
-            "value": "border-secondary",
-            "label": "Secondaire"
-          },
-          {
-            "value": "border-tertiary",
-            "label": "Tertiaire"
-          },
-          {
-            "value": "border-dark",
-            "label": "Sombre"
-          },
-          {
-            "value": "border-success",
-            "label": "Succès"
-          },
-          {
-            "value": "border-warning",
-            "label": "Avertissement"
-          },
-          {
-            "value": "border-danger",
-            "label": "Danger"
-          },
-          {
-            "value": "border-info",
-            "label": "Info"
-          }
-        ],
-        "default": ""
-      },
-      {
-        "type": "select",
-        "id": "offcanvas_shadow_sp",
-        "label": "Ombre",
-        "options": [
-          {
-            "value": "shadow-none",
-            "label": "Aucune"
-          },
-          {
-            "value": "shadow-1",
-            "label": "Ombre légère"
-          },
-          {
-            "value": "shadow-2",
-            "label": "Ombre partiel"
-          },
-          {
-            "value": "shadow-3",
-            "label": "Ombre profonde"
-          },
-          {
-            "value": "shadow-4",
-            "label": "Ombre totale"
-          }
-        ],
-        "default": "shadow-1"
-      }
-    ]
-  },
-  {
-    "name": "Typographie",
-    "settings": [
-      {
-        "type": "paragraph",
-        "content": "Documentation FR : [Typographie by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/parametres-du-theme/typographie)"
-      },
-      {
-        "type": "font_picker",
-        "id": "font_headings",
-        "label": "Titres police",
-        "default": "sans-serif",
-        "info": "La sélection d'une police différente peut influencer la vitesse de votre boutique. [En savoir plus sur les polices système.](https://help.shopify.com/manual/online-store/os/store-speed/improving-speed#fonts)"
-      },
-      {
-        "type": "text",
-        "id": "font_headings_custom",
-        "label": "Titres police (custom)",
-        "info": "Téléchargez votre fichier de police dans la section [Fichiers](https://www.shopify.com/admin/content/files) et entrez ici le nom exact du fichier. Par exemple, 'ubuntu-regular.woff2'. Pour plus d'informations, veuillez vous référer à notre vidéo de documentation."
-      },
-      {
-        "type": "font_picker",
-        "id": "font_body",
-        "label": "Corps police",
-        "default": "sans-serif",
-        "info": "La sélection d'une police différente peut influencer la vitesse de votre boutique. [En savoir plus sur les polices système.](https://help.shopify.com/manual/online-store/os/store-speed/improving-speed#fonts)"
+        "step": 5
       }
     ]
   },
@@ -769,343 +189,98 @@
     "settings": [
       {
         "type": "header",
-        "content": "=== Général ==="
-      },
-      {
-        "type": "checkbox",
-        "id": "animations_on_scroll",
-        "label": "Activer les animations au défilement",
-        "default": false,
-        "info": "Désactivez cette option pour arrêter les animations"
-      },
-      {
-        "type": "header",
-        "content": "Animation légendes (caption)"
-      },
-      {
-        "type": "checkbox",
-        "id": "effect_apply_caption_enable",
-        "label": "Activer",
-        "default": true,
-        "info": "Active des effets d'animations lors du défilement sur les Légendes (caption)"
-      },
-      {
-        "type": "select",
-        "id": "animation_caption_name",
-        "label": "Effet d'animation",
-        "default": "animate__fadeInDown",
-        "options": [
-          {
-            "group": "Retour",
-            "value": "animate__backInDown",
-            "label": "Back In Down"
-          },
-          {
-            "group": "Retour",
-            "value": "animate__backInLeft",
-            "label": "Back In Left"
-          },
-          {
-            "group": "Retour",
-            "value": "animate__backInRight",
-            "label": "Back In Right"
-          },
-          {
-            "group": "Retour",
-            "value": "animate__backInUp",
-            "label": "Back In Up"
-          },
-          {
-            "group": "Rebond",
-            "value": "animate__bounceIn",
-            "label": "Bounce In"
-          },
-          {
-            "group": "Rebond",
-            "value": "animate__bounceInDown",
-            "label": "Bounce-in-down"
-          },
-          {
-            "group": "Rebond",
-            "value": "animate__bounceInLeft",
-            "label": "Bounce-in-left"
-          },
-          {
-            "group": "Rebond",
-            "value": "animate__bounceInRight",
-            "label": "Bounce-in-right"
-          },
-          {
-            "group": "Rebond",
-            "value": "animate__bounceInUp",
-            "label": "Bounce-in-up"
-          },
-          {
-            "group": "Fondu",
-            "value": "animate__fadeIn",
-            "label": "Fade In"
-          },
-          {
-            "group": "Fondu",
-            "value": "animate__fadeInDown",
-            "label": "Fade-in-down"
-          },
-          {
-            "group": "Fondu",
-            "value": "animate__fadeInDownBig",
-            "label": "Fade-in-down Big"
-          },
-          {
-            "group": "Fondu",
-            "value": "animate__fadeInLeft",
-            "label": "Fade-in-left"
-          },
-          {
-            "group": "Fondu",
-            "value": "animate__fadeInLeftBig",
-            "label": "Fade-in-left Big"
-          },
-          {
-            "group": "Fondu",
-            "value": "animate__fadeInRight",
-            "label": "Fade-in-right"
-          },
-          {
-            "group": "Fondu",
-            "value": "animate__fadeInRightBig",
-            "label": "Fade-in-right Big"
-          },
-          {
-            "group": "Fondu",
-            "value": "animate__fadeInUp",
-            "label": "Fade-in-up"
-          },
-          {
-            "group": "Fondu",
-            "value": "animate__fadeInUpBig",
-            "label": "Fade-in-up Big"
-          },
-          {
-            "group": "Fondu",
-            "value": "animate__fadeInTopLeft",
-            "label": "Fade-in Top Left"
-          },
-          {
-            "group": "Fondu",
-            "value": "animate__fadeInTopRight",
-            "label": "Fade-in Top Right"
-          },
-          {
-            "group": "Fondu",
-            "value": "animate__fadeInBottomLeft",
-            "label": "Fade-in Bottom Left"
-          },
-          {
-            "group": "Fondu",
-            "value": "animate__fadeInBottomRight",
-            "label": "Fade-in Bottom Right"
-          },
-          {
-            "group": "Flip",
-            "value": "animate__flip",
-            "label": "Flip"
-          },
-          {
-            "group": "Flip",
-            "value": "animate__flipInX",
-            "label": "Flip In X"
-          },
-          {
-            "group": "Flip",
-            "value": "animate__flipInY",
-            "label": "Flip In Y"
-          },
-          {
-            "group": "Flip",
-            "value": "animate__flipOutX",
-            "label": "Flip Out X"
-          },
-          {
-            "group": "Flip",
-            "value": "animate__flipOutY",
-            "label": "Flip Out Y"
-          },
-          {
-            "group": "Vitesse Lumière",
-            "value": "animate__lightSpeedInRight",
-            "label": "Light Speed In Right"
-          },
-          {
-            "group": "Vitesse Lumière",
-            "value": "animate__lightSpeedInLeft",
-            "label": "Light Speed In Left"
-          },
-          {
-            "group": "Rotation",
-            "value": "animate__rotateIn",
-            "label": "Rotate In"
-          },
-          {
-            "group": "Rotation",
-            "value": "animate__rotateInDownLeft",
-            "label": "Rotate In Down Left"
-          },
-          {
-            "group": "Rotation",
-            "value": "animate__rotateInDownRight",
-            "label": "Rotate In Down Right"
-          },
-          {
-            "group": "Rotation",
-            "value": "animate__rotateInUpLeft",
-            "label": "Rotate In Up Left"
-          },
-          {
-            "group": "Rotation",
-            "value": "animate__rotateInUpRight",
-            "label": "Rotate In Up Right"
-          },
-          {
-            "group": "Zoom",
-            "value": "animate__zoomIn",
-            "label": "Zoom In"
-          },
-          {
-            "group": "Zoom",
-            "value": "animate__zoomInDown",
-            "label": "Zoom In Down"
-          },
-          {
-            "group": "Zoom",
-            "value": "animate__zoomInLeft",
-            "label": "Zoom In Left"
-          },
-          {
-            "group": "Zoom",
-            "value": "animate__zoomInRight",
-            "label": "Zoom In Right"
-          },
-          {
-            "group": "Zoom",
-            "value": "animate__zoomInUp",
-            "label": "Zoom In Up"
-          },
-          {
-            "group": "Glissement",
-            "value": "animate__slideInDown",
-            "label": "Slide In Down"
-          },
-          {
-            "group": "Glissement",
-            "value": "animate__slideInLeft",
-            "label": "Slide In Left"
-          },
-          {
-            "group": "Glissement",
-            "value": "animate__slideInRight",
-            "label": "Slide In Right"
-          },
-          {
-            "group": "Glissement",
-            "value": "animate__slideInUp",
-            "label": "Slide In Up"
-          }
-        ]
-      },
-      {
-        "type": "header",
-        "content": "Animation titres"
+  "content": "Main title animation"
       },
       {
         "type": "checkbox",
         "id": "effect_apply_title_enable",
-        "label": "Activer",
+        "label": "Enable",
         "default": true,
-        "info": "Active des effets d'animations lors du défilement sur les titres"
+        "info": "Enables animation effects when scrolling over main titles"
       },
       {
         "type": "select",
         "id": "animation_title_name",
-        "label": "Effet d'animation",
-        "default": "animate__fadeInUp",
+  "label": "Animation effect",
+        "default": "animate__zoomInRight",
         "options": [
           {
-            "group": "Retour",
+            "group": "Back",
             "value": "animate__backInDown",
             "label": "Back In Down"
           },
           {
-            "group": "Retour",
+            "group": "Back",
             "value": "animate__backInLeft",
             "label": "Back In Left"
           },
           {
-            "group": "Retour",
+            "group": "Back",
             "value": "animate__backInRight",
             "label": "Back In Right"
           },
           {
-            "group": "Retour",
+            "group": "Back",
             "value": "animate__backInUp",
             "label": "Back In Up"
           },
           {
-            "group": "Rebond",
+            "group": "Bounce",
             "value": "animate__bounceIn",
             "label": "Bounce In"
           },
           {
-            "group": "Rebond",
+            "group": "Bounce",
             "value": "animate__bounceInDown",
             "label": "Bounce-in-down"
           },
           {
-            "group": "Rebond",
+            "group": "Bounce",
             "value": "animate__bounceInLeft",
             "label": "Bounce-in-left"
           },
           {
-            "group": "Rebond",
+            "group": "Bounce",
             "value": "animate__bounceInRight",
             "label": "Bounce-in-right"
           },
           {
-            "group": "Rebond",
+            "group": "Bounce",
             "value": "animate__bounceInUp",
             "label": "Bounce-in-up"
           },
           {
-            "group": "Fondu",
+            "group": "Fade",
             "value": "animate__fadeIn",
             "label": "Fade In"
           },
           {
-            "group": "Fondu",
+            "group": "Fade",
             "value": "animate__fadeInDown",
             "label": "Fade-in-down"
           },
           {
-            "group": "Fondu",
+            "group": "Fade",
             "value": "animate__fadeInDownBig",
             "label": "Fade-in-down Big"
           },
           {
-            "group": "Fondu",
+            "group": "Fade",
             "value": "animate__fadeInLeft",
             "label": "Fade-in-left"
           },
           {
-            "group": "Fondu",
+            "group": "Fade",
             "value": "animate__fadeInLeftBig",
             "label": "Fade-in-left Big"
           },
           {
-            "group": "Fondu",
+            "group": "Fade",
             "value": "animate__fadeInRight",
             "label": "Fade-in-right"
           },
           {
-            "group": "Fondu",
+            "group": "Fade",
             "value": "animate__fadeInRightBig",
             "label": "Fade-in-right Big"
           },
@@ -1165,12 +340,12 @@
             "label": "Flip Out Y"
           },
           {
-            "group": "Vitesse Lumière",
+            "group": "Light Speed",
             "value": "animate__lightSpeedInRight",
             "label": "Light Speed In Right"
           },
           {
-            "group": "Vitesse Lumière",
+            "group": "Light Speed",
             "value": "animate__lightSpeedInLeft",
             "label": "Light Speed In Left"
           },
@@ -1225,22 +400,22 @@
             "label": "Zoom In Up"
           },
           {
-            "group": "Glissement",
+            "group": "Slide",
             "value": "animate__slideInDown",
             "label": "Slide In Down"
           },
           {
-            "group": "Glissement",
+            "group": "Slide",
             "value": "animate__slideInLeft",
             "label": "Slide In Left"
           },
           {
-            "group": "Glissement",
+            "group": "Slide",
             "value": "animate__slideInRight",
             "label": "Slide In Right"
           },
           {
-            "group": "Glissement",
+            "group": "Slide",
             "value": "animate__slideInUp",
             "label": "Slide In Up"
           }
@@ -1248,28 +423,28 @@
       },
       {
         "type": "header",
-        "content": "Animation SVG Sous-titre"
+  "content": "SVG subtitle animation"
       },
       {
         "type": "checkbox",
         "id": "effect_apply_svg_enable",
-        "label": "Activer",
+        "label": "Enable",
         "default": true,
-        "info": "Active des effets d'animations lors du défilement sur les SVG sous-titres"
+  "info": "Enables animation effects when scrolling over SVG subtitles"
       },
       {
         "type": "select",
         "id": "animation_svg_name",
-        "label": "Effet d'animation",
+  "label": "Animation effect",
         "default": "animate__zoomInRight",
         "options": [
           {
-            "group": "Retour",
+            "group": "Back",
             "value": "animate__backInDown",
             "label": "Back In Down"
           },
           {
-            "group": "Retour",
+            "group": "Back",
             "value": "animate__backInLeft",
             "label": "Back In Left"
           },
@@ -1284,22 +459,22 @@
             "label": "Back In Up"
           },
           {
-            "group": "Rebond",
+            "group": "Bounce",
             "value": "animate__bounceIn",
             "label": "Bounce In"
           },
           {
-            "group": "Rebond",
+            "group": "Bounce",
             "value": "animate__bounceInDown",
             "label": "Bounce-in-down"
           },
           {
-            "group": "Rebond",
+            "group": "Bounce",
             "value": "animate__bounceInLeft",
             "label": "Bounce-in-left"
           },
           {
-            "group": "Rebond",
+            "group": "Bounce",
             "value": "animate__bounceInRight",
             "label": "Bounce-in-right"
           },
@@ -1309,12 +484,12 @@
             "label": "Bounce-in-up"
           },
           {
-            "group": "Fondu",
+            "group": "Fade",
             "value": "animate__fadeIn",
             "label": "Fade In"
           },
           {
-            "group": "Fondu",
+            "group": "Fade",
             "value": "animate__fadeInDown",
             "label": "Fade-in-down"
           },
@@ -1399,12 +574,12 @@
             "label": "Flip Out Y"
           },
           {
-            "group": "Vitesse Lumière",
+            "group": "Light Speed",
             "value": "animate__lightSpeedInRight",
             "label": "Light Speed In Right"
           },
           {
-            "group": "Vitesse Lumière",
+            "group": "Light Speed",
             "value": "animate__lightSpeedInLeft",
             "label": "Light Speed In Left"
           },
@@ -1459,22 +634,22 @@
             "label": "Zoom In Up"
           },
           {
-            "group": "Glissement",
+            "group": "Slide",
             "value": "animate__slideInDown",
             "label": "Slide In Down"
           },
           {
-            "group": "Glissement",
+            "group": "Slide",
             "value": "animate__slideInLeft",
             "label": "Slide In Left"
           },
           {
-            "group": "Glissement",
+            "group": "Slide",
             "value": "animate__slideInRight",
             "label": "Slide In Right"
           },
           {
-            "group": "Glissement",
+            "group": "Slide",
             "value": "animate__slideInUp",
             "label": "Slide In Up"
           }
@@ -1482,19 +657,19 @@
       },
       {
         "type": "header",
-        "content": "Animation paragraphes"
+  "content": "Paragraph animation"
       },
       {
         "type": "checkbox",
         "id": "effect_apply_description_enable",
-        "label": "Activer",
+        "label": "Enable",
         "default": true,
-        "info": "Active des effets d'animations lors du défilement sur les paragraphes"
+        "info": "Enables animation effects when scrolling over paragraphs"
       },
       {
         "type": "select",
         "id": "animation_description_name",
-        "label": "Effet d'animation",
+  "label": "Animation effect",
         "default": "animate__fadeInUp",
         "options": [
           {
@@ -1633,12 +808,12 @@
             "label": "Flip Out Y"
           },
           {
-            "group": "Vitesse Lumière",
+            "group": "Light Speed",
             "value": "animate__lightSpeedInRight",
             "label": "Light Speed In Right"
           },
           {
-            "group": "Vitesse Lumière",
+            "group": "Light Speed",
             "value": "animate__lightSpeedInLeft",
             "label": "Light Speed In Left"
           },
@@ -1693,12 +868,12 @@
             "label": "Zoom In Up"
           },
           {
-            "group": "Glissement",
+            "group": "Slide",
             "value": "animate__slideInDown",
             "label": "Slide In Down"
           },
           {
-            "group": "Glissement",
+            "group": "Slide",
             "value": "animate__slideInLeft",
             "label": "Slide In Left"
           },
@@ -1716,19 +891,19 @@
       },
       {
         "type": "header",
-        "content": "Animation boutons"
+  "content": "Button animation"
       },
       {
         "type": "checkbox",
         "id": "effect_apply_btn_enable",
-        "label": "Activer",
+        "label": "Enable",
         "default": true,
-        "info": "Active des effets d'animations lors du défilement sur les boutons"
+        "info": "Enables animation effects when scrolling over buttons"
       },
       {
         "type": "select",
         "id": "animation_btn_name",
-        "label": "Effet d'animation",
+  "label": "Animation effect",
         "default": "animate__fadeInUp",
         "options": [
           {
@@ -1867,7 +1042,7 @@
             "label": "Flip Out Y"
           },
           {
-            "group": "Vitesse Lumière",
+            "group": "Light Speed",
             "value": "animate__lightSpeedInRight",
             "label": "Light Speed In Right"
           },
@@ -1951,16 +1126,8 @@
     ]
   },
   {
-    "name": "Réseaux sociaux",
+    "name": "Social",
     "settings": [
-      {
-        "type": "paragraph",
-        "content": "Documentation FR : [Réseaux sociaux by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/parametres-du-theme/reseaux-sociaux)"
-      },
-      {
-        "type": "paragraph",
-        "content": "Saisissez l'URL complète de chaque site de média social ci-dessous. Par exemple : https://www.facebook.com/shopiweb"
-      },
       {
         "type": "text",
         "id": "social_facebook",
@@ -2019,7 +1186,7 @@
       {
         "type": "text",
         "id": "social_phone",
-        "label": "Téléphone",
+        "label": "Phone",
         "info": "tel:+33612345678"
       }
     ]
@@ -2029,40 +1196,40 @@
     "settings": [
       {
         "type": "header",
-        "content": "🏆 Application Protection Boutique",
-        "info": "👉 Application Version Shopiweb Premium"
+  "content": "🏆 Store Protection Application",
+  "info": "👉 Shopiweb Premium Application Version"
       },
       {
         "type": "checkbox",
         "id": "enable-right-clic",
-        "label": "Désactiver le clic droit"
+        "label": "Disable right click"
       },
       {
         "type": "checkbox",
         "id": "enable-text-selection",
-        "label": "Désactiver la sélection du texte"
+        "label": "Disable text selection"
       },
       {
         "type": "checkbox",
         "id": "enable-image-drag",
-        "label": "Désactiver la sélection d'images"
+        "label": "Disable image selection"
       },
       {
         "type": "header",
-        "content": "🏆 Application Flèche Scroll Top"
+  "content": "🏆 Scroll to Top Arrow Application"
       },
       {
         "type": "checkbox",
         "id": "enable_scroll_top_btn",
-        "label": "Activer la flèche 'Défiler vers le haut'",
-        "info": "👉 Application Version Shopiweb Premium",
+        "label": "Enable 'Scroll to Top' arrow",
+        "info": "👉 Shopiweb Premium App Version",
         "default": false
       },
       {
         "type": "range",
         "id": "go_top_scroll",
-        "label": "Seuil d'affichage ",
-        "info": "Affiche le bouton après que l'utilisateur a dépassé cette valeur.",
+        "label": "Display threshold",
+        "info": "Shows the button after the user has exceeded this value.",
         "min": 0,
         "max": 2000,
         "step": 100,
@@ -2071,43 +1238,43 @@
       {
         "type": "select",
         "id": "scroll_top_btn_color",
-        "label": "Couleur du bouton 'Défiler vers le haut'",
+        "label": "Button color 'Scroll to Top'",
         "default": "btn-secondary",
         "options": [
           {
             "group": "Normal",
             "value": "btn-link",
-            "label": "Lien"
+            "label": "Link"
           },
           {
             "group": "Normal",
             "value": "btn-light",
-            "label": "Claire"
+            "label": "Light"
           },
           {
             "group": "Normal",
             "value": "btn-dark",
-            "label": "Sombre"
+            "label": "Dark"
           },
           {
             "group": "Normal",
             "value": "btn-primary",
-            "label": "Primaire"
+            "label": "Primary"
           },
           {
             "group": "Normal",
             "value": "btn-secondary",
-            "label": "Secondaire"
+            "label": "Secondary"
           },
           {
             "group": "Normal",
             "value": "btn-tertiary",
-            "label": "Tertiaire"
+            "label": "Tertiary"
           },
           {
             "group": "Normal",
             "value": "btn-success",
-            "label": "Succès"
+            "label": "Success"
           },
           {
             "group": "Normal",
@@ -2117,7 +1284,7 @@
           {
             "group": "Normal",
             "value": "btn-warning",
-            "label": "Avertissement"
+            "label": "Warning"
           },
           {
             "group": "Normal",
@@ -2127,74 +1294,74 @@
           {
             "group": "Contour",
             "value": "btn-outline-light",
-            "label": "Contour Claire"
+            "label": "Outline Light"
           },
           {
             "group": "Contour",
             "value": "btn-outline-dark",
-            "label": "Contour Sombre"
+            "label": "Outline Dark"
           },
           {
             "group": "Contour",
             "value": "btn-outline-primary",
-            "label": "Contour Primaire"
+            "label": "Outline Primary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-secondary",
-            "label": "Contour Secondaire"
+            "label": "Outline Secondary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-tertiary",
-            "label": "Contour Tertiaire"
+            "label": "Outline Tertiary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-success",
-            "label": "Contour Succès"
+            "label": "Outline Success"
           },
           {
             "group": "Contour",
             "value": "btn-outline-danger",
-            "label": "Contour Danger"
+            "label": "Outline Danger"
           },
           {
             "group": "Contour",
             "value": "btn-outline-warning",
-            "label": "Contour Avertissement"
+            "label": "Outline Warning"
           },
           {
             "group": "Contour",
             "value": "btn-outline-info",
-            "label": "Contour Info"
+            "label": "Outline Info"
           }
         ]
       },
       {
         "type": "select",
         "id": "scroll_mobile_position",
-        "label": "Position du bouton sur mobile",
+  "label": "Button position on mobile",
         "default": "center",
         "options": [
           {
             "value": "left",
-            "label": "Gauche"
+            "label": "Left"
           },
           {
             "value": "center",
-            "label": "Centre"
+            "label": "Center"
           },
           {
             "value": "right",
-            "label": "Droite"
+            "label": "Right"
           }
         ]
       },
       {
         "type": "select",
         "id": "scroll_desktop_position",
-        "label": "Position du bouton sur desktop",
+  "label": "Button position on desktop",
         "default": "center",
         "options": [
           {
@@ -2213,201 +1380,201 @@
       },
       {
         "type": "header",
-        "content": "🏆 Application Titre Onglet Inactif"
+  "content": "🏆 Inactive Tab Title Application"
       },
       {
         "type": "paragraph",
-        "content": "👉 Application Version Shopiweb Premium"
+  "content": "👉 Shopiweb Premium Application Version"
       },
       {
         "type": "paragraph",
-        "content": "Cette fonction permet de modifier dynamiquement le titre de l'onglet du navigateur lorsque la page devient inactive."
+  "content": "This feature allows you to dynamically change the browser tab title when the page becomes inactive."
       },
       {
         "type": "checkbox",
         "id": "browser_tab_enable",
-        "label": "Activer cette fonction",
+  "label": "Enable this feature",
         "default": true
       },
       {
         "type": "text",
         "id": "browser_tab_text",
-        "label": "Texte",
+  "label": "Text",
         "default": "😍 Poursuivre les achats..."
       },
       {
         "type": "header",
-        "content": "🏆 Application Wishlist"
+  "content": "🏆 Wishlist Application"
       },
       {
         "type": "checkbox",
         "id": "wishlist_enable",
-        "label": "Activer la Liste de Souhaits",
-        "info": "👉 Application Version Shopiweb Premium",
+  "label": "Enable Wishlist",
+  "info": "👉 Shopiweb Premium Application Version",
         "default": true
       },
       {
         "type": "checkbox",
         "id": "wishlist_show_atc_form",
-        "label": "Afficher le bouton 'Ajouter au panier'",
+  "label": "Show 'Add to Cart' button",
         "default": true
       },
       {
         "type": "header",
-        "content": "🏆 Application Cookies RGPD"
+  "content": "🏆 GDPR Cookies Application"
       },
       {
         "type": "checkbox",
         "id": "cooks",
-        "label": "Activer les Cookies",
-        "info": "👉 Application Version Shopiweb Premium",
+  "label": "Enable Cookies",
+  "info": "👉 Shopiweb Premium Application Version",
         "default": false
       },
       {
         "type": "select",
         "id": "bg_cooks",
-        "label": "Couleur de l'arrière plan",
+  "label": "Background color",
         "default": "",
         "options": [
           {
             "group": "Principal",
             "value": "bg-primary text-white",
-            "label": "Primaire"
+            "label": "Primary"
           },
           {
             "group": "Principal",
             "value": "bg-secondary text-white",
-            "label": "Secondaire"
+            "label": "Secondary"
           },
           {
             "group": "Principal",
             "value": "bg-tertiary text-white",
-            "label": "Tertiaire"
+            "label": "Tertiary"
           },
           {
             "group": "Intermédiaire",
             "value": "bg-white text-dark",
-            "label": "Blanc (par défaut)"
+            "label": "White (default)"
           },
           {
             "group": "Intermédiaire",
             "value": "bg-light text-body",
-            "label": "Claire"
+            "label": "Light"
           },
           {
             "group": "Intermédiaire",
             "value": "bg-dark text-white",
-            "label": "Sombre"
+            "label": "Dark"
           },
           {
             "group": "Par défaut",
             "value": "",
-            "label": "Corps (body)"
+            "label": "Body"
           }
         ]
       },
       {
         "type": "text",
         "id": "cooks_subtitle",
-        "label": "Titre 1",
+  "label": "Title 1",
         "default": "Salut c'est nous..."
       },
       {
         "type": "text",
         "id": "cooks_titre",
-        "label": "Titre 2",
+  "label": "Title 2",
         "default": "les Cookies !"
       },
       {
         "type": "richtext",
         "id": "cooks_description",
-        "label": "Description",
+  "label": "Description",
         "default": "<p>Nous utilisons des cookies pour vous garantir la meilleure expérience possible sur notre site web...</p>"
       },
       {
         "type": "select",
         "id": "cooks_description_size",
-        "label": "Taille de description",
+  "label": "Description size",
         "default": "fs-6",
         "options": [
           {
             "group": "Description Standard",
             "value": "fs-1",
-            "label": "Extra Grand"
+            "label": "Extra Large"
           },
           {
             "group": "Description Standard",
             "value": "fs-2",
-            "label": "Super Grand"
+            "label": "Super Large"
           },
           {
             "group": "Description Standard",
             "value": "fs-3",
-            "label": "Très Grand"
+            "label": "Very Large"
           },
           {
             "group": "Description Standard",
             "value": "fs-4",
-            "label": "Grand"
+            "label": "Large"
           },
           {
             "group": "Description Standard",
             "value": "fs-5",
-            "label": "Moyen"
+            "label": "Medium"
           },
           {
             "group": "Description Standard",
             "value": "fs-6",
-            "label": "Petit"
+            "label": "Small"
           }
         ]
       },
       {
         "type": "text",
         "id": "cookstxt-refused",
-        "label": "Texte du bouton refuser",
+  "label": "Refuse button text",
         "default": "Refuser"
       },
       {
         "type": "select",
         "id": "btn_color_cooks_refused",
-        "label": "Couleur du bouton 'Refuser'",
+  "label": "Refuse button color",
         "default": "btn-secondary",
         "options": [
           {
             "group": "Normal",
             "value": "btn-link",
-            "label": "Lien"
+            "label": "Link"
           },
           {
             "group": "Normal",
             "value": "btn-light",
-            "label": "Claire"
+            "label": "Light"
           },
           {
             "group": "Normal",
             "value": "btn-dark",
-            "label": "Sombre"
+            "label": "Dark"
           },
           {
             "group": "Normal",
             "value": "btn-primary",
-            "label": "Primaire"
+            "label": "Primary"
           },
           {
             "group": "Normal",
             "value": "btn-secondary",
-            "label": "Secondaire"
+            "label": "Secondary"
           },
           {
             "group": "Normal",
             "value": "btn-tertiary",
-            "label": "Tertiaire"
+            "label": "Tertiary"
           },
           {
             "group": "Normal",
             "value": "btn-success",
-            "label": "Succès"
+            "label": "Success"
           },
           {
             "group": "Normal",
@@ -2417,7 +1584,7 @@
           {
             "group": "Normal",
             "value": "btn-warning",
-            "label": "Avertissement"
+            "label": "Warning"
           },
           {
             "group": "Normal",
@@ -2427,96 +1594,96 @@
           {
             "group": "Contour",
             "value": "btn-outline-light",
-            "label": "Contour Claire"
+            "label": "Outline Light"
           },
           {
             "group": "Contour",
             "value": "btn-outline-dark",
-            "label": "Contour Sombre"
+            "label": "Outline Dark"
           },
           {
             "group": "Contour",
             "value": "btn-outline-primary",
-            "label": "Contour Primaire"
+            "label": "Outline Primary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-secondary",
-            "label": "Contour Secondaire"
+            "label": "Outline Secondary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-tertiary",
-            "label": "Contour Tertiaire"
+            "label": "Outline Tertiary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-success",
-            "label": "Contour Succès"
+            "label": "Outline Success"
           },
           {
             "group": "Contour",
             "value": "btn-outline-danger",
-            "label": "Contour Danger"
+            "label": "Outline Danger"
           },
           {
             "group": "Contour",
             "value": "btn-outline-warning",
-            "label": "Contour Avertissement"
+            "label": "Outline Warning"
           },
           {
             "group": "Contour",
             "value": "btn-outline-info",
-            "label": "Contour Info"
+            "label": "Outline Info"
           }
         ]
       },
       {
         "type": "text",
         "id": "cookstxt-refuse",
-        "label": "Texte du bouton en savoir plus",
-        "default": "En savoir +"
+  "label": "Learn more button text",
+  "default": "Learn more"
       },
       {
         "type": "select",
         "id": "btn_color_cooks_esp",
-        "label": "Couleur du bouton 'En savoir +'",
+  "label": "Learn more button color",
         "default": "btn-link",
         "options": [
           {
             "group": "Normal",
             "value": "btn-link",
-            "label": "Lien"
+            "label": "Link"
           },
           {
             "group": "Normal",
             "value": "btn-light",
-            "label": "Claire"
+            "label": "Light"
           },
           {
             "group": "Normal",
             "value": "btn-dark",
-            "label": "Sombre"
+            "label": "Dark"
           },
           {
             "group": "Normal",
             "value": "btn-primary",
-            "label": "Primaire"
+            "label": "Primary"
           },
           {
             "group": "Normal",
             "value": "btn-secondary",
-            "label": "Secondaire"
+            "label": "Secondary"
           },
           {
             "group": "Normal",
             "value": "btn-tertiary",
-            "label": "Tertiaire"
+            "label": "Tertiary"
           },
           {
             "group": "Normal",
             "value": "btn-success",
-            "label": "Succès"
+            "label": "Success"
           },
           {
             "group": "Normal",
@@ -2526,7 +1693,7 @@
           {
             "group": "Normal",
             "value": "btn-warning",
-            "label": "Avertissement"
+            "label": "Warning"
           },
           {
             "group": "Normal",
@@ -2536,102 +1703,102 @@
           {
             "group": "Contour",
             "value": "btn-outline-light",
-            "label": "Contour Claire"
+            "label": "Outline Light"
           },
           {
             "group": "Contour",
             "value": "btn-outline-dark",
-            "label": "Contour Sombre"
+            "label": "Outline Dark"
           },
           {
             "group": "Contour",
             "value": "btn-outline-primary",
-            "label": "Contour Primaire"
+            "label": "Outline Primary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-secondary",
-            "label": "Contour Secondaire"
+            "label": "Outline Secondary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-tertiary",
-            "label": "Contour Tertiaire"
+            "label": "Outline Tertiary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-success",
-            "label": "Contour Succès"
+            "label": "Outline Success"
           },
           {
             "group": "Contour",
             "value": "btn-outline-danger",
-            "label": "Contour Danger"
+            "label": "Outline Danger"
           },
           {
             "group": "Contour",
             "value": "btn-outline-warning",
-            "label": "Contour Avertissement"
+            "label": "Outline Warning"
           },
           {
             "group": "Contour",
             "value": "btn-outline-info",
-            "label": "Contour Info"
+            "label": "Outline Info"
           }
         ]
       },
       {
         "id": "url_refuse",
         "type": "url",
-        "label": "Lien du bouton 'En savoir +'",
-        "info": "Pour ne pas effectuer de redirection laisser le champ vide."
+  "label": "Learn more button link",
+  "info": "Leave blank to avoid redirection."
       },
       {
         "type": "text",
         "id": "cookstxt-agree",
-        "label": "Texte du bouton accord",
-        "default": "D'accord"
+  "label": "Accept button text",
+  "default": "Accept"
       },
       {
         "type": "select",
         "id": "btn_color_cooks_accept",
-        "label": "Couleur du bouton 'Accepter'",
+  "label": "Accept button color",
         "default": "btn-secondary",
         "options": [
           {
             "group": "Normal",
             "value": "btn-link",
-            "label": "Lien"
+            "label": "Link"
           },
           {
             "group": "Normal",
             "value": "btn-light",
-            "label": "Claire"
+            "label": "Light"
           },
           {
             "group": "Normal",
             "value": "btn-dark",
-            "label": "Sombre"
+            "label": "Dark"
           },
           {
             "group": "Normal",
             "value": "btn-primary",
-            "label": "Primaire"
+            "label": "Primary"
           },
           {
             "group": "Normal",
             "value": "btn-secondary",
-            "label": "Secondaire"
+            "label": "Secondary"
           },
           {
             "group": "Normal",
             "value": "btn-tertiary",
-            "label": "Tertiaire"
+            "label": "Tertiary"
           },
           {
             "group": "Normal",
             "value": "btn-success",
-            "label": "Succès"
+            "label": "Success"
           },
           {
             "group": "Normal",
@@ -2641,7 +1808,7 @@
           {
             "group": "Normal",
             "value": "btn-warning",
-            "label": "Avertissement"
+            "label": "Warning"
           },
           {
             "group": "Normal",
@@ -2651,134 +1818,134 @@
           {
             "group": "Contour",
             "value": "btn-outline-light",
-            "label": "Contour Claire"
+            "label": "Outline Light"
           },
           {
             "group": "Contour",
             "value": "btn-outline-dark",
-            "label": "Contour Sombre"
+            "label": "Outline Dark"
           },
           {
             "group": "Contour",
             "value": "btn-outline-primary",
-            "label": "Contour Primaire"
+            "label": "Outline Primary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-secondary",
-            "label": "Contour Secondaire"
+            "label": "Outline Secondary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-tertiary",
-            "label": "Contour Tertiaire"
+            "label": "Outline Tertiary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-success",
-            "label": "Contour Succès"
+            "label": "Outline Success"
           },
           {
             "group": "Contour",
             "value": "btn-outline-danger",
-            "label": "Contour Danger"
+            "label": "Outline Danger"
           },
           {
             "group": "Contour",
             "value": "btn-outline-warning",
-            "label": "Contour Avertissement"
+            "label": "Outline Warning"
           },
           {
             "group": "Contour",
             "value": "btn-outline-info",
-            "label": "Contour Info"
+            "label": "Outline Info"
           }
         ]
       },
       {
         "type": "header",
-        "content": "🏆 Application Chat Messenger"
+  "content": "🏆 Messenger Chat Application"
       },
       {
         "type": "checkbox",
         "id": "messengerchat",
-        "label": "Activer Chat Messenger",
-        "info": "👉 Application Version Shopiweb Premium",
+  "label": "Enable Messenger Chat",
+  "info": "👉 Shopiweb Premium Application Version",
         "default": false
       },
       {
         "type": "paragraph",
-        "content": "Ne fonctionne que si vous avez une page Facebook et que votre domaine est validé chez Facebook dans les paramètres du Chat."
+  "content": "Works only if you have a Facebook page and your domain is validated in Facebook Chat settings."
       },
       {
         "type": "text",
         "id": "pageid",
-        "label": "Id de page",
+  "label": "Page ID",
         "default": "162238792605427"
       },
       {
         "type": "header",
-        "content": "🏆 Application Chat WhatsApp"
+  "content": "🏆 WhatsApp Chat Application"
       },
       {
         "type": "checkbox",
         "id": "enable_whatsapp",
-        "label": "Activer Chat WhatsApp",
-        "info": "👉 Application Version Shopiweb Premium",
+  "label": "Enable WhatsApp Chat",
+  "info": "👉 Shopiweb Premium Application Version",
         "default": true
       },
       {
         "type": "text",
         "id": "whatsapp_number",
-        "label": "Numéro Whatsapp"
+  "label": "WhatsApp number"
       },
       {
         "type": "color",
         "id": "primary_color",
-        "label": "Couleur primaire",
+  "label": "Primary color",
         "default": "#25D366",
-        "info": "Nous vous recommandons de conserver la couleur principale de la marque WhatsApp"
+  "info": "We recommend keeping WhatsApp's main brand color"
       },
       {
         "type": "color",
         "id": "secondary_color",
-        "label": "Couleur secondaire",
+  "label": "Secondary color",
         "default": "#095e54",
-        "info": "Nous vous recommandons de conserver la couleur secondaire de la marque WhatsApp"
+  "info": "We recommend keeping WhatsApp's secondary brand color"
       },
       {
         "type": "header",
-        "content": "Bouton"
+  "content": "Button"
       },
       {
         "type": "text",
         "id": "btn_text",
-        "label": "Texte du bouton",
-        "default": "Chat avec nous"
+  "label": "Button text",
+  "default": "Chat with us"
       },
       {
         "type": "checkbox",
         "id": "show_btn_text",
-        "label": "Afficher le texte du bouton",
+  "label": "Show button text",
         "default": true
       },
       {
         "type": "text",
         "id": "btn_z_index",
-        "label": "Bouton z-index",
+  "label": "Button z-index",
         "default": "1023",
-        "info": "Augmentez ce nombre si le bouton apparaît sous d'autres éléments."
+  "info": "Increase this number if the button appears below other elements."
       },
       {
         "type": "header",
-        "content": "Dialogue"
+  "content": "Dialog"
       },
       {
         "type": "checkbox",
         "id": "show_dialog",
-        "label": "Afficher le dialogue",
+  "label": "Show dialog",
         "default": true,
-        "info": "Si elle est désactivée, elle ouvrira directement l'application WhatsApp en cliquant sur un bouton."
+  "info": "If disabled, clicking the button will open the WhatsApp app directly."
       },
       {
         "type": "image_picker",
@@ -2788,32 +1955,32 @@
       {
         "type": "text",
         "id": "dialog_name",
-        "label": "Nom",
+  "label": "Name",
         "default": "John Doe"
       },
       {
         "type": "text",
         "id": "dialog_subtitle",
-        "label": "Sous-titre",
-        "default": "Je répond généralement dans les minutes qui suivent."
+  "label": "Subtitle",
+  "default": "I usually reply within minutes."
       },
       {
         "type": "color",
         "id": "dialog_bg_color",
-        "label": "Couleur d'arrière-plan",
+  "label": "Background color",
         "default": "#ece5dd"
       },
       {
         "type": "richtext",
         "id": "dialog_msg",
-        "label": "Message",
-        "default": "<p>Bonjour 👋<br>Comment puis-je vous aider ?</p>"
+  "label": "Message",
+  "default": "<p>Hello 👋<br>How can I help you?</p>"
       },
       {
         "type": "text",
         "id": "dialog_text_placeholder",
-        "label": "Texte du placeholder",
-        "default": "Ecrivez votre message..."
+  "label": "Placeholder text",
+  "default": "Write your message..."
       }
     ]
   },
@@ -2822,158 +1989,158 @@
     "settings": [
       {
         "type": "header",
-        "content": "🏆 Application Panier Coulissant",
-        "info": "👉 Application Version Shopiweb Premium"
+  "content": "🏆 Sliding Cart Application",
+  "info": "👉 Shopiweb Premium Application Version"
       },
       {
         "type": "select",
         "id": "cart_icon_type",
         "options": [
           {
-            "group": "Vide",
+            "group": "Empty",
             "value": "1",
             "label": "Icône 1"
           },
           {
             "group": "Vide",
             "value": "2",
-            "label": "Icône 2"
+            "label": "Icon 2"
           },
           {
             "group": "Vide",
             "value": "3",
-            "label": "Icône 3"
+            "label": "Icon 3"
           },
           {
             "group": "Vide",
             "value": "4",
-            "label": "Icône 4"
+            "label": "Icon 4"
           },
           {
             "group": "Vide",
             "value": "5",
-            "label": "Icône 5"
+            "label": "Icon 5"
           },
           {
             "group": "Vide",
             "value": "6",
-            "label": "Icône 6"
+            "label": "Icon 6"
           },
           {
             "group": "Vide",
             "value": "7",
-            "label": "Icône 7"
+            "label": "Icon 7"
           },
           {
-            "group": "Plein",
+            "group": "Full",
             "value": "8",
-            "label": "Icône 8"
+            "label": "Icon 8"
           },
           {
             "group": "Plein",
             "value": "9",
-            "label": "Icône 9"
+            "label": "Icon 9"
           },
           {
             "group": "Plein",
             "value": "10",
-            "label": "Icône 10"
+            "label": "Icon 10"
           },
           {
             "group": "Plein",
             "value": "11",
-            "label": "Icône 11"
+            "label": "Icon 11"
           },
           {
             "group": "Plein",
             "value": "12",
-            "label": "Icône 12"
+            "label": "Icon 12"
           },
           {
             "group": "Plein",
             "value": "13",
-            "label": "Icône 13"
+            "label": "Icon 13"
           },
           {
             "group": "Plein",
             "value": "14",
-            "label": "Icône 14"
+            "label": "Icon 14"
           }
         ],
         "default": "4",
-        "label": "Style de l'icône « panier »"
+  "label": "Cart icon style"
       },
       {
         "type": "checkbox",
         "id": "cart_drawer_disable",
-        "label": "Désactiver le tiroir du panier",
-        "info": "Lien vers la page du panier à la place",
+  "label": "Disable cart drawer",
+  "info": "Link to cart page instead",
         "default": false
       },
       {
         "type": "checkbox",
         "id": "cart_taxes_shipping",
-        "label": "Afficher 'Taxes incluses et frais d'expédition...'",
+  "label": "Show 'Taxes included and shipping fees...'",
         "default": true
       },
       {
         "type": "checkbox",
         "id": "cart_drawer_show_cart_link",
-        "label": "Afficher le lien 'Voir le panier'",
+  "label": "Show 'View cart' link",
         "default": false
       },
       {
         "type": "checkbox",
         "id": "cart_drawer_show_payment_icons",
-        "label": "Afficher les icônes de paiement",
+  "label": "Show payment icons",
         "default": true
       },
       {
         "type": "checkbox",
         "id": "cart_drawer_show_note",
-        "label": "Afficher le champ Note",
+  "label": "Show Note field",
         "default": true
       },
       {
         "type": "select",
         "id": "cart_drawer_note_btn_color",
-        "label": "Couleur du bouton",
+  "label": "Button color",
         "default": "btn-outline-secondary",
         "options": [
           {
             "group": "Normal",
             "value": "btn-link",
-            "label": "Lien"
+            "label": "Link"
           },
           {
             "group": "Normal",
             "value": "btn-light",
-            "label": "Claire"
+            "label": "Light"
           },
           {
             "group": "Normal",
             "value": "btn-dark",
-            "label": "Sombre"
+            "label": "Dark"
           },
           {
             "group": "Normal",
             "value": "btn-primary",
-            "label": "Primaire"
+            "label": "Primary"
           },
           {
             "group": "Normal",
             "value": "btn-secondary",
-            "label": "Secondaire"
+            "label": "Secondary"
           },
           {
             "group": "Normal",
             "value": "btn-tertiary",
-            "label": "Tertiaire"
+            "label": "Tertiary"
           },
           {
             "group": "Normal",
             "value": "btn-success",
-            "label": "Succès"
+            "label": "Success"
           },
           {
             "group": "Normal",
@@ -2983,7 +2150,7 @@
           {
             "group": "Normal",
             "value": "btn-warning",
-            "label": "Avertissement"
+            "label": "Warning"
           },
           {
             "group": "Normal",
@@ -2993,96 +2160,96 @@
           {
             "group": "Contour",
             "value": "btn-outline-light",
-            "label": "Contour Claire"
+            "label": "Outline Light"
           },
           {
             "group": "Contour",
             "value": "btn-outline-dark",
-            "label": "Contour Sombre"
+            "label": "Outline Dark"
           },
           {
             "group": "Contour",
             "value": "btn-outline-primary",
-            "label": "Contour Primaire"
+            "label": "Outline Primary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-secondary",
-            "label": "Contour Secondaire"
+            "label": "Outline Secondary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-tertiary",
-            "label": "Contour Tertiaire"
+            "label": "Outline Tertiary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-success",
-            "label": "Contour Succès"
+            "label": "Outline Success"
           },
           {
             "group": "Contour",
             "value": "btn-outline-danger",
-            "label": "Contour Danger"
+            "label": "Outline Danger"
           },
           {
             "group": "Contour",
             "value": "btn-outline-warning",
-            "label": "Contour Avertissement"
+            "label": "Outline Warning"
           },
           {
             "group": "Contour",
             "value": "btn-outline-info",
-            "label": "Contour Info"
+            "label": "Outline Info"
           }
         ]
       },
       {
         "type": "checkbox",
         "id": "cart_drawer_show_shipping_rates",
-        "label": "Afficher la fonction 'Tarifs d'expédition'",
+  "label": "Show 'Shipping rates' feature",
         "default": true
       },
       {
         "type": "select",
         "id": "cart_drawer_shipping_rates_btn_color",
-        "label": "Couleur du bouton",
+  "label": "Button color",
         "default": "btn-outline-secondary",
         "options": [
           {
             "group": "Normal",
             "value": "btn-link",
-            "label": "Lien"
+            "label": "Link"
           },
           {
             "group": "Normal",
             "value": "btn-light",
-            "label": "Claire"
+            "label": "Light"
           },
           {
             "group": "Normal",
             "value": "btn-dark",
-            "label": "Sombre"
+            "label": "Dark"
           },
           {
             "group": "Normal",
             "value": "btn-primary",
-            "label": "Primaire"
+            "label": "Primary"
           },
           {
             "group": "Normal",
             "value": "btn-secondary",
-            "label": "Secondaire"
+            "label": "Secondary"
           },
           {
             "group": "Normal",
             "value": "btn-tertiary",
-            "label": "Tertiaire"
+            "label": "Tertiary"
           },
           {
             "group": "Normal",
             "value": "btn-success",
-            "label": "Succès"
+            "label": "Success"
           },
           {
             "group": "Normal",
@@ -3092,7 +2259,7 @@
           {
             "group": "Normal",
             "value": "btn-warning",
-            "label": "Avertissement"
+            "label": "Warning"
           },
           {
             "group": "Normal",
@@ -3102,89 +2269,89 @@
           {
             "group": "Contour",
             "value": "btn-outline-light",
-            "label": "Contour Claire"
+            "label": "Outline Light"
           },
           {
             "group": "Contour",
             "value": "btn-outline-dark",
-            "label": "Contour Sombre"
+            "label": "Outline Dark"
           },
           {
             "group": "Contour",
             "value": "btn-outline-primary",
-            "label": "Contour Primaire"
+            "label": "Outline Primary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-secondary",
-            "label": "Contour Secondaire"
+            "label": "Outline Secondary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-tertiary",
-            "label": "Contour Tertiaire"
+            "label": "Outline Tertiary"
           },
           {
             "group": "Contour",
             "value": "btn-outline-success",
-            "label": "Contour Succès"
+            "label": "Outline Success"
           },
           {
             "group": "Contour",
             "value": "btn-outline-danger",
-            "label": "Contour Danger"
+            "label": "Outline Danger"
           },
           {
             "group": "Contour",
             "value": "btn-outline-warning",
-            "label": "Contour Avertissement"
+            "label": "Outline Warning"
           },
           {
             "group": "Contour",
             "value": "btn-outline-info",
-            "label": "Contour Info"
+            "label": "Outline Info"
           }
         ]
       },
       {
         "type": "product_list",
         "id": "cart_drawer_empty_product_list",
-        "label": "Produits du panier vide",
-        "info": "Afficher ces produits lorsque le tiroir du panier est vide."
+  "label": "Empty cart products",
+  "info": "Show these products when the cart drawer is empty."
       },
       {
         "type": "header",
-        "content": "🏆 Application Compte à Rebours"
+  "content": "🏆 Countdown Application"
       },
       {
         "type": "checkbox",
         "id": "show_compte_rebours_panier",
-        "label": "Activer le Compte à Rebours (panier)",
-        "info": "👉 Application Version Shopiweb Premium",
+  "label": "Enable Countdown (cart)",
+  "info": "👉 Shopiweb Premium Application Version",
         "default": false
       },
       {
         "type": "text",
         "id": "text_after",
-        "label": "Texte avant",
-        "default": "Votre panier est réservé pendant"
+  "label": "Text before",
+  "default": "Your cart is reserved for"
       },
       {
         "type": "text",
         "id": "text_before",
-        "label": "Texte après",
-        "default": "minutes !"
+  "label": "Text after",
+  "default": "minutes!"
       },
       {
         "type": "color",
         "id": "clock_color",
-        "label": "Couleur compte à rebours",
+  "label": "Countdown color",
         "default": "#dc3545"
       },
       {
         "type": "range",
         "id": "timer_minutes",
-        "label": "Durée compte à rebours (minutes)",
+  "label": "Countdown duration (minutes)",
         "unit": "min",
         "min": 5,
         "max": 30,
@@ -3194,17 +2361,17 @@
       {
         "type": "text",
         "id": "end_message",
-        "label": "Message de fin de compte à rebours",
-        "default": "Le temps est écoulé !"
+  "label": "Countdown end message",
+  "default": "Time is up!"
       },
       {
         "type": "header",
-        "content": "=== Notice Panier ==="
+  "content": "=== Cart Notice ==="
       },
       {
         "type": "checkbox",
         "id": "cart_notice_show",
-        "label": "Afficher la notice panier",
+  "label": "Show cart notice",
         "default": false
       },
       {
@@ -3214,82 +2381,82 @@
       },
       {
         "type": "header",
-        "content": "🏆 Application Objectif Panier"
+  "content": "🏆 Cart Goal Application"
       },
       {
         "type": "checkbox",
         "id": "cart_goal_enable",
-        "label": "Activer objectif panier",
-        "info": "👉 Application Version Shopiweb Premium",
+  "label": "Enable cart goal",
+  "info": "👉 Shopiweb Premium Application Version",
         "default": true
       },
       {
         "type": "select",
         "id": "show_icon",
-        "label": "Icône objectif",
+  "label": "Goal icon",
         "default": "show_truck",
         "options": [
           {
             "value": "",
-            "label": "Aucun"
+            "label": "None"
           },
           {
             "value": "show_truck",
-            "label": "Icône livraison"
+            "label": "Delivery icon"
           },
           {
             "value": "show_gift",
-            "label": "Icône cadeau"
+            "label": "Gift icon"
           }
         ]
       },
       {
         "type": "text",
         "id": "cart_goal_value",
-        "label": "Valeur de l'objectif",
+  "label": "Goal value",
         "default": "100"
       },
       {
         "type": "richtext",
         "id": "cart_goal_description_before",
-        "label": "Description - Objectif NON atteint",
-        "default": "<p>Plus que <strong>[amount]</strong> et la <strong>LIVRAISON</strong> est <strong>OFFERTE !</strong></p>"
+  "label": "Description - Goal NOT reached",
+  "default": "<p>Only <strong>[amount]</strong> left and <strong>SHIPPING</strong> is <strong>FREE!</strong></p>"
       },
       {
         "type": "select",
         "id": "cart_goal_bg_color_before",
-        "label": "Couleur - Objectif NON atteint",
+  "label": "Color - Goal NOT reached",
         "default": "bg-warning",
         "options": [
           {
-            "group": "Sombre",
+            "group": "Dark",
             "value": "bg-primary",
-            "label": "Primaire"
+            "label": "Primary"
           },
           {
             "group": "Sombre",
             "value": "bg-secondary",
-            "label": "Secondaire"
+            "label": "Secondary"
           },
           {
             "group": "Sombre",
             "value": "bg-tertiary",
-            "label": "Tertiaire"
+            "label": "Tertiary"
           },
           {
             "group": "Sombre",
             "value": "bg-dark",
-            "label": "Sombre"
+            "label": "Dark"
           },
           {
-            "group": "Alerte",
+            "group": "Alert",
             "value": "bg-success",
-            "label": "Succès"
+            "label": "Success"
           },
           {
             "group": "Alerte",
             "value": "bg-warning",
-            "label": "Avertissement"
+            "label": "Warning"
           },
           {
             "group": "Alerte",
@@ -3306,13 +2473,13 @@
       {
         "type": "richtext",
         "id": "cart_goal_description_after",
-        "label": "Description - Objectif atteint",
-        "default": "<p>Félicitations ! Vous pouvez bénéficier de la <strong>LIVRAISON GRATUITE.</strong></p>"
+  "label": "Description - Goal reached",
+  "default": "<p>Congratulations! You qualify for <strong>FREE SHIPPING.</strong></p>"
       },
       {
         "type": "select",
         "id": "cart_goal_bg_color_after",
-        "label": "Couleur - Objectif atteint",
+  "label": "Color - Goal reached",
         "default": "bg-success",
         "options": [
           {
@@ -3333,17 +2500,17 @@
           {
             "group": "Sombre",
             "value": "bg-dark",
-            "label": "Sombre"
+            "label": "Dark"
           },
           {
-            "group": "Alerte",
+            "group": "Alert",
             "value": "bg-success",
-            "label": "Succès"
+            "label": "Success"
           },
           {
             "group": "Alerte",
             "value": "bg-warning",
-            "label": "Avertissement"
+            "label": "Warning"
           },
           {
             "group": "Alerte",
@@ -3628,52 +2795,52 @@
     "settings": [
       {
         "type": "header",
-        "content": "=== Couleur Swatches (Échantillons) ==="
+  "content": "=== Color Swatches (Samples) ==="
       },
       {
         "type": "paragraph",
-        "content": "REMARQUE : Les échantillons de couleurs sont utilisés pour remplacer les options de produits de couleur par les couleurs/teintes correspondantes. Vous devez nommer les images d'échantillons de couleurs au format \"swatch-bleu.png\" lorsque \"bleu\" est le nom de l'option traitée. Ensuite, veuillez télécharger les images dans le dossier [Fichiers](https://www.shopify.com/admin/settings/files) de Shopify."
+  "content": "NOTE: Color swatches are used to replace product color options with the corresponding colors/shades. You must name the color swatch images in the format 'swatch-blue.png' when 'blue' is the option name. Then, please upload the color swatch images to the [Files](https://www.shopify.com/admin/settings/files) folder in Shopify."
       },
       {
         "type": "checkbox",
         "id": "color_swatches_show",
-        "label": "Afficher les échantillons de couleurs",
+  "label": "Show color swatches",
         "default": true
       },
       {
         "type": "textarea",
         "id": "color_swatches_names",
-        "label": "Noms des échantillons de couleurs",
+  "label": "Color swatch names",
         "default": "Color, Colour, Couleur, Couleurs",
-        "info": "Liste séparée par des virgules de noms d'options de produits à afficher sous forme d'échantillons de couleurs"
+  "info": "Comma-separated list of product option names to display as color swatches"
       },
       {
         "type": "checkbox",
         "id": "color_swatches_use_variant_images",
-        "label": "Utiliser des images variantes",
+  "label": "Use variant images",
         "default": false,
-        "info": "Cochez cette option si vous souhaitez afficher l'image de la variante correspondante plutôt que les images des échantillons personnalisés."
+  "info": "Check this option if you want to display the corresponding variant image instead of custom swatch images."
       },
       {
         "type": "header",
-        "content": "=== Boutons de taille ==="
+  "content": "=== Size Buttons ==="
       },
       {
         "type": "paragraph",
-        "content": "REMARQUE : les boutons de taille sont utilisés pour remplacer les éléments de formulaire de produit des boîtes de sélection déroulantes par des boutons. Ils sont généralement utilisés pour les options de taille telles que X, M, L, etc."
+  "content": "NOTE: Size buttons are used to replace product form dropdowns with buttons. They are generally used for size options such as X, M, L, etc."
       },
       {
         "type": "checkbox",
         "id": "size_buttons_show",
-        "label": "Afficher les boutons de taille",
+  "label": "Show size buttons",
         "default": true
       },
       {
         "type": "textarea",
         "id": "size_buttons_names",
-        "label": "Nom des boutons de taille",
+  "label": "Size button names",
         "default": "Size, Sizes, Taille, Tailles",
-        "info": "Liste séparée par des virgules de noms d'options de produits à afficher sous forme de boutons de taille."
+  "info": "Comma-separated list of product option names to display as size buttons."
       }
     ]
   },
@@ -3683,50 +2850,50 @@
       {
         "type": "checkbox",
         "id": "stories_tooltips_enable",
-        "label": "Activer les infobulles",
+  "label": "Enable tooltips",
         "default": true
       },
       {
         "type": "text",
         "id": "stories_tooltips_delay",
-        "label": "Durée d'affichage (ms)",
+  "label": "Display duration (ms)",
         "default": "3000",
-        "info": "Temps en millisecondes avant que l'infobulle disparaisse (ex: 3000 = 3 sec)."
+  "info": "Time in milliseconds before the tooltip disappears (e.g., 3000 = 3 sec)."
       },
       {
         "type": "select",
         "id": "stories_tooltips_position",
-        "label": "Position de l'infobulle",
+  "label": "Tooltip position",
         "default": "top",
         "options": [
           {
             "value": "top",
-            "label": "Haut"
+            "label": "Top"
           },
           {
             "value": "bottom",
-            "label": "Bas"
+            "label": "Bottom"
           },
           {
             "value": "left",
-            "label": "Gauche"
+            "label": "Left"
           },
           {
             "value": "right",
-            "label": "Droite"
+            "label": "Right"
           }
         ]
       },
       {
         "type": "color",
         "id": "stories_tooltips_bg",
-        "label": "Couleur de fond",
+  "label": "Background color",
         "default": "#000000"
       },
       {
         "type": "color",
         "id": "stories_tooltips_text",
-        "label": "Couleur du texte",
+  "label": "Text color",
         "default": "#ffffff"
       }
     ]

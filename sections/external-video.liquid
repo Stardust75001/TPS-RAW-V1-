@@ -20,7 +20,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     endif
 
     if section.settings.external_video.type == 'youtube'
-        assign video_src = 'https://www.youtube.com/embed/' | append: section.settings.external_video.id | append: '&mute=1 to &autoplay=1'
+        assign video_src = 'https://www.youtube.com/embed/' | append: section.settings.external_video.id | append: '?autoplay=1&mute=1'
     else
         assign video_src = 'https://player.vimeo.com/video/' | append: section.settings.external_video.id
     endif
@@ -59,9 +59,9 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                 }
                                 a:hover span { transform: scale(1.1); }
                             </style>
-                            <a href=https://www.youtube.com/embed/{{ section.settings.external_video.id }}?autoplay=1&mute=1>
-                                <img loading="lazy" 
-                                    src=https://img.youtube.com/vi/{{ section.settings.external_video.id }}/maxresdefault.jpg 
+                            <a href='https://www.youtube.com/embed/{{ section.settings.external_video.id }}?autoplay=1&mute=1'>
+                                <img loading='lazy' 
+                                    src='https://img.youtube.com/vi/{{ section.settings.external_video.id }}/maxresdefault.jpg' 
                                     alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'>
                                 <span>
                                     <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor' class='bi bi-play-fill' viewBox='0 0 16 16'>
@@ -101,7 +101,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "bg_color",
-      "label": "Couleur de l'arrière plan",
+      "label": "Background color",
       "default": "bg-body text-body",
       "options": [
         {
@@ -144,7 +144,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "checkbox",
       "id": "bg_gradient",
-      "label": "Dégradé d'arrière-plan",
+      "label": "Background gradient",
       "default": false,
       "info": "Ne s'applique pas aux couleurs claires"
     },
@@ -189,7 +189,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "border_color",
-      "label": "Couleur de la bordure",
+      "label": "Color de la bordure",
       "options": [
         {
           "value": "",

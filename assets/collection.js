@@ -203,10 +203,10 @@ const showLoadingIndicator = (button) => {
   button.style.width = `${button.offsetWidth + 2}px`;
   button.style.height = `${button.offsetHeight + 2}px`;
   button.innerHTML = `
-        <div class="spinner-border mx-auto spinner-border-sm" style="width: 1.2rem; height: 1.2rem" role="status">
-            <span class="visually-hidden">En attente...</span>
-        </div>
-    `;
+    <div class="spinner-border mx-auto spinner-border-sm" style="width: 1.2rem; height: 1.2rem" role="status">
+      <span class="visually-hidden">Waiting...</span>
+    </div>
+  `;
 };
 
 const updateCollectionContent = async (button, direction) => {

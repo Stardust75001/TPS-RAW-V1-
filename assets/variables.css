@@ -1,12 +1,12 @@
 /* ========================================================================
-   INFORMATIONS GÉNÉRALES SUR LE SITE
-   Propriété de © 2019/2024 Shopiweb.fr
-   Pour plus d'informations, visitez : https://www.shopiweb.fr
-   ======================================================================== */
+    GENERAL INFORMATION ABOUT THE SITE
+    Property of © 2019/2024 Shopiweb.fr
+    For more information, visit: https://www.shopiweb.fr
+    ======================================================================== */
 
 /* =====================
-   Polices de caractères
-   ===================== */
+    Fonts
+    ===================== */
 
 
     @font-face {
@@ -51,8 +51,8 @@
 
 
 /* =====================
-   Variable CSS
-   ===================== */
+    CSS Variables
+    ===================== */
 
 :root {
     --bs-primary: #816c58;
@@ -127,12 +127,11 @@
 
 
 /* =====================
-   Boutons
-   ===================== */
+    Buttons
+    ===================== */
 
 body .btn {
     letter-spacing: 0.0rem;
-    text-transform: ;
     font-weight: 500;
 }
 
@@ -173,8 +172,8 @@ body .btn-lg {
 
 
 /* =====================
-   Formulaires
-   ===================== */
+    Forms
+    ===================== */
 
 .form-control-md,
 .form-select-md {
@@ -198,8 +197,8 @@ body .btn-lg {
 
 
 /* =====================
-   Offcanvas / Modal
-   ===================== */
+    Offcanvas / Modal
+    ===================== */
 
 body .offcanvas-backdrop,
 body .modal-backdrop {
@@ -210,8 +209,8 @@ body .modal-backdrop {
 }
 
 /* =====================
-   Accordéon
-   ===================== */
+    Accordion
+    ===================== */
 
 .accordion {
     --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
@@ -219,8 +218,8 @@ body .modal-backdrop {
 }
 
 /* =====================
-   Autres styles
-   ===================== */
+    Other styles
+    ===================== */
 
 #offcanvas-menu-nav .nav-link[aria-expanded]:after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23212529' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' y1='5' x2='12' y2='19'%3E%3C/line%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E")
@@ -234,21 +233,23 @@ body .modal-backdrop {
 }
 
 /* =====================
-   Personnalisation des prix
-   ===================== */
+    Price customization
+    ===================== */
 
 .product-item-price-final,
 .product-price-final {
   color: #198754!important;
 }
 /* === Footer/Header vars from BUBBLE === */
---footer-bg: #1c1f26;
---footer-text: #ffffff;
---footer-border-color: #444;
---footer-link-hover: #bbb;
---header-bg: #f8f9fa;
---header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
---header-text: #333;
---sticky-header-bg: #f9f9f9;
---sticky-border-color: #e1e1e1;
+:root {
+    --footer-bg: #1c1f26;
+    --footer-text: #ffffff;
+    --footer-border-color: #444;
+    --footer-link-hover: #bbb;
+    --header-bg: #f8f9fa;
+    --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --header-text: #333;
+    --sticky-header-bg: #f9f9f9;
+    --sticky-border-color: #e1e1e1;
+}
 

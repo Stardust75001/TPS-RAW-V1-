@@ -1,12 +1,12 @@
 /* ========================================================================
-   INFORMATIONS GÉNÉRALES SUR LE SITE
-   Propriété de © 2019/2024 Shopiweb.fr
-   Pour plus d'informations, visitez : https://www.shopiweb.fr
-   ======================================================================== */
+  GENERAL INFORMATION ABOUT THE SITE
+  Property of © 2019/2024 Shopiweb.fr
+  For more information, visit: https://www.shopiweb.fr
+  ======================================================================== */
 
 /* =====================
-   Recharger l'ensemble de la collection de produits avec un contenu actualisé
-   ===================== */
+  Reload the entire product collection with updated content
+  ===================== */
 const reloadCollection = async () => {
   const productListing = document.querySelector(".collection .product-listing");
 
@@ -70,8 +70,8 @@ const updateUIComponents = (updatedDocument) => {
 };
 
 /* =====================
-   Utilitaire pour mettre à jour l'URL avec de nouveaux paramètres de requête
-   ===================== */
+  Utility to update the URL with new query parameters
+  ===================== */
 const updateUrlWithQueryParams = (form) => {
   const params = new URLSearchParams(new FormData(form));
   const newUrl = `${window.location.pathname}?${params.toString()}`;
@@ -79,8 +79,8 @@ const updateUrlWithQueryParams = (form) => {
 };
 
 /* =====================
-   Mise à jour de la collection en fonction des changements de filtre
-   ===================== */
+  Update the collection when filter changes occur
+  ===================== */
 window.onChangeCollectionFilter = async (inputElement) => {
   const form = inputElement.closest("form");
   updateUrlWithQueryParams(form);
@@ -88,8 +88,8 @@ window.onChangeCollectionFilter = async (inputElement) => {
 };
 
 /* =====================
-   Gestion des changements de filtres de prix de la collection
-   ===================== */
+  Handle changes to collection price filters
+  ===================== */
 const setupPriceFilterListeners = () => {
   document.querySelectorAll(".filter-amounts input").forEach((input) => {
     input.addEventListener(
@@ -108,8 +108,8 @@ window.addEventListener(
 );
 
 /* =====================
-   Développe tous les filtres cachés en cliquant sur le bouton
-   ===================== */
+  Expand all hidden filters when clicking the button
+  ===================== */
 window.onClickFiltersViewMore = (button) => {
   button
     .closest(".collapse")
@@ -121,8 +121,8 @@ window.onClickFiltersViewMore = (button) => {
 };
 
 /* =====================
-   Efface tous les filtres et recharge la collection
-   ===================== */
+  Clear all filters and reload the collection
+  ===================== */
 window.onClickClearAllFilters = async (button) => {
   const form = button.closest("form");
   const sortValue = form.querySelector('[name="sort_by"]').value;
@@ -137,8 +137,8 @@ window.onClickClearAllFilters = async (button) => {
 };
 
 /* =====================
-   Initialise les curseurs du filtre de prix
-   ===================== */
+  Initialize price filter sliders
+  ===================== */
 const initializePriceFilterSliders = () => {
   document.querySelectorAll(".amount-selection-slider").forEach((slider) => {
     const minValueField = slider
@@ -179,8 +179,8 @@ window.addEventListener(
 );
 
 /* =====================
-   Met à jour les paramètres de l'URL
-   ===================== */
+  Update URL parameters
+  ===================== */
 const updateQueryParameters = (key, value) => {
   const params = new URLSearchParams(window.location.search);
   params.set(key, value);
@@ -188,8 +188,8 @@ const updateQueryParameters = (key, value) => {
 };
 
 /* =====================
-   Gère les changements dans le tri de la collection
-   ===================== */
+  Handle changes in collection sorting
+  ===================== */
 window.onChangeCollectionSortBy = (sortByValue) => {
   const updatedUrl = updateQueryParameters("sort_by", sortByValue);
   window.history.replaceState({}, "", updatedUrl);
@@ -197,16 +197,16 @@ window.onChangeCollectionSortBy = (sortByValue) => {
 };
 
 /* =====================
-   Fonctions permettant de charger d'autres produits dans une collection à la suite d'une action de l'utilisateur.
-   ===================== */
+  Functions to load more products in a collection after user action.
+  ===================== */
 const showLoadingIndicator = (button) => {
   button.style.width = `${button.offsetWidth + 2}px`;
   button.style.height = `${button.offsetHeight + 2}px`;
   button.innerHTML = `
-        <div class="spinner-border mx-auto spinner-border-sm" style="width: 1.2rem; height: 1.2rem" role="status">
-            <span class="visually-hidden">En attente...</span>
-        </div>
-    `;
+    <div class="spinner-border mx-auto spinner-border-sm" style="width: 1.2rem; height: 1.2rem" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  `;
 };
 
 const updateCollectionContent = async (button, direction) => {
@@ -254,8 +254,8 @@ window.onClickCollectionLoadPrevious = async (button, event) => {
 };
 
 /* =====================
-   Pagination infinie automatique
-   ===================== */
+  Automatic infinite pagination
+  ===================== */
 const initializeAutoPagination = () => {
   const pagination = document.querySelector("#paging-collection");
   if (!pagination) return;
@@ -333,8 +333,8 @@ window.showCompleteSwatchSet = (triggerButton, event) => {
 };
 
 /* =====================
-   Bannière de collection
-   ===================== */
+  Collection banner
+  ===================== */
 const initializeCollectionBanners = () => {
   const productListing = document.querySelector(".collection .product-listing");
 

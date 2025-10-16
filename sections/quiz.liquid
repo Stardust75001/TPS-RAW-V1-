@@ -1,10 +1,5 @@
 {% comment %}
----------------------------------------------------------
-Copyright © 2019/2024 Theme Shopiweb Premium. Tous droits réservés.
-La copie, la modification, la distribution ou l'utilisation
-non autorisée de ce code ou de toute partie de celui-ci est formellement interdite.
-Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
----------------------------------------------------------
+Quiz section template
 {% endcomment %}
 
 {% liquid 
@@ -31,13 +26,13 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                 {% render 'section-header' %}
             </div>
             <div class="quiz-items mt-6">
+                {% assign total_questions = 0 %}
                 {% for block in section.blocks %}
                     {% if block.type == 'item' %}
                         {% assign total_questions = total_questions | plus: 1 %}
                         {% liquid 
                             assign block_index = forloop.index
                             assign values = block.settings.values | split: ','
-
                             assign row_xs = block.settings.breakpoint_xs | prepend: 'row-cols-'
                             assign row_sm = block.settings.breakpoint_sm | prepend: 'row-cols-sm-'
                             assign row_md = block.settings.breakpoint_md | prepend: 'row-cols-md-'
@@ -56,69 +51,13 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                             {% endunless %}
                             <ul class="row justify-content-start justify-content-lg-center list-unstyled nx-n3 mx-lg-n4 mb-7 {{ row_xs }} {{ row_sm }} {{ row_md }} {{ row_lg }} {{ row_xl }} {{ row_xxl }}">
                                 {% for value in values %}
-                                    <li class="p-3 p-lg-4">
-                                        <div class="{% unless section.settings.animation == '' %}animate__animated opacity-0 {{ section.settings.animation_speed }}{% endunless %}"
-                                             data-animate-class="{{ section.settings.animation }}"
-                                             style="animation-delay: {{ forloop.index | times: 150 }}ms;">
-                                            <button 
-                                                class="btn btn-quiz-value p-3 p-lg-4 {{ section.settings.shadow_sp }} {{ section.settings.border_color }} {% unless block.settings.show_images %}rounded{% endunless %}"
-                                                data-value="{{ value | strip }}">
-                                                {% if block.settings.show_images %}
-                                                    {% liquid 
-                                                        assign value_handelized = value | handleize
-                                                        assign img_handle = 'quiz-' | append: block_index | append: '-' | append: value_handelized | append: '.png' 
-                                                        assign img_width = block.settings.img_size | split: 'x' | first
-                                                        assign img_height = block.settings.img_size | split: 'x' | last
-                                                        assign img_width_x2 = img_width | times: 2
-                                                        assign img_height_x2 = img_height | times: 2
-                                                        assign img_size = img_width_x2 | append: 'x' | append: img_height_x2
-                                                    %}
-                                                    <div class="img-wrapper mb-3">
-                                                        <img
-                                                            class="img-fluid"
-                                                            src="{{ img_handle | file_img_url: img_size, crop: 'center' }}"
-                                                            alt=""
-                                                            width="{{ img_width }}"
-                                                            height="{{ img_height }}"
-                                                            loading="lazy">
-                                                    </div>
-                                                {% endif %}
-                                                <span>
-                                                    {{ value | strip }}
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </li>
+                                    {% comment %}Quiz option items would go here{% endcomment %}
                                 {% endfor %}
                             </ul>
                         </div>
                     {% endif %}
                 {% endfor %}
             </div>
-
-            <div class="progress mb-3">
-                <div 
-                    class="progress-bar progress-bar-striped progress-bar-animated" 
-                    role="progressbar" 
-                    aria-hidden="true"
-                    aria-valuemin="0" 
-                    aria-valuemax="100" 
-                    data-total="{{ total_questions }}"
-                    style="width: 0%">
-                </div>
-            </div>
-            <div>
-                <p class="progress-bar-text text-muted small mb-6">
-                    {{ 'general.quiz.question_of_html' | t: count: 1, total: total_questions }}
-                </p>
-                <button 
-                    class="btn btn-quiz-prev px-8 {{ section.settings.prev_btn_color }} {{ btn_shadow_sp }} {{ section.settings.prev_btn_size }}" 
-                    type="button"
-                    hidden>
-                    {{ 'general.quiz.btn_previous' | t }}
-                </button>
-            </div>
-
             <div class="quiz-results" {% unless request.design_mode %}hidden{% endunless %}>
                 {% for block in section.blocks %}
                     {% if block.type == 'results' %}
@@ -138,7 +77,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                 {{ block.settings.description }}
                             </div>
                         {% endunless %}
-                        {% for set in (1..20) %}
+                        {% for set in (1..12) %}
                             {% assign values = 'set_' | append: set | append: '_values' %}
                             {% assign products = 'set_' | append: set | append: '_products' %}
                             {% if block.settings[products].count > 0 %}
@@ -147,11 +86,9 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                     data-result-set="{{ set }}" 
                                     class="product-listing list-unstyled row mx-n3 mx-lg-n4 mb-0 {{ section.settings.text_align }} {{ row_xs }} {{ row_sm }} {{ row_md }} {{ row_lg }} {{ row_xl }} {{ row_xxl }}" 
                                     {% unless request.design_mode %}hidden{% endunless %}>
-                                    {% liquid
-                                        for product in block.settings[products]
-                                            render 'product-item', product: product
-                                        endfor
-                                    %}
+                                    {% for product in block.settings[products] %}
+                                        {% render 'product-item', product: product %}
+                                    {% endfor %}
                                 </ul>
                             {% endif %}
                         {% endfor %}
@@ -175,75 +112,66 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
   "settings": [
     {
       "type": "header",
-      "content": "🏆 Application Quiz Générateur",
-      "info": "👉 Application Version Shopiweb Premium"
-    },
-    {
-      "type": "paragraph",
-      "content": "Documentation FR : [Quiz Générateur by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/sections/quiz-generateur)"
-    },
-    {
-      "type": "header",
       "content": "General"
     },
     {
       "type": "select",
       "id": "bg_color",
-      "label": "Couleur de l'arrière plan",
+      "label": "Background color",
       "default": "bg-body text-body",
       "options": [
         {
-          "group": "Principal",
-          "value": "bg-primary text-white",
-          "label": "Primaire"
+          "group": "Light",
+          "value": "bg-white text-body",
+          "label": "White"
         },
         {
-          "group": "Principal",
-          "value": "bg-secondary text-white",
-          "label": "Secondaire"
-        },
-        {
-          "group": "Principal",
-          "value": "bg-tertiary text-white",
-          "label": "Tertiaire"
-        },
-        {
-          "group": "Intermédiaire",
-          "value": "bg-white text-dark",
-          "label": "Blanc"
-        },
-        {
-          "group": "Intermédiaire",
+          "group": "Light",
           "value": "bg-light text-body",
-          "label": "Claire"
+          "label": "Light"
         },
         {
-          "group": "Intermédiaire",
-          "value": "bg-dark text-white",
-          "label": "Sombre"
-        },
-        {
-          "group": "Par défaut",
+          "group": "Normal",
           "value": "bg-body text-body",
-          "label": "Corps (body)"
+          "label": "Body"
         },
         {
-          "group": "Alerte",
+          "group": "Normal",
+          "value": "bg-primary text-white",
+          "label": "Primary"
+        },
+        {
+          "group": "Normal",
+          "value": "bg-secondary text-white",
+          "label": "Secondary"
+        },
+        {
+          "group": "Normal",
+          "value": "bg-tertiary text-white",
+          "label": "Tertiary"
+        },
+        {
+          "group": "Dark",
+          "value": "bg-dark text-white",
+          "label": "Dark"
+        },
+        {
+          "group": "Alert",
           "value": "bg-success text-white",
-          "label": "Succès"
+          "label": "Success"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-warning text-dark",
-          "label": "Avertissement"
+          "label": "Warning"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-danger text-white",
           "label": "Danger"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-info text-white",
           "label": "Info"
         }
@@ -252,159 +180,159 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "checkbox",
       "id": "bg_gradient",
-      "label": "Dégradé d'arrière-plan",
+      "label": "Background gradient",
       "default": false,
-      "info": "Ne s'applique pas aux couleurs claires"
+      "info": "Does not apply to light colors"
     },
     {
       "type": "select",
       "id": "container",
-      "label": "Conteneur",
+      "label": "Container",
       "default": "container",
       "options": [
         {
           "value": "container",
-          "label": "Conteneur"
+          "label": "Container"
         },
         {
           "value": "container-fluid",
-          "label": "Pleine largeur"
+          "label": "Full width"
         }
       ]
     },
     {
       "type": "text",
       "id": "max_width",
-      "label": "Largeur maximale (px)",
-      "info": "Ajuster la largeur du conteneur (en pixels)",
+      "label": "Max width (px)",
+      "info": "Adjust container width (in pixels)",
       "default": "960"
     },
     {
       "type": "select",
       "id": "text_align",
-      "label": "Alignement du texte",
+      "label": "Text alignment",
       "default": "text-center",
       "options": [
         {
           "value": "text-start",
-          "label": "Gauche"
+          "label": "Left"
         },
         {
           "value": "text-center",
-          "label": "Centre"
+          "label": "Center"
         }
       ]
     },
     {
       "type": "header",
-      "content": "En-tête de la section"
+      "content": "Section header"
     },
     {
       "type": "image_picker",
       "id": "subtitle_img",
-      "label": "Légende Image"
+      "label": "Caption image"
     },
     {
       "type": "text",
       "id": "brand_image_size",
-      "label": "Image Largeur/Hauteur (px)",
+      "label": "Image width/height (px)",
       "default": "60"
     },
     {
       "type": "text",
       "id": "subtitle",
-      "label": "Légende Texte",
-      "default": "Proposition de valeur unique"
+      "label": "Caption text",
+      "default": "Unique value proposition"
     },
     {
       "type": "select",
       "id": "subtitle_size",
-      "label": "Taille de la légende",
+      "label": "Caption size",
       "default": "fs-5",
       "options": [
         {
-          "group": "Légende Standard",
+          "group": "Standard caption",
           "value": "fs-1",
-          "label": "Extra Grand"
+          "label": "Extra Large"
         },
         {
-          "group": "Légende Standard",
+          "group": "Standard caption",
           "value": "fs-2",
-          "label": "Super Grand"
+          "label": "Super Large"
         },
         {
-          "group": "Légende Standard",
+          "group": "Standard caption",
           "value": "fs-3",
-          "label": "Très Grand"
+          "label": "Very Large"
         },
         {
-          "group": "Légende Standard",
+          "group": "Standard caption",
           "value": "fs-4",
-          "label": "Grand"
+          "label": "Large"
         },
         {
-          "group": "Légende Standard",
+          "group": "Standard caption",
           "value": "fs-5",
-          "label": "Moyen"
+          "label": "Medium"
         },
         {
-          "group": "Légende Standard",
+          "group": "Standard caption",
           "value": "fs-6",
-          "label": "Petit"
+          "label": "Small"
         }
       ]
     },
     {
       "type": "color",
       "id": "color_caption",
-      "label": "Couleur de la légende",
+      "label": "Caption color",
       "default": "#6c757d"
     },
     {
       "type": "text",
       "id": "title_overlay",
-      "label": "Titre overlay",
-      "info": "Visible sur ordinateur, masqué sur mobile pour optimiser la lisibilité."
+      "label": "Overlay title",
+      "info": "Visible on desktop, hidden on mobile for readability."
     },
     {
       "type": "select",
       "id": "title_overlay_size",
-      "label": "Taille du titre overlay",
+      "label": "Overlay title size",
       "default": "3",
       "options": [
         {
-          "group": "Titre Overlay",
+          "group": "Overlay title",
           "value": "4",
-          "label": "Grand"
+          "label": "Large"
         },
         {
-          "group": "Titre Overlay",
+          "group": "Overlay title",
           "value": "3",
-          "label": "Moyen"
+          "label": "Medium"
         },
         {
-          "group": "Titre Overlay",
+          "group": "Overlay title",
           "value": "2",
-          "label": "Petit"
+          "label": "Small"
         }
       ]
     },
     {
       "type": "color",
       "id": "color_title_overlay",
-      "label": "Couleur du titre overlay",
+      "label": "Overlay title color",
       "default": "#000000"
     },
     {
       "type": "inline_richtext",
       "id": "title",
-      "label": "Titre",
+      "label": "Title",
       "default": "Quiz"
     },
     {
       "type": "select",
       "id": "heading_tag",
-      "label": "Balise titre (SEO)",
+      "label": "Title tag (SEO)",
       "default": "h2",
       "options": [
         {
@@ -433,109 +361,109 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         },
         {
           "value": "span",
-          "label": "Aucune"
+          "label": "None"
         }
       ]
     },
     {
       "type": "select",
       "id": "title_size",
-      "label": "Taille du titre",
+      "label": "Title size",
       "default": "h2",
       "options": [
         {
-          "group": "Titre Supérieur",
+          "group": "Superior title",
           "value": "display-1",
-          "label": "Extra Extra Grand"
+          "label": "Extra Extra Large"
         },
         {
-          "group": "Titre Supérieur",
+          "group": "Superior title",
           "value": "display-2",
-          "label": "Extra Grand"
+          "label": "Extra Large"
         },
         {
-          "group": "Titre Supérieur",
+          "group": "Superior title",
           "value": "display-3",
-          "label": "Ultra Grand"
+          "label": "Ultra Large"
         },
         {
-          "group": "Titre Supérieur",
+          "group": "Superior title",
           "value": "display-4",
-          "label": "Super Grand"
+          "label": "Super Large"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard title",
           "value": "h1",
-          "label": "Très Grand"
+          "label": "Very Large"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard title",
           "value": "h2",
-          "label": "Grand"
+          "label": "Large"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard title",
           "value": "h3",
-          "label": "Moyen"
+          "label": "Medium"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard title",
           "value": "h4",
-          "label": "Petit"
+          "label": "Small"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard title",
           "value": "h5",
-          "label": "Très Petit"
+          "label": "Very Small"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard title",
           "value": "h6",
-          "label": "Super Petit"
+          "label": "Super Small"
         }
       ]
     },
     {
       "type": "richtext",
       "id": "description",
-      "label": "Description (facultatif)",
-      "default": "<p>Ajouter une description facultative à cette section</p>"
+      "label": "Description (optional)",
+      "default": "<p>Add an optional description to this section</p>"
     },
     {
       "type": "select",
       "id": "description_size",
-      "label": "Taille de description",
+      "label": "Description size",
       "default": "fs-5",
       "options": [
         {
-          "group": "Description Standard",
+          "group": "Standard description",
           "value": "fs-1",
-          "label": "Extra Grand"
+          "label": "Extra Large"
         },
         {
-          "group": "Description Standard",
+          "group": "Standard description",
           "value": "fs-2",
-          "label": "Super Grand"
+          "label": "Super Large"
         },
         {
-          "group": "Description Standard",
+          "group": "Standard description",
           "value": "fs-3",
-          "label": "Très Grand"
+          "label": "Very Large"
         },
         {
-          "group": "Description Standard",
+          "group": "Standard description",
           "value": "fs-4",
-          "label": "Grand"
+          "label": "Large"
         },
         {
-          "group": "Description Standard",
+          "group": "Standard description",
           "value": "fs-5",
-          "label": "Moyen"
+          "label": "Medium"
         },
         {
-          "group": "Description Standard",
+          "group": "Standard description",
           "value": "fs-6",
-          "label": "Petit"
+          "label": "Small"
         }
       ]
     },
@@ -546,35 +474,35 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "border_color",
-      "label": "Couleur de la bordure",
+      "label": "Border color",
       "options": [
         {
           "value": "",
-          "label": "Par défaut"
+          "label": "Default"
         },
         {
           "value": "border-primary",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
           "value": "border-secondary",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
           "value": "border-tertiary",
-          "label": "Tertiaire"
+          "label": "Tertiary"
         },
         {
           "value": "border-dark",
-          "label": "Sombre"
+          "label": "Dark"
         },
         {
           "value": "border-success",
-          "label": "Succès"
+          "label": "Success"
         },
         {
           "value": "border-warning",
-          "label": "Avertissement"
+          "label": "Warning"
         },
         {
           "value": "border-danger",
@@ -590,27 +518,27 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "shadow_sp",
-      "label": "Ombre",
+      "label": "Shadow",
       "options": [
         {
           "value": "shadow-none",
-          "label": "Aucune"
+          "label": "None"
         },
         {
           "value": "shadow-1",
-          "label": "Ombre légère"
+          "label": "Light shadow"
         },
         {
           "value": "shadow-2",
-          "label": "Ombre partiel"
+          "label": "Partial shadow"
         },
         {
           "value": "shadow-3",
-          "label": "Ombre profonde"
+          "label": "Deep shadow"
         },
         {
           "value": "shadow-4",
-          "label": "Ombre totale"
+          "label": "Full shadow"
         }
       ],
       "default": "shadow-1"
@@ -622,121 +550,121 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "animation",
-      "label": "Effet d'animation",
+      "label": "Animation effect",
       "default": "animate__zoomIn",
       "options": [
         {
-          "group": "Désactivé",
+          "group": "Disabled",
           "value": "",
-          "label": "Pas d'animation"
+          "label": "No animation"
         },
         {
-          "group": "Retour",
+          "group": "Back",
           "value": "animate__backInDown",
           "label": "Back In Down"
         },
         {
-          "group": "Retour",
+          "group": "Back",
           "value": "animate__backInLeft",
           "label": "Back In Left"
         },
         {
-          "group": "Retour",
+          "group": "Back",
           "value": "animate__backInRight",
           "label": "Back In Right"
         },
         {
-          "group": "Retour",
+          "group": "Back",
           "value": "animate__backInUp",
           "label": "Back In Up"
         },
         {
-          "group": "Rebond",
+          "group": "Bounce",
           "value": "animate__bounceIn",
           "label": "Bounce In"
         },
         {
-          "group": "Rebond",
+          "group": "Bounce",
           "value": "animate__bounceInDown",
           "label": "Bounce-in-down"
         },
         {
-          "group": "Rebond",
+          "group": "Bounce",
           "value": "animate__bounceInLeft",
           "label": "Bounce-in-left"
         },
         {
-          "group": "Rebond",
+          "group": "Bounce",
           "value": "animate__bounceInRight",
           "label": "Bounce-in-right"
         },
         {
-          "group": "Rebond",
+          "group": "Bounce",
           "value": "animate__bounceInUp",
           "label": "Bounce-in-up"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeIn",
           "label": "Fade In"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeInDown",
           "label": "Fade-in-down"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeInDownBig",
           "label": "Fade-in-down Big"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeInLeft",
           "label": "Fade-in-left"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeInLeftBig",
           "label": "Fade-in-left Big"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeInRight",
           "label": "Fade-in-right"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeInRightBig",
           "label": "Fade-in-right Big"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeInUp",
           "label": "Fade-in-up"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeInUpBig",
           "label": "Fade-in-up Big"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeInTopLeft",
           "label": "Fade-in Top Left"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeInTopRight",
           "label": "Fade-in Top Right"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeInBottomLeft",
           "label": "Fade-in Bottom Left"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeInBottomRight",
           "label": "Fade-in Bottom Right"
         },
@@ -766,12 +694,12 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
           "label": "Flip Out Y"
         },
         {
-          "group": "Vitesse Lumière",
+          "group": "Light Speed",
           "value": "animate__lightSpeedInRight",
           "label": "Light Speed In Right"
         },
         {
-          "group": "Vitesse Lumière",
+          "group": "Light Speed",
           "value": "animate__lightSpeedInLeft",
           "label": "Light Speed In Left"
         },
@@ -826,22 +754,22 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
           "label": "Zoom In Up"
         },
         {
-          "group": "Glissement",
+          "group": "Slide",
           "value": "animate__slideInDown",
           "label": "Slide In Down"
         },
         {
-          "group": "Glissement",
+          "group": "Slide",
           "value": "animate__slideInLeft",
           "label": "Slide In Left"
         },
         {
-          "group": "Glissement",
+          "group": "Slide",
           "value": "animate__slideInRight",
           "label": "Slide In Right"
         },
         {
-          "group": "Glissement",
+          "group": "Slide",
           "value": "animate__slideInUp",
           "label": "Slide In Up"
         }
@@ -850,16 +778,16 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "animation_speed",
-      "label": "Vitesse d'animation",
+      "label": "Animation speed",
       "default": "animate__fast",
       "options": [
         {
           "value": "animate__slower",
-          "label": "Plus lent"
+          "label": "Slower"
         },
         {
           "value": "animate__slow",
-          "label": "Lent"
+          "label": "Slow"
         },
         {
           "value": "",
@@ -867,39 +795,39 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         },
         {
           "value": "animate__fast",
-          "label": "Rapide"
+          "label": "Fast"
         },
         {
           "value": "animate__faster",
-          "label": "Plus rapide"
+          "label": "Faster"
         }
       ]
     },
     {
       "type": "header",
-      "content": "Produits résultats"
+      "content": "Result products"
     },
     {
       "type": "select",
       "id": "product_img_thumbnail",
-      "label": "Bordure de l'image",
+      "label": "Image border",
       "default": "img-thumbnail",
-      "info": "Ne s'applique pas au style 'carte'",
+      "info": "Does not apply to 'card' style",
       "options": [
         {
           "value": "",
-          "label": "Aucun"
+          "label": "None"
         },
         {
           "value": "img-thumbnail",
-          "label": "Bordure"
+          "label": "Border"
         }
       ]
     },
     {
       "type": "select",
       "id": "product_border_color",
-      "label": "Couleur de la bordure",
+      "label": "Border color",
       "options": [
         {
           "value": "",
@@ -907,23 +835,23 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         },
         {
           "value": "border-primary",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
           "value": "border-secondary",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
           "value": "border-dark",
-          "label": "Foncé"
+          "label": "Dark"
         },
         {
           "value": "border-success",
-          "label": "Succès"
+          "label": "Success"
         },
         {
           "value": "border-warning",
-          "label": "Avertissement"
+          "label": "Warning"
         },
         {
           "value": "border-danger",
@@ -939,27 +867,27 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "product_shadow_sp",
-      "label": "Ombre",
+      "label": "Shadow",
       "options": [
         {
           "value": "shadow-none",
-          "label": "Aucune"
+          "label": "None"
         },
         {
           "value": "shadow-1",
-          "label": "Ombre légère"
+          "label": "Light shadow"
         },
         {
           "value": "shadow-2",
-          "label": "Ombre partiel"
+          "label": "Partial shadow"
         },
         {
           "value": "shadow-3",
-          "label": "Ombre profonde"
+          "label": "Deep shadow"
         },
         {
           "value": "shadow-4",
-          "label": "Ombre totale"
+          "label": "Full shadow"
         }
       ],
       "default": "shadow-1"
@@ -967,67 +895,67 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "checkbox",
       "id": "product_show_sale_badge",
-      "label": "Afficher le badge de vente",
+      "label": "Show sale badge",
       "default": true
     },
     {
       "type": "select",
       "id": "product_sale_badge_color",
-      "label": "Couleur du badge de vente",
+      "label": "Sale badge color",
       "default": "bg-success text-white",
       "options": [
         {
           "group": "Principal",
           "value": "bg-primary text-white",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
           "group": "Principal",
           "value": "bg-secondary text-white",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
           "group": "Principal",
           "value": "bg-tertiary text-white",
-          "label": "Tertiaire"
+          "label": "Tertiary"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-white text-dark",
-          "label": "Blanc"
+          "label": "White"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-light text-body",
-          "label": "Claire"
+          "label": "Light"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-dark text-white",
-          "label": "Sombre"
+          "label": "Dark"
         },
         {
-          "group": "Par défaut",
+          "group": "Default",
           "value": "",
-          "label": "Corps (body)"
+          "label": "Body"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-success text-white",
-          "label": "Succès"
+          "label": "Success"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-warning text-dark",
-          "label": "Avertissement"
+          "label": "Warning"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-danger text-white",
           "label": "Danger"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-info text-white",
           "label": "Info"
         }
@@ -1036,126 +964,126 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "product_title_size",
-      "label": "Taille du titre des produits",
+      "label": "Product title size",
       "default": "h5",
       "options": [
         {
-          "group": "Titre Standard",
+          "group": "Standard Title",
           "value": "h1",
-          "label": "Très Grand"
+          "label": "Very Large"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard Title",
           "value": "h2",
-          "label": "Grand"
+          "label": "Large"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard Title",
           "value": "h3",
-          "label": "Moyen"
+          "label": "Medium"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard Title",
           "value": "h4",
-          "label": "Petit"
+          "label": "Small"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard Title",
           "value": "h5",
-          "label": "Très Petit"
+          "label": "Very Small"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard Title",
           "value": "h6",
-          "label": "Super Petit"
+          "label": "Super Small"
         }
       ]
     },
     {
       "type": "select",
       "id": "product_title_truncate",
-      "label": "Tronquer les titres des produits",
+      "label": "Truncate product titles",
       "default": "",
-      "info": "Utile si les titres de vos produits sont longs",
+      "info": "Useful if your product titles are long",
       "options": [
         {
           "value": "",
-          "label": "Non (default)"
+          "label": "No (default)"
         },
         {
           "value": "text-truncate",
-          "label": "Une ligne"
+          "label": "One line"
         }
       ]
     },
     {
       "type": "checkbox",
       "id": "product_show_vendor",
-      "label": "Afficher le distributeur",
+      "label": "Show vendor",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "product_show_color_swatches",
-      "label": "Afficher les pastilles 'swatches'",
+      "label": "Show color swatches",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "product_show_atc_form",
-      "label": "Afficher le bouton 'Ajouter au panier'",
+      "label": "Show 'Add to cart' button",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "product_form_show_inventory",
-      "label": "Afficher l'inventaire dans le bouton 'Ajouter au panier'",
+      "label": "Show inventory in 'Add to cart' button",
       "default": true
     },
     {
       "type": "header",
-      "content": "Bouton précédent"
+      "content": "Previous button"
     },
     {
       "type": "select",
       "id": "prev_btn_color",
-      "label": "Couleur du bouton",
+      "label": "Button color",
       "default": "btn-outline-secondary",
       "options": [
         {
           "group": "Normal",
           "value": "btn-link",
-          "label": "Lien"
+          "label": "Link"
         },
         {
           "group": "Normal",
           "value": "btn-light",
-          "label": "Claire"
+          "label": "Light"
         },
         {
           "group": "Normal",
           "value": "btn-dark",
-          "label": "Sombre"
+          "label": "Dark"
         },
         {
           "group": "Normal",
           "value": "btn-primary",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
           "group": "Normal",
           "value": "btn-secondary",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
           "group": "Normal",
           "value": "btn-tertiary",
-          "label": "Tertiaire"
+          "label": "Tertiary"
         },
         {
           "group": "Normal",
           "value": "btn-success",
-          "label": "Succès"
+          "label": "Success"
         },
         {
           "group": "Normal",
@@ -1165,7 +1093,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "group": "Normal",
           "value": "btn-warning",
-          "label": "Avertissement"
+          "label": "Warning"
         },
         {
           "group": "Normal",
@@ -1173,61 +1101,61 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
           "label": "Info"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-light",
-          "label": "Contour Claire"
+          "label": "Outline Light"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-dark",
-          "label": "Contour Sombre"
+          "label": "Outline Dark"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-primary",
-          "label": "Contour Primaire"
+          "label": "Outline Primary"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-secondary",
-          "label": "Contour Secondaire"
+          "label": "Outline Secondary"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-tertiary",
-          "label": "Contour Tertiaire"
+          "label": "Outline Tertiary"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-success",
-          "label": "Contour Succès"
+          "label": "Outline Success"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-danger",
-          "label": "Contour Danger"
+          "label": "Outline Danger"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-warning",
-          "label": "Contour Avertissement"
+          "label": "Outline Warning"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-info",
-          "label": "Contour Info"
+          "label": "Outline Info"
         }
       ]
     },
     {
       "type": "select",
       "id": "prev_btn_size",
-      "label": "Taille du bouton",
+      "label": "Button size",
       "default": "btn-sm",
       "options": [
         {
           "value": "btn-sm",
-          "label": "Petit"
+          "label": "Small"
         },
         {
           "value": "btn-md",
@@ -1241,12 +1169,12 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     },
     {
       "type": "header",
-      "content": "Espacement de la section"
+      "content": "Section spacing"
     },
     {
       "type": "range",
       "id": "pt",
-      "label": "Padding supérieure",
+      "label": "Padding top",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -1255,7 +1183,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "pb",
-      "label": "Padding inférieure",
+      "label": "Padding bottom",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -1264,7 +1192,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "mt",
-      "label": "Marge supérieure",
+      "label": "Margin top",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -1273,7 +1201,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "mb",
-      "label": "Marge inférieure",
+      "label": "Margin bottom",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -1287,8 +1215,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "settings": [
         {
           "type": "header",
-          "content": "🏆 Bloc Question",
-          "info": "👉 Bloc Version Shopiweb Premium"
+          "content": "🏆 Question Block",
+          "info": "👉 Shopiweb Premium Version Block"
         },
         {
           "type": "header",
@@ -1297,13 +1225,13 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "text",
           "id": "title",
-          "label": "Titre",
-          "default": "Comment décririez-vous votre peau ?"
+          "label": "Title",
+          "default": "How would you describe your skin?"
         },
         {
           "type": "select",
           "id": "heading_tag",
-          "label": "Balise titre (SEO)",
+          "label": "Title tag (SEO)",
           "default": "h3",
           "options": [
             {
@@ -1332,147 +1260,147 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
             },
             {
               "value": "span",
-              "label": "Aucune"
+              "label": "None"
             }
           ]
         },
         {
           "type": "select",
           "id": "title_size",
-          "label": "Taille du titre",
+          "label": "Title size",
           "default": "h3",
           "options": [
             {
-              "group": "Titre Supérieur",
+              "group": "Superior Title",
               "value": "display-1",
-              "label": "Extra Extra Grand"
+              "label": "Extra Extra Large"
             },
             {
-              "group": "Titre Supérieur",
+              "group": "Superior Title",
               "value": "display-2",
-              "label": "Extra Grand"
+              "label": "Extra Large"
             },
             {
-              "group": "Titre Supérieur",
+              "group": "Superior Title",
               "value": "display-3",
-              "label": "Ultra Grand"
+              "label": "Ultra Large"
             },
             {
-              "group": "Titre Supérieur",
+              "group": "Superior Title",
               "value": "display-4",
-              "label": "Super Grand"
+              "label": "Super Large"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h1",
-              "label": "Très Grand"
+              "label": "Very Large"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h2",
-              "label": "Grand"
+              "label": "Large"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h3",
-              "label": "Moyen"
+              "label": "Medium"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h4",
-              "label": "Petit"
+              "label": "Small"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h5",
-              "label": "Très Petit"
+              "label": "Very Small"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h6",
-              "label": "Super Petit"
+              "label": "Super Small"
             }
           ]
         },
         {
           "type": "richtext",
           "id": "description",
-          "label": "Description (facultatif)",
-          "default": "<p>Ajouter une description facultative à cette section</p>"
+          "label": "Description (optional)",
+          "default": "<p>Add an optional description to this section</p>"
         },
         {
           "type": "select",
           "id": "description_size",
-          "label": "Taille de description",
+          "label": "Description size",
           "default": "fs-5",
           "options": [
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-1",
-              "label": "Extra Grand"
+              "label": "Extra Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-2",
-              "label": "Super Grand"
+              "label": "Super Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-3",
-              "label": "Très Grand"
+              "label": "Very Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-4",
-              "label": "Grand"
+              "label": "Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-5",
-              "label": "Moyen"
+              "label": "Medium"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-6",
-              "label": "Petit"
+              "label": "Small"
             }
           ]
         },
         {
           "type": "header",
-          "content": "Valeurs"
+          "content": "Values"
         },
         {
           "type": "html",
           "id": "values",
-          "label": "Valeurs",
-          "default": "Normal, Grasse, Sèche, Sensible, Mixte",
-          "info": "Liste de valeurs séparées par des virgules. Par exemple Normal, Grasse, Sèche"
+          "label": "Values",
+          "default": "Normal, Oily, Dry, Sensitive, Combination",
+          "info": "Comma separated list of values. E.g. Normal, Oily, Dry"
         },
         {
           "type": "checkbox",
           "id": "show_images",
-          "label": "Afficher les images",
+          "label": "Show images",
           "default": true,
-          "info": "Désactivez si les valeurs du quiz pour cet élément de quiz ne comporteront pas d'images. Chaque image doit être téléchargée dans la zone [Fichiers de Shopify](https://www.shopify.com/admin/content/files) de votre administrateur Shopify avec le format suivant : 'quiz-index-valeur.png'. Par exemple, 'quiz-1-gras.png'. Note : l'index correspond à l'ordre des questions, par exemple la première question a l'index 1, la deuxième 2, et ainsi de suite."
+          "info": "Disable if the quiz values for this quiz item will not have images. Each image must be uploaded to the [Shopify Files](https://www.shopify.com/admin/content/files) area of your Shopify admin with the following format: 'quiz-index-value.png'. For example, 'quiz-1-oily.png'. Note: the index is the order of the questions, e.g. the first question has index 1, the second 2, and so on."
         },
         {
           "type": "text",
           "id": "img_size",
-          "label": "Taille des images",
+          "label": "Image size",
           "default": "240x240",
-          "info": "Largeur/Hauteur"
+          "info": "Width/Height"
         },
         {
           "type": "header",
-          "content": "Points d'arrêt",
-          "info": "Ajuster les éléments par ligne en fonction de la résolution de l'écran"
+          "content": "Breakpoints",
+          "info": "Adjust items per row based on screen resolution"
         },
         {
           "type": "range",
           "id": "breakpoint_xs",
-          "label": "Éléments par ligne / xs",
-          "info": "Largeur d'écran : moins de 576px",
+          "label": "Items per row / xs",
+          "info": "Screen width: less than 576px",
           "min": 1,
           "max": 6,
           "step": 1,
@@ -1481,8 +1409,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "range",
           "id": "breakpoint_sm",
-          "label": "Éléments par ligne / sm",
-          "info": "Largeur d'écran : ≥576px",
+          "label": "Items per row / sm",
+          "info": "Screen width: ≥576px",
           "min": 1,
           "max": 6,
           "step": 1,
@@ -1491,8 +1419,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "range",
           "id": "breakpoint_md",
-          "label": "Éléments par ligne / md",
-          "info": "Largeur d'écran : ≥768px",
+          "label": "Items per row / md",
+          "info": "Screen width: ≥768px",
           "min": 1,
           "max": 8,
           "step": 1,
@@ -1501,8 +1429,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "range",
           "id": "breakpoint_lg",
-          "label": "Éléments par ligne / lg",
-          "info": "Largeur d'écran : ≥992px",
+          "label": "Items per row / lg",
+          "info": "Screen width: ≥992px",
           "min": 1,
           "max": 8,
           "step": 1,
@@ -1511,8 +1439,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "range",
           "id": "breakpoint_xl",
-          "label": "Éléments par ligne / xl",
-          "info": "Largeur d'écran : ≥1200px",
+          "label": "Items per row / xl",
+          "info": "Screen width: ≥1200px",
           "min": 1,
           "max": 8,
           "step": 1,
@@ -1521,8 +1449,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "range",
           "id": "breakpoint_xxl",
-          "label": "Éléments par ligne / xxl",
-          "info": "Largeur d'écran : ≥1400px",
+          "label": "Items per row / xxl",
+          "info": "Screen width: ≥1400px",
           "min": 1,
           "max": 8,
           "step": 1,
@@ -1533,12 +1461,12 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "results",
       "limit": 1,
-      "name": "Résultats",
+      "name": "Results",
       "settings": [
         {
           "type": "header",
-          "content": "🏆 Bloc Résultats",
-          "info": "👉 Bloc Version Shopiweb Premium"
+          "content": "🏆 Results Block",
+          "info": "👉 Shopiweb Premium Version Block"
         },
         {
           "type": "header",
@@ -1547,13 +1475,13 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "text",
           "id": "title",
-          "label": "Titre",
-          "default": "Vos résultats"
+          "label": "Title",
+          "default": "Your results"
         },
         {
           "type": "select",
           "id": "heading_tag",
-          "label": "Balise titre (SEO)",
+          "label": "Title tag (SEO)",
           "default": "h2",
           "options": [
             {
@@ -1582,314 +1510,314 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
             },
             {
               "value": "span",
-              "label": "Aucune"
+              "label": "None"
             }
           ]
         },
         {
           "type": "select",
           "id": "title_size",
-          "label": "Taille du titre",
+          "label": "Title size",
           "default": "h2",
           "options": [
             {
-              "group": "Titre Supérieur",
+              "group": "Superior Title",
               "value": "display-1",
-              "label": "Extra Extra Grand"
+              "label": "Extra Extra Large"
             },
             {
-              "group": "Titre Supérieur",
+              "group": "Superior Title",
               "value": "display-2",
-              "label": "Extra Grand"
+              "label": "Extra Large"
             },
             {
-              "group": "Titre Supérieur",
+              "group": "Superior Title",
               "value": "display-3",
-              "label": "Ultra Grand"
+              "label": "Ultra Large"
             },
             {
-              "group": "Titre Supérieur",
+              "group": "Superior Title",
               "value": "display-4",
-              "label": "Super Grand"
+              "label": "Super Large"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h1",
-              "label": "Très Grand"
+              "label": "Very Large"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h2",
-              "label": "Grand"
+              "label": "Large"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h3",
-              "label": "Moyen"
+              "label": "Medium"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h4",
-              "label": "Petit"
+              "label": "Small"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h5",
-              "label": "Très Petit"
+              "label": "Very Small"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h6",
-              "label": "Super Petit"
+              "label": "Super Small"
             }
           ]
         },
         {
           "type": "richtext",
           "id": "description",
-          "label": "Description (facultatif)",
-          "default": "<p>Sur la base de vos réponses, voici nos principales recommandations</p>"
+          "label": "Description (optional)",
+          "default": "<p>Based on your answers, here are our top recommendations</p>"
         },
         {
           "type": "select",
           "id": "description_size",
-          "label": "Taille de description",
+          "label": "Description size",
           "default": "fs-5",
           "options": [
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-1",
-              "label": "Extra Grand"
+              "label": "Extra Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-2",
-              "label": "Super Grand"
+              "label": "Super Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-3",
-              "label": "Très Grand"
+              "label": "Very Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-4",
-              "label": "Grand"
+              "label": "Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-5",
-              "label": "Moyen"
+              "label": "Medium"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-6",
-              "label": "Petit"
+              "label": "Small"
             }
           ]
         },
         {
           "type": "header",
-          "content": "Ensemble 1"
+          "content": "Set 1"
         },
         {
           "type": "textarea",
           "id": "set_1_values",
-          "label": "Valeurs",
-          "info": "Saisissez les réponses associées à l'Ensemble 1, en les séparant par des virgules. Exemple : question-1-value, question-2-value, question-3-value. Ces valeurs correspondent aux réponses possibles pour les questions du questionnaire."
+          "label": "Values",
+          "info": "Enter the answers associated with Set 1, separated by commas. Example: question-1-value, question-2-value, question-3-value. These values correspond to the possible answers for the quiz questions."
         },
         {
           "type": "product_list",
           "id": "set_1_products",
-          "label": "Produits",
-          "info": "Ces produits apparaîtront pour les valeurs définies ci-dessus."
+          "label": "Products",
+          "info": "These products will appear for the values defined above."
         },
         {
           "type": "header",
-          "content": "Ensemble 2"
+          "content": "Set 2"
         },
         {
           "type": "textarea",
           "id": "set_2_values",
-          "label": "Valeurs",
-          "info": "Saisissez les réponses associées à l'Ensemble 2, en les séparant par des virgules. Exemple : question-1-value, question-2-value, question-3-value. Ces valeurs correspondent aux réponses possibles pour les questions du questionnaire."
+          "label": "Values",
+          "info": "Enter the answers associated with Set 2, separated by commas. Example: question-1-value, question-2-value, question-3-value. These values correspond to the possible answers for the quiz questions."
         },
         {
           "type": "product_list",
           "id": "set_2_products",
-          "label": "Produits",
-          "info": "Ces produits apparaîtront pour les valeurs définies ci-dessus."
+          "label": "Products",
+          "info": "These products will appear for the values defined above."
         },
         {
           "type": "header",
-          "content": "Ensemble 3"
+          "content": "Set 3"
         },
         {
           "type": "textarea",
           "id": "set_3_values",
-          "label": "Valeurs",
-          "info": "Saisissez les réponses associées à l'Ensemble 3, en les séparant par des virgules. Exemple : question-1-value, question-2-value, question-3-value. Ces valeurs correspondent aux réponses possibles pour les questions du questionnaire."
+          "label": "Values",
+          "info": "Enter the answers associated with Set 3, separated by commas. Example: question-1-value, question-2-value, question-3-value. These values correspond to the possible answers for the quiz questions."
         },
         {
           "type": "product_list",
           "id": "set_3_products",
-          "label": "Produits",
-          "info": "Ces produits apparaîtront pour les valeurs définies ci-dessus."
+          "label": "Products",
+          "info": "These products will appear for the values defined above."
         },
         {
           "type": "header",
-          "content": "Ensemble 4"
+          "content": "Set 4"
         },
         {
           "type": "textarea",
           "id": "set_4_values",
-          "label": "Valeurs",
-          "info": "Saisissez les réponses associées à l'Ensemble 4, en les séparant par des virgules. Exemple : question-1-value, question-2-value, question-3-value. Ces valeurs correspondent aux réponses possibles pour les questions du questionnaire."
+          "label": "Values",
+          "info": "Enter the answers associated with Set 4, separated by commas. Example: question-1-value, question-2-value, question-3-value. These values correspond to the possible answers for the quiz questions."
         },
         {
           "type": "product_list",
           "id": "set_4_products",
-          "label": "Produits",
-          "info": "Ces produits apparaîtront pour les valeurs définies ci-dessus."
+          "label": "Products",
+          "info": "These products will appear for the values defined above."
         },
         {
           "type": "header",
-          "content": "Ensemble 5"
+          "content": "Set 5"
         },
         {
           "type": "textarea",
           "id": "set_5_values",
-          "label": "Valeurs",
-          "info": "Saisissez les réponses associées à l'Ensemble 5, en les séparant par des virgules. Exemple : question-1-value, question-2-value, question-3-value. Ces valeurs correspondent aux réponses possibles pour les questions du questionnaire."
+          "label": "Values",
+          "info": "Enter the answers associated with Set 5, separated by commas. Example: question-1-value, question-2-value, question-3-value. These values correspond to the possible answers for the quiz questions."
         },
         {
           "type": "product_list",
           "id": "set_5_products",
-          "label": "Produits",
-          "info": "Ces produits apparaîtront pour les valeurs définies ci-dessus."
+          "label": "Products",
+          "info": "These products will appear for the values defined above."
         },
         {
           "type": "header",
-          "content": "Ensemble 6"
+          "content": "Set 6"
         },
         {
           "type": "textarea",
           "id": "set_6_values",
-          "label": "Valeurs",
-          "info": "Saisissez les réponses associées à l'Ensemble 6, en les séparant par des virgules. Exemple : question-1-value, question-2-value, question-3-value. Ces valeurs correspondent aux réponses possibles pour les questions du questionnaire."
+          "label": "Values",
+          "info": "Enter the answers associated with Set 6, separated by commas. Example: question-1-value, question-2-value, question-3-value. These values correspond to the possible answers for the quiz questions."
         },
         {
           "type": "product_list",
           "id": "set_6_products",
-          "label": "Produits",
-          "info": "Ces produits apparaîtront pour les valeurs définies ci-dessus."
+          "label": "Products",
+          "info": "These products will appear for the values defined above."
         },
         {
           "type": "header",
-          "content": "Ensemble 7"
+          "content": "Set 7"
         },
         {
           "type": "textarea",
           "id": "set_7_values",
-          "label": "Valeurs",
-          "info": "Saisissez les réponses associées à l'Ensemble 7, en les séparant par des virgules. Exemple : question-1-value, question-2-value, question-3-value. Ces valeurs correspondent aux réponses possibles pour les questions du questionnaire."
+          "label": "Values",
+          "info": "Enter the answers associated with Set 7, separated by commas. Example: question-1-value, question-2-value, question-3-value. These values correspond to the possible answers for the quiz questions."
         },
         {
           "type": "product_list",
           "id": "set_7_products",
-          "label": "Produits",
-          "info": "Ces produits apparaîtront pour les valeurs définies ci-dessus."
+          "label": "Products",
+          "info": "These products will appear for the values defined above."
         },
         {
           "type": "header",
-          "content": "Ensemble 8"
+          "content": "Set 8"
         },
         {
           "type": "textarea",
           "id": "set_8_values",
-          "label": "Valeurs",
-          "info": "Saisissez les réponses associées à l'Ensemble 8, en les séparant par des virgules. Exemple : question-1-value, question-2-value, question-3-value. Ces valeurs correspondent aux réponses possibles pour les questions du questionnaire."
+          "label": "Values",
+          "info": "Enter the answers associated with Set 8, separated by commas. Example: question-1-value, question-2-value, question-3-value. These values correspond to the possible answers for the quiz questions."
         },
         {
           "type": "product_list",
           "id": "set_8_products",
-          "label": "Produits",
-          "info": "Ces produits apparaîtront pour les valeurs définies ci-dessus."
+          "label": "Products",
+          "info": "These products will appear for the values defined above."
         },
         {
           "type": "header",
-          "content": "Ensemble 9"
+          "content": "Set 9"
         },
         {
           "type": "textarea",
           "id": "set_9_values",
-          "label": "Valeurs",
-          "info": "Saisissez les réponses associées à l'Ensemble 9, en les séparant par des virgules. Exemple : question-1-value, question-2-value, question-3-value. Ces valeurs correspondent aux réponses possibles pour les questions du questionnaire."
+          "label": "Values",
+          "info": "Enter the answers associated with Set 9, separated by commas. Example: question-1-value, question-2-value, question-3-value. These values correspond to the possible answers for the quiz questions."
         },
         {
           "type": "product_list",
           "id": "set_9_products",
-          "label": "Produits",
-          "info": "Ces produits apparaîtront pour les valeurs définies ci-dessus."
+          "label": "Products",
+          "info": "These products will appear for the values defined above."
         },
         {
           "type": "header",
-          "content": "Ensemble 10"
+          "content": "Set 10"
         },
         {
           "type": "textarea",
           "id": "set_10_values",
-          "label": "Valeurs",
-          "info": "Saisissez les réponses associées à l'Ensemble 10, en les séparant par des virgules. Exemple : question-1-value, question-2-value, question-3-value. Ces valeurs correspondent aux réponses possibles pour les questions du questionnaire."
+          "label": "Values",
+          "info": "Enter the answers associated with Set 10, separated by commas. Example: question-1-value, question-2-value, question-3-value. These values correspond to the possible answers for the quiz questions."
         },
         {
           "type": "product_list",
           "id": "set_10_products",
-          "label": "Produits",
-          "info": "Ces produits apparaîtront pour les valeurs définies ci-dessus."
+          "label": "Products",
+          "info": "These products will appear for the values defined above."
         },
         {
           "type": "header",
-          "content": "Ensemble 11"
+          "content": "Set 11"
         },
         {
           "type": "textarea",
           "id": "set_11_values",
-          "label": "Valeurs",
-          "info": "Saisissez les réponses associées à l'Ensemble 11, en les séparant par des virgules. Exemple : question-1-value, question-2-value, question-3-value. Ces valeurs correspondent aux réponses possibles pour les questions du questionnaire."
+          "label": "Values",
+          "info": "Enter the answers associated with Set 11, separated by commas. Example: question-1-value, question-2-value, question-3-value. These values correspond to the possible answers for the quiz questions."
         },
         {
           "type": "product_list",
           "id": "set_11_products",
-          "label": "Produits",
-          "info": "Ces produits apparaîtront pour les valeurs définies ci-dessus."
+          "label": "Products",
+          "info": "These products will appear for the values defined above."
         },
         {
           "type": "header",
-          "content": "Ensemble 12"
+          "content": "Set 12"
         },
         {
           "type": "textarea",
           "id": "set_12_values",
-          "label": "Valeurs",
-          "info": "Saisissez les réponses associées à l'Ensemble 12, en les séparant par des virgules. Exemple : question-1-value, question-2-value, question-3-value. Ces valeurs correspondent aux réponses possibles pour les questions du questionnaire."
+          "label": "Values",
+          "info": "Enter the answers associated with Set 12, separated by commas. Example: question-1-value, question-2-value, question-3-value. These values correspond to the possible answers for the quiz questions."
         },
         {
           "type": "product_list",
           "id": "set_12_products",
-          "label": "Produits",
-          "info": "Ces produits apparaîtront pour les valeurs définies ci-dessus."
+          "label": "Products",
+          "info": "These products will appear for the values defined above."
         },
         {
           "type": "header",
-          "content": "Points d'arrêt",
-          "info": "Ajuster les éléments par ligne en fonction de la résolution de l'écran"
+          "content": "Breakpoints",
+          "info": "Adjust items per row based on screen resolution"
         },
         {
           "type": "range",
           "id": "breakpoint_xs",
-          "label": "Éléments par ligne / xs",
-          "info": "Largeur d'écran : moins de 576px",
+          "label": "Items per row / xs",
+          "info": "Screen width: less than 576px",
           "min": 1,
           "max": 6,
           "step": 1,
@@ -1898,8 +1826,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "range",
           "id": "breakpoint_sm",
-          "label": "Éléments par ligne / sm",
-          "info": "Largeur d'écran : ≥576px",
+          "label": "Items per row / sm",
+          "info": "Screen width: ≥576px",
           "min": 1,
           "max": 6,
           "step": 1,
@@ -1908,8 +1836,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "range",
           "id": "breakpoint_md",
-          "label": "Éléments par ligne / md",
-          "info": "Largeur d'écran : ≥768px",
+          "label": "Items per row / md",
+          "info": "Screen width: ≥768px",
           "min": 1,
           "max": 8,
           "step": 1,
@@ -1918,8 +1846,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "range",
           "id": "breakpoint_lg",
-          "label": "Éléments par ligne / lg",
-          "info": "Largeur d'écran : ≥992px",
+          "label": "Items per row / lg",
+          "info": "Screen width: ≥992px",
           "min": 1,
           "max": 8,
           "step": 1,
@@ -1928,8 +1856,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "range",
           "id": "breakpoint_xl",
-          "label": "Éléments par ligne / xl",
-          "info": "Largeur d'écran : ≥1200px",
+          "label": "Items per row / xl",
+          "info": "Screen width: ≥1200px",
           "min": 1,
           "max": 8,
           "step": 1,
@@ -1938,8 +1866,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "range",
           "id": "breakpoint_xxl",
-          "label": "Éléments par ligne / xxl",
-          "info": "Largeur d'écran : ≥1400px",
+          "label": "Items per row / xxl",
+          "info": "Screen width: ≥1400px",
           "min": 1,
           "max": 8,
           "step": 1,
@@ -1947,9 +1875,6 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         }
       ]
     }
-  ],
-  "templates": [
-    "page"
   ],
   "presets": [
     {

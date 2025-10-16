@@ -62,7 +62,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 {% schema %}
 {
-  "name": "Barre de Réduction",
+  "name": "Discount Bar",
   "max_blocks": 3,
   "settings": [
     {
@@ -72,53 +72,53 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "bg_color",
-      "label": "Couleur de l'arrière plan",
+      "label": "Background color",
       "default": "bg-body text-body",
       "options": [
         {
-          "group": "Principal",
+          "group": "Main",
           "value": "bg-primary text-white",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
           "group": "Principal",
           "value": "bg-secondary text-white",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
           "group": "Principal",
           "value": "bg-tertiary text-white",
-          "label": "Tertiaire"
+          "label": "Tertiary"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-white text-dark",
-          "label": "Blanc"
+          "label": "White"
         },
         {
           "group": "Intermédiaire",
           "value": "bg-light text-body",
-          "label": "Claire"
+          "label": "Light"
         },
         {
           "group": "Intermédiaire",
           "value": "bg-dark text-white",
-          "label": "Sombre"
+          "label": "Dark"
         },
         {
-          "group": "Par défaut",
+          "group": "Default",
           "value": "bg-body text-body",
-          "label": "Corps (body)"
+          "label": "Body"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-success text-white",
-          "label": "Succès"
+          "label": "Success"
         },
         {
           "group": "Alerte",
           "value": "bg-warning text-dark",
-          "label": "Avertissement"
+          "label": "Warning"
         },
         {
           "group": "Alerte",
@@ -135,9 +135,9 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "checkbox",
       "id": "bg_gradient",
-      "label": "Dégradé d'arrière-plan",
+      "label": "Background gradient",
       "default": false,
-      "info": "Ne s'applique pas aux couleurs claires"
+      "info": "Does not apply to light colors"
     },
     {
       "type": "header",
@@ -146,16 +146,16 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "animation",
-      "label": "Effet d'animation",
+      "label": "Animation effect",
       "default": "animate__zoomIn",
       "options": [
         {
-          "group": "Désactivé",
+          "group": "Disabled",
           "value": "",
-          "label": "Pas d'animation"
+          "label": "No animation"
         },
         {
-          "group": "Retour",
+          "group": "Back",
           "value": "animate__backInDown",
           "label": "Back In Down"
         },
@@ -175,7 +175,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
           "label": "Back In Up"
         },
         {
-          "group": "Rebond",
+          "group": "Bounce",
           "value": "animate__bounceIn",
           "label": "Bounce In"
         },
@@ -200,7 +200,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
           "label": "Bounce-in-up"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeIn",
           "label": "Fade In"
         },
@@ -290,7 +290,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
           "label": "Flip Out Y"
         },
         {
-          "group": "Vitesse Lumière",
+          "group": "Light Speed",
           "value": "animate__lightSpeedInRight",
           "label": "Light Speed In Right"
         },
@@ -350,7 +350,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
           "label": "Zoom In Up"
         },
         {
-          "group": "Glissement",
+          "group": "Slide",
           "value": "animate__slideInDown",
           "label": "Slide In Down"
         },
@@ -374,16 +374,16 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "animation_speed",
-      "label": "Vitesse d'animation",
+      "label": "Animation speed",
       "default": "animate__fast",
       "options": [
         {
           "value": "animate__slower",
-          "label": "Plus lent"
+          "label": "Slower"
         },
         {
           "value": "animate__slow",
-          "label": "Lent"
+          "label": "Slow"
         },
         {
           "value": "",
@@ -391,22 +391,22 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         },
         {
           "value": "animate__fast",
-          "label": "Rapide"
+          "label": "Fast"
         },
         {
           "value": "animate__faster",
-          "label": "Plus rapide"
+          "label": "Faster"
         }
       ]
     },
     {
       "type": "header",
-      "content": "Espacement de la section"
+      "content": "Section spacing"
     },
     {
       "type": "range",
       "id": "pt",
-      "label": "Padding supérieure",
+      "label": "Top padding",
       "min": 0,
       "max": 6,
       "step": 1,
@@ -415,7 +415,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "pb",
-      "label": "Padding inférieure",
+      "label": "Bottom padding",
       "min": 0,
       "max": 6,
       "step": 1,
@@ -424,7 +424,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "mt",
-      "label": "Marge supérieure",
+      "label": "Top margin",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -433,7 +433,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "mb",
-      "label": "Marge inférieure",
+      "label": "Bottom margin",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -443,55 +443,55 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
   "blocks": [
     {
       "type": "discount",
-      "name": "Réduction",
+      "name": "Discount",
       "limit": 1,
       "settings": [
         {
           "type": "text",
           "id": "code",
-          "label": "Code de réduction",
+          "label": "Discount code",
           "default": "SHOPIWEB"
         },
         {
           "type": "select",
           "id": "btn_color",
-          "label": "Couleur du bouton",
+          "label": "Button color",
           "default": "btn-primary",
           "options": [
             {
               "group": "Normal",
               "value": "btn-link",
-              "label": "Lien"
+              "label": "Link"
             },
             {
               "group": "Normal",
               "value": "btn-light",
-              "label": "Claire"
+              "label": "Light"
             },
             {
               "group": "Normal",
               "value": "btn-dark",
-              "label": "Sombre"
+              "label": "Dark"
             },
             {
               "group": "Normal",
               "value": "btn-primary",
-              "label": "Primaire"
+              "label": "Primary"
             },
             {
               "group": "Normal",
               "value": "btn-secondary",
-              "label": "Secondaire"
+              "label": "Secondary"
             },
             {
               "group": "Normal",
               "value": "btn-tertiary",
-              "label": "Tertiaire"
+              "label": "Tertiary"
             },
             {
               "group": "Normal",
               "value": "btn-success",
-              "label": "Succès"
+              "label": "Success"
             },
             {
               "group": "Normal",
@@ -501,7 +501,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
             {
               "group": "Normal",
               "value": "btn-warning",
-              "label": "Avertissement"
+              "label": "Warning"
             },
             {
               "group": "Normal",
@@ -509,61 +509,61 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
               "label": "Info"
             },
             {
-              "group": "Contour",
+              "group": "Outline",
               "value": "btn-outline-light",
-              "label": "Contour Claire"
+              "label": "Outline Light"
             },
             {
               "group": "Contour",
               "value": "btn-outline-dark",
-              "label": "Contour Sombre"
+              "label": "Outline Dark"
             },
             {
               "group": "Contour",
               "value": "btn-outline-primary",
-              "label": "Contour Primaire"
+              "label": "Outline Primary"
             },
             {
               "group": "Contour",
               "value": "btn-outline-secondary",
-              "label": "Contour Secondaire"
+              "label": "Outline Secondary"
             },
             {
               "group": "Contour",
               "value": "btn-outline-tertiary",
-              "label": "Contour Tertiaire"
+              "label": "Outline Tertiary"
             },
             {
               "group": "Contour",
               "value": "btn-outline-success",
-              "label": "Contour Succès"
+              "label": "Outline Success"
             },
             {
               "group": "Contour",
               "value": "btn-outline-danger",
-              "label": "Contour Danger"
+              "label": "Outline Danger"
             },
             {
               "group": "Contour",
               "value": "btn-outline-warning",
-              "label": "Contour Avertissement"
+              "label": "Outline Warning"
             },
             {
               "group": "Contour",
               "value": "btn-outline-info",
-              "label": "Contour Info"
+              "label": "Outline Info"
             }
           ]
         },
         {
           "type": "select",
           "id": "btn_size",
-          "label": "Taille du bouton",
+          "label": "Button size",
           "default": "btn-sm",
           "options": [
             {
               "value": "btn-sm",
-              "label": "Petit"
+              "label": "Small"
             },
             {
               "value": "btn-md",
@@ -578,83 +578,83 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "select",
           "id": "icon",
-          "label": "Icône de copie",
+          "label": "Copy icon",
           "default": "copy",
           "options": [
             {
-              "group": "Régulier",
+              "group": "Regular",
               "value": "copy",
-              "label": "Copier"
+              "label": "Copy"
             },
             {
               "group": "Régulier",
               "value": "check",
-              "label": "Vérifier"
+              "label": "Check"
             },
             {
               "group": "Régulier",
               "value": "gift",
-              "label": "Cadeau"
+              "label": "Gift"
             },
             {
               "group": "Régulier",
               "value": "tag",
-              "label": "Étiquette"
+              "label": "Tag"
             },
             {
               "group": "Régulier",
               "value": "tags",
-              "label": "Étiquettes"
+              "label": "Tags"
             },
             {
               "group": "Régulier",
               "value": "clipboard",
-              "label": "Presse-papiers"
+              "label": "Clipboard"
             },
             {
-              "group": "Remplie",
+              "group": "Filled",
               "value": "gift-fill",
-              "label": "Cadeau Rempli"
+              "label": "Filled Gift"
             },
             {
               "group": "Remplie",
               "value": "tag-fill",
-              "label": "Étiquette Remplie"
+              "label": "Filled Tag"
             },
             {
               "group": "Remplie",
               "value": "tags-fill",
-              "label": "Étiquettes Remplies"
+              "label": "Filled Tags"
             },
             {
               "group": "Remplie",
               "value": "clipboard-fill",
-              "label": "Presse-papiers Rempli"
+              "label": "Filled Clipboard"
             }
           ]
         },
         {
           "type": "checkbox",
           "id": "borders",
-          "label": "Afficher les bordures",
+          "label": "Show borders",
           "default": false
         }
       ]
     },
     {
       "type": "title",
-      "name": "Titre",
+      "name": "Title",
       "settings": [
         {
           "type": "inline_richtext",
           "id": "title",
-          "label": "Titre",
+          "label": "Title",
           "default": "Profiter de notre code PROMO !"
         },
         {
           "type": "select",
           "id": "heading_tag",
-          "label": "Balise titre (SEO)",
+          "label": "Title tag (SEO)",
           "default": "h2",
           "options": [
             {
@@ -690,58 +690,58 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "select",
           "id": "title_size",
-          "label": "Taille du titre",
+          "label": "Title size",
           "default": "h3",
           "options": [
             {
-              "group": "Titre Supérieur",
+              "group": "Large Title",
               "value": "display-1",
-              "label": "Extra Extra Grand"
+              "label": "Extra Extra Large"
             },
             {
               "group": "Titre Supérieur",
               "value": "display-2",
-              "label": "Extra Grand"
+              "label": "Extra Large"
             },
             {
               "group": "Titre Supérieur",
               "value": "display-3",
-              "label": "Ultra Grand"
+              "label": "Ultra Large"
             },
             {
               "group": "Titre Supérieur",
               "value": "display-4",
-              "label": "Super Grand"
+              "label": "Super Large"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h1",
-              "label": "Très Grand"
+              "label": "Very Large"
             },
             {
               "group": "Titre Standard",
               "value": "h2",
-              "label": "Grand"
+              "label": "Large"
             },
             {
               "group": "Titre Standard",
               "value": "h3",
-              "label": "Moyen"
+              "label": "Medium"
             },
             {
               "group": "Titre Standard",
               "value": "h4",
-              "label": "Petit"
+              "label": "Small"
             },
             {
               "group": "Titre Standard",
               "value": "h5",
-              "label": "Très Petit"
+              "label": "Very Small"
             },
             {
               "group": "Titre Standard",
               "value": "h6",
-              "label": "Super Petit"
+              "label": "Super Small"
             }
           ]
         }
@@ -749,13 +749,13 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     },
     {
       "type": "text",
-      "name": "Texte",
+      "name": "Text",
       "settings": [
         {
           "type": "text",
           "id": "text",
-          "label": "Texte",
-          "default": "Livraison gratuite à partir de 100 euros"
+          "label": "Text",
+          "default": "Shipping gratuite à partir de 100 euros"
         }
       ]
     }

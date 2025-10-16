@@ -107,11 +107,11 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 {% schema %}
 {
-  "name": "Texte Défilant",
+  "name": "Scrolling Text",
   "settings": [
     {
       "type": "paragraph",
-      "content": "Documentation FR : [Texte défilant by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/sections/texte-defilant)"
+      "content": "Documentation: [Scrolling Text by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/sections/texte-defilant)"
     },
     {
       "type": "header",
@@ -120,61 +120,61 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "bg_color",
-      "label": "Couleur d'arrière-plan",
+      "label": "Background color",
       "default": "bg-dark text-white",
       "options": [
         {
-          "group": "Principal",
+          "group": "Main",
           "value": "bg-primary text-white",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
-          "group": "Principal",
+          "group": "Main",
           "value": "bg-secondary text-white",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
-          "group": "Principal",
+          "group": "Main",
           "value": "bg-tertiary text-white",
-          "label": "Tertiaire"
+          "label": "Tertiary"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-white text-dark",
-          "label": "Blanc"
+          "label": "White"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-light text-body",
-          "label": "Claire"
+          "label": "Light"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-dark text-white",
-          "label": "Sombre"
+          "label": "Dark"
         },
         {
-          "group": "Par défaut",
+          "group": "Default",
           "value": "bg-body text-body",
-          "label": "Corps (body)"
+          "label": "Body"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-success text-white",
-          "label": "Succès"
+          "label": "Success"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-warning text-dark",
-          "label": "Avertissement"
+          "label": "Warning"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-danger text-white",
           "label": "Danger"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-info text-white",
           "label": "Info"
         }
@@ -183,44 +183,44 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "checkbox",
       "id": "bg_gradient",
-      "label": "Dégradé d'arrière-plan",
+      "label": "Background gradient",
       "default": false,
-      "info": "Ne s'applique pas aux couleurs claires"
+      "info": "Does not apply to light colors"
     },
     {
       "type": "select",
       "id": "font_size",
-      "label": "Taille du texte",
+      "label": "Text size",
       "default": "large",
       "options": [
         {
           "value": "xlarge",
-          "label": "Super Grand"
+          "label": "Extra Large"
         },
         {
           "value": "large",
-          "label": "Très Grand"
+          "label": "Very Large"
         },
         {
           "value": "medium",
-          "label": "Grand"
+          "label": "Large"
         },
         {
           "value": "small",
-          "label": "Moyen"
+          "label": "Medium"
         },
         {
           "value": "xsmall",
-          "label": "Petit"
+          "label": "Small"
         }
       ]
     },
     {
       "type": "text",
       "id": "list_label",
-      "label": "Libellé de la liste",
-      "default": "Caractéristiques promotionnelles",
-      "info": "Utilisé à des fins d'accessibilité"
+      "label": "List label",
+      "default": "Promotional features",
+      "info": "Used for accessibility purposes"
     },
     {
       "type": "header",
@@ -229,40 +229,40 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "animation_duration",
-      "label": "Vitesse",
+      "label": "Speed",
       "min": 0,
       "max": 120,
       "step": 2,
       "default": 60,
       "unit": "sec",
-      "info": "Vitesse de défilement automatique"
+      "info": "Automatic scrolling speed"
     },
     {
       "type": "select",
       "id": "scrolling_direction",
-      "label": "Sens de défilement",
+      "label": "Scrolling direction",
       "default": "left",
-      "info": "Sens de défilement automatique",
+      "info": "Automatic scrolling direction",
       "options": [
         {
           "value": "left",
-          "label": "Gauche"
+          "label": "Left"
         },
         {
           "value": "right",
-          "label": "Droite"
+          "label": "Right"
         }
       ]
     },
     {
       "type": "header",
       "content": "Gap",
-      "info": "Espacement entre les éléments."
+      "info": "Spacing between items."
     },
     {
       "type": "range",
       "id": "gap",
-      "label": "Espacement",
+      "label": "Gap",
       "min": 0,
       "max": 12,
       "step": 1,
@@ -270,12 +270,12 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     },
     {
       "type": "header",
-      "content": "Espacement de la section"
+      "content": "Section spacing"
     },
     {
       "type": "range",
       "id": "pt",
-      "label": "Padding supérieure",
+      "label": "Top padding",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -284,7 +284,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "pb",
-      "label": "Padding inférieure",
+      "label": "Bottom padding",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -293,7 +293,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "mt",
-      "label": "Marge supérieure",
+      "label": "Top margin",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -302,7 +302,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "mb",
-      "label": "Marge inférieure",
+      "label": "Bottom margin",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -318,12 +318,12 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "text",
           "id": "text",
-          "label": "Texte"
+          "label": "Text"
         },
         {
           "type": "select",
           "id": "text_transform",
-          "label": "Transformation de texte",
+          "label": "Text transformation",
           "default": "text-capitalize",
           "options": [
             {
@@ -332,38 +332,38 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
             },
             {
               "value": "text-capitalize",
-              "label": "Capitale"
+              "label": "Capitalize"
             },
             {
               "value": "text-lowercase",
-              "label": "Minuscule"
+              "label": "Lowercase"
             },
             {
               "value": "text-uppercase",
-              "label": "Majuscule"
+              "label": "Uppercase"
             }
           ]
         },
         {
           "type": "select",
           "id": "scrolling_text_font_family",
-          "label": "Police d'écriture",
+          "label": "Font family",
           "default": "",
           "options": [
             {
               "value": "",
-              "label": "Par défaut"
+              "label": "Default"
             },
             {
               "value": "headings-font-family",
-              "label": "Titres"
+              "label": "Headings"
             }
           ]
         },
         {
           "type": "select",
           "id": "text_style",
-          "label": "Style de texte",
+          "label": "Text style",
           "default": "",
           "options": [
             {
@@ -372,7 +372,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
             },
             {
               "value": "text-flaming",
-              "label": "Flamme"
+              "label": "Flaming"
             },
             {
               "value": "text-3d",
@@ -386,49 +386,49 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         },
         {
           "type": "header",
-          "content": "Couleurs",
-          "info": "Le dégradé remplace les couleurs unies lorsqu'il est défini. Le contour du texte dégradé et l'arrière-plan dégradé ne peuvent pas être combinés."
+          "content": "Colors",
+          "info": "Gradient replaces solid colors when set. Gradient text outline and gradient background cannot be combined."
         },
         {
           "type": "color",
           "id": "text_color",
-          "label": "Couleur du texte",
+          "label": "Text color",
           "default": "#F56900"
         },
         {
           "type": "color",
           "id": "stroke_color",
-          "label": "Couleur du contour texte"
+          "label": "Text stroke color"
         },
         {
           "type": "color_background",
           "id": "text_gradient",
-          "label": "Dégradé du texte"
+          "label": "Text gradient"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Texte Défilant",
+      "name": "Scrolling Text",
       "category": "General",
       "blocks": [
         {
           "type": "item",
           "settings": {
-            "text": "Un message promotionnel"
+            "text": "A promotional message"
           }
         },
         {
           "type": "item",
           "settings": {
-            "text": "Encore un autre message promotionnel"
+            "text": "Another promotional message"
           }
         },
         {
           "type": "item",
           "settings": {
-            "text": "Essayez d'être bref"
+            "text": "Try to be brief"
           }
         }
       ]

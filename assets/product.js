@@ -8,24 +8,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const colorsDone = new Set();
   window.productVariants.forEach((variant) => {
-    const colorName = variant.option1?.trim().toLowerCase();
-    if (!colorName || colorsDone.has(colorName)) return;
+  const colorName = variant.option1?.trim().toLowerCase();
+  if (!colorName || colorsDone.has(colorName)) return;
 
-    // Cherche la couleur dans la liste Pantone
+  // Find the color in the Pantone list
     const pantone = pantoneColors.find((c) =>
       c.name.toLowerCase().includes(colorName)
     );
     if (!pantone) return;
 
-    // Crée la pastille
-    const swatch = document.createElement("button");
-    swatch.className = "color-swatch";
-    swatch.setAttribute("data-value", colorName);
-    swatch.setAttribute("data-variant-image", variant.featured_image);
-    swatch.style.background = pantone.hex;
-    swatch.title = pantone.name;
+  // Create the swatch
+  const swatch = document.createElement("button");
+  swatch.className = "color-swatch";
+  swatch.setAttribute("data-value", colorName);
+  swatch.setAttribute("data-variant-image", variant.featured_image);
+  swatch.style.background = pantone.hex;
+  swatch.title = pantone.name;
 
-    // Ajoute un écouteur pour mettre à jour le label au clic
+    // Add a listener to update the label on click
     swatch.addEventListener("click", function () {
       // Find the color label span (option position 1 is usually color)
       const label = swatchContainer
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     colorsDone.add(colorName);
   });
 
-  // Initialisation du label à la première couleur si aucune sélection
+  // Initialize the label to the first color if none selected
   const label = swatchContainer
     .closest(".product-option-wrapper")
     ?.querySelector(".color-swatches-title span");
@@ -60,14 +60,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 /* ========================================================================
-   INFORMATIONS GÉNÉRALES SUR LE SITE
-   Propriété de © 2019/2024 Shopiweb.fr
-   Pour plus d'informations, visitez : https://www.shopiweb.fr
-   ======================================================================== */
+  GENERAL SITE INFORMATION
+  Property of © 2019/2024 Shopiweb.fr
+  For more information, visit: https://www.shopiweb.fr
+  ======================================================================== */
 
 /* =====================
-   Formulaire (ATC) basé sur la variante
-   ===================== */
+  ATC form based on variant
+  ===================== */
 window.handleAtcFormVariantClick = async (btn, event) => {
   const form = btn.closest("form");
   form.querySelector('[name="id"]').value = btn.dataset.variantId;
@@ -76,8 +76,8 @@ window.handleAtcFormVariantClick = async (btn, event) => {
 };
 
 /* =====================
-   Formulaire principal d'ajout au panier (ATC)
-   ===================== */
+  Main add to cart form (ATC)
+  ===================== */
 window.handleAddToCartFormSubmit = async (form, event) => {
   event.preventDefault();
 
@@ -122,8 +122,8 @@ window.handleAddToCartFormSubmit = async (form, event) => {
 };
 
 /* =====================
-   Mise à jour de divers éléments en cas de changement de variante nécessitant une nouvelle recherche de documents
-   ===================== */
+  Update various elements when changing variant requiring new document fetch
+  ===================== */
 window.addEventListener("variantChange.shopiweb.product", async (event) => {
   const inventoryBar = document.querySelector("#inventory-bar");
 
@@ -163,12 +163,12 @@ window.addEventListener("variantChange.shopiweb.product", async (event) => {
       .querySelectorAll('.product-options [data-bs-toggle="tooltip"]')
       .forEach((el) => new bootstrap.Tooltip(el));
   } catch (error) {
-    console.error("Erreur lors de la mise à jour de la variante :", error);
+  console.error("Error updating variant:", error);
   }
 });
 /* =====================
-   Options d'achat (plans de vente/abonnement)
-   ===================== */
+  Purchase options (selling plans/subscription)
+  ===================== */
 const initializePurchaseOptions = () => {
   const wrapper = document.querySelector("#purchase-options-product");
 
@@ -237,8 +237,8 @@ const initializePurchaseOptions = () => {
 initializePurchaseOptions();
 
 /* =====================
-   Sélecteur d'options de produits - Écouter les événements de changement
-   ===================== */
+  Product option selector - Listen for change events
+  ===================== */
 window.handleProductOptionChange = async (input) => {
   const selectedOptions = [];
 
@@ -377,7 +377,7 @@ window.handleProductOptionChange = async (input) => {
     btn.innerHTML = window.theme.product.unavailable;
   }
 
-  // Mise à jour du label couleur à chaque changement de variante
+  // Update color label on each variant change
   const productOptionWrapper = input.closest(".product-option-wrapper");
   const swatchContainer =
     productOptionWrapper?.querySelector(".color-swatches");
@@ -385,7 +385,7 @@ window.handleProductOptionChange = async (input) => {
     ".color-swatches-title span"
   );
   if (swatchContainer && label) {
-    // Trouve la variante sélectionnée
+  // Find the selected variant
     const selectedOptions = [];
     input
       .closest("form")
@@ -404,13 +404,13 @@ window.handleProductOptionChange = async (input) => {
         JSON.stringify(variant.options) === JSON.stringify(selectedOptions)
     );
     if (variantSelected) {
-      // Affiche le nom complet du choix de couleur de la variante sélectionnée
+      // Display the full name of the selected variant color choice
       label.textContent =
         variantSelected.options && variantSelected.options[0]
           ? variantSelected.options[0]
           : "";
     } else {
-      // Fallback : nom de la pastille sélectionnée
+      // Fallback: name of the selected swatch
       let colorName = input.value;
       const swatchBtn = swatchContainer.querySelector(
         "[data-value='" + input.value.toLowerCase() + "']"
@@ -431,8 +431,8 @@ window.handleProductOptionChange = async (input) => {
 };
 
 /* =====================
-   Article - Changement de la variante
-   ===================== */
+  Product item - Variant change
+  ===================== */
 window.handleProductItemVariantChange = (select, event) => {
   if (select.options[select.selectedIndex].dataset.variantImage?.length) {
     select.closest(".product-item").querySelector(".product-item-img").src =
@@ -474,8 +474,8 @@ window.handleProductItemVariantChange = (select, event) => {
 };
 
 /* =====================
-   Bouton (Acheter maintenant)
-   ===================== */
+  Button (Buy now)
+  ===================== */
 window.handleBuyButtonClick = async (btn, event) => {
   event.preventDefault();
   btn.innerHTML = `
@@ -494,8 +494,8 @@ window.handleBuyButtonClick = async (btn, event) => {
 };
 
 /* =====================
-   Galerie de produits
-   ===================== */
+  Product gallery
+  ===================== */
 const initializeProductGallery = () => {
   document
     .querySelectorAll(".product-gallery:not(.init)")
@@ -671,8 +671,8 @@ window.addEventListener(
 );
 
 /* =====================
-   Barre d'inventaire
-   ===================== */
+  Inventory bar
+  ===================== */
 const initializeInventoryBar = () => {
   const wrapper = document.querySelector("#inventory-bar");
 
@@ -693,8 +693,8 @@ document.addEventListener("shopify:section:load", (e) => {
 });
 
 /* =====================
-   Upsell modal
-   ===================== */
+  Upsell modal
+  ===================== */
 const initializeUpsellModal = () => {
   const modal = document.querySelector("#modal-upsell-product");
   if (!modal) return;
@@ -738,7 +738,7 @@ const initializeUpsellModal = () => {
 initializeUpsellModal();
 
 // =====================
-// Couleur dominante des swatches couleur
+// Dominant color of color swatches
 // =====================
 document.addEventListener("DOMContentLoaded", () => {
   document

@@ -6,12 +6,12 @@
         "item_N7j7Tw": {
           "type": "item",
           "settings": {
-            "title": "Comment décririez-vous votre peau ?",
+            "title": "How would you describe your skin?",
             "heading_tag": "h3",
             "title_size": "h3",
-            "description": "<p>Ajouter une description facultative à cette section</p>",
+            "description": "<p>Add an optional description to this section</p>",
             "description_size": "fs-5",
-            "values": "Normal, Grasse, Sèche, Sensible, Mixte",
+            "values": "Normal, Oily, Dry, Sensitive, Combination",
             "show_images": true,
             "img_size": "300x300",
             "breakpoint_xs": 2,
@@ -25,10 +25,10 @@
         "item_kyE8Gn": {
           "type": "item",
           "settings": {
-            "title": "Quel âge avez-vous ?",
+            "title": "How old are you?",
             "heading_tag": "h3",
             "title_size": "h3",
-            "description": "<p>Ajouter une description facultative à cette section</p>",
+            "description": "<p>Add an optional description to this section</p>",
             "description_size": "fs-5",
             "values": "18-24, 25-34, 35-44, 45-54, 55+",
             "show_images": false,
@@ -44,12 +44,12 @@
         "item_HGxf7R": {
           "type": "item",
           "settings": {
-            "title": "Fumez-vous du tabac ?",
+            "title": "Do you smoke tobacco?",
             "heading_tag": "h3",
             "title_size": "h3",
-            "description": "<p>Ajouter une description facultative à cette section</p>",
+            "description": "<p>Add an optional description to this section</p>",
             "description_size": "fs-5",
-            "values": "Oui, Non",
+            "values": "Yes, No",
             "show_images": false,
             "img_size": "240x240",
             "breakpoint_xs": 2,
@@ -63,12 +63,12 @@
         "item_h4a8bR": {
           "type": "item",
           "settings": {
-            "title": "Quelle est votre couleur préféré ?",
+            "title": "What is your favorite color?",
             "heading_tag": "h3",
             "title_size": "h3",
-            "description": "<p>Ajouter une description facultative à cette section</p>",
+            "description": "<p>Add an optional description to this section</p>",
             "description_size": "fs-5",
-            "values": "Rouge, Bleu, Vert, Gris, Violet",
+            "values": "Red, Blue, Green, Gray, Purple",
             "show_images": true,
             "img_size": "240x240",
             "breakpoint_xs": 2,
@@ -82,34 +82,34 @@
         "results_XNrrk7": {
           "type": "results",
           "settings": {
-            "title": "Vos résultats",
+            "title": "Your results",
             "heading_tag": "h2",
             "title_size": "h2",
-            "description": "<p>Sur la base de vos réponses, voici nos principales recommandations</p>",
+            "description": "<p>Based on your answers, here are our top recommendations</p>",
             "description_size": "fs-5",
-            "set_1_values": "Normal, 18-24, Oui, Bleu",
+            "set_1_values": "Normal, 18-24, Yes, Blue",
             "set_1_products": [
               "etui-airpods-pro-capuccino",
               "etui-airpods-pro-navy",
               "etui-airpods-pro-nuage",
               "etui-airpods-pro-ruby"
             ],
-            "set_2_values": "Grasse, 25-34, Non, Rouge",
+            "set_2_values": "Oily, 25-34, No, Red",
             "set_2_products": [
               "etui-airpods-pro-ruby",
               "etui-airpods-pro-summer"
             ],
-            "set_3_values": "Sèche, 35-44, Oui",
+            "set_3_values": "Dry, 35-44, Yes",
             "set_3_products": [
               "etui-airpods-pro-smooth",
               "etui-airpods-pro-space-evasion",
               "etui-airpods-pro-summer"
             ],
-            "set_4_values": "Mixte, 35-44, Oui, Gris",
+            "set_4_values": "Combination, 35-44, Yes, Gray",
             "set_4_products": [
               "etui-airpods-pro-nuage"
             ],
-            "set_5_values": "Mixte, 35-44, Oui, Violet",
+            "set_5_values": "Combination, 35-44, Yes, Purple",
             "set_5_products": [
               "etui-airpods-pro-summer"
             ],
@@ -169,7 +169,7 @@
         "title": "Quiz",
         "heading_tag": "h2",
         "title_size": "h2",
-        "description": "<p>Veuillez compléter ce qui suit pour obtenir nos recommandations de produits.</p>",
+        "description": "<p>Please complete the following to get our product recommendations.</p>",
         "description_size": "fs-5",
         "border_color": "border-primary",
         "shadow_sp": "shadow-2",

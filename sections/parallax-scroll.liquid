@@ -190,81 +190,73 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     </div>
 </section>
 
-
 {% schema %}
 {
-  "name": "Parallaxe Défilante",
+  "name": "Parallax Scroll",
   "tag": "section",
   "settings": [
     {
       "type": "header",
-      "content": "Stylisation"
+      "content": "Styling"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "Couleur du texte",
+      "label": "Text color",
       "default": "#ffffff"
-    },
-    {
-      "type": "header",
-      "content": "Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "img_mobile",
-      "label": "Image - mobile"
-    },
-    {
-      "type": "image_picker",
-      "id": "img_desktop",
-      "label": "Image - bureau"
-    },
-    {
-      "type": "header",
-      "content": "Vidéo"
-    },
-    {
-      "type": "video",
-      "id": "video_mobile",
-      "label": "Vidéo - mobile"
-    },
-    {
-      "type": "video",
-      "id": "video_desktop",
-      "label": "Vidéo - bureau"
-    },
-    {
-      "type": "header",
-      "content": "Overlay"
     },
     {
       "type": "range",
       "id": "overlay_opacity",
-      "label": "Opacité",
+      "label": "Overlay opacity",
       "min": 0,
       "max": 100,
-      "step": 10,
-      "default": 30,
+      "step": 5,
+      "default": 0,
       "unit": "%"
     },
     {
       "type": "range",
       "id": "overlay_blur",
-      "label": "Flou",
+      "label": "Overlay blur",
       "min": 0,
-      "max": 10,
+      "max": 20,
       "step": 1,
-      "default": 0
+      "default": 0,
+      "unit": "px"
     },
     {
       "type": "header",
-      "content": "Espacement de la section"
+      "content": "Media"
+    },
+    {
+      "type": "video",
+      "id": "video_desktop",
+      "label": "Video desktop"
+    },
+    {
+      "type": "video",
+      "id": "video_mobile",
+      "label": "Video mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_desktop",
+      "label": "Image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_mobile",
+      "label": "Image mobile"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
     },
     {
       "type": "range",
       "id": "pt",
-      "label": "Padding supérieure",
+      "label": "Padding top",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -273,7 +265,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "pb",
-      "label": "Padding inférieure",
+      "label": "Padding bottom",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -282,7 +274,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "mt",
-      "label": "Marge supérieure",
+      "label": "Margin top",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -291,7 +283,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "mb",
-      "label": "Marge inférieure",
+      "label": "Margin bottom",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -302,85 +294,86 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "slide",
       "name": "Slide",
+      "limit": 1,
       "settings": [
         {
           "type": "text",
-          "id": "caption_max_width",
-          "label": "Largeur max. (px)",
-          "default": "720"
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Unique value proposition"
         },
         {
           "type": "image_picker",
           "id": "subtitle_img",
-          "label": "Légende Image"
+          "label": "Subtitle image"
         },
         {
-          "type": "text",
+          "type": "number",
           "id": "brand_image_size",
-          "label": "Image Largeur/Hauteur (px)",
-          "default": "60"
+          "label": "Brand image width",
+          "default": 120
         },
         {
-          "type": "text",
-          "id": "subtitle",
-          "label": "Légende Texte",
-          "default": "Proposition de valeur unique"
+          "type": "number",
+          "id": "caption_max_width",
+          "label": "Caption max width",
+          "default": 600
         },
         {
           "type": "select",
           "id": "subtitle_size",
-          "label": "Taille de la légende",
+          "label": "Caption size",
           "default": "fs-5",
           "options": [
             {
-              "group": "Légende Standard",
+              "group": "Standard Caption",
               "value": "fs-1",
-              "label": "Extra Grand"
+              "label": "Extra Large"
             },
             {
-              "group": "Légende Standard",
+              "group": "Standard Caption",
               "value": "fs-2",
-              "label": "Super Grand"
+              "label": "Super Large"
             },
             {
-              "group": "Légende Standard",
+              "group": "Standard Caption",
               "value": "fs-3",
-              "label": "Très Grand"
+              "label": "Very Large"
             },
             {
-              "group": "Légende Standard",
+              "group": "Standard Caption",
               "value": "fs-4",
-              "label": "Grand"
+              "label": "Large"
             },
             {
-              "group": "Légende Standard",
+              "group": "Standard Caption",
               "value": "fs-5",
-              "label": "Moyen"
+              "label": "Medium"
             },
             {
-              "group": "Légende Standard",
+              "group": "Standard Caption",
               "value": "fs-6",
-              "label": "Petit"
+              "label": "Small"
             }
           ]
         },
         {
           "type": "color",
           "id": "color_caption",
-          "label": "Couleur de la légende",
+          "label": "Caption color",
           "default": "#ffffff"
         },
         {
           "type": "inline_richtext",
           "id": "title",
-          "label": "Titre",
-          "default": "Titre du Slide",
-          "info": "Laisser vide pour désactiver"
+          "label": "Title",
+          "default": "Slide Title",
+          "info": "Leave blank to disable"
         },
         {
           "type": "select",
           "id": "heading_tag",
-          "label": "Balise titre (SEO)",
+          "label": "Title tag (SEO)",
           "default": "h2",
           "options": [
             {
@@ -409,65 +402,65 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
             },
             {
               "value": "span",
-              "label": "Aucune"
+              "label": "None"
             }
           ]
         },
         {
           "type": "select",
           "id": "title_size",
-          "label": "Taille du titre",
+          "label": "Title size",
           "default": "h2",
           "options": [
             {
-              "group": "Titre Supérieur",
+              "group": "Superior Title",
               "value": "display-1",
-              "label": "Extra Extra Grand"
+              "label": "Extra Extra Large"
             },
             {
-              "group": "Titre Supérieur",
+              "group": "Superior Title",
               "value": "display-2",
-              "label": "Extra Grand"
+              "label": "Extra Large"
             },
             {
-              "group": "Titre Supérieur",
+              "group": "Superior Title",
               "value": "display-3",
-              "label": "Ultra Grand"
+              "label": "Ultra Large"
             },
             {
-              "group": "Titre Supérieur",
+              "group": "Superior Title",
               "value": "display-4",
-              "label": "Super Grand"
+              "label": "Super Large"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h1",
-              "label": "Très Grand"
+              "label": "Very Large"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h2",
-              "label": "Grand"
+              "label": "Large"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h3",
-              "label": "Moyen"
+              "label": "Medium"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h4",
-              "label": "Petit"
+              "label": "Small"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h5",
-              "label": "Très Petit"
+              "label": "Very Small"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h6",
-              "label": "Super Petit"
+              "label": "Super Small"
             }
           ]
         },
@@ -475,279 +468,153 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
           "type": "richtext",
           "id": "description",
           "label": "Description",
-          "default": "<p>Associez du texte à une image pour mettre l'accent sur le produit, la collection ou l'article de blog de votre choix.</p>"
+          "default": "<p>Pair text with an image to highlight your chosen product, collection, or blog post.</p>"
         },
         {
           "type": "select",
           "id": "description_size",
-          "label": "Taille de description",
+          "label": "Description size",
           "default": "fs-5",
           "options": [
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-1",
-              "label": "Extra Grand"
+              "label": "Extra Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-2",
-              "label": "Super Grand"
+              "label": "Super Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-3",
-              "label": "Très Grand"
+              "label": "Very Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-4",
-              "label": "Grand"
+              "label": "Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-5",
-              "label": "Moyen"
+              "label": "Medium"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-6",
-              "label": "Petit"
+              "label": "Small"
             }
           ]
         },
         {
           "type": "header",
-          "content": "Premier bouton"
+          "content": "Primary Button"
         },
         {
           "type": "text",
           "id": "btn_primary_text",
-          "label": "Texte du bouton 1",
-          "info": "Laisser vide pour désactiver"
+          "label": "Button text",
+          "default": "Button 1 text"
         },
         {
           "type": "url",
           "id": "btn_primary_url",
-          "label": "Lien du bouton"
+          "label": "Button URL"
         },
         {
           "type": "select",
           "id": "btn_primary_color",
-          "label": "Couleur du bouton",
+          "label": "Button color",
           "default": "btn-primary",
           "options": [
             {
-              "group": "Normal",
-              "value": "btn-link",
-              "label": "Lien"
-            },
-            {
-              "group": "Normal",
-              "value": "btn-light",
-              "label": "Claire"
-            },
-            {
-              "group": "Normal",
-              "value": "btn-dark",
-              "label": "Sombre"
-            },
-            {
-              "group": "Normal",
               "value": "btn-primary",
-              "label": "Primaire"
+              "label": "Primary"
             },
             {
-              "group": "Normal",
               "value": "btn-secondary",
-              "label": "Secondaire"
+              "label": "Secondary"
             },
             {
-              "group": "Normal",
-              "value": "btn-tertiary",
-              "label": "Tertiaire"
+              "value": "btn-white",
+              "label": "White"
             },
             {
-              "group": "Normal",
-              "value": "btn-success",
-              "label": "Succès"
+              "value": "btn-dark",
+              "label": "Dark"
             },
             {
-              "group": "Normal",
-              "value": "btn-danger",
-              "label": "Danger"
-            },
-            {
-              "group": "Normal",
-              "value": "btn-warning",
-              "label": "Avertissement"
-            },
-            {
-              "group": "Normal",
-              "value": "btn-info",
-              "label": "Info"
-            },
-            {
-              "group": "Contour",
-              "value": "btn-outline-light",
-              "label": "Contour Claire"
-            },
-            {
-              "group": "Contour",
-              "value": "btn-outline-dark",
-              "label": "Contour Sombre"
-            },
-            {
-              "group": "Contour",
               "value": "btn-outline-primary",
-              "label": "Contour Primaire"
+              "label": "Outline Primary"
             },
             {
-              "group": "Contour",
               "value": "btn-outline-secondary",
-              "label": "Contour Secondaire"
+              "label": "Outline Secondary"
             },
             {
-              "group": "Contour",
-              "value": "btn-outline-tertiary",
-              "label": "Contour Tertiaire"
+              "value": "btn-outline-white",
+              "label": "Outline White"
             },
             {
-              "group": "Contour",
-              "value": "btn-outline-success",
-              "label": "Contour Succès"
-            },
-            {
-              "group": "Contour",
-              "value": "btn-outline-danger",
-              "label": "Contour Danger"
-            },
-            {
-              "group": "Contour",
-              "value": "btn-outline-warning",
-              "label": "Contour Avertissement"
-            },
-            {
-              "group": "Contour",
-              "value": "btn-outline-info",
-              "label": "Contour Info"
+              "value": "btn-outline-dark",
+              "label": "Outline Dark"
             }
           ]
         },
         {
           "type": "header",
-          "content": "Second bouton"
+          "content": "Secondary Button"
         },
         {
           "type": "text",
           "id": "btn_secondary_text",
-          "label": "Texte du bouton 2",
-          "info": "Laisser vide pour désactiver"
+          "label": "Button text",
+          "default": "Button 2 text"
         },
         {
           "type": "url",
           "id": "btn_secondary_url",
-          "label": "Lien du bouton"
+          "label": "Button URL"
         },
         {
           "type": "select",
           "id": "btn_secondary_color",
-          "label": "Couleur du bouton",
-          "default": "btn-secondary",
+          "label": "Button color",
+          "default": "btn-outline-white",
           "options": [
             {
-              "group": "Normal",
-              "value": "btn-link",
-              "label": "Lien"
-            },
-            {
-              "group": "Normal",
-              "value": "btn-light",
-              "label": "Claire"
-            },
-            {
-              "group": "Normal",
-              "value": "btn-dark",
-              "label": "Sombre"
-            },
-            {
-              "group": "Normal",
               "value": "btn-primary",
-              "label": "Primaire"
+              "label": "Primary"
             },
             {
-              "group": "Normal",
               "value": "btn-secondary",
-              "label": "Secondaire"
+              "label": "Secondary"
             },
             {
-              "group": "Normal",
-              "value": "btn-tertiary",
-              "label": "Tertiaire"
+              "value": "btn-white",
+              "label": "White"
             },
             {
-              "group": "Normal",
-              "value": "btn-success",
-              "label": "Succès"
+              "value": "btn-dark",
+              "label": "Dark"
             },
             {
-              "group": "Normal",
-              "value": "btn-danger",
-              "label": "Danger"
-            },
-            {
-              "group": "Normal",
-              "value": "btn-warning",
-              "label": "Avertissement"
-            },
-            {
-              "group": "Normal",
-              "value": "btn-info",
-              "label": "Info"
-            },
-            {
-              "group": "Contour",
-              "value": "btn-outline-light",
-              "label": "Contour Claire"
-            },
-            {
-              "group": "Contour",
-              "value": "btn-outline-dark",
-              "label": "Contour Sombre"
-            },
-            {
-              "group": "Contour",
               "value": "btn-outline-primary",
-              "label": "Contour Primaire"
+              "label": "Outline Primary"
             },
             {
-              "group": "Contour",
               "value": "btn-outline-secondary",
-              "label": "Contour Secondaire"
+              "label": "Outline Secondary"
             },
             {
-              "group": "Contour",
-              "value": "btn-outline-tertiary",
-              "label": "Contour Tertiaire"
+              "value": "btn-outline-white",
+              "label": "Outline White"
             },
             {
-              "group": "Contour",
-              "value": "btn-outline-success",
-              "label": "Contour Succès"
-            },
-            {
-              "group": "Contour",
-              "value": "btn-outline-danger",
-              "label": "Contour Danger"
-            },
-            {
-              "group": "Contour",
-              "value": "btn-outline-warning",
-              "label": "Contour Avertissement"
-            },
-            {
-              "group": "Contour",
-              "value": "btn-outline-info",
-              "label": "Contour Info"
+              "value": "btn-outline-dark",
+              "label": "Outline Dark"
             }
           ]
         }
@@ -762,42 +629,18 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
   },
   "presets": [
     {
-      "name": "Parallaxe Défilante",
+      "name": "Parallax Scroll",
       "category": "General",
       "blocks": [
         {
           "type": "slide",
           "settings": {
-            "title": "Titre du Slide 1",
-            "subtitle": "Proposition de valeur unique 1",
-            "description": "<p>Associez du texte à une image pour mettre l'accent sur le produit, la collection ou l'article de blog de votre choix.</p>",
-            "btn_primary_text": "Texte du bouton 1",
+            "title": "Slide title 1",
+            "subtitle": "Unique value proposition 1",
+            "description": "<p>Pair text with an image to highlight your chosen product, collection, or blog post.</p>",
+            "btn_primary_text": "Button 1 text",
             "btn_primary_url": "#",
-            "btn_secondary_text": "Texte du bouton 1",
-            "btn_secondary_url": "#"
-          }
-        },
-        {
-          "type": "slide",
-          "settings": {
-            "title": "Titre du Slide 2",
-            "subtitle": "Proposition de valeur unique 2",
-            "description": "<p>Associez du texte à une image pour mettre l'accent sur le produit, la collection ou l'article de blog de votre choix.</p>",
-            "btn_primary_text": "Texte du bouton 2",
-            "btn_primary_url": "#",
-            "btn_secondary_text": "Texte du bouton 2",
-            "btn_secondary_url": "#"
-          }
-        },
-        {
-          "type": "slide",
-          "settings": {
-            "title": "Titre du Slide 3",
-            "subtitle": "Proposition de valeur unique 3",
-            "description": "<p>Associez du texte à une image pour mettre l'accent sur le produit, la collection ou l'article de blog de votre choix.</p>",
-            "btn_primary_text": "Texte du bouton 3",
-            "btn_primary_url": "#",
-            "btn_secondary_text": "Texte du bouton 3",
+            "btn_secondary_text": "Button 2 text",
             "btn_secondary_url": "#"
           }
         }

@@ -1,0 +1,12 @@
+glossary_en.json
+out/lang_audit.csv
+out/modified_files.txt
+out/translated_items.csv
+out/translated_items.md
+out/translated_occurrences.csv
+sections/animated-counters.liquid
+sections/contact-form.liquid
+sections/image-compare.liquid
+sections/timeline.liquid
+theme-prod-reference/sections/contact-form.liquid
+theme-prod-reference/sections/template-collection-bundle.liquid
