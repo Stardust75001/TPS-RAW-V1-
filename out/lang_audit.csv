@@ -1,1 +1,142 @@
 file,where,original,updated
+/Users/asc/Shopify/TPS RAW V1/sections/comparaison-table.liquid,schema:settings/31/label,Color d'arrière plan de la deuxième colonne,Second column background color
+/Users/asc/Shopify/TPS RAW V1/sections/comparaison-table.liquid,schema:settings/32/label,Afficher la color en alternance des rangées,Alternate row colors
+/Users/asc/Shopify/TPS RAW V1/sections/multi-image-with-text.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/sections/instagram-gallery.liquid,schema:settings/14/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/sections/instagram-gallery.liquid,schema:settings/24/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/recently-viewed.liquid,schema:settings/16/label,Quantity maximale de produits à afficher,Maximum number of products to display
+/Users/asc/Shopify/TPS RAW V1/sections/template-collection.liquid,schema:settings/7/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/featured-collections.liquid,schema:settings/28/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/age-verfication-modal.liquid,schema:settings/14/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/video-with-text.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/sections/video-with-text.liquid,schema:settings/14/label,Color du fond de la vidéo,Video background color
+/Users/asc/Shopify/TPS RAW V1/sections/video-with-text.liquid,schema:settings/44/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/collage-dynamique.liquid,schema:blocks/5/settings/11/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/collage-dynamique.liquid,schema:blocks/7/settings/7/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/icon-blocks.liquid,schema:settings/15/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/sections/icon-blocks.liquid,schema:settings/24/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/icon-blocks.liquid,schema:blocks/0/settings/20/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/image-with-text.liquid,schema:settings/40/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/mp4-video.liquid,schema:settings/9/label,Color du fond de la vidéo,Video background color
+/Users/asc/Shopify/TPS RAW V1/sections/flip-flap-text.liquid,schema:settings/25/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/template-tracking.liquid,schema:settings/14/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/sections/template-tracking.liquid,schema:settings/20/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/template-product.liquid,schema:blocks/33/settings/1/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/image-with-text-explorer.liquid,schema:settings/37/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/image-text-image.liquid,schema:blocks/1/settings/20/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/sections/recommended-products.liquid,schema:settings/18/label,Quantity maximale de produits à afficher,Maximum number of products to display
+/Users/asc/Shopify/TPS RAW V1/sections/testimonials.liquid,schema:settings/14/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/sections/faq.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/scrolling-text-vertical.liquid,schema:settings/3/label,Color d'arrière-plan,Background color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/scrolling-text-vertical.liquid,schema:settings/30/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/comparaison-table.liquid,schema:settings/15/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/comparaison-table.liquid,schema:settings/31/label,Color d'arrière plan de la deuxième colonne,Second column background color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/comparaison-table.liquid,schema:settings/32/label,Afficher la color en alternance des rangées,Alternate row colors
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/multi-image-with-text.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/multi-image-with-text.liquid,schema:settings/33/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/instagram-gallery.liquid,schema:settings/14/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/instagram-gallery.liquid,schema:settings/24/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/parallax-image.liquid,schema:settings/31/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/discount-bar.liquid,schema:blocks/0/settings/1/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/featured-products.liquid,schema:settings/4/label,Quantity maximale de produits à afficher,Maximum number of products to display
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/featured-products.liquid,schema:settings/17/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/featured-products.liquid,schema:settings/60/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/recently-viewed.liquid,schema:settings/16/label,Quantity maximale de produits à afficher,Maximum number of products to display
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/template-collection.liquid,schema:settings/7/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/scrolling-image.liquid,schema:settings/15/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/scrolling-image.liquid,schema:settings/23/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/quiz.liquid,schema:settings/16/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/quiz.liquid,schema:settings/41/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/featured-collections.liquid,schema:settings/13/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/featured-collections.liquid,schema:settings/28/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/age-verfication-modal.liquid,schema:settings/14/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/image-with-text-counters.liquid,schema:settings/1/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/image-with-text-counters.liquid,schema:settings/41/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/cards-with-image.liquid,schema:blocks/0/settings/20/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/image-compare.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/image-compare.liquid,schema:settings/53/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/video-with-text.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/video-with-text.liquid,schema:settings/14/label,Color du fond de la vidéo,Video background color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/video-with-text.liquid,schema:settings/44/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/collage-dynamique.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/collage-dynamique.liquid,schema:settings/19/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/collage-dynamique.liquid,schema:blocks/0/settings/17/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/collage-dynamique.liquid,schema:blocks/2/settings/11/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/collage-dynamique.liquid,schema:blocks/5/settings/11/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/collage-dynamique.liquid,schema:blocks/7/settings/7/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/icon-blocks.liquid,schema:settings/15/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/icon-blocks.liquid,schema:settings/24/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/icon-blocks.liquid,schema:blocks/0/settings/20/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/image-with-text.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/image-with-text.liquid,schema:settings/40/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/mp4-video.liquid,schema:settings/9/label,Color du fond de la vidéo,Video background color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/cards-with-video.liquid,schema:settings/15/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/cards-with-video.liquid,schema:blocks/0/settings/22/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/navbar.liquid,schema:blocks/1/settings/4/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/accordion-visual.liquid,schema:blocks/0/settings/14/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/parallax-scroll.liquid,schema:blocks/0/settings/14/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/parallax-scroll.liquid,schema:blocks/0/settings/18/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/scrolling-text.liquid,schema:settings/2/label,Color d'arrière-plan,Background color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/flip-flap-text.liquid,schema:settings/27/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/animated-counters.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/animated-counters.liquid,schema:settings/18/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/animated-counters.liquid,schema:blocks/0/settings/17/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/template-tracking.liquid,schema:settings/14/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/template-tracking.liquid,schema:settings/20/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/template-product.liquid,schema:blocks/33/settings/1/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/image-with-text-explorer.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/image-with-text-explorer.liquid,schema:settings/39/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/image-text-image.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/image-text-image.liquid,schema:blocks/1/settings/20/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/recommended-products.liquid,schema:settings/18/label,Quantity maximale de produits à afficher,Maximum number of products to display
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/testimonials.liquid,schema:settings/14/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/testimonials.liquid,schema:settings/50/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/testimonials.liquid,schema:blocks/0/settings/32/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/html.liquid,schema:settings/16/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/html.liquid,schema:settings/25/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/timeline.liquid,schema:settings/15/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/timeline.liquid,schema:settings/28/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/timeline.liquid,schema:blocks/0/settings/22/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/tiktok-slider.liquid,schema:settings/15/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/tiktok-slider.liquid,schema:settings/25/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/marquee.liquid,schema:settings/2/label,Color d'arrière-plan,Background color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/faq.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/faq.liquid,schema:settings/33/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/media-tabs.liquid,schema:settings/15/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/media-tabs.liquid,schema:settings/31/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/theme-prod-reference/sections/announcement-bar.liquid,schema:settings/5/label,Color d'arrière-plan,Background color
+/Users/asc/Shopify/TPS RAW V1/out/backups/comparaison-table.liquid,schema:settings/31/label,Color d'arrière plan de la deuxième colonne,Second column background color
+/Users/asc/Shopify/TPS RAW V1/out/backups/comparaison-table.liquid,schema:settings/32/label,Afficher la color en alternance des rangées,Alternate row colors
+/Users/asc/Shopify/TPS RAW V1/out/backups/multi-image-with-text.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/out/backups/instagram-gallery.liquid,schema:settings/14/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/out/backups/instagram-gallery.liquid,schema:settings/24/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/recently-viewed.liquid,schema:settings/16/label,Quantity maximale de produits à afficher,Maximum number of products to display
+/Users/asc/Shopify/TPS RAW V1/out/backups/template-collection.liquid,schema:settings/7/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/featured-collections.liquid,schema:settings/28/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/age-verfication-modal.liquid,schema:settings/14/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/image-with-text-counters.liquid,schema:settings/1/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/out/backups/image-with-text-counters.liquid,schema:settings/41/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/cards-with-image.liquid,schema:blocks/0/settings/20/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/video-with-text.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."
+/Users/asc/Shopify/TPS RAW V1/out/backups/video-with-text.liquid,schema:settings/14/label,Color du fond de la vidéo,Video background color
+/Users/asc/Shopify/TPS RAW V1/out/backups/video-with-text.liquid,schema:settings/44/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/collage-dynamique.liquid,schema:blocks/5/settings/11/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/collage-dynamique.liquid,schema:blocks/7/settings/7/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/icon-blocks.liquid,schema:settings/15/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/out/backups/icon-blocks.liquid,schema:settings/24/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/icon-blocks.liquid,schema:blocks/0/settings/20/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/image-with-text.liquid,schema:settings/40/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/mp4-video.liquid,schema:settings/9/label,Color du fond de la vidéo,Video background color
+/Users/asc/Shopify/TPS RAW V1/out/backups/parallax-scroll.liquid,schema:blocks/0/settings/14/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/parallax-scroll.liquid,schema:blocks/0/settings/18/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/flip-flap-text.liquid,schema:settings/25/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/template-tracking.liquid,schema:settings/14/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/out/backups/template-tracking.liquid,schema:settings/20/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/template-product.liquid,schema:blocks/33/settings/1/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/image-with-text-explorer.liquid,schema:settings/37/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/image-text-image.liquid,schema:blocks/1/settings/20/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/recommended-products.liquid,schema:settings/18/label,Quantity maximale de produits à afficher,Maximum number of products to display
+/Users/asc/Shopify/TPS RAW V1/out/backups/testimonials.liquid,schema:settings/14/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/out/backups/html.liquid,schema:settings/16/label,Color du titre overlay,Overlay title color
+/Users/asc/Shopify/TPS RAW V1/out/backups/html.liquid,schema:settings/25/label,Color du bouton,Button color
+/Users/asc/Shopify/TPS RAW V1/out/backups/faq.liquid,schema:settings/2/info,"Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.","If no image is selected, the background color options below will be applied."

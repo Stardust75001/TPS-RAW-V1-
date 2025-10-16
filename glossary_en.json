@@ -1,22 +1,88 @@
 {
+  "Par défaut": "Default",
+  "Balise titre (SEO)": "Heading tag (SEO)",
+  "Taille du titre": "Title size",
+  "Taille de la légende": "Caption size",
+  "Couleur de la légende": "Caption color",
+  "Description (facultatif)": "Description (optional)",
+
+  "Titre": "Title",
+  "Titre de la bannière": "Banner title",
+  "Titre de la colonne": "Column title",
+  "Titre de la popup": "Popup title",
+  "Titre de la Pop-up": "Popup title",
+  "Titre de l'onglet": "Tab title",
+  "Title de l'onglet": "Tab title",
+  "Titre overlay": "Overlay title",
+  "Couleur du titre overlay": "Overlay title color",
+  "Color du titre overlay": "Overlay title color",
+
+  "Légende Image": "Caption image",
+  "Caption Image": "Caption image",
+  "Légende Texte": "Caption text",
+  "Caption Texte": "Caption text",
+
+  "Couleur": "Color",
   "Couleur de la bordure": "Border color",
+  "Color de la bordure": "Border color",
   "Couleur du bouton": "Button color",
+  "Color du bouton": "Button color",
   "Couleur des lignes du tableau": "Table row color",
   "Couleur de l'en-tête tableau": "Table header color",
   "Couleur du pied de tableau": "Table footer color",
-  "Couleur du texte de la deuxième colonne": "Second column text color",
-  "Couleur d'arrière plan de la deuxième colonne": "Second column background color",
+  "Couleur du texte": "Text color",
+  "Color du texte": "Text color",
+  "Couleur du SVG": "SVG color",
+  "Color du SVG": "SVG color",
+  "Couleur des svg": "SVG color",
+  "Color des svg": "SVG color",
+  "Couleur de la pagination": "Pagination color",
+  "Color de la pagination": "Pagination color",
+
+  "Couleur du fond de la vidéo": "Video background color",
+  "Color du fond de la vidéo": "Video background color",
+
   "Couleur d'arrière-plan": "Background color",
   "Couleur d'arrière plan": "Background color",
-  "Couleur du texte": "Text color",
-  "Couleur du SVG": "SVG color",
-  "Couleur du fond de la vidéo": "Video background color",
+  "Color d'arrière-plan": "Background color",
+  "Color d'arrière plan": "Background color",
+
+  "Couleur d'arrière plan de la deuxième colonne": "Second column background color",
+  "Couleur d'arrière-plan de la deuxième colonne": "Second column background color",
+  "Color d'arrière plan de la deuxième colonne": "Second column background color",
+  "Color d'arrière-plan de la deuxième colonne": "Second column background color",
+
+  "Couleur du badge de vente": "Sale badge color",
+  "Color du badge de vente": "Sale badge color",
+
+  "Couleur du compteur": "Counter color",
+  "Couleur des jours": "Days color",
+
+  "Couleur du fondu": "Fade color",
+  "Color du fondu": "Fade color",
+
+  "Couleur de Fond (Ouvert)": "Open state background color",
+  "Color de Fond (Ouvert)": "Open state background color",
+  "Couleur du Titre (Ouvert)": "Open state title color",
+  "Color du Title (Ouvert)": "Open state title color",
+  "Couleur de la Pastille - (Ouvert)": "Open state pill color",
+  "Color de la Pastille - (Ouvert)": "Open state pill color",
+  "Couleur du Signe - (Ouvert)": "Open state icon color",
+  "Color du Signe - (Ouvert)": "Open state icon color",
+
+  "Jours d'attente": "Days to wait",
+  "Days d'attente": "Days to wait",
+
+  "Si aucune image n'est sélectionnée, les options de couleur d'arrière-plan ci-dessous seront appliquées.": "If no image is selected, the background color options below will be applied.",
+  "Si aucune image n'est sélectionnée, les options de color d'arrière-plan ci-dessous seront appliquées.": "If no image is selected, the background color options below will be applied.",
+  "Remarque : correspond à la couleur de la bordure du tableau": "Note: matches the table border color",
+  "Sélectionnez une couleur différente pour mettre davantage en valeur votre produit.": "Select a different color to highlight your product.",
+
   "Afficher la couleur en alternance des rangées": "Alternate row colors",
-  "Titre de l'onglet": "Tab title",
-  "Titre overlay": "Overlay title",
-  "Couleur du titre overlay": "Overlay title color",
-  "Légende Image": "Caption image",
-  "Légende Texte": "Caption text",
+  "Afficher la color en alternance des rangées": "Alternate row colors",
+
+  "Quantité maximale de produits à afficher": "Maximum number of products to display",
+  "Quantity maximale de produits à afficher": "Maximum number of products to display",
 
   "Offre groupée": "Bundle offer",
   "Offre": "Offer",
@@ -24,13 +90,7 @@
   "Envoyer": "Send",
   "Annuler": "Cancel",
   "Disponibilité": "Availability",
-  "Ajouter au panier": "Add to cart"
-}
-{
-  "Par défaut": "Default",
-  "Balise titre (SEO)": "Heading tag (SEO)",
-  "Taille du titre": "Title size",
-  "Taille de la légende": "Caption size",
-  "Couleur de la légende": "Caption color",
-  "Description (facultatif)": "Description (optional)"
+  "Ajouter au panier": "Add to cart",
+  "Panier": "Cart",
+  "Suivre @shopiweb": "Follow @shopiweb"
 }
