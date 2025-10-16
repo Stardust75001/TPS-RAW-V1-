@@ -1,7 +1,7 @@
 {%- comment -%}
 SNIPPET: product-color-swatches.liquid
-Affiche des pastilles couleur (swatches) basées sur le metaobjet `color_swatch`
-et sur le metafield de variante `global.ref_variant_id`.
+Displays color swatches based on the `color_swatch` metaobject
+and the variant metafield `global.ref_variant_id`.
 {%- endcomment -%}
 
 {%- assign product_color_swatches = product | default: section.settings.product -%}
@@ -11,7 +11,7 @@ et sur le metafield de variante `global.ref_variant_id`.
 
 {%- if product_color_swatches != blank -%}
 
-  {%- comment -%} Expose une map variant.id -> ref_variant_id pour le JS {%- endcomment -%}
+  {%- comment -%} Expose a map variant.id -> ref_variant_id for JS {%- endcomment -%}
   <script type="application/json" id="variant-ref-map">
   {
   {%- for v in product_color_swatches.variants -%}
@@ -20,18 +20,18 @@ et sur le metafield de variante `global.ref_variant_id`.
   </script>
   <script>window.__productVariantsJSON = {{ product_color_swatches.variants | json }};</script>
 
-  {%- comment -%} Détecte l’index de l’option "Couleur/Color" {%- endcomment -%}
+  {%- comment -%} Detects the index of the "Color" option {%- endcomment -%}
   {%- assign color_opt_index = nil -%}
   {%- for opt in product_color_swatches.options_with_values -%}
     {%- assign opt_name = opt.name | downcase -%}
-    {%- if opt_name contains 'couleur' or opt_name contains 'color' -%}
+  {%- if opt_name contains 'color' or opt_name contains 'couleur' -%}
       {%- assign color_opt_index = forloop.index0 -%}
     {%- endif -%}
   {%- endfor -%}
 
   {%- if color_opt_index != nil -%}
     {%- assign seen = '' -%}
-    <div class="color-swatches" role="group" aria-label="Choose color">
+  <div class="color-swatches" role="group" aria-label="Choose color">
   {%- for v in product_color_swatches.variants -%}
         {%- assign key = v.metafields.global.ref_variant_id.value | default: v.options[color_opt_index] | downcase | strip -%}
         {%- if key == blank -%}{% continue %}{%- endif -%}

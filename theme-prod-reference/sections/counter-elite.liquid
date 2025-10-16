@@ -1,289 +1,23 @@
-{% comment %}
----------------------------------------------------------
-Copyright © 2019/2024 Theme Shopiweb Premium. Tous droits réservés.
-La copie, la modification, la distribution ou l'utilisation
-non autorisée de ce code ou de toute partie de celui-ci est formellement interdite.
-Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
----------------------------------------------------------
-{% endcomment %}
-
-{% liquid 
-    assign pt = section.settings.pt | prepend: 'pt-'
-    assign pb = section.settings.pb | prepend: 'pb-'
-    assign mt = section.settings.mt | prepend: 'mt-'
-    assign mb = section.settings.mb | prepend: 'mb-'
-
-    assign bg_color = section.settings.bg_color
-
-    if section.settings.bg_gradient
-        assign bg_color = bg_color | append: ' bg-gradient'
-    endif
-%}
-  
-<section id="counter-elite-{{ section.id }}" 
-         class="counter-elite enter-view {{ bg_color }} {{ pt }} {{ pb }} {{ mt }} {{ mb }}">
-  <div
-    class="countdown-banner-{{ section.id }}-wrapper container mx-auto"
-    style="max-width: {{ section.settings.max_width }}px;">
-
-    <div
-      class="countdown-banner-{{ section.id }}">
-      
-      <div class="countdown-banner-content">
-        {% for block in section.blocks %}
-          {% case block.type %}
-            {% when 'text' %}
-              <div class="countdown-banner-text-{{ section.id }}-{{ block.id }} {{ block.settings.text_align }}" {{ block.shopify_attributes }}>
-                {% unless block.settings.subtitle_img == blank %}
-                    <div 
-                        class="animate__animated animate__faster opacity-0"
-                        {% if settings.effect_apply_caption_enable %}
-                          data-animate-class="{{ settings.animation_caption_name }}"
-                          style="animation-delay: 1200ms;"
-                        {% endif %}>
-                            <img
-                                class="img-fluid mb-5"
-                                src="{{ block.settings.subtitle_img.src | image_url: width: block.settings.brand_image_size }}"
-                                alt="{{ block.settings.subtitle_img.alt | escape }}"
-                                width="{{ block.settings.brand_image_size }}"
-                                height="auto"
-                                loading="lazy">
-                        </div>
-                {% endunless %}
-                {% unless block.settings.subtitle == blank %}
-                    <div 
-                        class="animate__animated animate__faster opacity-0"
-                        {% if settings.effect_apply_caption_enable %}
-                          data-animate-class="{{ settings.animation_caption_name }}"
-                          style="animation-delay: 1000ms;"
-                        {% endif %}>
-                            <p class="subtitle text-uppercase fw-500 mb-3 {{ block.settings.subtitle_size }}"
-                                style="color:{{ block.settings.color_caption }};">
-                                {{ block.settings.subtitle }}
-                            </p>
-                    </div>
-                {% endunless %} 
-                {% unless block.settings.title == blank %}
-                    <{{ block.settings.heading_tag }} class="title mb-4 {{ block.settings.title_size }} animate__animated animate__faster opacity-0"
-                      {% if settings.effect_apply_title_enable %}
-                        data-animate-class="{{ settings.animation_title_name }}"
-                        style="animation-delay: 200ms;"
-                      {% endif %}
-                    >
-                        {{ block.settings.title }}
-                        {% if settings.custom_svg_h2 != blank %}
-                          <div class="h2_svg animate__animated animate__faster opacity-0"
-                              {% if settings.effect_apply_svg_enable %} 
-                                data-animate-class="{{ settings.animation_svg_name }}"
-                                style="animation-delay: 400ms;"
-                              {% endif %}
-                          >
-                            <span style="fill:{{ block.settings.color_svg_h2 }}; width:{{ settings.width_svg_h2 }}rem;"> {{ settings.custom_svg_h2 }}</span>
-                          </div>
-                        {% else %}
-                          {% if settings.svg_h2 != 'none' %}
-                            <div class="h2_svg mb-4 animate__animated animate__faster opacity-0"
-                                  {% if settings.effect_apply_svg_enable %} 
-                                    data-animate-class="{{ settings.animation_svg_name }}"
-                                    style="animation-delay: 400ms;"
-                                  {% endif %}>
-                              <span style="fill:{{ block.settings.color_svg_h2 }}; width:{{ settings.width_svg_h2 }}rem;"> {% render 'svg-subtitle', svg_h2: settings.svg_h2 %}</span>
-                            </div>
-                          {% endif %}
-                        {% endif %}
-                    </{{ block.settings.heading_tag }}>
-                {% endunless %}
-                {% unless block.settings.description == blank %}
-                    <div class="description rte text-muted mt-n2 {{ block.settings.description_size }} animate__animated animate__faster opacity-0"
-                         {% if settings.effect_apply_description_enable %} 
-                            data-animate-class="{{ settings.animation_description_name }}"
-                            style="animation-delay: 600ms;"
-                         {% endif %}
-                    >
-                        {{ block.settings.description }}
-                    </div>
-                {% endunless %}
-              </div>
-            {% when 'timer' %}
-              <style>
-                .timer-countdown-{{ section.id }}-{{ block.id }} {
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  flex-grow: 1;
-                  /*margin-top: 16px;*/
-                  /*margin-bottom: 16px;*/
-                  align-items: stretch;
-                }
-                .timer-countdown-{{ section.id }}-{{ block.id }} .time-block {
-                  position: relative;
-                  border-radius: 12px;
-                  /*padding: 20px;*/
-                  padding: 0 1rem;
-                }
-                .timer-countdown-{{ section.id }}-{{ block.id }} .time-block__num,
-                .timer-countdown-{{ section.id }}-{{ block.id }} .time-block__unit {
-                  display: block;
-                  text-align: center;
-                }
-                .timer-countdown-{{ section.id }}-{{ block.id }} .time-block__num {
-                  font-size: 25px;
-                  line-height: 1.2;
-                  font-weight: 700;
-                  margin-bottom: 4px;
-                }
-                .timer-countdown-{{ section.id }}-{{ block.id }} .time-block__unit {
-                  text-transform: uppercase;
-                  margin-top: 6px;
-                  font-size: 10px;
-                }
-                @media (min-width: 750px) {
-                  .timer-countdown-{{ section.id }}-{{ block.id }} .time-block__unit {
-                    font-size: 12px;
-                  }
-                }
-                .timer-countdown-{{ section.id }}-{{ block.id }} .time-divier {
-                  position: relative;
-                  width: 1px;
-                  min-height: 100%;
-                  background-color: var(--color);
-                }
-              </style>
-
-              <div
-                class="timer-countdown-{{ section.id }}-{{ block.id }}"{{ block.shopify_attributes }}
-                style="color: {{ block.settings.color }}; --color: {{ block.settings.color }};"
-              >
-                <div class="time-block">
-                  <span class="time-block__num js-timer-days">00</span>
-                  <span class="time-block__unit">Jours</span>
-                </div>
-                {% comment %} <span class="time-colon">:</span> {% endcomment %}
-                <span class="time-divier"></span>
-                <div class="time-block">
-                  <span class="time-block__num js-timer-hours">00</span>
-                  <span class="time-block__unit">Heures</span>
-                </div>
-                {% comment %} <span class="time-colon">:</span> {% endcomment %}
-                <span class="time-divier"></span>
-                <div class="time-block">
-                  <span class="time-block__num js-timer-minutes">00</span>
-                  <span class="time-block__unit">Minutes</span>
-                </div>
-                {% comment %} <span class="time-colon">:</span> {% endcomment %}
-                <span class="time-divier"></span>
-                <div class="time-block">
-                  <span class="time-block__num js-timer-seconds">00</span>
-                  <span class="time-block__unit">Secondes</span>
-                </div>
-              </div>
-
-              <style>
-                .timer-countdown-completed-text-{{ section.id }}-{{ block.id }} {
-                  display: none;
-                }
-              </style>
-              <div
-                class="timer-countdown-completed-text-{{ section.id }}-{{ block.id }}"
-              >
-                {{ block.settings.timer_completed_text }}
-              </div>
-
-              <script type="text/javascript">
-                (function () {
-
-                  function startTimer() {
-                    const second = 1000,
-                      minute = second * 60,
-                      hour = minute * 60,
-                      day = hour * 24,
-                      wrapper = document.querySelector(
-                        '.timer-countdown-{{ section.id }}-{{ block.id }}'
-                      ),
-                      countDown = new Date('{{ block.settings.year }}-{{ block.settings.month }}-{{ block.settings.day }}T{{ block.settings.hour }}:{{ block.settings.minute }}:00Z').getTime();
-
-                    console.log('start timer, end date:' + countDown)
-                    const interval = setInterval(function () {
-                      let now = new Date().getTime(),
-                        distance = countDown - now,
-                        days = Math.floor(distance / day),
-                        hours = Math.floor((distance % day) / hour),
-                        minutes = Math.floor((distance % hour) / minute),
-                        seconds = Math.floor((distance % minute) / second);
-
-                      (wrapper.querySelector('.js-timer-days').innerText = (
-                        days
-                      )),
-                        (wrapper.querySelector('.js-timer-hours').innerText = (
-                          hours
-                        )),
-                        (wrapper.querySelector('.js-timer-minutes').innerText = (
-                          minutes
-                        )),
-                        (wrapper.querySelector('.js-timer-seconds').innerText = (
-                          seconds
-                        ));
-
-                      if (distance < 0) {
-                        wrapper.querySelector('.js-timer-days').innerText = '00';
-                        wrapper.querySelector('.js-timer-hours').innerText = '00';
-                        wrapper.querySelector('.js-timer-minutes').innerText = '00';
-                        wrapper.querySelector('.js-timer-seconds').innerText = '00';
-                        {% if block.settings.hide_timer_on_completed %}
-                          wrapper.style.display = 'none';
-                        {% endif %}
-                        document.querySelector(
-                          '.timer-countdown-completed-text-{{ section.id }}-{{ block.id }}'
-                        ).style.display = 'block';
-
-                        clearInterval(interval);
-                      }
-
-                    }, second);
-                    document.addEventListener('shopify:section:unload', function (event) {
-                      if (event.detail.sectionId === '{{ section.id }}') clearInterval(interval);
-                    });
-                  }
-                  startTimer()
-                  if (window.Shopify && Shopify.designMode) {
-                    document.addEventListener('shopify:section:load', function (event) {
-                      if (event.detail.sectionId === '{{ section.id }}') {
-                        startTimer();
-                      }
-                    });
-                  }
-                })();
-              </script>
-            {% else %}
-
-          {% endcase %}
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</section>
-
 {% schema %}
 {
   "name": "🏆 Compteur Elite",
   "settings": [
     {
       "type": "header",
-      "content": "🏆 Application Compteur Elite",
-      "info": "👉 Version de l'application Shopiweb Premium"
+      "content": "🏆 Application Compteur Elite"
     },
     {
       "type": "paragraph",
-      "content": "Documentation FR : [Compteur Elite by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/sections/compteur-elite)"
+      "content": "Application de compteur élite avec animations"
     },
     {
       "type": "header",
-      "content": "General"
+      "content": "Configuration générale"
     },
     {
       "type": "select",
       "id": "bg_color",
-      "label": "Couleur de l'arrière plan",
+      "label": "Background color",
       "default": "bg-body text-body",
       "options": [
         {
@@ -302,7 +36,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
           "label": "Tertiaire"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Neutre",
           "value": "bg-white text-dark",
           "label": "Blanc"
         },
@@ -346,7 +80,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "checkbox",
       "id": "bg_gradient",
-      "label": "Dégradé d'arrière-plan",
+      "label": "Dégradé de fond",
       "default": false,
       "info": "Ne s'applique pas aux couleurs claires"
     },
@@ -427,7 +161,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "image_picker",
           "id": "subtitle_img",
-          "label": "Légende Image"
+          "label": "Caption Image"
         },
         {
           "type": "text",
@@ -438,12 +172,12 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "text",
           "id": "subtitle",
-          "label": "Légende Texte"
+          "label": "Caption Texte"
         },
         {
           "type": "select",
           "id": "subtitle_size",
-          "label": "Taille de la légende",
+          "label": "Caption size",
           "default": "fs-5",
           "options": [
             {
@@ -481,19 +215,19 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "color",
           "id": "color_caption",
-          "label": "Couleur de la légende",
+          "label": "Caption color",
           "default": "#6c757d"
         },
         {
           "type": "inline_richtext",
           "id": "title",
-          "label": "Titre",
+          "label": "Title",
           "default": "Texte du compteur"
         },
         {
           "type": "select",
           "id": "heading_tag",
-          "label": "Balise titre (SEO)",
+          "label": "Heading tag (SEO)",
           "default": "h2",
           "options": [
             {
@@ -529,7 +263,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "select",
           "id": "title_size",
-          "label": "Taille du titre",
+          "label": "Title size",
           "default": "h2",
           "options": [
             {
@@ -566,56 +300,56 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         },
         {
           "type": "header",
-          "content": "🏆 Application SVG Sous-titre",
-          "info": "👉 Application Version Shopiweb Premium"
+          "content": "🏆 SVG Subtitle Application",
+          "info": "👉 Shopiweb Premium Application Version"
         },
         {
           "type": "color",
           "id": "color_svg_h2",
-          "label": "Couleur du SVG",
+          "label": "SVG color",
           "default": "#fff"
         },
         {
           "type": "richtext",
           "id": "description",
-          "label": "Description (facultatif)",
-          "default": "<p>Ajouter une description facultative à cette section</p>"
+          "label": "Description (optional)",
+          "default": "<p>Add an optional description to this section</p>"
         },
         {
           "type": "select",
           "id": "description_size",
-          "label": "Taille de description",
+          "label": "Description size",
           "default": "fs-5",
           "options": [
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-1",
-              "label": "Extra Grand"
+              "label": "Extra Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-2",
-              "label": "Super Grand"
+              "label": "Super Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-3",
-              "label": "Très Grand"
+              "label": "Very Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-4",
-              "label": "Grand"
+              "label": "Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-5",
-              "label": "Moyen"
+              "label": "Medium"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-6",
-              "label": "Petit"
+              "label": "Small"
             }
           ]
         }
@@ -1298,7 +1032,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "checkbox",
           "id": "hide_timer_on_completed",
-          "label": "Cacher le compteur une fois terminé",
+          "label": "Hide counter when completed",
           "default": false
         },
         {
@@ -1310,7 +1044,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "color",
           "id": "color",
-          "label": "Couleur",
+          "label": "Color",
           "default": "#FFFFFF"
         }
       ]

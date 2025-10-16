@@ -117,7 +117,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                 <div class="row align-items-center {{ section.settings.img_align_desktop }}">
                     <div class="col-lg-6 mb-6 mb-lg-0">
                         {% unless section.settings.image %}
-                            {{ 'image' | placeholder_svg_tag: 'bg-light' }}
+            "label": "Color",
                         {% else %}
                             <img
                                 class="img-fluid rounded {{ section.settings.img_thumbnail }} {{ section.settings.shadow_sp }} {{ section.settings.border_color }}"
@@ -201,7 +201,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 {% schema %}
 {
-  "name": "🏆 Âge Verification Popup",
+  "name": "🏆 Age Verification Popup",
   "limit": 1,
   "enabled_on": {
     "groups": [
@@ -211,33 +211,33 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
   "settings": [
     {
       "type": "header",
-      "content": "🏆 Application Âge Verification Popup",
-      "info": "👉 Version de l'application Shopiweb Premium"
+      "content": "🏆 Age Verification Popup Application",
+      "info": "👉 Shopiweb Premium App Version"
     },
     {
       "type": "paragraph",
-      "content": "Documentation FR : [Âge Verification Popup by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/sections/age-verification-popup)"
+      "content": "Documentation EN: [Age Verification Popup by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/sections/age-verification-popup)"
     },
     {
       "type": "paragraph",
-      "content": "REMARQUE : comme la fenêtre popup ne s'affichera qu'une seule fois, vous pouvez la déclencher par une URL directe (paramètre). Par exemple : https://my-store.myshopify.com/?age-verfication-modal=true"
+      "content": "NOTE: As the popup window will only display once, you can trigger it via a direct URL (parameter). For example: https://my-store.myshopify.com/?age-verfication-modal=true"
     },
     {
       "type": "range",
       "id": "min_age",
-      "label": "Âge minimum",
+      "label": "Minimum age",
       "min": 16,
       "max": 21,
       "default": 18
     },
     {
       "type": "header",
-      "content": "Déclenchement"
+      "content": "Trigger"
     },
     {
       "type": "range",
       "id": "days_to_wait",
-      "label": "Jours d'attente",
+      "label": "Days to wait",
       "info": "Nombre de jours à attendre avant d'afficher à nouveau la fenêtre popup.",
       "default": 30,
       "min": 1,
@@ -251,7 +251,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "text_align",
-      "label": "Alignement du texte",
+      "label": "Text alignment",
       "default": "text-start",
       "options": [
         {
@@ -267,44 +267,44 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "inline_richtext",
       "id": "title",
-      "label": "Titre",
+      "label": "Title",
       "default": "Vérification de l'âge"
     },
     {
       "type": "select",
       "id": "title_size",
-      "label": "Taille du titre",
+      "label": "Title size",
       "default": "h3",
       "options": [
         {
-          "group": "Titre Standard",
+          "group": "Standard Title",
           "value": "h1",
-          "label": "Très Grand"
+          "label": "Extra Large"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard Title",
           "value": "h2",
-          "label": "Grand"
+          "label": "Large"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard Title",
           "value": "h3",
-          "label": "Moyen"
+          "label": "Medium"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard Title",
           "value": "h4",
-          "label": "Petit"
+          "label": "Small"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard Title",
           "value": "h5",
-          "label": "Très Petit"
+          "label": "Extra Small"
         },
         {
-          "group": "Titre Standard",
+          "group": "Standard Title",
           "value": "h6",
-          "label": "Super Petit"
+          "label": "Super Small"
         }
       ]
     },
@@ -312,50 +312,50 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "type": "richtext",
       "id": "description",
       "label": "Description",
-      "default": "<p>Veuillez confirmer votre âge pour continuer. <strong>Vous devez avoir plus de 18 ans ou l'âge de la majorité dans la juridiction à partir de laquelle vous accédez au site Web.</strong></p>"
+      "default": "<p>Please confirm your age to continue. <strong>You must be over 18 years old or the age of majority in the jurisdiction from which you access the website.</strong></p>"
     },
     {
       "type": "select",
       "id": "description_size",
-      "label": "Taille de description",
+      "label": "Description size",
       "default": "fs-5",
       "options": [
         {
-          "group": "Description Standard",
+          "group": "Standard Description",
           "value": "fs-1",
-          "label": "Extra Grand"
+          "label": "Extra Large"
         },
         {
-          "group": "Description Standard",
+          "group": "Standard Description",
           "value": "fs-2",
-          "label": "Super Grand"
+          "label": "Super Large"
         },
         {
-          "group": "Description Standard",
+          "group": "Standard Description",
           "value": "fs-3",
-          "label": "Très Grand"
+          "label": "Very Large"
         },
         {
-          "group": "Description Standard",
+          "group": "Standard Description",
           "value": "fs-4",
-          "label": "Grand"
+          "label": "Large"
         },
         {
-          "group": "Description Standard",
+          "group": "Standard Description",
           "value": "fs-5",
-          "label": "Moyen"
+          "label": "Medium"
         },
         {
-          "group": "Description Standard",
+          "group": "Standard Description",
           "value": "fs-6",
-          "label": "Petit"
+          "label": "Small"
         }
       ]
     },
     {
       "type": "select",
       "id": "input_group_size",
-      "label": "Taille des éléments du formulaire",
+      "label": "Form element size",
       "default": "",
       "options": [
         {
@@ -371,49 +371,49 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "text",
       "id": "btn_text",
-      "label": "Texte du bouton",
-      "default": "Continuer"
+      "label": "Button text",
+      "default": "Continue"
     },
     {
       "type": "select",
       "id": "btn_color",
-      "label": "Couleur du bouton",
+      "label": "Color du bouton",
       "default": "btn-primary",
       "options": [
         {
           "group": "Normal",
           "value": "btn-link",
-          "label": "Lien"
+          "label": "Link"
         },
         {
           "group": "Normal",
           "value": "btn-light",
-          "label": "Claire"
+          "label": "Light"
         },
         {
           "group": "Normal",
           "value": "btn-dark",
-          "label": "Sombre"
+          "label": "Dark"
         },
         {
           "group": "Normal",
           "value": "btn-primary",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
           "group": "Normal",
           "value": "btn-secondary",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
           "group": "Normal",
           "value": "btn-tertiary",
-          "label": "Tertiaire"
+          "label": "Tertiary"
         },
         {
           "group": "Normal",
           "value": "btn-success",
-          "label": "Succès"
+          "label": "Success"
         },
         {
           "group": "Normal",
@@ -423,7 +423,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "group": "Normal",
           "value": "btn-warning",
-          "label": "Avertissement"
+          "label": "Warning"
         },
         {
           "group": "Normal",
@@ -433,47 +433,47 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "group": "Contour",
           "value": "btn-outline-light",
-          "label": "Contour Claire"
+          "label": "Outline Light"
         },
         {
           "group": "Contour",
           "value": "btn-outline-dark",
-          "label": "Contour Sombre"
+          "label": "Outline Dark"
         },
         {
           "group": "Contour",
           "value": "btn-outline-primary",
-          "label": "Contour Primaire"
+          "label": "Outline Primary"
         },
         {
           "group": "Contour",
           "value": "btn-outline-secondary",
-          "label": "Contour Secondaire"
+          "label": "Outline Secondary"
         },
         {
           "group": "Contour",
           "value": "btn-outline-tertiary",
-          "label": "Contour Tertiaire"
+          "label": "Outline Tertiary"
         },
         {
           "group": "Contour",
           "value": "btn-outline-success",
-          "label": "Contour Succès"
+          "label": "Outline Success"
         },
         {
           "group": "Contour",
           "value": "btn-outline-danger",
-          "label": "Contour Danger"
+          "label": "Outline Danger"
         },
         {
           "group": "Contour",
           "value": "btn-outline-warning",
-          "label": "Contour Avertissement"
+          "label": "Outline Warning"
         },
         {
           "group": "Contour",
           "value": "btn-outline-info",
-          "label": "Contour Info"
+          "label": "Outline Info"
         }
       ]
     },
@@ -481,7 +481,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "type": "richtext",
       "id": "notice",
       "label": "Notice",
-      "default": "<p>En continuant à visiter notre magasin, vous acceptez nos conditions d'utilisation et notre politique de confidentialité.</p>"
+      "default": "<p>By continuing to visit our store, you accept our terms of use and privacy policy.</p>"
     },
     {
       "type": "header",
@@ -515,51 +515,51 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "img_crop",
-      "label": "Recadrage de l'image",
+      "label": "Image crop",
       "default": "center",
       "options": [
         {
           "value": "top",
-          "label": "Haut"
+          "label": "Top"
         },
         {
           "value": "center",
-          "label": "Centre"
+          "label": "Center"
         },
         {
           "value": "bottom",
-          "label": "Bas"
+          "label": "Bottom"
         },
         {
           "value": "left",
-          "label": "Gauche"
+          "label": "Left"
         },
         {
           "value": "right",
-          "label": "Droite"
+          "label": "Right"
         }
       ]
     },
     {
       "type": "select",
       "id": "img_thumbnail",
-      "label": "Bordure de l'image",
+      "label": "Image border",
       "default": "img-thumbnail",
       "options": [
         {
           "value": "",
-          "label": "Aucune"
+          "label": "None"
         },
         {
           "value": "img-thumbnail",
-          "label": "Bordure"
+          "label": "Border"
         }
       ]
     },
     {
       "type": "select",
       "id": "border_color",
-      "label": "Couleur de la bordure",
+      "label": "Border color",
       "options": [
         {
           "value": "",
@@ -567,27 +567,27 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         },
         {
           "value": "border-primary",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
           "value": "border-secondary",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
           "value": "border-tertiary",
-          "label": "Tertiaire"
+          "label": "Tertiary"
         },
         {
           "value": "border-dark",
-          "label": "Sombre"
+          "label": "Dark"
         },
         {
           "value": "border-success",
-          "label": "Succès"
+          "label": "Success"
         },
         {
           "value": "border-warning",
-          "label": "Avertissement"
+          "label": "Warning"
         },
         {
           "value": "border-danger",
@@ -603,27 +603,27 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "shadow_sp",
-      "label": "Ombre",
+      "label": "Shadow",
       "options": [
         {
           "value": "shadow-none",
-          "label": "Aucune"
+          "label": "None"
         },
         {
           "value": "shadow-1",
-          "label": "Ombre légère"
+          "label": "Light shadow"
         },
         {
           "value": "shadow-2",
-          "label": "Ombre partiel"
+          "label": "Partial shadow"
         },
         {
           "value": "shadow-3",
-          "label": "Ombre profonde"
+          "label": "Deep shadow"
         },
         {
           "value": "shadow-4",
-          "label": "Ombre totale"
+          "label": "Full shadow"
         }
       ],
       "default": "shadow-1"
@@ -631,16 +631,16 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "img_align_desktop",
-      "label": "Alignement de l'image (bureau)",
+      "label": "Image alignment (desktop)",
       "default": "flex-lg-row",
       "options": [
         {
           "value": "flex-lg-row",
-          "label": "Gauche"
+          "label": "Left"
         },
         {
           "value": "flex-lg-row-reverse",
-          "label": "Droite"
+          "label": "Right"
         }
       ]
     },
@@ -651,37 +651,37 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "text",
       "id": "text_month_label",
-      "label": "Mois label",
+      "label": "Month label",
       "default": "Mois"
     },
     {
       "type": "text",
       "id": "text_month_placeholder",
-      "label": "Mois placeholder",
+      "label": "Month placeholder",
       "default": "MM"
     },
     {
       "type": "text",
       "id": "text_day_label",
-      "label": "Jour label",
+      "label": "Day label",
       "default": "Jour"
     },
     {
       "type": "text",
       "id": "text_day_placeholder",
-      "label": "Jour placeholder",
+      "label": "Day placeholder",
       "default": "JJ"
     },
     {
       "type": "text",
       "id": "text_year_label",
-      "label": "Année label",
+      "label": "Year label",
       "default": "Année"
     },
     {
       "type": "text",
       "id": "text_year_placeholder",
-      "label": "Année placeholder",
+      "label": "Year placeholder",
       "default": "AAAA"
     },
     {
@@ -691,7 +691,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "pt",
-      "label": "Padding supérieure",
+      "label": "Top padding",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -700,7 +700,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "pb",
-      "label": "Padding inférieure",
+      "label": "Bottom padding",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -709,7 +709,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "mt",
-      "label": "Marge supérieure",
+      "label": "Top margin",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -718,7 +718,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "mb",
-      "label": "Marge inférieure",
+      "label": "Bottom margin",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -727,7 +727,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
   ],
   "presets": [
     {
-      "name": "🏆 Âge Verification Popup",
+      "name": "🏆 Age Verification Popup",
       "category": "General"
     }
   ]

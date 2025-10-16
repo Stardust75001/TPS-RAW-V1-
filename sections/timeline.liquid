@@ -11,76 +11,44 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     assign pt = section.settings.pt | prepend: 'pt-'
     assign pb = section.settings.pb | prepend: 'pb-'
     assign mt = section.settings.mt | prepend: 'mt-'
-    assign mb = section.settings.mb | prepend: 'mb-'
+          "label": "Border color",
 
-    assign bg_color = section.settings.bg_color
-
-    if section.settings.bg_gradient
-        assign bg_color = bg_color | append: ' bg-gradient'
-    endif
-
-    assign btn_shadow_sp = settings.btn_shadow_sp
-
-    assign brand_img_width = section.settings.brand_image_size
-%}
-
-{% style %}
-#background-text-{{ section.id }} {
-    font-size: calc(2em * {{ section.settings.title_overlay_size }});
-}
-  
-.timeline-list::before {
-    width: {{ section.settings.timeline_line_width }}px;   
-    background: rgba(var(--{{ section.settings.timeline_line_color }}-rgb), .5);
-}
-.timeline-list-item::before {
-    background: rgba(var(--{{ section.settings.timeline_line_color }}-rgb), 1);
-    width: {{ section.settings.timeline_dot_diameter }}px;
-    height: {{ section.settings.timeline_dot_diameter }}px;
-    transform: translateX({{ section.settings.timeline_dot_diameter | divided_by: 2 }}px);
-}
-.timeline-list-item:nth-child(odd)::before {
-    transform: translateX(-{{ section.settings.timeline_dot_diameter | divided_by: 2 }}px);
-}
-@media (max-width: 575px) {
-    .timeline-list-item::before {
-        transform: translateX(-{{ section.settings.timeline_dot_diameter | divided_by: 2 }}px);
-    }
-}
-{% endstyle %}
-
-<section 
-    id="timeline-{{ section.id }}" 
-    class="timeline overflow-hidden {{ bg_color }} {{ section.settings.text_align }} {{ pt }} {{ pb }} {{ mt }} {{ mb }}">
-    <div class="{{ section.settings.container }}" style="max-width: {{ section.settings.max_width }}px;">
-        {% unless section.settings.subtitle_img == blank %}
-            <div>
-                <img
-                    class="img-fluid mb-5"
-                    src="{{ section.settings.subtitle_img.src | image_url: width: brand_img_width }}"
-                    alt="{{ section.settings.subtitle_img.alt | escape }}"
-                    width="{{ brand_img_width }}"
-                    height="auto"
-                    loading="lazy">
-            </div>
-        {% endunless %}
-        
-        {% unless section.settings.subtitle == blank %}
-            <div>
-                <p class="subtitle text-uppercase fw-500 mb-3 {{ section.settings.subtitle_size }}"
-                    style="color:{{ section.settings.color_caption }};">
-                    {{ section.settings.subtitle }}
-                </p>
-            </div>
-        {% endunless %} 
-      
-        {% unless section.settings.title == blank %}
-            <div class="overlay-text-container my-4" style="position: relative;">
-                {% unless section.settings.title_overlay == blank %}
-                    <div id="background-text-{{ section.id }}" class="background-text-overlay d-none d-lg-block"
-                          style="color:{{ section.settings.color_title_overlay }};">
-                        {{ section.settings.title_overlay }}
-                    </div>
+            {
+              "value": "",
+              "label": "Default"
+            },
+            {
+              "value": "border-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "border-secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "border-tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "border-dark",
+              "label": "Dark"
+            },
+            {
+              "value": "border-success",
+              "label": "Success"
+            },
+            {
+              "value": "border-warning",
+              "label": "Warning"
+            },
+            {
+              "value": "border-danger",
+              "label": "Danger"
+            },
+            {
+              "value": "border-info",
+              "label": "Info"
+            }
                 {% endunless %}
                 <{{ section.settings.heading_tag }} class="title mb-4 {{ section.settings.title_size }}">
                     {{ section.settings.title }}
@@ -96,44 +64,28 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                         {% endif %}
                     {% endif %}
                 </{{ section.settings.heading_tag }}>
-            </div>
+          "label": "Shadow",
         {% endunless %}
-        {% unless section.settings.description == blank %}
-            <div class="description rte text-muted {% if section.settings.title_overlay %}mt-lg-6{% else %}mt-0{% endif %} mb-5 {{ section.settings.description_size }}">
-                {{ section.settings.description }}
-            </div>
-        {% endunless %}
-        <ul class="timeline-list">
-            {% for block in section.blocks %}
-                {% liquid
-                    case block.settings.img_orientation
-                        when 'square'
-                            assign img_width  = 600
-                            assign img_height = 600
-                        when 'landscape-4x3'
-                            assign img_width  = 600
-                            assign img_height = 600 | divided_by: 4 | times: 3 | round
-                        when 'landscape-16x9'
-                            assign img_width  = 600
-                            assign img_height = 600 | divided_by: 16 | times: 9 | round
-                        when 'potrait-3x4'
-                            assign img_width  = 600 
-                            assign img_height = 600 | divided_by: 3 | times: 4 | round
-                        when 'potrait-9x16'
-                            assign img_width  = 600 
-                            assign img_height = 600 | divided_by: 9 | times: 16 | round
-                        when 'adapt'
-                            assign img_width  = 600
-                            assign img_height = 600 | divided_by: block.settings.img.aspect_ratio | round
-                    endcase
-                %}
-                <li class="timeline-list-item enter-view py-4" {{ block.shopify_attributes }}>
-                    <div 
-                        class="{% unless block.settings.animation == '' %}animate__animated opacity-0 {{ block.settings.animation_speed }}{% endunless %}"
-                        data-animate-class="{{ block.settings.animation }}"
-                        style="animation-delay: {{ forloop.index | times: 150 }}ms;">
-                        <div 
-                            class="card {{ block.settings.shadow_sp }} {{ block.settings.border_color }}"
+            {
+              "value": "shadow-none",
+              "label": "None"
+            },
+            {
+              "value": "shadow-1",
+              "label": "Light shadow"
+            },
+            {
+              "value": "shadow-2",
+              "label": "Partial shadow"
+            },
+            {
+              "value": "shadow-3",
+              "label": "Deep shadow"
+            },
+            {
+              "value": "shadow-4",
+              "label": "Full shadow"
+            }
                             style="border-width: {{ block.settings.border_width }}px;">
                             {% unless block.settings.img == blank %}
                                 <img
@@ -182,6 +134,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 </section>
 
 {% schema %}
+
 {
   "name": "Chronologie",
   "settings": [
@@ -631,7 +584,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "btn_color",
-      "label": "Couleur du bouton",
+    "label": "Button color",
       "default": "btn-primary",
       "options": [
         {
@@ -805,6 +758,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
           "type": "select",
           "id": "border_color",
           "label": "Couleur de la bordure",
+        "label": "Border color",
           "options": [
             {
               "value": "",
@@ -813,34 +767,42 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
             {
               "value": "border-primary",
               "label": "Primaire"
+            "label": "Primary"
             },
             {
               "value": "border-secondary",
               "label": "Secondaire"
+            "label": "Secondary"
             },
             {
               "value": "border-tertiary",
               "label": "Tertiaire"
+            "label": "Tertiary"
             },
             {
               "value": "border-dark",
               "label": "Sombre"
+            "label": "Dark"
             },
             {
               "value": "border-success",
               "label": "Succès"
+            "label": "Success"
             },
             {
               "value": "border-warning",
               "label": "Avertissement"
+            "label": "Warning"
             },
             {
               "value": "border-danger",
               "label": "Danger"
+            "label": "Danger"
             },
             {
               "value": "border-info",
               "label": "Info"
+            "label": "Info"
             }
           ],
           "default": ""
@@ -862,22 +824,27 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
             {
               "value": "shadow-none",
               "label": "Aucune"
+            "label": "None"
             },
             {
               "value": "shadow-1",
               "label": "Ombre légère"
+            "label": "Light shadow"
             },
             {
               "value": "shadow-2",
               "label": "Ombre partiel"
+            "label": "Partial shadow"
             },
             {
               "value": "shadow-3",
               "label": "Ombre profonde"
+            "label": "Deep shadow"
             },
             {
               "value": "shadow-4",
               "label": "Ombre totale"
+            "label": "Full shadow"
             }
           ],
           "default": "shadow-1"
@@ -1332,7 +1299,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
           "type": "richtext",
           "id": "description",
           "label": "Description",
-          "default": "<p>Associez du texte à une image pour mettre l'accent sur le produit, la collection ou l'article de blog de votre choix. Ajoutez des détails sur la disponibilité, le style, ou donnez même un avis.</p>"
+          "default": "<p>Pair text with an image to highlight your chosen product, collection, or blog post. Add details about availability, style, or even provide a review.</p>"
         },
         {
           "type": "select",
@@ -1374,7 +1341,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         },
         {
           "type": "header",
-          "content": "Bouton"
+            "content": "Button"
         },
         {
           "type": "text",
@@ -1521,4 +1488,5 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     }
   ]
 }
+
 {% endschema %}

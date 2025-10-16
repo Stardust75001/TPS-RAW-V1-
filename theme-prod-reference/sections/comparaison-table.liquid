@@ -160,7 +160,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
                                             {% unless header_block.settings.cell_6_img == blank %}
                                                 {% render 'comparison-table-header-img', image: header_block.settings.cell_6_img %}
                                             {% endunless %}
-                                        {% when 7 %}
+                                    "label": "Color"
                                             {% unless header_block.settings.cell_7_img == blank %}
                                                 {% render 'comparison-table-header-img', image: header_block.settings.cell_7_img %}
                                             {% endunless %}
@@ -282,7 +282,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "bg_color",
-      "label": "Couleur de l'arrière plan",
+      "label": "Background color",
       "default": "bg-body text-body",
       "options": [
         {
@@ -325,7 +325,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "checkbox",
       "id": "bg_gradient",
-      "label": "Dégradé d'arrière-plan",
+      "label": "Background gradient",
       "default": false,
       "info": "Ne s'applique pas aux couleurs claires"
     },
@@ -375,7 +375,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "image_picker",
       "id": "subtitle_img",
-      "label": "Légende Image"
+      "label": "Caption Image"
     },
     {
       "type": "text",
@@ -386,12 +386,12 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "text",
       "id": "subtitle",
-      "label": "Légende Texte"
+      "label": "Caption Texte"
     },
     {
       "type": "select",
       "id": "subtitle_size",
-      "label": "Taille de la légende",
+      "label": "Caption size",
       "default": "fs-5",
       "options": [
         {
@@ -429,13 +429,13 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "color",
       "id": "color_caption",
-      "label": "Couleur de la légende",
+      "label": "Caption color",
       "default": "#6c757d"
     },
     {
       "type": "text",
       "id": "title_overlay",
-      "label": "Titre overlay",
+      "label": "Title overlay",
       "info": "Visible sur ordinateur, masqué sur mobile pour optimiser la lisibilité."
     },
     {
@@ -464,19 +464,19 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "color",
       "id": "color_title_overlay",
-      "label": "Couleur du titre overlay",
+      "label": "Color du titre overlay",
       "default": "#000000"
     },
     {
       "type": "inline_richtext",
       "id": "title",
-      "label": "Titre",
+      "label": "Title",
       "default": "Tableau Comparatif"
     },
     {
       "type": "select",
       "id": "heading_tag",
-      "label": "Balise titre (SEO)",
+      "label": "Heading tag (SEO)",
       "default": "h2",
       "options": [
         {
@@ -512,7 +512,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "title_size",
-      "label": "Taille du titre",
+      "label": "Title size",
       "default": "h2",
       "options": [
         {
@@ -570,7 +570,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "richtext",
       "id": "description",
-      "label": "Description (facultatif)",
+      "label": "Description (optional)",
       "default": "<p>Ajouter une description facultative à cette section</p>"
     },
     {
@@ -634,8 +634,8 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "border_color",
-      "label": "Couleur de la bordure",
-      "info": "Remarque : correspond à la couleur de la bordure du tableau",
+      "label": "Color de la bordure",
+      "info": "Remarque : correspond à la color de la bordure du tableau",
       "options": [
         {
           "value": "",
@@ -723,11 +723,11 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "table_border_color",
-      "label": "Couleur des lignes du tableau",
+      "label": "Color des lignes du tableau",
       "options": [
         {
           "value": "",
-          "label": "Par défaut"
+          "label": "Default"
         },
         {
           "value": "border-primary",
@@ -775,7 +775,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "table_thead_color",
-      "label": "Couleur de l'en-tête tableau",
+      "label": "Color de l'en-tête tableau",
       "default": "",
       "options": [
         {
@@ -795,7 +795,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "table_tfoot_color",
-      "label": "Couleur du pied de tableau",
+      "label": "Color du pied de tableau",
       "default": "",
       "options": [
         {
@@ -815,14 +815,14 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "table_second_col_color",
-      "label": "Couleur du texte de la deuxième colonne",
-      "info": "Sélectionnez une couleur différente pour mettre davantage en valeur votre produit.",
+      "label": "Color du texte de la deuxième colonne",
+      "info": "Sélectionnez une color différente pour mettre davantage en valeur votre produit.",
       "default": "text-primary",
       "options": [
         {
           "group": "Par défaut",
           "value": "",
-          "label": "Par défaut"
+          "label": "Default"
         },
         {
           "group": "Intermédiaire",
@@ -879,7 +879,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "table_second_bg_color",
-      "label": "Couleur d'arrière plan de la deuxième colonne",
+      "label": "Color d'arrière plan de la deuxième colonne",
       "default": "",
       "options": [
         {
@@ -942,7 +942,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "checkbox",
       "id": "table_striped",
-      "label": "Afficher la couleur en alternance des rangées",
+      "label": "Afficher la color en alternance des rangées",
       "default": true
     },
     {
@@ -1078,7 +1078,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "text",
           "id": "title",
-          "label": "Titre",
+          "label": "Title",
           "default": "Nom de l'élément"
         },
         {

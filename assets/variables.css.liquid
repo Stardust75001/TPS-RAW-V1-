@@ -1,14 +1,14 @@
 /* ========================================================================
-   INFORMATIONS GÉNÉRALES SUR LE SITE
-   Propriété de © 2019/2024 Shopiweb.fr
-   Pour plus d'informations, visitez : https://www.shopiweb.fr
-   ======================================================================== */
+    GENERAL INFORMATION ABOUT THE SITE
+    Property of © 2019/2024 Shopiweb.fr
+    For more information, visit: https://www.shopiweb.fr
+    ======================================================================== */
 
 /* =====================
-   Polices de caractères
+   Fonts
    ===================== */
 {% comment %} 
-    Définition des polices pour les en-têtes et le corps du texte. 
+    Definition of fonts for headings and body text. 
 {% endcomment %}
 {% if settings.font_headings_custom == blank %}
     {{ settings.font_headings | font_face: font_display: 'swap' }}
@@ -27,10 +27,10 @@
 {% endunless %}
 
 /* =====================
-   Variable CSS
+   CSS Variables
    ===================== */
 {% comment %}
-    Définition des couleurs principales, secondaires, et autres variables CSS globales.
+    Definition of main, secondary, and other global CSS variables.
 {% endcomment %}
 :root {
     --bs-primary: {{ settings.color_primary }};
@@ -107,10 +107,10 @@
 
 
 /* =====================
-   Boutons
+   Buttons
    ===================== */
 {% comment %}
-    Styles personnalisés pour les boutons, y compris les espacements et les transformations de texte.
+    Custom styles for buttons, including spacing and text transformations.
 {% endcomment %}
 body .btn {
     letter-spacing: {{ settings.buttons_letter_spacing }}rem;
@@ -159,10 +159,10 @@ body .btn-lg {
 
 
 /* =====================
-   Formulaires
+   Forms
    ===================== */
 {% comment %}
-    Styles spécifiques aux contrôles de formulaire comme les sélecteurs et les zones de texte.
+    Specific styles for form controls such as selectors and text areas.
 {% endcomment %}
 .form-control-md,
 .form-select-md {
@@ -189,7 +189,7 @@ body .btn-lg {
    Offcanvas / Modal
    ===================== */
 {% comment %}
-    Paramètres d'arrière-plan et de filtre pour les modales et les offcanvas.
+    Background and filter settings for modals and offcanvas.
 {% endcomment %}
 body .offcanvas-backdrop,
 body .modal-backdrop {
@@ -200,10 +200,10 @@ body .modal-backdrop {
 }
 
 /* =====================
-   Accordéon
+   Accordion
    ===================== */
 {% comment %}
-    Style spécifique pour les boutons d'accordéon et les icônes.
+    Specific style for accordion buttons and icons.
 {% endcomment %}
 .accordion {
     --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='{{ settings.color_body_text | replace: '#', '%23' }}'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
@@ -211,10 +211,10 @@ body .modal-backdrop {
 }
 
 /* =====================
-   Autres styles
+   Other styles
    ===================== */
 {% comment %}
-    Styles divers pour des éléments spécifiques comme les menus et les boutons de fermeture.
+    Various styles for specific elements such as menus and close buttons.
 {% endcomment %}
 #offcanvas-menu-nav .nav-link[aria-expanded]:after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='{{ settings.color_body_text | replace: '#', '%23' }}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' y1='5' x2='12' y2='19'%3E%3C/line%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E")
@@ -228,10 +228,10 @@ body .modal-backdrop {
 }
 
 /* =====================
-   Personnalisation des prix
+   Price customization
    ===================== */
 {% comment %}
-    Couleur spécifique pour le prix final des produits.
+    Specific color for the final price of products.
 {% endcomment %}
 .product-item-price-final,
 .product-price-final {

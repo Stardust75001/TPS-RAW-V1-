@@ -1,7 +1,7 @@
 // Import dynamique de la liste Pantone
 import { pantoneColors } from "./pantone-colors.js";
 
-// Génération dynamique des pastilles Pantone selon les variantes du produit
+// Dynamically generate Pantone swatches based on product variants
 document.addEventListener("DOMContentLoaded", () => {
   const swatchContainer = document.querySelector(".color-swatches");
   if (!swatchContainer || !window.productVariants) return;
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const colorName = variant.option1?.trim().toLowerCase();
     if (!colorName || colorsDone.has(colorName)) return;
 
-    // Cherche la couleur dans la liste Pantone
+  // Find the color in the Pantone list
     const pantone = pantoneColors.find((c) =>
       c.name.toLowerCase().includes(colorName)
     );
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     swatch.style.background = pantone.hex;
     swatch.title = pantone.name;
 
-    // Ajoute un écouteur pour mettre à jour le label au clic
+  // Add a listener to update the label on click
     swatch.addEventListener("click", function () {
       const label = swatchContainer
         .closest(".product-option-wrapper")
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     colorsDone.add(colorName);
   });
 
-  // Initialisation du label à la première couleur si aucune sélection
+  // Initialize the label to the first color if none selected
   const label = swatchContainer
     .closest(".product-option-wrapper")
     ?.querySelector(".color-swatches-title span");
@@ -53,10 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 /* ========================================================================
-   INFORMATIONS GÉNÉRALES SUR LE SITE
-   Propriété de © 2019/2024 Shopiweb.fr
-   Pour plus d'informations, visitez : https://www.shopiweb.fr
-   ======================================================================== */
+  GENERAL INFORMATION ABOUT THE SITE
+  Property of © 2019/2024 Shopiweb.fr
+  For more information, visit: https://www.shopiweb.fr
+  ======================================================================== */
 
 /* =====================
    Formulaire (ATC) basé sur la variante
@@ -370,7 +370,7 @@ window.handleProductOptionChange = async (input) => {
     btn.innerHTML = window.theme.product.unavailable;
   }
 
-  // Mise à jour du label couleur à chaque changement de variante
+  // Update color label on each variant change
   const productOptionWrapper = input.closest(".product-option-wrapper");
   const swatchContainer =
     productOptionWrapper?.querySelector(".color-swatches");
@@ -378,7 +378,7 @@ window.handleProductOptionChange = async (input) => {
     ".color-swatches-title span"
   );
   if (swatchContainer && label) {
-    // Trouve la variante sélectionnée
+  // Find the selected variant
     const selectedOptions = [];
     input
       .closest("form")
@@ -397,13 +397,13 @@ window.handleProductOptionChange = async (input) => {
         JSON.stringify(variant.options) === JSON.stringify(selectedOptions)
     );
     if (variantSelected) {
-      // Affiche le nom complet du choix de couleur de la variante sélectionnée
+  // Display the full name of the selected variant color choice
       label.textContent =
         variantSelected.options && variantSelected.options[0]
           ? variantSelected.options[0]
           : "";
     } else {
-      // Fallback : nom de la pastille sélectionnée
+  // Fallback: name of the selected swatch
       let colorName = input.value;
       const swatchBtn = swatchContainer.querySelector(
         "[data-value='" + input.value.toLowerCase() + "']"
@@ -424,8 +424,8 @@ window.handleProductOptionChange = async (input) => {
 };
 
 /* =====================
-   Article - Changement de la variante
-   ===================== */
+  Item - Change variant
+  ===================== */
 window.handleProductItemVariantChange = (select, event) => {
   if (select.options[select.selectedIndex].dataset.variantImage?.length) {
     select.closest(".product-item").querySelector(".product-item-img").src =
@@ -467,8 +467,8 @@ window.handleProductItemVariantChange = (select, event) => {
 };
 
 /* =====================
-   Bouton (Acheter maintenant)
-   ===================== */
+  Button (Buy now)
+  ===================== */
 window.handleBuyButtonClick = async (btn, event) => {
   event.preventDefault();
   btn.innerHTML = `
@@ -487,8 +487,8 @@ window.handleBuyButtonClick = async (btn, event) => {
 };
 
 /* =====================
-   Galerie de produits
-   ===================== */
+  Product gallery
+  ===================== */
 const initializeProductGallery = () => {
   document
     .querySelectorAll(".product-gallery:not(.init)")
@@ -732,6 +732,9 @@ initializeUpsellModal();
 
 // =====================
 // Couleur dominante des swatches couleur
+// =====================
+// =====================
+// Dominant color of color swatches
 // =====================
 document.addEventListener("DOMContentLoaded", () => {
   document

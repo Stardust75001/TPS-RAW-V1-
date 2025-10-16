@@ -316,12 +316,12 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 {% schema %}
 {
-  "name": "En-tête (navigation)",
+  "name": "Header (navigation)",
   "class": "sticky-top",
   "settings": [
     {
       "type": "paragraph",
-      "content": "Documentation FR : [En-tête (navigation) by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/en-tete/en-tete-navigation)"
+      "content": "Documentation EN: [Header (navigation) by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/en-tete/en-tete-navigation)"
     },
     {
       "type": "header",
@@ -330,42 +330,42 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "bg_color",
-      "label": "Couleur de l'arrière plan",
+      "label": "Background color",
       "options": [
         {
-          "group": "Principal",
+          "group": "Main",
           "value": "bg-primary text-white",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
-          "group": "Principal",
+          "group": "Main",
           "value": "bg-secondary text-white",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
-          "group": "Principal",
+          "group": "Main",
           "value": "bg-tertiary text-white",
-          "label": "Tertiaire"
+          "label": "Tertiary"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-white text-body",
-          "label": "Blanc"
+          "label": "White"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-light text-body",
-          "label": "Claire"
+          "label": "Light"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-dark text-white",
-          "label": "Sombre"
+          "label": "Dark"
         },
         {
-          "group": "Par défaut",
+          "group": "Default",
           "value": "bg-body text-body",
-          "label": "Corps (body)"
+          "label": "Body"
         }
       ],
       "default": "bg-body text-body"
@@ -373,20 +373,20 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "checkbox",
       "id": "bg_gradient",
-      "label": "Dégradé d'arrière-plan",
+      "label": "Background gradient",
       "default": false,
-      "info": "Ne s'applique pas aux couleurs claires"
+      "info": "Does not apply to light colors"
     },
     {
       "type": "select",
       "id": "bg_option",
-      "label": "Option d'arrière-plan",
+      "label": "Background option",
       "default": "",
-      "info": "S'applique uniquement à la page d'accueil.",
+      "info": "Applies only to the home page.",
       "options": [
         {
           "value": "",
-          "label": "Aucune"
+          "label": "None"
         },
         {
           "value": "navbar-transparent",
@@ -394,53 +394,53 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         },
         {
           "value": "navbar-backdrop",
-          "label": "Floue"
+          "label": "Blurred"
         }
       ]
     },
     {
       "type": "checkbox",
       "id": "logo_filter",
-      "label": "Activer l'inversion de couleur pour le logo",
+      "label": "Enable color inversion for logo",
       "default": false,
-      "info": "Inverse les couleurs du logo (p. ex., de blanc à noir) uniquement sur l'option fond transparent."
+      "info": "Inverts logo colors (e.g., from white to black) only on transparent background option."
     },
     {
       "type": "select",
       "id": "container",
-      "label": "Conteneur",
+      "label": "Container",
       "default": "container",
       "options": [
         {
           "value": "container",
-          "label": "Conteneur"
+          "label": "Container"
         },
         {
           "value": "container-fluid",
-          "label": "Pleine largeur"
+          "label": "Full width"
         }
       ]
     },
     {
       "type": "select",
       "id": "shadow",
-      "label": "Ombrage",
+      "label": "Shadow",
       "options": [
         {
           "value": "shadow-none",
-          "label": "Pas d'ombre"
+          "label": "No shadow"
         },
         {
           "value": "shadow-sm",
-          "label": "Ombre légère"
+          "label": "Light shadow"
         },
         {
           "value": "shadow",
-          "label": "Ombre partiel"
+          "label": "Partial shadow"
         },
         {
           "value": "shadow-lg",
-          "label": "Ombre profonde"
+          "label": "Deep shadow"
         }
       ],
       "default": "shadow-sm"
@@ -452,34 +452,34 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "layout_desktop",
-      "label": "Position logo - bureau",
+      "label": "Logo position - desktop",
       "options": [
         {
           "value": "navbar-desktop-logo-left",
-          "label": "Gauche"
+          "label": "Left"
         },
         {
           "value": "navbar-desktop-logo-center",
-          "label": "Centre"
+          "label": "Center"
         }
       ],
       "default": "navbar-desktop-logo-left"
     },
     {
       "type": "header",
-      "content": "🏆 Application SVG Logo",
-      "info": "👉 Application Version Shopiweb Premium"
+      "content": "🏆 SVG Logo Application",
+      "info": "👉 Shopiweb Premium Version Application"
     },
     {
       "type": "html",
       "id": "logo_svg",
-      "label": "Logo SVG (recommandé)",
-      "info": "Insérez le code SVG dans cette zone, sinon laisser vide."
+      "label": "SVG Logo (recommended)",
+      "info": "Insert SVG code in this area, otherwise leave blank."
     },
     {
       "type": "range",
       "id": "logo_svg_height_mobile",
-      "label": "Taille du logo svg - mobile",
+      "label": "SVG logo size - mobile",
       "min": 20,
       "max": 150,
       "step": 2,
@@ -488,7 +488,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "logo_svg_height_desktop",
-      "label": "Taille du logo svg - bureau",
+      "label": "SVG logo size - desktop",
       "min": 20,
       "max": 200,
       "step": 2,
@@ -502,7 +502,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "logo_height_mobile",
-      "label": "Taille du logo - mobile",
+      "label": "Logo size - mobile",
       "min": 20,
       "max": 100,
       "step": 2,
@@ -511,7 +511,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "logo_height_desktop",
-      "label": "Taille du logo - bureau",
+      "label": "Logo size - desktop",
       "min": 20,
       "max": 200,
       "step": 2,
@@ -519,7 +519,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     },
     {
       "type": "header",
-      "content": "Menu bureau"
+      "content": "Desktop menu"
     },
     {
       "type": "link_list",
@@ -530,22 +530,22 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "checkbox",
       "id": "always_show_toggle",
-      "label": "Basculer en menu burger",
+      "label": "Switch to burger menu",
       "default": false
     },
     {
       "type": "select",
       "id": "menu_desktop_font_family",
-      "label": "Police d'écriture",
+      "label": "Font family",
       "default": "",
       "options": [
         {
           "value": "",
-          "label": "Par défaut"
+          "label": "Default"
         },
         {
           "value": "headings-font-family",
-          "label": "Titres"
+          "label": "Headings"
         }
       ]
     },
@@ -556,27 +556,27 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "shadow_sp_img_megamenu",
-      "label": "Ombre image",
+      "label": "Image shadow",
       "options": [
         {
           "value": "shadow-none",
-          "label": "Aucune"
+          "label": "None"
         },
         {
           "value": "shadow-1",
-          "label": "Ombre légère"
+          "label": "Light shadow"
         },
         {
           "value": "shadow-2",
-          "label": "Ombre partiel"
+          "label": "Partial shadow"
         },
         {
           "value": "shadow-3",
-          "label": "Ombre profonde"
+          "label": "Deep shadow"
         },
         {
           "value": "shadow-4",
-          "label": "Ombre totale"
+          "label": "Full shadow"
         }
       ],
       "default": "shadow-1"
@@ -584,7 +584,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "border_color_img_megamenu",
-      "label": "Couleur de la bordure",
+      "label": "Border color",
       "options": [
         {
           "value": "",
@@ -592,27 +592,27 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         },
         {
           "value": "border-primary",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
           "value": "border-secondary",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
           "value": "border-tertiary",
-          "label": "Tertiaire"
+          "label": "Tertiary"
         },
         {
           "value": "border-dark",
-          "label": "Foncé"
+          "label": "Dark"
         },
         {
           "value": "border-success",
-          "label": "Succès"
+          "label": "Success"
         },
         {
           "value": "border-warning",
-          "label": "Avertissement"
+          "label": "Warning"
         },
         {
           "value": "border-danger",
@@ -628,22 +628,22 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "menu_desktop_trigger",
-      "label": "Déclencheur",
+      "label": "Trigger",
       "options": [
         {
           "value": "menu-desktop-click",
-          "label": "Click (recommandé)"
+          "label": "Click (recommended)"
         },
         {
           "value": "menu-desktop-hover",
-          "label": "Survol"
+          "label": "Hover"
         }
       ],
       "default": "menu-desktop-click"
     },
     {
       "type": "header",
-      "content": "Menu mobile"
+      "content": "Mobile menu"
     },
     {
       "type": "link_list",
@@ -654,96 +654,96 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "checkbox",
       "id": "mobile_menu_label",
-      "label": "Label menu mobile",
+      "label": "Mobile menu label",
       "default": true
     },
     {
       "type": "select",
       "id": "menu_mobile_font_family",
-      "label": "Police d'écriture",
+      "label": "Font family",
       "default": "",
       "options": [
         {
           "value": "",
-          "label": "Par défaut"
+          "label": "Default"
         },
         {
           "value": "headings-font-family",
-          "label": "Titres"
+          "label": "Headings"
         }
       ]
     },
     {
       "type": "checkbox",
       "id": "show_account",
-      "label": "Afficher Connexion Compte Client",
-      "info": "Permet d'afficher les liens de connexion et de création de compte client dans le menu mobile sous Bienvenue.",
+      "label": "Show customer account login",
+      "info": "Displays login and account creation links in the mobile menu under Welcome.",
       "default": false
     },
     {
       "type": "link_list",
       "id": "utilities_menu",
-      "label": "Menu utilitaires"
+      "label": "Utilities menu"
     },
     {
       "type": "checkbox",
       "id": "offcanvas_menu_show_cart_upsells",
-      "label": "Afficher les produits upsell du panier",
-      "info": "Active l'affichage de produits complémentaires en fonction du contenu du panier.",
+      "label": "Show cart upsell products",
+      "info": "Enables display of complementary products based on cart contents.",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "language_selector_show",
-      "label": "Afficher le sélecteur de language",
+      "label": "Show language selector",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "currency_selector_show",
-      "label": "Afficher le sélecteur de devise",
+      "label": "Show currency selector",
       "default": true
     },
     {
       "type": "select",
       "id": "lang_currency_btn_color",
-      "label": "Couleur du bouton langue/devise",
+      "label": "Language/currency button color",
       "default": "btn-outline-secondary",
       "options": [
         {
           "group": "Normal",
           "value": "btn-link",
-          "label": "Lien"
+          "label": "Link"
         },
         {
           "group": "Normal",
           "value": "btn-light",
-          "label": "Claire"
+          "label": "Light"
         },
         {
           "group": "Normal",
           "value": "btn-dark",
-          "label": "Sombre"
+          "label": "Dark"
         },
         {
           "group": "Normal",
           "value": "btn-primary",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
           "group": "Normal",
           "value": "btn-secondary",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
           "group": "Normal",
           "value": "btn-tertiary",
-          "label": "Tertiaire"
+          "label": "Tertiary"
         },
         {
           "group": "Normal",
           "value": "btn-success",
-          "label": "Succès"
+          "label": "Success"
         },
         {
           "group": "Normal",
@@ -753,7 +753,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "group": "Normal",
           "value": "btn-warning",
-          "label": "Avertissement"
+          "label": "Warning"
         },
         {
           "group": "Normal",
@@ -763,64 +763,64 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "group": "Contour",
           "value": "btn-outline-light",
-          "label": "Contour Claire"
+          "label": "Outline Light"
         },
         {
           "group": "Contour",
           "value": "btn-outline-dark",
-          "label": "Contour Sombre"
+          "label": "Outline Dark"
         },
         {
           "group": "Contour",
           "value": "btn-outline-primary",
-          "label": "Contour Primaire"
+          "label": "Outline Primary"
         },
         {
           "group": "Contour",
           "value": "btn-outline-secondary",
-          "label": "Contour Secondaire"
+          "label": "Outline Secondary"
         },
         {
           "group": "Contour",
           "value": "btn-outline-tertiary",
-          "label": "Contour Tertiaire"
+          "label": "Outline Tertiary"
         },
         {
           "group": "Contour",
           "value": "btn-outline-success",
-          "label": "Contour Succès"
+          "label": "Outline Success"
         },
         {
           "group": "Contour",
           "value": "btn-outline-danger",
-          "label": "Contour Danger"
+          "label": "Outline Danger"
         },
         {
           "group": "Contour",
           "value": "btn-outline-warning",
-          "label": "Contour Avertissement"
+          "label": "Outline Warning"
         },
         {
           "group": "Contour",
           "value": "btn-outline-info",
-          "label": "Contour Info"
+          "label": "Outline Info"
         }
       ]
     },
     {
       "type": "checkbox",
       "id": "offcanvas_menu_show_social_icons",
-      "label": "Afficher les icônes sociales",
+      "label": "Show social icons",
       "default": true
     },
     {
       "type": "header",
-      "content": "Espacement de la section"
+      "content": "Section spacing"
     },
     {
       "type": "range",
       "id": "pt",
-      "label": "Padding supérieure",
+      "label": "Top padding",
       "min": 0,
       "max": 6,
       "step": 1,
@@ -829,7 +829,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "pb",
-      "label": "Padding inférieure",
+      "label": "Bottom padding",
       "min": 0,
       "max": 6,
       "step": 1,
@@ -839,21 +839,21 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
   "blocks": [
     {
       "type": "tools",
-      "name": "🏆 Micro menu",
+      "name": "🏆 Micro Menu",
       "limit": 1,
       "settings": [
         {
           "type": "header",
-          "content": "🏆 Application Micro Menu",
-          "info": "👉 Application Version Shopiweb Premium"
+          "content": "🏆 Micro Menu Application",
+          "info": "👉 Shopiweb Premium Version Application"
         },
         {
           "type": "paragraph",
-          "content": "Documentation FR : [Micro menu by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/en-tete/en-tete-navigation/micro-menu)"
+          "content": "Documentation EN: [Micro menu by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/en-tete/en-tete-navigation/micro-menu)"
         },
         {
           "type": "paragraph",
-          "content": "Visible seulement sur ordinateur."
+          "content": "Visible only on desktop."
         },
         {
           "type": "header",
@@ -862,52 +862,52 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "select",
           "id": "bg_color",
-          "label": "Couleur de l'arrière plan",
+          "label": "Background color",
           "default": "bg-light text-body",
           "options": [
             {
-              "group": "Principal",
+              "group": "Main",
               "value": "bg-primary text-white",
-              "label": "Primaire"
+              "label": "Primary"
             },
             {
-              "group": "Principal",
+              "group": "Main",
               "value": "bg-secondary text-white",
-              "label": "Secondaire"
+              "label": "Secondary"
             },
             {
-              "group": "Principal",
+              "group": "Main",
               "value": "bg-tertiary text-white",
-              "label": "Tertiaire"
+              "label": "Tertiary"
             },
             {
-              "group": "Intermédiaire",
+              "group": "Intermediate",
               "value": "bg-white text-dark",
-              "label": "Blanc"
+              "label": "White"
             },
             {
-              "group": "Intermédiaire",
+              "group": "Intermediate",
               "value": "bg-light text-body",
-              "label": "Claire"
+              "label": "Light"
             },
             {
-              "group": "Intermédiaire",
+              "group": "Intermediate",
               "value": "bg-dark text-white",
-              "label": "Sombre"
+              "label": "Dark"
             },
             {
-              "group": "Par défaut",
+              "group": "Default",
               "value": "bg-body text-body",
-              "label": "Corps (body)"
+              "label": "Body"
             }
           ]
         },
         {
           "type": "checkbox",
           "id": "bg_gradient",
-          "label": "Dégradé d'arrière-plan",
+          "label": "Background gradient",
           "default": false,
-          "info": "Ne s'applique pas aux couleurs claires"
+          "info": "Does not apply to light colors"
         },
         {
           "type": "link_list",
@@ -918,72 +918,72 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "checkbox",
           "id": "option-outils",
-          "label": "Remplacer les icônes par un lien",
+          "label": "Replace icons with a link",
           "default": true
         },
         {
           "type": "text",
           "id": "option_text",
-          "label": "Titre du lien",
-          "default": "Service client 7j/7"
+          "label": "Link title",
+          "default": "Customer service 7/7"
         },
         {
           "type": "url",
           "id": "option_link",
-          "label": "Lien de redirection"
+          "label": "Redirect link"
         },
         {
           "type": "checkbox",
           "id": "language_selector_show",
-          "label": "Afficher le sélecteur de language",
+          "label": "Show language selector",
           "default": true
         },
         {
           "type": "checkbox",
           "id": "currency_selector_show",
-          "label": "Afficher le sélecteur de devise",
+          "label": "Show currency selector",
           "default": true
         },
         {
           "type": "select",
           "id": "lang_currency_btn_color",
-          "label": "Couleur du bouton langue/devise",
+          "label": "Language/currency button color",
           "default": "btn-outline-dark",
           "options": [
             {
               "group": "Normal",
               "value": "btn-link",
-              "label": "Lien"
+              "label": "Link"
             },
             {
               "group": "Normal",
               "value": "btn-light",
-              "label": "Claire"
+              "label": "Light"
             },
             {
               "group": "Normal",
               "value": "btn-dark",
-              "label": "Sombre"
+              "label": "Dark"
             },
             {
               "group": "Normal",
               "value": "btn-primary",
-              "label": "Primaire"
+              "label": "Primary"
             },
             {
               "group": "Normal",
               "value": "btn-secondary",
-              "label": "Secondaire"
+              "label": "Secondary"
             },
             {
               "group": "Normal",
               "value": "btn-tertiary",
-              "label": "Tertiaire"
+              "label": "Tertiary"
             },
             {
               "group": "Normal",
               "value": "btn-success",
-              "label": "Succès"
+              "label": "Success"
             },
             {
               "group": "Normal",
@@ -993,7 +993,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
             {
               "group": "Normal",
               "value": "btn-warning",
-              "label": "Avertissement"
+              "label": "Warning"
             },
             {
               "group": "Normal",
@@ -1003,47 +1003,47 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
             {
               "group": "Contour",
               "value": "btn-outline-light",
-              "label": "Contour Claire"
+              "label": "Outline Light"
             },
             {
               "group": "Contour",
               "value": "btn-outline-dark",
-              "label": "Contour Sombre"
+              "label": "Outline Dark"
             },
             {
               "group": "Contour",
               "value": "btn-outline-primary",
-              "label": "Contour Primaire"
+              "label": "Outline Primary"
             },
             {
               "group": "Contour",
               "value": "btn-outline-secondary",
-              "label": "Contour Secondaire"
+              "label": "Outline Secondary"
             },
             {
               "group": "Contour",
               "value": "btn-outline-tertiary",
-              "label": "Contour Tertiaire"
+              "label": "Outline Tertiary"
             },
             {
               "group": "Contour",
               "value": "btn-outline-success",
-              "label": "Contour Succès"
+              "label": "Outline Success"
             },
             {
               "group": "Contour",
               "value": "btn-outline-danger",
-              "label": "Contour Danger"
+              "label": "Outline Danger"
             },
             {
               "group": "Contour",
               "value": "btn-outline-warning",
-              "label": "Contour Avertissement"
+              "label": "Outline Warning"
             },
             {
               "group": "Contour",
               "value": "btn-outline-info",
-              "label": "Contour Info"
+              "label": "Outline Info"
             }
           ]
         }
@@ -1051,70 +1051,70 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     },
     {
       "type": "button",
-      "name": "🏆 Bouton",
+      "name": "🏆 Button",
       "limit": 1,
       "settings": [
         {
           "type": "header",
-          "content": "🏆 Application Bouton Navigation",
-          "info": "👉 Application Version Shopiweb Premium"
+          "content": "🏆 Navigation Button Application",
+          "info": "👉 Shopiweb Premium Version Application"
         },
         {
           "type": "paragraph",
-          "content": "Documentation FR : [Bouton by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/en-tete/en-tete-navigation/bouton)"
+          "content": "Documentation EN: [Button by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/en-tete/en-tete-navigation/bouton)"
         },
         {
           "type": "text",
           "id": "btn_text",
-          "label": "Texte du bouton",
-          "default": "Commander",
-          "info": "Laisser vide pour désactiver"
+          "label": "Button text",
+          "default": "Order",
+          "info": "Leave blank to disable"
         },
         {
           "type": "url",
           "id": "btn_url",
-          "label": "URL du bouton"
+          "label": "Button URL"
         },
         {
           "type": "select",
           "id": "btn_color",
-          "label": "Couleur du bouton",
+          "label": "Button color",
           "default": "btn-primary",
           "options": [
             {
               "group": "Normal",
               "value": "btn-link",
-              "label": "Lien"
+              "label": "Link"
             },
             {
               "group": "Normal",
               "value": "btn-light",
-              "label": "Claire"
+              "label": "Light"
             },
             {
               "group": "Normal",
               "value": "btn-dark",
-              "label": "Sombre"
+              "label": "Dark"
             },
             {
               "group": "Normal",
               "value": "btn-primary",
-              "label": "Primaire"
+              "label": "Primary"
             },
             {
               "group": "Normal",
               "value": "btn-secondary",
-              "label": "Secondaire"
+              "label": "Secondary"
             },
             {
               "group": "Normal",
               "value": "btn-tertiary",
-              "label": "Tertiaire"
+              "label": "Tertiary"
             },
             {
               "group": "Normal",
               "value": "btn-success",
-              "label": "Succès"
+              "label": "Success"
             },
             {
               "group": "Normal",
@@ -1124,7 +1124,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
             {
               "group": "Normal",
               "value": "btn-warning",
-              "label": "Avertissement"
+              "label": "Warning"
             },
             {
               "group": "Normal",
@@ -1134,59 +1134,59 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
             {
               "group": "Contour",
               "value": "btn-outline-light",
-              "label": "Contour Claire"
+              "label": "Outline Light"
             },
             {
               "group": "Contour",
               "value": "btn-outline-dark",
-              "label": "Contour Sombre"
+              "label": "Outline Dark"
             },
             {
               "group": "Contour",
               "value": "btn-outline-primary",
-              "label": "Contour Primaire"
+              "label": "Outline Primary"
             },
             {
               "group": "Contour",
               "value": "btn-outline-secondary",
-              "label": "Contour Secondaire"
+              "label": "Outline Secondary"
             },
             {
               "group": "Contour",
               "value": "btn-outline-tertiary",
-              "label": "Contour Tertiaire"
+              "label": "Outline Tertiary"
             },
             {
               "group": "Contour",
               "value": "btn-outline-success",
-              "label": "Contour Succès"
+              "label": "Outline Success"
             },
             {
               "group": "Contour",
               "value": "btn-outline-danger",
-              "label": "Contour Danger"
+              "label": "Outline Danger"
             },
             {
               "group": "Contour",
               "value": "btn-outline-warning",
-              "label": "Contour Avertissement"
+              "label": "Outline Warning"
             },
             {
               "group": "Contour",
               "value": "btn-outline-info",
-              "label": "Contour Info"
+              "label": "Outline Info"
             }
           ]
         },
         {
           "type": "select",
           "id": "btn_size",
-          "label": "Taille du bouton",
+          "label": "Button size",
           "default": "btn-sm",
           "options": [
             {
               "value": "btn-sm",
-              "label": "Petit"
+              "label": "Small"
             },
             {
               "value": "btn-md",
@@ -1203,8 +1203,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         "type": "button"
       }
     ],
-    "settings": {
-    }
+    "settings": {}
   }
 }
 {% endschema %}

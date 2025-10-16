@@ -131,167 +131,228 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 
 {% schema %}
 {
-  "name": "🏆 Barre d'Annonces",
+  "name": "🏆 Announcement Bar",
   "settings": [
     {
       "type": "header",
-      "content": "🏆 Application Barre d'annonces",
-      "info": "👉 Version de l'application Shopiweb Premium"
+      "content": "🏆 Announcement Bar App",
+      "info": "👉 Shopiweb Premium App Version"
     },
     {
-        "type": "paragraph",
-        "content": "Documentation FR : [Barre d'annonces by Shopiweb](https:\/\/www.docs.shopiweb.fr\/theme-premium\/documentation\/sections\/barre-dannonces)"
+      "type": "paragraph",
+      "content": "Documentation EN: [Announcement Bar by Shopiweb](https://www.docs.shopiweb.fr/theme-premium/documentation/sections/announcement-bar)"
     },
     {
       "type": "header",
-      "content": "Général"
+      "content": "General"
     },
     {
       "type": "checkbox",
       "id": "homepage",
-      "label": "Afficher uniquement sur la page d'accueil",
+      "label": "Show only on homepage",
       "default": false
     },
     {
       "type": "checkbox",
       "id": "sticky",
-      "label": "Coller en haut (Sticky)",
+      "label": "Stick to top (Sticky)",
       "default": false
     },
     {
-        "type": "select",
-        "id": "bg_color",
-        "label": "Couleur d'arrière-plan",
-        "default": "bg-dark text-white",
-        "options": [
-            { "group": "Principal", "value": "bg-primary text-white", "label": "Primaire" },
-            { "group": "Principal", "value": "bg-secondary text-white", "label": "Secondaire" },
-            { "group": "Principal", "value": "bg-tertiary text-white", "label": "Tertiaire" },
-            { "group": "Intermédiaire", "value": "bg-white text-dark", "label": "Blanc" },
-            { "group": "Intermédiaire", "value": "bg-light text-body", "label": "Claire" },
-            { "group": "Intermédiaire", "value": "bg-dark text-white", "label": "Sombre" },
-            { "group": "Par défaut", "value": "bg-body text-body", "label": "Corps (body)" },
-            { "group": "Alerte", "value": "bg-success text-white", "label": "Succès" },
-            { "group": "Alerte", "value": "bg-warning text-dark", "label": "Avertissement" },
-            { "group": "Alerte", "value": "bg-danger text-white", "label": "Danger" },
-            { "group": "Alerte", "value": "bg-info text-white", "label": "Info" }
-        ]
+      "type": "select",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "bg-dark text-white",
+      "options": [
+        {
+          "group": "Main",
+          "value": "bg-primary text-white",
+          "label": "Primary"
+        },
+        {
+          "group": "Main",
+          "value": "bg-secondary text-white",
+          "label": "Secondary"
+        },
+        {
+          "group": "Main",
+          "value": "bg-tertiary text-white",
+          "label": "Tertiary"
+        },
+        {
+          "group": "Intermediate",
+          "value": "bg-white text-dark",
+          "label": "White"
+        },
+        {
+          "group": "Intermediate",
+          "value": "bg-light text-body",
+          "label": "Light"
+        },
+        {
+          "group": "Intermediate",
+          "value": "bg-dark text-white",
+          "label": "Dark"
+        },
+        {
+          "group": "Default",
+          "value": "bg-body text-body",
+          "label": "Body"
+        },
+        {
+          "group": "Alert",
+          "value": "bg-success text-white",
+          "label": "Success"
+        },
+        {
+          "group": "Alert",
+          "value": "bg-warning text-dark",
+          "label": "Warning"
+        },
+        {
+          "group": "Alert",
+          "value": "bg-danger text-white",
+          "label": "Danger"
+        },
+        {
+          "group": "Alert",
+          "value": "bg-info text-white",
+          "label": "Info"
+        }
+      ]
     },
     {
-        "type": "checkbox",
-        "id": "bg_gradient",
-        "label": "Dégradé d'arrière-plan",
-        "default": false,
-        "info": "Ne s'applique pas aux couleurs claires"
+      "type": "checkbox",
+      "id": "bg_gradient",
+      "label": "Background gradient",
+      "default": false,
+      "info": "Does not apply to light colors"
     },
     {
-        "type": "text",
-        "id": "max_width",
-        "label": "Largeur maximale (px)",
-        "default": "600"
+      "type": "text",
+      "id": "max_width",
+      "label": "Maximum width (px)",
+      "default": "600"
     },
     {
-        "type": "select",
-        "id": "font_size",
-        "label": "Taille du texte",
-        "default": "fs-6",
-        "options": [
-            { "value": "", "label": "Normal" },
-            { "value": "fs-6", "label": "Petit" }
-        ]
+      "type": "select",
+      "id": "font_size",
+      "label": "Text size",
+      "default": "fs-6",
+      "options": [
+        {
+          "value": "",
+          "label": "Normal"
+        },
+        {
+          "value": "fs-6",
+          "label": "Small"
+        }
+      ]
     },
     {
-        "type": "select",
-        "id": "text_transform",
-        "label": "Transformation du texte",
-        "default": "text-capitalize",
-        "options": [
-            { "value": "", "label": "Normal" },
-            { "value": "text-capitalize", "label": "Capitale" },
-            { "value": "text-lowercase", "label": "Minuscule" },
-            { "value": "text-uppercase", "label": "Majuscule" }
-
-        ]
+      "type": "select",
+      "id": "text_transform",
+      "label": "Text transform",
+      "default": "text-capitalize",
+      "options": [
+        {
+          "value": "",
+          "label": "Normal"
+        },
+        {
+          "value": "text-capitalize",
+          "label": "Capitalize"
+        },
+        {
+          "value": "text-lowercase",
+          "label": "Lowercase"
+        },
+        {
+          "value": "text-uppercase",
+          "label": "Uppercase"
+        }
+      ]
     },
     {
       "type": "text",
       "id": "expiration_time",
-      "label": "Date d'expiration",
-      "info": "Masquer complètement la section de la barre d'annonces si ce délai est atteint en utilisant le format suivant : 2024-03-17 11h10am. Laisser vide pour désactiver"
+      "label": "Expiration date",
+      "info": "Completely hide the announcement bar section if this time is reached using the following format: 2024-03-17 11h10am. Leave blank to disable."
     },
     {
-        "type": "header",
-        "content": "Carrousel",
-        "info": "Ne s'affichera pas si vous publiez une seule diapositive"
+      "type": "header",
+      "content": "Carousel",
+      "info": "Will not display if you publish only one slide"
     },
     {
-        "type": "checkbox",
-        "id": "controls",
-        "label": "Flèches",
-        "info": "Boutons Précédent/Suivant",
-        "default": true
+      "type": "checkbox",
+      "id": "controls",
+      "label": "Arrows",
+      "info": "Previous/Next buttons",
+      "default": true
     },
     {
-        "type": "checkbox",
-        "id": "autoplay",
-        "label": "Lecture automatique",
-        "info": "Toutes les 5 secondes",
-        "default": true
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "info": "Every 5 seconds",
+      "default": true
     },
     {
-        "type": "header",
-        "content": "Espacement"
+      "type": "header",
+      "content": "Spacing"
     },
     {
-        "type": "range",
-        "id": "pt",
-        "label": "Marge supérieure",
-        "min": 0,
-        "max": 6,
-        "step": 1,
-        "default": 3
+      "type": "range",
+      "id": "pt",
+      "label": "Top margin",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "default": 3
     },
     {
-        "type": "range",
-        "id": "pb",
-        "label": "Marge inférieure",
-        "min": 0,
-        "max": 6,
-        "step": 1,
-        "default": 3
+      "type": "range",
+      "id": "pb",
+      "label": "Bottom margin",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "default": 3
     }
   ],
-    "blocks": [
-      {
-        "type": "Announcement",
-        "name": "Annonce",
-        "settings": [
-          {
-              "type": "header",
-              "content": "🏆 Bloc Annonce",
-              "info": "👉 Bloc Version Shopiweb Premium"
-          },
-          {
-              "type": "richtext",
-              "id": "description",
-              "label": "Description"
-          },
-          {
-              "type": "url",
-              "id": "url",
-              "label": "Lien"
-          },
-          {
-              "type": "header",
-              "content": "🏆 Application Compte à rebours",
-              "info": "👉 Application Version Shopiweb Premium"
-          },
-          {
-              "type": "text",
-              "id": "countdown_timer",
-              "label": "Compte à rebours",
-              "info": "Affichez un compte à rebours animé en utilisant le format suivant : 2024-03-17 11h10am. Laisser vide pour désactiver"
-          }
+  "blocks": [
+    {
+      "type": "Announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "header",
+          "content": "🏆 Announcement Block",
+          "info": "👉 Shopiweb Premium Block Version"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        },
+        {
+          "type": "header",
+          "content": "🏆 Countdown App",
+          "info": "👉 Shopiweb Premium App Version"
+        },
+        {
+          "type": "text",
+          "id": "countdown_timer",
+          "label": "Countdown",
+          "info": "Display an animated countdown using the following format: 2024-03-17 11h10am. Leave blank to disable."
+        }
       ]
     }
   ]

@@ -1,9 +1,7 @@
 {% schema %}
 {
   "name": "Carousel Block Buttons",
-  "settings": [
-
-  ],
+  "settings": [],
   "blocks": [
     {
       "type": "slide",
@@ -17,7 +15,7 @@
         {
           "type": "text",
           "id": "title",
-          "label": "Titre"
+          "label": "Title"
         },
         {
           "type": "textarea",
@@ -173,7 +171,7 @@
         {
           "type": "text",
           "id": "caption_color",
-          "label": "Couleur du texte",
+          "label": "Color du texte",
           "default": "#ffffff"
         },
         {
@@ -202,12 +200,7 @@
   ]
 }
 {% endschema %}
----------------------------------------------------------
-Copyright © 2019/2024 Theme Shopiweb Premium. Tous droits réservés.
-La copie, la modification, la distribution ou l'utilisation
-non autorisée de ce code ou de toute partie de celui-ci est formellement interdite.
-Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
----------------------------------------------------------
+
 {% comment %}
 ---------------------------------------------------------
 Copyright © 2019/2024 Theme Shopiweb Premium. Tous droits réservés.
@@ -235,6 +228,7 @@ Copyright © 2019/2024 Theme Shopiweb Premium. Tous droits réservés.
 {%- endstyle -%}
 
 <!-- Boutons dans le carousel -->
+{% for block in section.blocks %}
 <div class="carousel-caption {{ block.settings.caption_position_mobile }} {{ block.settings.caption_position_desktop }}"
      style="color: {{ block.settings.caption_color }};">
   <div style="max-width: {{ block.settings.caption_max_width }}px">
@@ -255,9 +249,11 @@ Copyright © 2019/2024 Theme Shopiweb Premium. Tous droits réservés.
       </div>
     {% endunless %}
 
-    <{{ block.settings.heading_tag }} class="title mb-3 {{ block.settings.title_size }}">
-      {{ block.settings.title }}
-    </{{ block.settings.heading_tag }}>
+    {% unless block.settings.title == blank %}
+      <{{ block.settings.heading_tag | default: 'h2' }} class="title mb-3 {{ block.settings.title_size }}">
+        {{ block.settings.title }}
+      </{{ block.settings.heading_tag | default: 'h2' }}>
+    {% endunless %}
 
     {% unless block.settings.description == blank %}
       <div class="description rte mb-6 {{ block.settings.description_size }}">
@@ -265,16 +261,19 @@ Copyright © 2019/2024 Theme Shopiweb Premium. Tous droits réservés.
       </div>
     {% endunless %}
 
-<div class="btn-wrapper">
-  {% unless block.settings.btn_text == blank %}
-    <a class="btn {{ block.settings.btn_color }} {{ block.settings.btn_size }}" href="{{ block.settings.btn_url }}">
-      {{ block.settings.btn_text }}
-    </a>
-  {% endunless %}
+    <div class="btn-wrapper">
+      {% unless block.settings.btn_text == blank %}
+        <a class="btn {{ block.settings.btn_color }} {{ block.settings.btn_size }}" href="{{ block.settings.btn_url }}">
+          {{ block.settings.btn_text }}
+        </a>
+      {% endunless %}
 
-  {% unless block.settings.btn_secondary_text == blank %}
-    <a class="btn {{ block.settings.btn_secondary_color }} {{ block.settings.btn_secondary_size }}" href="{{ block.settings.btn_secondary_url }}">
-      {{ block.settings.btn_secondary_text }}
-    </a>
-  {% endunless %}
-</div>
+      {% unless block.settings.btn_secondary_text == blank %}
+        <a class="btn {{ block.settings.btn_secondary_color }} {{ block.settings.btn_secondary_size }}" href="{{ block.settings.btn_secondary_url }}">
+          {{ block.settings.btn_secondary_text }}
+        </a>
+      {% endunless %}
+    </div>
+  </div> <!-- Closing div for max-width -->
+</div> <!-- Closing div for carousel-caption -->
+{% endfor %}

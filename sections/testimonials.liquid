@@ -246,7 +246,7 @@
     {
       "type": "select",
       "id": "bg_color",
-      "label": "Couleur de l'arrière plan",
+      "label": "Background color",
       "default": "bg-body text-body",
       "options": [
         {
@@ -289,7 +289,7 @@
     {
       "type": "checkbox",
       "id": "bg_gradient",
-      "label": "Dégradé d'arrière-plan",
+      "label": "Background gradient",
       "default": false,
       "info": "Ne s'applique pas aux couleurs claires"
     },
@@ -332,7 +332,7 @@
     {
       "type": "image_picker",
       "id": "subtitle_img",
-      "label": "Légende Image"
+      "label": "Caption Image"
     },
     {
       "type": "text",
@@ -343,12 +343,12 @@
     {
       "type": "text",
       "id": "subtitle",
-      "label": "Légende Texte"
+      "label": "Caption Texte"
     },
     {
       "type": "select",
       "id": "subtitle_size",
-      "label": "Taille de la légende",
+      "label": "Caption size",
       "default": "fs-5",
       "options": [
         {
@@ -386,13 +386,13 @@
     {
       "type": "color",
       "id": "color_caption",
-      "label": "Couleur de la légende",
+      "label": "Caption color",
       "default": "#6c757d"
     },
     {
       "type": "text",
       "id": "title_overlay",
-      "label": "Titre overlay",
+      "label": "Title overlay",
       "info": "Visible sur ordinateur, masqué sur mobile pour optimiser la lisibilité."
     },
     {
@@ -421,19 +421,19 @@
     {
       "type": "color",
       "id": "color_title_overlay",
-      "label": "Couleur du titre overlay",
+      "label": "Color du titre overlay",
       "default": "#000000"
     },
     {
       "type": "inline_richtext",
       "id": "title",
-      "label": "Titre",
+      "label": "Title",
       "default": "Témoignages"
     },
     {
       "type": "select",
       "id": "heading_tag",
-      "label": "Balise titre (SEO)",
+      "label": "Heading tag (SEO)",
       "default": "h2",
       "options": [
         {
@@ -469,7 +469,7 @@
     {
       "type": "select",
       "id": "title_size",
-      "label": "Taille du titre",
+      "label": "Title size",
       "default": "h2",
       "options": [
         {
@@ -527,7 +527,7 @@
     {
       "type": "richtext",
       "id": "description",
-      "label": "Description (facultatif)",
+      "label": "Description (optional)",
       "default": "<p>Ajouter une description facultative à cette section</p>"
     },
     {
@@ -599,7 +599,7 @@
       "options": [
         {
           "value": "default",
-          "label": "Par défaut"
+          "label": "Default"
         },
         {
           "value": "shopitrust",
@@ -611,13 +611,13 @@
     {
       "type": "color",
       "id": "star_color",
-      "label": "Couleur des étoiles actives",
+      "label": "Active star color",
       "default": "#ffb81c"
     },
     {
       "type": "color",
       "id": "star_off",
-      "label": "Couleur des étoiles inactives",
+      "label": "Color des étoiles inactives",
       "default": "#e5e4e2"
     },
     {
@@ -706,16 +706,16 @@
     {
       "type": "select",
       "id": "animation",
-      "label": "Effet d'animation",
+      "label": "Animation effect",
       "default": "animate__zoomIn",
       "options": [
         {
-          "group": "Désactivé",
+          "group": "Disabled",
           "value": "",
-          "label": "Pas d'animation"
+          "label": "No animation"
         },
         {
-          "group": "Retour",
+          "group": "Back",
           "value": "animate__backInDown",
           "label": "Back In Down"
         },
@@ -735,7 +735,7 @@
           "label": "Back In Up"
         },
         {
-          "group": "Rebond",
+          "group": "Bounce",
           "value": "animate__bounceIn",
           "label": "Bounce In"
         },
@@ -760,7 +760,7 @@
           "label": "Bounce-in-up"
         },
         {
-          "group": "Fondu",
+          "group": "Fade",
           "value": "animate__fadeIn",
           "label": "Fade In"
         },
@@ -850,7 +850,7 @@
           "label": "Flip Out Y"
         },
         {
-          "group": "Vitesse Lumière",
+          "group": "Light Speed",
           "value": "animate__lightSpeedInRight",
           "label": "Light Speed In Right"
         },
@@ -910,7 +910,7 @@
           "label": "Zoom In Up"
         },
         {
-          "group": "Glissement",
+          "group": "Slide",
           "value": "animate__slideInDown",
           "label": "Slide In Down"
         },
@@ -934,16 +934,16 @@
     {
       "type": "select",
       "id": "animation_speed",
-      "label": "Vitesse d'animation",
+      "label": "Animation speed",
       "default": "animate__fast",
       "options": [
         {
           "value": "animate__slower",
-          "label": "Plus lent"
+          "label": "Slower"
         },
         {
           "value": "animate__slow",
-          "label": "Lent"
+          "label": "Slow"
         },
         {
           "value": "",
@@ -951,24 +951,24 @@
         },
         {
           "value": "animate__fast",
-          "label": "Rapide"
+          "label": "Fast"
         },
         {
           "value": "animate__faster",
-          "label": "Plus rapide"
+          "label": "Faster"
         }
       ]
     },
     {
       "type": "header",
-      "content": "Points d'arrêt",
-      "info": "Ajuster les éléments par ligne en fonction de la résolution de l'écran"
+      "content": "Breakpoints",
+      "info": "Adjust items per row based on screen resolution"
     },
     {
       "type": "range",
       "id": "breakpoint_xs",
-      "label": "Éléments par ligne / xs",
-      "info": "Largeur d'écran : moins de 576px",
+      "label": "Items per row / xs",
+      "info": "Screen width: less than 576px",
       "min": 1,
       "max": 3,
       "step": 1,
@@ -977,8 +977,8 @@
     {
       "type": "range",
       "id": "breakpoint_sm",
-      "label": "Éléments par ligne / sm",
-      "info": "Largeur d'écran : ≥576px",
+      "label": "Items per row / sm",
+      "info": "Screen width: ≥576px",
       "min": 1,
       "max": 3,
       "step": 1,
@@ -987,8 +987,8 @@
     {
       "type": "range",
       "id": "breakpoint_md",
-      "label": "Éléments par ligne / md",
-      "info": "Largeur d'écran : ≥768px",
+      "label": "Items per row / md",
+      "info": "Screen width: ≥768px",
       "min": 1,
       "max": 4,
       "step": 1,
@@ -997,8 +997,8 @@
     {
       "type": "range",
       "id": "breakpoint_lg",
-      "label": "Éléments par ligne / lg",
-      "info": "Largeur d'écran : ≥992px",
+      "label": "Items per row / lg",
+      "info": "Screen width: ≥992px",
       "min": 1,
       "max": 6,
       "step": 1,
@@ -1007,8 +1007,8 @@
     {
       "type": "range",
       "id": "breakpoint_xl",
-      "label": "Éléments par ligne / xl",
-      "info": "Largeur d'écran : ≥1200px",
+      "label": "Items per row / xl",
+      "info": "Screen width: ≥1200px",
       "min": 1,
       "max": 6,
       "step": 1,
@@ -1017,8 +1017,8 @@
     {
       "type": "range",
       "id": "breakpoint_xxl",
-      "label": "Éléments par ligne / xxl",
-      "info": "Largeur d'écran : ≥1400px",
+      "label": "Items per row / xxl",
+      "info": "Screen width: ≥1400px",
       "min": 1,
       "max": 8,
       "step": 1,
@@ -1026,65 +1026,65 @@
     },
     {
       "type": "header",
-      "content": "Bouton 'Lire tous les avis'"
+      "content": "Button 'Read all reviews'"
     },
     {
       "type": "checkbox",
       "id": "btn_show",
-      "label": "Afficher le bouton",
+      "label": "Show button",
       "default": true
     },
     {
       "type": "text",
       "id": "btn_text",
-      "label": "Texte du bouton",
-      "default": "Voir tous les avis"
+      "label": "Button text",
+      "default": "See all reviews"
     },
     {
       "type": "url",
       "id": "btn_url",
-      "label": "URL du bouton"
+      "label": "Button URL"
     },
     {
       "type": "select",
       "id": "btn_color",
-      "label": "Couleur du bouton",
+      "label": "Button color",
       "default": "btn-primary",
       "options": [
         {
           "group": "Normal",
           "value": "btn-link",
-          "label": "Lien"
+          "label": "Link"
         },
         {
           "group": "Normal",
           "value": "btn-light",
-          "label": "Claire"
+          "label": "Light"
         },
         {
           "group": "Normal",
           "value": "btn-dark",
-          "label": "Sombre"
+          "label": "Dark"
         },
         {
           "group": "Normal",
           "value": "btn-primary",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
           "group": "Normal",
           "value": "btn-secondary",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
           "group": "Normal",
           "value": "btn-tertiary",
-          "label": "Tertiaire"
+          "label": "Tertiary"
         },
         {
           "group": "Normal",
           "value": "btn-success",
-          "label": "Succès"
+          "label": "Success"
         },
         {
           "group": "Normal",
@@ -1094,7 +1094,7 @@
         {
           "group": "Normal",
           "value": "btn-warning",
-          "label": "Avertissement"
+          "label": "Warning"
         },
         {
           "group": "Normal",
@@ -1102,60 +1102,60 @@
           "label": "Info"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-light",
-          "label": "Contour Claire"
+          "label": "Outline Light"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-dark",
-          "label": "Contour Sombre"
+          "label": "Outline Dark"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-primary",
-          "label": "Contour Primaire"
+          "label": "Outline Primary"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-secondary",
-          "label": "Contour Secondaire"
+          "label": "Outline Secondary"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-tertiary",
-          "label": "Contour Tertiaire"
+          "label": "Outline Tertiary"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-success",
-          "label": "Contour Succès"
+          "label": "Outline Success"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-danger",
-          "label": "Contour Danger"
+          "label": "Outline Danger"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-warning",
-          "label": "Contour Avertissement"
+          "label": "Outline Warning"
         },
         {
-          "group": "Contour",
+          "group": "Outline",
           "value": "btn-outline-info",
-          "label": "Contour Info"
+          "label": "Outline Info"
         }
       ]
     },
     {
       "type": "header",
-      "content": "Espacement de la section"
+      "content": "Section spacing"
     },
     {
       "type": "range",
       "id": "pt",
-      "label": "Padding supérieure",
+      "label": "Top padding",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -1164,7 +1164,7 @@
     {
       "type": "range",
       "id": "pb",
-      "label": "Padding inférieure",
+      "label": "Bottom padding",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -1173,7 +1173,7 @@
     {
       "type": "range",
       "id": "mt",
-      "label": "Marge supérieure",
+      "label": "Top margin",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -1182,7 +1182,7 @@
     {
       "type": "range",
       "id": "mb",
-      "label": "Marge inférieure",
+      "label": "Bottom margin",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -1201,69 +1201,69 @@
         {
           "type": "select",
           "id": "title_align",
-          "label": "Alignement du bloc titre",
+          "label": "Block title alignment",
           "default": "justify-content-start",
-          "info": "Alignement du titre, auteur et étoiles",
+          "info": "Alignment of title, author, and stars",
           "options": [
             {
               "value": "justify-content-start",
-              "label": "Gauche"
+              "label": "Left"
             },
             {
               "value": "justify-content-center",
-              "label": "Centre"
+              "label": "Center"
             }
           ]
         },
         {
           "type": "select",
           "id": "text_align",
-          "label": "Alignement du texte",
+          "label": "Text alignment",
           "default": "text-start",
-          "info": "Alignement du paragraphe",
+          "info": "Paragraph alignment",
           "options": [
             {
               "value": "text-start",
-              "label": "Gauche"
+              "label": "Left"
             },
             {
               "value": "text-center",
-              "label": "Centre"
+              "label": "Center"
             }
           ]
         },
         {
           "type": "select",
           "id": "border_color",
-          "label": "Couleur de la bordure",
+          "label": "Border color",
           "options": [
             {
               "value": "",
-              "label": "Par défaut"
+              "label": "Default"
             },
             {
               "value": "border-primary",
-              "label": "Primaire"
+              "label": "Primary"
             },
             {
               "value": "border-secondary",
-              "label": "Secondaire"
+              "label": "Secondary"
             },
             {
               "value": "border-tertiary",
-              "label": "Tertiaire"
+              "label": "Tertiary"
             },
             {
               "value": "border-dark",
-              "label": "Sombre"
+              "label": "Dark"
             },
             {
               "value": "border-success",
-              "label": "Succès"
+              "label": "Success"
             },
             {
               "value": "border-warning",
-              "label": "Avertissement"
+              "label": "Warning"
             },
             {
               "value": "border-danger",
@@ -1279,7 +1279,7 @@
         {
           "type": "range",
           "id": "border_width",
-          "label": "Largeur de la bordure",
+          "label": "Border width",
           "min": 0,
           "max": 10,
           "step": 1,
@@ -1288,34 +1288,34 @@
         {
           "type": "select",
           "id": "shadow_sp",
-          "label": "Ombre",
+          "label": "Shadow",
           "options": [
             {
               "value": "shadow-none",
-              "label": "Aucune"
+              "label": "None"
             },
             {
               "value": "shadow-1",
-              "label": "Ombre légère"
+              "label": "Light shadow"
             },
             {
               "value": "shadow-2",
-              "label": "Ombre partiel"
+              "label": "Partial shadow"
             },
             {
               "value": "shadow-3",
-              "label": "Ombre profonde"
+              "label": "Deep shadow"
             },
             {
               "value": "shadow-4",
-              "label": "Ombre totale"
+              "label": "Full shadow"
             }
           ],
           "default": "shadow-1"
         },
         {
           "type": "header",
-          "content": "Image produit"
+          "content": "Product image"
         },
         {
           "type": "image_picker",
@@ -1330,11 +1330,11 @@
           "options": [
             {
               "value": "square",
-              "label": "Carré"
+              "label": "Square"
             },
             {
               "value": "landscape",
-              "label": "Paysage"
+              "label": "Landscape"
             },
             {
               "value": "potrait",
@@ -1344,12 +1344,12 @@
         },
         {
           "type": "header",
-          "content": "Vidéo produit"
+          "content": "Product video"
         },
         {
           "type": "video",
           "id": "video",
-          "label": "Vidéo"
+          "label": "Video"
         },
         {
           "type": "checkbox",
@@ -1361,126 +1361,126 @@
           "type": "checkbox",
           "id": "loop",
           "label": "Loop",
-          "info": "(Vidéo en boucle)",
+          "info": "(Looped video)",
           "default": true
         },
         {
           "type": "checkbox",
           "id": "muted",
           "label": "Mute",
-          "info": "(Vidéo muette)",
+          "info": "(Muted video)",
           "default": true
         },
         {
           "type": "checkbox",
           "id": "controls",
-          "label": "Contrôles",
+          "label": "Controls",
           "default": true
         },
         {
           "type": "header",
-          "content": "Image Auteur"
+          "content": "Author image"
         },
         {
           "type": "image_picker",
           "id": "img_author",
           "label": "Image",
-          "info": "Laisser vide pour désactiver"
+          "info": "Leave empty to disable"
         },
         {
           "type": "text",
           "id": "img_rounded_width",
-          "label": "Image largeur (px)",
+          "label": "Image width (px)",
           "default": "70"
         },
         {
           "type": "text",
           "id": "img_rounded_height",
-          "label": "Image hauteur (px)",
+          "label": "Image height (px)",
           "default": "70"
         },
         {
           "type": "header",
-          "content": "Texte"
+          "content": "Text"
         },
         {
           "type": "text",
           "id": "title",
-          "label": "Titre",
-          "default": "Bonne Qualité"
+          "label": "Title",
+          "default": "Good Quality"
         },
         {
           "type": "select",
           "id": "title_size",
-          "label": "Taille du titre",
+          "label": "Title size",
           "default": "h5",
           "options": [
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h1",
-              "label": "Très Grand"
+              "label": "Very Large"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h2",
-              "label": "Grand"
+              "label": "Large"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h3",
-              "label": "Moyen"
+              "label": "Medium"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h4",
-              "label": "Petit"
+              "label": "Small"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h5",
-              "label": "Très Petit"
+              "label": "Very Small"
             },
             {
-              "group": "Titre Standard",
+              "group": "Standard Title",
               "value": "h6",
-              "label": "Super Petit"
+              "label": "Super Small"
             }
           ]
         },
         {
           "type": "text",
           "id": "text_author",
-          "label": "Auteur",
+          "label": "Author",
           "default": "John Doe"
         },
         {
           "type": "select",
           "id": "show_verified",
-          "label": "Badge vérifié",
+          "label": "Verified badge",
           "default": "show_avis_verified",
           "options": [
             {
               "value": "",
-              "label": "Aucun"
+              "label": "None"
             },
             {
               "value": "show_avis_verified",
-              "label": "Avis vérifié"
+              "label": "Verified review"
             },
             {
               "value": "show_achat_verified",
-              "label": "Achat vérifié"
+              "label": "Verified purchase"
             }
           ]
         },
         {
           "type": "header",
-          "content": "Étoiles"
+          "content": "Stars"
         },
         {
           "type": "checkbox",
           "id": "show_stars",
-          "label": "Afficher les étoiles",
+          "label": "Show stars",
           "default": true
         },
         {
@@ -1490,110 +1490,110 @@
           "max": 5,
           "step": 0.5,
           "unit": "★",
-          "label": "Nombre d'étoiles",
-          "info": "Définir le nombre d'étoiles. Les demi-étoiles sont autorisées.",
+          "label": "Number of stars",
+          "info": "Set the number of stars. Half stars are allowed.",
           "default": 5
         },
         {
           "type": "richtext",
           "id": "description",
           "label": "Description",
-          "default": "<p>Écrivez un retour à propos de vos produits. Ajustez le nombre de colonnes en fonction de la taille moyenne des messages.</p>"
+          "default": "<p>Write a review about your products. Adjust the number of columns based on the average message size.</p>"
         },
         {
           "type": "select",
           "id": "description_size",
-          "label": "Taille de description",
+          "label": "Description size",
           "default": "fs-5",
           "options": [
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-1",
-              "label": "Extra Grand"
+              "label": "Extra Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-2",
-              "label": "Super Grand"
+              "label": "Super Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-3",
-              "label": "Très Grand"
+              "label": "Very Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-4",
-              "label": "Grand"
+              "label": "Large"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-5",
-              "label": "Moyen"
+              "label": "Medium"
             },
             {
-              "group": "Description Standard",
+              "group": "Standard Description",
               "value": "fs-6",
-              "label": "Petit"
+              "label": "Small"
             }
           ]
         },
         {
           "type": "header",
-          "content": "Bouton"
+          "content": "Button"
         },
         {
           "type": "text",
           "id": "btn_text",
-          "label": "Texte du bouton",
-          "default": "Voir le produit",
-          "info": "Laisser vide pour désactiver"
+          "label": "Button text",
+          "default": "See product",
+          "info": "Leave empty to disable"
         },
         {
           "type": "url",
           "id": "btn_url",
-          "label": "URL du bouton"
+          "label": "Button URL"
         },
         {
           "type": "select",
           "id": "btn_color",
-          "label": "Couleur du bouton",
+          "label": "Button color",
           "default": "btn-primary",
           "options": [
             {
               "group": "Normal",
               "value": "btn-link",
-              "label": "Lien"
+              "label": "Link"
             },
             {
               "group": "Normal",
               "value": "btn-light",
-              "label": "Claire"
+              "label": "Light"
             },
             {
               "group": "Normal",
               "value": "btn-dark",
-              "label": "Sombre"
+              "label": "Dark"
             },
             {
               "group": "Normal",
               "value": "btn-primary",
-              "label": "Primaire"
+              "label": "Primary"
             },
             {
               "group": "Normal",
               "value": "btn-secondary",
-              "label": "Secondaire"
+              "label": "Secondary"
             },
             {
               "group": "Normal",
               "value": "btn-tertiary",
-              "label": "Tertiaire"
+              "label": "Tertiary"
             },
             {
               "group": "Normal",
               "value": "btn-success",
-              "label": "Succès"
+              "label": "Success"
             },
             {
               "group": "Normal",
@@ -1603,7 +1603,7 @@
             {
               "group": "Normal",
               "value": "btn-warning",
-              "label": "Avertissement"
+              "label": "Warning"
             },
             {
               "group": "Normal",
@@ -1611,61 +1611,61 @@
               "label": "Info"
             },
             {
-              "group": "Contour",
+              "group": "Outline",
               "value": "btn-outline-light",
-              "label": "Contour Claire"
+              "label": "Outline Light"
             },
             {
-              "group": "Contour",
+              "group": "Outline",
               "value": "btn-outline-dark",
-              "label": "Contour Sombre"
+              "label": "Outline Dark"
             },
             {
-              "group": "Contour",
+              "group": "Outline",
               "value": "btn-outline-primary",
-              "label": "Contour Primaire"
+              "label": "Outline Primary"
             },
             {
-              "group": "Contour",
+              "group": "Outline",
               "value": "btn-outline-secondary",
-              "label": "Contour Secondaire"
+              "label": "Outline Secondary"
             },
             {
-              "group": "Contour",
+              "group": "Outline",
               "value": "btn-outline-tertiary",
-              "label": "Contour Tertiaire"
+              "label": "Outline Tertiary"
             },
             {
-              "group": "Contour",
+              "group": "Outline",
               "value": "btn-outline-success",
-              "label": "Contour Succès"
+              "label": "Outline Success"
             },
             {
-              "group": "Contour",
+              "group": "Outline",
               "value": "btn-outline-danger",
-              "label": "Contour Danger"
+              "label": "Outline Danger"
             },
             {
-              "group": "Contour",
+              "group": "Outline",
               "value": "btn-outline-warning",
-              "label": "Contour Avertissement"
+              "label": "Outline Warning"
             },
             {
-              "group": "Contour",
+              "group": "Outline",
               "value": "btn-outline-info",
-              "label": "Contour Info"
+              "label": "Outline Info"
             }
           ]
         },
         {
           "type": "select",
           "id": "btn_size",
-          "label": "Taille du bouton",
+          "label": "Button size",
           "default": "btn-md",
           "options": [
             {
               "value": "btn-sm",
-              "label": "Petit"
+              "label": "Small"
             },
             {
               "value": "btn-md",
@@ -1682,7 +1682,7 @@
   ],
   "presets": [
     {
-      "name": "Témoignages",
+      "name": "Testimonials",
       "category": "General"
     }
   ]

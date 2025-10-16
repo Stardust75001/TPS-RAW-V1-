@@ -11,7 +11,7 @@ Template de test pour vérifier que les données produit sont correctement récu
                 <h4>Informations du produit actuel :</h4>
                 <ul>
                     <li><strong>Titre :</strong> {{ product.title | default: "ERREUR : Titre non trouvé" }}</li>
-                    <li><strong>Prix :</strong> {{ product.price | money | default: "ERREUR : Prix non trouvé" }}</li>
+                    <li><strong>Price :</strong> {{ product.price | money | default: "ERREUR : Prix non trouvé" }}</li>
                     <li><strong>ID :</strong> {{ product.id | default: "ERREUR : ID non trouvé" }}</li>
                     <li><strong>Handle :</strong> {{ product.handle | default: "ERREUR : Handle non trouvé" }}</li>
                     <li><strong>Vendor :</strong> {{ product.vendor | default: "Aucun vendeur" }}</li>

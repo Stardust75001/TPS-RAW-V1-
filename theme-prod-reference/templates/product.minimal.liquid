@@ -41,7 +41,7 @@ Template produit minimal - pour tester les redirections
         </div>
         
         <h2>{{ product.title }}</h2>
-        <p>Prix: {{ product.price | money }}</p>
+        <p>Price: {{ product.price | money }}</p>
         <p>{{ product.description | truncate: 200 }}</p>
         
     {% else %}

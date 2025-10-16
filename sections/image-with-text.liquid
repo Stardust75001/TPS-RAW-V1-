@@ -237,13 +237,13 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "image_picker",
       "id": "background_img",
-      "label": "Image d'arrière plan",
-      "info": "Si aucune image n'est sélectionnée, les options de couleur d'arrière-plan ci-dessous seront appliquées."
+      "label": "Background image",
+      "info": "If no image is selected, the background color options below will be applied."
     },
     {
       "type": "range",
       "id": "background_img_opacity",
-      "label": "Opacité",
+      "label": "Opacity",
       "min": 0,
       "max": 1,
       "step": 0.1,
@@ -252,7 +252,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "background_img_blur",
-      "label": "Flou",
+      "label": "Blur",
       "min": 0,
       "max": 10,
       "step": 1,
@@ -261,80 +261,80 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "bg_color",
-      "label": "Couleur de l'arrière plan",
+      "label": "Background color",
       "default": "bg-body text-body",
       "options": [
         {
-          "group": "Principal",
+          "group": "Main",
           "value": "bg-primary text-white",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
-          "group": "Principal",
+          "group": "Main",
           "value": "bg-secondary text-white",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
-          "group": "Principal",
+          "group": "Main",
           "value": "bg-tertiary text-white",
-          "label": "Tertiaire"
+          "label": "Tertiary"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-white text-dark",
-          "label": "Blanc"
+          "label": "White"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-light text-body",
-          "label": "Claire"
+          "label": "Light"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-dark text-white",
-          "label": "Sombre"
+          "label": "Dark"
         },
         {
-          "group": "Par défaut",
+          "group": "Default",
           "value": "bg-body text-body",
-          "label": "Corps (body)"
+          "label": "Body"
         }
       ]
     },
     {
       "type": "checkbox",
       "id": "bg_gradient",
-      "label": "Dégradé d'arrière-plan",
+      "label": "Background gradient",
       "default": false,
-      "info": "Ne s'applique pas aux couleurs claires"
+      "info": "Does not apply to light colors"
     },
     {
       "type": "select",
       "id": "container",
-      "label": "Conteneur",
+      "label": "Container",
       "default": "container",
       "options": [
         {
           "value": "container",
-          "label": "Conteneur"
+          "label": "Container"
         },
         {
           "value": "container-fluid",
-          "label": "Pleine largeur"
+          "label": "Full width"
         }
       ]
     },
     {
       "type": "text",
       "id": "max_width",
-      "label": "Largeur max. (px)",
+      "label": "Max width (px)",
       "default": "991"
     },
     {
       "type": "select",
       "id": "desktop_image_width",
-      "label": "Largeur d'image sur ordinateur",
-      "info": "L'image est automatiquement optimisée pour les mobiles.",
+      "label": "Desktop image width",
+      "info": "The image is automatically optimized for mobile.",
       "default": "medium",
       "options": [
         {
@@ -354,20 +354,20 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "text_align",
-      "label": "Alignement du texte",
+      "label": "Text alignment",
       "default": "text-start",
       "options": [
         {
           "value": "text-start",
-          "label": "Gauche"
+          "label": "Left"
         },
         {
           "value": "text-center",
-          "label": "Centre"
+          "label": "Center"
         },
         {
           "value": "text-end",
-          "label": "Droite"
+          "label": "Right"
         }
       ]
     },
@@ -388,15 +388,15 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "options": [
         {
           "value": "square",
-          "label": "Carré"
+          "label": "Square"
         },
         {
           "value": "landscape",
-          "label": "Paysage"
+          "label": "Landscape"
         },
         {
           "value": "landscape-x2",
-          "label": "Paysage 2x"
+          "label": "Landscape 2x"
         },
         {
           "value": "potrait",
@@ -411,51 +411,51 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "img_crop",
-      "label": "Recadrage de l'image",
+      "label": "Image crop",
       "default": "center",
       "options": [
         {
           "value": "top",
-          "label": "Haut"
+          "label": "Top"
         },
         {
           "value": "center",
-          "label": "Centre"
+          "label": "Center"
         },
         {
           "value": "bottom",
-          "label": "Bas"
+          "label": "Bottom"
         },
         {
           "value": "left",
-          "label": "Gauche"
+          "label": "Left"
         },
         {
           "value": "right",
-          "label": "Droite"
+          "label": "Right"
         }
       ]
     },
     {
       "type": "select",
       "id": "img_thumbnail",
-      "label": "Bordure de l'image",
+      "label": "Image border",
       "default": "img-thumbnail",
       "options": [
         {
           "value": "",
-          "label": "Aucune"
+          "label": "None"
         },
         {
           "value": "img-thumbnail",
-          "label": "Bordure"
+          "label": "Border"
         }
       ]
     },
     {
       "type": "select",
       "id": "border_color",
-      "label": "Couleur de la bordure",
+      "label": "Border color",
       "options": [
         {
           "value": "",
@@ -463,27 +463,27 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         },
         {
           "value": "border-primary",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
           "value": "border-secondary",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
           "value": "border-tertiary",
-          "label": "Tertiaire"
+          "label": "Tertiary"
         },
         {
           "value": "border-dark",
-          "label": "Sombre"
+          "label": "Dark"
         },
         {
           "value": "border-success",
-          "label": "Succès"
+          "label": "Success"
         },
         {
           "value": "border-warning",
-          "label": "Avertissement"
+          "label": "Warning"
         },
         {
           "value": "border-danger",
@@ -499,7 +499,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "border_width",
-      "label": "Largeur de la bordure",
+      "label": "Border width",
       "min": 0,
       "max": 10,
       "step": 1,
@@ -508,27 +508,27 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "shadow_sp",
-      "label": "Ombre",
+      "label": "Shadow",
       "options": [
         {
           "value": "shadow-none",
-          "label": "Aucune"
+          "label": "None"
         },
         {
           "value": "shadow-1",
-          "label": "Ombre légère"
+          "label": "Light shadow"
         },
         {
           "value": "shadow-2",
-          "label": "Ombre partiel"
+          "label": "Partial shadow"
         },
         {
           "value": "shadow-3",
-          "label": "Ombre profonde"
+          "label": "Deep shadow"
         },
         {
           "value": "shadow-4",
-          "label": "Ombre totale"
+          "label": "Full shadow"
         }
       ],
       "default": "shadow-1"
@@ -536,94 +536,94 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "img_align_desktop",
-      "label": "Alignement de l'image (bureau)",
+      "label": "Image alignment (desktop)",
       "default": "flex-lg-row",
       "options": [
         {
           "value": "flex-lg-row",
-          "label": "Gauche"
+          "label": "Left"
         },
         {
           "value": "flex-lg-row-reverse",
-          "label": "Droite"
+          "label": "Right"
         }
       ]
     },
     {
       "type": "header",
-      "content": "Texte"
+      "content": "Text"
     },
     {
       "type": "image_picker",
       "id": "subtitle_img",
-      "label": "Légende Image"
+      "label": "Caption image"
     },
     {
       "type": "text",
       "id": "brand_image_size",
-      "label": "Image Largeur/Hauteur (px)",
+      "label": "Image width/height (px)",
       "default": "60"
     },
     {
       "type": "text",
       "id": "subtitle",
-      "label": "Légende Texte",
-      "default": "Proposition de valeur unique"
+      "label": "Caption text",
+      "default": "Unique value proposition"
     },
     {
       "type": "select",
       "id": "subtitle_size",
-      "label": "Taille de la légende",
+      "label": "Caption size",
       "default": "fs-5",
       "options": [
         {
-          "group": "Légende Standard",
+          "group": "Standard caption",
           "value": "fs-1",
-          "label": "Extra Grand"
+          "label": "Extra large"
         },
         {
-          "group": "Légende Standard",
+          "group": "Standard caption",
           "value": "fs-2",
-          "label": "Super Grand"
+          "label": "Super large"
         },
         {
-          "group": "Légende Standard",
+          "group": "Standard caption",
           "value": "fs-3",
-          "label": "Très Grand"
+          "label": "Very large"
         },
         {
-          "group": "Légende Standard",
+          "group": "Standard caption",
           "value": "fs-4",
-          "label": "Grand"
+          "label": "Large"
         },
         {
-          "group": "Légende Standard",
+          "group": "Standard caption",
           "value": "fs-5",
-          "label": "Moyen"
+          "label": "Medium"
         },
         {
-          "group": "Légende Standard",
+          "group": "Standard caption",
           "value": "fs-6",
-          "label": "Petit"
+          "label": "Small"
         }
       ]
     },
     {
       "type": "color",
       "id": "color_caption",
-      "label": "Couleur de la légende",
+      "label": "Caption color",
       "default": "#6c757d"
     },
     {
       "type": "inline_richtext",
       "id": "title",
-      "label": "Titre",
+      "label": "Title",
       "default": "Image Avec Texte"
     },
     {
       "type": "select",
       "id": "heading_tag",
-      "label": "Balise titre (SEO)",
+      "label": "Heading tag (SEO)",
       "default": "h2",
       "options": [
         {
@@ -659,7 +659,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "title_size",
-      "label": "Taille du titre",
+      "label": "Title size",
       "default": "h2",
       "options": [
         {
@@ -718,7 +718,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
       "type": "richtext",
       "id": "description",
       "label": "Description",
-      "default": "<p>Associez du texte à une image pour mettre l'accent sur le produit, la collection ou l'article de blog de votre choix. Ajoutez des détails sur la disponibilité, le style, ou donnez même un avis.</p>"
+      "default": "<p>Pair text with an image to highlight your chosen product, collection, or blog post. Add details about availability, style, or even provide a review.</p>"
     },
     {
       "type": "select",
@@ -781,7 +781,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "color",
       "id": "readmore_color",
-      "label": "Couleur du fondu",
+      "label": "Color du fondu",
       "default": "#fff"
     },
     {
@@ -814,7 +814,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "btn_color",
-      "label": "Couleur du bouton",
+      "label": "Color du bouton",
       "default": "btn-primary",
       "options": [
         {

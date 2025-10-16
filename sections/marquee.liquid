@@ -8,10 +8,6 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
 {% endcomment %}
 
 {% liquid
-    assign pt = section.settings.pt | prepend: 'pt-'
-    assign pb = section.settings.pb | prepend: 'pb-'
-    assign mt = section.settings.mt | prepend: 'mt-'
-    assign mb = section.settings.mb | prepend: 'mb-'
 
     assign bg_color = section.settings.bg_color
 
@@ -20,37 +16,35 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     endif
 %}
 
-<section 
-    id="marquee-{{ section.id }}" 
-    class="marquee overflow-hidden {{ bg_color }} {{ section.settings.separator }} {{ pt }} {{ pb }} {{ mt }} {{ mb }}">
-    <ul 
-        class="list-unstyled mb-0 {{ section.settings.font_size }} {{ section.settings.text_transform }}"
-        data-animation-duration="{{ section.settings.animation_duration }}"
-        data-marquee-direction="{{ section.settings.marquee_direction }}"
-        data-section-id="{{ section.id }}"
-        aria-label="{{ section.settings.list_label }}">
-        {% for block in section.blocks %}
-            <li class="px-{{ section.settings.gap }}" {{ block.shopify_attributes }}>
-                {% unless block.settings.url == blank %}
-                    <a href="{{ block.settings.url }}">
-                {% endunless %}
-                {% if block.type == 'image' %}
-                    <img
-                        class="img-fluid"
-                        src="{{ block.settings.img.src | image_url: width: block.settings.img_width }}"
-                        alt="{{ block.settings.img.alt | escape }}"
-                        width="{{ block.settings.img_width }}"
-                        height="{{ block.settings.img_width | divided_by: block.settings.img.aspect_ratio | round }}"
-                        loading="lazy">
-                {% else %}
-                    {{ block.settings.text }}
-                {% endif %}
-                {% unless block.settings.url == blank %}
-                    </a>
-                {% endunless %}
-            </li>
-        {% endfor %}
-    </ul>
+
+<section
+  data-animation-duration="{{ section.settings.animation_duration }}"
+  data-marquee-direction="{{ section.settings.marquee_direction }}"
+  data-section-id="{{ section.id }}"
+  aria-label="{{ section.settings.list_label }}">
+  <ul>
+    {% for block in section.blocks %}
+      <li class="px-{{ section.settings.gap }}" {{ block.shopify_attributes }}>
+        {% unless block.settings.url == blank %}
+          <a href="{{ block.settings.url }}">
+        {% endunless %}
+        {% if block.type == 'image' %}
+          <img
+            class="img-fluid"
+            src="{{ block.settings.img.src | image_url: width: block.settings.img_width }}"
+            alt="{{ block.settings.img.alt | escape }}"
+            width="{{ block.settings.img_width }}"
+            height="{{ block.settings.img_width | divided_by: block.settings.img.aspect_ratio | round }}"
+            loading="lazy">
+        {% else %}
+          {{ block.settings.text }}
+        {% endif %}
+        {% unless block.settings.url == blank %}
+          </a>
+        {% endunless %}
+      </li>
+    {% endfor %}
+  </ul>
 </section>
 
 {% schema %}
@@ -68,61 +62,61 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "select",
       "id": "bg_color",
-      "label": "Couleur d'arrière-plan",
+      "label": "Background color",
       "default": "bg-dark text-white",
       "options": [
         {
-          "group": "Principal",
+          "group": "Main",
           "value": "bg-primary text-white",
-          "label": "Primaire"
+          "label": "Primary"
         },
         {
-          "group": "Principal",
+          "group": "Main",
           "value": "bg-secondary text-white",
-          "label": "Secondaire"
+          "label": "Secondary"
         },
         {
-          "group": "Principal",
+          "group": "Main",
           "value": "bg-tertiary text-white",
-          "label": "Tertiaire"
+          "label": "Tertiary"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-white text-dark",
-          "label": "Blanc"
+          "label": "White"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-light text-body",
-          "label": "Claire"
+          "label": "Light"
         },
         {
-          "group": "Intermédiaire",
+          "group": "Intermediate",
           "value": "bg-dark text-white",
-          "label": "Sombre"
+          "label": "Dark"
         },
         {
-          "group": "Par défaut",
+          "group": "Default",
           "value": "bg-body text-body",
-          "label": "Corps (body)"
+          "label": "Body"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-success text-white",
-          "label": "Succès"
+          "label": "Success"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-warning text-dark",
-          "label": "Avertissement"
+          "label": "Warning"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-danger text-white",
           "label": "Danger"
         },
         {
-          "group": "Alerte",
+          "group": "Alert",
           "value": "bg-info text-white",
           "label": "Info"
         }
@@ -131,52 +125,52 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "checkbox",
       "id": "bg_gradient",
-      "label": "Dégradé d'arrière-plan",
+      "label": "Background gradient",
       "default": false,
-      "info": "Ne s'applique pas aux couleurs claires"
+      "info": "Does not apply to light colors"
     },
     {
       "type": "select",
       "id": "font_size",
-      "label": "Taille du texte",
+      "label": "Text size",
       "default": "fs-4",
       "options": [
         {
           "group": "Texte Standard",
           "value": "fs-1",
-          "label": "Extra Grand"
+          "label": "Extra Large"
         },
         {
           "group": "Texte Standard",
           "value": "fs-2",
-          "label": "Super Grand"
+          "label": "Super Large"
         },
         {
           "group": "Texte Standard",
           "value": "fs-3",
-          "label": "Très Grand"
+          "label": "Very Large"
         },
         {
           "group": "Texte Standard",
           "value": "fs-4",
-          "label": "Grand"
+          "label": "Large"
         },
         {
           "group": "Texte Standard",
           "value": "fs-5",
-          "label": "Moyen"
+          "label": "Medium"
         },
         {
           "group": "Texte Standard",
           "value": "fs-6",
-          "label": "Petit"
+          "label": "Small"
         }
       ]
     },
     {
       "type": "select",
       "id": "text_transform",
-      "label": "Transformation de texte",
+      "label": "Text transformation",
       "default": "text-capitalize",
       "options": [
         {
@@ -185,24 +179,24 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         },
         {
           "value": "text-capitalize",
-          "label": "Capitale"
+          "label": "Capitalize"
         },
         {
           "value": "text-lowercase",
-          "label": "Minuscule"
+          "label": "Lowercase"
         },
         {
           "value": "text-uppercase",
-          "label": "Majuscule"
+          "label": "Uppercase"
         }
       ]
     },
     {
       "type": "text",
       "id": "list_label",
-      "label": "Libellé de la liste",
-      "default": "Caractéristiques promotionnelles",
-      "info": "Utilisé à des fins d'accessibilité"
+      "label": "List label",
+      "default": "Promotional features",
+      "info": "Used for accessibility purposes"
     },
     {
       "type": "header",
@@ -211,56 +205,56 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "animation_duration",
-      "label": "Vitesse",
+      "label": "Speed",
       "min": 0,
       "max": 60,
       "step": 1,
       "default": 20,
       "unit": "sec",
-      "info": "Vitesse de défilement automatique"
+      "info": "Automatic scrolling speed"
     },
     {
       "type": "select",
       "id": "marquee_direction",
-      "label": "Sens de défilement",
+      "label": "Scrolling direction",
       "default": "left",
-      "info": "Sens de défilement automatique",
+      "info": "Automatic scrolling direction",
       "options": [
         {
           "value": "left",
-          "label": "Gauche"
+          "label": "Left"
         },
         {
           "value": "right",
-          "label": "Droite"
+          "label": "Right"
         }
       ]
     },
     {
       "type": "select",
       "id": "separator",
-      "label": "Séparateur",
+      "label": "Separator",
       "default": "separator-dot",
       "options": [
         {
           "value": "",
-          "label": "Aucun"
+          "label": "None"
         },
         {
           "value": "separator-dot",
-          "label": "Point"
+          "label": "Dot"
         }
       ]
     },
     {
       "type": "header",
       "content": "Gap",
-      "info": "Espacement entre les éléments."
+      "info": "Spacing between items."
     },
     {
       "type": "range",
       "id": "gap",
-      "label": "Espacement",
+      "label": "Gap",
       "min": 0,
       "max": 12,
       "step": 1,
@@ -268,12 +262,12 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     },
     {
       "type": "header",
-      "content": "Espacement de la section"
+      "content": "Section spacing"
     },
     {
       "type": "range",
       "id": "pt",
-      "label": "Padding supérieure",
+      "label": "Top padding",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -282,7 +276,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "pb",
-      "label": "Padding inférieure",
+      "label": "Bottom padding",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -291,7 +285,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "mt",
-      "label": "Marge supérieure",
+      "label": "Top margin",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -300,7 +294,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
     {
       "type": "range",
       "id": "mb",
-      "label": "Marge inférieure",
+      "label": "Bottom margin",
       "min": 0,
       "max": 20,
       "step": 1,
@@ -315,7 +309,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "text",
           "id": "text",
-          "label": "Texte"
+          "label": "Text"
         },
         {
           "type": "url",
@@ -336,7 +330,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "text",
           "id": "img_width",
-          "label": "Largeur de l'image (px)",
+          "label": "Image width (px)",
           "default": "120"
         },
         {
@@ -355,19 +349,19 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "item",
           "settings": {
-            "text": "Un message promotionnel"
+            "text": "A promotional message"
           }
         },
         {
           "type": "item",
           "settings": {
-            "text": "Encore un autre message promotionnel"
+            "text": "Another promotional message"
           }
         },
         {
           "type": "item",
           "settings": {
-            "text": "Essayez d'être bref"
+            "text": "Try to be brief"
           }
         },
         {
@@ -379,7 +373,7 @@ Les contrevenants seront poursuivis dans toute la mesure permise par la loi.
         {
           "type": "item",
           "settings": {
-            "text": "Ajustez les paramètres de la section au besoin"
+            "text": "Adjust section settings as needed"
           }
         }
       ]

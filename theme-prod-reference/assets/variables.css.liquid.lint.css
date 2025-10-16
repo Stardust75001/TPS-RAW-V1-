@@ -1,0 +1,191 @@
+/* ========================================================================
+   GENERAL INFORMATION ABOUT THE SITE
+   Property of © 2019/2024 Shopiweb.fr
+   For more information, visit: https://www.shopiweb.fr
+   ======================================================================== */
+
+/* =====================
+   Fonts
+   ===================== */
+/* Definition of fonts for headings and body text. */
+/* Liquid code commented out for linting: */
+/* {% if settings.font_headings_custom == blank %}
+    {{ settings.font_headings | font_face: font_display: 'swap' }}
+{% else %}
+    @font-face {
+        font-family: "{{ settings.font_headings_custom | split: '.' | first }}";
+        src: url('{{ settings.font_headings_custom | file_url }}') format('{{ settings.font_headings_custom | split: '.' | last }}');
+        font-display: swap;
+    }
+{% endif %}
+
+{% unless settings.font_body.system %}
+    {{ settings.font_body | font_face: font_display: 'swap' }}
+    {{ settings.font_body | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' }}
+    {{ settings.font_body | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
+{% endunless %} */
+
+/* =====================
+   CSS Variables
+   ===================== */
+/* Definition of primary, secondary, and other global CSS variables. */
+:root {
+    /* Liquid code commented out for linting: */
+    /* --bs-primary: {{ settings.color_primary }}; */
+    /* ...repeat for all Liquid variables... */
+    --bs-primary: #d32f2f;
+    --bs-primary-rgb: 211,47,47;
+    --bs-primary-lighten-5: #e57373;
+    --bs-primary-lighten-10: #ef9a9a;
+    --bs-primary-darken-5: #b71c1c;
+    --bs-primary-darken-10: #880000;
+    --bs-secondary: #455a64;
+    --bs-secondary-rgb: 69,90,100;
+    --bs-secondary-lighten-5: #718792;
+    --bs-secondary-lighten-10: #b0bec5;
+    --bs-secondary-darken-5: #263238;
+    --bs-secondary-darken-10: #1a2327;
+    --bs-tertiary: #0F6378;
+    --bs-tertiary-rgb: 15,99,120;
+    --bs-tertiary-lighten-5: #4fc3f7;
+    --bs-tertiary-lighten-10: #81d4fa;
+    --bs-tertiary-darken-5: #01579b;
+    --bs-tertiary-darken-10: #002f4b;
+    --bs-dark: #212529;
+    --bs-dark-rgb: 33,37,41;
+    --bs-dark-lighten-5: #495057;
+    --bs-dark-lighten-10: #6c757d;
+    --bs-dark-darken-5: #1a1d20;
+    --bs-dark-darken-10: #111315;
+    --bs-light: #f8f9fa;
+    --bs-light-rgb: 248,249,250;
+    --bs-light-lighten-5: #ffffff;
+    --bs-light-lighten-10: #f1f3f4;
+    --bs-light-darken-5: #e9ecef;
+    --bs-light-darken-10: #dee2e6;
+    --bs-body-bg: #ffffff;
+    --bs-body-bg-rgb: 255,255,255;
+    --bs-body-color: #212529;
+    --bs-body-color-rgb: 33,37,41;
+    --bs-border-radius: 0.375rem;
+    --bs-link-color: #d32f2f;
+    --bs-link-color-rgb: 211,47,47;
+    --bs-link-hover-color: #880000;
+    --bs-link-hover-color-rgb: 136,0,0;
+    --bs-success: #198754;
+    --bs-success-darken: #145c32;
+    --bs-success-rgb: 25,135,84;
+    --bs-danger: #dc3545;
+    --bs-danger-darken: #a71d2a;
+    --bs-danger-rgb: 220,53,69;
+    --bs-warning: #ffc107;
+    --bs-warning-darken: #b28704;
+    --bs-warning-rgb: 255,193,7;
+    --bs-info: #0dcaf0;
+    --bs-info-darken: #0a8fb0;
+    --bs-info-rgb: 13,202,240;
+    --bs-headings-font-family: sans-serif;
+    --bs-headings-font-weight: 500;
+    --bs-body-font-family: sans-serif;
+}
+
+/* =====================
+   Buttons
+   ===================== */
+/* Custom styles for buttons, including spacing and text transformations. */
+body .btn {
+    letter-spacing: 0.0rem;
+    text-transform: none;
+    font-weight: 500;
+}
+
+body .btn-md {
+    --bs-btn-padding-x: 0.8rem;
+    --bs-btn-padding-y: 0.4rem;
+}
+
+body .btn-lg {
+    --bs-btn-padding-x: 1.2rem;
+    --bs-btn-padding-y: 0.6rem;
+}
+
+/* =====================
+   Forms
+   ===================== */
+/* Specific styles for form controls such as selectors and text areas. */
+.form-control-md,
+.form-select-md {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+
+.form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23212529' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e")
+}
+
+[dir="ltr"] .form-select-md {
+    padding-right: 2.5rem;
+}
+
+[dir="rtl"] .form-select-md {
+    padding-left: 2.5rem;
+}
+
+/* =====================
+   Offcanvas / Modal
+   ===================== */
+/* Background and filter settings for modals and offcanvas. */
+body .offcanvas-backdrop,
+body .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* backdrop-filter: blur(5px); */
+}
+
+/* =====================
+   Accordion
+   ===================== */
+/* Specific style for accordion buttons and icons. */
+.accordion {
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* =====================
+   Other styles
+   ===================== */
+/* Various styles for specific elements such as menus and close buttons. */
+#offcanvas-menu-nav .nav-link[aria-expanded]:after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23212529' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' y1='5' x2='12' y2='19'%3E%3C/line%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E")
+}
+#offcanvas-menu-nav .nav-link[aria-expanded="true"]::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23212529' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
+}
+
+.btn-close {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e")
+}
+
+/* =====================
+   Price customization
+   ===================== */
+/* Specific color for the final price of products. */
+.product-item-price-final,
+.product-price-final {
+  color: #198754 !important;
+}
+/* === Footer/Header vars from BUBBLE === */
+
+:root {
+    --footer-bg: #1c1f26;
+    --footer-text: #ffffff;
+    --footer-border-color: #444;
+    --footer-link-hover: #bbb;
+    --header-bg: #f8f9fa;
+    --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --header-text: #333;
+    --sticky-header-bg: #f9f9f9;
+    --sticky-border-color: #e1e1e1;
+}
+

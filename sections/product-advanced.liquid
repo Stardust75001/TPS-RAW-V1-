@@ -160,12 +160,12 @@ Section produit avancée avec galerie interactive et blocs dynamiques
 
 {% schema %}
 {
-  "name": "Produit avancé",
+  "name": "Advanced product",
   "settings": [
     {
       "type": "text",
       "id": "container",
-      "label": "Classe container",
+      "label": "Container class",
       "default": "container"
     },
     {
@@ -190,21 +190,19 @@ Section produit avancée avec galerie interactive et blocs dynamiques
   "blocks": [
     {
       "type": "vendor",
-      "name": "Vendeur",
+      "name": "Vendor",
       "limit": 1,
-      "settings": [
-
-      ]
+      "settings": []
     },
     {
       "type": "title",
-      "name": "Titre",
+      "name": "Title",
       "limit": 1,
       "settings": [
         {
           "type": "select",
           "id": "title_size",
-          "label": "Taille du titre",
+          "label": "Title size",
           "default": "h1",
           "options": [
             {
@@ -225,13 +223,13 @@ Section produit avancée avec galerie interactive et blocs dynamiques
     },
     {
       "type": "price",
-      "name": "Prix",
+      "name": "Price",
       "limit": 1,
       "settings": [
         {
           "type": "select",
           "id": "price_size",
-          "label": "Taille du prix",
+          "label": "Price size",
           "default": "h4",
           "options": [
             {
@@ -240,11 +238,11 @@ Section produit avancée avec galerie interactive et blocs dynamiques
             },
             {
               "value": "h4",
-              "label": "Moyen"
+              "label": "Medium"
             },
             {
               "value": "h5",
-              "label": "Petit"
+              "label": "Small"
             }
           ]
         }
@@ -254,58 +252,52 @@ Section produit avancée avec galerie interactive et blocs dynamiques
       "type": "description",
       "name": "Description",
       "limit": 1,
-      "settings": [
-
-      ]
+      "settings": []
     },
     {
       "type": "variants",
-      "name": "Sélecteur de variantes",
+      "name": "Variant selector",
       "limit": 1,
-      "settings": [
-
-      ]
+      "settings": []
     },
     {
       "type": "buy_buttons",
-      "name": "Boutons d'achat",
+      "name": "Buy buttons",
       "limit": 1,
       "settings": [
         {
           "type": "text",
           "id": "button_text",
-          "label": "Texte du bouton",
-          "default": "Ajouter au panier"
+          "label": "Button text",
+          "default": "Add to cart"
         }
       ]
     },
     {
       "type": "trust_badges",
-      "name": "Badges de confiance",
+      "name": "Trust badges",
       "limit": 1,
-      "settings": [
-
-      ]
+      "settings": []
     },
     {
       "type": "custom_text",
-      "name": "Texte personnalisé",
+      "name": "Custom text",
       "settings": [
         {
           "type": "richtext",
           "id": "text",
-          "label": "Texte"
+          "label": "Text"
         }
       ]
     },
     {
       "type": "spacer",
-      "name": "Espacement",
+      "name": "Spacer",
       "settings": [
         {
           "type": "range",
           "id": "space_size",
-          "label": "Taille de l'espacement",
+          "label": "Spacer size",
           "min": 1,
           "max": 10,
           "step": 1,
@@ -316,7 +308,7 @@ Section produit avancée avec galerie interactive et blocs dynamiques
   ],
   "presets": [
     {
-      "name": "Produit avancé",
+      "name": "Advanced product",
       "blocks": [
         {
           "type": "vendor"
