@@ -1,0 +1,31 @@
+name: Update Sentry SDK
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "@sentry/browser version (e.g. 7.121.0)"
+        required: true
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download SDK
+        run: |
+          curl -L "https://cdn.jsdelivr.net/npm/@sentry/browser@${{ github.event.inputs.version }}/build/bundle.tracing.min.js" \
+            -o assets/sentry-bundle.tracing.min.js
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/sentry-bundle.tracing.min.js
+          git commit -m "chore(sentry): bump SDK to ${{ github.event.inputs.version }}" || echo "No changes"
+          git push
+      # Optional: deploy to Shopify
+      - name: Push asset to Shopify
+        if: ${{ vars.SHOPIFY_DEPLOY == 'true' }}
+        env:
+          SHOPIFY_FLAG_PATH: ${{ secrets.SHOPIFY_FLAG_PATH }} # e.g. store domain
+          SHOPIFY_CLI_AUTH_TOKEN: ${{ secrets.SHOPIFY_CLI_AUTH_TOKEN }}
+        run: |
+          shopify theme push --only "assets/sentry-bundle.tracing.min.js" --json || true
