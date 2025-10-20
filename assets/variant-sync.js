@@ -265,4 +265,8 @@
 
   // ---- Go! ------------------------------------------------------------------
   initFromURL();
+<<<<<<< HEAD
 })();
+=======
+})();
+>>>>>>> d0c988f (Add variant-sync.js for product variant sync logic)
